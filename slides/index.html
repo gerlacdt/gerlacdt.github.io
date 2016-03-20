@@ -103,12 +103,12 @@
 
                     <blockquote>
 			<small>&ldquo;
-                        Lisp is worth learning for the profound enlightenment experience
-you will have when you finally get it; that experience will make you a
-better programmer for the rest of your days, even if you never
-actually use Lisp itself a lot.  &rdquo;
-                        <br>
-                        - Eric Raymond, &ldquo;How to Become a Hacker&rdquo;
+                            Lisp is worth learning for the profound enlightenment experience
+                            you will have when you finally get it; that experience will make you a
+                            better programmer for the rest of your days, even if you never
+                            actually use Lisp itself a lot.  &rdquo;
+                            <br>
+                            - Eric Raymond, &ldquo;<a href="http://www.catb.org/esr/faqs/hacker-howto.html">How to Become a Hacker</a>&rdquo;
                         </small>
 		    </blockquote>
                 </section>
@@ -154,8 +154,8 @@ actually use Lisp itself a lot.  &rdquo;
                     </section>
 
                     <section>
-                    <h2>More functions</h2>
-                                            <pre><code class="hljs" data-trim contenteditable>
+                        <h2>More functions</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
 
 (defn add-1
   "Sum up given parameters."
@@ -167,11 +167,11 @@ actually use Lisp itself a lot.  &rdquo;
   [{:keys [:firstname :lastname]}]
   {:fullname (str firstname " " lastname)})
 		        </code></pre>
-                </section>
+                    </section>
 
-                <section>
-                    <h2>Conditionals</h2>
-                                            <pre><code class="hljs" data-trim contenteditable>
+                    <section>
+                        <h2>Conditionals</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
 ;; if and cond
 
 (defn my-even?
@@ -191,12 +191,12 @@ actually use Lisp itself a lot.  &rdquo;
   ([] "Hello"))
 
 		        </code></pre>
-                </section>
+                    </section>
 
 
-                <section>
-                    <h2>Local variables</h2>
-                                            <pre><code class="hljs" data-trim contenteditable>
+                    <section>
+                        <h2>Local variables</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
 ;; let
 
 (defn area-circle
@@ -207,11 +207,11 @@ actually use Lisp itself a lot.  &rdquo;
     (* pi radius-squared)))
 
 		        </code></pre>
-                </section>
+                    </section>
 
-                                <section>
-                    <h2>Loops</h2>
-                    <pre><code class="hljs" data-trim contenteditable>
+                    <section>
+                        <h2>Loops</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
 ;; loops (better use high-order functions like
 ;; map, filter, reduce)
 (defn print-list-1
@@ -231,12 +231,12 @@ actually use Lisp itself a lot.  &rdquo;
     (println entry)))
 
 
-		    </code></pre>
-                                </section>
+		        </code></pre>
+                    </section>
 
-                                <section>
-                                    <h2>Core data structures</h2>
-                                    <pre><code class="hljs" data-trim contenteditable>
+                    <section>
+                        <h2>Core data structures</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
 ;; data structures
 
 (def a-vector [1 2 3])
@@ -251,8 +251,8 @@ actually use Lisp itself a lot.  &rdquo;
 (def a-map {:foo "bar" :a 1})
 (assoc a-map :b 2)
 
-		                    </code></pre>
-                </section>
+		        </code></pre>
+                    </section>
                 </section>
 
                 <section>
@@ -283,7 +283,7 @@ actually use Lisp itself a lot.  &rdquo;
 		    </code></pre>
                 </section>
 
-                                <section>
+                <section>
                     <h2>Concurrency</h2>
                     <pre><code class="hljs" data-trim contenteditable>
 ;; concurrency refs (in-memory transactions)
@@ -319,7 +319,7 @@ actually use Lisp itself a lot.  &rdquo;
 
                     <section>
                         <h2>Java for-each</h2>
-                    <pre><code class="hljs" data-trim contenteditable>
+                        <pre><code class="hljs" data-trim contenteditable>
 // java 1.4 and before
 
 for (int i = 0; i < list.size(); i++) {
@@ -332,12 +332,12 @@ for (int i = 0; i < list.size(); i++) {
 for (String s : list) {
     // do something with list item
 }
-		    </code></pre>
+		        </code></pre>
                     </section>
 
                     <section>
                         <h2>for-each macro</h2>
-                    <pre><code class="hljs" data-trim contenteditable>
+                        <pre><code class="hljs" data-trim contenteditable>
 ;; for-each macro
 (defmacro for-each
   "Simulates the java for-each loop"
@@ -350,7 +350,7 @@ for (String s : list) {
 ;; (for-each [x [1 2 3]]
 ;;           (println x))
 
-		    </code></pre>
+		        </code></pre>
                     </section>
 
                 </section>
@@ -380,7 +380,7 @@ for (String s : list) {
                             <li><a href="https://github.com/clojure-emacs/cider">Emacs</a></li>
                             <li><a href="https://github.com/shaunlebron/parinfer">atom/sublime parinfer</a></li>
                             <li><a href="https://cursive-ide.com/">IntelliJ Cursive</a></li>
-                         </ul>
+                        </ul>
                         <li>Web-middleware: <a href="https://github.com/ring-clojure/ring">ring</a></li>
                         <li>REST-router: <a href="https://github.com/weavejester/compojure">compojure</a></li>
                         <li>JSON: <a href="https://github.com/dakrone/cheshire">cheshire</a></li>
@@ -388,7 +388,7 @@ for (String s : list) {
 		    </ul>
                 </section>
 
-                                <section>
+                <section>
                     <h2>Clojurescript Libraries</h2>
 		    <ul>
 			<li>Build: <a href="http://leiningen.org/">Leiningen</a></li>
