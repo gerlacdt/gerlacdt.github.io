@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+	<meta charset="utf-8">
+
+	<title>reveal.js – The HTML Presentation Framework</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+	 var link = document.createElement( 'link' );
+	 link.rel = 'stylesheet';
+	 link.type = 'text/css';
+	 link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	 document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	     <script src="lib/js/html5shiv.js"></script>
+	     <![endif]-->
+    </head>
+
+    <body>
+
+	<div class="reveal">
+
+	    <!-- Any section element inside of this container is displayed as a slide -->
+	    <div class="slides">
+
+                <section>
+                    <h1>Clojure introduction</h1>
+                    <h3>Simple examples and more</h3>
+                    <p><small>Created by Daniel Gerlach</small></p>
+                </section>
+
+                <section>
+                    <h2>Agenda</h2>
+		    <ul>
+			<li>History</li>
+			<li>Language Basics</li>
+			<li>Libraries</li>
+		    </ul>
+                </section>
+
+                <section>
+                    <h2>History Clojure</h2>
+		    <ul>
+			<li><a href="http://clojure.org">clojure.org</a></li>
+			<li>released 2007</li>
+			<li>inventor Rich Hickey</li>
+                        <li>current version 1.8</li>
+                        <li>host language</li>
+                        <ul>
+                            <li>Clojure for JVM</li>
+                            <li>Clojurescript for V8</li>
+                            <li>ClojureCLR for .NET</li>
+                        </ul>
+		    </ul>
+                </section>
+
+                <section>
+                    <h2>Lisp history</h2>
+		    <ul>
+			<li>John McCarthy</li>
+			<li>release 1958 (second-oldest high-level language)</li>
+			<li>Lisp inventions</li>
+                        <ul>
+                            <li>Homoiconicity (Code is data. Data is code)</li>
+                            <li>macros</li>
+                            <li>if-then-else</li>
+                            <li>recursive functions</li>
+                            <li>automatic garbage collection</li>
+                            <li>generic functions</li>
+                            <li>lexical closures</li>
+                            <li>REPL (Read-Eval-Print-Loop)</li>
+                        </ul>
+		    </ul>
+                </section>
+
+                <section>
+                    <h2>Lisp quotes</h2>
+                    <blockquote>
+			&ldquo;
+                        the greatest single programming language ever designed
+                        &rdquo;
+                        <br>
+                        - Alan Kay, on Lisp
+		    </blockquote>
+
+                    <blockquote>
+			<small>&ldquo;
+                        Lisp is worth learning for the profound enlightenment experience
+you will have when you finally get it; that experience will make you a
+better programmer for the rest of your days, even if you never
+actually use Lisp itself a lot.  &rdquo;
+                        <br>
+                        - Eric Raymond, &ldquo;How to Become a Hacker&rdquo;
+                        </small>
+		    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Language overview</h2>
+		    <ul>
+			<li>strongly typed, dynamic</li>
+			<li>JVM hosted</li>
+			<li>Lisp</li>
+                        <li>Functional programming language</li>
+                        <li>Immutable data structures</li>
+                        <li>REPL-Driven-Development</li>
+                        <li>Concurrency</li>
+                        <li>Homoiconicity (Macros)</li>
+		    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Functions</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+;; this is a comment
+
+;; creates a global var
+(def x 1)
+
+(def hello-1 (fn []
+               "Hello World!"))
+
+;; creates a global var with a function as value
+(defn hello-2
+  "Returns hello world"
+  []
+  "Hello World!")
+
+(defn hello-3
+  "Multi arity function."
+  ([] "Hello world!")
+  ([name] (str "Hello " name "!")))
+
+		        </code></pre>
+                    </section>
+
+                    <section>
+                    <h2>More functions</h2>
+                                            <pre><code class="hljs" data-trim contenteditable>
+
+(defn add-1
+  "Sum up given parameters."
+  [& more]
+  (apply + more))
+
+(defn destruct-1
+  "Extract firstname and lastname and returns fullname."
+  [{:keys [:firstname :lastname]}]
+  {:fullname (str firstname " " lastname)})
+		        </code></pre>
+                </section>
+
+                <section>
+                    <h2>Conditionals</h2>
+                                            <pre><code class="hljs" data-trim contenteditable>
+;; if and cond
+
+(defn my-even?
+  "Only returns number if it is even."
+  [n]
+  (if (even? n)
+    n
+    :not-even))
+
+(defn greeting
+  "Returns the greeting in the given language. Defaults to :english"
+  ([language]
+   (cond (= language :english) "Hello"
+         (= language :french) "Bonjour"
+         (= language :spanish) "Hola"
+         :else "Hello"))
+  ([] "Hello"))
+
+		        </code></pre>
+                </section>
+
+
+                <section>
+                    <h2>Local variables</h2>
+                                            <pre><code class="hljs" data-trim contenteditable>
+;; let
+
+(defn area-circle
+  "Returns the area of a circle with the given radius"
+  [radius]
+  (let [pi 3.1415
+        radius-squared (* radius radius)]
+    (* pi radius-squared)))
+
+		        </code></pre>
+                </section>
+
+                                <section>
+                    <h2>Loops</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+;; loops (better use high-order functions like
+;; map, filter, reduce)
+(defn print-list-1
+  "Prints all entries of given list "
+  [collection]
+  (loop [coll collection]
+    (if (empty? coll)
+      nil
+      (do
+        (println (first coll))
+        (recur (rest coll))))))
+
+(defn print-list-2
+  "Prints all entries of given list"
+  [collection]
+  (doseq [entry collection]
+    (println entry)))
+
+
+		    </code></pre>
+                                </section>
+
+                                <section>
+                                    <h2>Core data structures</h2>
+                                    <pre><code class="hljs" data-trim contenteditable>
+;; data structures
+
+(def a-vector [1 2 3])
+(conj a-vector 4)
+
+(def a-list '(1 2 3))
+(conj a-list 4)
+
+(def a-set #{1 2 3})
+(conj a-set 4)
+
+(def a-map {:foo "bar" :a 1})
+(assoc a-map :b 2)
+
+		                    </code></pre>
+                </section>
+                </section>
+
+                <section>
+                    <h2>Lazy data structures</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+;; lazy data structures
+(def natural-numbers (iterate inc 1))
+;; (take 5 natural-numbers)
+		    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Functional programming</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+;; map filter reduce
+(def even-numbers (filter even? natural-numbers))
+
+(defn sum-of-squares
+  "Returns the sum of the given numbers squared."
+  [& numbers]
+  (reduce + 0  (map (fn [x]
+                      (* x x))
+                    numbers)))
+
+;; partial
+(def even-numbers-2 (iterate (partial + 2) 0))
+;; (take 10 even-numbers-2)
+		    </code></pre>
+                </section>
+
+                                <section>
+                    <h2>Concurrency</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+;; concurrency refs (in-memory transactions)
+(def account-a (ref 1000))
+(def account-b (ref 0))
+
+(defn transfer-money
+  "Transfers the given amount of money from account a to account b"
+  [amount a b]
+  (dosync
+   (alter a #(- % amount))
+   (alter b #(+ % amount))))
+;; @account-a
+;; @account-b
+;; (transfer-money 100 account-a account-b)
+		    </code></pre>
+                </section>
+                <section>
+                    <section>
+                        <h2>Macros</h2>
+                        <blockquote>
+			    <small>&ldquo;
+                                If you give someone Fortran, he has Fortran. If you give someone
+                                Lisp, he has any language he pleases.
+                                &rdquo;
+                                <br>
+                                - Guy Steele (Programming Language guru, Java Language Spec,
+                                Scheme, ECMAScript first edition, Common
+                                Lisp)
+                            </small>
+		        </blockquote>
+                    </section>
+
+                    <section>
+                        <h2>Java for-each</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+// java 1.4 and before
+
+for (int i = 0; i < list.size(); i++) {
+    String s = (String) list.get(i);
+    // do something with list item...
+}
+
+// java 1.5  (8 year later)
+
+for (String s : list) {
+    // do something with list item
+}
+		    </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>for-each macro</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+;; for-each macro
+(defmacro for-each
+  "Simulates the java for-each loop"
+  [[sym coll] & body]
+  `(loop [coll# ~coll]
+     (when-let [[~sym & xs#] (seq coll#)]
+       ~@body
+       (recur xs#))))
+
+;; (for-each [x [1 2 3]]
+;;           (println x))
+
+		    </code></pre>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h2>More language features</h2>
+                    <ul>
+                        <li><a href="https://en.wikipedia.org/wiki/Persistent_data_structure">persistent data structures</a></li>
+                        <li>namespaces</li>
+                        <li><a href="http://clojure.org/about/concurrent_programming">more concurrency</a></li>
+                        <ul>
+                            <li>atoms, refs, agents</li>
+                        </ul>
+                        <li>records</li>
+                        <li>protocols</li>
+                        <li><a href="http://clojure.org/about/runtime_polymorphism">multimethods</a></li>
+                        <li><a href="http://clojure.org/about/jvm_hosted">JVM interoperability</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Clojure Libraries</h2>
+		    <ul>
+			<li>Build: <a href="http://leiningen.org/">Leiningen</a></li>
+                        <li>IDEs and editors: </li>
+                        <ul>
+                            <li><a href="https://github.com/clojure-emacs/cider">Emacs</a></li>
+                            <li><a href="https://github.com/shaunlebron/parinfer">atom/sublime parinfer</a></li>
+                            <li><a href="https://cursive-ide.com/">IntelliJ Cursive</a></li>
+                         </ul>
+                        <li>Web-middleware: <a href="https://github.com/ring-clojure/ring">ring</a></li>
+                        <li>REST-router: <a href="https://github.com/weavejester/compojure">compojure</a></li>
+                        <li>JSON: <a href="https://github.com/dakrone/cheshire">cheshire</a></li>
+                        <li>Go-channels: <a href="https://github.com/clojure/core.async">core.async</a></li>
+		    </ul>
+                </section>
+
+                                <section>
+                    <h2>Clojurescript Libraries</h2>
+		    <ul>
+			<li>Build: <a href="http://leiningen.org/">Leiningen</a></li>
+                        <li>scaffold/live-reload etc.: <a href="https://github.com/bhauman/lein-figwheel">ring</a></li>
+                        <li>React.js wrapper: <a href="https://github.com/reagent-project/reagent">reagent</a></li>
+                        <li>Reactjs framework: <a href="https://github.com/Day8/re-frame">re-frame</a></li>
+		    </ul>
+                </section>
+
+		<section style="text-align: left;">
+		    <h1>THE END</h1>
+		    <p>
+			- <a href="http://slides.com">Try the online editor</a> <br>
+			- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+		    </p>
+		</section>
+
+	    </div>
+
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+
+	 // Full list of configuration options available at:
+	 // https://github.com/hakimel/reveal.js#configuration
+	 Reveal.initialize({
+	     controls: true,
+	     progress: true,
+	     history: true,
+	     center: true,
+             slideNumber: true,
+
+	     transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+	     // Optional reveal.js plugins
+	     dependencies: [
+		 { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		 { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		 { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		 { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		 { src: 'plugin/zoom-js/zoom.js', async: true },
+		 { src: 'plugin/notes/notes.js', async: true }
+	     ]
+	 });
+
+	</script>
+
+    </body>
+</html>
