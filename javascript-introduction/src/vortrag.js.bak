@@ -1,0 +1,265 @@
+'use strict';
+
+// function definition
+function hello() {
+    console.log("Hello word!");
+};
+// function expression
+var hello2 = function () {
+    console.log("Hello world!");
+};
+//functions as property in object
+var hello_object = {hello: function () {console.log("Hello World!");}};
+
+// function constructor
+var hello3 = new Function("hello3", "console.log(\"Hello World\")");
+
+// call functions
+hello();
+hello2();
+hello_object.hello();
+hello3();
+(function () {
+    console.log("Hello world!");  // call an anoymous function
+})();
+
+hello.call();
+hello2.apply();
+
+var add = function (a ,b) {
+    return a + b;
+};
+console.log("add invoked by apply: " + add.apply(null, [1,2]));
+console.log("add invoked by call: " + add.call(null, 4, 6));
+
+// high order functions
+function reduce(fn, initial, arr) {
+    var result = initial;
+    for (var i = 0; i < arr.length; i++) {
+        result = fn(result, arr[i]);
+    }
+    return result;
+}
+
+function filter(predicate, arr) {
+    var result = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (predicate(arr[i])) {
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+
+function map(fn, arr) {
+    var result = [];
+    for (var i = 0; i < arr.length; i++) {
+        result.push(fn(arr[i]));
+    }
+    return result;
+}
+
+var reduce_res = reduce(function (a,b) {return a + b}, 0, [1,2,3,4,5]);
+console.log(reduce_res);
+
+var filter_res = filter(function (x) {return x % 2 == 0}, [1,2,3,4,5,6,7,8,9,10]);
+console.log(filter_res);
+
+var map_res = map(function (x) {return x * x}, [1,2,3,4,5,6,7]);
+console.log(map_res);
+
+// map-reduce
+var sum_of_squares = reduce(function(a, b) {return a+b;}, 0,
+                            map(function (x) {return x * x}, [1,2,3,4,5,6,7]));
+console.log(sum_of_squares);  // 140
+
+var sum_of_squares = function(arr) {
+        return reduce(function(a,b) {return a + b;}, 0,
+                      map(function(x) {return x*x;}, arr))
+};
+
+console.log(sum_of_squares([1,2,3,4,5,6,7]));
+
+// monkey patching
+Array.prototype.mymap = function (fn) {
+    var result = [];
+    for (var i = 0; i < this.length; i++) {
+        result.push(fn(this[i]));
+    }
+    return result;
+};
+
+var squaredArray = [1,2,3,4,5,6,7].mymap(function (x) {return x * x});
+console.log(squaredArray);
+
+// simple closure
+var makeAdder = function (n) {
+    // n closes over returned function
+    return function (x) {
+        return n + x;
+    };
+};
+
+var add5 = makeAdder(5);
+console.log(add5(20));  // 25
+
+// immediate function call
+var add5 = function (n) {
+    // n closes over returned function
+    return function (x) {
+        return n + x;
+    };
+}(5);
+
+console.log(add5(20));  // 25
+
+// namespacing
+var myNamespace = {}
+
+// don't pollute global namespace
+myNamespace.hello = function(name) {
+    console.log("hello" + name);
+};
+
+myNamespace.goodbye = function() {
+    console.log("goodbye....");
+};
+
+myNamespace.hello("Daniel");
+myNamespace.goodbye();
+
+// module pattern
+var counterObj  = (function () {
+    var my = {};
+    var counter = 0;  // private
+    var hello = function () {  //private
+        return "hello world!";
+    };
+    // public methods
+    my.inc = function () {
+        return ++counter;
+    };
+    my.dec = function () {
+        return --counter;
+    };
+    my.reset = function () {
+        counter = 0; return counter;
+    };
+    my.say = function () {
+        return "Invoke private method:" + hello();
+    };
+    return my;
+})();  // invoke anonymous function
+console.log(counterObj.inc());
+console.log(counterObj.reset());
+console.log(counterObj.say());
+console.log(counterObj.hello());  // no method hello
+
+// jQuery a big module
+(function() {
+    var jQuery = window.$ = function() {
+        // initialize
+    };
+    
+    // private objects and functions
+})();  // call anonymous function immediately
+
+// callback functions
+$(document).ready(function(){
+  $("#b1").click(function(){
+      $("#p1").toggleClass('highlight');
+  });
+});
+
+// "this" demystified
+var foo = function() {
+    return this;
+};
+
+console.log(foo());  // window object
+
+var obj1 = {
+    name : "obj1",
+    obj_foo : foo
+};
+
+console.log(obj1.obj_foo());  // obj1
+
+var obj2 = {
+    name : "obj2",
+    obj_foo : foo
+};
+
+console.log(obj2.obj_foo());  // obj2
+
+// binding function contexts
+var bind = function(context, name) {
+    return function() {
+        return context[name].apply(context, arguments);
+    };
+};
+
+var button = {
+    clicked: false,
+
+    click: function () {
+        this.clicked = true;
+        console.log("clicked should be true: " + button.clicked);
+    }
+};
+
+// this is the button element NOT the button variable;
+// $(function() {
+//     $("#b1").click(button.click)  // fail
+//     // $("#b1").click($.proxy(button.click, button))  // ok
+// })
+
+var elem;
+$(function() {
+    elem = document.getElementById("b1");
+    elem.addEventListener("click", button.click, false);  // fail
+    // elem.addEventListener("click", bind(button, "click"), false);  // ok
+    // see elem has now property "clicked"
+    // console.log(elem);
+    // console.log(elem.clicked);
+})
+b
+// performance measuring
+var time = function (fn) {
+    var start = new Date().getTime();
+    var args = Array.prototype.slice.call(arguments, 1);
+    fn.apply(null, args);
+    console.log(new Date().getTime() - start + "ms");
+};
+
+// 1, 1, 2, 3, 5, 8, 13, 21, 34,.....
+var fib = function (n) {
+    if (n <= 2) {
+        return 1;
+    } else {
+        return fib(n-1) + fib(n-2);
+    }
+};
+
+var memoize = function (fn) {
+    var cache = {};
+
+    return function () {
+        var args = Array.prototype.slice.call(arguments);
+        var args_string = JSON.stringify(args);
+        if (cache[args_string] !== undefined) {
+            return cache[args_string];
+        } else {
+            cache[args_string] = fn.apply(null, args);
+            return cache[args_string];
+        }
+    };
+};
+
+//time uncached fibonacci
+time(fib, 41);
+
+fib = memoize(fib);
+// time cached fibonacci
+time(fib, 41);
+time(fib, 42);
