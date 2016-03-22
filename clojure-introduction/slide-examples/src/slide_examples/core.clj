@@ -30,14 +30,21 @@
   [{:keys [:firstname :lastname]}]
   {:fullname (str firstname " " lastname)})
 
+(defn destruct-2
+  "Extracts firstname and lastname but also add defaults if one of the
+  names do not exist. Returns concatenated fullname string."
+  [{:keys [:firstname :lastname]
+    :or {:firstname "John" :lastname "Doe"}}]
+  {:fullname (str firstname " " lastname)})
+
 ;; if and cond
 
 (defn my-even?
-  "Only returns number if it is even."
+  "Returns true if number is even."
   [n]
   (if (even? n)
-    n
-    :not-even))
+    true
+    false))
 
 (defn greeting
   "Returns the greeting in the given language. Defaults to :english"
