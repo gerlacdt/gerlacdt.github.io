@@ -64,19 +64,18 @@
         radius-squared (* radius radius)]
     (* pi radius-squared)))
 
-;; loops (better use high-order functions like
-;; map, filter, reduce)
-(defn print-list-1
-  "Prints all entries of given list "
-  [collection]
-  (loop [coll collection]
-    (if (empty? coll)
-      nil
-      (do
-        (println (first coll))
-        (recur (rest coll))))))
+;; loops with recur
 
-(defn print-list-2
+(defn factorial
+  "Returns the factorial of the given number."
+  [n]
+  (loop [i n
+         acc 1]
+    (if (zero? i)
+      acc
+      (recur (dec i) (* acc i)))))
+
+(defn print-list
   "Prints all entries of given list"
   [collection]
   (doseq [entry collection]
@@ -95,6 +94,20 @@
 
 (def a-map {:foo "bar" :a 1})
 (assoc a-map :b 2)
+
+;; (first a-vector)
+;; (rest a-vector)
+;; (drop 2 a-vector)
+;; (pop a-vector)
+;; (peek a-vector)
+;; (into {:c "value"} a-map)
+;; (into [5 6 7] a-vector)
+;; (concat [1 2] [3 4])
+
+(def users [{:name "James" :age 26}  {:name "John" :age 43}])
+;; update the age of the second (index 1) user
+(assoc-in users [1 :age] 44)
+
 
 
 ;; lazy data structures
