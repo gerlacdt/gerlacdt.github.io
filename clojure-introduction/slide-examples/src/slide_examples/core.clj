@@ -84,15 +84,19 @@
 ;; data structures
 
 (def a-vector [1 2 3])
+(def another-vector (vector 1 2 3))
 (conj a-vector 4)
 
 (def a-list '(1 2 3))
+(def another-list (list 1 2 3))
 (conj a-list 4)
 
 (def a-set #{1 2 3})
+(def another-set (set (list 1 2 3 1)))
 (conj a-set 4)
 
 (def a-map {:foo "bar" :a 1})
+(def another-map (hash-map :foo 1 :bar 2))
 (assoc a-map :b 2)
 
 ;; (first a-vector)
@@ -153,3 +157,35 @@
 
 ;; (for-each [x [1 2 3]]
 ;;           (println x))
+
+
+;; infix macro
+(defmacro infix
+  "Use this macro to get a familiar syntax."
+  [infixed]
+  (list (second infixed) (first infixed) (last infixed)))
+
+;; (infix (1 + 2))
+;; (macroexpand-1 '(infix (1 + 2)))
+
+(defmacro unless
+  "Inverted if"
+  [test & branches]
+  (conj branches (list 'not test) 'if))
+
+;; (unless (= 1 1)
+;;         true
+;;         false)
+
+;; (macroexpand-1 '(unless (= 1 1) true false))
+
+(defmacro my-and
+  ""
+  ([] true)
+  ([x] x)
+  ([x & next]
+   `(let [and# ~x]
+      (if and# (my-and ~@next) and#))))
+
+;; (my-and true false)
+;; (pprint (macroexpand-1 '(my-and true false)))

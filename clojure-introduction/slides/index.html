@@ -377,6 +377,42 @@ for (String s : list) {
 		        </code></pre>
                     </section>
 
+                    <section>
+                        <h2>More macros</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
+;; infix macro
+(defmacro infix
+  "Use this macro to get a familiar syntax."
+  [infixed]
+  (list (second infixed) (first infixed) (last infixed)))
+
+;; (infix (1 + 2))
+;; (macroexpand-1 '(infix (1 + 2)))
+
+(defmacro unless
+  "Inverted if"
+  [test & branches]
+  (conj branches (list 'not test) 'if))
+
+;; (unless (= 1 1)
+;;         true
+;;         false)
+
+;; (macroexpand-1 '(unless (= 1 1) true false))
+
+(defmacro my-and
+  ""
+  ([] true)
+  ([x] x)
+  ([x & next]
+   `(let [and# ~x]
+      (if and# (my-and ~@next) and#))))
+
+;; (my-and true false)
+;; (pprint (macroexpand-1 '(my-and true false)))
+		        </code></pre>
+                    </section>
+
                 </section>
 
                 <section>
