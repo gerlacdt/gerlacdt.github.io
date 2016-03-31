@@ -189,3 +189,5 @@
 
 ;; (my-and true false)
 ;; (pprint (macroexpand-1 '(my-and true false)))
+;; (use 'clojure.walk)
+;; (pprint (macroexpand-all '(my-and (= 1 1) (= 2 2) (= 1 2))))
