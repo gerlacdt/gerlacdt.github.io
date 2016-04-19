@@ -124,9 +124,24 @@
 (defn sum-of-squares
   "Returns the sum of the given numbers squared."
   [& numbers]
-  (reduce + 0  (map (fn [x]
-                      (* x x))
-                    numbers)))
+  (reduce + 0
+          (map (fn [x]
+                 (* x x))
+               numbers)))
+
+(defn square
+  "Returns the square of the given number."
+  [x]
+  (* x x))
+
+;; map filter reduce
+(defn sum-of-even-squares
+  "Returns the sum of even squares of the given numbers"
+  [& numbers]
+  (->> numbers
+       (map #(* % %))
+       (filter even?)
+       (reduce + 0)))
 
 ;; partial
 (def even-numbers-2 (iterate (partial + 2) 0))
