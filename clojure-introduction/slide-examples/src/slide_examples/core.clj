@@ -8,16 +8,53 @@
 (def hello-1 (fn []
                "Hello World!"))
 
+
+(def hello-2 #(str "Hello " %))
+
 ;; creates a global var with a function as value
-(defn hello-2
+(defn hello-3
   "Returns hello world"
   []
   "Hello World!")
 
-(defn hello-3
+(defn hello-4
   "Multi arity function."
   ([] "Hello world!")
   ([name] (str "Hello " name "!")))
+
+;; data structures
+
+(def a-vector [1 2 3])
+(def another-vector (vector 1 2 3))
+(conj a-vector 4)
+
+(def a-list '(1 2 3))
+(def another-list (list 1 2 3))
+(conj a-list 4)
+
+(def a-set #{1 2 3})
+(def another-set (set (list 1 2 3 1)))
+(conj a-set 4)
+
+(def a-map {:foo "bar" :a 1})
+(def another-map (hash-map :foo 1 :bar 2))
+(assoc a-map :b 2)
+
+;; (first a-vector)
+;; (rest a-vector)
+;; (drop 2 a-vector)
+;; (pop a-vector)
+;; (peek a-vector)
+;; (into {:c "value"} a-map)
+;; (into [5 6 7] a-vector)
+;; (concat [1 2] [3 4])
+
+(def users [{:name "James" :age 26}  {:name "John" :age 43}])
+;; update the age of the second (index 1) user
+(assoc-in users [1 :age] 44)
+
+
+
 
 
 (defn add-1
@@ -80,38 +117,6 @@
   [collection]
   (doseq [entry collection]
     (println entry)))
-
-;; data structures
-
-(def a-vector [1 2 3])
-(def another-vector (vector 1 2 3))
-(conj a-vector 4)
-
-(def a-list '(1 2 3))
-(def another-list (list 1 2 3))
-(conj a-list 4)
-
-(def a-set #{1 2 3})
-(def another-set (set (list 1 2 3 1)))
-(conj a-set 4)
-
-(def a-map {:foo "bar" :a 1})
-(def another-map (hash-map :foo 1 :bar 2))
-(assoc a-map :b 2)
-
-;; (first a-vector)
-;; (rest a-vector)
-;; (drop 2 a-vector)
-;; (pop a-vector)
-;; (peek a-vector)
-;; (into {:c "value"} a-map)
-;; (into [5 6 7] a-vector)
-;; (concat [1 2] [3 4])
-
-(def users [{:name "James" :age 26}  {:name "John" :age 43}])
-;; update the age of the second (index 1) user
-(assoc-in users [1 :age] 44)
-
 
 
 ;; lazy data structures

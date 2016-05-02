@@ -30,8 +30,8 @@
 	</script>
 
 	<!--[if lt IE 9]>
-	     <script src="lib/js/html5shiv.js"></script>
-	     <![endif]-->
+	    <script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
     </head>
 
     <body>
@@ -90,16 +90,16 @@
 
                     <section>
                         <h2>Lisp inventions</h2>
-                            <ul>
-                                <li>Homoiconicity (Code is data. Data is code)</li>
-                                <li>macros</li>
-                                <li>REPL (Read-Eval-Print-Loop)</li>
-                                <li>if-then-else</li>
-                                <li>recursive functions</li>
-                                <li>automatic garbage collection</li>
-                                <li>generic functions</li>
-                                <li>lexical closures</li>
-                            </ul>
+                        <ul>
+                            <li>Homoiconicity (Code is data. Data is code)</li>
+                            <li>macros</li>
+                            <li>REPL (Read-Eval-Print-Loop)</li>
+                            <li>if-then-else</li>
+                            <li>recursive functions</li>
+                            <li>automatic garbage collection</li>
+                            <li>generic functions</li>
+                            <li>lexical closures</li>
+                        </ul>
                     </section>
                 </section>
 
@@ -166,8 +166,46 @@
                     </section>
 
                     <section>
-                        <h2>More functions</h2>
+                        <h2>Core data structures</h2>
                         <pre><code class="hljs" data-trim contenteditable>
+
+;; data structures
+
+(def a-vector [1 2 3])
+(def another-vector (vector 1 2 3))
+(conj a-vector 4)
+
+(def a-list '(1 2 3))
+(def another-list (list 1 2 3))
+(conj a-list 4)
+
+(def a-set #{1 2 3})
+(def another-set (set (list 1 2 3 1)))
+(conj a-set 4)
+
+(def a-map {:foo "bar" :a 1})
+(def another-map (hash-map :foo 1 :bar 2))
+(assoc a-map :b 2)
+
+;; (first a-vector)
+;; (rest a-vector)
+;; (drop 2 a-vector)
+;; (pop a-vector)
+;; (peek a-vector)
+;; (into {:c "value"} a-map)
+;; (into [5 6 7] a-vector)
+;; (concat [1 2] [3 4])
+
+(def users [{:name "James" :age 26}  {:name "John" :age 43}])
+;; update the age of the second (index 1) user
+(assoc-in users [1 :age] 44)
+
+		        </code></pre>
+                    </section>
+
+                <section>
+                    <h2>More functions</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
 
 (defn add-1
   "Sum up given parameters."
@@ -185,12 +223,12 @@
   [{:keys [:firstname :lastname]
     :or {:firstname "John" :lastname "Doe"}}]
   {:fullname (str firstname " " lastname)})
-		        </code></pre>
-                    </section>
+		    </code></pre>
+                </section>
 
-                    <section>
-                        <h2>Conditionals</h2>
-                        <pre><code class="hljs" data-trim contenteditable>
+                <section>
+                    <h2>Conditionals</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
 ;; if and cond
 
 (defn my-even?
@@ -209,13 +247,13 @@
          :else "Hello"))
   ([] "Hello"))
 
-		        </code></pre>
-                    </section>
+		    </code></pre>
+                </section>
 
 
-                    <section>
-                        <h2>Local variables</h2>
-                        <pre><code class="hljs" data-trim contenteditable>
+                <section>
+                    <h2>Local variables</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
 ;; let
 
 (defn area-circle
@@ -225,12 +263,12 @@
         radius-squared (* radius radius)]
     (* pi radius-squared)))
 
-		        </code></pre>
-                    </section>
+		    </code></pre>
+                </section>
 
-                    <section>
-                        <h2>Loops</h2>
-                        <pre><code class="hljs" data-trim contenteditable>
+                <section>
+                    <h2>Loops</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
 ;; loops
 
 (defn factorial
@@ -247,41 +285,11 @@
   [collection]
   (doseq [entry collection]
     (println entry)))
-		        </code></pre>
-                    </section>
-
-                    <section>
-                        <h2>Core data structures</h2>
-                        <pre><code class="hljs" data-trim contenteditable>
-;; data structures
-
-(def a-vector [1 2 3])
-(conj a-vector 4)
-
-(def a-list '(1 2 3))
-(conj a-list 4)
-
-(def a-set #{1 2 3})
-(conj a-set 4)
-
-(def a-map {:foo "bar" :a 1})
-(assoc a-map :b 2)
-
-;; (first a-vector)
-;; (rest a-vector)
-;; (drop 2 a-vector)
-;; (pop a-vector)
-;; (peek a-vector)
-;; (into {:c "value"} a-map)
-;; (into [5 6 7] a-vector)
-;; (concat [1 2] [3 4])
-
-(def users [{:name "James" :age 26}  {:name "John" :age 43}])
-;; update the age of the second (index 1) user
-(assoc-in users [1 :age] 44)
-		        </code></pre>
-                    </section>
+		    </code></pre>
                 </section>
+                </section>
+
+
 
                 <section>
                     <h2>Lazy data structures</h2>
