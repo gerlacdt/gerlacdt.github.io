@@ -53,9 +53,7 @@
 ;; update the age of the second (index 1) user
 (assoc-in users [1 :age] 44)
 
-
-
-
+;; more functions
 
 (defn add-1
   "Sum up given parameters."
@@ -85,12 +83,11 @@
 
 (defn greeting
   "Returns the greeting in the given language. Defaults to :english"
+  ([] "Hello with with default argument")
   ([language]
-   (cond (= language :english) "Hello"
-         (= language :french) "Bonjour"
+   (cond (= language :french) "Bonjour"
          (= language :spanish) "Hola"
-         :else "Hello"))
-  ([] "Hello"))
+         :else "Hello")))
 
 ;; let
 
@@ -197,7 +194,10 @@
 ;;         true
 ;;         false)
 
-;; (macroexpand-1 '(unless (= 1 1) true false))
+;; (macroexpand-1 '(unless (= 1 0) "true branch" "false branch"))
+;; (if (not (= 1 0))
+;;   "true branch"
+;;   "false branch")
 
 (defmacro my-and
   ""

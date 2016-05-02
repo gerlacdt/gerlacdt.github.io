@@ -151,13 +151,16 @@
 (def hello-1 (fn []
                "Hello World!"))
 
+
+(def hello-2 #(str "Hello " %))
+
 ;; creates a global var with a function as value
-(defn hello-2
+(defn hello-3
   "Returns hello world"
   []
   "Hello World!")
 
-(defn hello-3
+(defn hello-4
   "Multi arity function."
   ([] "Hello world!")
   ([name] (str "Hello " name "!")))
@@ -406,11 +409,10 @@ for (String s : list) {
   [test & branches]
   (conj branches (list 'not test) 'if))
 
-;; (unless (= 1 1)
-;;         true
-;;         false)
-
-;; (macroexpand-1 '(unless (= 1 1) true false))
+;; (macroexpand-1 '(unless (= 1 0) "true branch" "false branch"))
+;; (if (not (= 1 0))
+;;   "true branch"
+;;   "false branch")
 
 (defmacro my-and
   ""
