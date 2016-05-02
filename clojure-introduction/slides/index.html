@@ -249,12 +249,11 @@
 
 (defn greeting
   "Returns the greeting in the given language. Defaults to :english"
+  ([] "Hello with with default argument")
   ([language]
-   (cond (= language :english) "Hello"
-         (= language :french) "Bonjour"
+   (cond (= language :french) "Bonjour"
          (= language :spanish) "Hola"
-         :else "Hello"))
-  ([] "Hello"))
+         :else "Hello")))
 
 		    </code></pre>
                 </section>
