@@ -53,6 +53,9 @@
 ;; update the age of the second (index 1) user
 (assoc-in users [1 :age] 44)
 
+;; --> java calendar slide
+
+
 ;; more functions
 
 (defn add-1
@@ -120,6 +123,11 @@
 (def natural-numbers (iterate inc 1))
 ;; (take 5 natural-numbers)
 
+;; (inc (inc (inc 1)))
+;; (-> 1 inc inc inc)
+
+
+
 ;; map filter reduce
 (def even-numbers (filter even? natural-numbers))
 
@@ -163,6 +171,9 @@
 ;; @account-b
 ;; (transfer-money 100 account-a account-b)
 
+
+;; --> macro introduction slides
+
 ;; for-each macro
 (defmacro for-each
   "Simulates the java for-each loop"
@@ -185,14 +196,20 @@
 ;; (infix (1 + 2))
 ;; (macroexpand-1 '(infix (1 + 2)))
 
-(defmacro unless
+(defmacro unless-1
   "Inverted if"
   [test & branches]
   (conj branches (list 'not test) 'if))
 
-;; (unless (= 1 1)
+;; (unless-1 (= 1 1)
 ;;         true
 ;;         false)
+
+(defmacro unless-2
+  "Inverted if, easier"
+  [test & branches]
+  `(if (not ~test)
+     ~@branches))
 
 ;; (macroexpand-1 '(unless (= 1 0) "true branch" "false branch"))
 ;; (if (not (= 1 0))

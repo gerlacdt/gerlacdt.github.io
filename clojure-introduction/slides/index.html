@@ -53,7 +53,7 @@
 			<li>History</li>
 			<li>Language Basics</li>
                         <ul>
-                            <li>live coding (a little)</li>
+                            <li>live coding</li>
                         </ul>
 			<li>Libraries and Links to get started</li>
 		    </ul>
@@ -81,8 +81,8 @@
                     <section>
                         <h2>Lisp history</h2>
 		        <ul>
-			    <li>second-oldest high-level language</li>
-                            <li>released 1958 (Fortran 1957)</li>
+			    <li>second-oldest high-level language (1958)</li>
+                            <li>Fortran 1957</li>
                             <li>inventor John McCarthy</li>
 		        </ul>
                         <img src="files/john_mccarthy.png" width="400">
@@ -135,7 +135,7 @@
                         <li>Immutable data structures</li>
                         <li>REPL-Driven-Development</li>
                         <li>Concurrency</li>
-                        <li>Homoiconicity (Macros)</li>
+                        <li>Homoiconicity (macros)</li>
 		    </ul>
                 </section>
 
@@ -175,7 +175,7 @@
                     </section>
 
                     <section>
-                        <h2>Core data structures</h2>
+                        <h2>Immutable data structures</h2>
                         <pre><code class="hljs" data-trim contenteditable>
 
 ;; data structures
@@ -211,6 +211,49 @@
 
 		        </code></pre>
                     </section>
+
+                    <section>
+                    <h2>Old Backend bug</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+// 2 dates in domain class
+Calendar arrivalTime;
+Calender expectedArrivalTime;
+
+// get time from somewhere
+Calendar cal = Calender.getInstance()// value of remote http call
+int delay = 2; // delay 2 min
+
+// set arrivalTime
+arrivalTime = cal
+expectedArrivalTime = cal;
+
+// 2 minutes delay for expectedArrivalTime
+expectedArrivalTime.add(Calendar.MINUTE, delay);
+
+// ??? buggy
+
+// happy debugging :)
+// old moovel backend ~ 200,000 lines of code
+REST-Layer   --> Object Mapper
+|
+|
+Service Layer (Stateless Session Bean)   --> some Util class
+|
+|
+DAO Layer
+|
+|
+Object Factory ---> Domain object
+|
+|
+HTTP Gateway Layer
+		    </code></pre>
+                    <ul>
+                    <li>prefer immutable (make everything final)</li>
+                    <li><a href="http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html">Java8 Date and Time</a></li>
+                    </ul>
+                </section>
+
 
                 <section>
                     <h2>More functions</h2>
@@ -305,6 +348,9 @@
 ;; lazy data structures
 (def natural-numbers (iterate inc 1))
 ;; (take 5 natural-numbers)
+
+;; (inc (inc (inc 1)))
+;; (-> 1 inc inc inc)
 		    </code></pre>
                 </section>
 
@@ -359,6 +405,13 @@
                                 Lisp)
                             </small>
 		        </blockquote>
+                        <blockquote>
+                            &ldquo;
+                                First rule of macros: don't write macros.
+                                &rdquo;
+                                <br>
+                                - anonymous
+                        </blockquote>
                     </section>
 
                     <section>
@@ -409,15 +462,20 @@ for (String s : list) {
 ;; (infix (1 + 2))
 ;; (macroexpand-1 '(infix (1 + 2)))
 
-(defmacro unless
+(defmacro unless-1
   "Inverted if"
   [test & branches]
   (conj branches (list 'not test) 'if))
 
-;; (macroexpand-1 '(unless (= 1 0) "true branch" "false branch"))
-;; (if (not (= 1 0))
-;;   "true branch"
-;;   "false branch")
+;; (unless-1 (= 1 1)
+;;         true
+;;         false)
+
+(defmacro unless-2
+  "Inverted if, easier"
+  [test & branches]
+  `(if (not ~test)
+     ~@branches))
 
 (defmacro my-and
   ""
