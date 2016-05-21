@@ -12,26 +12,28 @@ for (String s : list) {
 }
 
 
-// 2 dates in domain class
-Calendar arrivalTime;
+// 2 dates in a domain class
+Calendar scheduledArrivalTime;
 Calender expectedArrivalTime;
 
-// get time from somewhere
-Calendar cal = Calender.getInstance()// value of remote http call
-int delay = 2; // delay 2 min
+Calendar cal = calculateArrivalTime()  // --> Calender.getInstance()
 
-// set arrivalTime
-arrivalTime = cal
+// set arrivalTimes
+scheduledArrivalTime = cal
 expectedArrivalTime = cal;
 
-// 2 minutes delay for expectedArrivalTime
-expectedArrivalTime.add(Calendar.MINUTE, delay);
 
-// ??? buggy
+// after some calculations......
+
+
+// somewhere in the code: 2 minutes delay for expectedArrivalTime
+expectedArrivalTime.add(Calendar.MINUTE, 2);
+
+// ???
 
 // happy debugging :)
 // old moovel backend ~ 200,000 lines of code
-REST-Layer   --> Object Mapper
+REST-Layer   --> Object Mapper  --> Rest Object
 |
 |
 Service Layer (Stateless Session Bean)   --> some Util class

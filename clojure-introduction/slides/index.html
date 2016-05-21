@@ -95,6 +95,10 @@
                             <li>macros</li>
                             <li>REPL (Read-Eval-Print-Loop)</li>
                             <li>if-then-else</li>
+                            <ul>
+                                <li>conditional gotos</li>
+                                <li>if ... then ... goto line 42</li>
+                            </ul>
                             <li>recursive functions</li>
                             <li>automatic garbage collection</li>
                             <li>generic functions</li>
@@ -215,26 +219,24 @@
                     <section>
                     <h2>Old Backend bug</h2>
                     <pre><code class="hljs" data-trim contenteditable>
-// 2 dates in domain class
-Calendar arrivalTime;
+// 2 dates in a domain class
+Calendar scheduledArrivalTime;
 Calender expectedArrivalTime;
 
-// get time from somewhere
-Calendar cal = Calender.getInstance()// value of remote http call
-int delay = 2; // delay 2 min
+Calendar cal = calculateArrivalTime()  // --> Calender.getInstance()
 
-// set arrivalTime
-arrivalTime = cal
+// set arrivalTimes
+scheduledArrivalTime = cal
 expectedArrivalTime = cal;
 
-// 2 minutes delay for expectedArrivalTime
-expectedArrivalTime.add(Calendar.MINUTE, delay);
+// after some calculations......
 
-// ??? buggy
+// somewhere in the code: 2 minutes delay for expectedArrivalTime
+expectedArrivalTime.add(Calendar.MINUTE, 2);
 
 // happy debugging :)
 // old moovel backend ~ 200,000 lines of code
-REST-Layer   --> Object Mapper
+REST-Layer   --> Object Mapper  --> Rest Object
 |
 |
 Service Layer (Stateless Session Bean)   --> some Util class
@@ -337,6 +339,10 @@ HTTP Gateway Layer
   (doseq [entry collection]
     (println entry)))
 		    </code></pre>
+                    <ul>
+                        <li>loops not good lisp style</li>
+                        <li>use map filter reduce</li>
+                    </ul>
                 </section>
                 </section>
 
@@ -502,6 +508,9 @@ for (String s : list) {
                         </ul>
                         <li>records</li>
                         <li>protocols</li>
+                        <ul>
+                            <li><a href="http://blog.ontoillogical.com/blog/2014/10/18/solving-the-expression-problem-in-clojure/">Solving the expression problem</a></li>
+                        </ul>
                         <li><a href="http://clojure.org/about/runtime_polymorphism">multimethods</a></li>
                         <li><a href="http://clojure.org/about/jvm_hosted">JVM interoperability</a></li>
                     </ul>

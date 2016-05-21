@@ -112,6 +112,15 @@
       acc
       (recur (dec i) (* acc i)))))
 
+(defn sum-up
+  "Returns sum of all numbers from 0 to n"
+  [n]
+  (loop [i n
+         sum 0]
+    (if (zero? i)
+      sum
+      (recur (dec i) (+ sum i)))))
+
 (defn print-list
   "Prints all entries of given list"
   [collection]
@@ -156,6 +165,7 @@
 ;; partial
 (def even-numbers-2 (iterate (partial + 2) 0))
 ;; (take 10 even-numbers-2)
+
 
 ;; concurrency refs (in-memory transactions)
 (def account-a (ref 1000))
