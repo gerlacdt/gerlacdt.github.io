@@ -8,7 +8,6 @@
 (def hello-1 (fn []
                "Hello World!"))
 
-
 (def hello-2 #(str "Hello " %))
 
 ;; creates a global var with a function as value
@@ -16,6 +15,8 @@
   "Returns hello world"
   []
   "Hello World!")
+
+;; (macroexpand-1 '(defn hello-x [] "hello-x"))
 
 (defn hello-4
   "Multi arity function."
@@ -51,7 +52,8 @@
 
 (def users [{:name "James" :age 26}  {:name "John" :age 43}])
 ;; update the age of the second (index 1) user
-(assoc-in users [1 :age] 44)
+(assoc-in users [1 :age] 100)
+(update-in users [1 :age] (partial + 100))
 
 ;; --> java calendar slide
 
@@ -180,6 +182,14 @@
 ;; @account-a
 ;; @account-b
 ;; (transfer-money 100 account-a account-b)
+
+
+;; pre- and post conditions
+;; design-by-contract
+(defn constrained-sqr [x]
+  {:pre  [(pos? x)]
+   :post [(> % 16), (< % 225)]}
+  (* x x))
 
 
 ;; --> macro introduction slides

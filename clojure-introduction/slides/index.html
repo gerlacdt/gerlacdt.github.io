@@ -83,6 +83,7 @@
 		        <ul>
 			    <li>second-oldest high-level language (1958)</li>
                             <li>Fortran 1957</li>
+                            <li><font color="red">Lis</font>t <font color="red">P</font>rocessing</li>
                             <li>inventor John McCarthy</li>
 		        </ul>
                         <img src="files/john_mccarthy.png" width="400">
@@ -96,7 +97,7 @@
                             <li>REPL (Read-Eval-Print-Loop)</li>
                             <li>if-then-else</li>
                             <ul>
-                                <li>conditional gotos</li>
+                                <li>before: conditional gotos</li>
                                 <li>if ... then ... goto line 42</li>
                             </ul>
                             <li>recursive functions</li>
@@ -223,36 +224,26 @@
 Calendar scheduledArrivalTime;
 Calender expectedArrivalTime;
 
-Calendar cal = calculateArrivalTime()  // --> Calender.getInstance()
+Calendar cal = getArrivalTimeFromRemote() // Calender.getInstance()
 
 // set arrivalTimes
 scheduledArrivalTime = cal
 expectedArrivalTime = cal;
 
-// after some calculations......
+// many, many lines of code later......
 
 // somewhere in the code: 2 minutes delay for expectedArrivalTime
 expectedArrivalTime.add(Calendar.MINUTE, 2);
 
 // happy debugging :)
-// old moovel backend ~ 200,000 lines of code
-REST-Layer   --> Object Mapper  --> Rest Object
-|
-|
-Service Layer (Stateless Session Bean)   --> some Util class
-|
-|
-DAO Layer
-|
-|
-Object Factory ---> Domain object
-|
-|
-HTTP Gateway Layer
 		    </code></pre>
                     <ul>
-                    <li>prefer immutable (make everything final)</li>
-                    <li><a href="http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html">Java8 Date and Time</a></li>
+                        <li>in Java: prefer immutable</li>
+                        <ul>
+                            <li>thread-safe</li>
+                            <li>easier debugging ==> less surprises</li>
+                        </ul>
+                        <li><a href="http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html">Java8 Date and Time</a></li>
                     </ul>
                 </section>
 
@@ -395,6 +386,17 @@ HTTP Gateway Layer
 ;; @account-a
 ;; @account-b
 ;; (transfer-money 100 account-a account-b)
+		    </code></pre>
+                </section>
+                <section>
+                    <h2>Design by contract</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+;; pre- and post conditions
+;; design-by-contract
+(defn constrained-sqr [x]
+  {:pre  [(pos? x)]
+   :post [(> % 16), (< % 225)]}
+  (* x x))
 		    </code></pre>
                 </section>
                 <section>

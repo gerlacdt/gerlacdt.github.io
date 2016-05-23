@@ -16,14 +16,14 @@ for (String s : list) {
 Calendar scheduledArrivalTime;
 Calender expectedArrivalTime;
 
-Calendar cal = calculateArrivalTime()  // --> Calender.getInstance()
+Calendar cal = getArrivalTimeFromRemote() // Calender.getInstance()
 
 // set arrivalTimes
 scheduledArrivalTime = cal
 expectedArrivalTime = cal;
 
 
-// after some calculations......
+// many, many lines of code later......
 
 
 // somewhere in the code: 2 minutes delay for expectedArrivalTime
@@ -32,17 +32,3 @@ expectedArrivalTime.add(Calendar.MINUTE, 2);
 // ???
 
 // happy debugging :)
-// old moovel backend ~ 200,000 lines of code
-REST-Layer   --> Object Mapper  --> Rest Object
-|
-|
-Service Layer (Stateless Session Bean)   --> some Util class
-|
-|
-DAO Layer
-|
-|
-Object Factory ---> Domain object
-|
-|
-HTTP Gateway Layer
