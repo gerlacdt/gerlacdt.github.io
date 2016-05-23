@@ -7,6 +7,6 @@
   :main ^:skip-aot slide-examples.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}
-             :repl {:plugins [[cider/cider-nrepl "0.11.0-SNAPSHOT"]]}
+             :repl {:plugins [[cider/cider-nrepl "0.13.0-SNAPSHOT"]]}
              :dev {:dependencies [[org.clojure/tools.nrepl "0.2.12"]
                                   [org.clojure/tools.trace "0.7.9"]]}})
