@@ -43,8 +43,7 @@
 
                 <section>
                     <h1>Clojure introduction</h1>
-                    <h3>Simple examples and more</h3>
-                    <p><small>Created by Daniel Gerlach</small></p>
+                    <h4>Simple examples and more</h4>
                 </section>
 
                 <section>
@@ -106,30 +105,28 @@
                             <li>lexical closures</li>
                         </ul>
                     </section>
-                </section>
-
-                <section>
-                    <h2>Lisp quotes</h2>
-                    <blockquote>
-			&ldquo;
-                        the greatest single programming language ever designed
-                        &rdquo;
-                        <br>
-                        - Alan Kay, on Lisp
-		    </blockquote>
-
-                    <blockquote>
-			<small>&ldquo;
-                            Lisp is worth learning for the profound enlightenment experience
-                            you will have when you finally get it; that experience will make you a
-                            better programmer for the rest of your days, even if you never
-                            actually use Lisp itself a lot.  &rdquo;
+                    <section>
+                        <h2>Lisp quotes</h2>
+                        <blockquote>
+			    &ldquo;
+                            the greatest single programming language ever designed
+                            &rdquo;
                             <br>
-                            - Eric Raymond, &ldquo;<a href="http://www.catb.org/esr/faqs/hacker-howto.html">How to Become a Hacker</a>&rdquo;
-                        </small>
-		    </blockquote>
-                </section>
+                            - Alan Kay, on Lisp
+		        </blockquote>
 
+                        <blockquote>
+			    <small>&ldquo;
+                                Lisp is worth learning for the profound enlightenment experience
+                                you will have when you finally get it; that experience will make you a
+                                better programmer for the rest of your days, even if you never
+                                actually use Lisp itself a lot.  &rdquo;
+                                <br>
+                                - Eric Raymond, &ldquo;<a href="http://www.catb.org/esr/faqs/hacker-howto.html">How to Become a Hacker</a>&rdquo;
+                            </small>
+		        </blockquote>
+                    </section>
+                </section>
                 <section>
                     <h2>Clojure overview</h2>
 		    <ul>
@@ -352,8 +349,9 @@ expectedArrivalTime.add(Calendar.MINUTE, 2);
                 </section>
 
                 <section>
-                    <h2>Functional programming</h2>
-                    <pre><code class="hljs" data-trim contenteditable>
+                    <section>
+                        <h2>Functional programming</h2>
+                        <pre><code class="hljs" data-trim contenteditable>
 ;; map filter reduce
 (def even-numbers (filter even? natural-numbers))
 
@@ -367,9 +365,37 @@ expectedArrivalTime.add(Calendar.MINUTE, 2);
 ;; partial
 (def even-numbers-2 (iterate (partial + 2) 0))
 ;; (take 10 even-numbers-2)
-		    </code></pre>
-                </section>
+		        </code></pre>
+                    </section>
 
+                    <section>
+                        <h3>Functional programming part 2</h3>
+                        <pre><code class="hljs" data-trim contenteditable>
+(def fifth (comp first rest rest rest rest))
+
+(defn fnth
+  "Returns a function which returns n-th item from given sequence."
+  [n]
+  (apply comp (cons first (take (dec n) (repeat rest)))))
+
+;; ((fnth 5) [1 2 3 4 5 6])
+
+
+(defn fib [n]
+  (condp = n
+    0 1
+    1 1
+    (+ (fib (dec n)) (fib (- n 2)))))
+
+(def memo-fib
+  (memoize (fn [n]
+             (condp = n
+               0 1
+               1 1
+               (+ (memo-fib (dec n)) (memo-fib (- n 2)))))))
+                        </code></pre>
+                    </section>
+                </section>
                 <section>
                     <h2>Concurrency</h2>
                     <pre><code class="hljs" data-trim contenteditable>

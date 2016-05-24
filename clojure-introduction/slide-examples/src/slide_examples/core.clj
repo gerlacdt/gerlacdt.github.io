@@ -138,6 +138,7 @@
 ;; (-> 1 inc inc inc)
 
 
+;; functional programming
 
 ;; map filter reduce
 (def even-numbers (filter even? natural-numbers))
@@ -167,6 +168,29 @@
 ;; partial
 (def even-numbers-2 (iterate (partial + 2) 0))
 ;; (take 10 even-numbers-2)
+
+(def fifth (comp first rest rest rest rest))
+
+(defn fnth
+  "Returns a function which returns n-th item from given sequence."
+  [n]
+  (apply comp (cons first (take (dec n) (repeat rest)))))
+
+;; ((fnth 5) [1 2 3 4 5 6])
+
+
+(defn fib [n]
+  (condp = n
+    0 1
+    1 1
+    (+ (fib (dec n)) (fib (- n 2)))))
+
+(def memo-fib
+  (memoize (fn [n]
+             (condp = n
+               0 1
+               1 1
+               (+ (memo-fib (dec n)) (memo-fib (- n 2)))))))
 
 
 ;; concurrency refs (in-memory transactions)
