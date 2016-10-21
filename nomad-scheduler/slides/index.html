@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Nomad presentation</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section>
+                                <h1>Nomad</h1>
+                                A distributed, high available, datacenter-aware cluster manager/scheduler
+                                </br>
+                                </br>
+                                Daniel Gerlach@2016
+                            </section>
+
+			    <section>
+                                <h3>Nomad reference architecture</h3>
+                                <img src="../images/nomad_ref_architecture.jpeg"></img>
+                            </section>
+
+                            <section>
+                                <h3>Advantages</h3>
+                                <ul>
+                                    <li>seamless consul integration</li>
+                                    <ul>
+                                        <li>no interfering health checks: ecs / elb vs. consul</li>
+                                        <li>zero-downtime deployments</li>
+                                        <li>gliderlabs/registrator obsolete --> nomad (de)registers services</li>
+                                    </ul>
+                                    <li>dynamic ports --> better resource utilization</li>
+                                    <li>service accessible outside of consul cluster via fabio</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h3>More Advantages</h3>
+                                <ul>
+                                    <li>powerful CLI</li>
+                                    <ul>
+                                        <li>direct log access</li>
+                                    </ul>
+                                    <li>declarative job definition under version control</li>
+                                    <li>periodic batch jobs</li>
+                                    <ul>
+                                        <li>distributed cron</li>
+                                        <li>utilize multiple machines</li>
+                                    </ul>
+                                    <li>easy setup (single golang-binary)</li>
+                                    <li>docker support and more (raw executables, jvm)</li>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h3>Deployments</h3>
+                                <ul>
+                                    <li>canary deployment</li>
+                                    <li><font color="blue">blue</font>-<font color="green">green</font> deployment</li>
+                                    <li>fine-grained route weighting</li>
+                                    <ul>
+                                        <li>10% experimental, 90% stable</li>
+                                    </ul>
+                                    <li>deployment strategy configurable</li>
+                                    <ul>
+                                        <li>step-by-step rollout</li>
+                                        <li>how many instances in parallel</li>
+                                    </ul>
+                                </ul>
+                            </section>
+
+                            <section>
+                                <h3>Disadvantages</h3>
+                                <ul>
+                                    <li>it's not kubernetes (all-in-one-package)</li>
+                                    <li>relatively new --> version 0.4.1</li>
+                                    <li>self-hosted</li>
+                                </ul>
+                            </section>
+
+                            <section style="text-align: left;">
+                                <h3>References</h3>
+                                <ul>
+                                    <li><a href="https://www.nomadproject.io">nomad</a></li>
+                                    <li><a href="https://www.consul.io/">consul</a></li>
+                                <li><a href="https://github.com/eBay/fabio">fabio</a></li>
+                                <li><a href="http://research.google.com/pubs/pub43438.html">Large-scale cluster management at Google with Borg</a></li>
+                                </ul>
+                            </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
