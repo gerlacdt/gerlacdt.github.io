@@ -40,23 +40,27 @@
                             <section>
                                 <h3>Advantages</h3>
                                 <ul>
-                                    <li>seamless consul integration</li>
+                                    <li>consul integration</li>
                                     <ul>
-                                        <li>no interfering health checks: ecs / elb vs. consul</li>
-                                        <li>zero-downtime deployments</li>
-                                        <li>gliderlabs/registrator obsolete --> nomad (de)registers services</li>
+                                        <li>nomad (de)registers services</li>
                                     </ul>
-                                    <li>dynamic ports --> better resource utilization</li>
+                                    <li>zero-downtime deployments</li>
+                                    <li>dynamic ports support</li>
                                     <li>service accessible outside of consul cluster via fabio</li>
+                                    <li>not limited to docker (raw executables, jvm, rkt)</li>
+                                    <li>multi-region/datacenter support</li>
+                                    <li>complete open-source (Mozilla Public Licence 2.0)</li>
                                 </ul>
                             </section>
 
                             <section>
-                                <h3>More Advantages</h3>
+                                <h3>Advantages</h3>
                                 <ul>
                                     <li>powerful CLI</li>
                                     <ul>
-                                        <li>direct log access</li>
+                                        <li>log access</li>
+                                        <li>inspecting cluster, job state</li>
+                                        <li>scriptable</li>
                                     </ul>
                                     <li>declarative job definition under version control</li>
                                     <li>periodic batch jobs</li>
@@ -64,8 +68,7 @@
                                         <li>distributed cron</li>
                                         <li>utilize multiple machines</li>
                                     </ul>
-                                    <li>easy setup (single golang-binary)</li>
-                                    <li>docker support and more (raw executables, jvm)</li>
+                                    <li>operationally simple (single golang-binary)</li>
                                 </ul>
                             </section>
 
@@ -89,7 +92,21 @@
                             <section>
                                 <h3>Disadvantages</h3>
                                 <ul>
-                                    <li>it's not <a href="http://kubernetes.io/">kubernetes</a></li>
+                                    <li>not available as a service</li>
+                                    <li>strong contenders available: e.g. <a href="http://kubernetes.io/">kubernetes</a></li>
+                                    <ul>
+                                        <li>more mature</li>
+                                        <li>more features</li>
+                                        <li>bigger community</li>
+                                        <li>all-in-one-package</li>
+                                        <ul>
+                                            <li>scheduler</li>
+                                            <li>distributed K/V</li>
+                                            <li>service discovery</li>
+                                            <li>secret and configuration management</li>
+                                        </ul>
+                                        <li>available as a service in <a href="https://cloud.google.com/container-engine/">GCP</a> or <a href="https://azure.microsoft.com/en-us/services/container-service/">Azure</a></li>
+                                    </ul>
                                 </ul>
                             </section>
 
