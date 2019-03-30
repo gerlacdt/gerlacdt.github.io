@@ -1,5 +1,5 @@
 created: 20190329182025676
-modified: 20190330225257566
+modified: 20190330230620077
 tags: blog programming
 title: 2019-03-30 Starting with microservices? Consider this
 type: text/vnd.tiddlywiki
@@ -96,10 +96,10 @@ the [[four golden rules|https://landing.google.com/sre/sre-book/chapters/monitor
 
    Your HTTP-calls will fail from time to time. So make sure you have
    some retry-mechanism in place. But do not retry naively!
-   E.g. retries makes not sense if the http-response-code is 400
-   BAD_REQUEST, no matter how often you try the outcome will not
-   change. Neither you should do retries on POST requests, HTTP POST
-   is by definition not idempotent and you could accidentally create a
+   E.g. retries make not sense if the http-response-code is 400
+   BAD_REQUEST, no matter how often you try the request will never be successful. 
+   Neither you should do retries on POST requests, HTTP POST requests
+   are by definition not idempotent and you could accidentally create a
    lot of resources like orders and bookings. Your customers will not
    be happy.
 
@@ -107,10 +107,10 @@ the [[four golden rules|https://landing.google.com/sre/sre-book/chapters/monitor
    otherwise you can cause overload on other services, see
    [[cascading failures|https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/]]
 
-   Do not forget to secure yourself with timeouts. Missing timeouts
+   Do not forget to secure your services with timeouts. Missing timeouts
    make I/O calls wait too long and if they pile up they consume all
    your memory. In the worst case you service will be killed by your
-   docker scheduler because the hardlimit gets exceeded.
+   docker scheduler because the memory limit is exceeded.
 
    For very high-load services you should consider 
 [[load shedding or graceful degradation|https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/#xref_cascading-failure_load-shed-graceful-degredation]] in order to protect these service from going down.
@@ -195,9 +195,9 @@ function getUsers(userIds) {
   incompatibilities of API-versions or dependency on the same database. 
   Congratulations you built a distributed monolith.
 
-- Have a good CI/CD pipeline with automatic unit, system, integration
-  tests and automatic deployments. Make sure all teams use the same
-  deployment and other glue scripts. Use one Docker-Cluster
+- Have a good CI/CD pipeline with automatic tests and deployments. 
+  Make sure all teams use the same
+  deployment and glue scripts. Use one Docker-Cluster
   (Kubernetes, AWS ECS, Hashicorp Nomad) for the whole company (as
   long as you do not exceed hundreds of servers). This will keep the
   maintaining effort low.
