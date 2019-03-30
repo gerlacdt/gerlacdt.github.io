@@ -9653,21 +9653,19 @@ Code reviews.
 &quot;More than yourself.&quot;
 &lt;&lt;&lt;https://twitter.com/jessitron/status/914017624996171776</pre>
 </div>
-<div created="20190329182025676" modified="20190330150852929" tags="blog programming" title="2019-03-30 Starting with microservices? Consider this" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190329182025676" modified="20190330225257566" tags="blog programming" title="2019-03-30 Starting with microservices? Consider this" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Introduction
 
 Some years ago i was involved in migrating a big IBM Websphere
 monolith into a microservice landscape. We had a lot of problems with
 the monolith. Our development speed slowed down immensely. We had many
 merge conflicts because of too many dependencies in the
-codebase. Basically our developer team size outgrew the monolithic
-design and we started for extract different domains like payment,
-ordering and search to different two-pizza microservice teams.
+codebase. Basically we outgrew the monolithic design and we started to extract different domains like payment, ordering and search. The teams were restructured into Two-pizza teams.
 
 The whole migration was very structured and well planned. We migrated
 incrementally with the [[strangler pattern|https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler]].
 And as long we were ~20 developers, everything was fine. Teams worked
-independently in their domain. Teams could scale, deploy independently
+independently in their domain. They could scale, deploy independently
 and followed their own release cycles.
 
 But microservices bring new technical challenges. Maybe you now the saying:
@@ -9679,7 +9677,7 @@ Microservices cause technical problems.
 &lt;&lt;&lt;[[Peter Bourgon|https://speakerdeck.com/peterbourgon/go-plus-microservices-equals-go-kit?slide=15]]
 
 Developers tend to ignore, forget or just simply do not know about
-these challenges. Developers are overwhelmed by the new opportunities
+these challenges. They are overwhelmed by the new opportunities
 in the shiny microservice world. In the following i want to present my
 experience what we underestimated or forgot in our
 microservice-migration.
@@ -9694,18 +9692,18 @@ the other side developers are adventurous and try out new fancy
 programming languages and other stuff. And soon you have a dozen
 different tech stacks to support. Some teams build their own
 tech-knowledge silos. And don't get me wrong here, it is totally fine
-if a team has its domain-knowledge silo, but it is not fine if they
-are the only one in the company who uses a fancy programming language or something
-alike.  At google, they have thousands of engineers and they try to
+if a team has its domain-knowledge silo, but it is not fine if the team is
+the only one in the company who uses a fancy programming language.  At google, they have thousands of engineers and they try to
 stick to only 4 languages in the backend. The supported languages are
 C++, Java, Python and Go, see
 [[Software Engineering at Google, Fergus Henderson|https://arxiv.org/pdf/1702.01715.pdf]].
 If a backend team wants to start with another language they need to argument hard why
 they cannot fulfil their job with the company-wide supported
-languages. There is a clear decision-process involved how to
-introduce new technology.
+languages. There is a clear decision-process in place how to
+introduce new technology. That makes it a lot harder for developers to get to experimental and restrict them to use the newest and bleeding-edge technology.
+Another advantage from sticking to a minimum number of programming languages is that one can focus on business problems. For internal libraries you don't have to support a vast number of languages. Developers will also have a easy time when the want to rotate teams.
 
-You could use a [[technology radar|https://www.thoughtworks.com/de/radar]] to visualize the
+You could use a [[technology radar|https://www.thoughtworks.com/de/radar]] to visualise the
 supported tools, programming languages and platforms and make the
 decision process of introducing a technology clear.
 
