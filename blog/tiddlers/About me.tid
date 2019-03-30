@@ -1,12 +1,12 @@
 created: 20190329182217150
-modified: 20190329201311669
+modified: 20190330105059963
 tags: blog personal
 title: About me
 type: text/vnd.tiddlywiki
 
 My name is ''Daniel Gerlach''. Currently i work at https://www.moovel.com/en
 
-For programming i used Emacs with different programming languages:
+I am a happy long-term [[Emacs|https://www.gnu.org/software/emacs/]] user (almost 15 years now). At work i use different programming languages:
 
 * [[Java|https://openjdk.java.net/]]
 * [[Javascript|https://developer.mozilla.org/en-US/docs/Web/JavaScript]]
