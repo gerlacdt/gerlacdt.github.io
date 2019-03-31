@@ -1,5 +1,5 @@
 created: 20190329182025676
-modified: 20190330230620077
+modified: 20190331095422333
 tags: blog programming
 title: 2019-03-30 Starting with microservices? Consider this
 type: text/vnd.tiddlywiki
@@ -53,9 +53,7 @@ languages. There is a clear decision-process in place how to
 introduce new technology. That makes it a lot harder for developers to get to experimental and restrict them to use the newest and bleeding-edge technology.
 Another advantage from sticking to a minimum number of programming languages is that one can focus on business problems. For internal libraries you don't have to support a vast number of languages. Developers will also have a easy time when the want to rotate teams.
 
-You could use a [[technology radar|https://www.thoughtworks.com/de/radar]] to visualise the
-supported tools, programming languages and platforms and make the
-decision process of introducing a technology clear.
+A [[technology radar|https://www.thoughtworks.com/de/radar]] serves as an overview for the supported supported tools, programming languages and platforms. You also need a clear decision process of how new tech-stacks get approved.
 
 
 !! Have a good Monitoring/Tracing/Logging in place
@@ -73,7 +71,7 @@ log-cluster is flooded, your monitoring will not work either!
 Have strict rules for monitoring. No service should go into production
 without monitoring. With microservices you need transparency in order
 to do failure analysis or get notified if something is wrong. At least monitor
-the [[four golden rules|https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/]]:
+the [[four golden rules|https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref_monitoring_golden-signals]]:
 
 1. Latency. How high is the response time? Make sure you distinguish
    failed requests from successful requests. Failed requests can be

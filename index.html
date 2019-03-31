@@ -9653,7 +9653,7 @@ Code reviews.
 &quot;More than yourself.&quot;
 &lt;&lt;&lt;https://twitter.com/jessitron/status/914017624996171776</pre>
 </div>
-<div created="20190329182025676" modified="20190330225257566" tags="blog programming" title="2019-03-30 Starting with microservices? Consider this" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190329182025676" modified="20190331095422333" tags="blog programming" title="2019-03-30 Starting with microservices? Consider this" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Introduction
 
 Some years ago i was involved in migrating a big IBM Websphere
@@ -9703,9 +9703,7 @@ languages. There is a clear decision-process in place how to
 introduce new technology. That makes it a lot harder for developers to get to experimental and restrict them to use the newest and bleeding-edge technology.
 Another advantage from sticking to a minimum number of programming languages is that one can focus on business problems. For internal libraries you don't have to support a vast number of languages. Developers will also have a easy time when the want to rotate teams.
 
-You could use a [[technology radar|https://www.thoughtworks.com/de/radar]] to visualise the
-supported tools, programming languages and platforms and make the
-decision process of introducing a technology clear.
+A [[technology radar|https://www.thoughtworks.com/de/radar]] serves as an overview for the supported supported tools, programming languages and platforms. You also need a clear decision process of how new tech-stacks get approved.
 
 
 !! Have a good Monitoring/Tracing/Logging in place
@@ -9723,7 +9721,7 @@ log-cluster is flooded, your monitoring will not work either!
 Have strict rules for monitoring. No service should go into production
 without monitoring. With microservices you need transparency in order
 to do failure analysis or get notified if something is wrong. At least monitor
-the [[four golden rules|https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/]]:
+the [[four golden rules|https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref_monitoring_golden-signals]]:
 
 1. Latency. How high is the response time? Make sure you distinguish
    failed requests from successful requests. Failed requests can be
@@ -9746,10 +9744,10 @@ the [[four golden rules|https://landing.google.com/sre/sre-book/chapters/monitor
 
    Your HTTP-calls will fail from time to time. So make sure you have
    some retry-mechanism in place. But do not retry naively!
-   E.g. retries makes not sense if the http-response-code is 400
-   BAD_REQUEST, no matter how often you try the outcome will not
-   change. Neither you should do retries on POST requests, HTTP POST
-   is by definition not idempotent and you could accidentally create a
+   E.g. retries make not sense if the http-response-code is 400
+   BAD_REQUEST, no matter how often you try the request will never be successful. 
+   Neither you should do retries on POST requests, HTTP POST requests
+   are by definition not idempotent and you could accidentally create a
    lot of resources like orders and bookings. Your customers will not
    be happy.
 
@@ -9757,10 +9755,10 @@ the [[four golden rules|https://landing.google.com/sre/sre-book/chapters/monitor
    otherwise you can cause overload on other services, see
    [[cascading failures|https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/]]
 
-   Do not forget to secure yourself with timeouts. Missing timeouts
+   Do not forget to secure your services with timeouts. Missing timeouts
    make I/O calls wait too long and if they pile up they consume all
    your memory. In the worst case you service will be killed by your
-   docker scheduler because the hardlimit gets exceeded.
+   docker scheduler because the memory limit is exceeded.
 
    For very high-load services you should consider 
 [[load shedding or graceful degradation|https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/#xref_cascading-failure_load-shed-graceful-degredation]] in order to protect these service from going down.
@@ -9845,9 +9843,9 @@ function getUsers(userIds) {
   incompatibilities of API-versions or dependency on the same database. 
   Congratulations you built a distributed monolith.
 
-- Have a good CI/CD pipeline with automatic unit, system, integration
-  tests and automatic deployments. Make sure all teams use the same
-  deployment and other glue scripts. Use one Docker-Cluster
+- Have a good CI/CD pipeline with automatic tests and deployments. 
+  Make sure all teams use the same
+  deployment and glue scripts. Use one Docker-Cluster
   (Kubernetes, AWS ECS, Hashicorp Nomad) for the whole company (as
   long as you do not exceed hundreds of servers). This will keep the
   maintaining effort low.
