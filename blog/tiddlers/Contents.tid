@@ -1,8 +1,10 @@
 created: 20190328182548386
 list-before: $:/core/ui/SideBar/Open
-modified: 20190329194747191
+modified: 20190401162046062
 tags: $:/tags/SideBar
 title: Contents
 type: text/vnd.tiddlywiki
 
+<div class="tc-table-of-contents">
 <<toc-selective-expandable "blog" sort:"reverse[]">>
+</div>
