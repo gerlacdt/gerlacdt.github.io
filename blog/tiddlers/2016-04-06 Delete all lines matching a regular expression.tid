@@ -1,0 +1,7 @@
+created: 20190406165122625
+modified: 20190406174347839
+tags: Emacs
+title: 2016-04-06 Delete all lines matching a regular expression
+type: text/vnd.tiddlywiki
+
+Sometimes when i write small scripts i tend to insert a `print` statements for debugging. After i verified the correctness i want to get rid of these unnecessary debug statements. With Emacs you can delete all lines which match a specific ''regular expression'' with `M-x flush-lines` or with its alias `M-x delete-matching-lines`. Interactively you can enter your regular expression and all matching lines will be deleted from you cursor position downwards.

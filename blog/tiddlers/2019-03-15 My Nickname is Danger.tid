@@ -1,0 +1,24 @@
+created: 20190406124023176
+modified: 20190406174248403
+tags: blog
+title: 2019-03-15 My Nickname is Danger
+type: text/vnd.tiddlywiki
+
+7 years ago one of my colleagues "discovered" an algorithm which leads to this funny name: 
+
+* take the 3 first characters of the given names, i.e. firstname, middlename, lastname
+* concatenate them: DANiel + GERlach => Danger
+
+The algorithm can be easily implemented in a ''pure function'' in Javascript:
+
+```javascript
+function getNickname(fullname) {
+  return fullname
+    .split(/\s+/)
+    .map(n => n.substring(0,3))
+    .join('');
+}
+
+const result = getNickname('Daniel Gerlach');
+console.log(result);   // => DanGer
+```
