@@ -9401,8 +9401,8 @@ Error message and password prompt
 <div created="20190328193256888" modified="20190328193258927" title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>classic</pre>
 </div>
-<div created="20190406165122625" modified="20190406174347839" tags="Emacs" title="2016-04-06 Delete all lines matching a regular expression" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Sometimes when i write small scripts i tend to insert a `print` statements for debugging. After i verified the correctness i want to get rid of these unnecessary debug statements. With Emacs you can delete all lines which match a specific ''regular expression'' with `M-x flush-lines` or with its alias `M-x delete-matching-lines`. Interactively you can enter your regular expression and all matching lines will be deleted from you cursor position downwards.
+<div created="20190406165122625" modified="20190407144819090" tags="Emacs" title="2016-04-06 Delete all lines matching a regular expression" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Sometimes when i write small scripts i tend to insert `print` statements for debugging. After i verified the correctness of my program i want to get rid of all unnecessary debug statements. With Emacs you can delete all lines which match a specific ''regular expression'' with `M-x flush-lines` or with its alias `M-x delete-matching-lines`. Interactively you can enter your regular expression and all matching lines will be deleted from you cursor position downwards.
 </pre>
 </div>
 <div created="20190406124023176" modified="20190406174248403" tags="blog" title="2019-03-15 My Nickname is Danger" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -9895,7 +9895,7 @@ function getUsers(userIds) {
 
 You made it this far! Thanks for reading.</pre>
 </div>
-<div created="20190401161101731" modified="20190406174623288" tags="Emacs" title="2019-04-06 Test regular expressions" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190401161101731" modified="20190407144651770" tags="Emacs" title="2019-04-06 Test regular expressions" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Replacing or searching text with ''regular expressions'' is very common. But sometimes it is hard to get them right and you need some playground to try them out. In order to verify regular expressions i used to visit webpages like:
 
 * https://regexr.com/
@@ -9903,7 +9903,7 @@ You made it this far! Thanks for reading.</pre>
 
 But these webpages are optimised for perl, javascript or bash expressions and do not support Emacs regular expressions directly. In Emacs you have to consider some peculiarities. For example you have to escape parentheses.
 
-Recently i learnt about `M-x regexp-builder`. This is in interactive regular-expression tester. When started, you can type in your regular expression and the text in your buffer will be highlighted immediately. It even considers different capture groups and highlights them in different colours. Very nice!
+Recently i learnt about `M-x regexp-builder`. With it you can test your regular-expressions interactively. Just enter the  regular expression and the text in your buffer will be highlighted immediately. It even considers different capture groups and highlights them in different colours. Very nice!
 
 {{emacs_regexp_builder.png}}</pre>
 </div>
