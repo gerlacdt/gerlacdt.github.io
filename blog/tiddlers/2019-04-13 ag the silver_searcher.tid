@@ -1,5 +1,5 @@
 created: 20190413190043897
-modified: 20190413194158675
+modified: 20190413195404780
 tags: unix blog
 title: 2019-04-13 ag the silver_searcher
 type: text/vnd.tiddlywiki
@@ -14,7 +14,7 @@ find . -iname '*.go' | xargs grep -inH  "main"
 ```
 
 Recently i discovered [[ag the silver searcher|https://github.com/ggreer/the_silver_searcher]]. 
-`ag` is much faster than `grep` and searches directories recursively by default. `ag` respects out-of-the-box your `.gitignore` files, i.e. `build`, `dist` or `node_modules` directories will not clutter your search results. 
+`ag` is much faster than `grep` and searches directories recursively by default. `ag` respects out-of-the-box your `.gitignore` files, i.e. `build/`, `dist/` or `node_modules/` directories will not clutter your search results. 
 
 You can install `ag` on a Mac with [[brew|https://brew.sh/]], `brew install the_silver_searcher`.  The following command searches all files in your current directory for the string //main//.
 

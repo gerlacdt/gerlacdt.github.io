@@ -1,12 +1,12 @@
 created: 20190413183750337
-modified: 20190413190139303
+modified: 20190413195252309
 tags: unix blog
 title: 2019-04-13 Find and Replace in multiple files
 type: text/vnd.tiddlywiki
 
 As a software programmer you often have to search and replace a specific string in multiple files because of a refactoring or just improving  a variable or function name.
 
-Normally you can use your IDE or your editor for this. But in bigger codebases with thousands or hundred thousands of lines of code it can be very slow.  Or you are in an SSH-session and you have not access to your prefered tools. In such situations the command-line is pretty handy. It available everywhere and it is fast. 
+Normally you can use your IDE or your editor for this. But in bigger codebases with thousands or hundred thousands of lines of code it can be very slow. Or you are connected to a remote server via a SSH-session and  have no access to your preferred IDE. In such situations the command-line is pretty handy. It is available everywhere and it is fast. 
 
 The following command replaces `old` with `new` in all `*.go` files in the current directory:
 
@@ -14,6 +14,6 @@ The following command replaces `old` with `new` in all `*.go` files in the curre
 find . -iname '*.go' | xargs sed -i '' -e 's/old/new/g'
 ```
 
-I use this often in combination with [[git|https://git-scm.com/]]. First i commit my lastest changes, so that i have a clear state. Then i issue the above command. Afterwards i can check the changes in the files with `git diff`. If i did not like the changes, i could revert the changes easily with with `git reset`.
+I use this often in combination with [[git|https://git-scm.com/]]. First i commit my lastest changes, so that i have a clear state. Then i issue the above command. Afterwards i can check the changes in the files with `git diff`. If i did not like the changes, i could revert them with `git reset`.
 
 
