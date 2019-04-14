@@ -1,5 +1,5 @@
 created: 20190413084458606
-modified: 20190413150354943
+modified: 20190414075955659
 tags: Emacs
 title: 2019-04-13 Install Emacs 26.2 on MacOS
 type: text/vnd.tiddlywiki
@@ -10,7 +10,7 @@ In this short guide i want to show how i install Emacs on my ~MacBook.
 I use the vanilla Emacs build from https://emacsformacosx.com/
 It is just a simple //.dmg file//.
 
-With the installed //dmg file//, Emacs is now available on your Mac as an application but not in the terminal-app. The terminal still opens the old pre-install Emacs version. To make the new version available you have to create a bash-script and put in in your `$PATH`.
+After installing the //dmg file//, Emacs is now available on your Mac as an application but not in the terminal-app. The terminal still opens the pre-install Emacs version. To make the new version available you have to create a bash-script and put in your `$PATH`.
 
 ```bash
 # filename ~/bin/emacs
@@ -30,7 +30,7 @@ For further information see: https://emacsformacosx.com/tips
 
 !! My Emacs startup workflow
 
-When i start a session i run the emacs-server with `emacs --daemon`. This runs emacs in the background. Afterwards you can use `emacsclient` to open files. This utilises the running emacs-server and  emacs opens instantly!
+When i start a session i run the emacs-server with `emacs --daemon`. This runs emacs in the background. Afterwards you can use `emacsclient` to open files. ''emacsclient'' does not startup a full Emacs instance but utilises the running emacs-server. Basically emacs opens instantly!
 
 Additionally i created some bash aliases in my `~/.zshrc` or `~/.bashrc` in order to shorten the emacs commands.
 
@@ -43,7 +43,7 @@ alias ecc='emacsclient -c' # open GUI-emacs
 alias ew='emacs -nw -q'   # opens vanilla emacs in the terminal
 ```
 
-Finally i made Emacs the standard-editor in the shell with. So emacs will be used by other terminal-applications like git for editing git-commit-messages. Very nice!
+Finally i made Emacs the standard-editor in the shell. This makes other terminal-applications use Emacs, e.g. git for editing git-commit-messages.
 
 ```bash
 # filename: ~/.zshrc or ~/.bashrc

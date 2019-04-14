@@ -9974,7 +9974,7 @@ Recently i learnt about `M-x regexp-builder`. With it you can test your regular-
 
 {{emacs_regexp_builder.png}}</pre>
 </div>
-<div created="20190413190043897" modified="20190413195404780" tags="unix blog" title="2019-04-13 ag the silver_searcher" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190413190043897" modified="20190414075722038" tags="unix blog" title="2019-04-13 ag the silver_searcher" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>As a programmer you often search for a specific strings or regexps in multiple files. Previously i used to do this with the well-known GNU-tools `find` and `grep`.
 
 The following command searches for `main` in all `*.go` files in the current directory and:
@@ -9985,7 +9985,7 @@ find . -iname '*.go' | xargs grep -inH  &quot;main&quot;
 ```
 
 Recently i discovered [[ag the silver searcher|https://github.com/ggreer/the_silver_searcher]]. 
-`ag` is much faster than `grep` and searches directories recursively by default. `ag` respects out-of-the-box your `.gitignore` files, i.e. `build/`, `dist/` or `node_modules/` directories will not clutter your search results. 
+`ag` is much faster than `grep` and searches directories recursively by default. `ag` respects out-of-the-box your `.gitignore` files.
 
 You can install `ag` on a Mac with [[brew|https://brew.sh/]], `brew install the_silver_searcher`.  The following command searches all files in your current directory for the string //main//.
 
@@ -10007,13 +10007,13 @@ your-custom-folder-to-ignore/
 *.bak
 ```
 
-And if you miss your grep-output format, just use `ag main --vimgrep`. Then you can enjoy your standard grep-one-line output format again.
+And if you miss your grep-output format, just use `ag main --vimgrep`.
 </pre>
 </div>
-<div created="20190413183750337" modified="20190413195252309" tags="unix blog" title="2019-04-13 Find and Replace in multiple files" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190413183750337" modified="20190414075536398" tags="unix blog" title="2019-04-13 Find and Replace in multiple files" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>As a software programmer you often have to search and replace a specific string in multiple files because of a refactoring or just improving  a variable or function name.
 
-Normally you can use your IDE or your editor for this. But in bigger codebases with thousands or hundred thousands of lines of code it can be very slow. Or you are connected to a remote server via a SSH-session and  have no access to your preferred IDE. In such situations the command-line is pretty handy. It is available everywhere and it is fast. 
+Normally you can use your IDE or your editor for this. But in bigger codebases with thousands or hundred thousands of lines of code it can be very slow. Neither IDEs work for remote SSH-sessions. In such situations the command-line is pretty handy. It is available everywhere and it is fast. 
 
 The following command replaces `old` with `new` in all `*.go` files in the current directory:
 
@@ -10021,19 +10021,19 @@ The following command replaces `old` with `new` in all `*.go` files in the curre
 find . -iname '*.go' | xargs sed -i '' -e 's/old/new/g'
 ```
 
-I use this often in combination with [[git|https://git-scm.com/]]. First i commit my lastest changes, so that i have a clear state. Then i issue the above command. Afterwards i can check the changes in the files with `git diff`. If i did not like the changes, i could revert them with `git reset`.
+I use this often in combination with [[git|https://git-scm.com/]]. First i commit my lastest changes, so that i have a clear state. Then i issue the above command. Afterwards i check the changes in the files with `git diff`. If i do not like them, reverting is possible with `git reset`.
 
 
 </pre>
 </div>
-<div created="20190413084458606" modified="20190413150354943" tags="Emacs" title="2019-04-13 Install Emacs 26.2 on MacOS" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190413084458606" modified="20190414075955659" tags="Emacs" title="2019-04-13 Install Emacs 26.2 on MacOS" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Yesterday Emacs 26.2 was released, see: https://www.gnu.org/software/emacs/news/NEWS.26.2
 
 In this short guide i want to show how i install Emacs on my ~MacBook.
 I use the vanilla Emacs build from https://emacsformacosx.com/
 It is just a simple //.dmg file//.
 
-With the installed //dmg file//, Emacs is now available on your Mac as an application but not in the terminal-app. The terminal still opens the old pre-install Emacs version. To make the new version available you have to create a bash-script and put in in your `$PATH`.
+After installing the //dmg file//, Emacs is now available on your Mac as an application but not in the terminal-app. The terminal still opens the pre-install Emacs version. To make the new version available you have to create a bash-script and put in your `$PATH`.
 
 ```bash
 # filename ~/bin/emacs
@@ -10053,7 +10053,7 @@ For further information see: https://emacsformacosx.com/tips
 
 !! My Emacs startup workflow
 
-When i start a session i run the emacs-server with `emacs --daemon`. This runs emacs in the background. Afterwards you can use `emacsclient` to open files. This utilises the running emacs-server and  emacs opens instantly!
+When i start a session i run the emacs-server with `emacs --daemon`. This runs emacs in the background. Afterwards you can use `emacsclient` to open files. ''emacsclient'' does not startup a full Emacs instance but utilises the running emacs-server. Basically emacs opens instantly!
 
 Additionally i created some bash aliases in my `~/.zshrc` or `~/.bashrc` in order to shorten the emacs commands.
 
@@ -10066,7 +10066,7 @@ alias ecc='emacsclient -c' # open GUI-emacs
 alias ew='emacs -nw -q'   # opens vanilla emacs in the terminal
 ```
 
-Finally i made Emacs the standard-editor in the shell with. So emacs will be used by other terminal-applications like git for editing git-commit-messages. Very nice!
+Finally i made Emacs the standard-editor in the shell. This makes other terminal-applications use Emacs, e.g. git for editing git-commit-messages.
 
 ```bash
 # filename: ~/.zshrc or ~/.bashrc
