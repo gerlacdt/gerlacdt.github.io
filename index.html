@@ -206,7 +206,7 @@ Error message and password prompt
 
 <li>2019-04-06 Test regular expressions</li>
 
-<li>2019-04-13 ag the silver_searcher</li>
+<li>2019-04-13 ag the silver_searcher (replacement of find and grep)</li>
 
 <li>2019-04-13 Find and Replace in multiple files</li>
 
@@ -9752,18 +9752,18 @@ Code reviews.
 &quot;More than yourself.&quot;
 &lt;&lt;&lt;https://twitter.com/jessitron/status/914017624996171776</pre>
 </div>
-<div created="20190329182025676" modified="20190406124008631" tags="blog programming" title="2019-03-30 Starting with microservices? Consider this" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190329182025676" modified="20190609095918964" tags="blog programming" title="2019-03-30 Starting with microservices? Consider this" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Introduction
 
 Some years ago i was involved in migrating a big IBM Websphere
 monolith into a microservice landscape. We had a lot of problems with
-the monolith. Our development speed slowed down immensely. We had many
+the monolith. Our development speed slowed down. We had many
 merge conflicts because of too many dependencies in the
-codebase. Basically we outgrew the monolithic design and we started to extract different domains like payment, ordering and search. The teams were restructured into Two-pizza teams.
+codebase. We outgrew the monolithic design and we started to extract different domains like payment, ordering and search. The teams were restructured into Two-pizza teams.
 
 The whole migration was very structured and well planned. We migrated
 incrementally with the [[strangler pattern|https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler]].
-And as long we were ~20 developers, everything was fine. Teams worked
+As long we were ~20 developers in 5 different teams, everything was fine. Teams worked
 independently in their domain. They could scale, deploy independently
 and followed their own release cycles.
 
@@ -9785,7 +9785,7 @@ microservice-migration.
 !! Avoid a heterogeneous IT-landscape
 
 Microservices give you a lot of freedom which technology to choose
-like programming language, database etc. This is both boon and bane. On
+like programming language, database or web-framework. This is both boon and bane. On
 the one side every team can choose the technology which fits best, on
 the other side developers are adventurous and try out new fancy
 programming languages and other bleeding edge technology. And soon you have a dozen
@@ -9855,8 +9855,7 @@ the [[four golden signals|https://landing.google.com/sre/sre-book/chapters/monit
 
    Do not forget to protect your services with timeouts. Missing timeouts
    make I/O calls wait too long and if they pile up they consume all
-   your memory. In the worst case you service will be killed by your
-   docker scheduler because the memory limit is exceeded.
+   your memory or other resources like a thread pool. In the worst case you service will be killed by your docker scheduler because the memory limit is exceeded.
 
    For very high-load services you should consider 
 [[load shedding or graceful degradation|https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/#xref_cascading-failure_load-shed-graceful-degredation]] in order to protect these service from going down.
@@ -9895,7 +9894,7 @@ function getUsers(userIds) {
 5. Topology doesn't change.
 
    Especially with self-healing services and docker random port usage,
-   IP-addresses and ports change. Do not use static IP-addresses or
+   IP-addresses and ports change often. Do not use static IP-addresses or
    static ports. Use sophisticated service-discovery mechanisms. Many
    Docker-Scheduler provide them out-of-the-box like
    [[Kubernetes|https://kubernetes.io/]] or 
@@ -9906,7 +9905,7 @@ function getUsers(userIds) {
 
 6. There is one administrator.
 
-   Distributed systems are complex. So do not expected that there is
+   Distributed systems are complex. Do not expect that there is
    one person who knows it all. For bug analysis you need multiple
    people/teams.
 
@@ -9914,7 +9913,7 @@ function getUsers(userIds) {
 
    Network calls are expensive. You need to establish a connection,
    you need to serialize and deserialize the message body which cost
-   CPU. So the less you send the better. If you notice that you
+   CPU. The less you send the better. If you notice that you
    services are chatty, consider restructuring the domain
    boundaries. Most probably your domains do overlap or have multiple
    responsibilities.
@@ -9923,11 +9922,10 @@ function getUsers(userIds) {
 8. The network is homogeneous
 
    It's not. Before docker, almost all application ran on customized, &quot;snowlflaky&quot; servers 
-   configured via non-reproducable ssh-session. With Kubernetes or AWS ECS you can have 
+   configured via non-reproducible ssh-session. With Kubernetes or AWS ECS you can have 
    clusters with thousands of servers which are configured
    exactly the same. A single ~DevOps guy can operate thousands of
-   servers! What an achievement! You should also agree on a 
-   single data transfer format like
+   servers! You should also agree on a single data transfer format like
    [[JSON|https://www.json.org/]] or [[Protocol Buffers|https://developers.google.com/protocol-buffers/]] with
    [[gRPC|https://grpc.io/]]. You should strive for as much homogeneity as possible to reduce operation and maintenance costs. In my opinion the homogeneity provided by Docker is its biggest advantage.
 
@@ -9956,7 +9954,10 @@ function getUsers(userIds) {
   [[Site Reliability Engineering|https://landing.google.com/sre/books/]]
 
 
-You made it this far! Thanks for reading.</pre>
+!! Conclusion
+
+The main point i want to stress out is that microservices are hard because they do not solve technical problems but organisational problems. Keep this in mind. The tech department need to put a lot of additional effort into introducing microservices - the automation of CI and other infrastructure, getting used to distributed systems and completely reorganise your teams. But if you take this road, you will get many advantages: independent teams each have their on release cycle, organisational scalability and a lot more. But in the end it takes a lot of discipline to be successful.
+</pre>
 </div>
 <div created="20190406165122625" modified="20190413194123728" tags="Emacs" title="2019-04-06 Delete all lines matching a regular expression" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Sometimes when i write small scripts i tend to insert `print` statements for debugging. After i verified the correctness of my program i want to get rid of all unnecessary debug statements. With Emacs you can delete all lines which match a specific ''regular expression'' with `M-x flush-lines` or with its alias `M-x delete-matching-lines`. Interactively you can enter your regular expression and all matching lines will be deleted from you cursor position downwards.
@@ -9974,7 +9975,7 @@ Recently i learnt about `M-x regexp-builder`. With it you can test your regular-
 
 {{emacs_regexp_builder.png}}</pre>
 </div>
-<div created="20190413190043897" modified="20190414075722038" tags="unix blog" title="2019-04-13 ag the silver_searcher" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190413190043897" modified="20190609092506291" tags="unix blog" title="2019-04-13 ag the silver_searcher (replacement of find and grep)" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>As a programmer you often search for a specific strings or regexps in multiple files. Previously i used to do this with the well-known GNU-tools `find` and `grep`.
 
 The following command searches for `main` in all `*.go` files in the current directory and:
@@ -10007,10 +10008,10 @@ your-custom-folder-to-ignore/
 *.bak
 ```
 
-And if you miss your grep-output format, just use `ag main --vimgrep`.
+And if you miss your regular grep-output format, just use `ag main --vimgrep`.
 </pre>
 </div>
-<div created="20190413183750337" modified="20190414075536398" tags="unix blog" title="2019-04-13 Find and Replace in multiple files" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190413183750337" modified="20190609092345767" tags="unix blog" title="2019-04-13 Find and Replace in multiple files" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>As a software programmer you often have to search and replace a specific string in multiple files because of a refactoring or just improving  a variable or function name.
 
 Normally you can use your IDE or your editor for this. But in bigger codebases with thousands or hundred thousands of lines of code it can be very slow. Neither IDEs work for remote SSH-sessions. In such situations the command-line is pretty handy. It is available everywhere and it is fast. 
@@ -10021,7 +10022,7 @@ The following command replaces `old` with `new` in all `*.go` files in the curre
 find . -iname '*.go' | xargs sed -i '' -e 's/old/new/g'
 ```
 
-I use this often in combination with [[git|https://git-scm.com/]]. First i commit my lastest changes, so that i have a clear state. Then i issue the above command. Afterwards i check the changes in the files with `git diff`. If i do not like them, reverting is possible with `git reset`.
+I use this often in combination with [[git|https://git-scm.com/]]. First i commit my lastest changes, so i have a clear state. Then i issue the above command. Afterwards i check the changes in the files with `git diff`. If i do not like them, reverting is possible with `git reset`.
 
 
 </pre>
