@@ -1,5 +1,5 @@
 created: 20190413183750337
-modified: 20190414075536398
+modified: 20190609092345767
 tags: unix blog
 title: 2019-04-13 Find and Replace in multiple files
 type: text/vnd.tiddlywiki
@@ -14,6 +14,6 @@ The following command replaces `old` with `new` in all `*.go` files in the curre
 find . -iname '*.go' | xargs sed -i '' -e 's/old/new/g'
 ```
 
-I use this often in combination with [[git|https://git-scm.com/]]. First i commit my lastest changes, so that i have a clear state. Then i issue the above command. Afterwards i check the changes in the files with `git diff`. If i do not like them, reverting is possible with `git reset`.
+I use this often in combination with [[git|https://git-scm.com/]]. First i commit my lastest changes, so i have a clear state. Then i issue the above command. Afterwards i check the changes in the files with `git diff`. If i do not like them, reverting is possible with `git reset`.
 
 

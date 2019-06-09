@@ -1,7 +1,7 @@
 created: 20190413190043897
-modified: 20190414075722038
+modified: 20190609092506291
 tags: unix blog
-title: 2019-04-13 ag the silver_searcher
+title: 2019-04-13 ag the silver_searcher (replacement of find and grep)
 type: text/vnd.tiddlywiki
 
 As a programmer you often search for a specific strings or regexps in multiple files. Previously i used to do this with the well-known GNU-tools `find` and `grep`.
@@ -36,4 +36,4 @@ your-custom-folder-to-ignore/
 *.bak
 ```
 
-And if you miss your grep-output format, just use `ag main --vimgrep`.
+And if you miss your regular grep-output format, just use `ag main --vimgrep`.
