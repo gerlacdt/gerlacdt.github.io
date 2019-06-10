@@ -1,5 +1,5 @@
 created: 20190329182217150
-modified: 20190406170750499
+modified: 20190610174621042
 tags: blog personal
 title: About me
 type: text/vnd.tiddlywiki
@@ -14,7 +14,7 @@ I am a happy long-term [[Emacs|https://www.gnu.org/software/emacs/]] user (almos
 * [[python|https://www.python.org/]]
 * [[go|https://golang.org]]
 
-I am very interested in programming in general. I have a favour for lispy-languages like //[[Common Lisp|https://lisp-lang.org/]], [[Scheme|https://racket-lang.org/]] or [[Clojure|https://clojure.org/]]//. Also i am a strong supporter of functional programming paradigms like immutability, reference transparency, pure functions, high-order functions, functions as first-class citizens and composition of function(ality). Nevertheless i also like pragmatic programming languages like go.
+I am interested in programming. I have a favour for lispy-languages like //[[Common Lisp|https://lisp-lang.org/]], [[Scheme|https://racket-lang.org/]] or [[Clojure|https://clojure.org/]]//. Also i am a strong supporter of functional programming paradigms like immutability, reference transparency, pure functions, high-order functions, functions as first-class citizens and composition of function(ality). Nevertheless i also like pragmatic programming languages like go.
 
 My main coding principle is:
 
@@ -31,7 +31,7 @@ https://github.com/gerlacdt
 
 https://twitter.com/gerlacdt
 
-btw i like cats and i have one at home. Coincidentally her name is ''Ruby''.
+I like cats and i have one at home. Coincidentally her name is ''Ruby'' (like the programming language).
 
 
 Ruby in the kitchen

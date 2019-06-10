@@ -1,5 +1,5 @@
 created: 20190329182025676
-modified: 20190610080337021
+modified: 20190610174454860
 tags: blog programming
 title: 2019-03-30 Starting with microservices? Consider this
 type: text/vnd.tiddlywiki
@@ -10,7 +10,7 @@ Some years ago i was involved in migrating a big IBM Websphere
 monolith into a microservice landscape. We had a lot of problems with
 the monolith. Our development speed slowed down. We had many
 merge conflicts because of too many dependencies in the
-codebase. We outgrew the monolithic design and we started to extract different domains like payment, ordering and search. The teams were restructured into Two-pizza teams.
+codebase. We outgrew the monolithic design and decided to introduce microservices. We extracted different domains like payment, booking, user and search. The teams were restructured into two-pizza teams.
 
 The whole migration was very structured and well planned. We migrated
 incrementally with the [[strangler pattern|https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler]].
@@ -18,7 +18,7 @@ As long we were ~20 developers in 5 different teams, everything was fine. Teams 
 independently in their domain. They could scale, deploy independently
 and followed their own release cycles.
 
-But microservices bring new technical challenges. Maybe you now the saying:
+But microservices bring new technical challenges. Maybe you know the saying:
 
 <<<
 Microservices solve organizational problems.
@@ -211,7 +211,7 @@ Microservices are hard. Do not forget this. In the web you hear mainly
 about the big success-stories like Google, Amazon and the like. But
 for the most of us there are serious disadvantages to consider. Be
 aware of them! And do not get me wrong, microservices are great. It
-was definitely the way to go for us. We are now more than 100
+was definitely the way to go for us. Today we are more than 100
 developers and it gives me the creeps when i think that all of them
 would work on single monolithic git-repository. So be aware that it takes a lot of discipline and expect to learn a lot on the way to a productive microservice landscape.
 
