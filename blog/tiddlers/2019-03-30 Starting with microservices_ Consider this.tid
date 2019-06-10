@@ -1,5 +1,5 @@
 created: 20190329182025676
-modified: 20190609095918964
+modified: 20190610080337021
 tags: blog programming
 title: 2019-03-30 Starting with microservices? Consider this
 type: text/vnd.tiddlywiki
@@ -207,4 +207,11 @@ function getUsers(userIds) {
 
 !! Conclusion
 
-The main point i want to stress out is that microservices are hard because they do not solve technical problems but organisational problems. Keep this in mind. The tech department need to put a lot of additional effort into introducing microservices - the automation of CI and other infrastructure, getting used to distributed systems and completely reorganise your teams. But if you take this road, you will get many advantages: independent teams each have their on release cycle, organisational scalability and a lot more. But in the end it takes a lot of discipline to be successful.
+Microservices are hard. Do not forget this. In the web you hear mainly
+about the big success-stories like Google, Amazon and the like. But
+for the most of us there are serious disadvantages to consider. Be
+aware of them! And do not get me wrong, microservices are great. It
+was definitely the way to go for us. We are now more than 100
+developers and it gives me the creeps when i think that all of them
+would work on single monolithic git-repository. So be aware that it takes a lot of discipline and expect to learn a lot on the way to a productive microservice landscape.
+
