@@ -1,7 +1,7 @@
 created: 20190413190043897
-modified: 20190609092506291
+modified: 20190613161940895
 tags: unix blog
-title: 2019-04-13 ag the silver_searcher (replacement of find and grep)
+title: 2019-04-13 ag the silver_searcher
 type: text/vnd.tiddlywiki
 
 As a programmer you often search for a specific strings or regexps in multiple files. Previously i used to do this with the well-known GNU-tools `find` and `grep`.
