@@ -1,5 +1,5 @@
 created: 20190329182025676
-modified: 20190610174454860
+modified: 20190615151454146
 tags: blog programming
 title: 2019-03-30 Starting with microservices? Consider this
 type: text/vnd.tiddlywiki
@@ -121,8 +121,8 @@ the [[four golden signals|https://landing.google.com/sre/sre-book/chapters/monit
 // bad practice! Doing multiple network calls
 function getUsers(userIds) {
   const users = [];
-  for (u of users) {
-    const user = http.fetchSingleUser(u);
+  for (id of userIds) {
+    const user = http.fetchSingleUser(id);
     users.push(user);
   }
   return users;
@@ -172,7 +172,7 @@ function getUsers(userIds) {
 
 8. The network is homogeneous
 
-   It's not. Before docker, almost all application ran on customized, "snowlflaky" servers 
+   It's not. Before docker, almost all applications ran on customized, "snowlflaky" servers 
    configured via non-reproducible ssh-session. With Kubernetes or AWS ECS you can have 
    clusters with thousands of servers which are configured
    exactly the same. A single ~DevOps guy can operate thousands of
@@ -209,9 +209,6 @@ function getUsers(userIds) {
 
 Microservices are hard. Do not forget this. In the web you hear mainly
 about the big success-stories like Google, Amazon and the like. But
-for the most of us there are serious disadvantages to consider. Be
-aware of them! And do not get me wrong, microservices are great. It
-was definitely the way to go for us. Today we are more than 100
-developers and it gives me the creeps when i think that all of them
-would work on single monolithic git-repository. So be aware that it takes a lot of discipline and expect to learn a lot on the way to a productive microservice landscape.
+for the most of us there are serious disadvantages which are normally not mentioned. And do not get me wrong, microservices are great. It was definitely the way to go for us. Today we are more than 100 developers and it gives me the creeps when i imagine that all of them would work on single monolithic git-repository. 
+It is a long and hard way to a productive microservice landscape but definitively worth it. Just do not underestimate monitoring, automation and the fallacies of distributed systems!
 
