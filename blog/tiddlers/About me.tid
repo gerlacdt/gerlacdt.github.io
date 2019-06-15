@@ -1,5 +1,5 @@
 created: 20190329182217150
-modified: 20190610174621042
+modified: 20190615151854579
 tags: blog personal
 title: About me
 type: text/vnd.tiddlywiki
@@ -16,7 +16,7 @@ I am a happy long-term [[Emacs|https://www.gnu.org/software/emacs/]] user (almos
 
 I am interested in programming. I have a favour for lispy-languages like //[[Common Lisp|https://lisp-lang.org/]], [[Scheme|https://racket-lang.org/]] or [[Clojure|https://clojure.org/]]//. Also i am a strong supporter of functional programming paradigms like immutability, reference transparency, pure functions, high-order functions, functions as first-class citizens and composition of function(ality). Nevertheless i also like pragmatic programming languages like go.
 
-My main coding principle is:
+My coding principle is:
 
 <<<
 “Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?” 
