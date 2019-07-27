@@ -1,5 +1,5 @@
 created: 20190726160113627
-modified: 20190726163307912
+modified: 20190727133139617
 tags: unix blog linux postgres
 title: 2019-07-26 Install PostgreSQL on Ubuntu 19.04 for development
 type: text/vnd.tiddlywiki
@@ -44,23 +44,27 @@ psql> \password postgres
 Now you can switch from "peer" authentication to "md5" authentication which is the Postgres version of password authentication.  Change all occurrences of "peer" to "md5" in the "Method"-column in [[/etc/postgresql/11/main/pg_hba.conf|https://www.postgresql.org/docs/11/auth-pg-hba-conf.html]]. Your ''pg_hba.conf'' file should look like this:
 
 ```bash
-########### file: /etc/postgresql/11/main/pg_hba.conf ################
-local   all             postgres                                md5
+##### file: /etc/postgresql/11/main/pg_hba.conf #####
+local   all             postgres             md5
 
-# TYPE  DATABASE        USER            ADDRESS                 METHOD
+# TYPE  DATABASE        USER  ADDRESS        METHOD
 
 # "local" is for Unix domain socket connections only
-local   all             all                                     md5
+local   all             all                  md5
+
 # IPv4 local connections:
-host    all             all             127.0.0.1/32            md5
+host    all             all   127.0.0.1/32   md5
+
 # IPv6 local connections:
-host    all             all             ::1/128                 md5
-# Allow replication connections from localhost, by a user with the
-# replication privilege.
-local   replication     all                                     md5
-host    replication     all             127.0.0.1/32            md5
-host    replication     all             ::1/128                 md5
-########### file: /etc/postgresql/11/main/pg_hba.conf ################
+host    all             all   ::1/128        md5
+
+# Allow replication connections from localhost, by
+a user with the replication privilege.
+local   replication     all                  md5
+host    replication     all   127.0.0.1/32   md5
+host    replication     all x  ::1/128       md5
+##### file: /etc/postgresql/11/main/pg_hba.conf #####
+
 ```
 
 To activate the changes restart the postgres server:
@@ -76,7 +80,7 @@ psql -U postgres
 # alternatively PGPASSWORD=<your_password> psql -U postgres 
 # -> this version is better for scripting
 
-# create your application user with a password
+# create your application user with a password. Never use the admin user for application development!
 psql> CREATE USER myuser WITH ENCRYPTED PASSWORD 'foobar';
 
 # create a new database
@@ -104,10 +108,9 @@ CREATE TABLE users (
 You made it! Finally you can start your application development with
 your new and shiny ~PostgreSQL database. Do not forget this
 configuration is for development purpose only. For production you
-would use your cloud-provider DB-Service like AWS RDS
+would use a cloud-provider DB-Service like AWS RDS
 (https://aws.amazon.com/rds/) or Google Cloud SQL
-(https://cloud.google.com/sql/). Different security practices apply
-there.
+(https://cloud.google.com/sql/) with different security settings.
 
 
 !! The short version for the impatient
