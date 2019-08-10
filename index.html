@@ -10087,7 +10087,7 @@ Finally i made Emacs the standard-editor in the shell. This makes other terminal
 export EDITOR=&quot;emacs -q -nw&quot;  # make emacs my default editor in the terminal
 ```</pre>
 </div>
-<div created="20190726160113627" modified="20190727133139617" tags="unix blog linux postgres" title="2019-07-26 Install PostgreSQL on Ubuntu 19.04 for development" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190726160113627" modified="20190810123429978" tags="unix blog linux postgres" title="2019-07-26 Install PostgreSQL on Ubuntu 19.04 for development" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Recently i decided to switch from ~MacOS to Linux. I was already an
 Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i
 struggled a little bit with the installation of
@@ -10146,7 +10146,7 @@ host    all             all   ::1/128        md5
 a user with the replication privilege.
 local   replication     all                  md5
 host    replication     all   127.0.0.1/32   md5
-host    replication     all x  ::1/128       md5
+host    replication     all   ::1/128       md5
 ##### file: /etc/postgresql/11/main/pg_hba.conf #####
 
 ```

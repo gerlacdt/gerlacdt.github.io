@@ -1,5 +1,5 @@
 created: 20190726160113627
-modified: 20190727133139617
+modified: 20190810123429978
 tags: unix blog linux postgres
 title: 2019-07-26 Install PostgreSQL on Ubuntu 19.04 for development
 type: text/vnd.tiddlywiki
@@ -62,7 +62,7 @@ host    all             all   ::1/128        md5
 a user with the replication privilege.
 local   replication     all                  md5
 host    replication     all   127.0.0.1/32   md5
-host    replication     all x  ::1/128       md5
+host    replication     all   ::1/128       md5
 ##### file: /etc/postgresql/11/main/pg_hba.conf #####
 
 ```
