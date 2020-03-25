@@ -1,5 +1,5 @@
 ---
-title: "My Name Is Danger"
+title: "My Nickname Is Danger"
 date: 2019-03-15T08:51:40+01:00
 tags: ["javascript"]
 draft: true
