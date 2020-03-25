@@ -1,7 +1,7 @@
 ##########################################
 # Site Settings
 
-baseURL = "https://gerlacdt.github.io/"
+baseURL = "https://gerlacdt.github.io/blog"
 title = "Daniel's programming rants"
 languageCode = "en"
 hasCJKLanguage = false
