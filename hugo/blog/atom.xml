@@ -1,0 +1,1757 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title type="text">Daniel&#39;s programming rants</title>
+    <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
+    <updated>2020-03-25T11:55:08+01:00</updated>
+    <id>https://gerlacdt.github.io/</id>
+    <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
+    <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
+    <author>
+            <name>Daniel Gerlach</name>
+            <uri>https://gerlacdt.github.io/</uri>
+            </author>
+    
+    <generator uri="https://gohugo.io/" version="0.68.3">Hugo</generator>
+        <entry>
+            <title type="text">ESlint &#43; Prettier &#43; Typescript = Consistency</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/eslint-prettier-typescript/" />
+            <id>https://gerlacdt.github.io/posts/eslint-prettier-typescript/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2020-03-24T10:28:27+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Consistency is one of the most important factors in a codebase. It gives new developers an orientation and direction how to write new code, it keeps the code understandable, clear and free from bikeshedding, so developers can focus on real problems instead of indulging in discussions of their preferred codestyle and individual taste.]]></summary>
+            
+                <content type="html"><![CDATA[<p>Consistency is one of the most important factors in a codebase. It
+gives new developers an orientation and direction how to write new
+code, it keeps the code understandable, clear and free from
+bikeshedding, so developers can focus on real problems instead of
+indulging in discussions of their preferred codestyle and individual
+taste.</p>
+<p>Consistency can be pertained by strict discipline or you can enforce
+good style and formatting via opinionated code formatters like
+<a href="https://prettier.io">prettier</a> which makes development and
+collaboration a breeze. One of the forerunners of code formatters was
+<a href="https://golang.org/cmd/gofmt">gofmt</a>. Prior to gofmt opinionated
+formatters were not so popular (at least not to my
+knowledge). Basically gofmt defines the de facto Go formatting
+style. Almost all serious Go code is formatted that way. That&rsquo;s why
+all Go code looks familiar and is easy to work with. With prettier you
+can achieve the same &ldquo;feeling&rdquo; with Javascript, Typescript and many
+other supported languages. The same is true for linters. They help you
+to stick to common best practices and to avoid silly and potential
+problems. Long story short, linters and code formatters are essential
+tools for &lsquo;&lsquo;state-of-the-art software engineering&rsquo;'.</p>
+<p>In the article i show you how to setup <a href="https://eslint.org/">eslint</a>
+for <a href="https://www.typescriptlang.org/">Typescript</a> with prettier
+support. So let&rsquo;s start.</p>
+<p>First you need to install eslint in your (Typescript) project:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># install eslint with typescript support</span>
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+<span class="c1"># install prettier and eslint plugin with for prettier support</span>
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+</code></pre></td></tr></table>
+</div>
+</div><p>Next we have to configure eslint so that it works together with prettier. If you don&rsquo;t do that, eslint will not be compatible with the opinionated prettier formatting. The eslint configuration is done via two files <code>.eslintrc.js</code> and <code>.eslintignore</code>. You need both files in your project root.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// .eslintrc.js
+</span><span class="c1"></span>
+<span class="c1">// configures eslint rules
+</span><span class="c1"></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">env</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">node</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">parser</span><span class="o">:</span> <span class="s2">&#34;@typescript-eslint/parser&#34;</span><span class="p">,</span>
+  <span class="kr">extends</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">&#34;plugin:@typescript-eslint/recommended&#34;</span><span class="p">,</span> <span class="c1">// recommended eslint rules for typescript
+</span><span class="c1"></span>    <span class="s2">&#34;prettier/@typescript-eslint&#34;</span><span class="p">,</span> <span class="c1">// make eslint compatible with prettier formatting
+</span><span class="c1"></span>    <span class="s2">&#34;plugin:prettier/recommended&#34;</span><span class="p">,</span> <span class="c1">// eslint shows prettier formatting warnings. Must be always the last configuration.
+</span><span class="c1"></span>  <span class="p">],</span>
+  <span class="nx">parserOptions</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">ecmaVersion</span><span class="o">:</span> <span class="mi">2018</span><span class="p">,</span>
+    <span class="nx">sourceType</span><span class="o">:</span> <span class="s2">&#34;module&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;@typescript-eslint&#34;</span><span class="p">],</span>
+  <span class="nx">rules</span><span class="o">:</span> <span class="p">{},</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># eslintignore</span>
+
+<span class="c1"># you should ignore irrelevant *.js and *.ts files which do not belong to you project</span>
+
+<span class="c1"># do not lint node_modules/</span>
+node_modules
+<span class="c1"># do not lint build/ or dist/ folder</span>
+dist
+<span class="c1"># do not lint coverage/ folder</span>
+coverage
+</code></pre></td></tr></table>
+</div>
+</div><p>The prettier configuration needs to be created in <code>.prettierrc</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;printWidth&#34;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+  <span class="nt">&#34;trailingComma&#34;</span><span class="p">:</span> <span class="s2">&#34;all&#34;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Here we define a max line length of 80. I am also an advocate of trailing commas. This setting keeps the git diffs clean and as small as possible.</p>
+<p>With all this in place you can lint and format your code base:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># lint src files and list all errors</span>
+node_modules/.bin/eslint src/ --ext .ts
+
+<span class="c1"># same as above but fixes problems automatically if possible</span>
+node_modules/.bin/eslint src/ --ext .ts --fix
+
+<span class="c1"># format codebase in place</span>
+node_modules/.bin/prettier --trailing-comma all --write <span class="s1">&#39;src/**/*.ts&#39;</span>
+
+<span class="c1"># i used above the full path to the local /node_modules folder</span>
+<span class="c1"># you can also install prettier and eslint as global npm modules, then you can use them directly</span>
+<span class="c1"># this is recommended so editors can also leverage prettier and eslint</span>
+
+<span class="c1"># install globally</span>
+npm install -g prettier eslint
+
+<span class="c1"># now you can use</span>
+prettier --trailing-comma all --write <span class="s1">&#39;src/**/*.ts&#39;</span>
+eslint src/ --ext .ts --fix
+</code></pre></td></tr></table>
+</div>
+</div><p>It&rsquo;s good practice to enforce these practices. You can do this with a
+git pre-commit hook. Just install
+<a href="https://www.npmjs.com/package/husky">husky</a> and
+<a href="https://www.npmjs.com/package/lint-staged">lint-staged</a>. With these
+packages it is easy to configure the hooks.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># install npm packages to enable pre-commit hooks</span>
+npm install  --save-dev lint-staged husky
+</code></pre></td></tr></table>
+</div>
+</div><p>After the installation you need configure husky and lint-staged modules in the <code>package.json</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;lint&#34;</span><span class="p">:</span> <span class="s2">&#34; eslint src/ --ext .ts&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;lint-fix&#34;</span><span class="p">:</span> <span class="s2">&#34; eslint src/ --ext .ts --fix&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;pretty&#34;</span><span class="p">:</span> <span class="s2">&#34;prettier --trailing-comma all --write &#39;src/**/*.ts&#39;&#34;</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">....</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;devDependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="err">....</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;husky&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;hooks&#34;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&#34;pre-commit&#34;</span><span class="p">:</span> <span class="s2">&#34;lint-staged&#34;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;lint-staged&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;src/**/*.ts&#34;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&#34;eslint --fix&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;prettier --write&#34;</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You can find a fully configured project template on my
+<a href="https://github.com/gerlacdt/graphql-example">github</a>.</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/programming/" term="programming" label="programming" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Product Management Quotes</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/product-management-quotes/" />
+            <id>https://gerlacdt.github.io/posts/product-management-quotes/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2019-07-27T10:23:17+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[I collected my favorite quotes about product management:
+ We need teams of missionaries, not teams of mercenaries.
+ Marty Cagan, Inspired
+ It doesn’t matter how good your engineering team is if they are not given something worthwhile to build.
+ Marty Cagan, Inspired]]></summary>
+            
+                <content type="html"><![CDATA[<p>I collected my favorite quotes about product management:</p>
+<p><img src="/img/marty_cagan.jpg" alt="Marty Cagan"></p>
+<blockquote>
+<p>We need teams of missionaries, not teams of mercenaries.</p>
+</blockquote>
+<p>Marty Cagan, Inspired</p>
+<blockquote>
+<p>It doesn’t matter how good your engineering team is if they are not
+given something worthwhile to build.</p>
+</blockquote>
+<p>Marty Cagan, Inspired</p>
+<blockquote>
+<p>The use of OKRs in most companies is a mess - because it’s a framework that originated in an empowered team environment - and most companies applying it today don’t have empowered teams.</p>
+</blockquote>
+<p>Marty Cagan</p>
+<blockquote>
+<p>As director of product you are only as strong as your weakest product manager.</p>
+</blockquote>
+<p>Marty Cagan</p>
+<blockquote>
+<p>The MVP should be a prototype, not a product.</p>
+</blockquote>
+<p>Marty Cagan, Inspired</p>
+<blockquote>
+<p>Be stubborn on vision but flexible on details.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>What&rsquo;s dangerous is not to evolve.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>We&rsquo;ve had three big ideas at Amazon that we&rsquo;ve stuck with for 18 years, and they&rsquo;re the reason we&rsquo;re successful: Put the customer first. Invent. And be patient.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>If you don&rsquo;t understand the details of your business you are going to
+fail.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>The best customer service is if the customer doesn’t need to call you, doesn’t need to talk to you. It just works.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>No customer ever asked Amazon to create the Prime membership program.</p>
+</blockquote>
+<p>Jeff Bezos (myth that listen to your customers results in great products)</p>
+<blockquote>
+<p>We will continue to focus on hiring and retaining versatile and talented employees, and continue to weight their compensation to stock options rather than cash. We know our success will be largely affected by our ability to attract and retain a motivated employee base, each of whom must think like, and therefore must actually be, an owner.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>The people who are crazy enough to think they can change the world are
+the ones who do.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>I’m as proud of many of the things we haven’t done as the things we have done. Innovation is saying no to a thousand things.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>Innovation distinguishes between a leader and a follower.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>Design is not just what it looks like and feels like. Design is how it
+works.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>&hellip;the people that make those decisions sometimes are confused&hellip;</p>
+</blockquote>
+<p>Steve Jobs about people in the enterprise and their buying decisions</p>
+<blockquote>
+<p>That’s been one of my mantras - focus and simplicity. Simple can be harder than complex; you have to work hard to get your thinking clean to make it simple.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>The value is in what gets used, not in what gets built.</p>
+</blockquote>
+<p>Kris Gale</p>
+<blockquote>
+<p>If you are not embarrassed by the first version of your product, you’ve launched too late.</p>
+</blockquote>
+<p>Reid Hoffman</p>
+<blockquote>
+<p>The key is not to prioritize what’s on your schedule, but to schedule your priorities.</p>
+</blockquote>
+<p>Stephen Covey</p>
+<blockquote>
+<p>Your most unhappy customers are your greatest source of learning.</p>
+</blockquote>
+<p>Bill Gates</p>
+<blockquote>
+<p>Management is doing things right; leadership is doing the right
+things.</p>
+</blockquote>
+<p>Peter Drucker</p>
+<blockquote>
+<p>Efficiency is doing things right; effectiveness is doing the right
+things.</p>
+</blockquote>
+<p>Peter Drucker</p>
+<blockquote>
+<p>Strategy is a commodity, execution is an art.</p>
+</blockquote>
+<p>Peter Drucker</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/product/" term="product" label="product" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Install Postgres on Ubuntu</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/postgres-ubuntu/" />
+            <id>https://gerlacdt.github.io/posts/postgres-ubuntu/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2019-07-26T10:15:34+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Recently i decided to switch from MacOS to Linux. I was already an Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i struggled a little bit with the installation of PostgreSQL For MacOS there is a nice all-in-one package which i recommend: Postgres.]]></summary>
+            
+                <content type="html"><![CDATA[<p>Recently i decided to switch from MacOS to Linux. I was already an
+Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i
+struggled a little bit with the installation of
+<a href="https://www.postgresql.org">PostgreSQL</a> For MacOS there is a nice
+all-in-one package which i recommend:
+<a href="https://postgresapp.com">Postgres.app</a> Everything works
+out-of-the-box there. In Ubuntu, on the other hand, we need to adjust
+the default installation a little bit in order to start application
+development.</p>
+<p>In this little guide i want to give you a short description how to
+setup PostgreSQL for <a href="https://ubuntu.com">Ubuntu 19.04</a> for
+development purpose. For the impatient i compiled all important
+commands at the end of this article. So if you are already familiar
+with Linux you can skip the main part.  Keep in mind this guide is not
+for production usage!</p>
+<h2 id="installation-instructions">Installation instructions</h2>
+<p>First install the deb-package via apt-get:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install postgresql
+</code></pre></td></tr></table>
+</div>
+</div><p>Afterwards PostgreSQL is available on your system. During the
+installation a postgres OS-user with database admin permissions is
+added to your system. And here is the problem.  For local users <a href="https://www.postgresql.org/docs/11/auth-peer.html">peer
+authentication</a> is
+activated by default. This means Postgres relies on OS-users for
+authentication. You have to issue all commands with the <strong>postgres</strong>
+OS-user from the shell. For development purposes this is cumbersome
+and you want a normal <a href="https://www.postgresql.org/docs/11/auth-password.html">user/password
+authentication</a>.
+Hence you need to add a password to your existing postgres user:</p>
+<pre><code># login with the postgres OS-user (this user has db-admin permissions and can create new users and databases)
+sudo -u postgres psql
+
+# now you can add a password in the psql-shell
+psql&gt; \password postgres
+</code></pre><p>Now you can switch from &ldquo;peer&rdquo; authentication to &ldquo;md5&rdquo; authentication
+which is the Postgres version of password authentication.  Change all
+occurrences of &ldquo;peer&rdquo; to &ldquo;md5&rdquo; in the &ldquo;Method&rdquo;-column in
+<a href="https://www.postgresql.org/docs/11/auth-pg-hba-conf.html">/etc/postgresql/11/main/pg_hba.conf</a>. Your
+<strong>pg_hba.conf</strong> file should look like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">##### file: /etc/postgresql/11/main/pg_hba.conf #####</span>
+
+<span class="nb">local</span>   all             postgres             md5
+
+<span class="c1"># TYPE  DATABASE        USER  ADDRESS        METHOD</span>
+
+<span class="c1"># &#34;local&#34; is for Unix domain socket connections only</span>
+<span class="nb">local</span>   all             all                  md5
+
+<span class="c1"># IPv4 local connections:</span>
+host    all             all   127.0.0.1/32   md5
+
+<span class="c1"># IPv6 local connections:</span>
+host    all             all   ::1/128        md5
+
+<span class="c1"># Allow replication connections from localhost, by</span>
+a user with the replication privilege.
+<span class="nb">local</span>   replication     all                  md5
+host    replication     all   127.0.0.1/32   md5
+host    replication     all   ::1/128       md5
+<span class="c1">##### file: /etc/postgresql/11/main/pg_hba.conf #####</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>To activate the changes restart the postgres server:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo service postgresql restart
+</code></pre></td></tr></table>
+</div>
+</div><p>You are almost ready to go! Login with your new password:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">psql -U postgres
+<span class="c1"># alternatively PGPASSWORD=&lt;your_password&gt; psql -U postgres</span>
+<span class="c1"># -&gt; this version is better for scripting</span>
+
+<span class="c1"># create your application user with a password. Never use the admin user for application development!</span>
+psql&gt; CREATE USER myuser WITH ENCRYPTED PASSWORD <span class="s1">&#39;foobar&#39;</span><span class="p">;</span>
+
+<span class="c1"># create a new database</span>
+psql&gt; CREATE DATABASE mydb<span class="p">;</span>
+
+<span class="c1"># add privileges to your new db-user, so he is allowed to create,change and delete tables etc.</span>
+psql&gt; GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser<span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You can create your first table and run a sql-file:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">PGPASSWORD</span><span class="o">=</span>foobar psql -U myuser -d mydb -f create-tables.sql
+
+<span class="c1"># file: create-tables.sql</span>
+CREATE TABLE users <span class="o">(</span>
+       id serial PRIMARY KEY,
+       firstname text,
+       surname text,
+       email text NOT NULL,
+       age smallint
+<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You made it! Finally you can start your application development with
+your new and shiny PostgreSQL database. Do not forget this
+configuration is for development purpose only. For production you
+would use a cloud-provider DB-Service like <a href="https://aws.amazon.com/rds/">AWS
+RDS</a> or <a href="https://cloud.google.com/sql/">Google Cloud
+SQL</a> with different security settings.</p>
+<h2 id="tldr">TL;DR</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># install postgres</span>
+sudo apt-get install postgresql
+
+<span class="c1"># login with the postgres OS-user</span>
+sudo -u postgres psql
+
+<span class="c1"># add a password to the postgres user in the psql-shell</span>
+psql&gt; <span class="se">\p</span>assword postgres
+
+<span class="c1"># change /etc/postgresql/11/main/pg_hba.conf</span>
+<span class="c1"># auth Method should be everywhere &#34;md5&#34;, example file see above</span>
+
+<span class="c1"># restart postgres in order to apply changes</span>
+sudo service postgresql restart
+
+<span class="c1"># login with the postgres user and create your application user and a new database with correct privileges</span>
+<span class="nv">PGPASSWORD</span><span class="o">=</span>&lt;your_password&gt; psql -U postgres
+psql&gt; CREATE USER myuser WITH ENCRYPTED PASSWORD <span class="s1">&#39;foobar&#39;</span><span class="p">;</span>
+psql&gt; CREATE DATABASE mydb<span class="p">;</span>
+psql&gt; GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser<span class="p">;</span>
+
+<span class="c1"># create a table in your new database with the new user</span>
+&gt; <span class="nv">PGPASSWORD</span><span class="o">=</span>foobar psql -U myuser -d mydb -f create-tables.sql
+
+<span class="c1"># file: create-tables.sql</span>
+CREATE TABLE users <span class="o">(</span>
+       id serial PRIMARY KEY,
+       firstname text,
+       surname text,
+       email text NOT NULL,
+       age smallint
+<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/linux/" term="linux" label="linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/postgres/" term="postgres" label="postgres" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">My Presentations</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/my-presentations/" />
+            <id>https://gerlacdt.github.io/posts/my-presentations/</id>
+            <updated>2020-03-25T11:34:37+01:00</updated>
+            <published>2019-07-25T11:01:35+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Links to my presentation slides  clojure introduction javascript introduction java8 new features hashicorp nomad tutorial  ]]></summary>
+            
+                <content type="html"><![CDATA[<h2 id="links-to-my-presentation-slides">Links to my presentation slides</h2>
+<ul>
+<li><a href="http://gerlacdt.github.io/slides/clojure-introduction/slides/index.html">clojure introduction</a></li>
+<li><a href="http://gerlacdt.github.io/slides/javascript-introduction/slides/index.html">javascript introduction</a></li>
+<li><a href="http://gerlacdt.github.io/slides/java8-introduction/slides/index.html">java8 new features</a></li>
+<li><a href="http://gerlacdt.github.io/slides/nomad-scheduler/slides/index.html">hashicorp nomad tutorial</a></li>
+</ul>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Emacs Delete Lines</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-delete-lines/" />
+            <id>https://gerlacdt.github.io/posts/emacs-delete-lines/</id>
+            <updated>2020-03-25T11:51:15+01:00</updated>
+            <published>2019-05-13T10:34:42+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Sometimes when i write small scripts i tend to insert print statements for debugging. After i verified the correctness of my program i want to get rid of all unnecessary debug statements. With Emacs you can delete all lines which match a specific regular expression with M-x flush-lines or with its alias M-x delete-matching-lines.]]></summary>
+            
+                <content type="html"><![CDATA[<p>Sometimes when i write small scripts i tend to insert <code>print</code>
+statements for debugging. After i verified the correctness of my
+program i want to get rid of all unnecessary debug statements. With
+Emacs you can delete all lines which match a specific <em>regular
+expression</em> with <code>M-x flush-lines</code> or with its alias <code>M-x delete-matching-lines</code>. Interactively you can enter your regular
+expression and all matching lines will be deleted from you cursor
+position downwards.</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/emacs/" term="emacs" label="emacs" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Install Emacs on MacOS</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-macos/" />
+            <id>https://gerlacdt.github.io/posts/emacs-macos/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2019-04-13T10:34:42+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Yesterday Emacs 26.2 was released, see: https://www.gnu.org/software/emacs/news/NEWS.26.2
+In this short guide i want to show how i install Emacs on my MacBook. I use the vanilla Emacs build from https://emacsformacosx.com/ It is just a simple .dmg file.
+After installing the dmg file, Emacs is now available on your Mac as an application but not in the terminal-app.]]></summary>
+            
+                <content type="html"><![CDATA[<p>Yesterday Emacs 26.2 was released, see: <a href="https://www.gnu.org/software/emacs/news/NEWS.26.2">https://www.gnu.org/software/emacs/news/NEWS.26.2</a></p>
+<p>In this short guide i want to show how i install Emacs on my MacBook.
+I use the vanilla Emacs build from <a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a>
+It is just a simple <em>.dmg file</em>.</p>
+<p>After installing the <em>dmg file</em>, Emacs is now available on your Mac as
+an application but not in the terminal-app. The terminal still opens
+the pre-install Emacs version. To make the new version available you
+have to create a bash-script and put in your <code>$PATH</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># filename ~/bin/emacs</span>
+
+<span class="c1">#!/bin/sh</span>
+/Applications/Emacs.app/Contents/MacOS/Emacs <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Put the <em>emacsclient</em> command in your <code>$PATH</code> too. Just run the
+following line:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin
+</code></pre></td></tr></table>
+</div>
+</div><p>For further information see: <a href="https://emacsformacosx.com/tips">https://emacsformacosx.com/tips</a></p>
+<h2 id="my-emacs-startup-workflow">My Emacs startup workflow</h2>
+<p>When i start a session i run the emacs-server with <code>emacs --daemon</code>. This runs emacs in the background. Afterwards you can use
+<code>emacsclient</code> to open files. <em>emacsclient</em> does not startup a full
+Emacs instance but utilises the running emacs-server. Basically emacs
+opens instantly!</p>
+<p>Additionally i created some bash aliases in my <code>~/.zshrc</code> or
+<code>~/.bashrc</code> in order to shorten the emacs commands.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># filename ~/.zshrc or ~/.bashrc</span>
+
+<span class="nb">alias</span> <span class="nv">edd</span><span class="o">=</span><span class="s1">&#39;emacs --daemon&#39;</span>  <span class="c1"># start emacs server in background</span>
+<span class="nb">alias</span> <span class="nv">e</span><span class="o">=</span><span class="s1">&#39;emacsclient -t&#39;</span>  <span class="c1"># open emacs in terminal</span>
+<span class="nb">alias</span> <span class="nv">ecc</span><span class="o">=</span><span class="s1">&#39;emacsclient -c&#39;</span> <span class="c1"># open GUI-emacs</span>
+<span class="nb">alias</span> <span class="nv">ew</span><span class="o">=</span><span class="s1">&#39;emacs -nw -q&#39;</span>   <span class="c1"># opens vanilla emacs in the terminal</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Finally i made Emacs the standard-editor in the shell. This makes
+other terminal-applications use Emacs, e.g. git for editing
+git-commit-messages.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># filename: ~/.zshrc or ~/.bashrc</span>
+
+<span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span><span class="s2">&#34;emacs -q -nw&#34;</span>  <span class="c1"># make emacs my default editor in the terminal</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/emacs/" term="emacs" label="emacs" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Find and Replace in multiple files</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/find-and-replace/" />
+            <id>https://gerlacdt.github.io/posts/find-and-replace/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2019-04-13T10:13:14+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[As a software programmer you often have to search and replace a specific string in multiple files because of a refactoring or just improving a variable or function name.
+Normally you can use your IDE or your editor for this. But in bigger codebases with thousands or hundred thousands of lines of code it can be very slow.]]></summary>
+            
+                <content type="html"><![CDATA[<p>As a software programmer you often have to search and replace a
+specific string in multiple files because of a refactoring or just
+improving a variable or function name.</p>
+<p>Normally you can use your IDE or your editor for this. But in bigger
+codebases with thousands or hundred thousands of lines of code it can
+be very slow. Neither IDEs work for remote SSH-sessions. In such
+situations the command-line is pretty handy. It is available
+everywhere and it is fast.</p>
+<p>The following command replaces <code>old</code> with <code>new</code> in all <code>*.go</code> files in
+the current directory:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">find . -iname <span class="s1">&#39;*.go&#39;</span> <span class="p">|</span> xargs sed -i <span class="s1">&#39;&#39;</span> -e <span class="s1">&#39;s/old/new/g&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>I use this often in combination with
+<a href="https://git-scm.com/">git</a>. First i commit my lastest changes, so i
+have a clear state. Then i issue the above command. Afterwards i check
+the changes in the files with <code>git diff</code>. If i do not like them,
+reverting is possible with <code>git reset</code>.</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/linux/" term="linux" label="linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/bash/" term="bash" label="bash" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">ag the_silver_searcher, a grep replacement</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/ag-silver-searcher/" />
+            <id>https://gerlacdt.github.io/posts/ag-silver-searcher/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2019-04-13T10:04:01+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[As a programmer you often search for a specific strings or regexps in multiple files. Previously i used to do this with the well-known GNU-tools find and grep.
+The following command searches for main in all *.go files in the current directory and:]]></summary>
+            
+                <content type="html"><![CDATA[<p>As a programmer you often search for a specific strings or regexps in
+multiple files. Previously i used to do this with the well-known
+GNU-tools <code>find</code> and <code>grep</code>.</p>
+<p>The following command searches for <code>main</code> in all <code>*.go</code> files in the
+current directory and:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">find . -iname <span class="s1">&#39;*.go&#39;</span> <span class="p">|</span> xargs grep -inH  <span class="s2">&#34;main&#34;</span>
+<span class="c1"># -i ignore case, -n print line number, -H print filename</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Recently i discovered <a href="https://github.com/ggreer/the_silver_searcher">ag the silver searcher</a>.
+<code>ag</code> is much faster than <code>grep</code> and searches directories recursively by default. <code>ag</code> respects out-of-the-box your <code>.gitignore</code> files.</p>
+<p>You can install <code>ag</code> on a Mac with <a href="https://brew.sh/">brew</a>, <code>brew install the_silver_searcher</code>.  The following command searches all
+files in your current directory for the string //main//.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ag main
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/img/ag_silver_searcher.png" alt="ag_silver_searcher"></p>
+<p><code>ag</code> considers your <code>.gitignore</code> automatically but you can tweak it
+even more with your own <code>.agignore</code> file. I put my <code>.agignore</code> file in
+my <code>$HOME</code> folder so <code>ag</code> can find it everywhere.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># filename: ~/.agignore</span>
+
+node_modules/
+build/
+target/
+your-custom-folder-to-ignore/
+*.bak
+</code></pre></td></tr></table>
+</div>
+</div><p>And if you miss your regular grep-output format, just use:</p>
+<p><code>ag main --vimgrep</code></p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/linux/" term="linux" label="linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/bash/" term="bash" label="bash" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Emacs Test Regexps</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-test-regexps/" />
+            <id>https://gerlacdt.github.io/posts/emacs-test-regexps/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2019-04-06T10:39:15+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Replacing or searching text with regular expressions is very common. But sometimes it is hard to get them right and you need some playground to try them out. In order to verify regular expressions i used to visit webpages like:
+ https://regexr.com/ https://regex101.]]></summary>
+            
+                <content type="html"><![CDATA[<p>Replacing or searching text with <em>regular expressions</em> is very
+common. But sometimes it is hard to get them right and you need some
+playground to try them out. In order to verify regular expressions i
+used to visit webpages like:</p>
+<ul>
+<li><a href="https://regexr.com/">https://regexr.com/</a></li>
+<li><a href="https://regex101.com/">https://regex101.com/</a></li>
+</ul>
+<p>But these webpages are optimised for perl, javascript or bash
+expressions and do not support Emacs regular expressions directly. In
+Emacs you have to consider some peculiarities. For example you have to
+escape parentheses.</p>
+<p>Recently i learnt about <code>M-x regexp-builder</code>. With it you can test
+your regular-expressions interactively. Just enter the regular
+expression and the text in your buffer will be highlighted
+immediately. It even considers different capture groups and highlights
+them in different colours. Very nice!</p>
+<p><img src="/img/emacs_regexp_builder.png" alt="emacs_regexp_builder"></p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/emacs/" term="emacs" label="emacs" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Things to consider with microservices</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/microservices/" />
+            <id>https://gerlacdt.github.io/posts/microservices/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2019-03-30T09:53:54+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase.]]></summary>
+            
+                <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Some years ago i was involved in migrating a big IBM Websphere
+monolith into a microservice landscape. We had a lot of problems with
+the monolith. Our development speed slowed down. We had many merge
+conflicts because of too many dependencies in the codebase. We outgrew
+the monolithic design and decided to introduce microservices. We
+extracted different domains like payment, booking, user and
+search. The teams were restructured into two-pizza teams.</p>
+<p>The whole migration was very structured and well planned. We migrated
+incrementally with the <a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler">strangler
+pattern</a>.
+As long we were ~20 developers in 5 different teams, everything was
+fine. Teams worked independently in their domain. They could scale,
+deploy independently and followed their own release cycles.</p>
+<p>But microservices bring new technical challenges. Maybe you know the saying:</p>
+<blockquote>
+<p>Microservices solve organizational problems.</p>
+<p>Microservices cause technical problems.</p>
+</blockquote>
+<p><a href="https://speakerdeck.com/peterbourgon/go-plus-microservices-equals-go-kit?slide=15">Peter Bourgon</a></p>
+<p>Developers tend to ignore, forget or just simply do not know about
+these challenges. They are overwhelmed by the new opportunities in the
+shiny microservice world. In the following i want to present my
+experience what we underestimated or forgot in our
+microservice-migration.</p>
+<h2 id="avoid-a-heterogeneous-it-landscape">Avoid a heterogeneous IT-landscape</h2>
+<p>Microservices give you a lot of freedom which technology to choose
+like programming language, database or web-framework. This is both
+boon and bane. On the one side every team can choose the technology
+which fits best, on the other side developers are adventurous and try
+out new fancy programming languages and other bleeding edge
+technology. And soon you have a dozen different tech stacks to
+support. Some teams build their own tech-knowledge silos. And don&rsquo;t
+get me wrong here, it is totally fine if a team has its
+domain-knowledge silo, but it is not fine if the team is the only one
+in the company who uses a fancy programming language.  At google, they
+have thousands of engineers and they try to stick to only 4 languages
+in the backend. The supported languages are C++, Java, Python and Go,
+see <a href="https://arxiv.org/pdf/1702.01715.pdf">Software Engineering at Google, Fergus
+Henderson</a>.  If a backend team
+wants to start with another language they need to argument very hard
+why they cannot fulfil their job with the company-wide supported
+languages. There is a clear decision-process in place how to introduce
+new a technology. This restricts the developers from using the newest
+bleeding-edge technology.  Another advantage is that one can focus on
+business problems and avoid discussions about tech exploration
+etc. Your internal libraries need to be written and supported only in
+a few languages. Developers will also have an easy time when they want
+to switch teams. Team rotation is encouraged, facilitates
+knowledge-transfer and pushes developers out of their comfort zone
+which makes them more valuable.</p>
+<p>A <a href="https://www.thoughtworks.com/de/radar">technology radar</a> serves as
+an overview for the supported tools, programming languages and
+platforms. A radar helps to keep track of all technology used in your
+company.</p>
+<h2 id="have-a-good-monitoringtracinglogging-in-place">Have a good Monitoring/Tracing/Logging in place</h2>
+<p>We suffered sometime from logging problems because our ~ElasticSearch
+cluster was overloaded or some indices had conflicts. Logging is
+hard. Make sure you have clear logging-guildlines. Do not log too
+much, at best you have <a href="https://peter.bourgon.org/blog/2016/02/07/logging-v-instrumentation.html">silent
+services</a>,
+i.e. only log if a manual intervention is needed in case of an
+error. Logging is fine for debugging and error tracking in the
+development-Stage but it should not be overused in production. Be
+careful if your monitoring and alarming is based on logging. If your
+log-cluster is flooded, your monitoring will not work either!</p>
+<p>Have strict rules for monitoring. No service should go into production
+without monitoring. With microservices you need transparency in order
+to do failure analysis or get notified if something is wrong. At least
+monitor the <a href="https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref_monitoring_golden-signals">four golden
+signals</a>:</p>
+<ol>
+<li>
+<p>Latency. How high is the response time? Make sure you distinguish
+failed requests from successful requests. Failed requests can be
+fast and screw up your metrics.</p>
+</li>
+<li>
+<p>Traffic. How many Requests per second (RPS) do we serve?</p>
+</li>
+<li>
+<p>Errors. How high is the error rate? Number of error response /
+Number of successful responses</p>
+</li>
+<li>
+<p>Saturation. How full is your service? CPU utilisation, memory
+consumption.</p>
+</li>
+</ol>
+<h2 id="don-forget-the-8-fallacies-of-distributed-computing">Don&rsquo; forget the 8 fallacies of distributed computing</h2>
+<p><a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">Fallacies of distributed computing by Peter
+Deutsch</a></p>
+<ol>
+<li>
+<p>The network is reliable.</p>
+<p>Your HTTP-calls will fail from time to time. So make sure you have
+some retry-mechanism in place. But do not retry naively!
+E.g. retries make not sense if the http-response-code is 400
+BAD_REQUEST, no matter how often you try the request will never be successful.
+Neither you should do retries on POST requests, HTTP POST requests
+are by definition not idempotent and you could accidentally create a
+lot of resources like orders or trigger payments. Your customers will not
+be happy.</p>
+<p>You should also limit your retries, do not retry indefinitely,
+otherwise you can cause overload on other services, see
+<a href="https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/">cascading failures</a></p>
+<p>Do not forget to protect your services with timeouts. Missing timeouts
+make I/O calls wait too long and if they pile up they consume all
+your memory or other resources like a thread pool. In the worst case you service will be killed by your docker scheduler because the memory limit is exceeded.</p>
+<p>For very high-load services you should consider <a href="https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/#xref_cascading-failure_load-shed-graceful-degredation">load shedding or
+graceful degradation</a>
+in order to protect these service from going down.</p>
+</li>
+<li>
+<p>Latency is zero.</p>
+<p>Network can be slow. You should clearly separate internal function
+calls from network calls. E.g. do not use network calls in
+loops. Better fetch everything with one network call.</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// bad practice! Doing multiple network calls
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getUsers</span><span class="p">(</span><span class="nx">userIds</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nx">id</span> <span class="k">of</span> <span class="nx">userIds</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">fetchSingleUser</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="nx">users</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">users</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good, only one network call
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getUsers</span><span class="p">(</span><span class="nx">userIds</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">http</span><span class="p">.</span><span class="nx">fetchUsers</span><span class="p">(</span><span class="nx">userIds</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>
+<p>Bandwidth is infinite.</p>
+<p>Use your bandwidth sparingly. E.g logging every http request and
+response is definitely too much. Do not use  sql-statements like this:
+<code>SELECT * from  table</code>, always select only required columns.</p>
+</li>
+<li>
+<p>The network is secure.</p>
+</li>
+<li>
+<p>Topology doesn&rsquo;t change.</p>
+<p>Especially with self-healing services and docker random port usage,
+IP-addresses and ports change often. Do not use static IP-addresses
+or static ports. Use sophisticated service-discovery
+mechanisms. Many Docker-Scheduler provide them out-of-the-box like
+<a href="https://kubernetes.io/">Kubernetes</a> or <a href="https://www.nomadproject.io/">Hashicorp&rsquo;s
+Nomad</a>. With <a href="https://aws.amazon.com/ecs/">AWS
+ECS</a> you can use an <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html">AWS Application
+Load Balancer</a> (ALB) for service discovery.</p>
+</li>
+<li>
+<p>There is one administrator.</p>
+<p>Distributed systems are complex. Do not expect that there is
+one person who knows it all. For bug analysis you need multiple
+people/teams.</p>
+</li>
+<li>
+<p>Transport cost is zero.</p>
+<p>Network calls are expensive. You need to establish a connection,
+you need to serialize and deserialize the message body which cost
+CPU. The less you send the better. If you notice that you
+services are chatty, consider restructuring the domain
+boundaries. Most probably your domains do overlap or have multiple
+responsibilities.</p>
+</li>
+<li>
+<p>The network is homogeneous</p>
+<p>It&rsquo;s not. Before docker, almost all applications ran on customized,
+&ldquo;snowlflaky&rdquo; servers configured via non-reproducible
+ssh-session. With Kubernetes or AWS ECS you can have clusters with
+thousands of servers which are configured exactly the same. A
+single ~DevOps guy can operate thousands of servers! You should
+also agree on a single data transfer format like
+<a href="https://www.json.org/">JSON</a> or <a href="https://developers.google.com/protocol-buffers/">Protocol
+Buffers</a> with
+<a href="https://grpc.io/">gRPC</a>. You should strive for as much homogeneity
+as possible to reduce operation and maintenance costs. In my
+opinion the homogeneity provided by Docker is its biggest
+advantage.</p>
+</li>
+</ol>
+<h2 id="other-things-to-consider">Other things to consider</h2>
+<ul>
+<li>
+<p>Keep your domain boundaries clear and separated. Teams should always
+be able to deploy independently and without consulting other
+teams. You ever experienced a deployment where 3 or 4 services were
+involved and had to be deployed synchronously because of
+incompatibilities of API-versions or dependency on the same database.
+Congratulations you built a distributed monolith.</p>
+</li>
+<li>
+<p>Have a good CI/CD pipeline with automatic tests and deployments.
+Make sure all teams use the same
+deployment and glue scripts. Use one Docker-Cluster
+(Kubernetes, AWS ECS, Hashicorp Nomad) for the whole company (as
+long as you do not exceed hundreds of servers). This will keep the
+maintenance effort low.</p>
+</li>
+<li>
+<p>If you have reusable modules/libraries, make sure you have
+transitive CI-builds</p>
+</li>
+<li>
+<p>Adhere to good coding cloud-native practices, see
+[[12-factor-app|https://12factor.net]] and
+[[Site Reliability Engineering|https://landing.google.com/sre/books/]]</p>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Microservices are hard. Do not forget this. In the web you hear mainly
+about the big success-stories like Google, Amazon and the like. But
+for the most of us there are serious disadvantages which are normally
+not mentioned. And do not get me wrong, microservices are great. It
+was definitely the way to go for us. Today we are more than 100
+developers and it gives me the creeps when i imagine that all of them
+would work on single monolithic git-repository.  It is a long and hard
+way to a productive microservice landscape but definitively worth
+it. Just do not underestimate monitoring, automation and the fallacies
+of distributed systems!</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/programming/" term="programming" label="programming" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/microservices/" term="microservices" label="microservices" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Programming Quotes</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/programming-quotes/" />
+            <id>https://gerlacdt.github.io/posts/programming-quotes/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2019-03-29T09:40:28+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Over the years i collected some (funny) programming quotes. Lean back and enjoy:
+ Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&rsquo;re as clever as you can be when you write it, how will you ever debug it?]]></summary>
+            
+                <content type="html"><![CDATA[<p>Over the years i collected some (funny) programming quotes. Lean back and enjoy:</p>
+<p><img src="/img/kernighan.jpg" alt="Brian Kernighan"></p>
+<blockquote>
+<p>Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&rsquo;re as clever as you can be when you write it, how will you ever debug it?</p>
+</blockquote>
+<p>Brian W. Kernighan</p>
+<blockquote>
+<p>Don’t comment bad code—rewrite it.</p>
+</blockquote>
+<p>Brian W. Kernighan</p>
+<blockquote>
+<p>The most effective debugging tool is still careful thought, coupled with judiciously placed print statements.</p>
+</blockquote>
+<p>Brian W. Kernighan</p>
+<blockquote>
+<p>90% of the functionality delivered now is better than 100% delivered never.</p>
+</blockquote>
+<p>Kernighan &amp; Plauger</p>
+<blockquote>
+<p>There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies.</p>
+</blockquote>
+<p>C.A.R. Hoare</p>
+<blockquote>
+<p>What one programmer can do in one month, two programmers can do in two months.&rdquo;</p>
+</blockquote>
+<p>Fred Brooks</p>
+<blockquote>
+<p>Nine women can&rsquo;t make a baby in one month.</p>
+</blockquote>
+<p>Fred Brooks</p>
+<blockquote>
+<p>Good judgement is the result of experience … Experience is the result of bad judgement.</p>
+</blockquote>
+<p>Fred Brooks</p>
+<blockquote>
+<p>Before software can be reusable it first has to be usable.</p>
+</blockquote>
+<p>Ralph Johnson</p>
+<blockquote>
+<p>You can have the project: Done On Time. Done On Budget. Done Properly - Pick two.</p>
+</blockquote>
+<p>Unknown</p>
+<blockquote>
+<p>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
+</blockquote>
+<p>Martin Fowler</p>
+<blockquote>
+<p>Expert programmers know how to choose the level of abstraction appropriate to their task.</p>
+</blockquote>
+<p>Structure and Interpretation of Computer Programs, by Abelson, Sussman, and Sussman</p>
+<blockquote>
+<p>When one teaches, two learn.</p>
+</blockquote>
+<p>Robert Heinlein</p>
+<blockquote>
+<p>Weeks of coding can save you hours of planning.</p>
+</blockquote>
+<p>Unknown</p>
+<blockquote>
+<p>Theory is when you know something, but it doesn’t work. Practice is when something works, but you don’t know why. Programmers combine theory and practice: Nothing works and they don’t know why.</p>
+</blockquote>
+<p>Unknown</p>
+<blockquote>
+<p>One of my most productive days was throwing away 1000 lines of code.</p>
+</blockquote>
+<p>Ken Thompson</p>
+<blockquote>
+<p>A primary cause of complexity is that software vendors uncritically adopt almost any feature that users want.</p>
+</blockquote>
+<p>Niklaus Wirth</p>
+<blockquote>
+<p>The craft of programming begins with empathy, not formatting or languages or tools or algorithms or data structures.</p>
+</blockquote>
+<p>Kent Beck</p>
+<blockquote>
+<p>I bought my boss two copies of The Mythical Man Month so that he could read it twice as fast.</p>
+</blockquote>
+<p><a href="https://twitter.com/rkoutnik">https://twitter.com/rkoutnik</a></p>
+<blockquote>
+<p>There&rsquo;s nothing more permanent than a temporary hack.</p>
+</blockquote>
+<p>Kyle Simpson</p>
+<blockquote>
+<p>The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.</p>
+</blockquote>
+<p>John Johnson</p>
+<blockquote>
+<p>Program testing can be a very effective way to show the presence of bugs, but is hopelessly inadequate for showing their absence.</p>
+</blockquote>
+<p>Edsger Dijkstra</p>
+<blockquote>
+<p>No matter how slow you are writing clean code, you will always be slower if you make a mess.</p>
+</blockquote>
+<p>Uncle Bob Martin</p>
+<blockquote>
+<p>First, solve the problem. Then, write the code.</p>
+</blockquote>
+<p>John Johnson</p>
+<blockquote>
+<p>We sort of understood abstractly the idea that there are only two kinds of software projects: failures and future legacy horrors.</p>
+</blockquote>
+<p>Peter Weinberger</p>
+<blockquote>
+<p>Computer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter.</p>
+</blockquote>
+<p>Eric S. Raymond</p>
+<blockquote>
+<p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
+</blockquote>
+<p>Harold Abelson &amp; Gerald Jay Sussman</p>
+<blockquote>
+<p>Programming is not about typing, it&rsquo;s about thinking.</p>
+</blockquote>
+<p>Rich Hickey</p>
+<blockquote>
+<p>Measuring programming progress by lines of code is like measuring aircraft building progress by weight.</p>
+</blockquote>
+<p>Bill Gates</p>
+<blockquote>
+<p>Be careful about using the following code — I’ve only proven that it works, I haven’t tested it.</p>
+</blockquote>
+<p>Donald Knuth</p>
+<blockquote>
+<p>Thinking doesn’t guarantee that we won’t make mistakes. But not thinking guarantees that we will.</p>
+</blockquote>
+<p>Leslie Lamport</p>
+<blockquote>
+<p>Debugging is like being the detective in a crime movie where you are also the murderer.
+Filipe Fortes</p>
+</blockquote>
+<blockquote>
+<p>Good specifications will always improve programmer productivity far better than any programming tool or technique.</p>
+</blockquote>
+<p>Milt Bryce</p>
+<blockquote>
+<p>Programming can be fun, so can cryptography; however they should not be combined.</p>
+</blockquote>
+<p>Kreitzberg &amp; Shneiderman</p>
+<blockquote>
+<p>The purpose of software engineering is to control complexity, not to create it.</p>
+</blockquote>
+<p>Pamela Zave</p>
+<blockquote>
+<p>The best programs are the ones written when the programmer is supposed to be working on something else.</p>
+</blockquote>
+<p>Melinda Varian</p>
+<blockquote>
+<p>&ldquo;How did you know so much about computers?”</p>
+<p>&ldquo;I didn’t, it was the first one.”</p>
+</blockquote>
+<p>Grace Hopper on Letterman</p>
+<blockquote>
+<p>One accurate measurement is worth a thousand expert opinions.</p>
+</blockquote>
+<p>Grace Hopper</p>
+<blockquote>
+<p>People have an enormous tendency to resist change. They love to say, &lsquo;We&rsquo;ve always done it this way.&rsquo; I try to fight that.</p>
+</blockquote>
+<p>Grace Hopper</p>
+<blockquote>
+<p>There are a million ways to lose a work day, but not even a single way to get one back.
+Tom DeMarco</p>
+</blockquote>
+<blockquote>
+<p>The sooner you start to code, the longer the program will take.</p>
+</blockquote>
+<p>Roy Carlson</p>
+<blockquote>
+<p>Fools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it.</p>
+</blockquote>
+<p>Alan Perlis</p>
+<blockquote>
+<p>Don’t worry about what anyone else is going to do. The best way to predict the future is to invent it.</p>
+</blockquote>
+<p>Alan Kay</p>
+<blockquote>
+<p>Make it correct, make it clear, make it concise, make it fast. In that order.</p>
+</blockquote>
+<p>Wes Dyer</p>
+<blockquote>
+<p>For every complex problem, there is a solution that is simple, neat, and wrong.</p>
+</blockquote>
+<p>H.L Mencken</p>
+<blockquote>
+<p>The best way to get the right answer on the internet is not to ask a question; it’s to post the wrong answer.</p>
+</blockquote>
+<p>Cunningham’s Law</p>
+<blockquote>
+<p>Give someone a program, you frustrate them for a day; teach them how to program, you frustrate them for a lifetime.</p>
+</blockquote>
+<p>David Leinweber</p>
+<blockquote>
+<p>If you don’t actively attack the risks, the risks will actively attack you.</p>
+</blockquote>
+<p>Tom Gilb</p>
+<blockquote>
+<p>Projects without clear goals will not achieve their goal clearly.</p>
+</blockquote>
+<p>Tom Gilb</p>
+<blockquote>
+<p>Java is to Javascript what Car is to Carpet.</p>
+</blockquote>
+<p>Chris Heilmann</p>
+<blockquote>
+<p>If it doesn’t work, it doesn’t matter how fast it doesn’t work.</p>
+</blockquote>
+<p>Mich Ravera</p>
+<blockquote>
+<p>Today, most software exists, not to solve a problem, but to interface with other software.</p>
+</blockquote>
+<p>I.O. Angell</p>
+<blockquote>
+<p>Simplicity is a prerequisite for reliability.</p>
+</blockquote>
+<p>E.W Dijkstra</p>
+<blockquote>
+<p>I love deadlines. I like the whooshing sound they make as they fly by.</p>
+</blockquote>
+<p>Douglas Adams</p>
+<blockquote>
+<p>There are only two kinds of languages: the ones people complain about and the ones nobody uses.</p>
+</blockquote>
+<p>Bjarne Stroustrup</p>
+<blockquote>
+<p>The most important single aspect of software development is to be clear about what you are trying to build.</p>
+</blockquote>
+<p>Bjarne Stroustrup</p>
+<blockquote>
+<p>I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.</p>
+</blockquote>
+<p>Bjarne Stroustrup</p>
+<blockquote>
+<p>It is far, far easier to make a correct program fast than it is to make a fast program correct.</p>
+</blockquote>
+<p>Herb Sutter</p>
+<blockquote>
+<p>Anyone could learn Lisp in one day, except that if they already knew Fortran, it would take three days.</p>
+</blockquote>
+<p>Marvin Minsky</p>
+<blockquote>
+<p>&ldquo;When debugging, novices insert corrective code; experts remove defective code.&rdquo;</p>
+</blockquote>
+<p>Richard Pattis</p>
+<blockquote>
+<p>10 lines of code = 10 issues.</p>
+<p>500 lines of code = &ldquo;looks fine.&rdquo;</p>
+</blockquote>
+<p>Code reviews.
+<a href="https://twitter.com/iamdevloper/status/397664295875805184">https://twitter.com/iamdevloper/status/397664295875805184</a></p>
+<blockquote>
+<p>&ldquo;Typescript is hugely helpful when you&rsquo;re working on a big team.&rdquo;</p>
+<p>&ldquo;How big?&rdquo;</p>
+<p>&ldquo;More than yourself.&rdquo;</p>
+</blockquote>
+<p><a href="https://twitter.com/jessitron/status/914017624996171776">https://twitter.com/jessitron/status/914017624996171776</a></p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/programming/" term="programming" label="programming" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">My Nickname Is Danger</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/my-name-is-danger/" />
+            <id>https://gerlacdt.github.io/posts/my-name-is-danger/</id>
+            <updated>2020-03-25T11:18:17+01:00</updated>
+            <published>2019-03-15T08:51:40+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[A few years ago one of my colleagues &ldquo;discovered&rdquo; an algorithm which led to my nickname:
+ take the 3 first characters of my first name and surname concatenate them: DANiel + GERlach =&gt; Danger  The algorithm can be implemented as a pure function in Javascript:]]></summary>
+            
+                <content type="html"><![CDATA[<p>A few years ago one of my colleagues &ldquo;discovered&rdquo; an algorithm which
+led to my nickname:</p>
+<ul>
+<li>take the 3 first characters of my first name and surname</li>
+<li>concatenate them: DANiel + GERlach =&gt; Danger</li>
+</ul>
+<p>The algorithm can be implemented as a <strong>pure function</strong> in Javascript:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getNickname</span><span class="p">(</span><span class="nx">fullname</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fullname</span>
+    <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">getNickname</span><span class="p">(</span><span class="s1">&#39;Daniel Gerlach&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>   <span class="c1">// =&gt; DanGer
+</span></code></pre></td></tr></table>
+</div>
+</div>]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/javascript/" term="javascript" label="javascript" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+</feed>

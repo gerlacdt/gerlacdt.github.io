@@ -1,6 +1,6 @@
 ---
 title: "Emacs Delete Lines"
-date: 2020-04-06T10:42:05+01:00
+date: 2019-05-13T10:34:42+01:00
 tags: ["emacs"]
 draft: false
 ---

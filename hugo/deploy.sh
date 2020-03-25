@@ -9,4 +9,4 @@ hugo -D
 
 # move release to correct location
 cd ${ROOT_DIR}
-cp -r hugo/blog/public/* .
+cp -r public/* .

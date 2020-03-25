@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.68.3" /><meta name="theme-color" content="#fff" />
+        <script>
+            const userPrefers = localStorage.getItem('theme');
+            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            const lightModeMediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+            if (userPrefers === 'dark') {
+                changeModeMeta('dark');
+            } else if (userPrefers === 'light') {
+                changeModeMeta('light');
+            } else if (darkModeMediaQuery.matches) {
+                changeModeMeta('dark');
+            } else if (lightModeMediaQuery.matches) {
+                changeModeMeta('light');
+            }
+            function changeModeMeta(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                if (theme === 'dark') {
+                    changeThemeColor('#282a36');
+                } else {
+                    changeThemeColor('#fff');
+                }
+            }
+            function changeThemeColor(themeColor) {
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColor);
+            }
+        </script>
+
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>ESlint &#43; Prettier &#43; Typescript = Consistency | Daniel&#39;s programming rants</title>
+
+    <link rel="stylesheet" href="/css/meme.min.88d3244f0229d491161420376079c8c38087213498f82f01782b3ce2426f7855.css" integrity="sha256-iNMkTwIp1JEWFCA3YHnIw4CHITSY+C8BeCs84kJveFU=" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="Daniel Gerlach" />
+    <meta name="description" content="Consistency is one of the most important factors in a codebase. It gives new developers an orientation and direction how to write new code, it keeps the code understandable, clear and free from bikeshedding, so developers can focus on real problems instead of indulging in discussions of their preferred codestyle and individual taste." />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Daniel&#39;s programming rants" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Daniel&#39;s programming rants" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://gerlacdt.github.io/posts/eslint-prettier-typescript/" />
+
+
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2020-03-24T10:28:27+01:00",
+        "dateModified": "2020-03-25T11:18:17+01:00",
+        "url": "https://gerlacdt.github.io/posts/eslint-prettier-typescript/",
+        "headline": "ESlint + Prettier + Typescript = Consistency",
+        "description": "Consistency is one of the most important factors in a codebase. It gives new developers an orientation and direction how to write new code, it keeps the code understandable, clear and free from bikeshedding, so developers can focus on real problems instead of indulging in discussions of their preferred codestyle and individual taste.",
+        "inLanguage" : "en",
+        "articleSection": "posts",
+        "wordCount":  751 ,
+        "image": "https://gerlacdt.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "url": "https://gerlacdt.github.io/",
+            "name": "Daniel Gerlach"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Daniel's programming rants",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gerlacdt.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://gerlacdt.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://gerlacdt.github.io/"
+        }
+    }
+</script>
+
+    
+
+
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@gerlacdt" />
+
+    
+
+
+
+
+
+<meta property="og:title" content="ESlint &#43; Prettier &#43; Typescript = Consistency" />
+<meta property="og:description" content="Consistency is one of the most important factors in a codebase. It gives new developers an orientation and direction how to write new code, it keeps the code understandable, clear and free from bikeshedding, so developers can focus on real problems instead of indulging in discussions of their preferred codestyle and individual taste." />
+<meta property="og:url" content="https://gerlacdt.github.io/posts/eslint-prettier-typescript/" />
+<meta property="og:site_name" content="Daniel&#39;s programming rants" />
+<meta property="og:locale" content="en" /><meta property="og:image" content="https://gerlacdt.github.io/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-03-24T10:28:27+01:00" />
+    <meta property="article:modified_time" content="2020-03-25T11:18:17+01:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header" data-scroll-header>
+        
+            <div class="header-wrapper">
+                <div class="header-inner">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">Daniel&#39;s programming rants</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon "><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">Posts</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon "><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">Tags</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon "><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">About</span></a>
+                </li>
+            
+        
+            
+                
+                    <li class="menu-item">
+                        
+    
+        
+            
+        
+        <div id="theme-switcher">🌞</div>
+    
+
+
+                    </li>
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        <article class="content post" data-small-caps="true" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title">ESlint &#43; Prettier &#43; Typescript = Consistency</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2020-03-24T10:28:27+01:00" class="post-meta-item published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2020.3.24</time>
+    
+    
+        
+        <time datetime="2020-03-25T11:18:17+01:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.3.25</time>
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;751</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;4&nbsp;mins</span>
+    
+    
+</div>
+            
+
+            <div class="post-body"><p style="text-indent:0"><span class="drop-cap">C</span>onsistency is one of the most important factors in a codebase. It
+gives new developers an orientation and direction how to write new
+code, it keeps the code understandable, clear and free from
+bikeshedding, so developers can focus on real problems instead of
+indulging in discussions of their preferred codestyle and individual
+taste.</p>
+<p>Consistency can be pertained by strict discipline or you can enforce
+good style and formatting via opinionated code formatters like
+<a href="https://prettier.io" target="_blank" rel="noopener">prettier</a> which makes development and
+collaboration a breeze. One of the forerunners of code formatters was
+<a href="https://golang.org/cmd/gofmt" target="_blank" rel="noopener">gofmt</a>. Prior to gofmt opinionated
+formatters were not so popular (at least not to my
+knowledge). Basically gofmt defines the de facto Go formatting
+style. Almost all serious Go code is formatted that way. That&rsquo;s why
+all Go code looks familiar and is easy to work with. With prettier you
+can achieve the same &ldquo;feeling&rdquo; with Javascript, Typescript and many
+other supported languages. The same is true for linters. They help you
+to stick to common best practices and to avoid silly and potential
+problems. Long story short, linters and code formatters are essential
+tools for &lsquo;&lsquo;state-of-the-art software engineering&rsquo;'.</p>
+<p>In the article i show you how to setup <a href="https://eslint.org/" target="_blank" rel="noopener">eslint</a>
+for <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">Typescript</a> with prettier
+support. So let&rsquo;s start.</p>
+<p>First you need to install eslint in your (Typescript) project:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># install eslint with typescript support</span>
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+<span class="c1"># install prettier and eslint plugin with for prettier support</span>
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+</code></pre></td></tr></table>
+</div>
+</div><p>Next we have to configure eslint so that it works together with prettier. If you don&rsquo;t do that, eslint will not be compatible with the opinionated prettier formatting. The eslint configuration is done via two files <code>.eslintrc.js</code> and <code>.eslintignore</code>. You need both files in your project root.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// .eslintrc.js
+</span><span class="c1"></span>
+<span class="c1">// configures eslint rules
+</span><span class="c1"></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">env</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">node</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">parser</span><span class="o">:</span> <span class="s2">&#34;@typescript-eslint/parser&#34;</span><span class="p">,</span>
+  <span class="kr">extends</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">&#34;plugin:@typescript-eslint/recommended&#34;</span><span class="p">,</span> <span class="c1">// recommended eslint rules for typescript
+</span><span class="c1"></span>    <span class="s2">&#34;prettier/@typescript-eslint&#34;</span><span class="p">,</span> <span class="c1">// make eslint compatible with prettier formatting
+</span><span class="c1"></span>    <span class="s2">&#34;plugin:prettier/recommended&#34;</span><span class="p">,</span> <span class="c1">// eslint shows prettier formatting warnings. Must be always the last configuration.
+</span><span class="c1"></span>  <span class="p">],</span>
+  <span class="nx">parserOptions</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">ecmaVersion</span><span class="o">:</span> <span class="mi">2018</span><span class="p">,</span>
+    <span class="nx">sourceType</span><span class="o">:</span> <span class="s2">&#34;module&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;@typescript-eslint&#34;</span><span class="p">],</span>
+  <span class="nx">rules</span><span class="o">:</span> <span class="p">{},</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># eslintignore</span>
+
+<span class="c1"># you should ignore irrelevant *.js and *.ts files which do not belong to you project</span>
+
+<span class="c1"># do not lint node_modules/</span>
+node_modules
+<span class="c1"># do not lint build/ or dist/ folder</span>
+dist
+<span class="c1"># do not lint coverage/ folder</span>
+coverage
+</code></pre></td></tr></table>
+</div>
+</div><p>The prettier configuration needs to be created in <code>.prettierrc</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;printWidth&#34;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+  <span class="nt">&#34;trailingComma&#34;</span><span class="p">:</span> <span class="s2">&#34;all&#34;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Here we define a max line length of 80. I am also an advocate of trailing commas. This setting keeps the git diffs clean and as small as possible.</p>
+<p>With all this in place you can lint and format your code base:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># lint src files and list all errors</span>
+node_modules/.bin/eslint src/ --ext .ts
+
+<span class="c1"># same as above but fixes problems automatically if possible</span>
+node_modules/.bin/eslint src/ --ext .ts --fix
+
+<span class="c1"># format codebase in place</span>
+node_modules/.bin/prettier --trailing-comma all --write <span class="s1">&#39;src/**/*.ts&#39;</span>
+
+<span class="c1"># i used above the full path to the local /node_modules folder</span>
+<span class="c1"># you can also install prettier and eslint as global npm modules, then you can use them directly</span>
+<span class="c1"># this is recommended so editors can also leverage prettier and eslint</span>
+
+<span class="c1"># install globally</span>
+npm install -g prettier eslint
+
+<span class="c1"># now you can use</span>
+prettier --trailing-comma all --write <span class="s1">&#39;src/**/*.ts&#39;</span>
+eslint src/ --ext .ts --fix
+</code></pre></td></tr></table>
+</div>
+</div><p>It&rsquo;s good practice to enforce these practices. You can do this with a
+git pre-commit hook. Just install
+<a href="https://www.npmjs.com/package/husky" target="_blank" rel="noopener">husky</a> and
+<a href="https://www.npmjs.com/package/lint-staged" target="_blank" rel="noopener">lint-staged</a>. With these
+packages it is easy to configure the hooks.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># install npm packages to enable pre-commit hooks</span>
+npm install  --save-dev lint-staged husky
+</code></pre></td></tr></table>
+</div>
+</div><p>After the installation you need configure husky and lint-staged modules in the <code>package.json</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;lint&#34;</span><span class="p">:</span> <span class="s2">&#34; eslint src/ --ext .ts&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;lint-fix&#34;</span><span class="p">:</span> <span class="s2">&#34; eslint src/ --ext .ts --fix&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;pretty&#34;</span><span class="p">:</span> <span class="s2">&#34;prettier --trailing-comma all --write &#39;src/**/*.ts&#39;&#34;</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="err">....</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;devDependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="err">....</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;husky&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;hooks&#34;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&#34;pre-commit&#34;</span><span class="p">:</span> <span class="s2">&#34;lint-staged&#34;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;lint-staged&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;src/**/*.ts&#34;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&#34;eslint --fix&#34;</span><span class="p">,</span>
+      <span class="s2">&#34;prettier --write&#34;</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You can find a fully configured project template on my
+<a href="https://github.com/gerlacdt/graphql-example" target="_blank" rel="noopener">github</a>.</p>
+</div>
+
+        </article>
+
+        
+
+        
+    
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">Author</span>: <a href="https://gerlacdt.github.io/" target="_blank" rel="noopener">Daniel Gerlach</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">Link</span>: <a href="/posts/eslint-prettier-typescript/" target="_blank" rel="noopener">https://gerlacdt.github.io/posts/eslint-prettier-typescript/</a></li>
+            
+            
+        </ul>
+    
+
+
+
+        
+    <div class="updated-badge-container"><div title="Updated @ 2020-03-25 11:18:17 CET" style="cursor:help;display:inline-block">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-03-25</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-03-25</text></g></svg></div></div>
+
+
+        
+
+        
+
+<div class="post-share">
+
+        
+
+        <div class="share-items">
+
+            
+                
+                <div class="share-item twitter">
+                    
+                    <a href="https://twitter.com/share?url=https://gerlacdt.github.io/posts/eslint-prettier-typescript/&amp;text=ESlint%20&#43;%20Prettier%20&#43;%20Typescript%20=%20Consistency&amp;via=gerlacdt" title="Share on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon twitter-icon"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+                </div>
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+        </div>
+
+    </div>
+
+
+
+
+        
+    
+    
+        <div class="related-posts">
+            <h2 class="related-title">See Also:<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
+            <ul class="related-list">
+                
+                    <li class="related-item">
+                        <a href="/posts/microservices/" class="related-link">Things to consider with microservices</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/programming-quotes/" class="related-link">Programming Quotes</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/programming/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>programming</a>
+                
+            
+        </div>
+    
+
+
+        
+
+        
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/product-management-quotes/" rel="next">Product Management Quotes ></a>
+                </li>
+            
+        </ul>
+    
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner"><div class="site-info">©&nbsp;2019–2020&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;Daniel Gerlach</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"></div>
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+        <script src="/js/meme.min.0804fb6c876b0567e98ac1471652ba71f683321de03b1f03f54566af77b405d2.js" integrity="sha256-CAT7bIdrBWfpisFHFlK6cfaDMh3gOx8D9UVmr3e0BdI="></script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speedAsDuration: true,
+        header: '[data-scroll-header]'
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
