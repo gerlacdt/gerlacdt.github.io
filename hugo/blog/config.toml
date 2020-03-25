@@ -6,7 +6,7 @@ title = "Daniel's programming rants"
 languageCode = "en"
 hasCJKLanguage = false
 # Copyright information (Markdown supported)
-copyright = "Daniel Gerlach"
+# copyright = "Daniel Gerlach"
 
 # Name of theme
 theme = "meme"
@@ -94,17 +94,17 @@ uglyURLs = false
 # Author’s information
 [author]
     # Name
-    name = "Daniel Gerlach"
+    # name = "Daniel Gerlach"
     # Email
-    email = "Daniel.Gerlach1981@gmail.com"
+    # email = "Daniel.Gerlach1981@gmail.com"
     # Motto or introduction
-    motto = "Hasta la vista baby!"
+    # motto = "Hasta la vista baby!"
     # Avatar
-    avatar = "/icons/apple-touch-icon.png"
+    # avatar = "/icons/apple-touch-icon.png"
     # Personal website, default: baseURL
-    website = "https://gerlacdt.github.io"
+    # website = "https://gerlacdt.github.io"
     # Twitter
-    twitter = "gerlacdt"
+    # twitter = "gerlacdt"
 
 # Related content
 [related]
