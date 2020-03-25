@@ -116,7 +116,11 @@ prettier --trailing-comma all --write 'src/**/*.ts'
 eslint src/ --ext .ts --fix
 ```
 
-It's good practice to enforce these practices. You can do this with a git pre-commit hook. Just install [[husky|https://www.npmjs.com/package/husky]] and [[lint-staged|https://www.npmjs.com/package/lint-staged]]. With these packages it is easy to configure the hooks.
+It's good practice to enforce these practices. You can do this with a
+git pre-commit hook. Just install
+[husky](https://www.npmjs.com/package/husky) and
+[lint-staged](https://www.npmjs.com/package/lint-staged). With these
+packages it is easy to configure the hooks.
 
 ```bash
 # install npm packages to enable pre-commit hooks

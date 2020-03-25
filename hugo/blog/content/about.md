@@ -9,7 +9,7 @@ I am a happy long-term [Emacs](https://www.gnu.org/software/emacs/) user (almost
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Typescript](https://www.typescriptlang.org/)
 * [python](https://www.python.org/)
-* [go](https://golang.org)
+* [Go](https://golang.org)
 
 I am interested in programming. I have a favour for lispy-languages
 like [Common Lisp](https://lisp-lang.org/),
@@ -19,7 +19,7 @@ functional programming paradigms like immutability, reference
 transparency, pure functions, high-order functions, functions as
 first-class citizens and composition of functions. I think functional
 programming makes coding more fun and comprehensible. Nevertheless i
-also like pragmatic programming languages like go.
+also like pragmatic programming languages like Go.
 
 My coding principle is:
 
