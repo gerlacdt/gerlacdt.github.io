@@ -8,5 +8,4 @@ rm -rf public
 hugo -D
 
 # move release to correct location
-cd ${ROOT_DIR}
-cp -r public/* .
+cp -r public/* ${ROOT_DIR}

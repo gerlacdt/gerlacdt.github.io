@@ -15,15 +15,9 @@
             <language>en</language>
         
         
-            <managingEditor>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</managingEditor>
         
         
-            <webMaster>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</webMaster>
-        
-        
-            <copyright>Daniel Gerlach</copyright>
-        
-        <lastBuildDate>Wed, 25 Mar 2020 11:27:38 +0100</lastBuildDate>
+        <lastBuildDate>Wed, 25 Mar 2020 12:08:14 +0100</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
@@ -34,9 +28,7 @@
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/eslint-prettier-typescript/</guid>
                 <pubDate>Tue, 24 Mar 2020 10:28:27 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<p>Consistency is one of the most important factors in a codebase. It
 gives new developers an orientation and direction how to write new
@@ -312,9 +304,7 @@ npm install  --save-dev lint-staged husky
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/product-management-quotes/</guid>
                 <pubDate>Sat, 27 Jul 2019 10:23:17 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<p>I collected my favorite quotes about product management:</p>
 <p><img src="/img/marty_cagan.jpg" alt="Marty Cagan"></p>
@@ -452,9 +442,7 @@ things.</p>
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/postgres-ubuntu/</guid>
                 <pubDate>Fri, 26 Jul 2019 10:15:34 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<p>Recently i decided to switch from MacOS to Linux. I was already an
 Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i
@@ -729,13 +717,11 @@ CREATE TABLE users <span class="o">(</span>
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/my-presentations/</guid>
                 <pubDate>Thu, 25 Jul 2019 11:01:35 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<h2 id="links-to-my-presentation-slides">Links to my presentation slides</h2>
 <ul>
-<li><a href="http://gerlacdt.github.io/slides/clojure-introduction/slides/index.html">clojure introduction</a>N</li>
+<li><a href="http://gerlacdt.github.io/slides/clojure-introduction/slides/index.html">clojure introduction</a></li>
 <li><a href="http://gerlacdt.github.io/slides/javascript-introduction/slides/index.html">javascript introduction</a></li>
 <li><a href="http://gerlacdt.github.io/slides/java8-introduction/slides/index.html">java8 new features</a></li>
 <li><a href="http://gerlacdt.github.io/slides/nomad-scheduler/slides/index.html">hashicorp nomad tutorial</a></li>
@@ -755,14 +741,49 @@ CREATE TABLE users <span class="o">(</span>
             </item>
         
             <item>
+                <title>Emacs Delete Lines</title>
+                <link>https://gerlacdt.github.io/posts/emacs-delete-lines/</link>
+                <guid isPermaLink="true">https://gerlacdt.github.io/posts/emacs-delete-lines/</guid>
+                <pubDate>Mon, 13 May 2019 10:34:42 +0100</pubDate>
+                
+                
+                
+                    <description><![CDATA[<p>Sometimes when i write small scripts i tend to insert <code>print</code>
+statements for debugging. After i verified the correctness of my
+program i want to get rid of all unnecessary debug statements. With
+Emacs you can delete all lines which match a specific <em>regular
+expression</em> with <code>M-x flush-lines</code> or with its alias <code>M-x delete-matching-lines</code>. Interactively you can enter your regular
+expression and all matching lines will be deleted from you cursor
+position downwards.</p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://gerlacdt.github.io/tags/emacs/">emacs</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
                 <title>Install Emacs on MacOS</title>
                 <link>https://gerlacdt.github.io/posts/emacs-macos/</link>
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/emacs-macos/</guid>
                 <pubDate>Sat, 13 Apr 2019 10:34:42 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<p>Yesterday Emacs 26.2 was released, see: <a href="https://www.gnu.org/software/emacs/news/NEWS.26.2">https://www.gnu.org/software/emacs/news/NEWS.26.2</a></p>
 <p>In this short guide i want to show how i install Emacs on my MacBook.
@@ -865,9 +886,7 @@ git-commit-messages.</p>
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/find-and-replace/</guid>
                 <pubDate>Sat, 13 Apr 2019 10:13:14 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<p>As a software programmer you often have to search and replace a
 specific string in multiple files because of a refactoring or just
@@ -926,9 +945,7 @@ reverting is possible with <code>git reset</code>.</p>
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/ag-silver-searcher/</guid>
                 <pubDate>Sat, 13 Apr 2019 10:04:01 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<p>As a programmer you often search for a specific strings or regexps in
 multiple files. Previously i used to do this with the well-known
@@ -1017,9 +1034,7 @@ your-custom-folder-to-ignore/
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/emacs-test-regexps/</guid>
                 <pubDate>Sat, 06 Apr 2019 10:39:15 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<p>Replacing or searching text with <em>regular expressions</em> is very
 common. But sometimes it is hard to get them right and you need some
@@ -1067,9 +1082,7 @@ them in different colours. Very nice!</p>
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/microservices/</guid>
                 <pubDate>Sat, 30 Mar 2019 09:53:54 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<h2 id="introduction">Introduction</h2>
 <p>Some years ago i was involved in migrating a big IBM Websphere
@@ -1350,9 +1363,7 @@ of distributed systems!</p>
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/programming-quotes/</guid>
                 <pubDate>Fri, 29 Mar 2019 09:40:28 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<p>Over the years i collected some (funny) programming quotes. Lean back and enjoy:</p>
 <p><img src="/img/kernighan.jpg" alt="Brian Kernighan"></p>
@@ -1637,9 +1648,7 @@ Tom DeMarco</p>
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/my-name-is-danger/</guid>
                 <pubDate>Fri, 15 Mar 2019 08:51:40 +0100</pubDate>
                 
-                    <author>Daniel.Gerlach1981@gmail.com (Daniel Gerlach)</author>
                 
-                <copyright>Daniel Gerlach</copyright>
                 
                     <description><![CDATA[<p>A few years ago one of my colleagues &ldquo;discovered&rdquo; an algorithm which
 led to my nickname:</p>

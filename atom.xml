@@ -4,17 +4,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-03-25T11:27:38+01:00</updated>
+    <updated>2020-03-25T12:08:14+01:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
     <author>
             <name>Daniel Gerlach</name>
             <uri>https://gerlacdt.github.io/</uri>
-            
-                <email>Daniel.Gerlach1981@gmail.com</email>
             </author>
-    <rights>Daniel Gerlach</rights>
+    
     <generator uri="https://gohugo.io/" version="0.68.3">Hugo</generator>
         <entry>
             <title type="text">ESlint &#43; Prettier &#43; Typescript = Consistency</title>
@@ -24,10 +22,9 @@
             <published>2020-03-24T10:28:27+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[Consistency is one of the most important factors in a codebase. It gives new developers an orientation and direction how to write new code, it keeps the code understandable, clear and free from bikeshedding, so developers can focus on real problems instead of indulging in discussions of their preferred codestyle and individual taste.]]></summary>
+            <summary type="html"><![CDATA[Consistency is one of the most important factors in a codebase. It gives new developers an orientation and direction how to write new code, it keeps the code understandable, clear and free from bikeshedding, so developers can focus on real problems instead of indulging in discussions of their preferred codestyle and individual taste.]]></summary>
             
                 <content type="html"><![CDATA[<p>Consistency is one of the most important factors in a codebase. It
 gives new developers an orientation and direction how to write new
@@ -305,10 +302,9 @@ npm install  --save-dev lint-staged husky
             <published>2019-07-27T10:23:17+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[I collected my favorite quotes about product management:
+            <summary type="html"><![CDATA[I collected my favorite quotes about product management:
  We need teams of missionaries, not teams of mercenaries.
  Marty Cagan, Inspired
  It doesn’t matter how good your engineering team is if they are not given something worthwhile to build.
@@ -452,10 +448,9 @@ things.</p>
             <published>2019-07-26T10:15:34+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[Recently i decided to switch from MacOS to Linux. I was already an Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i struggled a little bit with the installation of PostgreSQL For MacOS there is a nice all-in-one package which i recommend: Postgres.]]></summary>
+            <summary type="html"><![CDATA[Recently i decided to switch from MacOS to Linux. I was already an Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i struggled a little bit with the installation of PostgreSQL For MacOS there is a nice all-in-one package which i recommend: Postgres.]]></summary>
             
                 <content type="html"><![CDATA[<p>Recently i decided to switch from MacOS to Linux. I was already an
 Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i
@@ -728,18 +723,17 @@ CREATE TABLE users <span class="o">(</span>
             <title type="text">My Presentations</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/my-presentations/" />
             <id>https://gerlacdt.github.io/posts/my-presentations/</id>
-            <updated>2020-03-25T11:18:17+01:00</updated>
+            <updated>2020-03-25T11:34:37+01:00</updated>
             <published>2019-07-25T11:01:35+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[Links to my presentation slides  clojure introductionN javascript introduction java8 new features hashicorp nomad tutorial  ]]></summary>
+            <summary type="html"><![CDATA[Links to my presentation slides  clojure introduction javascript introduction java8 new features hashicorp nomad tutorial  ]]></summary>
             
                 <content type="html"><![CDATA[<h2 id="links-to-my-presentation-slides">Links to my presentation slides</h2>
 <ul>
-<li><a href="http://gerlacdt.github.io/slides/clojure-introduction/slides/index.html">clojure introduction</a>N</li>
+<li><a href="http://gerlacdt.github.io/slides/clojure-introduction/slides/index.html">clojure introduction</a></li>
 <li><a href="http://gerlacdt.github.io/slides/javascript-introduction/slides/index.html">javascript introduction</a></li>
 <li><a href="http://gerlacdt.github.io/slides/java8-introduction/slides/index.html">java8 new features</a></li>
 <li><a href="http://gerlacdt.github.io/slides/nomad-scheduler/slides/index.html">hashicorp nomad tutorial</a></li>
@@ -759,6 +753,47 @@ CREATE TABLE users <span class="o">(</span>
         </entry>
     
         <entry>
+            <title type="text">Emacs Delete Lines</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-delete-lines/" />
+            <id>https://gerlacdt.github.io/posts/emacs-delete-lines/</id>
+            <updated>2020-03-25T11:56:39+01:00</updated>
+            <published>2019-05-13T10:34:42+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Sometimes when i write small scripts i tend to insert print statements for debugging. After i verified the correctness of my program i want to get rid of all unnecessary debug statements. With Emacs you can delete all lines which match a specific regular expression with M-x flush-lines or with its alias M-x delete-matching-lines.]]></summary>
+            
+                <content type="html"><![CDATA[<p>Sometimes when i write small scripts i tend to insert <code>print</code>
+statements for debugging. After i verified the correctness of my
+program i want to get rid of all unnecessary debug statements. With
+Emacs you can delete all lines which match a specific <em>regular
+expression</em> with <code>M-x flush-lines</code> or with its alias <code>M-x delete-matching-lines</code>. Interactively you can enter your regular
+expression and all matching lines will be deleted from you cursor
+position downwards.</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/emacs/" term="emacs" label="emacs" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">Install Emacs on MacOS</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-macos/" />
             <id>https://gerlacdt.github.io/posts/emacs-macos/</id>
@@ -766,10 +801,9 @@ CREATE TABLE users <span class="o">(</span>
             <published>2019-04-13T10:34:42+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[Yesterday Emacs 26.2 was released, see: https://www.gnu.org/software/emacs/news/NEWS.26.2
+            <summary type="html"><![CDATA[Yesterday Emacs 26.2 was released, see: https://www.gnu.org/software/emacs/news/NEWS.26.2
 In this short guide i want to show how i install Emacs on my MacBook. I use the vanilla Emacs build from https://emacsformacosx.com/ It is just a simple .dmg file.
 After installing the dmg file, Emacs is now available on your Mac as an application but not in the terminal-app.]]></summary>
             
@@ -876,10 +910,9 @@ git-commit-messages.</p>
             <published>2019-04-13T10:13:14+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[As a software programmer you often have to search and replace a specific string in multiple files because of a refactoring or just improving a variable or function name.
+            <summary type="html"><![CDATA[As a software programmer you often have to search and replace a specific string in multiple files because of a refactoring or just improving a variable or function name.
 Normally you can use your IDE or your editor for this. But in bigger codebases with thousands or hundred thousands of lines of code it can be very slow.]]></summary>
             
                 <content type="html"><![CDATA[<p>As a software programmer you often have to search and replace a
@@ -941,10 +974,9 @@ reverting is possible with <code>git reset</code>.</p>
             <published>2019-04-13T10:04:01+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[As a programmer you often search for a specific strings or regexps in multiple files. Previously i used to do this with the well-known GNU-tools find and grep.
+            <summary type="html"><![CDATA[As a programmer you often search for a specific strings or regexps in multiple files. Previously i used to do this with the well-known GNU-tools find and grep.
 The following command searches for main in all *.go files in the current directory and:]]></summary>
             
                 <content type="html"><![CDATA[<p>As a programmer you often search for a specific strings or regexps in
@@ -1036,10 +1068,9 @@ your-custom-folder-to-ignore/
             <published>2019-04-06T10:39:15+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[Replacing or searching text with regular expressions is very common. But sometimes it is hard to get them right and you need some playground to try them out. In order to verify regular expressions i used to visit webpages like:
+            <summary type="html"><![CDATA[Replacing or searching text with regular expressions is very common. But sometimes it is hard to get them right and you need some playground to try them out. In order to verify regular expressions i used to visit webpages like:
  https://regexr.com/ https://regex101.]]></summary>
             
                 <content type="html"><![CDATA[<p>Replacing or searching text with <em>regular expressions</em> is very
@@ -1090,10 +1121,9 @@ them in different colours. Very nice!</p>
             <published>2019-03-30T09:53:54+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase.]]></summary>
+            <summary type="html"><![CDATA[Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase.]]></summary>
             
                 <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
 <p>Some years ago i was involved in migrating a big IBM Websphere
@@ -1376,10 +1406,9 @@ of distributed systems!</p>
             <published>2019-03-29T09:40:28+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[Over the years i collected some (funny) programming quotes. Lean back and enjoy:
+            <summary type="html"><![CDATA[Over the years i collected some (funny) programming quotes. Lean back and enjoy:
  Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&rsquo;re as clever as you can be when you write it, how will you ever debug it?]]></summary>
             
                 <content type="html"><![CDATA[<p>Over the years i collected some (funny) programming quotes. Lean back and enjoy:</p>
@@ -1667,10 +1696,9 @@ Tom DeMarco</p>
             <published>2019-03-15T08:51:40+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io</uri>
-                    <email>Daniel.Gerlach1981@gmail.com</email>
+                    <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <rights>Daniel Gerlach</rights><summary type="html"><![CDATA[A few years ago one of my colleagues &ldquo;discovered&rdquo; an algorithm which led to my nickname:
+            <summary type="html"><![CDATA[A few years ago one of my colleagues &ldquo;discovered&rdquo; an algorithm which led to my nickname:
  take the 3 first characters of my first name and surname concatenate them: DANiel + GERlach =&gt; Danger  The algorithm can be implemented as a pure function in Javascript:]]></summary>
             
                 <content type="html"><![CDATA[<p>A few years ago one of my colleagues &ldquo;discovered&rdquo; an algorithm which
