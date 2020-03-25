@@ -17,7 +17,7 @@
         
         
         
-        <lastBuildDate>Wed, 25 Mar 2020 12:59:29 +0100</lastBuildDate>
+        <lastBuildDate>Wed, 25 Mar 2020 13:38:17 +0100</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
@@ -706,35 +706,6 @@ CREATE TABLE users <span class="o">(</span>
                                     <category domain="https://gerlacdt.github.io/tags/postgres/">postgres</category>
                                 
                             
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>My Presentations</title>
-                <link>https://gerlacdt.github.io/posts/my-presentations/</link>
-                <guid isPermaLink="true">https://gerlacdt.github.io/posts/my-presentations/</guid>
-                <pubDate>Thu, 25 Jul 2019 11:01:35 +0100</pubDate>
-                
-                
-                
-                    <description><![CDATA[<h2 id="links-to-my-presentation-slides">Links to my presentation slides</h2>
-<ul>
-<li><a href="http://gerlacdt.github.io/slides/clojure-introduction/slides/index.html">clojure introduction</a></li>
-<li><a href="http://gerlacdt.github.io/slides/javascript-introduction/slides/index.html">javascript introduction</a></li>
-<li><a href="http://gerlacdt.github.io/slides/java8-introduction/slides/index.html">java8 new features</a></li>
-<li><a href="http://gerlacdt.github.io/slides/nomad-scheduler/slides/index.html">hashicorp nomad tutorial</a></li>
-</ul>
-]]></description>
-                
-                
-                
-                
-                
-                    
-                        
-                    
                         
                     
                 
@@ -1637,6 +1608,35 @@ Tom DeMarco</p>
                                     <category domain="https://gerlacdt.github.io/tags/programming/">programming</category>
                                 
                             
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>My Presentations</title>
+                <link>https://gerlacdt.github.io/posts/my-presentations/</link>
+                <guid isPermaLink="true">https://gerlacdt.github.io/posts/my-presentations/</guid>
+                <pubDate>Sat, 16 Mar 2019 11:01:35 +0100</pubDate>
+                
+                
+                
+                    <description><![CDATA[<h2 id="links-to-my-presentation-slides">Links to my presentation slides</h2>
+<ul>
+<li><a href="http://gerlacdt.github.io/slides/clojure-introduction/slides/index.html">clojure introduction</a></li>
+<li><a href="http://gerlacdt.github.io/slides/javascript-introduction/slides/index.html">javascript introduction</a></li>
+<li><a href="http://gerlacdt.github.io/slides/java8-introduction/slides/index.html">java8 new features</a></li>
+<li><a href="http://gerlacdt.github.io/slides/nomad-scheduler/slides/index.html">hashicorp nomad tutorial</a></li>
+</ul>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
                         
                     
                 
