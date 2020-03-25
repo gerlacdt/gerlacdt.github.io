@@ -2,7 +2,7 @@
 title: "My Nickname Is Danger"
 date: 2019-03-15T08:51:40+01:00
 tags: ["javascript"]
-draft: true
+draft: false
 ---
 
 A few years ago one of my colleagues "discovered" an algorithm which

@@ -2,7 +2,7 @@
 title: "Find and Replace in multiple files"
 date: 2019-04-13T10:13:14+01:00
 tags: ["linux", "bash"]
-draft: true
+draft: false
 ---
 
 As a software programmer you often have to search and replace a

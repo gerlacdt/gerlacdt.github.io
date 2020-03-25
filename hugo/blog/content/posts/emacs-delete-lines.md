@@ -2,7 +2,7 @@
 title: "Emacs Delete Lines"
 date: 2020-04-06T10:42:05+01:00
 tags: ["emacs"]
-draft: true
+draft: false
 ---
 
 Sometimes when i write small scripts i tend to insert `print`

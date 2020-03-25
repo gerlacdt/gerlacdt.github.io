@@ -2,7 +2,7 @@
 title: "Install Emacs on MacOS"
 date: 2019-04-13T10:34:42+01:00
 tags: ["emacs"]
-draft: true
+draft: false
 ---
 
 Yesterday Emacs 26.2 was released, see: https://www.gnu.org/software/emacs/news/NEWS.26.2

@@ -2,7 +2,7 @@
 title: "ag the_silver_searcher, a grep replacement"
 date: 2019-04-13T10:04:01+01:00
 tags: ["linux", "bash"]
-draft: true
+draft: false
 ---
 
 

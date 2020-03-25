@@ -1,7 +1,7 @@
 ---
 title: "My Presentations"
 date: 2019-07-25T11:01:35+01:00
-draft: true
+draft: false
 ---
 
 

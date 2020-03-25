@@ -2,7 +2,7 @@
 title: "ESlint + Prettier + Typescript = Consistency"
 date: 2020-03-24T10:28:27+01:00
 tags: ["programming"]
-draft: true
+draft: false
 ---
 
 

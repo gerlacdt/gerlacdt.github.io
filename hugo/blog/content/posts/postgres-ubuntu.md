@@ -2,7 +2,7 @@
 title: "Install Postgres on Ubuntu"
 date: 2019-07-26T10:15:34+01:00
 tags: ["linux", "postgres"]
-draft: true
+draft: false
 ---
 
 Recently i decided to switch from MacOS to Linux. I was already an

@@ -2,7 +2,7 @@
 title: "Emacs Test Regexps"
 date: 2019-04-06T10:39:15+01:00
 tags: ["emacs"]
-draft: true
+draft: false
 ---
 
 

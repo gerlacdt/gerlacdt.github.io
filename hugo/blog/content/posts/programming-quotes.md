@@ -2,7 +2,7 @@
 title: "Programming Quotes"
 date: 2019-03-29T09:40:28+01:00
 tags: ["programming"]
-draft: true
+draft: false
 ---
 
 Over the years i collected some (funny) programming quotes. Lean back and enjoy:

@@ -2,7 +2,7 @@
 title: "Things to consider with microservices"
 date: 2019-03-30T09:53:54+01:00
 tags: ["programming", "microservices"]
-draft: true
+draft: false
 ---
 
 ## Introduction
