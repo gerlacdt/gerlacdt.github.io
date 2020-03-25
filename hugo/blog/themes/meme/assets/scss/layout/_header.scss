@@ -1,0 +1,51 @@
+.header {
+    z-index: 3;
+}
+
+@if ($headerLayoutFlex) {
+    .header {
+        position: fixed;
+        width: 100%;
+    }
+    .header-wrapper {
+        padding: 1em 0;
+        @include blur;
+        background: $headerBackground;
+    }
+    .header-inner {
+        opacity: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: var(--main-inner);
+        margin: 0 auto;
+    }
+    .site-brand {
+        margin-right: 1em;
+    }
+} @else {
+    .header {
+        position: relative;
+        background: $headerBackground;
+    }
+    .site-brand {
+        text-align: center;
+    }
+}
+
+@if ($siteBrandSVG) {
+    .brand {
+        width: $siteBrandSVGWidth;
+        height: $siteBrandSVGHeight;
+        fill: $siteBrandSVGFill;
+    }
+} @else {
+    .brand {
+        font-size: $siteBrandFontSize;
+        color: $siteBrandFontColor;
+        text-decoration: none;
+        &:hover {
+            color: $siteBrandFontColor;
+        }
+    }
+}
