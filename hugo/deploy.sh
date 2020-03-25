@@ -1,15 +1,12 @@
 #!/bin/bash
 
-ROOT_DIR=$(pwd)
-
-RELEASE_FOLDER="blog"
+ROOT_DIR="../$(pwd)"
 
 # create ./public/ release folder
-cd hugo/blog
+cd blog
 rm -rf public
 hugo -D
 
 # move release to correct location
 cd ${ROOT_DIR}
-rm -rf ${RELEASE_FOLDER}
-mv hugo/blog/public ${RELEASE_FOLDER}
+cp -r hugo/blog/public/* .

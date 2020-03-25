@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.68.3" /><meta name="theme-color" content="#fff" />
+        <script>
+            const userPrefers = localStorage.getItem('theme');
+            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            const lightModeMediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+            if (userPrefers === 'dark') {
+                changeModeMeta('dark');
+            } else if (userPrefers === 'light') {
+                changeModeMeta('light');
+            } else if (darkModeMediaQuery.matches) {
+                changeModeMeta('dark');
+            } else if (lightModeMediaQuery.matches) {
+                changeModeMeta('light');
+            }
+            function changeModeMeta(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                if (theme === 'dark') {
+                    changeThemeColor('#282a36');
+                } else {
+                    changeThemeColor('#fff');
+                }
+            }
+            function changeThemeColor(themeColor) {
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColor);
+            }
+        </script>
+
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>Things to consider with microservices | Daniel&#39;s programming rants</title>
+
+    <link rel="stylesheet" href="/css/meme.min.88d3244f0229d491161420376079c8c38087213498f82f01782b3ce2426f7855.css" integrity="sha256-iNMkTwIp1JEWFCA3YHnIw4CHITSY+C8BeCs84kJveFU=" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="Daniel Gerlach" />
+    <meta name="description" content="Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase." />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Daniel&#39;s programming rants" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Daniel&#39;s programming rants" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://gerlacdt.github.io/posts/microservices/" />
+
+
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2019-03-30T09:53:54+01:00",
+        "dateModified": "2020-03-25T11:18:17+01:00",
+        "url": "https://gerlacdt.github.io/posts/microservices/",
+        "headline": "Things to consider with microservices",
+        "description": "Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase.",
+        "inLanguage" : "en",
+        "articleSection": "posts",
+        "wordCount":  1460 ,
+        "image": "https://gerlacdt.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Hasta la vista baby!",
+            "email": "Daniel.Gerlach1981@gmail.com",
+            "image": "https://gerlacdt.github.io/icons/apple-touch-icon.png",
+            "url": "https://gerlacdt.github.io",
+            "name": "Daniel Gerlach"
+        },
+        "license": "Daniel Gerlach",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Daniel's programming rants",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gerlacdt.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://gerlacdt.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://gerlacdt.github.io/"
+        }
+    }
+</script>
+
+    
+
+
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@gerlacdt" />
+<meta name="twitter:creator" content="@gerlacdt" />
+
+    
+
+
+
+
+
+<meta property="og:title" content="Things to consider with microservices" />
+<meta property="og:description" content="Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase." />
+<meta property="og:url" content="https://gerlacdt.github.io/posts/microservices/" />
+<meta property="og:site_name" content="Daniel&#39;s programming rants" />
+<meta property="og:locale" content="en" /><meta property="og:image" content="https://gerlacdt.github.io/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2019-03-30T09:53:54+01:00" />
+    <meta property="article:modified_time" content="2020-03-25T11:18:17+01:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header" data-scroll-header>
+        
+            <div class="header-wrapper">
+                <div class="header-inner">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">Daniel&#39;s programming rants</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon "><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">Posts</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon "><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">Tags</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon "><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">About</span></a>
+                </li>
+            
+        
+            
+                
+                    <li class="menu-item">
+                        
+    
+        
+            
+        
+        <div id="theme-switcher">🌞</div>
+    
+
+
+                    </li>
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        <article class="content post" data-small-caps="true" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title">Things to consider with microservices</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2019-03-30T09:53:54+01:00" class="post-meta-item published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2019.3.30</time>
+    
+    
+        
+        <time datetime="2020-03-25T11:18:17+01:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.3.25</time>
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1460</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;7&nbsp;mins</span>
+    
+    
+</div>
+            
+
+            <div class="post-body"><h2 id="introduction"><a href="#introduction" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Introduction</h2>
+<p style="text-indent:0"><span class="drop-cap">S</span>ome years ago i was involved in migrating a big IBM Websphere
+monolith into a microservice landscape. We had a lot of problems with
+the monolith. Our development speed slowed down. We had many merge
+conflicts because of too many dependencies in the codebase. We outgrew
+the monolithic design and decided to introduce microservices. We
+extracted different domains like payment, booking, user and
+search. The teams were restructured into two-pizza teams.</p>
+<p>The whole migration was very structured and well planned. We migrated
+incrementally with the <a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler" target="_blank" rel="noopener">strangler
+pattern</a>.
+As long we were ~20 developers in 5 different teams, everything was
+fine. Teams worked independently in their domain. They could scale,
+deploy independently and followed their own release cycles.</p>
+<p>But microservices bring new technical challenges. Maybe you know the saying:</p>
+<blockquote>
+<p>Microservices solve organizational problems.</p>
+<p>Microservices cause technical problems.</p>
+</blockquote>
+<p><a href="https://speakerdeck.com/peterbourgon/go-plus-microservices-equals-go-kit?slide=15" target="_blank" rel="noopener">Peter Bourgon</a></p>
+<p>Developers tend to ignore, forget or just simply do not know about
+these challenges. They are overwhelmed by the new opportunities in the
+shiny microservice world. In the following i want to present my
+experience what we underestimated or forgot in our
+microservice-migration.</p>
+<h2 id="avoid-a-heterogeneous-it-landscape"><a href="#avoid-a-heterogeneous-it-landscape" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Avoid a heterogeneous IT-landscape</h2>
+<p>Microservices give you a lot of freedom which technology to choose
+like programming language, database or web-framework. This is both
+boon and bane. On the one side every team can choose the technology
+which fits best, on the other side developers are adventurous and try
+out new fancy programming languages and other bleeding edge
+technology. And soon you have a dozen different tech stacks to
+support. Some teams build their own tech-knowledge silos. And don&rsquo;t
+get me wrong here, it is totally fine if a team has its
+domain-knowledge silo, but it is not fine if the team is the only one
+in the company who uses a fancy programming language.  At google, they
+have thousands of engineers and they try to stick to only 4 languages
+in the backend. The supported languages are C++, Java, Python and Go,
+see <a href="https://arxiv.org/pdf/1702.01715.pdf" target="_blank" rel="noopener">Software Engineering at Google, Fergus
+Henderson</a>.  If a backend team
+wants to start with another language they need to argument very hard
+why they cannot fulfil their job with the company-wide supported
+languages. There is a clear decision-process in place how to introduce
+new a technology. This restricts the developers from using the newest
+bleeding-edge technology.  Another advantage is that one can focus on
+business problems and avoid discussions about tech exploration
+etc. Your internal libraries need to be written and supported only in
+a few languages. Developers will also have an easy time when they want
+to switch teams. Team rotation is encouraged, facilitates
+knowledge-transfer and pushes developers out of their comfort zone
+which makes them more valuable.</p>
+<p>A <a href="https://www.thoughtworks.com/de/radar" target="_blank" rel="noopener">technology radar</a> serves as
+an overview for the supported tools, programming languages and
+platforms. A radar helps to keep track of all technology used in your
+company.</p>
+<h2 id="have-a-good-monitoringtracinglogging-in-place"><a href="#have-a-good-monitoringtracinglogging-in-place" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Have a good Monitoring/Tracing/Logging in place</h2>
+<p>We suffered sometime from logging problems because our ~ElasticSearch
+cluster was overloaded or some indices had conflicts. Logging is
+hard. Make sure you have clear logging-guildlines. Do not log too
+much, at best you have <a href="https://peter.bourgon.org/blog/2016/02/07/logging-v-instrumentation.html" target="_blank" rel="noopener">silent
+services</a>,
+i.e. only log if a manual intervention is needed in case of an
+error. Logging is fine for debugging and error tracking in the
+development-Stage but it should not be overused in production. Be
+careful if your monitoring and alarming is based on logging. If your
+log-cluster is flooded, your monitoring will not work either!</p>
+<p>Have strict rules for monitoring. No service should go into production
+without monitoring. With microservices you need transparency in order
+to do failure analysis or get notified if something is wrong. At least
+monitor the <a href="https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref_monitoring_golden-signals" target="_blank" rel="noopener">four golden
+signals</a>:</p>
+<ol>
+<li>
+<p>Latency. How high is the response time? Make sure you distinguish
+failed requests from successful requests. Failed requests can be
+fast and screw up your metrics.</p>
+</li>
+<li>
+<p>Traffic. How many Requests per second (RPS) do we serve?</p>
+</li>
+<li>
+<p>Errors. How high is the error rate? Number of error response /
+Number of successful responses</p>
+</li>
+<li>
+<p>Saturation. How full is your service? CPU utilisation, memory
+consumption.</p>
+</li>
+</ol>
+<h2 id="don-forget-the-8-fallacies-of-distributed-computing"><a href="#don-forget-the-8-fallacies-of-distributed-computing" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Don&rsquo; forget the 8 fallacies of distributed computing</h2>
+<p><a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing" target="_blank" rel="noopener">Fallacies of distributed computing by Peter
+Deutsch</a></p>
+<ol>
+<li>
+<p>The network is reliable.</p>
+<p>Your HTTP-calls will fail from time to time. So make sure you have
+some retry-mechanism in place. But do not retry naively!
+E.g. retries make not sense if the http-response-code is 400
+BAD_REQUEST, no matter how often you try the request will never be successful.
+Neither you should do retries on POST requests, HTTP POST requests
+are by definition not idempotent and you could accidentally create a
+lot of resources like orders or trigger payments. Your customers will not
+be happy.</p>
+<p>You should also limit your retries, do not retry indefinitely,
+otherwise you can cause overload on other services, see
+<a href="https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/" target="_blank" rel="noopener">cascading failures</a></p>
+<p>Do not forget to protect your services with timeouts. Missing timeouts
+make I/O calls wait too long and if they pile up they consume all
+your memory or other resources like a thread pool. In the worst case you service will be killed by your docker scheduler because the memory limit is exceeded.</p>
+<p>For very high-load services you should consider <a href="https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/#xref_cascading-failure_load-shed-graceful-degredation" target="_blank" rel="noopener">load shedding or
+graceful degradation</a>
+in order to protect these service from going down.</p>
+</li>
+<li>
+<p>Latency is zero.</p>
+<p>Network can be slow. You should clearly separate internal function
+calls from network calls. E.g. do not use network calls in
+loops. Better fetch everything with one network call.</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// bad practice! Doing multiple network calls
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getUsers</span><span class="p">(</span><span class="nx">userIds</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nx">id</span> <span class="k">of</span> <span class="nx">userIds</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">fetchSingleUser</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="nx">users</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">users</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good, only one network call
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getUsers</span><span class="p">(</span><span class="nx">userIds</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">http</span><span class="p">.</span><span class="nx">fetchUsers</span><span class="p">(</span><span class="nx">userIds</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>
+<p>Bandwidth is infinite.</p>
+<p>Use your bandwidth sparingly. E.g logging every http request and
+response is definitely too much. Do not use  sql-statements like this:
+<code>SELECT * from  table</code>, always select only required columns.</p>
+</li>
+<li>
+<p>The network is secure.</p>
+</li>
+<li>
+<p>Topology doesn&rsquo;t change.</p>
+<p>Especially with self-healing services and docker random port usage,
+IP-addresses and ports change often. Do not use static IP-addresses
+or static ports. Use sophisticated service-discovery
+mechanisms. Many Docker-Scheduler provide them out-of-the-box like
+<a href="https://kubernetes.io/" target="_blank" rel="noopener">Kubernetes</a> or <a href="https://www.nomadproject.io/" target="_blank" rel="noopener">Hashicorp&rsquo;s
+Nomad</a>. With <a href="https://aws.amazon.com/ecs/" target="_blank" rel="noopener">AWS
+ECS</a> you can use an <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html" target="_blank" rel="noopener">AWS Application
+Load Balancer</a> (ALB) for service discovery.</p>
+</li>
+<li>
+<p>There is one administrator.</p>
+<p>Distributed systems are complex. Do not expect that there is
+one person who knows it all. For bug analysis you need multiple
+people/teams.</p>
+</li>
+<li>
+<p>Transport cost is zero.</p>
+<p>Network calls are expensive. You need to establish a connection,
+you need to serialize and deserialize the message body which cost
+CPU. The less you send the better. If you notice that you
+services are chatty, consider restructuring the domain
+boundaries. Most probably your domains do overlap or have multiple
+responsibilities.</p>
+</li>
+<li>
+<p>The network is homogeneous</p>
+<p>It&rsquo;s not. Before docker, almost all applications ran on customized,
+&ldquo;snowlflaky&rdquo; servers configured via non-reproducible
+ssh-session. With Kubernetes or AWS ECS you can have clusters with
+thousands of servers which are configured exactly the same. A
+single ~DevOps guy can operate thousands of servers! You should
+also agree on a single data transfer format like
+<a href="https://www.json.org/" target="_blank" rel="noopener">JSON</a> or <a href="https://developers.google.com/protocol-buffers/" target="_blank" rel="noopener">Protocol
+Buffers</a> with
+<a href="https://grpc.io/" target="_blank" rel="noopener">gRPC</a>. You should strive for as much homogeneity
+as possible to reduce operation and maintenance costs. In my
+opinion the homogeneity provided by Docker is its biggest
+advantage.</p>
+</li>
+</ol>
+<h2 id="other-things-to-consider"><a href="#other-things-to-consider" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Other things to consider</h2>
+<ul>
+<li>
+<p>Keep your domain boundaries clear and separated. Teams should always
+be able to deploy independently and without consulting other
+teams. You ever experienced a deployment where 3 or 4 services were
+involved and had to be deployed synchronously because of
+incompatibilities of API-versions or dependency on the same database.
+Congratulations you built a distributed monolith.</p>
+</li>
+<li>
+<p>Have a good CI/CD pipeline with automatic tests and deployments.
+Make sure all teams use the same
+deployment and glue scripts. Use one Docker-Cluster
+(Kubernetes, AWS ECS, Hashicorp Nomad) for the whole company (as
+long as you do not exceed hundreds of servers). This will keep the
+maintenance effort low.</p>
+</li>
+<li>
+<p>If you have reusable modules/libraries, make sure you have
+transitive CI-builds</p>
+</li>
+<li>
+<p>Adhere to good coding cloud-native practices, see
+[[12-factor-app|https://12factor.net]] and
+[[Site Reliability Engineering|https://landing.google.com/sre/books/]]</p>
+</li>
+</ul>
+<h2 id="conclusion"><a href="#conclusion" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Conclusion</h2>
+<p>Microservices are hard. Do not forget this. In the web you hear mainly
+about the big success-stories like Google, Amazon and the like. But
+for the most of us there are serious disadvantages which are normally
+not mentioned. And do not get me wrong, microservices are great. It
+was definitely the way to go for us. Today we are more than 100
+developers and it gives me the creeps when i imagine that all of them
+would work on single monolithic git-repository.  It is a long and hard
+way to a productive microservice landscape but definitively worth
+it. Just do not underestimate monitoring, automation and the fallacies
+of distributed systems!</p>
+</div>
+
+        </article>
+
+        
+
+        
+    
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">Author</span>: <a href="https://gerlacdt.github.io" target="_blank" rel="noopener">Daniel Gerlach</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">Link</span>: <a href="/posts/microservices/" target="_blank" rel="noopener">https://gerlacdt.github.io/posts/microservices/</a></li>
+            
+            <li class="copyright-item license"><span class="copyright-item-text">License</span>: Daniel Gerlach</li>
+            
+        </ul>
+    
+
+
+
+        
+    <div class="updated-badge-container"><div title="Updated @ 2020-03-25 11:18:17 CET" style="cursor:help;display:inline-block">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-03-25</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-03-25</text></g></svg></div></div>
+
+
+        
+
+        
+
+<div class="post-share">
+
+        
+
+        <div class="share-items">
+
+            
+                
+                <div class="share-item twitter">
+                    
+                    <a href="https://twitter.com/share?url=https://gerlacdt.github.io/posts/microservices/&amp;text=Things%20to%20consider%20with%20microservices&amp;via=gerlacdt" title="Share on Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon twitter-icon"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+                </div>
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+        </div>
+
+    </div>
+
+
+
+
+        
+    
+    
+        <div class="related-posts">
+            <h2 class="related-title">See Also:<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon related-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"/></svg></h2>
+            <ul class="related-list">
+                
+                    <li class="related-item">
+                        <a href="/posts/programming-quotes/" class="related-link">Programming Quotes</a>
+                    </li>
+                
+                    <li class="related-item">
+                        <a href="/posts/eslint-prettier-typescript/" class="related-link">ESlint &#43; Prettier &#43; Typescript = Consistency</a>
+                    </li>
+                
+            </ul>
+        </div>
+    
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/programming/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>programming</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/microservices/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>microservices</a>
+                
+            
+        </div>
+    
+
+
+        
+
+        
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+                <li class="post-nav-prev">
+                    <a href="/posts/emacs-test-regexps/" rel="prev">< Emacs Test Regexps</a>
+                </li>
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/programming-quotes/" rel="next">Programming Quotes ></a>
+                </li>
+            
+        </ul>
+    
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner"><div class="site-info">©&nbsp;2019–2020&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;Daniel Gerlach</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright">Daniel Gerlach</div>
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+        <script src="/js/meme.min.0804fb6c876b0567e98ac1471652ba71f683321de03b1f03f54566af77b405d2.js" integrity="sha256-CAT7bIdrBWfpisFHFlK6cfaDMh3gOx8D9UVmr3e0BdI="></script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speedAsDuration: true,
+        header: '[data-scroll-header]'
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
