@@ -98,7 +98,7 @@ uglyURLs = false
     # Email
     email = "Daniel.Gerlach1981@gmail.com"
     # Motto or introduction
-    motto = "Viva La Vida"
+    motto = "Hasta la vista baby!"
     # Avatar
     avatar = "/icons/apple-touch-icon.png"
     # Personal website, default: baseURL
@@ -1100,15 +1100,15 @@ uglyURLs = false
     displayShareOnText = false
 
     shareOnTwitter = true
-    shareOnFacebook = true
-    shareOnLinkedIn = true
-    shareOnTelegram = true
-    shareOnWeibo = true
-    shareOnDouban = true
-    shareOnQQ = true
-    shareOnQzone = true
+    shareOnFacebook = false
+    shareOnLinkedIn = false
+    shareOnTelegram = false
+    shareOnWeibo = false
+    shareOnDouban = false
+    shareOnQQ = false
+    shareOnQzone = false
 
-    shareViaQRCode = true
+    shareViaQRCode = false
 
 
     ######################################
@@ -1237,7 +1237,7 @@ uglyURLs = false
 
     enableHighlight = true
 
-    enableOverflowY = true
+    enableOverflowY = false
     maxHeight = 20
     # Unit: em
 
