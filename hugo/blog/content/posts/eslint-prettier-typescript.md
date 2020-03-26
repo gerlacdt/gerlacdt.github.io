@@ -228,6 +228,6 @@ your rules and guidelines and stick to them forcefully. Whenever you
 can enforce them or check them automatically, do it. It will save you
 a lot of time.
 
-I hope i could convince you that consistency matters. Using ESlint,
-Prettier and Typescript is only one example of how to improve your
+I hope i could convince you that consistency matters. And that the
+winning trio with ESlint, Prettier and Typescript improves your
 codebase.

@@ -17,7 +17,7 @@
         
         
         
-        <lastBuildDate>Thu, 26 Mar 2020 21:48:36 +0100</lastBuildDate>
+        <lastBuildDate>Thu, 26 Mar 2020 21:57:03 +0100</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
@@ -335,8 +335,8 @@ requests. To avoid senseless work, be consistent all the time with
 your rules and guidelines and stick to them forcefully. Whenever you
 can enforce them or check them automatically, do it. It will save you
 a lot of time.</p>
-<p>I hope i could convince you that consistency matters. Using ESlint,
-Prettier and Typescript is only one example of how to improve your
+<p>I hope i could convince you that consistency matters. And that the
+winning trio with ESlint, Prettier and Typescript improves your
 codebase.</p>
 ]]></description>
                 
