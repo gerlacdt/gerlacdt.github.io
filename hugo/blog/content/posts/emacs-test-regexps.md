@@ -19,7 +19,7 @@ expressions and do not support Emacs regular expressions directly. In
 Emacs you have to consider some peculiarities. For example you have to
 escape parentheses.
 
-Recently i learnt about `M-x regexp-builder`. With it you can test
+Recently i learnt about `M-x regexp-builder` with which you can test
 your regular-expressions interactively. Just enter the regular
 expression and the text in your buffer will be highlighted
 immediately. It even considers different capture groups and highlights

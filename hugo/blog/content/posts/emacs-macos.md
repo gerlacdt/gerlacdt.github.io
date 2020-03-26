@@ -8,13 +8,13 @@ draft: false
 Yesterday Emacs 26.2 was released, see: https://www.gnu.org/software/emacs/news/NEWS.26.2
 
 In this short guide i want to show how i install Emacs on my MacBook.
-I use the vanilla Emacs build from https://emacsformacosx.com/
+I use the vanilla Emacs build from https://emacsformacosx.com/.
 It is just a simple *.dmg file*.
 
 After installing the *dmg file*, Emacs is now available on your Mac as
 an application but not in the terminal-app. The terminal still opens
 the pre-install Emacs version. To make the new version available you
-have to create a bash-script and put in your `$PATH`.
+have to create a bash-script and put it in your `$PATH`.
 
 ```bash
 # filename ~/bin/emacs
@@ -37,9 +37,9 @@ For further information see: https://emacsformacosx.com/tips
 
 When i start a session i run the emacs-server with `emacs
 --daemon`. This runs emacs in the background. Afterwards you can use
-`emacsclient` to open files. *emacsclient* does not startup a full
-Emacs instance but utilises the running emacs-server. Basically emacs
-opens instantly!
+`emacsclient` to open files. From now on *emacsclient* does not
+startup a full Emacs instance but utilises the running
+emacs-server. Basically emacs opens instantly!
 
 Additionally i created some bash aliases in my `~/.zshrc` or
 `~/.bashrc` in order to shorten the emacs commands.

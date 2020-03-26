@@ -18,12 +18,14 @@ find . -iname '*.go' | xargs grep -inH  "main"
 # -i ignore case, -n print line number, -H print filename
 ```
 
-Recently i discovered [ag the silver searcher](https://github.com/ggreer/the_silver_searcher).
-`ag` is much faster than `grep` and searches directories recursively by default. `ag` respects out-of-the-box your `.gitignore` files.
+Recently i discovered [ag the silver
+searcher](https://github.com/ggreer/the_silver_searcher). `ag` is
+much faster than `grep` and searches directories recursively by
+default. `ag` respects out-of-the-box your `.gitignore` files.
 
 You can install `ag` on a Mac with [brew](https://brew.sh/), `brew
 install the_silver_searcher`.  The following command searches all
-files in your current directory for the string //main//.
+files in your current directory for the string "main".
 
 ```bash
 ag main

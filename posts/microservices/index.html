@@ -79,13 +79,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2019-03-30T09:53:54+01:00",
-        "dateModified": "2020-03-25T11:18:17+01:00",
+        "dateModified": "2020-03-26T21:47:36+01:00",
         "url": "https://gerlacdt.github.io/posts/microservices/",
         "headline": "Things to consider with microservices",
         "description": "Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase.",
         "inLanguage" : "en",
         "articleSection": "posts",
-        "wordCount":  1460 ,
+        "wordCount":  1485 ,
         "image": "https://gerlacdt.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -129,7 +129,7 @@
 <meta property="og:locale" content="en" /><meta property="og:image" content="https://gerlacdt.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2019-03-30T09:53:54+01:00" />
-    <meta property="article:modified_time" content="2020-03-25T11:18:17+01:00" />
+    <meta property="article:modified_time" content="2020-03-26T21:47:36+01:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -263,7 +263,7 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1460</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1485</span>
     
     
         
@@ -308,7 +308,7 @@ technology. And soon you have a dozen different tech stacks to
 support. Some teams build their own tech-knowledge silos. And don&rsquo;t
 get me wrong here, it is totally fine if a team has its
 domain-knowledge silo, but it is not fine if the team is the only one
-in the company who uses a fancy programming language.  At google, they
+in the company who uses a fancy programming language.  At Google, they
 have thousands of engineers and they try to stick to only 4 languages
 in the backend. The supported languages are C++, Java, Python and Go,
 see <a href="https://arxiv.org/pdf/1702.01715.pdf" target="_blank" rel="noopener">Software Engineering at Google, Fergus
@@ -316,11 +316,11 @@ Henderson</a>.  If a backend team
 wants to start with another language they need to argument very hard
 why they cannot fulfil their job with the company-wide supported
 languages. There is a clear decision-process in place how to introduce
-new a technology. This restricts the developers from using the newest
+a new technology. This restricts the developers from using the newest
 bleeding-edge technology.  Another advantage is that one can focus on
-business problems and avoid discussions about tech exploration
-etc. Your internal libraries need to be written and supported only in
-a few languages. Developers will also have an easy time when they want
+business problems and avoid discussions about tech explorations
+etc. Your internal libraries need to be written in and supported for
+few languages. Developers will also have an easy time when they want
 to switch teams. Team rotation is encouraged, facilitates
 knowledge-transfer and pushes developers out of their comfort zone
 which makes them more valuable.</p>
@@ -329,14 +329,14 @@ an overview for the supported tools, programming languages and
 platforms. A radar helps to keep track of all technology used in your
 company.</p>
 <h2 id="have-a-good-monitoringtracinglogging-in-place"><a href="#have-a-good-monitoringtracinglogging-in-place" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Have a good Monitoring/Tracing/Logging in place</h2>
-<p>We suffered sometime from logging problems because our ~ElasticSearch
+<p>We suffered sometime from logging problems because our ElasticSearch
 cluster was overloaded or some indices had conflicts. Logging is
 hard. Make sure you have clear logging-guildlines. Do not log too
 much, at best you have <a href="https://peter.bourgon.org/blog/2016/02/07/logging-v-instrumentation.html" target="_blank" rel="noopener">silent
 services</a>,
 i.e. only log if a manual intervention is needed in case of an
 error. Logging is fine for debugging and error tracking in the
-development-Stage but it should not be overused in production. Be
+development stage but it should not be overused in production. Be
 careful if your monitoring and alarming is based on logging. If your
 log-cluster is flooded, your monitoring will not work either!</p>
 <p>Have strict rules for monitoring. No service should go into production
@@ -354,8 +354,8 @@ fast and screw up your metrics.</p>
 <p>Traffic. How many Requests per second (RPS) do we serve?</p>
 </li>
 <li>
-<p>Errors. How high is the error rate? Number of error response /
-Number of successful responses</p>
+<p>Errors. How high is the error rate? </br>
+Number of error responses / Number of successful responses</p>
 </li>
 <li>
 <p>Saturation. How full is your service? CPU utilisation, memory
@@ -370,7 +370,7 @@ Deutsch</a></p>
 <p>The network is reliable.</p>
 <p>Your HTTP-calls will fail from time to time. So make sure you have
 some retry-mechanism in place. But do not retry naively!
-E.g. retries make not sense if the http-response-code is 400
+E.g. retries make no sense if the http response code is 400
 BAD_REQUEST, no matter how often you try the request will never be successful.
 Neither you should do retries on POST requests, HTTP POST requests
 are by definition not idempotent and you could accidentally create a
@@ -378,7 +378,7 @@ lot of resources like orders or trigger payments. Your customers will not
 be happy.</p>
 <p>You should also limit your retries, do not retry indefinitely,
 otherwise you can cause overload on other services, see
-<a href="https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/" target="_blank" rel="noopener">cascading failures</a></p>
+<a href="https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/" target="_blank" rel="noopener">cascading failures</a>.</p>
 <p>Do not forget to protect your services with timeouts. Missing timeouts
 make I/O calls wait too long and if they pile up they consume all
 your memory or other resources like a thread pool. In the worst case you service will be killed by your docker scheduler because the memory limit is exceeded.</p>
@@ -452,7 +452,7 @@ Load Balancer</a> (ALB) for service discovery.</p>
 <p>There is one administrator.</p>
 <p>Distributed systems are complex. Do not expect that there is
 one person who knows it all. For bug analysis you need multiple
-people/teams.</p>
+people or teams.</p>
 </li>
 <li>
 <p>Transport cost is zero.</p>
@@ -466,17 +466,18 @@ responsibilities.</p>
 <li>
 <p>The network is homogeneous</p>
 <p>It&rsquo;s not. Before docker, almost all applications ran on customized,
-&ldquo;snowlflaky&rdquo; servers configured via non-reproducible
+&ldquo;snowflaky&rdquo; servers configured via non-reproducible
 ssh-session. With Kubernetes or AWS ECS you can have clusters with
-thousands of servers which are configured exactly the same. A
-single ~DevOps guy can operate thousands of servers! You should
-also agree on a single data transfer format like
+thousands of servers which are configured exactly the same. One
+single DevOps guy can operate thousands of servers! Therefore you
+should agree on a common cluster management tool with as few
+clusters as possible. Only then, you gain the real advantages of
+Docker. Further agree on a single data transfer format like
 <a href="https://www.json.org/" target="_blank" rel="noopener">JSON</a> or <a href="https://developers.google.com/protocol-buffers/" target="_blank" rel="noopener">Protocol
 Buffers</a> with
-<a href="https://grpc.io/" target="_blank" rel="noopener">gRPC</a>. You should strive for as much homogeneity
-as possible to reduce operation and maintenance costs. In my
-opinion the homogeneity provided by Docker is its biggest
-advantage.</p>
+<a href="https://grpc.io/" target="_blank" rel="noopener">gRPC</a>. Strive for as much homogeneity as
+possible to reduce operation and maintenance costs. In my opinion
+the homogeneity provided by Docker is its biggest advantage.</p>
 </li>
 </ol>
 <h2 id="other-things-to-consider"><a href="#other-things-to-consider" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Other things to consider</h2>
@@ -491,11 +492,10 @@ Congratulations you built a distributed monolith.</p>
 </li>
 <li>
 <p>Have a good CI/CD pipeline with automatic tests and deployments.
-Make sure all teams use the same
-deployment and glue scripts. Use one Docker-Cluster
-(Kubernetes, AWS ECS, Hashicorp Nomad) for the whole company (as
-long as you do not exceed hundreds of servers). This will keep the
-maintenance effort low.</p>
+Make sure all teams use the same deployment and glue scripts. Use
+one cluster (Kubernetes, AWS ECS, Hashicorp Nomad) for the whole
+company (as long as you do not exceed hundreds of servers). This
+will keep the maintenance effort low.</p>
 </li>
 <li>
 <p>If you have reusable modules/libraries, make sure you have
@@ -503,8 +503,8 @@ transitive CI-builds</p>
 </li>
 <li>
 <p>Adhere to good coding cloud-native practices, see
-[[12-factor-app|https://12factor.net]] and
-[[Site Reliability Engineering|https://landing.google.com/sre/books/]]</p>
+<a href="https://12factor.net" target="_blank" rel="noopener">12-factor-app</a> and <a href="https://landing.google.com/sre/books/" target="_blank" rel="noopener">Site Reliability
+Engineering</a></p>
 </li>
 </ul>
 <h2 id="conclusion"><a href="#conclusion" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Conclusion</h2>
@@ -544,9 +544,9 @@ of distributed systems!</p>
 
 
         
-    <div class="updated-badge-container"><div title="Updated @ 2020-03-25 11:18:17 CET" style="cursor:help;display:inline-block">
+    <div class="updated-badge-container"><div title="Updated @ 2020-03-26 21:47:36 CET" style="cursor:help;display:inline-block">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-03-25</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-03-25</text></g></svg></div></div>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-03-26</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-03-26</text></g></svg></div></div>
 
 
         

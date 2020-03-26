@@ -48,7 +48,7 @@ technology. And soon you have a dozen different tech stacks to
 support. Some teams build their own tech-knowledge silos. And don't
 get me wrong here, it is totally fine if a team has its
 domain-knowledge silo, but it is not fine if the team is the only one
-in the company who uses a fancy programming language.  At google, they
+in the company who uses a fancy programming language.  At Google, they
 have thousands of engineers and they try to stick to only 4 languages
 in the backend. The supported languages are C++, Java, Python and Go,
 see [Software Engineering at Google, Fergus
@@ -56,11 +56,11 @@ Henderson](https://arxiv.org/pdf/1702.01715.pdf).  If a backend team
 wants to start with another language they need to argument very hard
 why they cannot fulfil their job with the company-wide supported
 languages. There is a clear decision-process in place how to introduce
-new a technology. This restricts the developers from using the newest
+a new technology. This restricts the developers from using the newest
 bleeding-edge technology.  Another advantage is that one can focus on
-business problems and avoid discussions about tech exploration
-etc. Your internal libraries need to be written and supported only in
-a few languages. Developers will also have an easy time when they want
+business problems and avoid discussions about tech explorations
+etc. Your internal libraries need to be written in and supported for
+few languages. Developers will also have an easy time when they want
 to switch teams. Team rotation is encouraged, facilitates
 knowledge-transfer and pushes developers out of their comfort zone
 which makes them more valuable.
@@ -73,14 +73,14 @@ company.
 
 ## Have a good Monitoring/Tracing/Logging in place
 
-We suffered sometime from logging problems because our ~ElasticSearch
+We suffered sometime from logging problems because our ElasticSearch
 cluster was overloaded or some indices had conflicts. Logging is
 hard. Make sure you have clear logging-guildlines. Do not log too
 much, at best you have [silent
 services](https://peter.bourgon.org/blog/2016/02/07/logging-v-instrumentation.html),
 i.e. only log if a manual intervention is needed in case of an
 error. Logging is fine for debugging and error tracking in the
-development-Stage but it should not be overused in production. Be
+development stage but it should not be overused in production. Be
 careful if your monitoring and alarming is based on logging. If your
 log-cluster is flooded, your monitoring will not work either!
 
@@ -96,8 +96,8 @@ signals](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed
 
 2. Traffic. How many Requests per second (RPS) do we serve?
 
-3.  Errors. How high is the error rate? Number of error response /
-     Number of successful responses
+3.  Errors. How high is the error rate? </br>
+    Number of error responses / Number of successful responses
 
 4. Saturation. How full is your service? CPU utilisation, memory
     consumption.
@@ -112,7 +112,7 @@ Deutsch](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
 
    Your HTTP-calls will fail from time to time. So make sure you have
    some retry-mechanism in place. But do not retry naively!
-   E.g. retries make not sense if the http-response-code is 400
+   E.g. retries make no sense if the http response code is 400
    BAD_REQUEST, no matter how often you try the request will never be successful.
    Neither you should do retries on POST requests, HTTP POST requests
    are by definition not idempotent and you could accidentally create a
@@ -121,7 +121,7 @@ Deutsch](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
 
    You should also limit your retries, do not retry indefinitely,
    otherwise you can cause overload on other services, see
-   [cascading failures](https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/)
+   [cascading failures](https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/).
 
    Do not forget to protect your services with timeouts. Missing timeouts
    make I/O calls wait too long and if they pile up they consume all
@@ -177,7 +177,7 @@ function getUsers(userIds) {
 
    Distributed systems are complex. Do not expect that there is
    one person who knows it all. For bug analysis you need multiple
-   people/teams.
+   people or teams.
 
 7. Transport cost is zero.
 
@@ -192,17 +192,18 @@ function getUsers(userIds) {
 8. The network is homogeneous
 
    It's not. Before docker, almost all applications ran on customized,
-   "snowlflaky" servers configured via non-reproducible
+   "snowflaky" servers configured via non-reproducible
    ssh-session. With Kubernetes or AWS ECS you can have clusters with
-   thousands of servers which are configured exactly the same. A
-   single ~DevOps guy can operate thousands of servers! You should
-   also agree on a single data transfer format like
+   thousands of servers which are configured exactly the same. One
+   single DevOps guy can operate thousands of servers! Therefore you
+   should agree on a common cluster management tool with as few
+   clusters as possible. Only then, you gain the real advantages of
+   Docker. Further agree on a single data transfer format like
    [JSON](https://www.json.org/) or [Protocol
    Buffers](https://developers.google.com/protocol-buffers/) with
-   [gRPC](https://grpc.io/). You should strive for as much homogeneity
-   as possible to reduce operation and maintenance costs. In my
-   opinion the homogeneity provided by Docker is its biggest
-   advantage.
+   [gRPC](https://grpc.io/). Strive for as much homogeneity as
+   possible to reduce operation and maintenance costs. In my opinion
+   the homogeneity provided by Docker is its biggest advantage.
 
 
 ## Other things to consider
@@ -215,18 +216,17 @@ function getUsers(userIds) {
   Congratulations you built a distributed monolith.
 
 - Have a good CI/CD pipeline with automatic tests and deployments.
-  Make sure all teams use the same
-  deployment and glue scripts. Use one Docker-Cluster
-  (Kubernetes, AWS ECS, Hashicorp Nomad) for the whole company (as
-  long as you do not exceed hundreds of servers). This will keep the
-  maintenance effort low.
+  Make sure all teams use the same deployment and glue scripts. Use
+  one cluster (Kubernetes, AWS ECS, Hashicorp Nomad) for the whole
+  company (as long as you do not exceed hundreds of servers). This
+  will keep the maintenance effort low.
 
 - If you have reusable modules/libraries, make sure you have
   transitive CI-builds
 
 - Adhere to good coding cloud-native practices, see
-  [[12-factor-app|https://12factor.net]] and
-  [[Site Reliability Engineering|https://landing.google.com/sre/books/]]
+  [12-factor-app](https://12factor.net) and [Site Reliability
+  Engineering](https://landing.google.com/sre/books/)
 
 
 ## Conclusion

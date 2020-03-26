@@ -8,19 +8,19 @@ draft: false
 Recently i decided to switch from MacOS to Linux. I was already an
 Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i
 struggled a little bit with the installation of
-[PostgreSQL](https://www.postgresql.org) For MacOS there is a nice
+[PostgreSQL](https://www.postgresql.org). For MacOS there is a nice
 all-in-one package which i recommend:
-[Postgres.app](https://postgresapp.com) Everything works
+[Postgres.app](https://postgresapp.com). Everything works
 out-of-the-box there. In Ubuntu, on the other hand, we need to adjust
 the default installation a little bit in order to start application
 development.
 
 In this little guide i want to give you a short description how to
 setup PostgreSQL for [Ubuntu 19.04](https://ubuntu.com) for
-development purpose. For the impatient i compiled all important
-commands at the end of this article. So if you are already familiar
-with Linux you can skip the main part.  Keep in mind this guide is not
-for production usage!
+development. For the impatient i compiled all important commands at
+the end of this article. So if you are already familiar with Linux you
+can skip the main part.  Keep in mind this guide is not for production
+usage!
 
 
 ## Installation instructions

@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-03-26T16:44:42+01:00</updated>
+    <updated>2020-03-26T21:48:36+01:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -506,29 +506,29 @@ things.</p>
             <title type="text">Install Postgres on Ubuntu</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/postgres-ubuntu/" />
             <id>https://gerlacdt.github.io/posts/postgres-ubuntu/</id>
-            <updated>2020-03-25T11:18:17+01:00</updated>
+            <updated>2020-03-26T21:14:17+01:00</updated>
             <published>2019-07-26T10:15:34+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
                     <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <summary type="html"><![CDATA[Recently i decided to switch from MacOS to Linux. I was already an Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i struggled a little bit with the installation of PostgreSQL For MacOS there is a nice all-in-one package which i recommend: Postgres.]]></summary>
+            <summary type="html"><![CDATA[Recently i decided to switch from MacOS to Linux. I was already an Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i struggled a little bit with the installation of PostgreSQL. For MacOS there is a nice all-in-one package which i recommend: Postgres.]]></summary>
             
                 <content type="html"><![CDATA[<p>Recently i decided to switch from MacOS to Linux. I was already an
 Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i
 struggled a little bit with the installation of
-<a href="https://www.postgresql.org">PostgreSQL</a> For MacOS there is a nice
+<a href="https://www.postgresql.org">PostgreSQL</a>. For MacOS there is a nice
 all-in-one package which i recommend:
-<a href="https://postgresapp.com">Postgres.app</a> Everything works
+<a href="https://postgresapp.com">Postgres.app</a>. Everything works
 out-of-the-box there. In Ubuntu, on the other hand, we need to adjust
 the default installation a little bit in order to start application
 development.</p>
 <p>In this little guide i want to give you a short description how to
 setup PostgreSQL for <a href="https://ubuntu.com">Ubuntu 19.04</a> for
-development purpose. For the impatient i compiled all important
-commands at the end of this article. So if you are already familiar
-with Linux you can skip the main part.  Keep in mind this guide is not
-for production usage!</p>
+development. For the impatient i compiled all important commands at
+the end of this article. So if you are already familiar with Linux you
+can skip the main part.  Keep in mind this guide is not for production
+usage!</p>
 <h2 id="installation-instructions">Installation instructions</h2>
 <p>First install the deb-package via apt-get:</p>
 <div class="highlight"><div class="chroma">
@@ -826,24 +826,24 @@ position downwards.</p>
             <title type="text">Install Emacs on MacOS</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-macos/" />
             <id>https://gerlacdt.github.io/posts/emacs-macos/</id>
-            <updated>2020-03-25T11:18:17+01:00</updated>
+            <updated>2020-03-26T21:19:44+01:00</updated>
             <published>2019-04-13T10:34:42+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
                     <uri>https://gerlacdt.github.io/</uri>
                     </author>
             <summary type="html"><![CDATA[Yesterday Emacs 26.2 was released, see: https://www.gnu.org/software/emacs/news/NEWS.26.2
-In this short guide i want to show how i install Emacs on my MacBook. I use the vanilla Emacs build from https://emacsformacosx.com/ It is just a simple .dmg file.
+In this short guide i want to show how i install Emacs on my MacBook. I use the vanilla Emacs build from https://emacsformacosx.com/. It is just a simple .dmg file.
 After installing the dmg file, Emacs is now available on your Mac as an application but not in the terminal-app.]]></summary>
             
                 <content type="html"><![CDATA[<p>Yesterday Emacs 26.2 was released, see: <a href="https://www.gnu.org/software/emacs/news/NEWS.26.2">https://www.gnu.org/software/emacs/news/NEWS.26.2</a></p>
 <p>In this short guide i want to show how i install Emacs on my MacBook.
-I use the vanilla Emacs build from <a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a>
+I use the vanilla Emacs build from <a href="https://emacsformacosx.com/">https://emacsformacosx.com/</a>.
 It is just a simple <em>.dmg file</em>.</p>
 <p>After installing the <em>dmg file</em>, Emacs is now available on your Mac as
 an application but not in the terminal-app. The terminal still opens
 the pre-install Emacs version. To make the new version available you
-have to create a bash-script and put in your <code>$PATH</code>.</p>
+have to create a bash-script and put it in your <code>$PATH</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -871,9 +871,9 @@ following line:</p>
 </div><p>For further information see: <a href="https://emacsformacosx.com/tips">https://emacsformacosx.com/tips</a></p>
 <h2 id="my-emacs-startup-workflow">My Emacs startup workflow</h2>
 <p>When i start a session i run the emacs-server with <code>emacs --daemon</code>. This runs emacs in the background. Afterwards you can use
-<code>emacsclient</code> to open files. <em>emacsclient</em> does not startup a full
-Emacs instance but utilises the running emacs-server. Basically emacs
-opens instantly!</p>
+<code>emacsclient</code> to open files. From now on <em>emacsclient</em> does not
+startup a full Emacs instance but utilises the running
+emacs-server. Basically emacs opens instantly!</p>
 <p>Additionally i created some bash aliases in my <code>~/.zshrc</code> or
 <code>~/.bashrc</code> in order to shorten the emacs commands.</p>
 <div class="highlight"><div class="chroma">
@@ -935,21 +935,21 @@ git-commit-messages.</p>
             <title type="text">Find and Replace in multiple files</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/find-and-replace/" />
             <id>https://gerlacdt.github.io/posts/find-and-replace/</id>
-            <updated>2020-03-25T11:18:17+01:00</updated>
+            <updated>2020-03-26T21:24:54+01:00</updated>
             <published>2019-04-13T10:13:14+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
                     <uri>https://gerlacdt.github.io/</uri>
                     </author>
             <summary type="html"><![CDATA[As a software programmer you often have to search and replace a specific string in multiple files because of a refactoring or just improving a variable or function name.
-Normally you can use your IDE or your editor for this. But in bigger codebases with thousands or hundred thousands of lines of code it can be very slow.]]></summary>
+Normally you can use your IDE or your editor for this. But in bigger codebases with thousand or million lines of code it can be very slow.]]></summary>
             
                 <content type="html"><![CDATA[<p>As a software programmer you often have to search and replace a
 specific string in multiple files because of a refactoring or just
 improving a variable or function name.</p>
 <p>Normally you can use your IDE or your editor for this. But in bigger
-codebases with thousands or hundred thousands of lines of code it can
-be very slow. Neither IDEs work for remote SSH-sessions. In such
+codebases with thousand or million lines of code it can be very
+slow. Neither do IDEs work with remote SSH-sessions. In such
 situations the command-line is pretty handy. It is available
 everywhere and it is fast.</p>
 <p>The following command replaces <code>old</code> with <code>new</code> in all <code>*.go</code> files in
@@ -957,16 +957,23 @@ the current directory:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">find . -iname <span class="s1">&#39;*.go&#39;</span> <span class="p">|</span> xargs sed -i <span class="s1">&#39;&#39;</span> -e <span class="s1">&#39;s/old/new/g&#39;</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># bsd tools, e.g. MacOS</span>
+find . -iname <span class="s1">&#39;*.go&#39;</span> <span class="p">|</span> xargs sed -i <span class="s1">&#39;&#39;</span> -e <span class="s1">&#39;s/old/new/g&#39;</span>
+
+<span class="c1"># gnu tools, e.g. Linux</span>
+find . -iname <span class="s1">&#39;*.go&#39;</span> <span class="p">|</span> xargs sed -i -e <span class="s1">&#39;s/old/new/g&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>I use this often in combination with
-<a href="https://git-scm.com/">git</a>. First i commit my lastest changes, so i
-have a clear state. Then i issue the above command. Afterwards i check
-the changes in the files with <code>git diff</code>. If i do not like them,
-reverting is possible with <code>git reset</code>.</p>
+<a href="https://git-scm.com/">git</a>. First i commit my latest changes, so i
+have a clear state. Then i issue the above <code>find-sed</code>
+command. Afterwards i check the changes in the files with <code>git diff</code>. If i do not like them, reverting is possible with <code>git reset</code>.</p>
 ]]></content>
             
             
@@ -999,7 +1006,7 @@ reverting is possible with <code>git reset</code>.</p>
             <title type="text">ag the_silver_searcher, a grep replacement</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/ag-silver-searcher/" />
             <id>https://gerlacdt.github.io/posts/ag-silver-searcher/</id>
-            <updated>2020-03-25T11:18:17+01:00</updated>
+            <updated>2020-03-26T21:12:37+01:00</updated>
             <published>2019-04-13T10:04:01+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -1023,10 +1030,12 @@ current directory and:</p>
 <span class="c1"># -i ignore case, -n print line number, -H print filename</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>Recently i discovered <a href="https://github.com/ggreer/the_silver_searcher">ag the silver searcher</a>.
-<code>ag</code> is much faster than <code>grep</code> and searches directories recursively by default. <code>ag</code> respects out-of-the-box your <code>.gitignore</code> files.</p>
+</div><p>Recently i discovered <a href="https://github.com/ggreer/the_silver_searcher">ag the silver
+searcher</a>. <code>ag</code> is
+much faster than <code>grep</code> and searches directories recursively by
+default. <code>ag</code> respects out-of-the-box your <code>.gitignore</code> files.</p>
 <p>You can install <code>ag</code> on a Mac with <a href="https://brew.sh/">brew</a>, <code>brew install the_silver_searcher</code>.  The following command searches all
-files in your current directory for the string //main//.</p>
+files in your current directory for the string &ldquo;main&rdquo;.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -1093,7 +1102,7 @@ your-custom-folder-to-ignore/
             <title type="text">Emacs Test Regexps</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-test-regexps/" />
             <id>https://gerlacdt.github.io/posts/emacs-test-regexps/</id>
-            <updated>2020-03-25T11:18:17+01:00</updated>
+            <updated>2020-03-26T21:28:02+01:00</updated>
             <published>2019-04-06T10:39:15+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -1114,7 +1123,7 @@ used to visit webpages like:</p>
 expressions and do not support Emacs regular expressions directly. In
 Emacs you have to consider some peculiarities. For example you have to
 escape parentheses.</p>
-<p>Recently i learnt about <code>M-x regexp-builder</code>. With it you can test
+<p>Recently i learnt about <code>M-x regexp-builder</code> with which you can test
 your regular-expressions interactively. Just enter the regular
 expression and the text in your buffer will be highlighted
 immediately. It even considers different capture groups and highlights
@@ -1146,7 +1155,7 @@ them in different colours. Very nice!</p>
             <title type="text">Things to consider with microservices</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/microservices/" />
             <id>https://gerlacdt.github.io/posts/microservices/</id>
-            <updated>2020-03-25T11:18:17+01:00</updated>
+            <updated>2020-03-26T21:47:36+01:00</updated>
             <published>2019-03-30T09:53:54+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -1189,7 +1198,7 @@ technology. And soon you have a dozen different tech stacks to
 support. Some teams build their own tech-knowledge silos. And don&rsquo;t
 get me wrong here, it is totally fine if a team has its
 domain-knowledge silo, but it is not fine if the team is the only one
-in the company who uses a fancy programming language.  At google, they
+in the company who uses a fancy programming language.  At Google, they
 have thousands of engineers and they try to stick to only 4 languages
 in the backend. The supported languages are C++, Java, Python and Go,
 see <a href="https://arxiv.org/pdf/1702.01715.pdf">Software Engineering at Google, Fergus
@@ -1197,11 +1206,11 @@ Henderson</a>.  If a backend team
 wants to start with another language they need to argument very hard
 why they cannot fulfil their job with the company-wide supported
 languages. There is a clear decision-process in place how to introduce
-new a technology. This restricts the developers from using the newest
+a new technology. This restricts the developers from using the newest
 bleeding-edge technology.  Another advantage is that one can focus on
-business problems and avoid discussions about tech exploration
-etc. Your internal libraries need to be written and supported only in
-a few languages. Developers will also have an easy time when they want
+business problems and avoid discussions about tech explorations
+etc. Your internal libraries need to be written in and supported for
+few languages. Developers will also have an easy time when they want
 to switch teams. Team rotation is encouraged, facilitates
 knowledge-transfer and pushes developers out of their comfort zone
 which makes them more valuable.</p>
@@ -1210,14 +1219,14 @@ an overview for the supported tools, programming languages and
 platforms. A radar helps to keep track of all technology used in your
 company.</p>
 <h2 id="have-a-good-monitoringtracinglogging-in-place">Have a good Monitoring/Tracing/Logging in place</h2>
-<p>We suffered sometime from logging problems because our ~ElasticSearch
+<p>We suffered sometime from logging problems because our ElasticSearch
 cluster was overloaded or some indices had conflicts. Logging is
 hard. Make sure you have clear logging-guildlines. Do not log too
 much, at best you have <a href="https://peter.bourgon.org/blog/2016/02/07/logging-v-instrumentation.html">silent
 services</a>,
 i.e. only log if a manual intervention is needed in case of an
 error. Logging is fine for debugging and error tracking in the
-development-Stage but it should not be overused in production. Be
+development stage but it should not be overused in production. Be
 careful if your monitoring and alarming is based on logging. If your
 log-cluster is flooded, your monitoring will not work either!</p>
 <p>Have strict rules for monitoring. No service should go into production
@@ -1235,8 +1244,8 @@ fast and screw up your metrics.</p>
 <p>Traffic. How many Requests per second (RPS) do we serve?</p>
 </li>
 <li>
-<p>Errors. How high is the error rate? Number of error response /
-Number of successful responses</p>
+<p>Errors. How high is the error rate? </br>
+Number of error responses / Number of successful responses</p>
 </li>
 <li>
 <p>Saturation. How full is your service? CPU utilisation, memory
@@ -1251,7 +1260,7 @@ Deutsch</a></p>
 <p>The network is reliable.</p>
 <p>Your HTTP-calls will fail from time to time. So make sure you have
 some retry-mechanism in place. But do not retry naively!
-E.g. retries make not sense if the http-response-code is 400
+E.g. retries make no sense if the http response code is 400
 BAD_REQUEST, no matter how often you try the request will never be successful.
 Neither you should do retries on POST requests, HTTP POST requests
 are by definition not idempotent and you could accidentally create a
@@ -1259,7 +1268,7 @@ lot of resources like orders or trigger payments. Your customers will not
 be happy.</p>
 <p>You should also limit your retries, do not retry indefinitely,
 otherwise you can cause overload on other services, see
-<a href="https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/">cascading failures</a></p>
+<a href="https://landing.google.com/sre/sre-book/chapters/addressing-cascading-failures/">cascading failures</a>.</p>
 <p>Do not forget to protect your services with timeouts. Missing timeouts
 make I/O calls wait too long and if they pile up they consume all
 your memory or other resources like a thread pool. In the worst case you service will be killed by your docker scheduler because the memory limit is exceeded.</p>
@@ -1333,7 +1342,7 @@ Load Balancer</a> (ALB) for service discovery.</p>
 <p>There is one administrator.</p>
 <p>Distributed systems are complex. Do not expect that there is
 one person who knows it all. For bug analysis you need multiple
-people/teams.</p>
+people or teams.</p>
 </li>
 <li>
 <p>Transport cost is zero.</p>
@@ -1347,17 +1356,18 @@ responsibilities.</p>
 <li>
 <p>The network is homogeneous</p>
 <p>It&rsquo;s not. Before docker, almost all applications ran on customized,
-&ldquo;snowlflaky&rdquo; servers configured via non-reproducible
+&ldquo;snowflaky&rdquo; servers configured via non-reproducible
 ssh-session. With Kubernetes or AWS ECS you can have clusters with
-thousands of servers which are configured exactly the same. A
-single ~DevOps guy can operate thousands of servers! You should
-also agree on a single data transfer format like
+thousands of servers which are configured exactly the same. One
+single DevOps guy can operate thousands of servers! Therefore you
+should agree on a common cluster management tool with as few
+clusters as possible. Only then, you gain the real advantages of
+Docker. Further agree on a single data transfer format like
 <a href="https://www.json.org/">JSON</a> or <a href="https://developers.google.com/protocol-buffers/">Protocol
 Buffers</a> with
-<a href="https://grpc.io/">gRPC</a>. You should strive for as much homogeneity
-as possible to reduce operation and maintenance costs. In my
-opinion the homogeneity provided by Docker is its biggest
-advantage.</p>
+<a href="https://grpc.io/">gRPC</a>. Strive for as much homogeneity as
+possible to reduce operation and maintenance costs. In my opinion
+the homogeneity provided by Docker is its biggest advantage.</p>
 </li>
 </ol>
 <h2 id="other-things-to-consider">Other things to consider</h2>
@@ -1372,11 +1382,10 @@ Congratulations you built a distributed monolith.</p>
 </li>
 <li>
 <p>Have a good CI/CD pipeline with automatic tests and deployments.
-Make sure all teams use the same
-deployment and glue scripts. Use one Docker-Cluster
-(Kubernetes, AWS ECS, Hashicorp Nomad) for the whole company (as
-long as you do not exceed hundreds of servers). This will keep the
-maintenance effort low.</p>
+Make sure all teams use the same deployment and glue scripts. Use
+one cluster (Kubernetes, AWS ECS, Hashicorp Nomad) for the whole
+company (as long as you do not exceed hundreds of servers). This
+will keep the maintenance effort low.</p>
 </li>
 <li>
 <p>If you have reusable modules/libraries, make sure you have
@@ -1384,8 +1393,8 @@ transitive CI-builds</p>
 </li>
 <li>
 <p>Adhere to good coding cloud-native practices, see
-[[12-factor-app|https://12factor.net]] and
-[[Site Reliability Engineering|https://landing.google.com/sre/books/]]</p>
+<a href="https://12factor.net">12-factor-app</a> and <a href="https://landing.google.com/sre/books/">Site Reliability
+Engineering</a></p>
 </li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
