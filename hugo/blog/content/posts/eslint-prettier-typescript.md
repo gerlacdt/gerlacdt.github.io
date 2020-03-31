@@ -74,7 +74,7 @@ module.exports = {
 ```
 
 ```bash
-# eslintignore
+# .eslintignore
 
 # you should ignore irrelevant *.js and *.ts files which do not belong to you project
 

@@ -136,6 +136,7 @@ Donald Knuth
 Leslie Lamport
 
 > Debugging is like being the detective in a crime movie where you are also the murderer.
+
 Filipe Fortes
 
 > Good specifications will always improve programmer productivity far better than any programming tool or technique.
@@ -169,6 +170,7 @@ Grace Hopper
 Grace Hopper
 
 > There are a million ways to lose a work day, but not even a single way to get one back.
+
 Tom DeMarco
 
 > The sooner you start to code, the longer the program will take.
