@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-03-26T21:57:03+01:00</updated>
+    <updated>2020-04-03T14:12:18+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -18,7 +18,7 @@
             <title type="text">ESlint &#43; Prettier &#43; Typescript = Consistency</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/eslint-prettier-typescript/" />
             <id>https://gerlacdt.github.io/posts/eslint-prettier-typescript/</id>
-            <updated>2020-03-26T21:56:37+01:00</updated>
+            <updated>2020-04-03T14:11:48+02:00</updated>
             <published>2020-03-24T10:28:27+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -46,7 +46,7 @@ Javascript, Typescript and many other supported languages.</p>
 <p>The same is true for linters. They help you to comply with common best
 practices and to avoid potential problems. Linters and code formatters
 are essential tools for <strong>state-of-the-art software engineering</strong>.</p>
-<p>In this article i show you how to setup <a href="https://eslint.org/">ESlint</a>
+<p>In this article I show you how to setup <a href="https://eslint.org/">ESlint</a>
 for <a href="https://www.typescriptlang.org/">Typescript</a> with Prettier
 support. So let&rsquo;s start.</p>
 <p>First you need to install ESlint in your (Typescript) project:</p>
@@ -192,7 +192,7 @@ global npm modules, then you can use them directly. This enables
 editors to leverage prettier and ESlint too. You are then able to
 incorporate both tools in your usual workflow. For example, i
 configured my editor to show ESlint errors during typing and
-formatting is done automatically when i save the current file.</p>
+formatting is done automatically when I save the current file.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -228,7 +228,7 @@ npm install --save-dev lint-staged husky
 </code></pre></td></tr></table>
 </div>
 </div><p>After the installation you need configure husky and lint-staged
-modules in your local project&rsquo;s <code>package.json</code>. In this example, i run
+modules in your local project&rsquo;s <code>package.json</code>. In this example, I run
 <code>eslint --fix</code> and <code>prettier --write</code> during a pre-commit for all
 changed files. This makes sure that no inconsistent code will ever be
 committed to your codebase.</p>
@@ -301,11 +301,11 @@ important characteristics of a good codebase. Especially if your
 project has multiple contributors but even if you work
 alone. Consistency keeps the code maintainable and helps to keep up
 high quality.</p>
-<p>When i start working in a new team on a existing codebase, the first
-thing i do is checking the codebase regarding consistency. Is the
+<p>When I start working in a new team on a existing codebase, the first
+thing I do is checking the codebase regarding consistency. Is the
 formatting always the same? Is immutability preferred? Are threads or
 asynchronous programming with callbacks used? Or promises? Or
-<em>async-await</em>? Can i see re-emergent patterns? Are class, function and
+<em>async-await</em>? Can I see re-emergent patterns? Are class, function and
 variable names consistent? Is Domain Driven Design used?</p>
 <p>The main point is that consistency should be apparent across the whole
 codebase and that new team members are able to deduct how code should
@@ -331,7 +331,7 @@ requests. To avoid senseless work, be consistent all the time with
 your rules and guidelines and stick to them forcefully. Whenever you
 can enforce them or check them automatically, do it. It will save you
 a lot of time.</p>
-<p>I hope i could convince you that consistency matters. And that the
+<p>I hope I could convince you that consistency matters. And that the
 winning trio with ESlint, Prettier and Typescript improves your
 codebase.</p>
 ]]></content>
@@ -1155,7 +1155,7 @@ them in different colours. Very nice!</p>
             <title type="text">Things to consider with microservices</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/microservices/" />
             <id>https://gerlacdt.github.io/posts/microservices/</id>
-            <updated>2020-03-26T21:48:57+01:00</updated>
+            <updated>2020-04-03T14:09:42+02:00</updated>
             <published>2019-03-30T09:53:54+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -1252,7 +1252,7 @@ Number of error responses / Number of successful responses</p>
 consumption.</p>
 </li>
 </ol>
-<h2 id="don-forget-the-8-fallacies-of-distributed-computing">Don&rsquo; forget the 8 fallacies of distributed computing</h2>
+<h2 id="dont-forget-the-8-fallacies-of-distributed-computing">Don&rsquo;t forget the 8 fallacies of distributed computing</h2>
 <p><a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">Fallacies of distributed computing by Peter
 Deutsch</a></p>
 <ol>

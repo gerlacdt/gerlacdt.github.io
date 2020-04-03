@@ -103,7 +103,7 @@ signals](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed
     consumption.
 
 
-## Don' forget the 8 fallacies of distributed computing
+## Don't forget the 8 fallacies of distributed computing
 
 [Fallacies of distributed computing by Peter
 Deutsch](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)

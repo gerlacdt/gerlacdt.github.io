@@ -30,7 +30,7 @@ practices and to avoid potential problems. Linters and code formatters
 are essential tools for **state-of-the-art software engineering**.
 
 
-In this article i show you how to setup [ESlint](https://eslint.org/)
+In this article I show you how to setup [ESlint](https://eslint.org/)
 for [Typescript](https://www.typescriptlang.org/) with Prettier
 support. So let's start.
 
@@ -120,7 +120,7 @@ global npm modules, then you can use them directly. This enables
 editors to leverage prettier and ESlint too. You are then able to
 incorporate both tools in your usual workflow. For example, i
 configured my editor to show ESlint errors during typing and
-formatting is done automatically when i save the current file.
+formatting is done automatically when I save the current file.
 
 ``` bash
 # install globally
@@ -144,7 +144,7 @@ npm install --save-dev lint-staged husky
 ```
 
 After the installation you need configure husky and lint-staged
-modules in your local project's `package.json`. In this example, i run
+modules in your local project's `package.json`. In this example, I run
 `eslint --fix` and `prettier --write` during a pre-commit for all
 changed files. This makes sure that no inconsistent code will ever be
 committed to your codebase.
@@ -196,11 +196,11 @@ project has multiple contributors but even if you work
 alone. Consistency keeps the code maintainable and helps to keep up
 high quality.
 
-When i start working in a new team on a existing codebase, the first
-thing i do is checking the codebase regarding consistency. Is the
+When I start working in a new team on a existing codebase, the first
+thing I do is checking the codebase regarding consistency. Is the
 formatting always the same? Is immutability preferred? Are threads or
 asynchronous programming with callbacks used? Or promises? Or
-*async-await*? Can i see re-emergent patterns? Are class, function and
+*async-await*? Can I see re-emergent patterns? Are class, function and
 variable names consistent? Is Domain Driven Design used?
 
 The main point is that consistency should be apparent across the whole
@@ -228,6 +228,6 @@ your rules and guidelines and stick to them forcefully. Whenever you
 can enforce them or check them automatically, do it. It will save you
 a lot of time.
 
-I hope i could convince you that consistency matters. And that the
+I hope I could convince you that consistency matters. And that the
 winning trio with ESlint, Prettier and Typescript improves your
 codebase.
