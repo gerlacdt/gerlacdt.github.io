@@ -85,21 +85,76 @@ important.
 
 ##### Tests should be fast
 
-https://martinfowler.com/bliki/UnitTest.html
-* compile suite and commit suite (from Martin Fowler)
-* compile suite: run it multiple times a minute (can be a single test or test file, no need to run the complete test suite)
-* commit suite: run before I am ready to commit (finished the feature, fixed the bug)
 
-* fast (few seconds), at best you need not loose your focus
-  (compile/commit suite), run them frequently (during compilation or
-  commit)
+A useful test suite will be run frequently, sometimes multipe times a
+minute, and therefore must be fast, i.e. a few seconds at
+most. Loosing focus during the run is unwanted because it decreases
+productivity and breaks the flow. Further if unit tests are slow,
+developers will not run tests regularly or skip running them
+completely and tests will loose their purpose to provide fast
+feedback. Martin Fowler speaks of a **[compile suite and a commit
+suite](https://martinfowler.com/bliki/UnitTest.html)**. Normally
+developers work on a specific part or unit of a system like a single
+file or class. With every compilation, they only run the related tests
+to get feedback as fast as possible. Hence this group of tests is
+"compile suite". The compile suite comprises the smallest set of tests
+which verify the correctness of the unit of the system which is
+currently worked on. After finishing work on a feature or bugfix,
+before committing, all unit tests are run to check if nothing else is
+broken. Hence these tests are called the "commit suite".
+
+
+The optimal duration of a unit test is in the nanosecond range. Even
+if a few hundred milliseconds sounds fast for a single test, it will
+be much too slow. For a project with multiple thousand tests, it would
+take minutes to complete all tests. Developer will only reluctantly
+wait or even worse they will skip running them completely.
+
+
+Tests, relying on network calls, database queries or time related
+logic, are inherently slow. In order to make these tests fast Test
+Doubles can be used. With a Test Double you *inject* a fake
+implementation in order to replace the database or http call. This
+technique is well know as [Dependency
+Injection](https://martinfowler.com/articles/injection.html#InversionOfControl).
+
+In the code block below the UserService uses a UserRepository in order
+to carry out the intended business logic. A real UserRepository talks
+naturally to a database and is too slow for a good unit test. In order
+to make the test fast we substitute the real implementation with a
+FakeUserRepository.
+
+``` java
+public class UserServiceTest {
+
+    // test double
+    UserRepository fakeUserRepository = new FakeUserRepository();
+
+    // dependency injection
+    UserService sut = new UserService(fakeUserRepository);
+
+    @Test
+    public void registerUser_validUser_success() {
+        // arrange
+        User user = new User("foobar");
+
+        // act
+        sut.registerUser(user);
+
+        // assert
+        User u = sut.getUser(user.getId());
+        assertNotNull(u);
+    }
+}
+```
 
 ##### Test should be isolated
 * isolated from each other, i.e. they are independent from each other
   and can run in any order. It should be not problem to run tests
   concurrently and in parallel. The workload of big test suites can be
-  distributed across different machines.
-
+  distributed across different machines. Every unit test should be
+  able to run alone without any dependencies (other unit tests, File
+  or network I/O, database)
 
 ##### Test should be deterministic
 * deterministic (they should be green if the behavior of the
@@ -164,7 +219,7 @@ with your test suite.
 
 
 
-#### Use Test Doubles wisely
+#### Use Test Doubles wisely (or the fallacy of mocking)
 
 * classical and mockist testing
 https://martinfowler.com/articles/mocksArentStubs.html
@@ -198,11 +253,9 @@ when appropriate: caching feature, check if cache was called
   the SUT.
 
 
-#### The fallacy of mocking
-
-Mocks make your tests stable and fast. They prevent flaky tests because
-mocks replace unstable and slow network calls with predefined,
-hard-coded behaviour.
+The fallacy of mocking -- Mocks make your tests stable and fast. They
+prevent flaky tests because mocks replace unstable and slow network
+calls with predefined, hard-coded behaviour.
 
 But there is a catch. Overusing mocks is dangerous. There are many
 reason why mocks contribute to worsening the codebase:
