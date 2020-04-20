@@ -1,6 +1,6 @@
 ---
 title: "Writing better Unit Tests"
-date: 2020-03-31T20:08:51+02:00
+date: 2020-04-20T08:08:00+02:00
 tags: ["programming", "testing"]
 draft: true
 ---
@@ -11,12 +11,12 @@ draft: true
 
 TDD and test engineering culture is considered best practice these
 days. Still I often encounter projects without tests or with bad
-tests. **Brittle** tests are bad. Maybe your experienced this
-yourself, you made some changes in a specific part of the system and
-suddenly a lot of other tests fail which have nothing to do with this
-specific part of the system. Basically a test is brittle if the test
-fails when a developer makes unrelated changes to the production
-code. Tests can also fail because they are **flaky**. Flaky tests are
+tests. **Brittle** tests are bad. Maybe you experienced this yourself,
+you made some changes in a specific part of the system and suddenly a
+lot of other tests fail which have nothing to do with this specific
+part of the system. Basically a test is brittle if the test fails when
+a developer makes unrelated changes to the production code. Tests can
+also fail because they are **flaky**. Flaky tests are
 non-deterministic due to relying on remote systems, making network
 calls or accessing remote databases. This causes tests to randomly
 succeed or fail even when production code has not changed.
@@ -87,7 +87,7 @@ important.
 ##### Tests should be fast
 
 
-A useful test suite will be run frequently, sometimes multipe times a
+A useful test suite will be run frequently, sometimes multiple times a
 minute, and therefore must be fast, i.e. a few seconds at
 most. Loosing focus during the run is unwanted because it decreases
 productivity and breaks the flow. Further if unit tests are slow,
@@ -148,14 +148,66 @@ public class UserServiceTest {
 }
 ```
 
-##### Test should be isolated
-isolated from each other, i.e. they are independent from each other
-and can run in any order. It should be not problem to run tests
-concurrently and in parallel. The workload of big test suites can be
-distributed across different machines. Every unit test should be able
-to run alone without any dependencies (other unit tests, File or
-network I/O, database)
+##### Tests should be isolated
 
+Tests should be independent from each other. It must be possible to
+run the tests in any order, concurrently or in parallel. This becomes
+especially important when the project is big and contains thousand of
+tests. In order to speed up the build, the workload can be distributed
+across different machines. The distribution logic is very simple if
+the tests are isolated. Contrary, it would be very hard or even
+impossible to distribute tests which make up a complex dependency
+graph. Further any single unit test should be able to run alone
+without any dependencies like other unit tests, file or network I/O,
+and databases.
+
+Below there is an example of a bad unit test. The second test depends
+on the first one and it will fail if the first test does not run
+before or fails. Not only this eradicates the possibility to
+distribute the tests but also developers will have a hard time to
+figure out the root cause of the potential error.
+
+``` java
+// BAD
+// tests depend on each other and cannot run in random order or concurrently
+
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class BankAccountServiceOrderedTest {
+
+    BankAccountService sut = new BankAccountService();
+    User user = new User("userId");
+
+    @Test
+    @Order(1)
+    public void createAccount_validUser_ok() {
+        // act
+        sut.createAccount(user);
+
+        // assert
+        boolean actual = sut.hasAccount(user.getId());
+        assertTrue(actual);
+    }
+
+    @Test
+    @Order(2)
+    public void deposit_100Dollars_ok() {
+        // arrange
+        Integer amount = 100;
+
+        // act
+        Integer actual = sut.deposit(user, amount);
+
+        // assert
+        Integer expected = 100;
+        assertEquals(expected, actual);
+    }
+}
+```
+
+
+The second example shows a group of good unit tests. Both tests are
+independent. The small cost of adding 2-3 lines per tests is more than
+acceptable.
 
 ``` java
 // GOOD
@@ -204,70 +256,52 @@ public class BankAccountServiceTest {
 }
 ```
 
+##### Tests should be deterministic
 
-``` java
+A deterministic test never changes its outcome when there was no
+change in behaviour. A test which switches from green to red or the
+other way around without any change is called flaky. Test Doubles are
+a good way to get rid of flaky dependencies like external network or
+database calls. The earlier example with the FakeUserRepository
+demonstrates this.
 
-// BAD EXAMPLE
-// tests depend on each other and cannot run in random order or concurrently
+##### Tests should focus on a single unit of the system
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class BankAccountServiceOrderedTest {
+A unit test should focus on a single part of the system. If a unit
+tests breaks, it should be easy to find the cause of the problem. The
+other way around is also true: If someone changes code of a unit, only
+corresponding unit tests should break. If you need to start a debugger
+to figure out what went wrong, the chance is high that your tests are
+to diverse and include much more than a single unit.
 
-    BankAccountService sut = new BankAccountService();
-    User user = new User("userId");
+Unit tests which not focus on a single unit tend to be brittle because
+they will fail if some other part of the system changes. This
+contradicts the definition above. Brittle tests are a serious problem
+because developers loose trust in the test suite and they neglect
+badly needed future refactorings. This hampers maintainability and
+causes the quality of the codebase to degrade. More often than not, in
+many projects existing unit tests are more a burden than a backing for
+the developers.
 
-    @Test
-    @Order(1)
-    public void createAccount_validUser_ok() {
-        // act
-        sut.createAccount(user);
 
-        // assert
-        boolean actual = sut.hasAccount(user.getId());
-        assertTrue(actual);
-    }
+##### Tests should be enduring
 
-    @Test
-    @Order(2)
-    public void deposit_100Dollars_ok() {
-        // arrange
-        Integer amount = 100;
+Strive for unchangeable tests. A test should be written once and never
+be touched except there is a change of behaviour in the corresponding
+unit. Changes of the internal implementation should never break a
+test. Like i mentioned earlier these are brittle tests. We should
+prevent them at any cost.
 
-        // act
-        Integer actual = sut.deposit(user, amount);
+Brittle tests can creep into the codebase because of the overuse of
+mocks. Mocks verify if specific methods get called. Hence mocks know
+about the internal implementation which makes the tests prone to
+failures. Further if the internal implementation change, you need to
+change all tests which uses the mock. In large codebases this could
+mean a lot of effort.
 
-        // assert
-        Integer expected = 100;
-        assertEquals(expected, actual);
-    }
-}
-```
+TODO Only test *public* methods, prevent brittleness.
 
-##### Test should be deterministic
-* deterministic (they should be green if the behavior of the
-  production code did not change, on the other side tests should only
-  fail if the behavior has changed) NOT FLAKY
-
-##### Test should focus on a single unit of the system
-* Focus on a single unit/part of the system. If a unit tests breaks it
-  should be clear where the problem lies. The other way around is also
-  true: If someone changes code of a unit, only corresponding unit
-  tests should break. If dozen of other tests fail you probably have
-  **brittle** tests. If this happens often to new developers, this
-  will be a serious problem because developers loose trust in the test
-  suite and they neglect badly needed future refactorings. This
-  hampers maintainability and causes the quality of the codebase to
-  degrade. More often than not, this happens to many projects, and the
-  existing unit test are rather a burden than backing for the
-  developers. This makes it easy to understand where the problem lies.
-  If you need to start a debugger to understand a failing, the chance
-  is high your tests is testing a single unit.
-
-##### Test should be stable (avoid brittle and flaky tests)
-* prevent brittle tests (if internal details change, tests should not
-  break)
-
-##### Test should be clear, concise and complete
+##### Tests should be clear, concise and complete
 * test should be clear, concise and complete (DAMP over DRY), no
   if/loop or other complicated logic, simple sequence of statements
   Cognitive load should be reduced
@@ -280,13 +314,6 @@ public class BankAccountServiceOrderedTest {
   * Tests are an indicator if the production code design is OK! If you
     have to write complicated tests with a lot of setup code, maybe
     something is wrong.
-
-
-
-##### Test should be enduring
-* an enduring test is written once. you should never need to change
-  the test except the behavior of the corresponding unit changed. ->
-  Avoid brittle tests
 
 
 ##### Tests should give you confidence
