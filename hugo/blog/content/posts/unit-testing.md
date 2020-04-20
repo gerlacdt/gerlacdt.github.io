@@ -11,25 +11,25 @@ draft: true
 
 TDD and test engineering culture is considered best practice these
 days. Still I often encounter projects without tests or with bad
-tests. **Brittle** tests are bad, e.g. when a developer made some
-changes in a specific part of the system and suddenly a lot of tests
-fail which have nothing to do with this specific part of the
-system. Basically a test is brittle if the test fails when a developer
-makes unrelated changes to the production code. Tests can also fail
-because they are **flaky**. Flaky tests are non-deterministic due to
-relying on remote systems, making network calls or accessing remote
-databases which data is not owned by the test. This causes tests to
-randomly succeed or fail even when production code has not changed.
+tests. **Brittle** tests are bad. Maybe your experienced this
+yourself, you made some changes in a specific part of the system and
+suddenly a lot of other tests fail which have nothing to do with this
+specific part of the system. Basically a test is brittle if the test
+fails when a developer makes unrelated changes to the production
+code. Tests can also fail because they are **flaky**. Flaky tests are
+non-deterministic due to relying on remote systems, making network
+calls or accessing remote databases. This causes tests to randomly
+succeed or fail even when production code has not changed.
 
 Both, brittle and flaky, tests are a serious problems in a codebase
-and should be avoided at all cost. Otherwise they will succumb
-progressively more and more time and effort of your
-developers. Finally developers are kept busy to repair broken tests
-and productivity suffers enormously. This can happen in disguise and
-developers are not even aware of the problem. In some companies the
-test coverage is treated as a key metric. Hence if the coverage high,
-nobody will question the current state. Maybe all people involved are
-very proud of the high coverage, not recognizing their real problem.
+and should be avoided. Otherwise they will succumb progressively more
+and more time and effort of your developers. Finally developers are
+kept busy with repairing broken tests and productivity suffers
+enormously. This can happen in disguise and developers are not even
+aware of the problem. In some companies test coverage is treated as a
+key metric. Hence if the coverage high, nobody will question the
+current state. Maybe all people involved are very proud of the high
+coverage, not recognizing their real problem.
 
 Maintainable, fast and deterministic unit tests build the foundation
 of a sustainable codebase. But unit tests alone are not enough to
@@ -40,31 +40,32 @@ readiness. The **test pyramid** visualizes this.
 <img src="/img/test_pyramid.png" alt="https://stackoverflow.com/questions/56696132/why-is-ui-testing-at-the-top-of-the-test-pyramid" class="medium-zoom-image" width="300">
 
 
-System tests and UI tests are good enough to check your product as a
-whole, but these tests are slow, flaky, not repeatable and often are
-conducted manually which makes them bad candidates for daily releases
-and continuous integration. If UI tests or system tests fail, they
-will not tell developers where the problem lies. Therefore developers
-have to make big efforts in order to trace the bug which triggered a
-UI test to fail. If you rely heavily on manual regression testing
-instead of having a exhaustive unit test suite in place is an
-anti-pattern, the **test ice cone**. It is the inverse of the test
-pyramid and leads to an unsustainable codebase because failing system
-and UI tests leave developers in the dark about the root cause of the
-failing test.
+System tests and UI tests are good to check your product as a whole,
+but these tests are slow, flaky, not repeatable and often are
+conducted manually which makes them bad candidates for [continuous
+integration and
+delivery](https://martinfowler.com/books/continuousDelivery.html). If
+UI tests or system tests fail, developers have a hard time to locate
+the problem. It is an onerous task to trace the bug which triggered a
+UI test to fail. If a project relies heavily on manual regression
+testing instead of an exhaustive unit test suite is an anti-pattern,
+the **test ice cone**. It is the inverse of the test pyramid and leads
+to an unsustainable codebase because failing system and UI tests leave
+developers in the dark about the root cause.
 
 <img src="/img/ice_cone.jpg" alt="https://watirmelon.blog/testing-pyramids/" class="medium-zoom-image" width="300">
 
 In this article I will focus on unit tests. Good unit tests should be
 clean, maintainable and most notably "useful" for developers. The main
 purpose of tests is to save time for developers and keep the code
-quality high. A negative example is having a high code coverage, but
-developers are busy by fixing 90% of their precious time failing
-tests, is a pretty bad situation. Careless use of unit testing can
-result in a system that requires more effort to maintain than without
-tests and takes more effort to change without actually improving
-confidence in the next production release. It is crucial to identify
-bad tests and to know how to write good tests.
+quality high. But careless use of testing can have also negative
+effects on productivity and code quality. E.g if developers loose a
+majority of their time fixing tests instead of building new
+features. "Wrong" testing can result in a system that requires more
+effort to maintain than without tests and takes more effort to change
+without actually improving confidence in the next production
+release. It is crucial to identify bad tests and to know how to write
+good tests.
 
 
 This blog post is built upon the shoulder of giants. Basically I draw
@@ -91,38 +92,37 @@ minute, and therefore must be fast, i.e. a few seconds at
 most. Loosing focus during the run is unwanted because it decreases
 productivity and breaks the flow. Further if unit tests are slow,
 developers will not run tests regularly or skip running them
-completely and tests will loose their purpose to provide fast
+completely. Then tests will loose their purpose to provide fast
 feedback. Martin Fowler speaks of a **[compile suite and a commit
 suite](https://martinfowler.com/bliki/UnitTest.html)**. Normally
 developers work on a specific part or unit of a system like a single
 file or class. With every compilation, they only run the related tests
-to get feedback as fast as possible. Hence this group of tests is
+to get feedback as fast as possible. Hence this group of tests is the
 "compile suite". The compile suite comprises the smallest set of tests
 which verify the correctness of the unit of the system which is
-currently worked on. After finishing work on a feature or bugfix,
-before committing, all unit tests are run to check if nothing else is
-broken. Hence these tests are called the "commit suite".
+currently worked on. After finishing a feature or bugfix, before
+committing, all unit tests are run to check if nothing else is
+broken. Hence this group of tests is called the "commit suite".
 
 
-The optimal duration of a unit test is in the nanosecond range. Even
-if a few hundred milliseconds sounds fast for a single test, it will
-be much too slow. For a project with multiple thousand tests, it would
-take minutes to complete all tests. Developer will only reluctantly
-wait or even worse they will skip running them completely.
+The optimal duration of a unit test is in the nanosecond range. A few
+hundred milliseconds sounds fast for a single unit test but it is too
+slow if you think about a project with multiple thousand tests. All
+tests would take minutes to complete. A developer will only
+reluctantly wait or even worse he will skip running the tests.
 
 
 Tests, relying on network calls, database queries or time related
-logic, are inherently slow. In order to make these tests fast Test
-Doubles can be used. With a Test Double you *inject* a fake
-implementation in order to replace the database or http call. This
-technique is well know as [Dependency
+logic, are inherently slow. **Test Doubles** are a method to make
+tests fast and reliable. With a Test Double you *inject* a fake
+implementation replacing the database or http call. This technique is
+well know as [Dependency
 Injection](https://martinfowler.com/articles/injection.html#InversionOfControl).
 
-In the code block below the UserService uses a UserRepository in order
-to carry out the intended business logic. A real UserRepository talks
-naturally to a database and is too slow for a good unit test. In order
-to make the test fast we substitute the real implementation with a
-FakeUserRepository.
+In the code block below the UserService uses the UserRepository to
+carry out the intended business logic. A real UserRepository talks
+naturally to a database and is too slow for a unit test. Here the real
+database implementation is substituted with a FakeUserRepository.
 
 ``` java
 public class UserServiceTest {
@@ -149,12 +149,99 @@ public class UserServiceTest {
 ```
 
 ##### Test should be isolated
-* isolated from each other, i.e. they are independent from each other
-  and can run in any order. It should be not problem to run tests
-  concurrently and in parallel. The workload of big test suites can be
-  distributed across different machines. Every unit test should be
-  able to run alone without any dependencies (other unit tests, File
-  or network I/O, database)
+isolated from each other, i.e. they are independent from each other
+and can run in any order. It should be not problem to run tests
+concurrently and in parallel. The workload of big test suites can be
+distributed across different machines. Every unit test should be able
+to run alone without any dependencies (other unit tests, File or
+network I/O, database)
+
+
+``` java
+// GOOD
+// tests can run in random order and concurrently
+
+@TestMethodOrder(MethodOrderer.Random.class)
+public class BankAccountServiceTest {
+
+    BankAccountService sut = new BankAccountService();
+
+    @BeforeEach
+    public void beforeEach() {
+        sut.resetAll();
+    }
+
+    @Test
+    public void deposit_100Dollars_ok() {
+        // arrange
+        User user = new User("userId");
+        sut.createAccount(user);
+        Integer amount = 100;
+
+        // act
+        Integer actual = sut.deposit(user, amount);
+
+        // assert
+        Integer expected = 100;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void withdraw_50Dollars_ok() {
+        // arrange
+        User user = new User("userId");
+        sut.createAccount(user);
+        sut.deposit(user, 100);
+        Integer amount = 50;
+
+        // act
+        Integer actual = sut.withdraw(user, amount);
+
+        // assert
+        Integer expected = 50;
+        assertEquals(expected, actual);
+    }
+}
+```
+
+
+``` java
+
+// BAD EXAMPLE
+// tests depend on each other and cannot run in random order or concurrently
+
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class BankAccountServiceOrderedTest {
+
+    BankAccountService sut = new BankAccountService();
+    User user = new User("userId");
+
+    @Test
+    @Order(1)
+    public void createAccount_validUser_ok() {
+        // act
+        sut.createAccount(user);
+
+        // assert
+        boolean actual = sut.hasAccount(user.getId());
+        assertTrue(actual);
+    }
+
+    @Test
+    @Order(2)
+    public void deposit_100Dollars_ok() {
+        // arrange
+        Integer amount = 100;
+
+        // act
+        Integer actual = sut.deposit(user, amount);
+
+        // assert
+        Integer expected = 100;
+        assertEquals(expected, actual);
+    }
+}
+```
 
 ##### Test should be deterministic
 * deterministic (they should be green if the behavior of the
