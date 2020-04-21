@@ -299,12 +299,188 @@ failures. Further if the internal implementation change, you need to
 change all tests which uses the mock. In large codebases this could
 mean a lot of effort.
 
-TODO Only test *public* methods, prevent brittleness.
+You should only test *public* methods. I often see developers who test
+private methods. Therefore they make them public. This contradicts the
+concept of information hiding and low coupling. Then your public
+methods expose the internals which makes it impossible to switch the
+internal implementation without breaking the majority of
+tests. Additionally, you corrupted the module's contract and swamped
+its interface with confusing public methods. Testing private method
+hidden as public methods does not only lead to brittle tests but also
+to overloaded interfaces which have serious negative impact on your
+code quality.
+
+
 
 ##### Tests should be clear, concise and complete
-* test should be clear, concise and complete (DAMP over DRY), no
-  if/loop or other complicated logic, simple sequence of statements
-  Cognitive load should be reduced
+
+A test should be clear, concise and complete. What does that mean
+exactly? A clear test is easy to read and to understand. Tests should
+not include complex logic like nested if-conditions or complicated
+loops. A good test is a simple sequence of expressions without any
+branching. Further a test should always comply to the same
+structure. Common structures are *arrange-act-assert* or
+*given-when-then*. A common and consistent structure reduces cognitive
+load and gives developers, new to the codebase, a model how to write
+tests for the project which increases productivity. To make the test
+as clear as possible you should avoid using more than one
+assertion. Basically there should be a one-to-one mapping from the
+test case to the assertion. If you feel the need for multiple
+assertions, you can write an additional tests including these
+assertions. This keeps the tests clear and failure tracing cheap.  The
+following codeblock shows one good assertion and some unnecessary
+ones:
+
+``` java
+public class PaymentServiceTest {
+
+    PaymentService sut = new PaymentService(new PaymentGateway());
+
+    @Test
+    @DisplayName("payment with valid user")
+    void pay_validUser_success() {
+        // arrange
+        User user = new User("userId");
+        user.setHasValidCreditCard(true);
+        int amount = 750;
+        PaymentRequest request = new PaymentRequest(user, amount);
+
+        // act
+        PaymentResponse actual = sut.pay(request);
+
+        // assert
+        // GOOD one assert is enough to cover the test case
+        boolean expected = true;
+        assertEquals(expected, actual.isSuccess());
+
+        // BAD
+        // over-assert
+        assertEquals(expectedReason, actual.getReason());
+        assertEquals(expectedStateOfSUT, sut.getState());
+        assertEquals(expectedOther, otherStuffNonRelatedToTest);
+    }
+}
+```
+
+A complete test contains all information to understand the test,
+i.e. all dependencies, all objects in a wanted state, pre-configured
+data etc. This stands in contrast to a concise test.
+
+``` java
+// BAD
+
+// test is too DRY
+
+// What kind of users will be created by the createUsers() function?
+// What will be asserted by the validate() function?
+
+class PaymentServiceDRYTest {
+
+    List<User> users = createUsers();
+
+    @Test
+    @DisplayName("payment with valid user")
+    void pay_validUser_success() {
+        // arrange
+        PaymentService sut = new PaymentService(new PaymentGateway());
+
+        // BAD
+        // which user in the list is a valid one?
+        PaymentRequest request = new PaymentRequest(users.get(0), 750);
+
+        // act
+        PaymentResponse actual = sut.pay(request);
+
+        // assert
+        validate(actual, true, null);
+    }
+}
+```
+
+
+``` java
+// GOOD
+
+// Test is DAMP
+
+// all information needed for the test are inside the test
+
+public class PaymentServiceDAMPTest {
+
+    PaymentService sut = new PaymentService(new PaymentGateway());
+
+    @Test
+    @DisplayName("payment with valid user")
+    void pay_validUser_success() {
+        // arrange
+        User user = new User("userId");
+        user.setHasValidCreditCard(true);
+        int amount = 750;
+        PaymentRequest request = new PaymentRequest(user, amount);
+
+        // act
+        PaymentResponse actual = sut.pay(request);
+
+        // assert
+        boolean expected = true;
+        assertEquals(expected, actual.isSuccess());
+    }
+}
+```
+
+``` java
+// BAD use of shared helper function.
+
+// We don't know about the properties of the created user.
+
+// If someone changes createDefaultUser(), the test could break.
+
+    @Test
+    void pay_validUser_success3() {
+        // arrange
+        User user = createDefaultUser();
+        int amount = 750;
+        PaymentRequest request = new PaymentRequest(user, amount);
+
+        // act
+        PaymentResponse actual = sut.pay(request);
+
+        // assert
+        boolean expected = true;
+        assertEquals(expected, actual.isSuccess());
+    }
+```
+
+``` java
+
+// GOOD use of shared helper function.
+
+// Set properties which matter for the test explicitly.
+
+// Test is complete.
+// You understand the test without checking createDefaultUser().
+// Even if someone changes createUserDefault(), the test will work.
+
+    @Test
+    void pay_validUser_success2() {
+        // arrange
+        User user = createDefaultUser();
+        user.setHasValidCreditCard(true);
+        int amount = 750;
+        PaymentRequest request = new PaymentRequest(user, amount);
+
+        // act
+        PaymentResponse actual = sut.pay(request);
+
+        // assert
+        boolean expected = true;
+        assertEquals(expected, actual.isSuccess());
+    }
+```
+
+
+* test should be clear, concise and complete (DAMP over DRY)
+  https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html
 
   * How to prevent brittle tests
   * How to write clear tests
@@ -324,11 +500,11 @@ suite should be an indicator that you can deploy confidently to
 production. Green tests should give the individual developer a good
 feeling about his code changes. Tests should facilitate
 maintainability and make the code more comprehensible. Above I gave
-some examples when tests do more harm than support the developers. At
-this point you need to reconsider your testing strategy. Tests should
-improve productivity so you can make changes faster and deliver more
-features in less time. If this is not the case, something is wrong
-with your test suite.
+some examples when tests do more harm than good. At this point you
+need to reconsider your testing strategy. Tests should improve
+productivity so you can make changes faster and deliver features in
+less time. If this is not the case, something is wrong with your test
+strategy.
 
 
 
