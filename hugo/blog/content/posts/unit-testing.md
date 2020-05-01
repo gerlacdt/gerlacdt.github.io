@@ -1,35 +1,62 @@
 ---
-title: "Writing better Unit Tests"
-date: 2020-04-20T08:08:00+02:00
+title: "Why and How to write better Unit Tests"
+date: 2020-05-02T08:08:00+02:00
 tags: ["programming", "testing"]
 draft: true
 ---
 
+<!-- [tldr](#tldr)  this is cross-reference inside the document-->
+
+### TL;DR {#tldr}
+
+I use *unit test* and test interchangeably.
+
+* Good tests build the foundation of a maintainable codebase
+* Tests should help developers to be productive
+* Tests should be fast
+* Tests should be independent
+* Tests should be deterministic
+* Tests should focus on a single unit
+* Tests should be enduring
+* Tests should be clear, concise and complete
+  * Avoid complex control flow logic like nested ifs or loops
+  * Tests should follow a consistent naming pattern like *UnitName_StateUnderTest_ExpectedBehavior*
+  * Tests should comply to a consistent structure like *arrange-act-assert*
+  * Tests should be [DAMP not
+    DRY](https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html)
+* Tests should give developers confidence to deploy to production and to refactor
+* Test Doubles help to make tests fast and deterministic
+* The overuse of Mocking makes test hard to read and brittle
+* Prefer state verification over interaction verification
+* Prevent brittle tests
+* Prevent flaky tests
+* Read more in [Software Engineering at
+ Google](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/)
+ and [Kent Becks's Programmer Test
+ Principles](https://medium.com/@kentbeck_7670/programmer-test-principles-d01c064d7934)
 
 
-### Introduction / Motivation
+### Why good unit tests are important
 
 TDD and test engineering culture is considered best practice these
-days. Still I often encounter projects without tests or with bad
+days. Alas, I often encounter projects without tests or with bad
 tests. **Brittle** tests are bad. Maybe you experienced this yourself,
 you made some changes in a specific part of the system and suddenly a
-lot of other tests fail which have nothing to do with this specific
-part of the system. Basically a test is brittle if the test fails when
-a developer makes unrelated changes to the production code. Tests can
-also fail because they are **flaky**. Flaky tests are
-non-deterministic due to relying on remote systems, making network
-calls or accessing remote databases. This causes tests to randomly
-succeed or fail even when production code has not changed.
+lot of unrelated tests fail. Tests can also fail because they are
+**flaky**. Flaky tests are non-deterministic due to relying on remote
+systems, making network calls or accessing remote databases. This
+causes tests to randomly succeed or fail even when production code has
+not changed.
 
 Both, brittle and flaky, tests are a serious problems in a codebase
-and should be avoided. Otherwise they will succumb progressively more
-and more time and effort of your developers. Finally developers are
-kept busy with repairing broken tests and productivity suffers
-enormously. This can happen in disguise and developers are not even
-aware of the problem. In some companies test coverage is treated as a
-key metric. Hence if the coverage high, nobody will question the
-current state. Maybe all people involved are very proud of the high
-coverage, not recognizing their real problem.
+and should be shunned. Otherwise they will succumb progressively more
+and more time and effort of the developers. Finally developers are
+kept busy with repairing broken tests and productivity suffers. This
+can happen in disguise and developers are not even aware of the
+problem. In some companies test coverage is treated as a key
+metric. Hence if the coverage high, nobody will question the current
+state. Maybe all people involved are very proud of the high coverage,
+not recognizing their real problem.
 
 Maintainable, fast and deterministic unit tests build the foundation
 of a sustainable codebase. But unit tests alone are not enough to
@@ -46,35 +73,127 @@ conducted manually which makes them bad candidates for [continuous
 integration and
 delivery](https://martinfowler.com/books/continuousDelivery.html). If
 UI tests or system tests fail, developers have a hard time to locate
-the problem. It is an onerous task to trace the bug which triggered a
-UI test to fail. If a project relies heavily on manual regression
-testing instead of an exhaustive unit test suite is an anti-pattern,
-the **test ice cone**. It is the inverse of the test pyramid and leads
-to an unsustainable codebase because failing system and UI tests leave
-developers in the dark about the root cause.
+the problem. It is an onerous task to trace the bug which triggered
+such a test to fail. Relying heavily in a project on manual regression
+testing instead of an exhaustive, automatic test suite is an
+anti-pattern, the **test ice cone**. It is the inverse of the test
+pyramid and leads to an unsustainable codebase because failing system
+tests leave developers in the dark about the root cause.
 
 <img src="/img/ice_cone.jpg" alt="https://watirmelon.blog/testing-pyramids/" class="medium-zoom-image" width="300">
 
 In this article I will focus on unit tests. Good unit tests should be
 clean, maintainable and most notably "useful" for developers. The main
 purpose of tests is to save time for developers and keep the code
-quality high. But careless use of testing can have also negative
-effects on productivity and code quality. E.g if developers loose a
-majority of their time fixing tests instead of building new
-features. "Wrong" testing can result in a system that requires more
-effort to maintain than without tests and takes more effort to change
-without actually improving confidence in the next production
-release. It is crucial to identify bad tests and to know how to write
-good tests.
+quality high. But careless use of testing can have negative effects on
+productivity and code quality. E.g if developers loose a majority of
+their time fixing tests instead of building new features. "Wrong"
+testing can result in a system that requires more effort to maintain
+than without tests and takes more effort to change without actually
+improving confidence in the next production release. It is crucial to
+identify bad tests and to know how to write good tests.
 
 
 This blog post is built upon the shoulder of giants. Basically I draw
  from the fantastic book [Software Engineering at
  Google](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/)
  . Especially from Chapter 12 "Unit Testing". I was also heavily
- inspired by this article about [Programmer Test
+ inspired by the article about [Programmer Test
  Principles](https://medium.com/@kentbeck_7670/programmer-test-principles-d01c064d7934)
  from Kent Beck, the father of TDD.
+
+
+### Test Doubles
+
+**Test Doubles** play a crucial part in writing good unit tests, we'll
+see soon. But first, let's define what a Test Double is. A Test Double
+is a replacement of a production code class or function. Multiple
+types of Test Doubles exist. In my opinion, the three most important
+ones are:
+
+* A **Fake** is a simplified implementation of a given interface, for
+  example a *FakeUserRepository* "fakes" the real database repository
+  behaviour with an in-memory Hashmap. A Fake is used interchangeably
+  with a real implementation and is typically applied via dependency
+  injection.
+* A **Stub** returns predefined values to specific calls which are
+  internally needed by the **SUT** (System Under Test) to fulfill the
+  tested behaviour.
+* A **Mock** is a stub, but additionally checks the interactions of
+  the mock. For example, was the mock called with the expected
+  parameters or was the mocked method called an expected number of
+  times. Checking the interactions of mocks is also called
+  [**interaction
+  testing**](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/).
+  Naturally both, Stubbing and Mocking, is done via mock-frameworks.
+
+An exhaustive list of Test Double types can be found in [Martin
+Fowler's article](https://martinfowler.com/bliki/TestDouble.html).
+
+The following is a fake implementation of a UserRepository. An
+in-memory Hashmap replaces a real database. The Fake can be used by a
+unit test via dependency injection. There will be a relevant example
+with an example usage later on.
+
+``` java
+// Fake example
+
+public interface UserRepository {
+    public void save(User user);
+    public User findById(String id);
+}
+
+
+// Fakes the UserRepository with a HashMap implementation
+
+public class FakeUserRepository implements UserRepository {
+
+    private Map<String, User> users = new HashMap<>();
+
+    @Override
+    public void save(User user) {
+        users.put(user.getId(), user);
+    }
+
+    @Override
+    public User findById(String id) {
+        return users.get(id);
+    }
+}
+```
+
+The next example shows a simple mock which stubs a method of a
+UserRepository. Without the interaction verification at the end of the
+test, the mock would be a simple stub.
+
+``` java
+// Mock example
+
+import static org.mockito.Mockito.*;
+
+public class UserServiceMockTest {
+
+    UserRepository mockUserRepository = mock(UserRepository.class);
+    UserService sut = new UserService(mockUserRepository);
+
+    @Test
+    public void getUser_ReturnUser() {
+        // arrange
+        User user = new User("userId");
+        when(mockUserRepository.findById(anyString())).thenReturn(user);
+
+        // act
+        User actual = sut.getUser("userId");
+
+        // assert
+        assertEquals("userId", actual.getId());
+
+        // verify interaction
+        // check that findById() was called with the correct parameter and exactly once
+        verify(mockUserRepository, times(1)).findById("userId");
+    }
+}
+```
 
 
 ### What makes a good unit test?
@@ -92,7 +211,7 @@ minute, and therefore must be fast, i.e. a few seconds at
 most. Loosing focus during the run is unwanted because it decreases
 productivity and breaks the flow. Further if unit tests are slow,
 developers will not run tests regularly or skip running them
-completely. Then tests will loose their purpose to provide fast
+completely. Then tests will loose their purpose, namely providing fast
 feedback. Martin Fowler speaks of a **[compile suite and a commit
 suite](https://martinfowler.com/bliki/UnitTest.html)**. Normally
 developers work on a specific part or unit of a system like a single
@@ -113,10 +232,10 @@ reluctantly wait or even worse he will skip running the tests.
 
 
 Tests, relying on network calls, database queries or time related
-logic, are inherently slow. **Test Doubles** are a method to make
-tests fast and reliable. With a Test Double you *inject* a fake
+logic, are inherently slow. Test Doubles are a mechanism to make tests
+fast and reliable. With a Test Double you *inject* a fake
 implementation replacing the database or http call. This technique is
-well know as [Dependency
+well known as [Dependency
 Injection](https://martinfowler.com/articles/injection.html#InversionOfControl).
 
 In the code block below the UserService uses the UserRepository to
@@ -151,15 +270,15 @@ public class UserServiceTest {
 ##### Tests should be isolated
 
 Tests should be independent from each other. It must be possible to
-run the tests in any order, concurrently or in parallel. This becomes
+run the tests in any order, concurrently and in parallel. This becomes
 especially important when the project is big and contains thousand of
 tests. In order to speed up the build, the workload can be distributed
 across different machines. The distribution logic is very simple if
 the tests are isolated. Contrary, it would be very hard or even
 impossible to distribute tests which make up a complex dependency
 graph. Further any single unit test should be able to run alone
-without any dependencies like other unit tests, file or network I/O,
-and databases.
+without depending on other unit tests, files, network I/O, and
+databases.
 
 Below there is an example of a bad unit test. The second test depends
 on the first one and it will fail if the first test does not run
@@ -205,9 +324,8 @@ public class BankAccountServiceOrderedTest {
 ```
 
 
-The second example shows a group of good unit tests. Both tests are
-independent. The small cost of adding 2-3 lines per tests is more than
-acceptable.
+The second example shows two independent tests. The small cost of
+adding 2-3 lines per tests is more than acceptable.
 
 ``` java
 // GOOD
@@ -272,43 +390,39 @@ tests breaks, it should be easy to find the cause of the problem. The
 other way around is also true: If someone changes code of a unit, only
 corresponding unit tests should break. If you need to start a debugger
 to figure out what went wrong, the chance is high that your tests are
-to diverse and include much more than a single unit.
+too diffuse and include much more than a single unit.
 
 Unit tests which not focus on a single unit tend to be brittle because
-they will fail if some other part of the system changes. This
-contradicts the definition above. Brittle tests are a serious problem
-because developers loose trust in the test suite and they neglect
-badly needed future refactorings. This hampers maintainability and
-causes the quality of the codebase to degrade. More often than not, in
-many projects existing unit tests are more a burden than a backing for
-the developers.
+they will fail if some other part of the system changes. Brittle tests
+are a serious problem because developers loose trust in the test suite
+and they neglect badly needed refactorings. This hampers
+maintainability and causes the quality of the codebase to
+degrade. More often than not, in many projects existing unit tests are
+more a burden than a backing for the developers.
 
 
 ##### Tests should be enduring
 
 Strive for unchangeable tests. A test should be written once and never
 be touched except there is a change of behaviour in the corresponding
-unit. Changes of the internal implementation should never break a
-test. Like i mentioned earlier these are brittle tests. We should
-prevent them at any cost.
+unit. Changes of internals should never break a test. Like i mentioned
+earlier these are brittle tests. We should prevent them at any cost.
 
 Brittle tests can creep into the codebase because of the overuse of
 mocks. Mocks verify if specific methods get called. Hence mocks know
 about the internal implementation which makes the tests prone to
-failures. Further if the internal implementation change, you need to
-change all tests which uses the mock. In large codebases this could
-mean a lot of effort.
+failures. Further if the internal implementation changes, you need to
+adjust all tests which use the mock. In large codebases this means a
+lot of effort.
 
-You should only test *public* methods. I often see developers who test
-private methods. Therefore they make them public. This contradicts the
-concept of information hiding and low coupling. Then your public
-methods expose the internals which makes it impossible to switch the
-internal implementation without breaking the majority of
-tests. Additionally, you corrupted the module's contract and swamped
-its interface with confusing public methods. Testing private method
-hidden as public methods does not only lead to brittle tests but also
-to overloaded interfaces which have serious negative impact on your
-code quality.
+Test only *public* methods. I often see developers who test private
+methods. Therefore they make them public or protected. This
+contradicts the concept of information hiding and low coupling. Then
+your public methods expose the internals which makes it impossible to
+switch the internal implementation without breaking a majority of
+tests. Additionally, you crippled the module's contract and swamped
+its interface with confusing public methods which should be
+private.
 
 
 
@@ -317,19 +431,21 @@ code quality.
 A test should be clear, concise and complete. What does that mean
 exactly? A clear test is easy to read and to understand. Tests should
 not include complex logic like nested if-conditions or complicated
-loops. A good test is a simple sequence of expressions without any
-branching. Further a test should always comply to the same
+loops. A clear test is a simple sequence of expressions without any
+branching. All tests in a project should comply to the same
 structure. Common structures are *arrange-act-assert* or
 *given-when-then*. A common and consistent structure reduces cognitive
-load and gives developers, new to the codebase, a model how to write
-tests for the project which increases productivity. To make the test
-as clear as possible you should avoid using more than one
-assertion. Basically there should be a one-to-one mapping from the
-test case to the assertion. If you feel the need for multiple
-assertions, you can write an additional tests including these
-assertions. This keeps the tests clear and failure tracing cheap.  The
-following codeblock shows one good assertion and some unnecessary
-ones:
+load and gives developers, unfamiliar with the codebase, a model how
+to write tests. A consistent naming pattern adds clarity too,
+e.g. `UnitName_StateUnderTest_ExpectedBehavior`. Rich failure
+messages, with context where and why the test failed, reduces
+debugging effort immensely. Keeping the number of assertions to a
+minimum keeps the test short and focused. If you feel the need for
+multiple assertions, you can write additional tests with a different
+focus. At best, there is a one-to-one correlation from the test name
+to the assertion. The following test shows one good assertion and some
+unnecessary ones:
+
 
 ``` java
 public class PaymentServiceTest {
@@ -354,7 +470,7 @@ public class PaymentServiceTest {
         assertEquals(expected, actual.isSuccess());
 
         // BAD
-        // over-assert
+        // unnecessary over-assertion
         assertEquals(expectedReason, actual.getReason());
         assertEquals(expectedStateOfSUT, sut.getState());
         assertEquals(expectedOther, otherStuffNonRelatedToTest);
@@ -362,11 +478,32 @@ public class PaymentServiceTest {
 }
 ```
 
-A complete test contains all information to understand the test,
-i.e. all dependencies, all objects in a wanted state, pre-configured
-data etc. This stands in contrast to a concise test.
+Completeness and conciseness contradict themselves. A good test finds
+a balance of both. The highest priority is readability though which is
+fostered by completeness. A *complete* test contains all dependencies,
+pre-configured objects and data needed to run the test. The apt
+developer must resist the urge to make the test too DRY (Don't Repeat
+Yourself). DRY code scatters important shared logic and hurts
+readability. Relying too much on shared helper classes and functions
+reduces the amount of code but increases coupling and makes tests
+brittle. [Google's Testing on the Toilet
+Blog](https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html)
+favors the **DAMP** principle (*Descriptive And Meaningful Phrases*)
+over the DRY principle for tests. A little duplication improves
+comprehension and should be preferred over uniqueness. If you think
+complete tests are too verbose or your tests require lots of setup
+code, it could be an indicator that your production code is flawed and
+you should rethink your overall design.
+
+The following examples show a test in a DRY and a DAMP version. The
+DRY version uses shared helper functions like `createUsers()` or
+`validate()` with unclear semantics. The DAMP version replaces these
+magical functions with a simple constructor call and an assertion
+statement.
+
 
 ``` java
+
 // BAD
 
 // test is too DRY
@@ -376,7 +513,8 @@ data etc. This stands in contrast to a concise test.
 
 class PaymentServiceDRYTest {
 
-    List<User> users = createUsers();
+    // magical helper function
+    List<User> users = createUsers(); // how many users will be created?
 
     @Test
     @DisplayName("payment with valid user")
@@ -392,11 +530,14 @@ class PaymentServiceDRYTest {
         PaymentResponse actual = sut.pay(request);
 
         // assert
-        validate(actual, true, null);
+        // magical helper function
+        validate(actual, true, null);  // what are these parameters?
+
+        // validate() is used in other contexts too
+        // the three parameters are: validate(actual, expected, resultObject)
     }
 }
 ```
-
 
 ``` java
 // GOOD
@@ -427,6 +568,16 @@ public class PaymentServiceDAMPTest {
     }
 }
 ```
+
+Nevertheless conciseness is important too and must not be neglected. A
+deliberate usage of shared helpers makes this possible. For example,
+after calling the helper function you could explicitly set the needed
+properties for the test on the returned object. So you utilize the
+shared helper function but also decouple the test from it. Further the
+relevant properties, needed by the test, are made prominent and the
+test will be stable even if someone changes the helper logic. The
+example below illustrates that.
+
 
 ``` java
 // BAD use of shared helper function.
@@ -459,7 +610,7 @@ public class PaymentServiceDAMPTest {
 
 // Test is complete.
 // You understand the test without checking createDefaultUser().
-// Even if someone changes createUserDefault(), the test will work.
+// Even if someone changes createDefaultUser(), the test will be ok.
 
     @Test
     void pay_validUser_success2() {
@@ -478,110 +629,50 @@ public class PaymentServiceDAMPTest {
     }
 ```
 
-
-* test should be clear, concise and complete (DAMP over DRY)
-  https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html
-
-  * How to prevent brittle tests
-  * How to write clear tests
-  * Better Design: Input parameters should comply to a minimum
-    interface. Only used properties should be included. Easier stubbing,
-    test doubling!
-  * Tests are an indicator if the production code design is OK! If you
-    have to write complicated tests with a lot of setup code, maybe
-    something is wrong.
-
-
-##### Tests should give you confidence
+##### Tests should give you confidence (and a good feeling)
 
 Finally your test suite should give you confidence that your code
-changes are correct and you did not break anything. Further a green
-suite should be an indicator that you can deploy confidently to
-production. Green tests should give the individual developer a good
-feeling about his code changes. Tests should facilitate
-maintainability and make the code more comprehensible. Above I gave
-some examples when tests do more harm than good. At this point you
-need to reconsider your testing strategy. Tests should improve
-productivity so you can make changes faster and deliver features in
-less time. If this is not the case, something is wrong with your test
-strategy.
+changes are correct and you did not break anything. A green suite is
+an indicator that you can deploy without worries to production. Green
+tests should give the individual developer a good feeling about his
+code changes. Thereby tests act as a productivity booster so you can
+make changes faster and deliver features in less time -- always
+feeling good at it.
 
 
+#### The Fallacy Of Mocking
+
+We learned that mocks make unit tests fast and deterministic. They
+prevent flaky tests because they replace unstable calls or slow
+network calls with predefined, hard-coded behaviour. There is a catch
+though. The overuse of mocking or stubbing has a negative effect on
+your test code quality:
+
+1. Tests become unclear because mock-statements bloat the code and
+   make the test hard to comprehend. The maintainability of your test
+   code suffers.
+
+2. Tests become brittle. The more you mock, the more internals of the
+   SUT are leaked. Changing the internals, even without changing the
+   behaviour of the SUT, could make the test fail.
+
+3. A need of too many mocks could be a sign of bad design. Most
+   probably the SUT has too many dependencies and responsibilities and
+   should be divided.
+
+ [Google](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/)
+ also warns about the overuse of mock-frameworks and interaction
+ testing. Nevertheless interaction testing is sometimes the only way
+ to check the code correctness. For example in order to check a
+ caching logic, you need to call a function twice. First to fill the
+ cache with a value, second to get the cached value from the
+ cache. The only way to verify that the second value was retrieved
+ from the cache is to check if the cache was called. Another insight
+ from Google is that they prefer Fakes over Mocks. Fakes are not that
+ intrusive and the test code is not swamped by stubbing-behaviour
+ statements.
 
 
-#### Use Test Doubles wisely (or the fallacy of mocking)
+#### Last words
 
-* classical and mockist testing
-https://martinfowler.com/articles/mocksArentStubs.html
-
-* test doubles
-https://martinfowler.com/bliki/TestDouble.html
-Fakes, Stubs, Spies, Mocks
-
-mocking != test doubles
-dangerous to overuse mocking frameworks
-* seams
-* mocking frameworks
-* kinds of Test Doubles
- * faking (in-memory DB)
- * stubbing (often done with mock framework)
-Dangers of stubbing:
-tests become unclear (too many stub statements complicate the test code)
-tests become brittle (leaked implementation details of SUT)
-tests become less effective (no way to check that stub behaves like real implementation)
-
-* interaction testing (mocking and verifying calls)
-prefer state testing over interaction testing
-when appropriate: caching feature, check if cache was called
-
-* Test Doubles vs real implementations
-- prefer real implementation over test double aka classical testing
-- Faking preferred over other test doubles
-- overuse of stubbing leads to unclear and brittle tests
-- interaction testing should be avoided when possible: it leadss to
-  tests that are brittle because of exposes implementation details of
-  the SUT.
-
-
-The fallacy of mocking -- Mocks make your tests stable and fast. They
-prevent flaky tests because mocks replace unstable and slow network
-calls with predefined, hard-coded behaviour.
-
-But there is a catch. Overusing mocks is dangerous. There are many
-reason why mocks contribute to worsening the codebase:
-
-1. Tests become brittle. With mocks you focus on interaction
-   testing. Hence your tests focus on the **internals** of your System
-   Under Test(SUT).
-
-2. Using too many mocks/stubs make your tests complicated and hard to
-   comprehend. The maintainability of your test code suffers and other
-   developers will have a hard to time extend or change the tests.
-
-
-
-
-### TL;DR
-
-* prevent brittle tests
-  * strive for unchanging tests
-  * test only public API, never make private functions public because you want to test them!
-  * test state, not interactions
-  * prefer state verification rather than interaction verification
-    * interaction verification, e.g. check if a cache gets hit or not (cannot be told by state verification)
-
-* write clear tests
-  * make your tests complete and concise
-    * [DAMP over DRY when sharing code for tests](https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html)
-    * be consistent, naming should be a defined naming standard
-      * arrange-act-assert or given-when-then
-      * one common naming standards is:
-        * UnitName_StateUnderTest_ExpectedBehavior
-    * avoid (complex) logic (no ifs or loops)
-    * Only use one assert, a unit test has a small scope, you should
-      only test the minimum which verifies the behavior
-    * shared variables (good naming CLOSED_ACCOUNT)
-    * shared setup (beforeEach, afterEach)
-    * avoid shared helpers (magic validate() function which validate a bunch of properties)
-    * reduce cognitive load
-    * write clear failure messages (test should state the problem, no debugging needed, "ERROR got %actual, want %expected")
+TODO
