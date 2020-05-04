@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-04-03T14:12:18+02:00</updated>
+    <updated>2020-05-04T19:04:09+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -13,12 +13,1013 @@
             <uri>https://gerlacdt.github.io/</uri>
             </author>
     
-    <generator uri="https://gohugo.io/" version="0.68.3">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.69.2">Hugo</generator>
+        <entry>
+            <title type="text">Why and How to write better Unit Tests</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/unit-testing/" />
+            <id>https://gerlacdt.github.io/posts/unit-testing/</id>
+            <updated>2020-05-04T19:03:23+02:00</updated>
+            <published>2020-05-04T08:08:00+02:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[TL;DR I use unit test and test interchangeably.
+ Good tests build the foundation of a maintainable and high-quality codebase Tests should help developers to be productive Tests should be fast Tests should be independent Tests should be deterministic Tests should focus on a single unit Tests should be enduring Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Tests should comply to a consistent structure One assertion per test Tests should be DAMP not DRY   Tests should give developers confidence to deploy to production and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&rsquo;s Programmer Test Principles Microsoft&rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.]]></summary>
+            
+                <content type="html"><![CDATA[<!-- [tldr](#tldr)  this is cross-reference inside the document-->
+<h3 id="tldr">TL;DR</h3>
+<p>I use <em>unit test</em> and test interchangeably.</p>
+<ul>
+<li>Good tests build the foundation of a maintainable and high-quality
+codebase</li>
+<li>Tests should help developers to be productive</li>
+<li>Tests should be fast</li>
+<li>Tests should be independent</li>
+<li>Tests should be deterministic</li>
+<li>Tests should focus on a single unit</li>
+<li>Tests should be enduring</li>
+<li>Tests should be clear, concise and complete
+<ul>
+<li>Avoid complex control flow logic like nested ifs or loops</li>
+<li>Tests should follow a consistent naming pattern like <em>UnitName_StateUnderTest_ExpectedBehavior</em></li>
+<li>Tests should comply to a consistent structure</li>
+<li>One assertion per test</li>
+<li>Tests should be <a href="https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html">DAMP not
+DRY</a></li>
+</ul>
+</li>
+<li>Tests should give developers confidence to deploy to production and to refactor</li>
+<li>Test Doubles help to make tests fast and deterministic</li>
+<li>The overuse of Mocking makes test hard to read and brittle</li>
+<li>Prefer state verification over interaction verification</li>
+<li>Prevent brittle tests</li>
+<li>Prevent flaky tests</li>
+<li>Read more:
+<ul>
+<li><a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Software Engineering at Google</a></li>
+<li><a href="https://medium.com/@kentbeck_7670/programmer-test-principles-d01c064d7934">Kent Becks&rsquo;s Programmer Test
+Principles</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices">Microsoft&rsquo;s Best Practices for Unit
+testing</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="why-good-unit-tests-are-important">Why good unit tests are important</h3>
+<p>TDD and test engineering culture is considered best practice these
+days. Alas, I often encounter projects without tests or with bad
+tests. <strong>Brittle</strong> tests are bad. Maybe you experienced this yourself,
+you made some changes in a specific part of the system and suddenly a
+lot of unrelated tests fail. This is not only annoying for developers
+but also a time killer. Tests can also fail because they are
+<strong>flaky</strong>. Flaky tests are non-deterministic due to relying on remote
+systems, making network calls or accessing remote databases. This
+causes tests to randomly succeed or fail even when production code has
+not changed.</p>
+<p>Both, brittle and flaky, tests are a serious problems in a codebase
+and should be shunned. Otherwise they will succumb progressively more
+and more time and effort of the developers. Finally developers are
+kept busy with repairing broken tests and productivity suffers. This
+can happen in disguise and developers are not even aware of the
+problem. In some companies test coverage is treated as a key
+metric. Hence if the coverage high, nobody will question the current
+situation. Maybe the whole involved team is proud of the high
+coverage, not recognizing their real problem.</p>
+<p>Maintainable, fast and deterministic unit tests build the foundation
+of a sustainable codebase. But unit tests alone are not enough to
+guarantee a usable, successful and bug-free application. Additionally
+you need system and UI tests in order to verify production
+readiness. The <strong>test pyramid</strong> visualizes this.</p>
+<img src="/img/test_pyramid.png" alt="https://stackoverflow.com/questions/56696132/why-is-ui-testing-at-the-top-of-the-test-pyramid" class="medium-zoom-image" width="300">
+<p>System tests and UI tests are good to check your product as a whole,
+but these tests are slow, flaky, not repeatable and often are
+conducted manually which makes them bad candidates for <a href="https://martinfowler.com/books/continuousDelivery.html">continuous
+integration and
+delivery</a>. If
+system tests fail, it is hard for developers to locate the problem
+because the scope of a system test is very broad and not as focused as
+in a unit test. Relying heavily in a project on manual regression
+testing instead of an exhaustive, automatic test suite is an
+anti-pattern, the <strong>test ice cone</strong>. It is the inverse of the test
+pyramid and leads to an unsustainable codebase because failing system
+tests leave developers in the dark about the root cause and drain
+their productivity. Did you ever work in a project with a Jira Board,
+cluttered with unresolved Bugs in the backlog? &ndash; all bugs found by
+so-called manual QAs or testers.</p>
+<img src="/img/ice_cone.jpg" alt="https://watirmelon.blog/testing-pyramids/" class="medium-zoom-image" width="300">
+<p>In this article I will focus on unit tests. Good unit tests should be
+clean, maintainable and most notably &ldquo;useful&rdquo; for developers. The main
+purpose of tests is to save time for developers and keep the code
+quality high. But careless use of testing can have negative effects on
+productivity and code quality. E.g if developers loose a majority of
+their time fixing tests instead of building new features. &ldquo;Wrong&rdquo;
+testing can result in a system that requires even more effort to
+maintain than without tests and takes more effort to change without
+actually improving confidence in the next production release. It is
+crucial to identify bad tests and to know how to write good tests.</p>
+<p>This blog post is built upon the shoulder of giants. Basically I draw
+from the fantastic book <a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Software Engineering at
+Google</a>
+. Especially from Chapter 12 &ldquo;Unit Testing&rdquo;. I was also heavily
+inspired by the article about <a href="https://medium.com/@kentbeck_7670/programmer-test-principles-d01c064d7934">Programmer Test
+Principles</a>
+from Kent Beck, the father of TDD.</p>
+<h3 id="test-doubles">Test Doubles</h3>
+<p><strong>Test Doubles</strong> play a crucial part in writing good unit tests, we&rsquo;ll
+see soon. But first, let&rsquo;s define what a Test Double is. A Test Double
+is a replacement of a production code class or function. Multiple
+types of Test Doubles exist. In my opinion, the three most important
+ones are:</p>
+<ul>
+<li>A <strong>Fake</strong> is a simplified implementation of a given interface, for
+example a <em>FakeUserRepository</em> &ldquo;fakes&rdquo; the real database repository
+behaviour with an in-memory Hashmap. A Fake is used interchangeably
+with a real implementation and is typically applied via dependency
+injection.</li>
+<li>A <strong>Stub</strong> returns predefined, hard-coded values to specific calls
+which are internally needed by the <strong>SUT</strong> (System Under Test) to
+fulfill the tested behaviour.</li>
+<li>A <strong>Mock</strong> is a stub, but additionally checks the interactions of
+the mock with its environment. For example, was the mock called with
+the expected parameters or was the mocked method called an expected
+number of times? Checking the interactions of mocks is also called
+<a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/"><strong>interaction
+testing</strong></a>.
+Naturally both, Stubbing and Mocking, is realized via
+mock-frameworks.</li>
+</ul>
+<p>An exhaustive list of Test Double types can be found in <a href="https://martinfowler.com/bliki/TestDouble.html">Martin
+Fowler&rsquo;s article</a>.</p>
+<p>The following is a fake implementation of a UserRepository. An
+in-memory Hashmap replaces a real database. The Fake can be used by a
+unit test via dependency injection. There will be a relevant example
+with an example usage later on.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Fake example
+</span><span class="c1"></span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="n">User</span> <span class="nf">findById</span><span class="o">(</span><span class="n">String</span> <span class="n">id</span><span class="o">);</span>
+<span class="o">}</span>
+
+
+<span class="c1">// Fakes the UserRepository interface with a HashMap implementation
+</span><span class="c1"></span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FakeUserRepository</span> <span class="kd">implements</span> <span class="n">UserRepository</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">users</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="n">user</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">User</span> <span class="nf">findById</span><span class="o">(</span><span class="n">String</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">users</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The next example shows a simple mock which stubs a method of the
+UserRepository. Without the interaction verification at the end of the
+test, the mock would be a simple stub.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Mock example
+</span><span class="c1"></span>
+<span class="kn">import static</span> <span class="nn">org.mockito.Mockito.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserServiceMockTest</span> <span class="o">{</span>
+
+    <span class="n">UserRepository</span> <span class="n">mockUserRepository</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">UserRepository</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="c1">// dependency injection
+</span><span class="c1"></span>    <span class="n">UserService</span> <span class="n">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserService</span><span class="o">(</span><span class="n">mockUserRepository</span><span class="o">);</span>
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getUser_ReturnUser</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">&#34;userId&#34;</span><span class="o">);</span>
+        <span class="n">when</span><span class="o">(</span><span class="n">mockUserRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">anyString</span><span class="o">())).</span><span class="na">thenReturn</span><span class="o">(</span><span class="n">user</span><span class="o">);</span> <span class="c1">// stubbing
+</span><span class="c1"></span>
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">getUser</span><span class="o">(</span><span class="s">&#34;userId&#34;</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="n">assertEquals</span><span class="o">(</span><span class="s">&#34;userId&#34;</span><span class="o">,</span> <span class="n">actual</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+
+        <span class="c1">// verify interaction
+</span><span class="c1"></span>        <span class="c1">// check that findById() was called with the correct parameter and exactly once
+</span><span class="c1"></span>        <span class="n">verify</span><span class="o">(</span><span class="n">mockUserRepository</span><span class="o">,</span> <span class="n">times</span><span class="o">(</span><span class="n">1</span><span class="o">)).</span><span class="na">findById</span><span class="o">(</span><span class="s">&#34;userId&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="what-makes-a-good-unit-test">What makes a good unit test?</h3>
+<p>There are a lot of opinions floating around about how to write good
+unit tests. In the following I list the traits which I consider most
+important.</p>
+<h5 id="tests-should-be-fast">Tests should be fast</h5>
+<p>A useful test suite will be run frequently, sometimes multiple times a
+minute, and therefore must be fast, i.e. a few seconds at
+most. Loosing focus during the run is unwanted because it decreases
+productivity and breaks the flow. Further if unit tests are slow,
+developers will not run tests regularly or skip running them
+completely. Then tests will loose their purpose, namely providing fast
+feedback. Martin Fowler speaks of a <strong><a href="https://martinfowler.com/bliki/UnitTest.html">compile suite and a commit
+suite</a></strong>. Normally
+developers work on a specific part or unit of a system like a single
+file or class. With every compilation, they only run the related tests
+to get feedback as fast as possible. Hence this group of tests is the
+&ldquo;compile suite&rdquo;. The compile suite comprises the smallest set of tests
+which verify the correctness of the unit of the system which is
+currently worked on. After finishing a feature or bugfix, before
+committing, all unit tests are run to check if nothing else is
+broken. Hence this group of tests is called the &ldquo;commit suite&rdquo;.</p>
+<p>The optimal duration of a unit test is in the nanosecond
+range. Hundred milliseconds sounds fast for a single unit test but it
+is too slow if you think about a project with multiple thousand
+tests. All tests would take minutes to complete. A developer will only
+reluctantly wait or even worse he will skip running the tests.</p>
+<p>Tests, relying on network calls, database queries or time related
+logic, are inherently slow. Test Doubles are a mechanism to make tests
+fast and reliable. With a Test Double you <em>inject</em> a fake
+implementation replacing the database or HTTP call. This technique is
+well known as <a href="https://martinfowler.com/articles/injection.html#InversionOfControl">Dependency
+Injection</a>.</p>
+<p>In the code block below the UserService uses the UserRepository to
+carry out the intended business logic. A real UserRepository talks
+naturally to a database and is too slow for a unit test. Here the real
+database implementation is substituted with a FakeUserRepository from
+above.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserServiceTest</span> <span class="o">{</span>
+
+    <span class="c1">// test double
+</span><span class="c1"></span>    <span class="n">UserRepository</span> <span class="n">fakeUserRepository</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FakeUserRepository</span><span class="o">();</span>
+
+    <span class="c1">// dependency injection
+</span><span class="c1"></span>    <span class="n">UserService</span> <span class="n">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserService</span><span class="o">(</span><span class="n">fakeUserRepository</span><span class="o">);</span>
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerUser_validUser_success</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">&#34;foobar&#34;</span><span class="o">);</span>
+
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">sut</span><span class="o">.</span><span class="na">registerUser</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">u</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">getUser</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+        <span class="n">assertNotNull</span><span class="o">(</span><span class="n">u</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="tests-should-be-isolated">Tests should be isolated</h5>
+<p>Tests should be independent from each other. It must be possible to
+run the tests in any order, concurrently and in parallel. This becomes
+especially important when the project is big and contains thousand of
+tests. In order to speed up the build, the workload can be distributed
+across different machines. The distribution logic is very simple if
+the tests are isolated. Contrary, it would be very hard or even
+impossible to distribute tests which make up a complex dependency
+graph. Further any single unit test should be able to run alone
+without depending on other unit tests, files, network I/O, and
+databases.</p>
+<p>Below there is an example of a bad unit test. The second test depends
+on the first one and it will fail if the first test does not run
+before or fails. Not only this eradicates the possibility to
+distribute the tests but also developers will have a hard time to
+figure out the root cause of the potential error. Did the second test
+fail because of itself or because of the test before?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// BAD
+</span><span class="c1">// tests depend on each other and cannot run in random order or concurrently
+</span><span class="c1"></span>
+<span class="nd">@TestMethodOrder</span><span class="o">(</span><span class="n">MethodOrderer</span><span class="o">.</span><span class="na">OrderAnnotation</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BankAccountServiceOrderedTest</span> <span class="o">{</span>
+
+    <span class="n">BankAccountService</span> <span class="n">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BankAccountService</span><span class="o">();</span>
+    <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">&#34;userId&#34;</span><span class="o">);</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@Order</span><span class="o">(</span><span class="n">1</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createAccount_validUser_ok</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">sut</span><span class="o">.</span><span class="na">createAccount</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">hasAccount</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+        <span class="n">assertTrue</span><span class="o">(</span><span class="n">actual</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@Order</span><span class="o">(</span><span class="n">2</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deposit_100Dollars_ok</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">Integer</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">100</span><span class="o">;</span>
+
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">Integer</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">deposit</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="n">Integer</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">100</span><span class="o">;</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The second example shows two independent tests. The small cost of
+adding 2-3 lines per tests is more than acceptable.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// GOOD
+</span><span class="c1">// tests can run in random order and concurrently
+</span><span class="c1"></span>
+<span class="nd">@TestMethodOrder</span><span class="o">(</span><span class="n">MethodOrderer</span><span class="o">.</span><span class="na">Random</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BankAccountServiceTest</span> <span class="o">{</span>
+
+    <span class="n">BankAccountService</span> <span class="n">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BankAccountService</span><span class="o">();</span>
+
+    <span class="nd">@BeforeEach</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">beforeEach</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">sut</span><span class="o">.</span><span class="na">resetAll</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deposit_100Dollars_ok</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">&#34;userId&#34;</span><span class="o">);</span>
+        <span class="n">sut</span><span class="o">.</span><span class="na">createAccount</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+        <span class="n">Integer</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">100</span><span class="o">;</span>
+
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">Integer</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">deposit</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="n">Integer</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">100</span><span class="o">;</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">withdraw_50Dollars_ok</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">&#34;userId&#34;</span><span class="o">);</span>
+        <span class="n">sut</span><span class="o">.</span><span class="na">createAccount</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+        <span class="n">sut</span><span class="o">.</span><span class="na">deposit</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">100</span><span class="o">);</span>
+        <span class="n">Integer</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">50</span><span class="o">;</span>
+
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">Integer</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">withdraw</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="n">Integer</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">50</span><span class="o">;</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="tests-should-be-deterministic">Tests should be deterministic</h5>
+<p>A deterministic test never changes its outcome when there was no
+change of behaviour. A test switching from green to red or the other
+way around without any change is called flaky. Test Doubles are a good
+way to get rid of flaky dependencies like external network or database
+calls. The earlier example with the FakeUserRepository demonstrates
+this.</p>
+<h5 id="tests-should-focus-on-a-single-unit-of-the-system">Tests should focus on a single unit of the system</h5>
+<p>A unit test should focus on a single part of the system. If a unit
+tests breaks, it should be easy to find the root cause. The other way
+around is also true: If someone changes a unit, only corresponding
+unit tests should possibly break. If you need to start a debugger to
+figure out what went wrong, the chance is high that your tests are too
+diffuse and include much more than a single unit.</p>
+<p>Unit tests which not focus on a single unit tend to be brittle because
+they will fail if some other part of the system changes. Brittle tests
+are a serious problem because developers loose trust in the test suite
+and they neglect badly needed refactorings. This hampers
+maintainability and causes the quality of the codebase to
+degrade. More often than not, in many projects existing unit tests are
+more a burden than a backing for the developers.</p>
+<h5 id="tests-should-be-enduring">Tests should be enduring</h5>
+<p>Strive for unchangeable tests. A test should be written once and never
+be touched except there is a change of behaviour in the corresponding
+unit. Changes of internals should never break a test if the behaviour
+stays the same. Like i mentioned earlier these are brittle tests. We
+should prevent them at any cost.</p>
+<p>Brittle tests can creep into the codebase because of the overuse of
+mocks. Mocks verify if specific methods get called. Hence mocks know
+about the internal implementation which makes the tests prone to
+failures. If the internal implementation changes, you need to adjust
+all tests which use related mocks. In large codebases this means a lot
+of effort.</p>
+<p>Test only <em>public</em> methods. I often see developers who test private
+methods. Therefore they make them public or protected. This
+contradicts the concept of information hiding and low coupling. Then
+you expose the internals of a unit which makes it impossible to switch
+the internal implementation without breaking a majority of
+tests. Additionally, you crippled the module&rsquo;s contract and swamped
+its interface with confusing public methods which should be private.</p>
+<h5 id="tests-should-be-clear-concise-and-complete">Tests should be clear, concise and complete</h5>
+<p>A test should be clear, concise and complete. What does that mean
+exactly? A clear test is easy to read and to understand. Tests should
+not include complex logic like nested if-conditions or complicated
+loops. A clear test is a simple sequence of expressions without any
+branching. Consistency is critical. All tests in a project should
+comply to a common structure like <em>arrange-act-assert</em> or
+<em>given-when-then</em>. A consistent structure reduces cognitive load and
+gives developers, unfamiliar with the codebase, a prescriptive model
+how a test should look like. A consistent naming pattern adds clarity
+and bolsters readability. A collection of common patterns can be found
+<a href="https://dzone.com/articles/7-popular-unit-test-naming">here</a>. My
+preferred one is <code>UnitName_StateUnderTest_ExpectedBehavior</code>.  Rich
+failure messages are important too. A message with a detailed context
+where and why the test failed, reduces debugging effort
+immensely. According to
+<a href="https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices">Microsoft</a>
+you should create a separate test for each assertion. In case of a
+test failure, a single assertion helps to demystify the error. Most
+testing-frameworks anyway stop during the first assertion error per
+test. At best, a visible correlation from the test name to the
+assertion statement exist.</p>
+<p>The following test shows one good assertion and some
+unnecessary ones:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PaymentServiceTest</span> <span class="o">{</span>
+
+    <span class="n">PaymentService</span> <span class="n">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PaymentService</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentGateway</span><span class="o">());</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@DisplayName</span><span class="o">(</span><span class="s">&#34;payment with valid user&#34;</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">pay_validUser_success</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">&#34;userId&#34;</span><span class="o">);</span>
+        <span class="n">user</span><span class="o">.</span><span class="na">setHasValidCreditCard</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">750</span><span class="o">;</span>
+        <span class="n">PaymentRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PaymentRequest</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>
+
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">PaymentResponse</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">pay</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="c1">// GOOD one assert is enough to cover the test case
+</span><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">expected</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">());</span>
+
+        <span class="c1">// BAD
+</span><span class="c1"></span>        <span class="c1">// unnecessary over-assertion
+</span><span class="c1"></span>        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expectedReason</span><span class="o">,</span> <span class="n">actual</span><span class="o">.</span><span class="na">getReason</span><span class="o">());</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expectedStateOfSUT</span><span class="o">,</span> <span class="n">sut</span><span class="o">.</span><span class="na">getState</span><span class="o">());</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expectedOther</span><span class="o">,</span> <span class="n">otherStuffNonRelatedToTest</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Completeness and conciseness contradict themselves. A good test finds
+a balance of both. The highest priority is readability though which is
+fostered by completeness. A <em>complete</em> test contains all dependencies,
+pre-configured objects and data needed to run the test. The apt
+developer must resist the urge to make the test too DRY (Don&rsquo;t Repeat
+Yourself). DRY code scatters important shared logic and hurts
+readability. Relying too much on shared helper classes and functions
+reduces the amount of code but increases coupling and makes tests
+brittle. <a href="https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html">Google&rsquo;s Testing on the Toilet
+Blog</a>
+favors the <strong>DAMP</strong> principle (<em>Descriptive And Meaningful Phrases</em>)
+over the DRY principle for tests. A little duplication improves
+comprehension and should be preferred over uniqueness. If you think
+complete tests are too verbose or your tests require lots of setup
+code, it could be an indicator that your production code is flawed and
+you should rethink your overall design.</p>
+<p>The following examples show a test in a DRY and a DAMP version. The
+DRY version uses shared helper functions like <code>createUsers()</code> or
+<code>validate()</code> with unclear semantics. The DAMP version replaces these
+magical functions with a simple constructor call and an assertion
+statement.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">
+<span class="c1">// BAD
+</span><span class="c1"></span>
+<span class="c1">// test is too DRY
+</span><span class="c1"></span>
+<span class="c1">// What kind of users will be created by the createUsers() function?
+</span><span class="c1">// What will be asserted by the validate() function?
+</span><span class="c1"></span>
+<span class="kd">class</span> <span class="nc">PaymentServiceDRYTest</span> <span class="o">{</span>
+
+    <span class="c1">// magical helper function
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="n">createUsers</span><span class="o">();</span> <span class="c1">// how many users will be created?
+</span><span class="c1"></span>
+    <span class="nd">@Test</span>
+    <span class="nd">@DisplayName</span><span class="o">(</span><span class="s">&#34;payment with valid user&#34;</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">pay_validUser_success</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">PaymentService</span> <span class="n">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PaymentService</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentGateway</span><span class="o">());</span>
+
+        <span class="c1">// BAD
+</span><span class="c1"></span>        <span class="c1">// which user in the list is a valid one?
+</span><span class="c1"></span>        <span class="n">PaymentRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PaymentRequest</span><span class="o">(</span><span class="n">users</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">),</span> <span class="n">750</span><span class="o">);</span>
+
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">PaymentResponse</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">pay</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="c1">// magical helper function
+</span><span class="c1"></span>        <span class="n">validate</span><span class="o">(</span><span class="n">actual</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>  <span class="c1">// what are these parameters?
+</span><span class="c1"></span>
+        <span class="c1">// validate() is used in other contexts too
+</span><span class="c1"></span>        <span class="c1">// the three parameters are: validate(actual, expected, resultObject)
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// GOOD
+</span><span class="c1"></span>
+<span class="c1">// Test is DAMP
+</span><span class="c1"></span>
+<span class="c1">// all information needed for the test are inside the test
+</span><span class="c1"></span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PaymentServiceDAMPTest</span> <span class="o">{</span>
+
+    <span class="n">PaymentService</span> <span class="n">sut</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PaymentService</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentGateway</span><span class="o">());</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@DisplayName</span><span class="o">(</span><span class="s">&#34;payment with valid user&#34;</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">pay_validUser_success</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">&#34;userId&#34;</span><span class="o">);</span>
+        <span class="n">user</span><span class="o">.</span><span class="na">setHasValidCreditCard</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">750</span><span class="o">;</span>
+        <span class="n">PaymentRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PaymentRequest</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>
+
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">PaymentResponse</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">pay</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">expected</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Nevertheless conciseness is important too and must not be neglected. A
+deliberate usage of shared helpers makes this possible. For example,
+after calling the helper function you could explicitly set the needed
+properties for the test on the returned object. So you utilize the
+shared helper function but also decouple the test from it. Further the
+relevant properties, needed by the test, are made prominent and the
+test will be stable even if someone changes the helper logic. The
+example below illustrates that.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// BAD use of shared helper function.
+</span><span class="c1"></span>
+<span class="c1">// We don&#39;t know about the properties of the created user.
+</span><span class="c1"></span>
+<span class="c1">// If someone changes createDefaultUser(), the test could break.
+</span><span class="c1"></span>
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">pay_validUser_success3</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">createDefaultUser</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">750</span><span class="o">;</span>
+        <span class="n">PaymentRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PaymentRequest</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>
+
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">PaymentResponse</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">pay</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">expected</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">());</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">
+<span class="c1">// GOOD use of shared helper function.
+</span><span class="c1"></span>
+<span class="c1">// Set properties which matter for the test explicitly.
+</span><span class="c1"></span>
+<span class="c1">// Test is complete.
+</span><span class="c1">// You understand the test without checking createDefaultUser().
+</span><span class="c1">// Even if someone changes createDefaultUser(), the test will be ok.
+</span><span class="c1"></span>
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">pay_validUser_success2</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// arrange
+</span><span class="c1"></span>        <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">createDefaultUser</span><span class="o">();</span>
+        <span class="n">user</span><span class="o">.</span><span class="na">setHasValidCreditCard</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">750</span><span class="o">;</span>
+        <span class="n">PaymentRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PaymentRequest</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>
+
+        <span class="c1">// act
+</span><span class="c1"></span>        <span class="n">PaymentResponse</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="na">pay</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+
+        <span class="c1">// assert
+</span><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">expected</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">());</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="tests-should-give-you-confidence-and-a-good-feeling">Tests should give you confidence (and a good feeling)</h5>
+<p>Finally your test suite should give you confidence that your code
+changes are correct and you did not break anything. A green suite is
+an indicator that you can deploy to production without worries. Green
+tests should give the individual developer a good feeling about his
+code changes. Thereby tests act as a productivity booster so you can
+make changes faster and deliver features in less time &ndash; always
+feeling good at it.</p>
+<h4 id="the-fallacy-of-mocking">The Fallacy Of Mocking</h4>
+<p>We learned that mocks make unit tests fast and deterministic. They
+prevent flaky tests because they replace unstable calls or slow
+network calls with predefined, hard-coded behaviour. There is a catch
+though. The overuse of mocking or stubbing has a negative effect on
+your test code quality:</p>
+<ol>
+<li>
+<p>Tests become unclear because mock statements bloat the code and
+make the test hard to comprehend. The maintainability of your test
+code suffers.</p>
+</li>
+<li>
+<p>Tests become brittle. The more you mock, the more internals of the
+SUT are leaked. Changing the internals, even without changing the
+behaviour of the SUT, could make the test fail which contracts the
+principle of enduring tests.</p>
+</li>
+<li>
+<p>A need of too many mocks could be an indicator of bad design. Most
+probably the SUT has too many dependencies and responsibilities and
+should be divided.</p>
+</li>
+</ol>
+<p><a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Google</a>
+also warns about the overuse of mock-frameworks and interaction
+testing. Nevertheless interaction testing is sometimes the only way
+to check the code correctness. For example in order to check a
+caching logic, you need to call a function twice. First to get object
+and to fill the cache, second to get the object from the cache. Both
+returned objects are indistinguishable. The only way to verify that
+the second object was retrieved from the cache is to check if the
+cache was called. Another insight from Google is that they prefer
+<em>Fakes over Mocks</em>. Fakes are not that intrusive and the test code is
+not swamped by stubbing-behaviour statements.</p>
+<h4 id="final-words">Final words</h4>
+<p>You made it, it was a long read. I hope you gained some new insights
+and understand that good unit tests play a crucial part for a
+successful software project. Especially identifying good and bad tests
+is important, so you do not fall into the trap of brittle or flaky
+tests. Eventually tests exist to make the life of developers
+easier. When tests do not increase productivity, confidence and code
+quality, they failed their purpose. Chasing a 100% code coverage is
+also nonsense. As long developers feel confident about their code base
+and major refactorings are done regularly everything is fine.</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/programming/" term="programming" label="programming" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/testing/" term="testing" label="testing" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">ESlint &#43; Prettier &#43; Typescript = Consistency</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/eslint-prettier-typescript/" />
             <id>https://gerlacdt.github.io/posts/eslint-prettier-typescript/</id>
-            <updated>2020-04-03T14:11:48+02:00</updated>
+            <updated>2020-05-04T19:01:03+02:00</updated>
             <published>2020-03-24T10:28:27+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -131,7 +1132,7 @@ your project root.</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># eslintignore</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># .eslintignore</span>
 
 <span class="c1"># you should ignore irrelevant *.js and *.ts files which do not belong to you project</span>
 
@@ -1155,7 +2156,7 @@ them in different colours. Very nice!</p>
             <title type="text">Things to consider with microservices</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/microservices/" />
             <id>https://gerlacdt.github.io/posts/microservices/</id>
-            <updated>2020-04-03T14:09:42+02:00</updated>
+            <updated>2020-04-03T14:13:00+02:00</updated>
             <published>2019-03-30T09:53:54+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -1440,7 +2441,7 @@ of distributed systems!</p>
             <title type="text">Programming Quotes</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/programming-quotes/" />
             <id>https://gerlacdt.github.io/posts/programming-quotes/</id>
-            <updated>2020-03-25T11:18:17+01:00</updated>
+            <updated>2020-05-04T19:01:03+02:00</updated>
             <published>2019-03-29T09:40:28+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -1576,9 +2577,9 @@ of distributed systems!</p>
 </blockquote>
 <p>Leslie Lamport</p>
 <blockquote>
-<p>Debugging is like being the detective in a crime movie where you are also the murderer.
-Filipe Fortes</p>
+<p>Debugging is like being the detective in a crime movie where you are also the murderer.</p>
 </blockquote>
+<p>Filipe Fortes</p>
 <blockquote>
 <p>Good specifications will always improve programmer productivity far better than any programming tool or technique.</p>
 </blockquote>
@@ -1609,9 +2610,9 @@ Filipe Fortes</p>
 </blockquote>
 <p>Grace Hopper</p>
 <blockquote>
-<p>There are a million ways to lose a work day, but not even a single way to get one back.
-Tom DeMarco</p>
+<p>There are a million ways to lose a work day, but not even a single way to get one back.</p>
 </blockquote>
+<p>Tom DeMarco</p>
 <blockquote>
 <p>The sooner you start to code, the longer the program will take.</p>
 </blockquote>
