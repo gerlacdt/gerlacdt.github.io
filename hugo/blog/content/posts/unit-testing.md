@@ -30,10 +30,12 @@ I use *unit test* and test interchangeably.
 * Prefer state verification over interaction verification
 * Prevent brittle tests
 * Prevent flaky tests
-* Read more in [Software Engineering at
- Google](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/)
- and [Kent Becks's Programmer Test
+* Read more in:
+  * [Software Engineering at Google](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/)
+  * [Kent Becks's Programmer Test
  Principles](https://medium.com/@kentbeck_7670/programmer-test-principles-d01c064d7934)
+  * [Microsoft's Best Practices for Unit
+ testing](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices)
 
 
 ### Why good unit tests are important
@@ -432,18 +434,25 @@ A test should be clear, concise and complete. What does that mean
 exactly? A clear test is easy to read and to understand. Tests should
 not include complex logic like nested if-conditions or complicated
 loops. A clear test is a simple sequence of expressions without any
-branching. All tests in a project should comply to the same
-structure. Common structures are *arrange-act-assert* or
-*given-when-then*. A common and consistent structure reduces cognitive
-load and gives developers, unfamiliar with the codebase, a model how
-to write tests. A consistent naming pattern adds clarity too,
-e.g. `UnitName_StateUnderTest_ExpectedBehavior`. Rich failure
-messages, with context where and why the test failed, reduces
-debugging effort immensely. Keeping the number of assertions to a
-minimum keeps the test short and focused. If you feel the need for
-multiple assertions, you can write additional tests with a different
-focus. At best, there is a one-to-one correlation from the test name
-to the assertion. The following test shows one good assertion and some
+branching. Consistency is critical too. All tests in a project should
+comply to a common structure like *arrange-act-assert* or
+*given-when-then*. A consistent structure reduces cognitive load and
+gives developers, unfamiliar with the codebase, a model how to write
+tests. A consistent naming pattern adds clarity and bolsters
+readability, e.g. `UnitName_StateUnderTest_ExpectedBehavior`.  Rich
+failure messages, with a detailed context where and why the test
+failed, reduces debugging effort immensely and helps developers
+staying productive. According to
+[Microsoft](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices)
+you should create a separate test for each assertion. In case of a
+test failure, avoiding multiple assertions helps to demystify the
+error since you do not have to dig through a chain of
+assert-statements. Moreover your test stays focused because with a
+single assertion you are guaranteed to check one single test case and
+are not inclined to enlarge the test scope. At best, a visible
+correlation from the test name to the assertion exist.
+
+The following test shows one good assertion and some
 unnecessary ones:
 
 
@@ -673,6 +682,15 @@ your test code quality:
  statements.
 
 
-#### Last words
+#### Final words
 
-TODO
+You made it, it was a long read. I hope you gained some new insights
+and understand that good unit tests play a crucial part for a
+successful software project. Especially identifying good and bad tests
+is important, so you do not fall into the trap of brittle or flaky
+tests. Eventually tests exist to make the life of developers
+easier. When tests do not increase productivity, confidence and code
+quality, they failed their purpose. Chasing a 100% code coverage is
+also nonsense as long developers feel confident about their code base
+and major refactorings are done regularly. Always scrutinize your
+current testing strategy, maybe there is room for improvement.
