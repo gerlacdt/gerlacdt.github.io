@@ -1,6 +1,6 @@
 ---
 title: "Why and How to write better Unit Tests"
-date: 2020-05-02T08:08:00+02:00
+date: 2020-05-04T08:08:00+02:00
 tags: ["programming", "testing"]
 draft: true
 ---
@@ -11,7 +11,8 @@ draft: true
 
 I use *unit test* and test interchangeably.
 
-* Good tests build the foundation of a maintainable codebase
+* Good tests build the foundation of a maintainable and high-quality
+  codebase
 * Tests should help developers to be productive
 * Tests should be fast
 * Tests should be independent
@@ -21,7 +22,8 @@ I use *unit test* and test interchangeably.
 * Tests should be clear, concise and complete
   * Avoid complex control flow logic like nested ifs or loops
   * Tests should follow a consistent naming pattern like *UnitName_StateUnderTest_ExpectedBehavior*
-  * Tests should comply to a consistent structure like *arrange-act-assert*
+  * Tests should comply to a consistent structure
+  * One assertion per test
   * Tests should be [DAMP not
     DRY](https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html)
 * Tests should give developers confidence to deploy to production and to refactor
@@ -30,7 +32,7 @@ I use *unit test* and test interchangeably.
 * Prefer state verification over interaction verification
 * Prevent brittle tests
 * Prevent flaky tests
-* Read more in:
+* Read more:
   * [Software Engineering at Google](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/)
   * [Kent Becks's Programmer Test
  Principles](https://medium.com/@kentbeck_7670/programmer-test-principles-d01c064d7934)
@@ -44,7 +46,8 @@ TDD and test engineering culture is considered best practice these
 days. Alas, I often encounter projects without tests or with bad
 tests. **Brittle** tests are bad. Maybe you experienced this yourself,
 you made some changes in a specific part of the system and suddenly a
-lot of unrelated tests fail. Tests can also fail because they are
+lot of unrelated tests fail. This is not only annoying for developers
+but also a time killer. Tests can also fail because they are
 **flaky**. Flaky tests are non-deterministic due to relying on remote
 systems, making network calls or accessing remote databases. This
 causes tests to randomly succeed or fail even when production code has
@@ -57,8 +60,8 @@ kept busy with repairing broken tests and productivity suffers. This
 can happen in disguise and developers are not even aware of the
 problem. In some companies test coverage is treated as a key
 metric. Hence if the coverage high, nobody will question the current
-state. Maybe all people involved are very proud of the high coverage,
-not recognizing their real problem.
+situation. Maybe the whole involved team is proud of the high
+coverage, not recognizing their real problem.
 
 Maintainable, fast and deterministic unit tests build the foundation
 of a sustainable codebase. But unit tests alone are not enough to
@@ -74,13 +77,16 @@ but these tests are slow, flaky, not repeatable and often are
 conducted manually which makes them bad candidates for [continuous
 integration and
 delivery](https://martinfowler.com/books/continuousDelivery.html). If
-UI tests or system tests fail, developers have a hard time to locate
-the problem. It is an onerous task to trace the bug which triggered
-such a test to fail. Relying heavily in a project on manual regression
+system tests fail, it is hard for developers to locate the problem
+because the scope of a system test is very broad and not as focused as
+in a unit test. Relying heavily in a project on manual regression
 testing instead of an exhaustive, automatic test suite is an
 anti-pattern, the **test ice cone**. It is the inverse of the test
 pyramid and leads to an unsustainable codebase because failing system
-tests leave developers in the dark about the root cause.
+tests leave developers in the dark about the root cause and drain
+their productivity. Did you ever work in a project with a Jira Board,
+cluttered with unresolved Bugs in the backlog? -- all bugs found by
+so-called manual QAs or testers.
 
 <img src="/img/ice_cone.jpg" alt="https://watirmelon.blog/testing-pyramids/" class="medium-zoom-image" width="300">
 
@@ -90,10 +96,10 @@ purpose of tests is to save time for developers and keep the code
 quality high. But careless use of testing can have negative effects on
 productivity and code quality. E.g if developers loose a majority of
 their time fixing tests instead of building new features. "Wrong"
-testing can result in a system that requires more effort to maintain
-than without tests and takes more effort to change without actually
-improving confidence in the next production release. It is crucial to
-identify bad tests and to know how to write good tests.
+testing can result in a system that requires even more effort to
+maintain than without tests and takes more effort to change without
+actually improving confidence in the next production release. It is
+crucial to identify bad tests and to know how to write good tests.
 
 
 This blog post is built upon the shoulder of giants. Basically I draw
@@ -118,16 +124,17 @@ ones are:
   behaviour with an in-memory Hashmap. A Fake is used interchangeably
   with a real implementation and is typically applied via dependency
   injection.
-* A **Stub** returns predefined values to specific calls which are
-  internally needed by the **SUT** (System Under Test) to fulfill the
-  tested behaviour.
+* A **Stub** returns predefined, hard-coded values to specific calls
+  which are internally needed by the **SUT** (System Under Test) to
+  fulfill the tested behaviour.
 * A **Mock** is a stub, but additionally checks the interactions of
-  the mock. For example, was the mock called with the expected
-  parameters or was the mocked method called an expected number of
-  times. Checking the interactions of mocks is also called
+  the mock with its environment. For example, was the mock called with
+  the expected parameters or was the mocked method called an expected
+  number of times? Checking the interactions of mocks is also called
   [**interaction
   testing**](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/).
-  Naturally both, Stubbing and Mocking, is done via mock-frameworks.
+  Naturally both, Stubbing and Mocking, is realized via
+  mock-frameworks.
 
 An exhaustive list of Test Double types can be found in [Martin
 Fowler's article](https://martinfowler.com/bliki/TestDouble.html).
@@ -146,7 +153,7 @@ public interface UserRepository {
 }
 
 
-// Fakes the UserRepository with a HashMap implementation
+// Fakes the UserRepository interface with a HashMap implementation
 
 public class FakeUserRepository implements UserRepository {
 
@@ -164,7 +171,7 @@ public class FakeUserRepository implements UserRepository {
 }
 ```
 
-The next example shows a simple mock which stubs a method of a
+The next example shows a simple mock which stubs a method of the
 UserRepository. Without the interaction verification at the end of the
 test, the mock would be a simple stub.
 
@@ -176,13 +183,15 @@ import static org.mockito.Mockito.*;
 public class UserServiceMockTest {
 
     UserRepository mockUserRepository = mock(UserRepository.class);
+
+    // dependency injection
     UserService sut = new UserService(mockUserRepository);
 
     @Test
     public void getUser_ReturnUser() {
         // arrange
         User user = new User("userId");
-        when(mockUserRepository.findById(anyString())).thenReturn(user);
+        when(mockUserRepository.findById(anyString())).thenReturn(user); // stubbing
 
         // act
         User actual = sut.getUser("userId");
@@ -226,24 +235,25 @@ committing, all unit tests are run to check if nothing else is
 broken. Hence this group of tests is called the "commit suite".
 
 
-The optimal duration of a unit test is in the nanosecond range. A few
-hundred milliseconds sounds fast for a single unit test but it is too
-slow if you think about a project with multiple thousand tests. All
-tests would take minutes to complete. A developer will only
+The optimal duration of a unit test is in the nanosecond
+range. Hundred milliseconds sounds fast for a single unit test but it
+is too slow if you think about a project with multiple thousand
+tests. All tests would take minutes to complete. A developer will only
 reluctantly wait or even worse he will skip running the tests.
 
 
 Tests, relying on network calls, database queries or time related
 logic, are inherently slow. Test Doubles are a mechanism to make tests
 fast and reliable. With a Test Double you *inject* a fake
-implementation replacing the database or http call. This technique is
+implementation replacing the database or HTTP call. This technique is
 well known as [Dependency
 Injection](https://martinfowler.com/articles/injection.html#InversionOfControl).
 
 In the code block below the UserService uses the UserRepository to
 carry out the intended business logic. A real UserRepository talks
 naturally to a database and is too slow for a unit test. Here the real
-database implementation is substituted with a FakeUserRepository.
+database implementation is substituted with a FakeUserRepository from
+above.
 
 ``` java
 public class UserServiceTest {
@@ -286,7 +296,8 @@ Below there is an example of a bad unit test. The second test depends
 on the first one and it will fail if the first test does not run
 before or fails. Not only this eradicates the possibility to
 distribute the tests but also developers will have a hard time to
-figure out the root cause of the potential error.
+figure out the root cause of the potential error. Did the second test
+fail because of itself or because of the test before?
 
 ``` java
 // BAD
@@ -379,20 +390,20 @@ public class BankAccountServiceTest {
 ##### Tests should be deterministic
 
 A deterministic test never changes its outcome when there was no
-change in behaviour. A test which switches from green to red or the
-other way around without any change is called flaky. Test Doubles are
-a good way to get rid of flaky dependencies like external network or
-database calls. The earlier example with the FakeUserRepository
-demonstrates this.
+change of behaviour. A test switching from green to red or the other
+way around without any change is called flaky. Test Doubles are a good
+way to get rid of flaky dependencies like external network or database
+calls. The earlier example with the FakeUserRepository demonstrates
+this.
 
 ##### Tests should focus on a single unit of the system
 
 A unit test should focus on a single part of the system. If a unit
-tests breaks, it should be easy to find the cause of the problem. The
-other way around is also true: If someone changes code of a unit, only
-corresponding unit tests should break. If you need to start a debugger
-to figure out what went wrong, the chance is high that your tests are
-too diffuse and include much more than a single unit.
+tests breaks, it should be easy to find the root cause. The other way
+around is also true: If someone changes a unit, only corresponding
+unit tests should possibly break. If you need to start a debugger to
+figure out what went wrong, the chance is high that your tests are too
+diffuse and include much more than a single unit.
 
 Unit tests which not focus on a single unit tend to be brittle because
 they will fail if some other part of the system changes. Brittle tests
@@ -407,24 +418,24 @@ more a burden than a backing for the developers.
 
 Strive for unchangeable tests. A test should be written once and never
 be touched except there is a change of behaviour in the corresponding
-unit. Changes of internals should never break a test. Like i mentioned
-earlier these are brittle tests. We should prevent them at any cost.
+unit. Changes of internals should never break a test if the behaviour
+stays the same. Like i mentioned earlier these are brittle tests. We
+should prevent them at any cost.
 
 Brittle tests can creep into the codebase because of the overuse of
 mocks. Mocks verify if specific methods get called. Hence mocks know
 about the internal implementation which makes the tests prone to
-failures. Further if the internal implementation changes, you need to
-adjust all tests which use the mock. In large codebases this means a
-lot of effort.
+failures. If the internal implementation changes, you need to adjust
+all tests which use related mocks. In large codebases this means a lot
+of effort.
 
 Test only *public* methods. I often see developers who test private
 methods. Therefore they make them public or protected. This
 contradicts the concept of information hiding and low coupling. Then
-your public methods expose the internals which makes it impossible to
-switch the internal implementation without breaking a majority of
+you expose the internals of a unit which makes it impossible to switch
+the internal implementation without breaking a majority of
 tests. Additionally, you crippled the module's contract and swamped
-its interface with confusing public methods which should be
-private.
+its interface with confusing public methods which should be private.
 
 
 
@@ -434,23 +445,23 @@ A test should be clear, concise and complete. What does that mean
 exactly? A clear test is easy to read and to understand. Tests should
 not include complex logic like nested if-conditions or complicated
 loops. A clear test is a simple sequence of expressions without any
-branching. Consistency is critical too. All tests in a project should
+branching. Consistency is critical. All tests in a project should
 comply to a common structure like *arrange-act-assert* or
 *given-when-then*. A consistent structure reduces cognitive load and
-gives developers, unfamiliar with the codebase, a model how to write
-tests. A consistent naming pattern adds clarity and bolsters
-readability, e.g. `UnitName_StateUnderTest_ExpectedBehavior`.  Rich
-failure messages, with a detailed context where and why the test
-failed, reduces debugging effort immensely and helps developers
-staying productive. According to
+gives developers, unfamiliar with the codebase, a prescriptive model
+how a test should look like. A consistent naming pattern adds clarity
+and bolsters readability. A collection of common patterns can be found
+[here](https://dzone.com/articles/7-popular-unit-test-naming). My
+preferred one is `UnitName_StateUnderTest_ExpectedBehavior`.  Rich
+failure messages are important too. A message with a detailed context
+where and why the test failed, reduces debugging effort
+immensely. According to
 [Microsoft](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices)
 you should create a separate test for each assertion. In case of a
-test failure, avoiding multiple assertions helps to demystify the
-error since you do not have to dig through a chain of
-assert-statements. Moreover your test stays focused because with a
-single assertion you are guaranteed to check one single test case and
-are not inclined to enlarge the test scope. At best, a visible
-correlation from the test name to the assertion exist.
+test failure, a single assertion helps to demystify the error. Most
+testing-frameworks anyway stop during the first assertion error per
+test. At best, a visible correlation from the test name to the
+assertion statement exist.
 
 The following test shows one good assertion and some
 unnecessary ones:
@@ -642,7 +653,7 @@ example below illustrates that.
 
 Finally your test suite should give you confidence that your code
 changes are correct and you did not break anything. A green suite is
-an indicator that you can deploy without worries to production. Green
+an indicator that you can deploy to production without worries. Green
 tests should give the individual developer a good feeling about his
 code changes. Thereby tests act as a productivity booster so you can
 make changes faster and deliver features in less time -- always
@@ -657,15 +668,16 @@ network calls with predefined, hard-coded behaviour. There is a catch
 though. The overuse of mocking or stubbing has a negative effect on
 your test code quality:
 
-1. Tests become unclear because mock-statements bloat the code and
+1. Tests become unclear because mock statements bloat the code and
    make the test hard to comprehend. The maintainability of your test
    code suffers.
 
 2. Tests become brittle. The more you mock, the more internals of the
    SUT are leaked. Changing the internals, even without changing the
-   behaviour of the SUT, could make the test fail.
+   behaviour of the SUT, could make the test fail which contracts the
+   principle of enduring tests.
 
-3. A need of too many mocks could be a sign of bad design. Most
+3. A need of too many mocks could be an indicator of bad design. Most
    probably the SUT has too many dependencies and responsibilities and
    should be divided.
 
@@ -673,13 +685,13 @@ your test code quality:
  also warns about the overuse of mock-frameworks and interaction
  testing. Nevertheless interaction testing is sometimes the only way
  to check the code correctness. For example in order to check a
- caching logic, you need to call a function twice. First to fill the
- cache with a value, second to get the cached value from the
- cache. The only way to verify that the second value was retrieved
- from the cache is to check if the cache was called. Another insight
- from Google is that they prefer Fakes over Mocks. Fakes are not that
- intrusive and the test code is not swamped by stubbing-behaviour
- statements.
+ caching logic, you need to call a function twice. First to get object
+ and to fill the cache, second to get the object from the cache. Both
+ returned objects are indistinguishable. The only way to verify that
+ the second object was retrieved from the cache is to check if the
+ cache was called. Another insight from Google is that they prefer
+ *Fakes over Mocks*. Fakes are not that intrusive and the test code is
+ not swamped by stubbing-behaviour statements.
 
 
 #### Final words
@@ -691,6 +703,5 @@ is important, so you do not fall into the trap of brittle or flaky
 tests. Eventually tests exist to make the life of developers
 easier. When tests do not increase productivity, confidence and code
 quality, they failed their purpose. Chasing a 100% code coverage is
-also nonsense as long developers feel confident about their code base
-and major refactorings are done regularly. Always scrutinize your
-current testing strategy, maybe there is room for improvement.
+also nonsense. As long developers feel confident about their code base
+and major refactorings are done regularly everything is fine.
