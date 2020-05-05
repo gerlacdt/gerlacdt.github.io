@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-05-04T19:04:09+02:00</updated>
+    <updated>2020-05-05T18:10:03+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -18,7 +18,7 @@
             <title type="text">Why and How to write better Unit Tests</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/unit-testing/" />
             <id>https://gerlacdt.github.io/posts/unit-testing/</id>
-            <updated>2020-05-04T19:03:23+02:00</updated>
+            <updated>2020-05-05T18:08:45+02:00</updated>
             <published>2020-05-04T08:08:00+02:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -68,14 +68,14 @@ testing</a></li>
 <h3 id="why-good-unit-tests-are-important">Why good unit tests are important</h3>
 <p>TDD and test engineering culture is considered best practice these
 days. Alas, I often encounter projects without tests or with bad
-tests. <strong>Brittle</strong> tests are bad. Maybe you experienced this yourself,
-you made some changes in a specific part of the system and suddenly a
-lot of unrelated tests fail. This is not only annoying for developers
-but also a time killer. Tests can also fail because they are
-<strong>flaky</strong>. Flaky tests are non-deterministic due to relying on remote
-systems, making network calls or accessing remote databases. This
-causes tests to randomly succeed or fail even when production code has
-not changed.</p>
+tests. Maybe you experienced this yourself, you changed something in a
+specific part of the system and suddenly a lot of unrelated tests
+fail. Congratulations, you made the acquaintance of <strong>brittle</strong> tests.
+This is not only annoying for developers but also a time killer.
+Another kind of bad tests are <strong>flaky</strong> tests. They are
+non-deterministic due to relying on remote systems, making network
+calls or accessing remote databases. This causes tests to randomly
+succeed or fail even when production code has not changed.</p>
 <p>Both, brittle and flaky, tests are a serious problems in a codebase
 and should be shunned. Otherwise they will succumb progressively more
 and more time and effort of the developers. Finally developers are
@@ -978,15 +978,18 @@ cache was called. Another insight from Google is that they prefer
 <em>Fakes over Mocks</em>. Fakes are not that intrusive and the test code is
 not swamped by stubbing-behaviour statements.</p>
 <h4 id="final-words">Final words</h4>
-<p>You made it, it was a long read. I hope you gained some new insights
-and understand that good unit tests play a crucial part for a
-successful software project. Especially identifying good and bad tests
-is important, so you do not fall into the trap of brittle or flaky
+<p>I know some presented traits are idealistic. Ideals are often hard or
+even impossible to achieve. Nevertheless these &ldquo;ideals&rdquo; should serve
+you as a guide star. I hope you gained some new insights and
+understand that good unit tests play a crucial part for a successful
+software project. Especially identifying good and bad tests is
+important, so you do not fall into the trap of brittle or flaky
 tests. Eventually tests exist to make the life of developers
 easier. When tests do not increase productivity, confidence and code
-quality, they failed their purpose. Chasing a 100% code coverage is
-also nonsense. As long developers feel confident about their code base
-and major refactorings are done regularly everything is fine.</p>
+quality, they failed their purpose. I also hope that i could eliminate
+some fallacies about mocking or that chasing a 100% code coverage is
+nonsense. As long developers feel confident about their codebase and
+refactorings are done regularly everything is fine.</p>
 ]]></content>
             
             

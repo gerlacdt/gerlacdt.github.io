@@ -2,7 +2,7 @@
 title: "Why and How to write better Unit Tests"
 date: 2020-05-04T08:08:00+02:00
 tags: ["programming", "testing"]
-draft: true
+ndraft: true
 ---
 
 <!-- [tldr](#tldr)  this is cross-reference inside the document-->
@@ -44,14 +44,14 @@ I use *unit test* and test interchangeably.
 
 TDD and test engineering culture is considered best practice these
 days. Alas, I often encounter projects without tests or with bad
-tests. **Brittle** tests are bad. Maybe you experienced this yourself,
-you made some changes in a specific part of the system and suddenly a
-lot of unrelated tests fail. This is not only annoying for developers
-but also a time killer. Tests can also fail because they are
-**flaky**. Flaky tests are non-deterministic due to relying on remote
-systems, making network calls or accessing remote databases. This
-causes tests to randomly succeed or fail even when production code has
-not changed.
+tests. Maybe you experienced this yourself, you changed something in a
+specific part of the system and suddenly a lot of unrelated tests
+fail. Congratulations, you made the acquaintance of **brittle** tests.
+This is not only annoying for developers but also a time killer.
+Another kind of bad tests are **flaky** tests. They are
+non-deterministic due to relying on remote systems, making network
+calls or accessing remote databases. This causes tests to randomly
+succeed or fail even when production code has not changed.
 
 Both, brittle and flaky, tests are a serious problems in a codebase
 and should be shunned. Otherwise they will succumb progressively more
@@ -696,12 +696,15 @@ your test code quality:
 
 #### Final words
 
-You made it, it was a long read. I hope you gained some new insights
-and understand that good unit tests play a crucial part for a
-successful software project. Especially identifying good and bad tests
-is important, so you do not fall into the trap of brittle or flaky
+I know some presented traits are idealistic. Ideals are often hard or
+even impossible to achieve. Nevertheless these "ideals" should serve
+you as a guide star. I hope you gained some new insights and
+understand that good unit tests play a crucial part for a successful
+software project. Especially identifying good and bad tests is
+important, so you do not fall into the trap of brittle or flaky
 tests. Eventually tests exist to make the life of developers
 easier. When tests do not increase productivity, confidence and code
-quality, they failed their purpose. Chasing a 100% code coverage is
-also nonsense. As long developers feel confident about their code base
-and major refactorings are done regularly everything is fine.
+quality, they failed their purpose. I also hope that i could eliminate
+some fallacies about mocking or that chasing a 100% code coverage is
+nonsense. As long developers feel confident about their codebase and
+refactorings are done regularly everything is fine.
