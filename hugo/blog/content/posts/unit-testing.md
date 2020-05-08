@@ -9,24 +9,22 @@ ndraft: true
 
 ### TL;DR {#tldr}
 
-I use *unit test* and test interchangeably.
-
-* Good tests build the foundation of a maintainable and high-quality
+* Good unit tests build the foundation of a maintainable and high-quality
   codebase
-* Tests should help developers to be productive
-* Tests should be fast
-* Tests should be independent
-* Tests should be deterministic
-* Tests should focus on a single unit
-* Tests should be enduring
-* Tests should be clear, concise and complete
+* Unit Tests should help developers to be productive
+* Unit Tests should be fast
+* Unit Tests should be independent
+* Unit Tests should be deterministic
+* Unit Tests should focus on a single unit
+* Unit Tests should be enduring
+* Unit Tests should be clear, concise and complete
   * Avoid complex control flow logic like nested ifs or loops
-  * Tests should follow a consistent naming pattern like *UnitName_StateUnderTest_ExpectedBehavior*
-  * Tests should comply to a consistent structure
-  * One assertion per test
-  * Tests should be [DAMP not
+  * Unit Tests should follow a consistent naming pattern like *UnitName_StateUnderTest_ExpectedBehavior*
+  * Unit Tests should comply to a consistent structure
+  * One assertion per unit test
+  * Unit Tests should be [DAMP not
     DRY](https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html)
-* Tests should give developers confidence to deploy to production and to refactor
+* Unit Tests should give developers confidence to deploy and to refactor
 * Test Doubles help to make tests fast and deterministic
 * The overuse of Mocking makes test hard to read and brittle
 * Prefer state verification over interaction verification

@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-05-05T18:10:03+02:00</updated>
+    <updated>2020-05-08T19:54:27+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -18,38 +18,36 @@
             <title type="text">Why and How to write better Unit Tests</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/unit-testing/" />
             <id>https://gerlacdt.github.io/posts/unit-testing/</id>
-            <updated>2020-05-05T18:08:45+02:00</updated>
+            <updated>2020-05-08T19:53:46+02:00</updated>
             <published>2020-05-04T08:08:00+02:00</published>
             <author>
                     <name>Daniel Gerlach</name>
                     <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <summary type="html"><![CDATA[TL;DR I use unit test and test interchangeably.
- Good tests build the foundation of a maintainable and high-quality codebase Tests should help developers to be productive Tests should be fast Tests should be independent Tests should be deterministic Tests should focus on a single unit Tests should be enduring Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Tests should comply to a consistent structure One assertion per test Tests should be DAMP not DRY   Tests should give developers confidence to deploy to production and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&rsquo;s Programmer Test Principles Microsoft&rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.]]></summary>
+            <summary type="html"><![CDATA[TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be independent Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure One assertion per unit test Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&rsquo;s Programmer Test Principles Microsoft&rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.]]></summary>
             
                 <content type="html"><![CDATA[<!-- [tldr](#tldr)  this is cross-reference inside the document-->
 <h3 id="tldr">TL;DR</h3>
-<p>I use <em>unit test</em> and test interchangeably.</p>
 <ul>
-<li>Good tests build the foundation of a maintainable and high-quality
+<li>Good unit tests build the foundation of a maintainable and high-quality
 codebase</li>
-<li>Tests should help developers to be productive</li>
-<li>Tests should be fast</li>
-<li>Tests should be independent</li>
-<li>Tests should be deterministic</li>
-<li>Tests should focus on a single unit</li>
-<li>Tests should be enduring</li>
-<li>Tests should be clear, concise and complete
+<li>Unit Tests should help developers to be productive</li>
+<li>Unit Tests should be fast</li>
+<li>Unit Tests should be independent</li>
+<li>Unit Tests should be deterministic</li>
+<li>Unit Tests should focus on a single unit</li>
+<li>Unit Tests should be enduring</li>
+<li>Unit Tests should be clear, concise and complete
 <ul>
 <li>Avoid complex control flow logic like nested ifs or loops</li>
-<li>Tests should follow a consistent naming pattern like <em>UnitName_StateUnderTest_ExpectedBehavior</em></li>
-<li>Tests should comply to a consistent structure</li>
-<li>One assertion per test</li>
-<li>Tests should be <a href="https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html">DAMP not
+<li>Unit Tests should follow a consistent naming pattern like <em>UnitName_StateUnderTest_ExpectedBehavior</em></li>
+<li>Unit Tests should comply to a consistent structure</li>
+<li>One assertion per unit test</li>
+<li>Unit Tests should be <a href="https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html">DAMP not
 DRY</a></li>
 </ul>
 </li>
-<li>Tests should give developers confidence to deploy to production and to refactor</li>
+<li>Unit Tests should give developers confidence to deploy and to refactor</li>
 <li>Test Doubles help to make tests fast and deterministic</li>
 <li>The overuse of Mocking makes test hard to read and brittle</li>
 <li>Prefer state verification over interaction verification</li>
