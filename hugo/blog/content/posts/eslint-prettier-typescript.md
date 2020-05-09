@@ -29,12 +29,12 @@ The same is true for linters. They help you to comply with common best
 practices and to avoid potential problems. Linters and code formatters
 are essential tools for **state-of-the-art software engineering**.
 
+##### Setup ESLint and Prettier
 
-In this article I show you how to setup [ESlint](https://eslint.org/)
-for [Typescript](https://www.typescriptlang.org/) with Prettier
-support. So let's start.
-
-First you need to install ESlint in your (Typescript) project:
+I will show you how to setup [ESlint](https://eslint.org/) for
+[Typescript](https://www.typescriptlang.org/) with Prettier
+support. So let's start. First you need to install ESlint in your
+(Typescript) project:
 
 ```bash
 # install eslint with typescript support
@@ -180,15 +180,7 @@ You can find a fully configured project template on my
 [github](https://github.com/gerlacdt/graphql-example).
 
 
-### Final words
-
-By now, you went through a lot of project setup effort but you have a
-stable scaffold on which you can build upon which can be used for your
-future projects. I hope your codebase could benefit from the newly
-gained consistency. Do not worry if you encounter hundreds of errors
-or warnings the first time you run a linter on your project. This is
-normal if you already have an existing project and never used static
-code analyzers like linters before.
+##### One more word about consistency
 
 I can only emphasize once more that consistency is one of the most
 important characteristics of a good codebase. Especially if your
@@ -216,18 +208,30 @@ Do controllers have the same tests like unit and component tests? If
 the model is inconsistent or askew, new team members are left in
 uncertainty. They never know if they comply to existing coding
 guidelines because the guidelines are not visible in the source code
-itself. Even if they are visible but there are exceptions, it is hard
-for an outsider to decide what is right. In bad projects, i
-encountered lengthy coding guidelines in Confluence and other wikis
-but the real code diverged a long time ago from these written
-guidelines. The best guidelines and rules are often deducible from the
-existing code. Another thing you want to avoid due to lacking
-consistency is time consuming and exhausting discussions in pull
-requests. To avoid senseless work, be consistent all the time with
-your rules and guidelines and stick to them forcefully. Whenever you
-can enforce them or check them automatically, do it. It will save you
-a lot of time.
+itself. Even if they are visible but exceptions exist, it is hard for
+an outsider to decide what is right. In bad projects, i encountered
+lengthy coding guidelines in Confluence but the real code diverged a
+long time ago from these written guidelines. The best guidelines and
+rules are often deducible from the existing code. Another thing you
+want to avoid due to lacking consistency is time consuming and
+exhausting discussions in pull requests. To avoid senseless work, be
+consistent all the time with your rules and guidelines and stick to
+them. Whenever you can enforce them or check them automatically, do
+it. It will save you a lot of time.
 
-I hope I could convince you that consistency matters. And that the
+
+### Final words
+
+By now, you went through a lot of project setup effort and learned
+about the importance of consistency. But if you apply consistency with
+linters and automatic code formatters, you will have great tools which
+help you to write better code.
+
+When you first time run a linter on your project, do not worry if you
+encounter hundreds of warnings. This is normal, just get rid of them
+step-by-step, e.g. reduce the number of lint-warnings with every pull
+request.
+
+I hope, I could convince you that consistency matters. And that the
 winning trio with ESlint, Prettier and Typescript improves your
 codebase.
