@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-05-09T15:30:55+02:00</updated>
+    <updated>2020-05-17T15:03:58+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -13,7 +13,345 @@
             <uri>https://gerlacdt.github.io/</uri>
             </author>
     
-    <generator uri="https://gohugo.io/" version="0.69.2">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.70.0">Hugo</generator>
+        <entry>
+            <title type="text">Programming Quotes</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/programming-quotes/" />
+            <id>https://gerlacdt.github.io/posts/programming-quotes/</id>
+            <updated>2020-05-17T15:03:26+02:00</updated>
+            <published>2020-05-17T08:00:00+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Over the years i collected some (funny) programming quotes. Lean back and enjoy:
+ Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&rsquo;re as clever as you can be when you write it, how will you ever debug it?]]></summary>
+            
+                <content type="html"><![CDATA[<p>Over the years i collected some (funny) programming quotes. Lean back and enjoy:</p>
+<p><img src="/img/kernighan.jpg" alt="Brian Kernighan"></p>
+<blockquote>
+<p>Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&rsquo;re as clever as you can be when you write it, how will you ever debug it?</p>
+</blockquote>
+<p>Brian W. Kernighan</p>
+<blockquote>
+<p>Don’t comment bad code—rewrite it.</p>
+</blockquote>
+<p>Brian W. Kernighan</p>
+<blockquote>
+<p>The most effective debugging tool is still careful thought, coupled with judiciously placed print statements.</p>
+</blockquote>
+<p>Brian W. Kernighan</p>
+<blockquote>
+<p>90% of the functionality delivered now is better than 100% delivered never.</p>
+</blockquote>
+<p>Kernighan &amp; Plauger</p>
+<blockquote>
+<p>C is quirky, flawed, and an enormous success.</p>
+</blockquote>
+<p>Dennis Ritchie</p>
+<blockquote>
+<p>There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies.</p>
+</blockquote>
+<p>C.A.R. Hoare</p>
+<blockquote>
+<p>What one programmer can do in one month, two programmers can do in two months.&rdquo;</p>
+</blockquote>
+<p>Fred Brooks</p>
+<blockquote>
+<p>Nine women can&rsquo;t make a baby in one month.</p>
+</blockquote>
+<p>Fred Brooks</p>
+<blockquote>
+<p>Good judgement is the result of experience … Experience is the result of bad judgement.</p>
+</blockquote>
+<p>Fred Brooks</p>
+<blockquote>
+<p>Before software can be reusable it first has to be usable.</p>
+</blockquote>
+<p>Ralph Johnson</p>
+<blockquote>
+<p>You can have the project: Done On Time. Done On Budget. Done Properly - Pick two.</p>
+</blockquote>
+<p>Unknown</p>
+<blockquote>
+<p>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
+</blockquote>
+<p>Martin Fowler</p>
+<blockquote>
+<p>Expert programmers know how to choose the level of abstraction appropriate to their task.</p>
+</blockquote>
+<p>Structure and Interpretation of Computer Programs, by Abelson, Sussman, and Sussman</p>
+<blockquote>
+<p>When one teaches, two learn.</p>
+</blockquote>
+<p>Robert Heinlein</p>
+<blockquote>
+<p>Weeks of coding can save you hours of planning.</p>
+</blockquote>
+<p>Unknown</p>
+<blockquote>
+<p>Theory is when you know something, but it doesn’t work. Practice is when something works, but you don’t know why. Programmers combine theory and practice: Nothing works and they don’t know why.</p>
+</blockquote>
+<p>Unknown</p>
+<blockquote>
+<p>One of my most productive days was throwing away 1000 lines of code.</p>
+</blockquote>
+<p>Ken Thompson</p>
+<blockquote>
+<p>A primary cause of complexity is that software vendors uncritically adopt almost any feature that users want.</p>
+</blockquote>
+<p>Niklaus Wirth</p>
+<blockquote>
+<p>The craft of programming begins with empathy, not formatting or languages or tools or algorithms or data structures.</p>
+</blockquote>
+<p>Kent Beck</p>
+<blockquote>
+<p>I bought my boss two copies of The Mythical Man Month so that he could read it twice as fast.</p>
+</blockquote>
+<p><a href="https://twitter.com/rkoutnik">https://twitter.com/rkoutnik</a></p>
+<blockquote>
+<p>There&rsquo;s nothing more permanent than a temporary hack.</p>
+</blockquote>
+<p>Kyle Simpson</p>
+<blockquote>
+<p>The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.</p>
+</blockquote>
+<p>John Johnson</p>
+<blockquote>
+<p>Program testing can be a very effective way to show the presence of bugs, but is hopelessly inadequate for showing their absence.</p>
+</blockquote>
+<p>Edsger Dijkstra</p>
+<blockquote>
+<p>Simplicity is a prerequisite for reliability.</p>
+</blockquote>
+<p>Edsger Dijkstra</p>
+<blockquote>
+<p>No matter how slow you are writing clean code, you will always be slower if you make a mess.</p>
+</blockquote>
+<p>Uncle Bob Martin</p>
+<blockquote>
+<p>First, solve the problem. Then, write the code.</p>
+</blockquote>
+<p>John Johnson</p>
+<blockquote>
+<p>We sort of understood abstractly the idea that there are only two kinds of software projects: failures and future legacy horrors.</p>
+</blockquote>
+<p>Peter Weinberger</p>
+<blockquote>
+<p>Computer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter.</p>
+</blockquote>
+<p>Eric S. Raymond</p>
+<blockquote>
+<p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
+</blockquote>
+<p>Harold Abelson &amp; Gerald Jay Sussman</p>
+<blockquote>
+<p>Programming is not about typing, it&rsquo;s about thinking.</p>
+</blockquote>
+<p>Rich Hickey</p>
+<blockquote>
+<p>Measuring programming progress by lines of code is like measuring aircraft building progress by weight.</p>
+</blockquote>
+<p>Bill Gates</p>
+<blockquote>
+<p>Be careful about using the following code — I’ve only proven that it works, I haven’t tested it.</p>
+</blockquote>
+<p>Donald Knuth</p>
+<blockquote>
+<p>Thinking doesn’t guarantee that we won’t make mistakes. But not thinking guarantees that we will.</p>
+</blockquote>
+<p>Leslie Lamport</p>
+<blockquote>
+<p>Debugging is like being the detective in a crime movie where you are also the murderer.</p>
+</blockquote>
+<p>Filipe Fortes</p>
+<blockquote>
+<p>Good specifications will always improve programmer productivity far better than any programming tool or technique.</p>
+</blockquote>
+<p>Milt Bryce</p>
+<blockquote>
+<p>Programming can be fun, so can cryptography; however they should not be combined.</p>
+</blockquote>
+<p>Kreitzberg &amp; Shneiderman</p>
+<blockquote>
+<p>The purpose of software engineering is to control complexity, not to create it.</p>
+</blockquote>
+<p>Pamela Zave</p>
+<blockquote>
+<p>The best programs are the ones written when the programmer is supposed to be working on something else.</p>
+</blockquote>
+<p>Melinda Varian</p>
+<blockquote>
+<p>&ldquo;How did you know so much about computers?”</p>
+<p>&ldquo;I didn’t, it was the first one.”</p>
+</blockquote>
+<p>Grace Hopper on Letterman</p>
+<blockquote>
+<p>One accurate measurement is worth a thousand expert opinions.</p>
+</blockquote>
+<p>Grace Hopper</p>
+<blockquote>
+<p>People have an enormous tendency to resist change. They love to say, &lsquo;We&rsquo;ve always done it this way.&rsquo; I try to fight that.</p>
+</blockquote>
+<p>Grace Hopper</p>
+<blockquote>
+<p>There are a million ways to lose a work day, but not even a single way to get one back.</p>
+</blockquote>
+<p>Tom DeMarco</p>
+<blockquote>
+<p>The sooner you start to code, the longer the program will take.</p>
+</blockquote>
+<p>Roy Carlson</p>
+<blockquote>
+<p>Fools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it.</p>
+</blockquote>
+<p>Alan Perlis</p>
+<blockquote>
+<p>There are two ways to write error-free programs; only the third one works.</p>
+</blockquote>
+<p>Alan J. Perlis</p>
+<blockquote>
+<p>Don’t worry about what anyone else is going to do. The best way to predict the future is to invent it.</p>
+</blockquote>
+<p>Alan Kay</p>
+<blockquote>
+<p>Make it correct, make it clear, make it concise, make it fast. In that order.</p>
+</blockquote>
+<p>Wes Dyer</p>
+<blockquote>
+<p>For every complex problem, there is a solution that is simple, neat, and wrong.</p>
+</blockquote>
+<p>H.L Mencken</p>
+<blockquote>
+<p>The best way to get the right answer on the internet is not to ask a question; it’s to post the wrong answer.</p>
+</blockquote>
+<p>Cunningham’s Law</p>
+<blockquote>
+<p>Give someone a program, you frustrate them for a day; teach them how to program, you frustrate them for a lifetime.</p>
+</blockquote>
+<p>David Leinweber</p>
+<blockquote>
+<p>If you don’t actively attack the risks, the risks will actively attack you.</p>
+</blockquote>
+<p>Tom Gilb</p>
+<blockquote>
+<p>Projects without clear goals will not achieve their goal clearly.</p>
+</blockquote>
+<p>Tom Gilb</p>
+<blockquote>
+<p>Java is to Javascript what Car is to Carpet.</p>
+</blockquote>
+<p>Chris Heilmann</p>
+<blockquote>
+<p>If it doesn’t work, it doesn’t matter how fast it doesn’t work.</p>
+</blockquote>
+<p>Mich Ravera</p>
+<blockquote>
+<p>Today, most software exists, not to solve a problem, but to interface with other software.</p>
+</blockquote>
+<p>I.O. Angell</p>
+<blockquote>
+<p>I love deadlines. I like the whooshing sound they make as they fly by.</p>
+</blockquote>
+<p>Douglas Adams</p>
+<blockquote>
+<p>There are only two kinds of languages: the ones people complain about and the ones nobody uses.</p>
+</blockquote>
+<p>Bjarne Stroustrup</p>
+<blockquote>
+<p>The most important single aspect of software development is to be clear about what you are trying to build.</p>
+</blockquote>
+<p>Bjarne Stroustrup</p>
+<blockquote>
+<p>I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.</p>
+</blockquote>
+<p>Bjarne Stroustrup</p>
+<blockquote>
+<p>It is far, far easier to make a correct program fast than it is to make a fast program correct.</p>
+</blockquote>
+<p>Herb Sutter</p>
+<blockquote>
+<p>Anyone could learn Lisp in one day, except that if they already knew Fortran, it would take three days.</p>
+</blockquote>
+<p>Marvin Minsky</p>
+<blockquote>
+<p>&ldquo;When debugging, novices insert corrective code; experts remove defective code.&rdquo;</p>
+</blockquote>
+<p>Richard Pattis</p>
+<blockquote>
+<p>10 lines of code = 10 issues.</p>
+<p>500 lines of code = &ldquo;looks fine.&rdquo;</p>
+</blockquote>
+<p>Code reviews.
+<a href="https://twitter.com/iamdevloper/status/397664295875805184">https://twitter.com/iamdevloper/status/397664295875805184</a></p>
+<blockquote>
+<p>&ldquo;Typescript is hugely helpful when you&rsquo;re working on a big team.&rdquo;</p>
+<p>&ldquo;How big?&rdquo;</p>
+<p>&ldquo;More than yourself.&rdquo;</p>
+</blockquote>
+<p><a href="https://twitter.com/jessitron/status/914017624996171776">https://twitter.com/jessitron/status/914017624996171776</a></p>
+<blockquote>
+<p>Walking on water and developing software from a specification are easy if both are frozen.</p>
+</blockquote>
+<p>Edward V Berard</p>
+<blockquote>
+<p>In order to understand recursion, one must first understand recursion.</p>
+</blockquote>
+<p>Anonymous</p>
+<blockquote>
+<p>Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.</p>
+</blockquote>
+<p>Martin Golding</p>
+<blockquote>
+<p>A good programmer looks both ways before crossing a one-way street.</p>
+</blockquote>
+<p>Anonymous</p>
+<blockquote>
+<p>Just don’t create a file called -rf.</p>
+</blockquote>
+<p>Larry Wall</p>
+<blockquote>
+<p>You want it in one line? Does it have to fit in 80 columns?</p>
+</blockquote>
+<p>Larry Wall</p>
+<blockquote>
+<p>Linux is only free if your time has no value.</p>
+</blockquote>
+<p>Jamie Zawinski</p>
+<blockquote>
+<p>Never trust a computer you can’t throw out a window.</p>
+</blockquote>
+<p>Steve Wozniak</p>
+<blockquote>
+<p>A good way to stay flexible is to write less code.</p>
+</blockquote>
+<p>Pragmatic Programmer</p>
+<blockquote>
+<p>Code never lies, comments sometimes do.</p>
+</blockquote>
+<p>Ron Jeffries</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/programming/" term="programming" label="programming" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Why and How to write better Unit Tests</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/unit-testing/" />
@@ -2433,296 +2771,6 @@ of distributed systems!</p>
                             
                             
                                 <category scheme="https://gerlacdt.github.io/tags/microservices/" term="microservices" label="microservices" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">Programming Quotes</title>
-            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/programming-quotes/" />
-            <id>https://gerlacdt.github.io/posts/programming-quotes/</id>
-            <updated>2020-05-04T19:01:03+02:00</updated>
-            <published>2019-03-29T09:40:28+01:00</published>
-            <author>
-                    <name>Daniel Gerlach</name>
-                    <uri>https://gerlacdt.github.io/</uri>
-                    </author>
-            <summary type="html"><![CDATA[Over the years i collected some (funny) programming quotes. Lean back and enjoy:
- Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&rsquo;re as clever as you can be when you write it, how will you ever debug it?]]></summary>
-            
-                <content type="html"><![CDATA[<p>Over the years i collected some (funny) programming quotes. Lean back and enjoy:</p>
-<p><img src="/img/kernighan.jpg" alt="Brian Kernighan"></p>
-<blockquote>
-<p>Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&rsquo;re as clever as you can be when you write it, how will you ever debug it?</p>
-</blockquote>
-<p>Brian W. Kernighan</p>
-<blockquote>
-<p>Don’t comment bad code—rewrite it.</p>
-</blockquote>
-<p>Brian W. Kernighan</p>
-<blockquote>
-<p>The most effective debugging tool is still careful thought, coupled with judiciously placed print statements.</p>
-</blockquote>
-<p>Brian W. Kernighan</p>
-<blockquote>
-<p>90% of the functionality delivered now is better than 100% delivered never.</p>
-</blockquote>
-<p>Kernighan &amp; Plauger</p>
-<blockquote>
-<p>There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies.</p>
-</blockquote>
-<p>C.A.R. Hoare</p>
-<blockquote>
-<p>What one programmer can do in one month, two programmers can do in two months.&rdquo;</p>
-</blockquote>
-<p>Fred Brooks</p>
-<blockquote>
-<p>Nine women can&rsquo;t make a baby in one month.</p>
-</blockquote>
-<p>Fred Brooks</p>
-<blockquote>
-<p>Good judgement is the result of experience … Experience is the result of bad judgement.</p>
-</blockquote>
-<p>Fred Brooks</p>
-<blockquote>
-<p>Before software can be reusable it first has to be usable.</p>
-</blockquote>
-<p>Ralph Johnson</p>
-<blockquote>
-<p>You can have the project: Done On Time. Done On Budget. Done Properly - Pick two.</p>
-</blockquote>
-<p>Unknown</p>
-<blockquote>
-<p>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
-</blockquote>
-<p>Martin Fowler</p>
-<blockquote>
-<p>Expert programmers know how to choose the level of abstraction appropriate to their task.</p>
-</blockquote>
-<p>Structure and Interpretation of Computer Programs, by Abelson, Sussman, and Sussman</p>
-<blockquote>
-<p>When one teaches, two learn.</p>
-</blockquote>
-<p>Robert Heinlein</p>
-<blockquote>
-<p>Weeks of coding can save you hours of planning.</p>
-</blockquote>
-<p>Unknown</p>
-<blockquote>
-<p>Theory is when you know something, but it doesn’t work. Practice is when something works, but you don’t know why. Programmers combine theory and practice: Nothing works and they don’t know why.</p>
-</blockquote>
-<p>Unknown</p>
-<blockquote>
-<p>One of my most productive days was throwing away 1000 lines of code.</p>
-</blockquote>
-<p>Ken Thompson</p>
-<blockquote>
-<p>A primary cause of complexity is that software vendors uncritically adopt almost any feature that users want.</p>
-</blockquote>
-<p>Niklaus Wirth</p>
-<blockquote>
-<p>The craft of programming begins with empathy, not formatting or languages or tools or algorithms or data structures.</p>
-</blockquote>
-<p>Kent Beck</p>
-<blockquote>
-<p>I bought my boss two copies of The Mythical Man Month so that he could read it twice as fast.</p>
-</blockquote>
-<p><a href="https://twitter.com/rkoutnik">https://twitter.com/rkoutnik</a></p>
-<blockquote>
-<p>There&rsquo;s nothing more permanent than a temporary hack.</p>
-</blockquote>
-<p>Kyle Simpson</p>
-<blockquote>
-<p>The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.</p>
-</blockquote>
-<p>John Johnson</p>
-<blockquote>
-<p>Program testing can be a very effective way to show the presence of bugs, but is hopelessly inadequate for showing their absence.</p>
-</blockquote>
-<p>Edsger Dijkstra</p>
-<blockquote>
-<p>No matter how slow you are writing clean code, you will always be slower if you make a mess.</p>
-</blockquote>
-<p>Uncle Bob Martin</p>
-<blockquote>
-<p>First, solve the problem. Then, write the code.</p>
-</blockquote>
-<p>John Johnson</p>
-<blockquote>
-<p>We sort of understood abstractly the idea that there are only two kinds of software projects: failures and future legacy horrors.</p>
-</blockquote>
-<p>Peter Weinberger</p>
-<blockquote>
-<p>Computer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter.</p>
-</blockquote>
-<p>Eric S. Raymond</p>
-<blockquote>
-<p>Programs must be written for people to read, and only incidentally for machines to execute.</p>
-</blockquote>
-<p>Harold Abelson &amp; Gerald Jay Sussman</p>
-<blockquote>
-<p>Programming is not about typing, it&rsquo;s about thinking.</p>
-</blockquote>
-<p>Rich Hickey</p>
-<blockquote>
-<p>Measuring programming progress by lines of code is like measuring aircraft building progress by weight.</p>
-</blockquote>
-<p>Bill Gates</p>
-<blockquote>
-<p>Be careful about using the following code — I’ve only proven that it works, I haven’t tested it.</p>
-</blockquote>
-<p>Donald Knuth</p>
-<blockquote>
-<p>Thinking doesn’t guarantee that we won’t make mistakes. But not thinking guarantees that we will.</p>
-</blockquote>
-<p>Leslie Lamport</p>
-<blockquote>
-<p>Debugging is like being the detective in a crime movie where you are also the murderer.</p>
-</blockquote>
-<p>Filipe Fortes</p>
-<blockquote>
-<p>Good specifications will always improve programmer productivity far better than any programming tool or technique.</p>
-</blockquote>
-<p>Milt Bryce</p>
-<blockquote>
-<p>Programming can be fun, so can cryptography; however they should not be combined.</p>
-</blockquote>
-<p>Kreitzberg &amp; Shneiderman</p>
-<blockquote>
-<p>The purpose of software engineering is to control complexity, not to create it.</p>
-</blockquote>
-<p>Pamela Zave</p>
-<blockquote>
-<p>The best programs are the ones written when the programmer is supposed to be working on something else.</p>
-</blockquote>
-<p>Melinda Varian</p>
-<blockquote>
-<p>&ldquo;How did you know so much about computers?”</p>
-<p>&ldquo;I didn’t, it was the first one.”</p>
-</blockquote>
-<p>Grace Hopper on Letterman</p>
-<blockquote>
-<p>One accurate measurement is worth a thousand expert opinions.</p>
-</blockquote>
-<p>Grace Hopper</p>
-<blockquote>
-<p>People have an enormous tendency to resist change. They love to say, &lsquo;We&rsquo;ve always done it this way.&rsquo; I try to fight that.</p>
-</blockquote>
-<p>Grace Hopper</p>
-<blockquote>
-<p>There are a million ways to lose a work day, but not even a single way to get one back.</p>
-</blockquote>
-<p>Tom DeMarco</p>
-<blockquote>
-<p>The sooner you start to code, the longer the program will take.</p>
-</blockquote>
-<p>Roy Carlson</p>
-<blockquote>
-<p>Fools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it.</p>
-</blockquote>
-<p>Alan Perlis</p>
-<blockquote>
-<p>Don’t worry about what anyone else is going to do. The best way to predict the future is to invent it.</p>
-</blockquote>
-<p>Alan Kay</p>
-<blockquote>
-<p>Make it correct, make it clear, make it concise, make it fast. In that order.</p>
-</blockquote>
-<p>Wes Dyer</p>
-<blockquote>
-<p>For every complex problem, there is a solution that is simple, neat, and wrong.</p>
-</blockquote>
-<p>H.L Mencken</p>
-<blockquote>
-<p>The best way to get the right answer on the internet is not to ask a question; it’s to post the wrong answer.</p>
-</blockquote>
-<p>Cunningham’s Law</p>
-<blockquote>
-<p>Give someone a program, you frustrate them for a day; teach them how to program, you frustrate them for a lifetime.</p>
-</blockquote>
-<p>David Leinweber</p>
-<blockquote>
-<p>If you don’t actively attack the risks, the risks will actively attack you.</p>
-</blockquote>
-<p>Tom Gilb</p>
-<blockquote>
-<p>Projects without clear goals will not achieve their goal clearly.</p>
-</blockquote>
-<p>Tom Gilb</p>
-<blockquote>
-<p>Java is to Javascript what Car is to Carpet.</p>
-</blockquote>
-<p>Chris Heilmann</p>
-<blockquote>
-<p>If it doesn’t work, it doesn’t matter how fast it doesn’t work.</p>
-</blockquote>
-<p>Mich Ravera</p>
-<blockquote>
-<p>Today, most software exists, not to solve a problem, but to interface with other software.</p>
-</blockquote>
-<p>I.O. Angell</p>
-<blockquote>
-<p>Simplicity is a prerequisite for reliability.</p>
-</blockquote>
-<p>E.W Dijkstra</p>
-<blockquote>
-<p>I love deadlines. I like the whooshing sound they make as they fly by.</p>
-</blockquote>
-<p>Douglas Adams</p>
-<blockquote>
-<p>There are only two kinds of languages: the ones people complain about and the ones nobody uses.</p>
-</blockquote>
-<p>Bjarne Stroustrup</p>
-<blockquote>
-<p>The most important single aspect of software development is to be clear about what you are trying to build.</p>
-</blockquote>
-<p>Bjarne Stroustrup</p>
-<blockquote>
-<p>I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.</p>
-</blockquote>
-<p>Bjarne Stroustrup</p>
-<blockquote>
-<p>It is far, far easier to make a correct program fast than it is to make a fast program correct.</p>
-</blockquote>
-<p>Herb Sutter</p>
-<blockquote>
-<p>Anyone could learn Lisp in one day, except that if they already knew Fortran, it would take three days.</p>
-</blockquote>
-<p>Marvin Minsky</p>
-<blockquote>
-<p>&ldquo;When debugging, novices insert corrective code; experts remove defective code.&rdquo;</p>
-</blockquote>
-<p>Richard Pattis</p>
-<blockquote>
-<p>10 lines of code = 10 issues.</p>
-<p>500 lines of code = &ldquo;looks fine.&rdquo;</p>
-</blockquote>
-<p>Code reviews.
-<a href="https://twitter.com/iamdevloper/status/397664295875805184">https://twitter.com/iamdevloper/status/397664295875805184</a></p>
-<blockquote>
-<p>&ldquo;Typescript is hugely helpful when you&rsquo;re working on a big team.&rdquo;</p>
-<p>&ldquo;How big?&rdquo;</p>
-<p>&ldquo;More than yourself.&rdquo;</p>
-</blockquote>
-<p><a href="https://twitter.com/jessitron/status/914017624996171776">https://twitter.com/jessitron/status/914017624996171776</a></p>
-]]></content>
-            
-            
-            
-            
-            
-                
-                    
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://gerlacdt.github.io/tags/programming/" term="programming" label="programming" />
                             
                         
                     

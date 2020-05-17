@@ -4,17 +4,22 @@
   
   <url>
     <loc>https://gerlacdt.github.io/posts/</loc>
-    <lastmod>2020-05-09T15:30:12+02:00</lastmod>
+    <lastmod>2020-05-17T15:03:26+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://gerlacdt.github.io/tags/programming/</loc>
-    <lastmod>2020-05-09T15:30:12+02:00</lastmod>
+    <lastmod>2020-05-17T15:03:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gerlacdt.github.io/posts/programming-quotes/</loc>
+    <lastmod>2020-05-17T15:03:26+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://gerlacdt.github.io/tags/</loc>
-    <lastmod>2020-05-09T15:30:12+02:00</lastmod>
+    <lastmod>2020-05-17T15:03:26+02:00</lastmod>
   </url>
   
   <url>
@@ -100,11 +105,6 @@
   <url>
     <loc>https://gerlacdt.github.io/posts/microservices/</loc>
     <lastmod>2020-04-03T14:13:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gerlacdt.github.io/posts/programming-quotes/</loc>
-    <lastmod>2020-05-04T19:01:03+02:00</lastmod>
   </url>
   
   <url>

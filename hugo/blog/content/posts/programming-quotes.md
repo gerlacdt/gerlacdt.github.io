@@ -1,6 +1,6 @@
 ---
 title: "Programming Quotes"
-date: 2019-03-29T09:40:28+01:00
+date: 2020-05-17T08:00:00+01:00
 tags: ["programming"]
 draft: false
 ---
@@ -24,6 +24,10 @@ Brian W. Kernighan
 > 90% of the functionality delivered now is better than 100% delivered never.
 
 Kernighan & Plauger
+
+> C is quirky, flawed, and an enormous success.
+
+Dennis Ritchie
 
 > There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies.
 
@@ -94,8 +98,11 @@ Kyle Simpson
 
 John Johnson
 
-
 > Program testing can be a very effective way to show the presence of bugs, but is hopelessly inadequate for showing their absence.
+
+Edsger Dijkstra
+
+> Simplicity is a prerequisite for reliability.
 
 Edsger Dijkstra
 
@@ -181,6 +188,10 @@ Roy Carlson
 
 Alan Perlis
 
+> There are two ways to write error-free programs; only the third one works.
+
+Alan J. Perlis
+
 > Don’t worry about what anyone else is going to do. The best way to predict the future is to invent it.
 
 Alan Kay
@@ -220,10 +231,6 @@ Mich Ravera
 > Today, most software exists, not to solve a problem, but to interface with other software.
 
 I.O. Angell
-
-> Simplicity is a prerequisite for reliability.
-
-E.W Dijkstra
 
 > I love deadlines. I like the whooshing sound they make as they fly by.
 
@@ -267,3 +274,44 @@ https://twitter.com/iamdevloper/status/397664295875805184
 > "More than yourself."
 
 https://twitter.com/jessitron/status/914017624996171776
+
+
+> Walking on water and developing software from a specification are easy if both are frozen.
+
+Edward V Berard
+
+> In order to understand recursion, one must first understand recursion.
+
+Anonymous
+
+> Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.
+
+Martin Golding
+
+> A good programmer looks both ways before crossing a one-way street.
+
+Anonymous
+
+> Just don’t create a file called -rf.
+
+Larry Wall
+
+> You want it in one line? Does it have to fit in 80 columns?
+
+Larry Wall
+
+> Linux is only free if your time has no value.
+
+Jamie Zawinski
+
+> Never trust a computer you can’t throw out a window.
+
+Steve Wozniak
+
+> A good way to stay flexible is to write less code.
+
+Pragmatic Programmer
+
+> Code never lies, comments sometimes do.
+
+Ron Jeffries
