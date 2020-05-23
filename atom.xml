@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-05-17T15:03:58+02:00</updated>
+    <updated>2020-05-23T21:34:42+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -14,6 +14,163 @@
             </author>
     
     <generator uri="https://gohugo.io/" version="0.70.0">Hugo</generator>
+        <entry>
+            <title type="text">Google Testing Toilet Collection</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/google-testing-toilet/" />
+            <id>https://gerlacdt.github.io/posts/google-testing-toilet/</id>
+            <updated>2020-05-23T21:31:30+02:00</updated>
+            <published>2020-05-23T08:00:00+02:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[In my one of my previous posts i wrote about Good Unit Tests. During my research i discovered the famous Google Testing on the Toilet posts which provide great advice. The Testing-on-the-Toilet articles are short (~3min reads) and give hands-on examples, ready to be applied immediately.]]></summary>
+            
+                <content type="html"><![CDATA[<p>In my one of my previous posts i wrote about <a href="http://gerlacdt.github.io/posts/unit-testing/">Good Unit
+Tests</a>. During my
+research i discovered the famous <a href="https://testing.googleblog.com/">Google Testing on the
+Toilet</a> posts which provide great
+advice. The Testing-on-the-Toilet articles are short (~3min reads) and
+give hands-on examples, ready to be applied immediately. Here are my
+favorites:</p>
+<h3 id="testing-on-the-toilet">Testing on the Toilet</h3>
+<ul>
+<li>
+<p><a href="https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html">Testing on the Toilet: Tests Too DRY? Make Them
+DAMP!</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2018/11/testing-on-toilet-exercise-service-call.html">Testing on the Toilet: Exercise Service Call Contracts in Tests</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2018/06/testing-on-toilet-only-verify-relevant.html">Testing on the Toilet: Only Verify Relevant Method Arguments</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2018/06/testing-on-toilet-keep-tests-focused.html">Testing on the Toilet: Keep Tests Focused</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2018/02/testing-on-toilet-cleanly-create-test.html">Testing on the Toilet: Cleanly Create Test Data</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2017/12/testing-on-toilet-only-verify-state.html">Testing on the Toilet: Only Verify State-Changing Method Calls</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2017/01/testing-on-toilet-keep-cause-and-effect.html">Testing on the Toilet: Keep Cause and Effect Clear</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html">Testing on the Toilet: What Makes a Good End-to-End Test?</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2014/03/testing-on-toilet-what-makes-good-test.html">Testing on the Toilet: What Makes a Good Test?</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html">Testing on the Toilet: Know Your Test Doubles</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html">Just Say No to More End-to-End Tests</a></p>
+</li>
+</ul>
+<h3 id="code-health">Code Health</h3>
+<p><a href="https://testing.googleblog.com/2017/04/code-health-googles-internal-code.html">Code
+Health</a>
+is a subseries of Googles Testing blog and contains fundamental wisdom
+about keeping large codebases maintainable, readable and
+&ldquo;healthy&rdquo;. Following these practices reduces complexity and
+facilitates simplicity. As a consequence programming stays enjoyable
+and developers productivity does not decay over time.</p>
+<ul>
+<li>
+<p><a href="https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html">Code Health: Respectful Reviews == Useful
+Reviews</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2018/07/code-health-make-interfaces-hard-to.html">Code Health: Make Interfaces Hard to
+Misuse</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2017/11/obsessed-with-primitives.html">Code Health: Obsessed With
+Primitives?</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2017/10/code-health-identifiernamingpostforworl.html">Code Health:
+IdentifierNamingPostForWorldWideWebBlog</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2017/09/code-health-providing-context-with.html">Code Health: Providing Context with Commit Messages and Bug
+Reports</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2017/08/code-health-eliminate-yagni-smells.html">Code Health: Eliminate YAGNI
+Smells</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2017/07/code-health-to-comment-or-not-to-comment.html">Code Health: To Comment or Not to
+Comment?</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html">Code Health: Too Many Comments on Your Code
+Reviews?</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2017/06/code-health-reduce-nesting-reduce.html">Code Health: Reduce Nesting, Reduce
+Complexity</a></p>
+</li>
+</ul>
+<h3 id="hackable-projects">Hackable projects</h3>
+<p>Google defines &ldquo;hackable&rdquo; code as code which is &ldquo;nice to work on&rdquo;. In
+this subseries they define the traits of healthy and likable projects.</p>
+<ul>
+<li>
+<p><a href="https://testing.googleblog.com/2016/08/hackable-projects.html">Hackable Projects - Pillar 1: Code
+Health</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2016/10/hackable-projects-pillar-2-debuggability.html">Hackable Projects - Pillar 2:
+Debuggability</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2016/11/hackable-projects-pillar-3.html">Hackable Projects - Pillar 3:
+Infrastructure</a></p>
+</li>
+</ul>
+<h3 id="more-on-testing-and-code-health">More on testing and code health</h3>
+<p>Are you interested in even more Google testing practices? I recommend
+the great talk <a href="https://www.youtube.com/watch?v=u5senBJUkPc">&ldquo;All Your Tests are
+Terrible&hellip;&quot;</a> from <a href="https://twitter.com/tituswinters">Titus
+Winters</a> and <a href="https://twitter.com/hyrumwright">Hyrum
+Wright</a>, both are co-authors of the
+<a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">#FlamingoBook</a>
+which gives deep insights in Google&rsquo;s software engineering
+practices. Hyrum has even his own law named after him &ndash; <a href="https://www.hyrumslaw.com/">Hyrum&rsquo;s
+Law</a>.</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/programming/" term="programming" label="programming" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/testing/" term="testing" label="testing" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Programming Quotes</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/programming-quotes/" />
@@ -356,7 +513,7 @@
             <title type="text">Why and How to write better Unit Tests</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/unit-testing/" />
             <id>https://gerlacdt.github.io/posts/unit-testing/</id>
-            <updated>2020-05-08T19:53:46+02:00</updated>
+            <updated>2020-05-23T14:57:35+02:00</updated>
             <published>2020-05-04T08:08:00+02:00</published>
             <author>
                     <name>Daniel Gerlach</name>

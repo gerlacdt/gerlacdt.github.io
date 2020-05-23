@@ -2,7 +2,7 @@
 title: "Why and How to write better Unit Tests"
 date: 2020-05-04T08:08:00+02:00
 tags: ["programming", "testing"]
-ndraft: true
+draft: false
 ---
 
 <!-- [tldr](#tldr)  this is cross-reference inside the document-->
