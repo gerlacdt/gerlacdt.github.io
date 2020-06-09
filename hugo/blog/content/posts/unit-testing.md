@@ -291,8 +291,8 @@ without depending on other unit tests, files, network I/O, and
 databases.
 
 Below there is an example of a bad unit test. The second test depends
-on the first one and it will fail if the first test does not run
-before or fails. Not only this eradicates the possibility to
+on the first one and it will fail if the first test did not run
+before or failed. Not only this eradicates the possibility to
 distribute the tests but also developers will have a hard time to
 figure out the root cause of the potential error. Did the second test
 fail because of itself or because of the test before?
