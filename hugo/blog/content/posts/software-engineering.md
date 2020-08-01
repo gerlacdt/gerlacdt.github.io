@@ -7,11 +7,10 @@ draft: true
 
 In Joel Spolsky's blog post ["The Joel Test: 12 Steps to better
 Code"](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/),
-he describes a simple test composed of twelve simple yes-no
-questions. For a **yes** you get one point and for a **no** you get no
-point. 10 points are acceptable and 12 are perfect. If you have less
-than 10 points, you will get in trouble with your software -- sooner
-or later.
+he describes a test composed of twelve simple yes-no questions. For a
+**yes** you get one point. 10 points are acceptable and 12 are
+perfect. If you have less than 10 points, you will get in trouble with
+your software -- sooner or later.
 
 For a quick self-check, these are the original questions:
 
@@ -34,161 +33,209 @@ development.
 
 Although Joel's Test is still an excellent indicator for good software
 development and engineering, 20 years have past and many game changing
-technologies have emerged like mobile apps, the public cloud with AWS,
-Azure and GCP and in general better tooling is available. The success
-of [git](https://git-scm.com/) and [github](https://github.com/)
-changed how we develop software. In this article i want to extend
-Joel's test with contemporary questions:
+technologies have emerged like mobile apps, the public cloud and in
+general better tooling is available. The success of
+[git](https://git-scm.com/) and [github](https://github.com/) changed
+how we develop software. In this article i want to extend Joel's test
+with contemporary questions:
 
 13. Do you enforce a common code styleguide?
 14. Do you write tests?
-15. Do you do code reviews?
-16. Do developers write documentation?
+15. Do you conduct code reviews?
+16. Do your developers write documentation?
 17. Do you focus on code health?
 18. Do you practice continuous integration?
 19. Do you have a mentoring program?
-20. Is you infrastructure reproducible?
+20. Is your infrastructure reproducible?
 21. Is hiring the most important process in your company?
 22. Do you provide the best technology to your developers?
 23. Do you focus on the four key metrics?
+24. Do you empower your developers?
 
+The extended test consists of 24 yes-no questions. As with Joel's
+Test, for a **yes** you get one point. The ranking is:
 
-All these points heavily contribute to a sustainable and healthy
-codebase which is the foundation for a successful long-term project.
+* <= 20 points, you must improve
+* 21 points, you are ok
+* 22 points, you are a high-performer
+* 23 points, you are a high-performer
+* 24 points, you are best-in-class
 
-What is sustainable code? Lessons in sustainability
-https://youtu.be/zW-i9eVGU_k
+Further I want to emphasis that **sustainablity** is my main intention
+for the test. Many questions contribute directly or indirectly to a
+sustainable and healthy codebase which is crucial for a successful
+long-term software project and in general for a successful software
+company. [Titus Winters](https://youtu.be/zW-i9eVGU_k) defines a
+sustainable codebase as:
+
 
 > Your organization's codebase is sustainable when you are able to
 change all of the things that you ought to change, safety, and can do
 so for the lifetime of your codebase.
 
-Titus Winters
-
-* Software engineering KPIs
- based on https://www.oreilly.com/library/view/software-engineering-at/9781492082781
-
-
-
-#### Rating/Scoring
-
-* <= 21 you must improve
-* 22 high-performer
-* 23 high-performer
-* 24 state-of-the-art
-
 
 #### Do you enforce a common code styleguide?
 
-* better readability
-* enforce consistency with linters, static code analyzers and Code Reviews (we talk later more about reviews)
-* enforce readablity, autoformatting, code styleguides (if you not a digital company and do not wnat to put the big effort and create you own guideline, just pick an existing one from Google, Facebook or other company which open source their code style guides.
-* KPI: new developers can write consistent code according to the guidelines/rules without looking at them
-* KPI: no bikeshedding, how much time do your developers waste on styleguides, intendation, formatting discussions?
+**Consistency** is one of the most important properties of a codebase,
+It bolsters readability and maintainability which are essential for
+sustainable code. A consistent codebase is easier to grasp and makes
+onboarding new developers faster. New programmers are guided by the
+prevailing style and can adapt quickly to it. Consistency is also an
+indicator for coder's discipline, clearly you don't want to have dead
+code, unused imports, wrong indentations, and other intricacies in
+your codebase. The desired consistency can be achieved by a code
+styleguide.
+
+At best you enforce the rules of the styleguide via tooling like
+static code analyzers, linters and autoformatting tools. Often these
+tools are integrated into the build or they are run even before a
+commit. Further there are also manually measures like [code
+reviews](#codereview) to enforce a common code style.
+
+A consistent code style increases productivity, e.g. linters prevent
+sloppy programming errors, autoformatters leave no room for useless
+(sometimes religious) discussions about indentation and formatting
+rules. All code looks the same. Developer's taste and ego take a back
+seat.
 
 
 #### Do you write tests?
 
-Live a Testing Culture.
 
-* KPI: code coverage for unit tests
-* KPI: tests are fast, < 10 secs
-* KPI: prevent brittle, flaky tests, otherwise developers loose trust
-* no more changes without a corresponding test
-* no bugs fixed without a tests demonstrating the bug is indeed fixed
-  (previously failed, now passes)
-* tests need to easy to run (no extra effort for developers, otherwise
-  nobody will do it)
+Writing automatic test is a major trait of a sustainable
+codebase. There are many kind of tests but the best known
+classification comes with the [Test
+Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html).
 
-* Reverting expectations: Titus Winters, Beyonce Rule "If you liked it, you shoulda  put a test on it!"
+* Unit Tests
+* Service Tests
+* User Interface Tests
 
-#### Do you do code reviews?
+Particularly **unit tests** build the foundation and give developers
+confidence to move fast and not to break existing functionality. Unit
+tests are a major pillar of a fast feedback loop. This keeps
+developers happy and the quality high. In general, tests act as a
+safety net, prevent new bugs from being introduced and old bugs from
+reoccurrence.
 
-* KPI: reviews are done for ALL code changes
-* KPI: reviews are done regularly, < 1 workday
-* uphold high quality
+Without automatic tests your codebase will erode and only long-term
+developers will be capable to make changes. Onboarding new developers
+will take months or will never succeed at all. Over time developer
+speed will slow down and finally come to a complete halt. Heavily
+relying on manual testing before a release is a clear indicator of
+missing automatic tests and extends the release cycle by days or
+weeks. High performers deploy on a daily basis which is not possible
+with manual testing phases. Therefore manual testing should be reduced
+to a minimum or completely avoided.
 
-knowledge transfer and learning/mentoring, prevent bugs, foster common
-understanding, platform for discussions for trade-offs, better
-solutions, keep everybody in the loop, practice your code reading
-skill (more important than writing code!)
+Establishing a good testing culture is especially important. E.g.
 
-One of the most important steps in the feedback loop for developers
-after compiling, unit testing and linting.
+* no code changes without a corresponding test
+* no bugfix without a test demonstrating the bug is indeed fixed
+* unit test should be fast, so developers run them continuously
+* unit test code coverage should be at a reasonable level, ~70%, don't
+  strive for 100%
 
-In order to guarantee a flawless experience developers and reviewer
-should comply to some [code review
+At Google, they practice the [Beyonce Rule "If you liked it, you
+shoulda put a test on
+it!"](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/)
+This rule inverts responsibility, e.g. if someone breaks a feature and
+there was no test, the original author of the broken feature "shoulda
+put a test on it!".
+
+#### Do you conduct code reviews? {#codereview}
+
+Code reviews are a critical step in your software engineering
+process. Not only they prevent entering bugs into your mainline but
+they are a major tool for knowledge transfer, learning and mentoring.
+The code review process fosters a common understanding between
+reviewers and author and offers a platform for discussions about
+trade-offs and design decisions. Reviews are not only focused on
+correctness but also on readability, performance and other
+non-functional properties.
+
+All of that will lead to better solutions. Further reviewers practice
+their code reading skill which is as important as code
+writing. Besides compiling, linting and running tests, code reviews
+form a major step in a developers feedback loop. Code should never be
+committed into mainline without a proper code review.
+
+Because code reviews can conjure up heated discussions and to
+guarantee a flawless experience, reviewers should comply to some [code
+review
 guidelines](https://google.github.io/eng-practices/review/reviewer/).
 
 #### Do developers write documentation?
 
-* KPI: new developer is ready to start developing,  < 1 day of joining the company or a new project
-* KPI: doc is up to-date and complete (architecture/design, development, scripts, infrastructure are in version control)
+Documentation starts with the code. Code comments or a good
+description of a pull request are good examples. Thereby good
+documentation focuses on **why** something was done. An extensive
+`README.md` acts as the "front-page" of a project and should contain
+its purpose and instructions for developers to set up their local
+environment for development. e.g building the project, running the
+test, prerequisites to install.
 
+There are more kinds of documentation with different purposes:
 
-Good documentation describres **why** something was done.
+* Design Docs (showing alternative solutions, why was one approach
+  chosen over the others?)
+* Architecture Diagrams (System overview, showing coherence between
+  components)
+* Operational Playbooks for [Software Reliability Engineers
+  (SREs)](https://landing.google.com/sre/workbook/chapters/on-call/)
+  (operational instructions fighting outages)
 
-Why a thread-model was chosen in favor for a event-driven model?
-Why did you chose a monotlith over a microservice architecture?
-Why did you skip caching for some endpoints?
-All these question needs to be answered.
-
-- Design Docs (showing alternative solution, argument why was one approach chose over the others)
-- Architecture Diagrams
-- Code comments (good docs start with good comments)
-- PR (describe why, we need this change, and the purpose), maybe reference the Design Doc
-
-
-Good, up-to-date documents are foundation of a sustainable software
-project. They help to keep an overview over an ever-growing project,
-give new developers a good start and build a searchable knowledge base
-and keep track of made decision in the past.
-
-However, in old software projects, i often encounter a gazillion of
-documents, deprecated, scatter around in thousand places like
-powerpoints, Excel and Word documents stored in Sharepoint, not
-indexable and thus not searchable. Sometimes these worthless documents
-lie in company wikis like Confluence, but they are still deprecated
-and the provided search is often primitive. Worse yet, these docs
-contain sometimes false information and reading them is only a waste
-of time for new project members.
-
-Good documentation makes a project more understandable and long-term
-project members are capable of answering critical questions why things
-were done in the past. In the majority of projects you only get "this
-is historically grown" and the only way to find the real answer is
-doing a lot of time consuming face-to-face interviews.
-
-There are documents for different purposes. Code comments are the
-first documentation a developer writes. Alas, many devs don't write
-good comments, they often describe what the codes does which is often
-obvious if you know the programming language. But good comments
-explain **why** the code was written and explain why decisions were
-made.
-
-For Software Reliability Engineers (SREs), [on-call
-playbooks](https://landing.google.com/sre/workbook/chapters/on-call/)
-are important. They contain how to operate a system and response
-failure. E.g. where can one find the logs, how can one access the
-monitoring system, what are critical monitor values, how to
-restart/scale the system, how to resolve a specific incident etc.
-
-A README is the "front-page" of a project. It should contain an
-overview about the project, its purpose, instructions for developers
-to set up their dev environment and should answer questions like how
-to build the project, run tests etc.
+All these documents should be written by developers or operators.
+. Living, up-to-date documentation makes a project more understandable
+and long-term project members are capable of answering critical
+questions why things were done in the past. In the majority of
+projects you only get "this is historically grown" as an answer and
+the only way to find the real answer is conducting many time consuming
+face-to-face interviews. Documentation helps to keep an overview over
+an ever-growing project, to facilitate the start for new developers
+and to build a searchable knowledge base. Past decisions should be
+transparent through good documentation.
 
 
 ### Do you focus on code health?
 
-https://testing.googleblog.com/2016/08/hackable-projects.html
-* continuously reduce technical debt
-* no new features before fixing existing bugs
+Developer happiness is major criteria for high quality code. If your
+developers working on a shitty codebase, they quickly adapt to the
+same poor quality or leave. The existing codebase act as a **role
+model**. It is important to continuously focus on code health which
+bolster developer happiness and therefore aims for better code
+quality. The best coders are repelled by bad code and attracted by
+healthy code. But what is a healthy codebase?
 
-Unit tests are not for the author but for all future readers of the
-code and future changers of the code. Reading/Changing happen X-times
-more often than writing the code. So always keep your focus on
-maintainability and readability.
+A codebase is healthy when:
+
+* you have fast builds
+* you have an easy development setup
+* you have fast and maintainable tests
+* you have clean, readable, decoupled and consistent code
+* you can easily debug the system
+* you continuously tackling technical debt
+
+You can find a much more exhaustive explanation of code health in
+[Google's Testing Blog about Code
+Health](https://testing.googleblog.com/2016/08/hackable-projects.html).
+
+A sign of bad code is:
+
+* complicated developer setup
+* hard to debug, missing monitoring, noisy garbage logs
+* long build times
+* inconsistent code (dead code, unused imports, different formatting
+  styles, no code styleguide)
+* large merge conflicts due to long running feature branches, broken mainline
+* no tests, flaky tests, hard to maintain tests because of mocking overusage
+
+Never trade dirty code or workarounds due to time or release pressure
+for code health. You will end up very badly in the long run. Worse
+yet, you get in a vicious cycle because bad code slows you down and in
+order to fulfil the next release you add more dirty workarounds. So
+always prioritize code health, even when it looks counterintuitive at
+first sight.
 
 ### Do you practice continuous integration?
 * how often do you release you product? (daily, weekly, monthly, quarterly, yearly)
@@ -225,7 +272,7 @@ Version Control, Code Reviews -  all this applies for configuration code also.
 Kubernetes/Helm yamls, Terraform modules, AWS Cloudformation, or whatever you use
 
 
-### Is hiring the most important process in you company?
+### Is hiring the most important process in you company? {#hiring}
 
 (11. Do new candidates write code during their interview?)
 
@@ -291,6 +338,56 @@ In [Accelerate](https://itrevolution.com/book/accelerate/)/[DevOps Report 2019 p
 3. mean time to restore (MTTR)
 4. change fail percentage
 
+### Do you empower your developers?
+
+Many companies treat their developers as pure delivery teams,
+i.e. they are used to implement features based on roadmaps defined by
+leadership, stakeholders for product management departments. Why this
+is a bad idea, see [Marty Cagan's
+post](https://svpg.com/product-fail/). With this approach you only
+getting half of their value. Further companies think developer teams
+can be easily replaced or even outsourced. They are treated as
+mercenaries but as we know from [John
+Doerr](https://svpg.com/missionaries-vs-mercenaries/)
+
+> we need teams of missionaries, not teams of mercenaries.
+
+But for an outsourced IT, it is impossible to work in missionary mode.
+
+In order to get the most of you developer teams, you must hire
+missionaries and empower them. Empowered developers are first-class
+employees. Companies, recognizing their value, provide tech-specific
+careers with compensations comparable to high-management salary level.
+Regarding digitalization, developers are the best source of innovation
+because they know the enabling technology. But it is hard to find and
+to keep the best. There are a lot of pretenders around, you should not
+fall for them. See, why the [hiring process](#hiring) is the most
+important to attract and identify top talent.
+
+
+Empowered developers should not only implement predefined features
+from stakeholders but are invited to come up with their own solutions
+to satisfy the customer needs. Therefore we should give developers
+**problems** to solve not features to implement. Therefore it is
+mandatory that developers understand the business context. A quick
+self-check if you have empowered developers:
+
+* Can developers identify themselves with the customers?
+* Do they attend user tests regularly?
+* At best, do your developers use the application themselves?
+* Do they know the pains of the customers or are they shielded away by
+  a wall of stakeholders, business departments, program managers and
+  never have the chance to get in contact with customers?
+* Do your developers drive the own features to implement and not only
+  getting them at the sprint-planning or from a roadmap?
+
+Finally empowered engineers means a mindset change in the whole
+company, see [Marty
+Cagan](https://svpg.com/keys-to-successful-transformation/):
+
+> (the company is) moving from a model where the technology teams
+> exist to “serve the business” to one where they exist to “serve the
+> customers, in ways that work for the business.
 
 ### Conclusion
 
@@ -305,10 +402,9 @@ departments and outsourced IT.
 These enterprises never considered "software" as a competitive
 advantage. But slowly even they understand that ["software eats the
 world"](https://a16z.com/2011/08/20/why-software-is-eating-the-world/)
-and they want to do develop software in house again. In such
+and they want to do develop software in-house again. In such
 situations, missing know-how and "wrong" people with lack of skills
 are common.  This article wants to be a simple and easy applicable
-guideline for them to establish a good coding mentality with good
-practices. I hope you can apply the full test for your development
-department and gain some insights about weaknesses and possible
-improvements.
+guideline for them to establish a good coding mentality and culture
+with good practices. I hope you can apply the full test and gain some
+insights about weaknesses and possible improvements in your company.
