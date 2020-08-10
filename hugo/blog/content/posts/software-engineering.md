@@ -201,7 +201,7 @@ transparent through good documentation.
 
 Developer happiness is major criteria for high quality code. If your
 developers working on a shitty codebase, they quickly adapt to the
-same poor quality or leave. The existing codebase act as a **role
+poor quality or leave. The existing codebase act as a **role
 model**. It is important to continuously focus on code health which
 bolster developer happiness and therefore aims for better code
 quality. The best coders are repelled by bad code and attracted by
@@ -212,9 +212,9 @@ A codebase is healthy when:
 * you have fast builds
 * you have an easy development setup
 * you have fast and maintainable tests
-* you have clean, readable, decoupled and consistent code
+* you have clean, readable, loosely coupled and consistent code
 * you can easily debug the system
-* you continuously tackling technical debt
+* you continuously tackle technical debt
 
 You can find a much more exhaustive explanation of code health in
 [Google's Testing Blog about Code
@@ -228,7 +228,7 @@ A sign of bad code is:
 * inconsistent code (dead code, unused imports, different formatting
   styles, no code styleguide)
 * large merge conflicts due to long running feature branches, broken mainline
-* no tests, flaky tests, hard to maintain tests because of mocking overusage
+* no tests, flaky tests, hard-maintainable tests because of mocking overuse
 
 Never trade dirty code or workarounds due to time or release pressure
 for code health. You will end up very badly in the long run. Worse
@@ -238,11 +238,37 @@ always prioritize code health, even when it looks counterintuitive at
 first sight.
 
 ### Do you practice continuous integration?
-* how often do you release you product? (daily, weekly, monthly, quarterly, yearly)
-* https://martinfowler.com/articles/branching-patterns.html
-* KPI: trunk-based development. How often do you merge to trunk?
-* KPI: everything in VC: code, infrastructure, configuration, documentation, architecture, No Confluence!
-* single branch == trunk with feature toggles, always releasable
+
+Nowadays Continuous Integration is hopefully commonplace. At best, you
+work with trunk-based development and your mainline is always
+releasable, preferably with feature toggles. Small and frequent
+releases shortens the release cycles and prevent problems or outages
+which happen when large releases are done only quarterly or
+yearly. Warning: Automatic testing is a main prerequisite!
+
+CI helps to prevent tedious, lengthy merge conflict resolutions
+because your developers regularly commit into mainline. Additionally
+you will get rid of time consuming integration problems at the end of
+your implementation phases.
+
+Typically, it is a main goal of "agile" to identify risks as early as
+possible and not to postpone them till the end of a project. CI
+supports exactly with that. You will identify early integration or
+design problems and you will get test/user feedback early in the
+development phase. This allows you to make course correction on the
+way.
+
+Although trunk-based development is the preferred approach, there are
+other [branching
+patters](https://martinfowler.com/articles/branching-patterns.html)
+around.
+
+
+* TODO with CI pipeline with building testing, linting the project ->
+  confident developers
+
+  Fix bugs when they pop up, often minutes after commit and the build
+  failed (fast feedback)
 
 
 ### Do you have a mentoring program?
@@ -266,10 +292,26 @@ who was in the teams. This quickly leads to heterogeneity.
 
 ### Is your infrastructure reproducible?
 
-Infrastructure as Code
+Today, Public Cloud Providers like AWS and Azure provide APIs to
+create, update and manage your infrastructure.  With the usage of
+APIs, it is natural to retain your whole [Infrastructure as Code
+(IaC)](https://en.wikipedia.org/wiki/Infrastructure_as_code).
 
-Version Control, Code Reviews -  all this applies for configuration code also.
-Kubernetes/Helm yamls, Terraform modules, AWS Cloudformation, or whatever you use
+Since we are speaking about code, all previous points apply for
+infrastructure too. You should keep it under version control, conduct
+code reviews, run tests in you CI pipeline and keep your codebase
+clean via formating and linting tools. Known tools for infrastructure
+are [Kubernetes
+manifest](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/),
+[Helm charts](https://helm.sh/),
+[Terraform](https://www.terraform.io/) or [AWS
+Cloudformation](https://aws.amazon.com/cloudformation/).
+
+A good indicator if your infastructure is reproducable is how you
+treat your servers, like cattle or pets? Recreation of a failing
+server should be easier than duct-taping the failing one. Beware of
+[snowflake
+servers](https://martinfowler.com/bliki/SnowflakeServer.html)!
 
 
 ### Is hiring the most important process in you company? {#hiring}
