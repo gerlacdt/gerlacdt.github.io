@@ -76,7 +76,7 @@ so for the lifetime of your codebase.
 
 #### Do you enforce a common code styleguide?
 
-**Consistency** is one of the most important properties of a codebase,
+**Consistency** is one of the most important properties of a codebase.
 It bolsters readability and maintainability which are essential for
 sustainable code. A consistent codebase is easier to grasp and makes
 onboarding new developers faster. New programmers are guided by the
@@ -113,7 +113,7 @@ Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html).
 
 Particularly **unit tests** build the foundation and give developers
 confidence to move fast and not to break existing functionality. Unit
-tests are a major pillar of a fast feedback loop. This keeps
+testing is a major pillar of a fast feedback loop. This keeps
 developers happy and the quality high. In general, tests act as a
 safety net, prevent new bugs from being introduced and old bugs from
 reoccurrence.
@@ -160,10 +160,10 @@ writing. Besides compiling, linting and running tests, code reviews
 form a major step in a developers feedback loop. Code should never be
 committed into mainline without a proper code review.
 
-Because code reviews can conjure up heated discussions and to
-guarantee a flawless experience, reviewers should comply to some [code
-review
-guidelines](https://google.github.io/eng-practices/review/reviewer/).
+Because code reviews can conjure up heated discussions, reviewers
+should comply to some [code review
+guidelines](https://google.github.io/eng-practices/review/reviewer/)
+in order to guarantee a flawless experience.
 
 #### Do developers write documentation?
 
@@ -172,10 +172,10 @@ description of a pull request are good examples. Thereby good
 documentation focuses on **why** something was done. An extensive
 `README.md` acts as the "front-page" of a project and should contain
 its purpose and instructions for developers to set up their local
-environment for development. e.g building the project, running the
-test, prerequisites to install.
+environment for development, e.g installing prerequisites, building
+the project, running the test.
 
-There are more kinds of documentation with different purposes:
+Additionally a variety of documents with different purposes exist:
 
 * Design Docs (showing alternative solutions, why was one approach
   chosen over the others?)
@@ -185,16 +185,17 @@ There are more kinds of documentation with different purposes:
   (SREs)](https://landing.google.com/sre/workbook/chapters/on-call/)
   (operational instructions fighting outages)
 
-All these documents should be written by developers or operators.
-. Living, up-to-date documentation makes a project more understandable
-and long-term project members are capable of answering critical
-questions why things were done in the past. In the majority of
-projects you only get "this is historically grown" as an answer and
-the only way to find the real answer is conducting many time consuming
+All these documents should be written by developers, operators or
+other technical people. Living, up-to-date documentation makes a
+project more understandable and long-term project members are capable
+of answering questions why things were done in the past -- in the
+majority of projects, the top answer is "this is historically grown".
+The only way to get real insights is conducting time consuming
 face-to-face interviews. Documentation helps to keep an overview over
 an ever-growing project, to facilitate the start for new developers
 and to build a searchable knowledge base. Past decisions should be
-transparent through good documentation.
+transparent through good documentation and not hidden in people's
+heads.
 
 
 ### Do you focus on code health?
@@ -241,34 +242,20 @@ first sight.
 
 Nowadays Continuous Integration is hopefully commonplace. At best, you
 work with trunk-based development and your mainline is always
-releasable, preferably with feature toggles. Small and frequent
-releases shortens the release cycles and prevent problems or outages
-which happen when large releases are done only quarterly or
-yearly. Warning: Automatic testing is a main prerequisite!
+releasable, preferably with feature toggles. Highest priority is to
+keep the mainline green and a broken build should be fixed
+immediately. Small and frequent releases prevent bugs or even outages
+which happen when large releases are done intermittently.
 
-CI helps to prevent tedious, lengthy merge conflict resolutions
-because your developers regularly commit into mainline. Additionally
-you will get rid of time consuming integration problems at the end of
-your implementation phases.
+CI helps to prevent tedious merge conflict resolutions because your
+developers regularly commit into mainline. Additionally you will get
+rid of time consuming integration problems at the end of your
+implementation phases.
 
-Typically, it is a main goal of "agile" to identify risks as early as
-possible and not to postpone them till the end of a project. CI
-supports exactly with that. You will identify early integration or
-design problems and you will get test/user feedback early in the
-development phase. This allows you to make course correction on the
-way.
-
-Although trunk-based development is the preferred approach, there are
-other [branching
-patters](https://martinfowler.com/articles/branching-patterns.html)
-around.
-
-
-* TODO with CI pipeline with building testing, linting the project ->
-  confident developers
-
-  Fix bugs when they pop up, often minutes after commit and the build
-  failed (fast feedback)
+"Agile"'s main goal is to identify risks as early as possible and not
+to postpone them till the end of a project. CI supports exactly
+that. With CI, you will detect integration, design problems
+early. This allows you to make course correction on the way.
 
 
 ### Do you have a mentoring program?
