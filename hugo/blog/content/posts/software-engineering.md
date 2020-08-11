@@ -47,7 +47,7 @@ with contemporary questions:
 18. Do you practice continuous integration?
 19. Do you have a mentoring program?
 20. Is your infrastructure reproducible?
-21. Is hiring the most important process in your company?
+21. Are you doing your best to keep your engineers?
 22. Do you provide the best technology to your developers?
 23. Do you focus on the four key metrics?
 24. Do you empower your developers?
@@ -301,12 +301,7 @@ server should be easier than duct-taping the failing one. Beware of
 servers](https://martinfowler.com/bliki/SnowflakeServer.html)!
 
 
-### Is hiring the most important process in you company? {#hiring}
-
-(11. Do new candidates write code during their interview?)
-
-Engineering Manager should know coding. He should be able to talk the
-same language like developers.
+### Are you doing your best to keep your engineers? {#keep}
 
 > I've built a lot of my success off finding these "truly gifted"
 > people, and not settling for 'B" and "C" players, but really going
@@ -320,6 +315,25 @@ same language like developers.
 
 Steve Jobs
 
+Hiring good engineers is very important but keeping them is too!  The
+best engineering teams share a common mindset. Engineers want to work
+with other engineers sharing the same interests and approaching the
+same goals. This creates a virtuous circle, engineers motivate each
+other in order to achieve the best possible outcomes. Be careful
+though, a single new hire can disturb an A-player team's
+balance. That's why the hiring process is very important.
+
+You should treat your engineers as first-class employees. Companies,
+recognizing their value, provide tech-specific careers with
+compensations comparable to high-management salary level.
+
+Further, engineering managers play an essential role to keep your
+engineers (happy). They should know how to code and share the same
+engineering mindset. If your engineering managers are not technical
+skilled, your engineers will not take them seriously. Worse yet, they
+will leave at some point in time because they feel misunderstood.
+
+You should strive to hire A players and to keep them.
 
 
 ### Do you provide the best technology to your developers?
@@ -385,21 +399,18 @@ But for an outsourced IT, it is impossible to work in missionary mode.
 
 In order to get the most of you developer teams, you must hire
 missionaries and empower them. Empowered developers are first-class
-employees. Companies, recognizing their value, provide tech-specific
-careers with compensations comparable to high-management salary level.
-Regarding digitalization, developers are the best source of innovation
-because they know the enabling technology. But it is hard to find and
-to keep the best. There are a lot of pretenders around, you should not
-fall for them. See, why the [hiring process](#hiring) is the most
-important to attract and identify top talent.
+employees. Regarding digitization, developers are the best source of
+innovation because they know the enabling technology. But it is hard
+to attract, identify and to keep top talent. See, how to hire
+(11. from Joel's test) and [keep the best](#keep).
 
 
 Empowered developers should not only implement predefined features
 from stakeholders but are invited to come up with their own solutions
 to satisfy the customer needs. Therefore we should give developers
-**problems** to solve not features to implement. Therefore it is
-mandatory that developers understand the business context. A quick
-self-check if you have empowered developers:
+**problems** to solve not features to implement. It is mandatory that
+developers understand the business context. A quick self-check if you
+have empowered developers:
 
 * Can developers identify themselves with the customers?
 * Do they attend user tests regularly?
