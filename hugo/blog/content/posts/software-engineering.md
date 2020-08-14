@@ -259,22 +259,18 @@ early. This allows you to make course correction on the way.
 
 
 ### Do you have a mentoring program?
-* consistent IT philosophy
-* software methodologies, documented architecture/design, coding
-standards, dev tools, reusable artifacts, QA processes, Testing
-Culture, Code Reviews, coding practices like Version Control, CI/CD
-* Teach them the rules of the game, molding the new recruits into a
-team.
 
-**established these policies and coach them you new employees**
+Mentoring is a great way to coach new employees. With a mentoring
+program, you not only foster a consistent engineering culture with
+best common practices like software methodologies, code styleguides,
+code reviews, testing culture and other policies across the whole
+organization but it is mandatory for molding new recruits into a
+productive team.
 
-Newcomers should be introduced on their very first days. It's good to
-seek new perspectives/ideas from new employees. But you need a working
-foundation first. Otherwise all new senior developers will drive
-change. Eventually different teams have different policies, dependent
-who was in the teams. This quickly leads to heterogeneity.
-
-- great way to transfer the company culture to the new employees from the start
+Mentored developers are more likely to stay. They feel approved and
+treated as first-class employees because you invest time and effort in
+them from the beginning. It is a fantastic way to give raise to great
+and loyal engineers in the long-run.
 
 
 ### Is your infrastructure reproducible?
@@ -375,11 +371,28 @@ https://architectelevator.com/cloud/enterprise-non-cloud/
 
 ### Do you focus on the four key metrics?
 
-In [Accelerate](https://itrevolution.com/book/accelerate/)/[DevOps Report 2019 p18](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf) four key metrics are defined which differentiate from low and high performances?
-1. lead time
-2. deployment frequency
-3. mean time to restore (MTTR)
-4. change fail percentage
+The best way to measure if your engineering department is top-notch,
+ are the four key metrics, defined in fantastic book
+ [Accelerate](https://itrevolution.com/book/accelerate/).
+
+High performers strive for:
+
+1. Short lead time
+2. High deployment frequency
+3. Short mean time to restore (MTTR)
+4. Low change fail percentage
+
+Some of the above metrics seem contradictory like high deployment
+frequency and low change fail percentage. But according to the studies
+of the [DevOps
+Report](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf)
+the best companies perform in **all** key metrics excellently.
+
+If you look for improvements, it is critical to focus on these four
+key points permanently. Don't fall prey to expensive agile
+transformation methodologies like SAFe or other IT
+consultants. Usually they promise a magical and fast performance boost
+but often they turn out as insignificant.
 
 ### Do you empower your developers?
 
@@ -408,7 +421,7 @@ to attract, identify and to keep top talent. See, how to hire
 Empowered developers should not only implement predefined features
 from stakeholders but are invited to come up with their own solutions
 to satisfy the customer needs. Therefore we should give developers
-**problems** to solve not features to implement. It is mandatory that
+**problems** to oslve not features to implement. It is mandatory that
 developers understand the business context. A quick self-check if you
 have empowered developers:
 
@@ -433,10 +446,10 @@ Cagan](https://svpg.com/keys-to-successful-transformation/):
 
 **Digital** companies like Google, Amazon, Facebook, Microsoft or
 Netflix have these traits in their blood and they live by these
-standards already for decades. For them "software" is their core
+standards already for decades. For them, "software" is their core
 product, they cannot afford piling up technical debt since they would
 cripple and risk their own future. This is well understood by them. In
-contrary to non-digital companies with a oldschool enterprise IT
+contrary to non-digital companies with oldschool enterprise IT
 departments and outsourced IT.
 
 These enterprises never considered "software" as a competitive
@@ -447,4 +460,5 @@ situations, missing know-how and "wrong" people with lack of skills
 are common.  This article wants to be a simple and easy applicable
 guideline for them to establish a good coding mentality and culture
 with good practices. I hope you can apply the full test and gain some
-insights about weaknesses and possible improvements in your company.
+insights about strengths, weaknesses and possible improvements in your
+company.
