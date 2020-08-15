@@ -334,40 +334,38 @@ You should strive to hire A players and to keep them.
 
 ### Do you provide the best technology to your developers?
 
-Joel's 9. Do you use the best tools money can buy?
+This points extends Joel's original ninth point "Do you use the best
+tools money can buy?" Joel focused mainly on software tools running on
+your local machine like IDEs, editors, compilers, debuggers and also
+local hardware like a second monitor. All this make your programmers
+happy and productive. While this is still true, nowadays it takes more
+than local tooling to *keep* your developers happy.
 
-* to run tests and get fast feedback to the developers CI/CD
-* strive for a homogenous technology stack, otherwise you have to
-support too many Getting to the sweet spot is hard, because developers
-tend to always use the bleeding edge technology but then it's hard to
-build proficiency in one tech-stack. The knowledge of you staff will
-be diversified and many teams do need to reinvent the wheel,
-e.g. different testing-frameworks, different deployment tools,
-different infrastructure-stack like Kubernetes/Consul/AWS ECS,
-different programming languages means all web-frameworks differ and
-reusability is not possible between different teams
+A major pillar of productivity is going to the public cloud like
+Amazon AWS or Microsoft Azure. Public clouds offer a great work
+experience for your engineers. The self-service approach is
+particularly important, engineers can automate their application stack
+via APIs and scripts, use the newest technology and operate the
+complete system without writing tickets and getting approvals from
+superiors. It enables your developers to take responsibility for the
+full lifecyle of the application from design, to implementation, to
+release and to operation. It's a great productivity booster. If you
+cannot go to the public cloud due to legal or other restrictions,
+beware of the [on-prem enterprise
+non-cloud](https://architectelevator.com/cloud/enterprise-non-cloud/). The
+**enterprise non-cloud** is a treacherous thing, it offers modern
+software stacks like Kubernetes or Prometheus but is fails to deliver
+the main advantages of the public cloud like real self-service with
+APIs, elasticity, scalability and a just-in-time price model. This
+will make your programmers grumpy and less productive, particularly
+the ones with public cloud experience.
 
-Tooling
-
-- public cloud AWS, Azure, GCP
-- collaboration tools like github for Version Control
-- google docs for parallel working on one document
-
-
-Processes
-
-- reducing overhead
-- no bullshit finance approval process (anti agile) Deciding about
-  millions for AWS or Azure but need approval 150$ for a domestic
-  flight...
-- on-premise clouds are often enterprise clouds with all the approval
-  chain, ticket process with manual workprocess in the background and
-  fake self-services. Developers want the convenience of a public cloud!
-
-
-enterprise non-cloud
-https://architectelevator.com/cloud/enterprise-non-cloud/
-
+Other kind of tools are equally important, e.g. modern collaboration
+tools like Google Docs or Office 365 which support parallel
+collaboration at one document with multiple users, modern
+communication tools like Slack and a contemporary version control
+platform like [github](https://github.com/) with integration for code
+reviews, for CI pipelines and in general for the public cloud.
 
 ### Do you focus on the four key metrics?
 
