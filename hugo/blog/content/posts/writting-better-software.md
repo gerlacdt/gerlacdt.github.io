@@ -1,8 +1,8 @@
 ---
 title: "Writing better Code"
-date: 2020-05-30T16:38:45+02:00
+date: 2020-08-16T18:38:45+02:00
 tags: ["programming", "softwareengineering", ]
-draft: true
+draft: false
 ---
 
 In Joel Spolsky's blog post ["The Joel Test: 12 Steps to better

@@ -10,17 +10,444 @@
         <title>Daniel&#39;s programming rants</title>
         <link>https://gerlacdt.github.io/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
-        <generator>Hugo 0.70.0 https://gohugo.io/</generator>
+        <generator>Hugo 0.74.3 https://gohugo.io/</generator>
         
             <language>en</language>
         
         
         
         
-        <lastBuildDate>Sat, 23 May 2020 21:34:42 +0200</lastBuildDate>
+        <lastBuildDate>Sun, 16 Aug 2020 19:43:47 +0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Writing better Code</title>
+                <link>https://gerlacdt.github.io/posts/writting-better-software/</link>
+                <guid isPermaLink="true">https://gerlacdt.github.io/posts/writting-better-software/</guid>
+                <pubDate>Sun, 16 Aug 2020 18:38:45 +0200</pubDate>
+                
+                
+                
+                    <description><![CDATA[<p>In Joel Spolsky&rsquo;s blog post <a href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/">&ldquo;The Joel Test: 12 Steps to better
+Code&rdquo;</a>,
+he describes a test composed of twelve simple yes-no questions. For a
+<strong>yes</strong> you get one point. 10 points are acceptable and 12 are
+perfect. If you have less than 10 points, you will get in trouble with
+your software &ndash; sooner or later.</p>
+<p>For a quick self-check, these are the original questions:</p>
+<ol>
+<li>Do you use source control?</li>
+<li>Can you make a build in one step?</li>
+<li>Do you make daily builds?</li>
+<li>Do you have a bug database?</li>
+<li>Do you fix bugs before writing new code?</li>
+<li>Do you have an up-to-date schedule?</li>
+<li>Do you have a spec?</li>
+<li>Do programmers have quiet working conditions?</li>
+<li>Do you use the best tools money can buy?</li>
+<li>Do you have testers?</li>
+<li>Do new candidates write code during their interview?</li>
+<li>Do you do hallway usability testing?</li>
+</ol>
+<p>Although Joel&rsquo;s Test is still an excellent indicator for good software
+development and engineering, 20 years have past and many game changing
+technologies have emerged like mobile apps, the public cloud and in
+general better tooling is available. The success of
+<a href="https://git-scm.com/">git</a> and <a href="https://github.com/">github</a> changed
+how we develop software. In this article i want to extend Joel&rsquo;s test
+with contemporary questions:</p>
+<ol start="13">
+<li>Do you enforce a common code styleguide?</li>
+<li>Do you write tests?</li>
+<li>Do you conduct code reviews?</li>
+<li>Do your developers write documentation?</li>
+<li>Do you focus on code health?</li>
+<li>Do you practice continuous integration?</li>
+<li>Do you have a mentoring program?</li>
+<li>Is your infrastructure reproducible?</li>
+<li>Are you doing your best to keep your engineers?</li>
+<li>Do you provide the best technology for your developers?</li>
+<li>Do you focus on the four key metrics?</li>
+<li>Do you empower your developers?</li>
+</ol>
+<p>The extended test consists of 24 yes-no questions. As with Joel&rsquo;s
+Test, for a <strong>yes</strong> you get one point. The ranking is:</p>
+<ul>
+<li>&lt;= 20 points, you must improve</li>
+<li>21 points, you are ok</li>
+<li>22 points, you are a high-performer</li>
+<li>23 points, you are a high-performer</li>
+<li>24 points, you are best-in-class</li>
+</ul>
+<p>Further I want to emphasis that <strong>sustainablity</strong> is my main intention
+for the test. Many questions contribute directly or indirectly to a
+sustainable and healthy codebase which is crucial for a successful
+long-term software project and in general for a successful software
+company. <a href="https://youtu.be/zW-i9eVGU_k?t=197">Titus Winters</a> defines a
+sustainable codebase as:</p>
+<blockquote>
+<p>Your organization&rsquo;s codebase is sustainable when you are able to
+change all of the things that you ought to change, safety, and can do
+so for the lifetime of your codebase.</p>
+</blockquote>
+<h4 id="13-do-you-enforce-a-common-code-styleguide">13. Do you enforce a common code styleguide?</h4>
+<p><strong>Consistency</strong> is one of the most important properties of a codebase.
+It bolsters readability and maintainability which are essential for
+sustainable code. A consistent codebase is easier to grasp and makes
+onboarding new developers faster. New programmers are guided by the
+prevailing style and can adapt quickly to it. Consistency is also an
+indicator for coder&rsquo;s discipline, clearly you don&rsquo;t want to have dead
+code, unused imports, wrong indentations, and other intricacies in
+your codebase. The desired consistency can be achieved by a code
+styleguide.</p>
+<p>At best you enforce the rules of the styleguide via tooling like
+static code analyzers, linters and autoformatting tools. Often these
+tools are integrated into the build or are executed before a
+commit. Further there are also manually measures like <a href="#codereview">code
+reviews</a> to enforce a common code style.</p>
+<p>A consistent code style increases productivity, e.g. linters prevent
+sloppy programming errors, autoformatters leave no room for useless
+(sometimes religious) discussions about indentation and formatting
+rules. All code looks the same. Developer&rsquo;s taste and ego take a back
+seat.</p>
+<h4 id="14-do-you-write-tests">14. Do you write tests?</h4>
+<p>Writing automatic test is a major trait of a sustainable
+codebase. There are many kind of tests but the best known
+classification comes with the <a href="https://martinfowler.com/articles/practical-test-pyramid.html">Test
+Pyramid</a>.</p>
+<ul>
+<li>Unit Tests</li>
+<li>Service Tests</li>
+<li>User Interface Tests</li>
+</ul>
+<p>Particularly <strong>unit tests</strong> build the foundation and give developers
+confidence to move fast and not to break existing functionality. Unit
+testing is a major pillar of a fast feedback loop. This keeps
+developers happy and the quality high. In general, tests act as a
+safety net, prevent new bugs from being introduced and old bugs from
+reoccurrence.</p>
+<p>Without automatic tests your codebase will erode and only long-term
+developers will be capable to make changes. Onboarding new developers
+will take months or will never succeed at all. Over time developer
+speed will slow down and finally come to a complete halt. Heavily
+relying on manual testing before a release is a clear indicator of
+missing automatic tests and extends the release cycle by days or
+weeks. High performers deploy on a daily basis which is not possible
+with manual testing phases. Therefore manual testing should be reduced
+to a minimum or completely avoided.</p>
+<p>Establishing a good testing culture is especially important. E.g.</p>
+<ul>
+<li>no code changes without a corresponding test</li>
+<li>no bugfix without a test demonstrating the bug is indeed fixed</li>
+<li>unit test should be fast, so developers run them continuously</li>
+<li>unit test code coverage should be at a reasonable level like ~70%</li>
+</ul>
+<p>At Google, they practice the <a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Beyonce Rule &ldquo;If you liked it, you
+shoulda put a test on
+it!&quot;</a>
+This rule inverts responsibility, e.g. if someone breaks a feature and
+there was no test, the original author of the broken feature &ldquo;shoulda
+put a test on it!&rdquo;.</p>
+<h4 id="codereview">15. Do you conduct code reviews?</h4>
+<p>Code reviews are a critical step in your software engineering
+process. Not only they prevent entering bugs into your mainline but
+they are a major tool for knowledge transfer, learning and mentoring.
+The code review process fosters a common understanding between
+reviewers and author and offers a platform for discussions about
+trade-offs and design decisions. Reviews are not only focused on
+correctness but also on readability, performance and other
+non-functional properties.</p>
+<p>All of that will lead to better solutions. Further reviewers practice
+their code reading skill which is as important as code
+writing. Besides compiling, linting and running tests, code reviews
+form a major step in a developers feedback loop. Code should never be
+committed into mainline without a proper code review.</p>
+<p>Because code reviews can conjure up heated discussions, reviewers
+should comply to some <a href="https://google.github.io/eng-practices/review/reviewer/">code review
+guidelines</a>
+in order to guarantee a flawless experience.</p>
+<h4 id="16-do-developers-write-documentation">16. Do developers write documentation?</h4>
+<p>Documentation starts with the code. Code comments or a good
+description of a pull request are good examples. Thereby good
+documentation focuses on <strong>why</strong> something was done. An extensive
+<code>README.md</code> acts as the &ldquo;front-page&rdquo; of a project and should contain
+its purpose and instructions for developers to set up their local
+environment for development, e.g installing prerequisites, building
+the project, running the tests.</p>
+<p>Additionally a variety of documents with different purposes exist:</p>
+<ul>
+<li>Design Docs (showing alternative solutions, why was one approach
+chosen over the others?)</li>
+<li>Architecture Diagrams (System overview, showing coherence between
+components)</li>
+<li>Operational Playbooks for <a href="https://landing.google.com/sre/workbook/chapters/on-call/">Software Reliability Engineers
+(SREs)</a>
+(operational instructions for fighting outages)</li>
+</ul>
+<p>All these documents should be written by developers, operators or
+other technical people. Living, up-to-date documentation makes a
+project more understandable and long-term project members are capable
+of answering questions why things were done in the past &ndash; in the
+majority of projects, the top answer is &ldquo;this is historically grown&rdquo;.
+The only way to get real insights is conducting time consuming
+face-to-face interviews. Documentation helps to keep an overview over
+an ever-growing project, to facilitate the start for new developers
+and to build a searchable knowledge base. Past decisions should be
+transparent through good documentation and not hidden in people&rsquo;s
+heads.</p>
+<h3 id="17-do-you-focus-on-code-health">17. Do you focus on code health?</h3>
+<p>A healthy codebase is a major criteria for developer happiness. If
+your developers working on a shitty codebase, they adapt to the poor
+quality or leave. The existing codebase act as a <strong>role model</strong>. For
+the purpose of high quality code, it is important to continuously
+focus on code health. The best coders are repelled by bad code and
+attracted by healthy code. But what is a healthy codebase?</p>
+<p>A codebase is healthy when:</p>
+<ul>
+<li>you have fast builds</li>
+<li>you have an easy development setup</li>
+<li>you have fast and maintainable tests</li>
+<li>you have clean, readable, loosely coupled and consistent code</li>
+<li>you can easily debug the system</li>
+<li>you continuously tackle technical debt</li>
+</ul>
+<p>You can find a much more exhaustive explanation of code health in
+<a href="https://testing.googleblog.com/2016/08/hackable-projects.html">Google&rsquo;s Testing Blog about Code
+Health</a>.</p>
+<p>Signs of bad code are:</p>
+<ul>
+<li>complicated developer setup</li>
+<li>hard to debug, missing monitoring, noisy garbage logs</li>
+<li>long build times</li>
+<li>inconsistent code (dead code, unused imports, different formatting
+styles, no code styleguide)</li>
+<li>large merge conflicts due to long running feature branches, broken mainline</li>
+<li>no tests, flaky tests, hard-maintainable tests because of mocking overuse</li>
+</ul>
+<p>Never trade dirty code or workarounds due to time or release pressure
+for code health. You will end up very badly in the long run. Worse
+yet, you get in a vicious cycle because bad code slows you down and in
+order to fulfil the next release you add more dirty workarounds. So
+always prioritize code health, even when it looks counterintuitive at
+first sight.</p>
+<h3 id="18-do-you-practice-continuous-integration">18. Do you practice continuous integration?</h3>
+<p>Nowadays Continuous Integration is hopefully commonplace. At best, you
+work with trunk-based development and your mainline is always
+releasable, preferably with feature toggles. Highest priority is to
+keep the mainline green and a broken build should be fixed
+immediately. Small and frequent releases prevent bugs or even outages
+which happen when large releases are done only intermittently.</p>
+<p>CI helps to prevent tedious merge conflict resolutions because your
+developers regularly commit into mainline. Additionally you will get
+rid of time consuming integration problems at the end of your
+implementation phases.</p>
+<p>&ldquo;Agile&rdquo;&rsquo;s main goal is to identify risks as early as possible and not
+to postpone them till the end of a project. CI supports exactly
+that. With CI, you will detect integration, design problems
+early. This allows you to make course correction on the way.</p>
+<h3 id="19-do-you-have-a-mentoring-program">19. Do you have a mentoring program?</h3>
+<p>Mentoring is a great way to coach new employees. With a mentoring
+program, you not only foster a consistent engineering culture with
+best common practices like software methodologies, code styleguides,
+code reviews, testing culture and other policies across the whole
+organization but it is mandatory for molding new recruits into a
+productive team.</p>
+<p>Mentored developers are more likely to stay. They feel approved and
+treated as first-class employees because you invest time and effort in
+them from the beginning. It is a fantastic way to give raise to great
+and loyal engineers.</p>
+<h3 id="20-is-your-infrastructure-reproducible">20. Is your infrastructure reproducible?</h3>
+<p>Today, public cloud providers like AWS and Azure provide APIs to
+create, update and manage your infrastructure.  With the usage of
+APIs, it is natural to store your whole <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code">Infrastructure as Code
+(IaC)</a>.</p>
+<p>Since we are speaking about code, all previous points apply for
+infrastructure too. You should keep it under version control, conduct
+code reviews, run tests in you CI pipeline and keep your codebase
+clean via formating and linting tools. Known tools for infrastructure
+are <a href="https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/">Kubernetes
+manifests</a>,
+<a href="https://helm.sh/">Helm charts</a>,
+<a href="https://www.terraform.io/">Terraform</a> or <a href="https://aws.amazon.com/cloudformation/">AWS
+Cloudformation</a>.</p>
+<p>A good indicator if your infastructure is reproducable is how you
+treat your servers, like <a href="http://www.pass.org/eventdownload.aspx?suid=1902">cattle or
+pets</a>? Recreation of
+a failing server should be easier than duct-taping a failing
+one. Beware of <a href="https://martinfowler.com/bliki/SnowflakeServer.html">snowflake
+servers</a>!</p>
+<h3 id="keep">21. Are you doing your best to keep your engineers?</h3>
+<blockquote>
+<p>I&rsquo;ve built a lot of my success off finding these &ldquo;truly gifted&rdquo;
+people, and not settling for &lsquo;B&rdquo; and &ldquo;C&rdquo; players, but really going
+for the &ldquo;A&rdquo; players. &hellip; I found that when you get enough &ldquo;A&rdquo;
+players together, when you go through the incredible work to find
+five of these &ldquo;S&rdquo; players, they REALLY like working with each other
+because they have never had a chance to do that before. And, they
+don&rsquo;t want to work with &ldquo;B&rdquo; and &ldquo;C&rdquo; players, and so it becomes
+self-policing, and they only want to hire more &ldquo;A&rdquo; players, so you
+build up these pockets of &ldquo;A&rdquo; players, and it propagates &hellip;&rdquo;</p>
+</blockquote>
+<p>Steve Jobs</p>
+<p>Hiring good engineers is very important but keeping them is too!  The
+best engineering teams share a common mindset. Engineers want to work
+with other engineers sharing the same interests and approaching the
+same goals. This creates a virtuous circle, engineers motivate each
+other in order to achieve the best possible outcomes. Be careful
+though, a single new hire can disturb an A-player team&rsquo;s
+balance. That&rsquo;s why the hiring process is very important.</p>
+<p>You should treat your engineers as first-class employees. Companies,
+recognizing their value, provide tech-specific careers with
+compensations comparable to high-management salary level.</p>
+<p>Further, engineering managers play an essential role to keep your
+engineers (happy). They should know how to code and share the same
+engineering mindset. If your engineering managers are not technical
+skilled, your engineers will not take them seriously. Worse yet, they
+will leave at some point in time because they feel misunderstood.</p>
+<p>You should strive to hire A players and to keep them.</p>
+<h3 id="22-do-you-provide-the-best-technology-for-your-developers">22. Do you provide the best technology for your developers?</h3>
+<p>This points extends Joel&rsquo;s original ninth point &ldquo;Do you use the best
+tools money can buy?&rdquo; Joel focused mainly on software tools running on
+your local machine like IDEs, editors, compilers, debuggers and also
+local hardware like a second monitor. All this make your programmers
+happy and productive. While this is still true, nowadays it takes more
+than local tooling to <em>keep</em> your developers happy.</p>
+<p>A major pillar of productivity is going to the public cloud like
+Amazon AWS or Microsoft Azure. Public clouds offer a great work
+experience for your engineers. The self-service approach is
+particularly important, engineers can automate their application stack
+via APIs and scripts, use the newest technology and operate the
+complete system without writing tickets and getting approvals from
+superiors. It enables your developers to take responsibility for the
+full lifecyle of the application from design, to implementation, to
+release and to operation. It&rsquo;s a great productivity booster. If you
+cannot go to the public cloud due to legal or other restrictions,
+beware of the <a href="https://architectelevator.com/cloud/enterprise-non-cloud/">on-prem enterprise
+non-cloud</a>. The
+<strong>enterprise non-cloud</strong> is a treacherous thing, it offers modern
+software stacks like Kubernetes or Prometheus but is fails to deliver
+the main advantages of the public cloud like real self-service with
+APIs, elasticity, scalability and a pay-per-usage price model.</p>
+<p>Other kind of tools are equally important, e.g. modern collaboration
+tools like Google Docs or Office 365 which support parallel
+collaboration at one document with multiple users, modern
+communication tools like Slack and a contemporary version control
+platform like <a href="https://github.com/">github</a> with integration for code
+reviews, for CI pipelines and for the public cloud.</p>
+<h3 id="23-do-you-focus-on-the-four-key-metrics">23. Do you focus on the four key metrics?</h3>
+<p>The best way to measure if your engineering department is top-notch,
+are the four key metrics, defined in fantastic book
+<a href="https://itrevolution.com/book/accelerate/">Accelerate</a>.</p>
+<p>High performers strive for:</p>
+<ol>
+<li>Short lead time</li>
+<li>High deployment frequency</li>
+<li>Short mean time to restore (MTTR)</li>
+<li>Low change fail percentage</li>
+</ol>
+<p>Some of the above metrics seem contradictory like high deployment
+frequency and low change fail percentage. But according to the studies
+of the <a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf">DevOps
+Report</a>
+the best companies perform in <strong>all</strong> key metrics excellently.</p>
+<p>If you look for improvements, it is critical to focus on these four
+key points permanently. Don&rsquo;t fall prey to expensive agile
+transformation methodologies like SAFe or other IT
+consultants. Usually they promise a magical and fast performance boost
+but often the impact turns out as insignificant or even worsens the
+situation.</p>
+<h3 id="24-do-you-empower-your-developers">24. Do you empower your developers?</h3>
+<p>Many companies treat their developers as pure delivery teams,
+i.e. they are used to implement features based on roadmaps defined by
+leadership, stakeholders for product management. Why this is a bad
+idea, see <a href="https://svpg.com/product-fail/">Marty Cagan&rsquo;s post &ldquo;why products
+fail?&quot;</a>. With this approach you only
+getting half of their value. Further companies think developer teams
+can be easily replaced or even outsourced. They are treated as
+mercenaries but as we know from <a href="https://svpg.com/missionaries-vs-mercenaries/">John
+Doerr</a></p>
+<blockquote>
+<p>we need teams of missionaries, not teams of mercenaries.</p>
+</blockquote>
+<p>But for an outsourced IT, it is almost impossible to work in
+missionary mode.</p>
+<p>In order to get the most of you developer teams, you must hire
+missionaries and empower them. Empowered developers are first-class
+employees. Your developers are the best source of innovation because
+they know the enabling technology. But it is hard to attract, identify
+and to keep top talent. See, how to hire (11. from Joel&rsquo;s test) and
+<a href="#keep">keep the best</a>.</p>
+<p>Empowered developers should not only implement predefined features
+from stakeholders but are invited to come up with their own solutions
+to satisfy the customer needs. Therefore we should give developers
+<strong>problems</strong> to solve, not features to implement. It is mandatory that
+developers understand the business context. A quick self-check if you
+have empowered developers:</p>
+<ul>
+<li>Can developers identify themselves with the customers?</li>
+<li>Do they attend user tests regularly?</li>
+<li>At best, do your developers use the application themselves?</li>
+<li>Do they know the pains of the customers or are they shielded away by
+a wall of stakeholders, business departments, program managers and
+never have the chance to get in contact with customers?</li>
+<li>Do your developers drive their own features or do they only get them
+at the sprint-planning?</li>
+</ul>
+<p>Finally empowered engineers means a mindset change in the whole
+company, see <a href="https://svpg.com/keys-to-successful-transformation/">Marty
+Cagan</a>:</p>
+<blockquote>
+<p>(the company is) moving from a model where the technology teams
+exist to “serve the business” to one where they exist to “serve the
+customers, in ways that work for the business.</p>
+</blockquote>
+<h3 id="conclusion">Conclusion</h3>
+<p><strong>Digital</strong> companies like Google, Amazon, Facebook, Microsoft or
+Netflix have these traits in their blood and they live by these
+standards already for decades. For them, &ldquo;software&rdquo; is their core
+product, they cannot afford piling up technical debt since they would
+cripple and risk their own future. This is well understood by them. In
+contrary to non-digital companies with oldschool enterprise IT
+departments and outsourced IT.</p>
+<p>Non-digital enterprises never considered &ldquo;software&rdquo; as a competitive
+advantage. But slowly even they understand that <a href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">&ldquo;software eats the
+world&rdquo;</a>
+and they want to do develop software in-house again. In such
+situations, missing know-how and &ldquo;wrong&rdquo; people with lack of skills
+are common.  This article wants to be a simple and easy applicable
+guideline for them to establish a good coding mentality and culture
+with good practices. I hope you can apply the full test and gain some
+insights about strengths, weaknesses and possible improvements in your
+company or team.</p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://gerlacdt.github.io/tags/programming/">programming</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://gerlacdt.github.io/tags/softwareengineering/">softwareengineering</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Google Testing Toilet Collection</title>
@@ -858,8 +1285,8 @@ graph. Further any single unit test should be able to run alone
 without depending on other unit tests, files, network I/O, and
 databases.</p>
 <p>Below there is an example of a bad unit test. The second test depends
-on the first one and it will fail if the first test does not run
-before or fails. Not only this eradicates the possibility to
+on the first one and it will fail if the first test did not run
+before or failed. Not only this eradicates the possibility to
 distribute the tests but also developers will have a hard time to
 figure out the root cause of the potential error. Did the second test
 fail because of itself or because of the test before?</p>
