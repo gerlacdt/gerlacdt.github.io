@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-08-16T19:43:47+02:00</updated>
+    <updated>2020-08-16T20:03:17+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -16,9 +16,9 @@
     <generator uri="https://gohugo.io/" version="0.74.3">Hugo</generator>
         <entry>
             <title type="text">Writing better Code</title>
-            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/writting-better-software/" />
-            <id>https://gerlacdt.github.io/posts/writting-better-software/</id>
-            <updated>2020-08-16T19:42:59+02:00</updated>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/writing-better-software/" />
+            <id>https://gerlacdt.github.io/posts/writing-better-software/</id>
+            <updated>2020-08-16T19:44:05+02:00</updated>
             <published>2020-08-16T18:38:45+02:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -944,7 +944,7 @@ Law</a>.</p>
             <title type="text">Why and How to write better Unit Tests</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/unit-testing/" />
             <id>https://gerlacdt.github.io/posts/unit-testing/</id>
-            <updated>2020-06-09T17:45:12+02:00</updated>
+            <updated>2020-08-16T19:44:05+02:00</updated>
             <published>2020-05-04T08:08:00+02:00</published>
             <author>
                     <name>Daniel Gerlach</name>
