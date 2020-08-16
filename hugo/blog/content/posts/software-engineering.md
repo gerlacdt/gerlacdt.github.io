@@ -28,9 +28,6 @@ For a quick self-check, these are the original questions:
 12. Do you do hallway usability testing?
 
 
-All points are still relevant and essential for today's software
-development.
-
 Although Joel's Test is still an excellent indicator for good software
 development and engineering, 20 years have past and many game changing
 technologies have emerged like mobile apps, the public cloud and in
@@ -48,7 +45,7 @@ with contemporary questions:
 19. Do you have a mentoring program?
 20. Is your infrastructure reproducible?
 21. Are you doing your best to keep your engineers?
-22. Do you provide the best technology to your developers?
+22. Do you provide the best technology for your developers?
 23. Do you focus on the four key metrics?
 24. Do you empower your developers?
 
@@ -65,7 +62,7 @@ Further I want to emphasis that **sustainablity** is my main intention
 for the test. Many questions contribute directly or indirectly to a
 sustainable and healthy codebase which is crucial for a successful
 long-term software project and in general for a successful software
-company. [Titus Winters](https://youtu.be/zW-i9eVGU_k) defines a
+company. [Titus Winters](https://youtu.be/zW-i9eVGU_k?t=197) defines a
 sustainable codebase as:
 
 
@@ -74,7 +71,7 @@ change all of the things that you ought to change, safety, and can do
 so for the lifetime of your codebase.
 
 
-#### Do you enforce a common code styleguide?
+#### 13. Do you enforce a common code styleguide?
 
 **Consistency** is one of the most important properties of a codebase.
 It bolsters readability and maintainability which are essential for
@@ -88,7 +85,7 @@ styleguide.
 
 At best you enforce the rules of the styleguide via tooling like
 static code analyzers, linters and autoformatting tools. Often these
-tools are integrated into the build or they are run even before a
+tools are integrated into the build or are executed before a
 commit. Further there are also manually measures like [code
 reviews](#codereview) to enforce a common code style.
 
@@ -99,7 +96,7 @@ rules. All code looks the same. Developer's taste and ego take a back
 seat.
 
 
-#### Do you write tests?
+#### 14. Do you write tests?
 
 
 Writing automatic test is a major trait of a sustainable
@@ -133,8 +130,7 @@ Establishing a good testing culture is especially important. E.g.
 * no code changes without a corresponding test
 * no bugfix without a test demonstrating the bug is indeed fixed
 * unit test should be fast, so developers run them continuously
-* unit test code coverage should be at a reasonable level, ~70%, don't
-  strive for 100%
+* unit test code coverage should be at a reasonable level like ~70%
 
 At Google, they practice the [Beyonce Rule "If you liked it, you
 shoulda put a test on
@@ -143,7 +139,7 @@ This rule inverts responsibility, e.g. if someone breaks a feature and
 there was no test, the original author of the broken feature "shoulda
 put a test on it!".
 
-#### Do you conduct code reviews? {#codereview}
+#### 15. Do you conduct code reviews? {#codereview}
 
 Code reviews are a critical step in your software engineering
 process. Not only they prevent entering bugs into your mainline but
@@ -165,7 +161,7 @@ should comply to some [code review
 guidelines](https://google.github.io/eng-practices/review/reviewer/)
 in order to guarantee a flawless experience.
 
-#### Do developers write documentation?
+#### 16. Do developers write documentation?
 
 Documentation starts with the code. Code comments or a good
 description of a pull request are good examples. Thereby good
@@ -173,7 +169,7 @@ documentation focuses on **why** something was done. An extensive
 `README.md` acts as the "front-page" of a project and should contain
 its purpose and instructions for developers to set up their local
 environment for development, e.g installing prerequisites, building
-the project, running the test.
+the project, running the tests.
 
 Additionally a variety of documents with different purposes exist:
 
@@ -183,7 +179,7 @@ Additionally a variety of documents with different purposes exist:
   components)
 * Operational Playbooks for [Software Reliability Engineers
   (SREs)](https://landing.google.com/sre/workbook/chapters/on-call/)
-  (operational instructions fighting outages)
+  (operational instructions for fighting outages)
 
 All these documents should be written by developers, operators or
 other technical people. Living, up-to-date documentation makes a
@@ -198,15 +194,14 @@ transparent through good documentation and not hidden in people's
 heads.
 
 
-### Do you focus on code health?
+### 17. Do you focus on code health?
 
-Developer happiness is major criteria for high quality code. If your
-developers working on a shitty codebase, they quickly adapt to the
-poor quality or leave. The existing codebase act as a **role
-model**. It is important to continuously focus on code health which
-bolster developer happiness and therefore aims for better code
-quality. The best coders are repelled by bad code and attracted by
-healthy code. But what is a healthy codebase?
+A healthy codebase is a major criteria for developer happiness. If
+your developers working on a shitty codebase, they adapt to the poor
+quality or leave. The existing codebase act as a **role model**. For
+the purpose of high quality code, it is important to continuously
+focus on code health. The best coders are repelled by bad code and
+attracted by healthy code. But what is a healthy codebase?
 
 A codebase is healthy when:
 
@@ -221,7 +216,7 @@ You can find a much more exhaustive explanation of code health in
 [Google's Testing Blog about Code
 Health](https://testing.googleblog.com/2016/08/hackable-projects.html).
 
-A sign of bad code is:
+Signs of bad code are:
 
 * complicated developer setup
 * hard to debug, missing monitoring, noisy garbage logs
@@ -238,14 +233,14 @@ order to fulfil the next release you add more dirty workarounds. So
 always prioritize code health, even when it looks counterintuitive at
 first sight.
 
-### Do you practice continuous integration?
+### 18. Do you practice continuous integration?
 
 Nowadays Continuous Integration is hopefully commonplace. At best, you
 work with trunk-based development and your mainline is always
 releasable, preferably with feature toggles. Highest priority is to
 keep the mainline green and a broken build should be fixed
 immediately. Small and frequent releases prevent bugs or even outages
-which happen when large releases are done intermittently.
+which happen when large releases are done only intermittently.
 
 CI helps to prevent tedious merge conflict resolutions because your
 developers regularly commit into mainline. Additionally you will get
@@ -258,7 +253,7 @@ that. With CI, you will detect integration, design problems
 early. This allows you to make course correction on the way.
 
 
-### Do you have a mentoring program?
+### 19. Do you have a mentoring program?
 
 Mentoring is a great way to coach new employees. With a mentoring
 program, you not only foster a consistent engineering culture with
@@ -270,14 +265,14 @@ productive team.
 Mentored developers are more likely to stay. They feel approved and
 treated as first-class employees because you invest time and effort in
 them from the beginning. It is a fantastic way to give raise to great
-and loyal engineers in the long-run.
+and loyal engineers.
 
 
-### Is your infrastructure reproducible?
+### 20. Is your infrastructure reproducible?
 
-Today, Public Cloud Providers like AWS and Azure provide APIs to
+Today, public cloud providers like AWS and Azure provide APIs to
 create, update and manage your infrastructure.  With the usage of
-APIs, it is natural to retain your whole [Infrastructure as Code
+APIs, it is natural to store your whole [Infrastructure as Code
 (IaC)](https://en.wikipedia.org/wiki/Infrastructure_as_code).
 
 Since we are speaking about code, all previous points apply for
@@ -285,19 +280,20 @@ infrastructure too. You should keep it under version control, conduct
 code reviews, run tests in you CI pipeline and keep your codebase
 clean via formating and linting tools. Known tools for infrastructure
 are [Kubernetes
-manifest](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/),
+manifests](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/),
 [Helm charts](https://helm.sh/),
 [Terraform](https://www.terraform.io/) or [AWS
 Cloudformation](https://aws.amazon.com/cloudformation/).
 
 A good indicator if your infastructure is reproducable is how you
-treat your servers, like cattle or pets? Recreation of a failing
-server should be easier than duct-taping the failing one. Beware of
-[snowflake
+treat your servers, like [cattle or
+pets](http://www.pass.org/eventdownload.aspx?suid=1902)? Recreation of
+a failing server should be easier than duct-taping a failing
+one. Beware of [snowflake
 servers](https://martinfowler.com/bliki/SnowflakeServer.html)!
 
 
-### Are you doing your best to keep your engineers? {#keep}
+### 21. Are you doing your best to keep your engineers? {#keep}
 
 > I've built a lot of my success off finding these "truly gifted"
 > people, and not settling for 'B" and "C" players, but really going
@@ -332,7 +328,7 @@ will leave at some point in time because they feel misunderstood.
 You should strive to hire A players and to keep them.
 
 
-### Do you provide the best technology to your developers?
+### 22. Do you provide the best technology for your developers?
 
 This points extends Joel's original ninth point "Do you use the best
 tools money can buy?" Joel focused mainly on software tools running on
@@ -356,18 +352,16 @@ non-cloud](https://architectelevator.com/cloud/enterprise-non-cloud/). The
 **enterprise non-cloud** is a treacherous thing, it offers modern
 software stacks like Kubernetes or Prometheus but is fails to deliver
 the main advantages of the public cloud like real self-service with
-APIs, elasticity, scalability and a just-in-time price model. This
-will make your programmers grumpy and less productive, particularly
-the ones with public cloud experience.
+APIs, elasticity, scalability and a pay-per-usage price model.
 
 Other kind of tools are equally important, e.g. modern collaboration
 tools like Google Docs or Office 365 which support parallel
 collaboration at one document with multiple users, modern
 communication tools like Slack and a contemporary version control
 platform like [github](https://github.com/) with integration for code
-reviews, for CI pipelines and in general for the public cloud.
+reviews, for CI pipelines and for the public cloud.
 
-### Do you focus on the four key metrics?
+### 23. Do you focus on the four key metrics?
 
 The best way to measure if your engineering department is top-notch,
  are the four key metrics, defined in fantastic book
@@ -390,15 +384,16 @@ If you look for improvements, it is critical to focus on these four
 key points permanently. Don't fall prey to expensive agile
 transformation methodologies like SAFe or other IT
 consultants. Usually they promise a magical and fast performance boost
-but often they turn out as insignificant.
+but often the impact turns out as insignificant or even worsens the
+situation.
 
-### Do you empower your developers?
+### 24. Do you empower your developers?
 
 Many companies treat their developers as pure delivery teams,
 i.e. they are used to implement features based on roadmaps defined by
-leadership, stakeholders for product management departments. Why this
-is a bad idea, see [Marty Cagan's
-post](https://svpg.com/product-fail/). With this approach you only
+leadership, stakeholders for product management. Why this is a bad
+idea, see [Marty Cagan's post "why products
+fail?"](https://svpg.com/product-fail/). With this approach you only
 getting half of their value. Further companies think developer teams
 can be easily replaced or even outsourced. They are treated as
 mercenaries but as we know from [John
@@ -406,20 +401,21 @@ Doerr](https://svpg.com/missionaries-vs-mercenaries/)
 
 > we need teams of missionaries, not teams of mercenaries.
 
-But for an outsourced IT, it is impossible to work in missionary mode.
+But for an outsourced IT, it is almost impossible to work in
+missionary mode.
 
 In order to get the most of you developer teams, you must hire
 missionaries and empower them. Empowered developers are first-class
-employees. Regarding digitization, developers are the best source of
-innovation because they know the enabling technology. But it is hard
-to attract, identify and to keep top talent. See, how to hire
-(11. from Joel's test) and [keep the best](#keep).
+employees. Your developers are the best source of innovation because
+they know the enabling technology. But it is hard to attract, identify
+and to keep top talent. See, how to hire (11. from Joel's test) and
+[keep the best](#keep).
 
 
 Empowered developers should not only implement predefined features
 from stakeholders but are invited to come up with their own solutions
 to satisfy the customer needs. Therefore we should give developers
-**problems** to oslve not features to implement. It is mandatory that
+**problems** to solve, not features to implement. It is mandatory that
 developers understand the business context. A quick self-check if you
 have empowered developers:
 
@@ -429,8 +425,8 @@ have empowered developers:
 * Do they know the pains of the customers or are they shielded away by
   a wall of stakeholders, business departments, program managers and
   never have the chance to get in contact with customers?
-* Do your developers drive the own features to implement and not only
-  getting them at the sprint-planning or from a roadmap?
+* Do your developers drive their own features or do they only get them
+  at the sprint-planning?
 
 Finally empowered engineers means a mindset change in the whole
 company, see [Marty
@@ -450,7 +446,7 @@ cripple and risk their own future. This is well understood by them. In
 contrary to non-digital companies with oldschool enterprise IT
 departments and outsourced IT.
 
-These enterprises never considered "software" as a competitive
+Non-digital enterprises never considered "software" as a competitive
 advantage. But slowly even they understand that ["software eats the
 world"](https://a16z.com/2011/08/20/why-software-is-eating-the-world/)
 and they want to do develop software in-house again. In such
@@ -459,4 +455,4 @@ are common.  This article wants to be a simple and easy applicable
 guideline for them to establish a good coding mentality and culture
 with good practices. I hope you can apply the full test and gain some
 insights about strengths, weaknesses and possible improvements in your
-company.
+company or team.
