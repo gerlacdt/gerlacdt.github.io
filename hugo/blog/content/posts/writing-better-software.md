@@ -299,7 +299,7 @@ servers](https://martinfowler.com/bliki/SnowflakeServer.html)!
 > people, and not settling for 'B" and "C" players, but really going
 > for the "A" players. ... I found that when you get enough "A"
 > players together, when you go through the incredible work to find
-> five of these "S" players, they REALLY like working with each other
+> five of these "A" players, they REALLY like working with each other
 > because they have never had a chance to do that before. And, they
 > don't want to work with "B" and "C" players, and so it becomes
 > self-policing, and they only want to hire more "A" players, so you

@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-08-16T20:08:27+02:00</updated>
+    <updated>2020-08-18T21:01:27+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -18,7 +18,7 @@
             <title type="text">Writing better Code</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/writing-better-software/" />
             <id>https://gerlacdt.github.io/posts/writing-better-software/</id>
-            <updated>2020-08-16T19:44:05+02:00</updated>
+            <updated>2020-08-18T21:00:39+02:00</updated>
             <published>2020-08-16T18:38:45+02:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -280,7 +280,7 @@ servers</a>!</p>
 people, and not settling for &lsquo;B&rdquo; and &ldquo;C&rdquo; players, but really going
 for the &ldquo;A&rdquo; players. &hellip; I found that when you get enough &ldquo;A&rdquo;
 players together, when you go through the incredible work to find
-five of these &ldquo;S&rdquo; players, they REALLY like working with each other
+five of these &ldquo;A&rdquo; players, they REALLY like working with each other
 because they have never had a chance to do that before. And, they
 don&rsquo;t want to work with &ldquo;B&rdquo; and &ldquo;C&rdquo; players, and so it becomes
 self-policing, and they only want to hire more &ldquo;A&rdquo; players, so you
