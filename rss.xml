@@ -10,17 +10,159 @@
         <title>Daniel&#39;s programming rants</title>
         <link>https://gerlacdt.github.io/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
-        <generator>Hugo 0.74.3 https://gohugo.io/</generator>
+        <generator>Hugo 0.75.1 https://gohugo.io/</generator>
         
             <language>en</language>
         
         
         
         
-        <lastBuildDate>Tue, 18 Aug 2020 21:01:27 +0200</lastBuildDate>
+        <lastBuildDate>Thu, 08 Oct 2020 20:13:47 +0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Product Management Quotes</title>
+                <link>https://gerlacdt.github.io/posts/product-management-quotes/</link>
+                <guid isPermaLink="true">https://gerlacdt.github.io/posts/product-management-quotes/</guid>
+                <pubDate>Thu, 08 Oct 2020 10:00:00 +0100</pubDate>
+                
+                
+                
+                    <description><![CDATA[<p>I collected my favorite quotes about product management:</p>
+<p><img src="/img/marty_cagan.jpg" alt="Marty Cagan"></p>
+<blockquote>
+<p>We need teams of missionaries, not teams of mercenaries.</p>
+</blockquote>
+<p>Marty Cagan, Inspired</p>
+<blockquote>
+<p>It doesn’t matter how good your engineering team is if they are not
+given something worthwhile to build.</p>
+</blockquote>
+<p>Marty Cagan, Inspired</p>
+<blockquote>
+<p>The use of OKRs in most companies is a mess - because it’s a framework that originated in an empowered team environment - and most companies applying it today don’t have empowered teams.</p>
+</blockquote>
+<p>Marty Cagan</p>
+<blockquote>
+<p>As director of product you are only as strong as your weakest product manager.</p>
+</blockquote>
+<p>Marty Cagan</p>
+<blockquote>
+<p>The MVP should be a prototype, not a product.</p>
+</blockquote>
+<p>Marty Cagan, Inspired</p>
+<blockquote>
+<p>Be stubborn on vision but flexible on details.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>What&rsquo;s dangerous is not to evolve.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>We&rsquo;ve had three big ideas at Amazon that we&rsquo;ve stuck with for 18 years, and they&rsquo;re the reason we&rsquo;re successful: Put the customer first. Invent. And be patient.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>If you don&rsquo;t understand the details of your business you are going to
+fail.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>The best customer service is if the customer doesn’t need to call you, doesn’t need to talk to you. It just works.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>No customer ever asked Amazon to create the Prime membership program.</p>
+</blockquote>
+<p>Jeff Bezos (myth that listen to your customers results in great products)</p>
+<blockquote>
+<p>We will continue to focus on hiring and retaining versatile and talented employees, and continue to weight their compensation to stock options rather than cash. We know our success will be largely affected by our ability to attract and retain a motivated employee base, each of whom must think like, and therefore must actually be, an owner.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>Good process serves you so you can serve customers. But if you’re not watchful, the process can become the thing. This can happen very easily in large organizations. You stop looking at outcomes and just make sure you’re doing the process right.</p>
+</blockquote>
+<p>Jeff Bezos</p>
+<blockquote>
+<p>The people who are crazy enough to think they can change the world are
+the ones who do.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>I’m as proud of many of the things we haven’t done as the things we have done. Innovation is saying no to a thousand things.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>Innovation distinguishes between a leader and a follower.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>Design is not just what it looks like and feels like. Design is how it
+works.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>&hellip;the people that make those decisions sometimes are confused&hellip;</p>
+</blockquote>
+<p>Steve Jobs about people in the enterprise and their buying decisions</p>
+<blockquote>
+<p>That’s been one of my mantras - focus and simplicity. Simple can be harder than complex; you have to work hard to get your thinking clean to make it simple.</p>
+</blockquote>
+<p>Steve Jobs</p>
+<blockquote>
+<p>The value is in what gets used, not in what gets built.</p>
+</blockquote>
+<p>Kris Gale</p>
+<blockquote>
+<p>If you are not embarrassed by the first version of your product, you’ve launched too late.</p>
+</blockquote>
+<p>Reid Hoffman</p>
+<blockquote>
+<p>The key is not to prioritize what’s on your schedule, but to schedule your priorities.</p>
+</blockquote>
+<p>Stephen Covey</p>
+<blockquote>
+<p>Your most unhappy customers are your greatest source of learning.</p>
+</blockquote>
+<p>Bill Gates</p>
+<blockquote>
+<p>Management is doing things right; leadership is doing the right
+things.</p>
+</blockquote>
+<p>Peter Drucker</p>
+<blockquote>
+<p>Efficiency is doing things right; effectiveness is doing the right
+things.</p>
+</blockquote>
+<p>Peter Drucker</p>
+<blockquote>
+<p>Strategy is a commodity, execution is an art.</p>
+</blockquote>
+<p>Peter Drucker</p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://gerlacdt.github.io/tags/product/">product</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Writing better Code</title>
@@ -288,7 +430,7 @@ five of these &ldquo;A&rdquo; players, they REALLY like working with each other
 because they have never had a chance to do that before. And, they
 don&rsquo;t want to work with &ldquo;B&rdquo; and &ldquo;C&rdquo; players, and so it becomes
 self-policing, and they only want to hire more &ldquo;A&rdquo; players, so you
-build up these pockets of &ldquo;A&rdquo; players, and it propagates &hellip;&rdquo;</p>
+build up these pockets of &ldquo;A&rdquo; players, and it propagates &hellip;&quot;</p>
 </blockquote>
 <p>Steve Jobs</p>
 <p>Hiring good engineers is very important but keeping them is too!  The
@@ -637,7 +779,7 @@ Law</a>.</p>
 </blockquote>
 <p>C.A.R. Hoare</p>
 <blockquote>
-<p>What one programmer can do in one month, two programmers can do in two months.&rdquo;</p>
+<p>What one programmer can do in one month, two programmers can do in two months.&quot;</p>
 </blockquote>
 <p>Fred Brooks</p>
 <blockquote>
@@ -2266,144 +2408,6 @@ codebase.</p>
                                 
                                 
                                     <category domain="https://gerlacdt.github.io/tags/programming/">programming</category>
-                                
-                            
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>Product Management Quotes</title>
-                <link>https://gerlacdt.github.io/posts/product-management-quotes/</link>
-                <guid isPermaLink="true">https://gerlacdt.github.io/posts/product-management-quotes/</guid>
-                <pubDate>Sat, 27 Jul 2019 10:23:17 +0100</pubDate>
-                
-                
-                
-                    <description><![CDATA[<p>I collected my favorite quotes about product management:</p>
-<p><img src="/img/marty_cagan.jpg" alt="Marty Cagan"></p>
-<blockquote>
-<p>We need teams of missionaries, not teams of mercenaries.</p>
-</blockquote>
-<p>Marty Cagan, Inspired</p>
-<blockquote>
-<p>It doesn’t matter how good your engineering team is if they are not
-given something worthwhile to build.</p>
-</blockquote>
-<p>Marty Cagan, Inspired</p>
-<blockquote>
-<p>The use of OKRs in most companies is a mess - because it’s a framework that originated in an empowered team environment - and most companies applying it today don’t have empowered teams.</p>
-</blockquote>
-<p>Marty Cagan</p>
-<blockquote>
-<p>As director of product you are only as strong as your weakest product manager.</p>
-</blockquote>
-<p>Marty Cagan</p>
-<blockquote>
-<p>The MVP should be a prototype, not a product.</p>
-</blockquote>
-<p>Marty Cagan, Inspired</p>
-<blockquote>
-<p>Be stubborn on vision but flexible on details.</p>
-</blockquote>
-<p>Jeff Bezos</p>
-<blockquote>
-<p>What&rsquo;s dangerous is not to evolve.</p>
-</blockquote>
-<p>Jeff Bezos</p>
-<blockquote>
-<p>We&rsquo;ve had three big ideas at Amazon that we&rsquo;ve stuck with for 18 years, and they&rsquo;re the reason we&rsquo;re successful: Put the customer first. Invent. And be patient.</p>
-</blockquote>
-<p>Jeff Bezos</p>
-<blockquote>
-<p>If you don&rsquo;t understand the details of your business you are going to
-fail.</p>
-</blockquote>
-<p>Jeff Bezos</p>
-<blockquote>
-<p>The best customer service is if the customer doesn’t need to call you, doesn’t need to talk to you. It just works.</p>
-</blockquote>
-<p>Jeff Bezos</p>
-<blockquote>
-<p>No customer ever asked Amazon to create the Prime membership program.</p>
-</blockquote>
-<p>Jeff Bezos (myth that listen to your customers results in great products)</p>
-<blockquote>
-<p>We will continue to focus on hiring and retaining versatile and talented employees, and continue to weight their compensation to stock options rather than cash. We know our success will be largely affected by our ability to attract and retain a motivated employee base, each of whom must think like, and therefore must actually be, an owner.</p>
-</blockquote>
-<p>Jeff Bezos</p>
-<blockquote>
-<p>The people who are crazy enough to think they can change the world are
-the ones who do.</p>
-</blockquote>
-<p>Steve Jobs</p>
-<blockquote>
-<p>I’m as proud of many of the things we haven’t done as the things we have done. Innovation is saying no to a thousand things.</p>
-</blockquote>
-<p>Steve Jobs</p>
-<blockquote>
-<p>Innovation distinguishes between a leader and a follower.</p>
-</blockquote>
-<p>Steve Jobs</p>
-<blockquote>
-<p>Design is not just what it looks like and feels like. Design is how it
-works.</p>
-</blockquote>
-<p>Steve Jobs</p>
-<blockquote>
-<p>&hellip;the people that make those decisions sometimes are confused&hellip;</p>
-</blockquote>
-<p>Steve Jobs about people in the enterprise and their buying decisions</p>
-<blockquote>
-<p>That’s been one of my mantras - focus and simplicity. Simple can be harder than complex; you have to work hard to get your thinking clean to make it simple.</p>
-</blockquote>
-<p>Steve Jobs</p>
-<blockquote>
-<p>The value is in what gets used, not in what gets built.</p>
-</blockquote>
-<p>Kris Gale</p>
-<blockquote>
-<p>If you are not embarrassed by the first version of your product, you’ve launched too late.</p>
-</blockquote>
-<p>Reid Hoffman</p>
-<blockquote>
-<p>The key is not to prioritize what’s on your schedule, but to schedule your priorities.</p>
-</blockquote>
-<p>Stephen Covey</p>
-<blockquote>
-<p>Your most unhappy customers are your greatest source of learning.</p>
-</blockquote>
-<p>Bill Gates</p>
-<blockquote>
-<p>Management is doing things right; leadership is doing the right
-things.</p>
-</blockquote>
-<p>Peter Drucker</p>
-<blockquote>
-<p>Efficiency is doing things right; effectiveness is doing the right
-things.</p>
-</blockquote>
-<p>Peter Drucker</p>
-<blockquote>
-<p>Strategy is a commodity, execution is an art.</p>
-</blockquote>
-<p>Peter Drucker</p>
-]]></description>
-                
-                
-                
-                
-                
-                    
-                        
-                    
-                        
-                            
-                                
-                                
-                                
-                                    <category domain="https://gerlacdt.github.io/tags/product/">product</category>
                                 
                             
                         
