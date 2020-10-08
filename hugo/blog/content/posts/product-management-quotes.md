@@ -1,6 +1,6 @@
 ---
 title: "Product Management Quotes"
-date: 2019-07-27T10:23:17+01:00
+date: 2020-10-08T10:00:00+01:00
 tags: ["product"]
 draft: false
 ---
@@ -59,6 +59,11 @@ Jeff Bezos (myth that listen to your customers results in great products)
 > We will continue to focus on hiring and retaining versatile and talented employees, and continue to weight their compensation to stock options rather than cash. We know our success will be largely affected by our ability to attract and retain a motivated employee base, each of whom must think like, and therefore must actually be, an owner.
 
 Jeff Bezos
+
+> Good process serves you so you can serve customers. But if you’re not watchful, the process can become the thing. This can happen very easily in large organizations. You stop looking at outcomes and just make sure you’re doing the process right.
+
+Jeff Bezos
+
 
 > The people who are crazy enough to think they can change the world are
 the ones who do.
