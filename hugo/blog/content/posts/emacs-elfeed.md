@@ -12,10 +12,10 @@ interesting content is even more time consuming.
 
 Subscribing to an [RSS feed](https://en.wikipedia.org/wiki/RSS) can
 reduce your effort immensely. An RSS feed "pushes" the newest updates
-to subscribers, so they never miss updates. In order to make use of
-RSS feeds you need an "feed reader" or "feed aggregator". Such a feed
-reader will save you from visiting your favorite websites again and
-again.
+to subscribers and they will never miss updates. In order to make use
+of RSS feeds you need a "feed reader" or "feed aggregator". Such a
+feed reader will save you from visiting your favorite websites again
+and again, so you can use your precious time more productively.
 
 [Emacs](https://www.gnu.org/software/emacs/) is the epitome of
 extensibility, and it's no surprise that Emacs makes also a great RSS

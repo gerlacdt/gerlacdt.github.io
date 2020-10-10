@@ -17,7 +17,7 @@
         
         
         
-        <lastBuildDate>Sat, 10 Oct 2020 20:18:19 +0200</lastBuildDate>
+        <lastBuildDate>Sat, 10 Oct 2020 20:28:41 +0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
@@ -36,10 +36,10 @@ time. Worse yet, scanning and filtering these websites for new
 interesting content is even more time consuming.</p>
 <p>Subscribing to an <a href="https://en.wikipedia.org/wiki/RSS">RSS feed</a> can
 reduce your effort immensely. An RSS feed &ldquo;pushes&rdquo; the newest updates
-to subscribers, so they never miss updates. In order to make use of
-RSS feeds you need an &ldquo;feed reader&rdquo; or &ldquo;feed aggregator&rdquo;. Such a feed
-reader will save you from visiting your favorite websites again and
-again.</p>
+to subscribers and they will never miss updates. In order to make use
+of RSS feeds you need a &ldquo;feed reader&rdquo; or &ldquo;feed aggregator&rdquo;. Such a
+feed reader will save you from visiting your favorite websites again
+and again, so you can use your precious time more productively.</p>
 <p><a href="https://www.gnu.org/software/emacs/">Emacs</a> is the epitome of
 extensibility, and it&rsquo;s no surprise that Emacs makes also a great RSS
 reader!  The <a href="https://github.com/skeeto/elfeed">elfeed</a> package turns
