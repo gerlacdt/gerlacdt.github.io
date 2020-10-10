@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-10T16:55:20+02:00</updated>
+    <updated>2020-10-10T20:13:34+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -14,6 +14,135 @@
             </author>
     
     <generator uri="https://gohugo.io/" version="0.75.1">Hugo</generator>
+        <entry>
+            <title type="text">Emacs as RSS reader</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-elfeed/" />
+            <id>https://gerlacdt.github.io/posts/emacs-elfeed/</id>
+            <updated>2020-10-10T20:12:19+02:00</updated>
+            <published>2020-10-10T10:00:00+01:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[Do you have a list of websites you visit regularly? Just to find out nothing new was added. This manual scraping is often a waste of time. Worse yet, scanning and filtering these websites for new interesting content is even more time consuming.]]></summary>
+            
+                <content type="html"><![CDATA[<p>Do you have a list of websites you visit regularly? Just to find out
+nothing new was added. This manual scraping is often a waste of
+time. Worse yet, scanning and filtering these websites for new
+interesting content is even more time consuming.</p>
+<p>Subscribing to an <a href="https://en.wikipedia.org/wiki/RSS">RSS feed</a> can
+reduce your effort immensely. An RSS feed &ldquo;pushes&rdquo; the newest updates
+to subscribers, so they never miss updates. In order to make use of
+RSS feeds you need an &ldquo;feed reader&rdquo; or &ldquo;feed aggregator&rdquo;. Such a feed
+reader will save you from visiting your favorite websites again and
+again.</p>
+<p><a href="https://www.gnu.org/software/emacs/">Emacs</a> is the epitome of
+extensibility, and it&rsquo;s no surprise Emacs makes also a great RSS
+reader!  The <a href="https://github.com/skeeto/elfeed">elfeed</a> package turns
+Emacs into a full-fledged feed reader which support multiple feeds,
+searching, filtering and more.</p>
+<p>The following shows a sample elfeed configuration with some
+programming news subscriptions. elfeed will only download the last two
+days of updates and mark them as unread.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-common-lisp" data-lang="common-lisp"><span class="c1">;; data is stored in ~/.elfeed</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">elfeed-feeds</span>
+      <span class="o">&#39;</span><span class="p">(</span>
+        <span class="c1">;; programming</span>
+        <span class="p">(</span><span class="s">&#34;https://news.ycombinator.com/rss&#34;</span> <span class="nv">hacker</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.heise.de/developer/rss/news-atom.xml&#34;</span> <span class="nv">heise</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/programming.rss&#34;</span> <span class="nv">programming</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/emacs.rss&#34;</span> <span class="nv">emacs</span><span class="p">)</span>
+
+        <span class="c1">;; programming languages</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/golang.rss&#34;</span> <span class="nv">golang</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/java.rss&#34;</span> <span class="nv">java</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/javascript.rss&#34;</span> <span class="nv">javascript</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/typescript.rss&#34;</span> <span class="nv">typescript</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/clojure.rss&#34;</span> <span class="nv">clojure</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/python.rss&#34;</span> <span class="nv">python</span><span class="p">)</span>
+
+        <span class="c1">;; cloud</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/aws.rss&#34;</span> <span class="nv">aws</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/googlecloud.rss&#34;</span> <span class="nv">googlecloud</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/azure.rss&#34;</span> <span class="nv">azure</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/devops.rss&#34;</span> <span class="nv">devops</span><span class="p">)</span>
+        <span class="p">(</span><span class="s">&#34;https://www.reddit.com/r/kubernetes.rss&#34;</span> <span class="nv">kubernetes</span><span class="p">)</span>
+<span class="p">))</span>
+
+<span class="p">(</span><span class="nv">setq-default</span> <span class="nv">elfeed-search-filter</span> <span class="s">&#34;@2-days-ago +unread&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">setq-default</span> <span class="nv">elfeed-search-title-max-width</span> <span class="mi">100</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">setq-default</span> <span class="nv">elfeed-search-title-min-width</span> <span class="mi">100</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>A usual worflow looks like this:</p>
+<ul>
+<li>start <code>elfeed</code></li>
+<li><code>G</code> fetches the newest RSS feed updates</li>
+<li><code>s</code> filter for a specific topic like <code>java</code>, <code>golang</code> or <code>kubernetes</code></li>
+<li><code>c</code> clears the search filter and shows everything again</li>
+<li>navigate up and down with <code>n</code> (next line) and <code>p</code> (previous line)</li>
+<li><code>b</code> open current url in your browser</li>
+</ul>
+<p>For a complete documentation visit the official elfeed page:
+<a href="https://github.com/skeeto/elfeed">https://github.com/skeeto/elfeed</a></p>
+<h3 id="screen-record">Screen record</h3>
+<p><img src="/img/elfeed.gif" alt="elfeed"></p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/emacs/" term="emacs" label="emacs" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Product Management Quotes</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/product-management-quotes/" />
