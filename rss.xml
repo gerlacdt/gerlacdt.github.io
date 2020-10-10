@@ -17,7 +17,7 @@
         
         
         
-        <lastBuildDate>Thu, 08 Oct 2020 20:13:47 +0200</lastBuildDate>
+        <lastBuildDate>Sat, 10 Oct 2020 16:55:20 +0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
@@ -198,7 +198,7 @@ development and engineering, 20 years have past and many game changing
 technologies have emerged like mobile apps, the public cloud and in
 general better tooling is available. The success of
 <a href="https://git-scm.com/">git</a> and <a href="https://github.com/">github</a> changed
-how we develop software. In this article i want to extend Joel&rsquo;s test
+how we develop software. In this article I want to extend Joel&rsquo;s test
 with contemporary questions:</p>
 <ol start="13">
 <li>Do you enforce a common code styleguide?</li>
@@ -219,8 +219,7 @@ Test, for a <strong>yes</strong> you get one point. The ranking is:</p>
 <ul>
 <li>&lt;= 20 points, you must improve</li>
 <li>21 points, you are ok</li>
-<li>22 points, you are a high-performer</li>
-<li>23 points, you are a high-performer</li>
+<li>22, 23 points, you are a high-performer</li>
 <li>24 points, you are best-in-class</li>
 </ul>
 <p>Further I want to emphasis that <strong>sustainablity</strong> is my main intention
@@ -240,7 +239,7 @@ It bolsters readability and maintainability which are essential for
 sustainable code. A consistent codebase is easier to grasp and makes
 onboarding new developers faster. New programmers are guided by the
 prevailing style and can adapt quickly to it. Consistency is also an
-indicator for coder&rsquo;s discipline, clearly you don&rsquo;t want to have dead
+indicator for coders' discipline, clearly you don&rsquo;t want to have dead
 code, unused imports, wrong indentations, and other intricacies in
 your codebase. The desired consistency can be achieved by a code
 styleguide.</p>
@@ -248,11 +247,11 @@ styleguide.</p>
 static code analyzers, linters and autoformatting tools. Often these
 tools are integrated into the build or are executed before a
 commit. Further there are also manually measures like <a href="#codereview">code
-reviews</a> to enforce a common code style.</p>
-<p>A consistent code style increases productivity, e.g. linters prevent
+reviews</a> to enforce a common style.</p>
+<p>A consistent style increases productivity, e.g. linters prevent
 sloppy programming errors, autoformatters leave no room for useless
 (sometimes religious) discussions about indentation and formatting
-rules. All code looks the same. Developer&rsquo;s taste and ego take a back
+rules. All code looks the same. Developers' taste and ego take a back
 seat.</p>
 <h4 id="14-do-you-write-tests">14. Do you write tests?</h4>
 <p>Writing automatic test is a major trait of a sustainable
@@ -387,7 +386,7 @@ rid of time consuming integration problems at the end of your
 implementation phases.</p>
 <p>&ldquo;Agile&rdquo;&rsquo;s main goal is to identify risks as early as possible and not
 to postpone them till the end of a project. CI supports exactly
-that. With CI, you will detect integration, design problems
+that. With CI, you will detect integration and design problems
 early. This allows you to make course correction on the way.</p>
 <h3 id="19-do-you-have-a-mentoring-program">19. Do you have a mentoring program?</h3>
 <p>Mentoring is a great way to coach new employees. With a mentoring
@@ -459,7 +458,7 @@ than local tooling to <em>keep</em> your developers happy.</p>
 <p>A major pillar of productivity is going to the public cloud like
 Amazon AWS or Microsoft Azure. Public clouds offer a great work
 experience for your engineers. The self-service approach is
-particularly important, engineers can automate their application stack
+particularly important. Engineers can automate their application stack
 via APIs and scripts, use the newest technology and operate the
 complete system without writing tickets and getting approvals from
 superiors. It enables your developers to take responsibility for the
@@ -496,15 +495,14 @@ Report</a>
 the best companies perform in <strong>all</strong> key metrics excellently.</p>
 <p>If you look for improvements, it is critical to focus on these four
 key points permanently. Don&rsquo;t fall prey to expensive agile
-transformation methodologies like SAFe or other IT
-consultants. Usually they promise a magical and fast performance boost
-but often the impact turns out as insignificant or even worsens the
-situation.</p>
+transformation methodologies like SAFe. Usually they promise a magical
+and fast performance boost but often the impact turns out as
+insignificant or even worsens the situation.</p>
 <h3 id="24-do-you-empower-your-developers">24. Do you empower your developers?</h3>
 <p>Many companies treat their developers as pure delivery teams,
 i.e. they are used to implement features based on roadmaps defined by
-leadership, stakeholders for product management. Why this is a bad
-idea, see <a href="https://svpg.com/product-fail/">Marty Cagan&rsquo;s post &ldquo;why products
+leadership and product management departments. Why this is a bad idea,
+see <a href="https://svpg.com/product-fail/">Marty Cagan&rsquo;s post &ldquo;why products
 fail?&quot;</a>. With this approach you only
 getting half of their value. Further companies think developer teams
 can be easily replaced or even outsourced. They are treated as

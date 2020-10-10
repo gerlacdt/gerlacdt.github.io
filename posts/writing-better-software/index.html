@@ -79,13 +79,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2020-08-16T18:38:45+02:00",
-        "dateModified": "2020-08-18T21:00:39+02:00",
+        "dateModified": "2020-10-10T16:49:42+02:00",
         "url": "https://gerlacdt.github.io/posts/writing-better-software/",
         "headline": "Writing better Code",
         "description": "In Joel Spolsky\u0026rsquo;s blog post \u0026ldquo;The Joel Test: 12 Steps to better Code\u0026rdquo;, he describes a test composed of twelve simple yes-no questions. For a yes you get one point. 10 points are acceptable and 12 are perfect. If you have less than 10 points, you will get in trouble with your software \u0026ndash; sooner or later.",
         "inLanguage" : "en",
         "articleSection": "posts",
-        "wordCount":  3033 ,
+        "wordCount":  3023 ,
         "image": "https://gerlacdt.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -129,7 +129,7 @@
 <meta property="og:locale" content="en" /><meta property="og:image" content="https://gerlacdt.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2020-08-16T18:38:45+02:00" />
-    <meta property="article:modified_time" content="2020-08-18T21:00:39+02:00" />
+    <meta property="article:modified_time" content="2020-10-10T16:49:42+02:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -263,7 +263,7 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;3033</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;3023</span>
     
     
         
@@ -299,7 +299,7 @@ development and engineering, 20 years have past and many game changing
 technologies have emerged like mobile apps, the public cloud and in
 general better tooling is available. The success of
 <a href="https://git-scm.com/" target="_blank" rel="noopener">git</a> and <a href="https://github.com/" target="_blank" rel="noopener">github</a> changed
-how we develop software. In this article i want to extend Joel&rsquo;s test
+how we develop software. In this article I want to extend Joel&rsquo;s test
 with contemporary questions:</p>
 <ol start="13">
 <li>Do you enforce a common code styleguide?</li>
@@ -320,8 +320,7 @@ Test, for a <strong>yes</strong> you get one point. The ranking is:</p>
 <ul>
 <li>&lt;= 20 points, you must improve</li>
 <li>21 points, you are ok</li>
-<li>22 points, you are a high-performer</li>
-<li>23 points, you are a high-performer</li>
+<li>22, 23 points, you are a high-performer</li>
 <li>24 points, you are best-in-class</li>
 </ul>
 <p>Further I want to emphasis that <strong>sustainablity</strong> is my main intention
@@ -341,7 +340,7 @@ It bolsters readability and maintainability which are essential for
 sustainable code. A consistent codebase is easier to grasp and makes
 onboarding new developers faster. New programmers are guided by the
 prevailing style and can adapt quickly to it. Consistency is also an
-indicator for coder&rsquo;s discipline, clearly you don&rsquo;t want to have dead
+indicator for coders' discipline, clearly you don&rsquo;t want to have dead
 code, unused imports, wrong indentations, and other intricacies in
 your codebase. The desired consistency can be achieved by a code
 styleguide.</p>
@@ -349,11 +348,11 @@ styleguide.</p>
 static code analyzers, linters and autoformatting tools. Often these
 tools are integrated into the build or are executed before a
 commit. Further there are also manually measures like <a href="#codereview">code
-reviews</a> to enforce a common code style.</p>
-<p>A consistent code style increases productivity, e.g. linters prevent
+reviews</a> to enforce a common style.</p>
+<p>A consistent style increases productivity, e.g. linters prevent
 sloppy programming errors, autoformatters leave no room for useless
 (sometimes religious) discussions about indentation and formatting
-rules. All code looks the same. Developer&rsquo;s taste and ego take a back
+rules. All code looks the same. Developers' taste and ego take a back
 seat.</p>
 <h4 id="14-do-you-write-tests"><a href="#14-do-you-write-tests" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>14. Do you write tests?</h4>
 <p>Writing automatic test is a major trait of a sustainable
@@ -488,7 +487,7 @@ rid of time consuming integration problems at the end of your
 implementation phases.</p>
 <p>&ldquo;Agile&rdquo;&rsquo;s main goal is to identify risks as early as possible and not
 to postpone them till the end of a project. CI supports exactly
-that. With CI, you will detect integration, design problems
+that. With CI, you will detect integration and design problems
 early. This allows you to make course correction on the way.</p>
 <h3 id="19-do-you-have-a-mentoring-program"><a href="#19-do-you-have-a-mentoring-program" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>19. Do you have a mentoring program?</h3>
 <p>Mentoring is a great way to coach new employees. With a mentoring
@@ -560,7 +559,7 @@ than local tooling to <em>keep</em> your developers happy.</p>
 <p>A major pillar of productivity is going to the public cloud like
 Amazon AWS or Microsoft Azure. Public clouds offer a great work
 experience for your engineers. The self-service approach is
-particularly important, engineers can automate their application stack
+particularly important. Engineers can automate their application stack
 via APIs and scripts, use the newest technology and operate the
 complete system without writing tickets and getting approvals from
 superiors. It enables your developers to take responsibility for the
@@ -597,15 +596,14 @@ Report</a>
 the best companies perform in <strong>all</strong> key metrics excellently.</p>
 <p>If you look for improvements, it is critical to focus on these four
 key points permanently. Don&rsquo;t fall prey to expensive agile
-transformation methodologies like SAFe or other IT
-consultants. Usually they promise a magical and fast performance boost
-but often the impact turns out as insignificant or even worsens the
-situation.</p>
+transformation methodologies like SAFe. Usually they promise a magical
+and fast performance boost but often the impact turns out as
+insignificant or even worsens the situation.</p>
 <h3 id="24-do-you-empower-your-developers"><a href="#24-do-you-empower-your-developers" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>24. Do you empower your developers?</h3>
 <p>Many companies treat their developers as pure delivery teams,
 i.e. they are used to implement features based on roadmaps defined by
-leadership, stakeholders for product management. Why this is a bad
-idea, see <a href="https://svpg.com/product-fail/" target="_blank" rel="noopener">Marty Cagan&rsquo;s post &ldquo;why products
+leadership and product management departments. Why this is a bad idea,
+see <a href="https://svpg.com/product-fail/" target="_blank" rel="noopener">Marty Cagan&rsquo;s post &ldquo;why products
 fail?&quot;</a>. With this approach you only
 getting half of their value. Further companies think developer teams
 can be easily replaced or even outsourced. They are treated as
@@ -690,9 +688,9 @@ company or team.</p>
 
 
         
-    <div class="updated-badge-container"><div title="Updated @ 2020-08-18 21:00:39 CEST" style="cursor:help;display:inline-block">
+    <div class="updated-badge-container"><div title="Updated @ 2020-10-10 16:49:42 CEST" style="cursor:help;display:inline-block">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-08-18</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-08-18</text></g></svg></div></div>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-10-10</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-10-10</text></g></svg></div></div>
 
 
         

@@ -33,7 +33,7 @@ development and engineering, 20 years have past and many game changing
 technologies have emerged like mobile apps, the public cloud and in
 general better tooling is available. The success of
 [git](https://git-scm.com/) and [github](https://github.com/) changed
-how we develop software. In this article i want to extend Joel's test
+how we develop software. In this article I want to extend Joel's test
 with contemporary questions:
 
 13. Do you enforce a common code styleguide?
@@ -54,8 +54,7 @@ Test, for a **yes** you get one point. The ranking is:
 
 * <= 20 points, you must improve
 * 21 points, you are ok
-* 22 points, you are a high-performer
-* 23 points, you are a high-performer
+* 22, 23 points, you are a high-performer
 * 24 points, you are best-in-class
 
 Further I want to emphasis that **sustainablity** is my main intention
@@ -78,7 +77,7 @@ It bolsters readability and maintainability which are essential for
 sustainable code. A consistent codebase is easier to grasp and makes
 onboarding new developers faster. New programmers are guided by the
 prevailing style and can adapt quickly to it. Consistency is also an
-indicator for coder's discipline, clearly you don't want to have dead
+indicator for coders' discipline, clearly you don't want to have dead
 code, unused imports, wrong indentations, and other intricacies in
 your codebase. The desired consistency can be achieved by a code
 styleguide.
@@ -87,12 +86,12 @@ At best you enforce the rules of the styleguide via tooling like
 static code analyzers, linters and autoformatting tools. Often these
 tools are integrated into the build or are executed before a
 commit. Further there are also manually measures like [code
-reviews](#codereview) to enforce a common code style.
+reviews](#codereview) to enforce a common style.
 
-A consistent code style increases productivity, e.g. linters prevent
+A consistent style increases productivity, e.g. linters prevent
 sloppy programming errors, autoformatters leave no room for useless
 (sometimes religious) discussions about indentation and formatting
-rules. All code looks the same. Developer's taste and ego take a back
+rules. All code looks the same. Developers' taste and ego take a back
 seat.
 
 
@@ -249,7 +248,7 @@ implementation phases.
 
 "Agile"'s main goal is to identify risks as early as possible and not
 to postpone them till the end of a project. CI supports exactly
-that. With CI, you will detect integration, design problems
+that. With CI, you will detect integration and design problems
 early. This allows you to make course correction on the way.
 
 
@@ -340,7 +339,7 @@ than local tooling to *keep* your developers happy.
 A major pillar of productivity is going to the public cloud like
 Amazon AWS or Microsoft Azure. Public clouds offer a great work
 experience for your engineers. The self-service approach is
-particularly important, engineers can automate their application stack
+particularly important. Engineers can automate their application stack
 via APIs and scripts, use the newest technology and operate the
 complete system without writing tickets and getting approvals from
 superiors. It enables your developers to take responsibility for the
@@ -382,17 +381,16 @@ the best companies perform in **all** key metrics excellently.
 
 If you look for improvements, it is critical to focus on these four
 key points permanently. Don't fall prey to expensive agile
-transformation methodologies like SAFe or other IT
-consultants. Usually they promise a magical and fast performance boost
-but often the impact turns out as insignificant or even worsens the
-situation.
+transformation methodologies like SAFe. Usually they promise a magical
+and fast performance boost but often the impact turns out as
+insignificant or even worsens the situation.
 
 ### 24. Do you empower your developers?
 
 Many companies treat their developers as pure delivery teams,
 i.e. they are used to implement features based on roadmaps defined by
-leadership, stakeholders for product management. Why this is a bad
-idea, see [Marty Cagan's post "why products
+leadership and product management departments. Why this is a bad idea,
+see [Marty Cagan's post "why products
 fail?"](https://svpg.com/product-fail/). With this approach you only
 getting half of their value. Further companies think developer teams
 can be easily replaced or even outsourced. They are treated as
