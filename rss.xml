@@ -17,7 +17,7 @@
         
         
         
-        <lastBuildDate>Sat, 10 Oct 2020 20:13:34 +0200</lastBuildDate>
+        <lastBuildDate>Sat, 10 Oct 2020 20:18:19 +0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
@@ -41,7 +41,7 @@ RSS feeds you need an &ldquo;feed reader&rdquo; or &ldquo;feed aggregator&rdquo;
 reader will save you from visiting your favorite websites again and
 again.</p>
 <p><a href="https://www.gnu.org/software/emacs/">Emacs</a> is the epitome of
-extensibility, and it&rsquo;s no surprise Emacs makes also a great RSS
+extensibility, and it&rsquo;s no surprise that Emacs makes also a great RSS
 reader!  The <a href="https://github.com/skeeto/elfeed">elfeed</a> package turns
 Emacs into a full-fledged feed reader which support multiple feeds,
 searching, filtering and more.</p>
@@ -112,7 +112,7 @@ days of updates and mark them as unread.</p>
 
 </code></pre></td></tr></table>
 </div>
-</div><p>A usual worflow looks like this:</p>
+</div><p>A usual workflow looks like this:</p>
 <ul>
 <li>start <code>elfeed</code></li>
 <li><code>G</code> fetches the newest RSS feed updates</li>

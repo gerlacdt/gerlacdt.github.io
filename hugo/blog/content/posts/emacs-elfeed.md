@@ -18,7 +18,7 @@ reader will save you from visiting your favorite websites again and
 again.
 
 [Emacs](https://www.gnu.org/software/emacs/) is the epitome of
-extensibility, and it's no surprise Emacs makes also a great RSS
+extensibility, and it's no surprise that Emacs makes also a great RSS
 reader!  The [elfeed](https://github.com/skeeto/elfeed) package turns
 Emacs into a full-fledged feed reader which support multiple feeds,
 searching, filtering and more.
@@ -59,7 +59,7 @@ days of updates and mark them as unread.
 
 ```
 
-A usual worflow looks like this:
+A usual workflow looks like this:
 
 * start `elfeed`
 * `G` fetches the newest RSS feed updates

@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-10T20:13:34+02:00</updated>
+    <updated>2020-10-10T20:18:19+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -18,7 +18,7 @@
             <title type="text">Emacs as RSS reader</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-elfeed/" />
             <id>https://gerlacdt.github.io/posts/emacs-elfeed/</id>
-            <updated>2020-10-10T20:12:19+02:00</updated>
+            <updated>2020-10-10T20:17:41+02:00</updated>
             <published>2020-10-10T10:00:00+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -37,7 +37,7 @@ RSS feeds you need an &ldquo;feed reader&rdquo; or &ldquo;feed aggregator&rdquo;
 reader will save you from visiting your favorite websites again and
 again.</p>
 <p><a href="https://www.gnu.org/software/emacs/">Emacs</a> is the epitome of
-extensibility, and it&rsquo;s no surprise Emacs makes also a great RSS
+extensibility, and it&rsquo;s no surprise that Emacs makes also a great RSS
 reader!  The <a href="https://github.com/skeeto/elfeed">elfeed</a> package turns
 Emacs into a full-fledged feed reader which support multiple feeds,
 searching, filtering and more.</p>
@@ -108,7 +108,7 @@ days of updates and mark them as unread.</p>
 
 </code></pre></td></tr></table>
 </div>
-</div><p>A usual worflow looks like this:</p>
+</div><p>A usual workflow looks like this:</p>
 <ul>
 <li>start <code>elfeed</code></li>
 <li><code>G</code> fetches the newest RSS feed updates</li>
