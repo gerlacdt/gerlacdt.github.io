@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-10-10T20:28:41+02:00</updated>
+    <updated>2020-12-06T19:25:25+01:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -13,7 +13,7 @@
             <uri>https://gerlacdt.github.io/</uri>
             </author>
     
-    <generator uri="https://gohugo.io/" version="0.75.1">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.78.2">Hugo</generator>
         <entry>
             <title type="text">Emacs as RSS reader</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-elfeed/" />
@@ -1221,7 +1221,7 @@ Law</a>.</p>
             <title type="text">Why and How to write better Unit Tests</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/unit-testing/" />
             <id>https://gerlacdt.github.io/posts/unit-testing/</id>
-            <updated>2020-10-10T15:02:27+02:00</updated>
+            <updated>2020-12-06T19:25:05+01:00</updated>
             <published>2020-05-04T08:08:00+02:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -1771,7 +1771,7 @@ more a burden than a backing for the developers.</p>
 <p>Strive for unchangeable tests. A test should be written once and never
 be touched except there is a change of behaviour in the corresponding
 unit. Changes of internals should never break a test if the behaviour
-stays the same. Like i mentioned earlier these are brittle tests. We
+stays the same. Like I mentioned earlier these are brittle tests. We
 should prevent them at any cost.</p>
 <p>Brittle tests can creep into the codebase because of the overuse of
 mocks. Mocks verify if specific methods get called. Hence mocks know
@@ -1962,7 +1962,7 @@ statement.</p>
 </span><span class="c1"></span>        <span class="n">validate</span><span class="o">(</span><span class="n">actual</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>  <span class="c1">// what are these parameters?
 </span><span class="c1"></span>
         <span class="c1">// validate() is used in other contexts too
-</span><span class="c1"></span>        <span class="c1">// the three parameters are: validate(actual, expected, resultObject)
+</span><span class="c1"></span>        <span class="c1">// the three parameters are: validate(actual, expected, errorMessage)
 </span><span class="c1"></span>    <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -2158,8 +2158,8 @@ code suffers.</p>
 <li>
 <p>Tests become brittle. The more you mock, the more internals of the
 SUT are leaked. Changing the internals, even without changing the
-behaviour of the SUT, could make the test fail which contracts the
-principle of enduring tests.</p>
+behaviour of the SUT, could make the test fail which contradicts
+the principle of enduring tests.</p>
 </li>
 <li>
 <p>A need of too many mocks could be an indicator of bad design. Most
@@ -2187,7 +2187,7 @@ software project. Especially identifying good and bad tests is
 important, so you do not fall into the trap of brittle or flaky
 tests. Eventually tests exist to make the life of developers
 easier. When tests do not increase productivity, confidence and code
-quality, they failed their purpose. I also hope that i could eliminate
+quality, they failed their purpose. I also hope that I could eliminate
 some fallacies about mocking or that chasing a 100% code coverage is
 nonsense. As long developers feel confident about their codebase and
 refactorings are done regularly everything is fine.</p>

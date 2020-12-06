@@ -417,7 +417,7 @@ more a burden than a backing for the developers.
 Strive for unchangeable tests. A test should be written once and never
 be touched except there is a change of behaviour in the corresponding
 unit. Changes of internals should never break a test if the behaviour
-stays the same. Like i mentioned earlier these are brittle tests. We
+stays the same. Like I mentioned earlier these are brittle tests. We
 should prevent them at any cost.
 
 Brittle tests can creep into the codebase because of the overuse of
@@ -552,7 +552,7 @@ class PaymentServiceDRYTest {
         validate(actual, true, null);  // what are these parameters?
 
         // validate() is used in other contexts too
-        // the three parameters are: validate(actual, expected, resultObject)
+        // the three parameters are: validate(actual, expected, errorMessage)
     }
 }
 ```
@@ -672,8 +672,8 @@ your test code quality:
 
 2. Tests become brittle. The more you mock, the more internals of the
    SUT are leaked. Changing the internals, even without changing the
-   behaviour of the SUT, could make the test fail which contracts the
-   principle of enduring tests.
+   behaviour of the SUT, could make the test fail which contradicts
+   the principle of enduring tests.
 
 3. A need of too many mocks could be an indicator of bad design. Most
    probably the SUT has too many dependencies and responsibilities and
@@ -702,7 +702,7 @@ software project. Especially identifying good and bad tests is
 important, so you do not fall into the trap of brittle or flaky
 tests. Eventually tests exist to make the life of developers
 easier. When tests do not increase productivity, confidence and code
-quality, they failed their purpose. I also hope that i could eliminate
+quality, they failed their purpose. I also hope that I could eliminate
 some fallacies about mocking or that chasing a 100% code coverage is
 nonsense. As long developers feel confident about their codebase and
 refactorings are done regularly everything is fine.
