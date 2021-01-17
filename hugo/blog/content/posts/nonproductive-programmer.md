@@ -67,7 +67,9 @@ Concurrency.
 A presumable Java NPP's vicious cycle could look like this:
 
 
-![vicious_cycle](/img/vicious_cycle.drawio.png)
+<p align="center">
+  <img src="/img/vicious_cycle.drawio.png" alt="vicious cycle" class="medium-zoom-image" width="400">
+</p>
 
 
 [Kelsey Hightower](https://twitter.com/kelseyhightower/status/1281086164514963457?s=20) brought it to the point:

@@ -28,7 +28,7 @@ again:
 by Winston Churchill
 
 
-###### <span style="color: blue">Recursive Functions of Symbolic Expressions and Their Computations by Machine, Part I</span>
+### <span style="color: blue">Recursive Functions of Symbolic Expressions and Their Computations by Machine, Part I</span>
 
 by John McCarthy 1960
 
@@ -48,14 +48,14 @@ condition. Casually he also introduces the first
 **garbage-collection** algorithm with a `free-storage-list`. All in
 one paper, groundbreaking!
 
-Unfortunately the paper is hard to "digest" due to it's age. A
+Unfortunately the paper is hard to "digest" due to its age. A
 contemporary and more comprehensible essay was written by Paul Graham,
 [The Roots of
 Lisp](http://www.paulgraham.com/rootsoflisp.html). Graham picks up
 McCarthy's paper and brings it in a more readable form.
 
 
-###### <span style="color: blue">On the Criteria To Be Used in Decomposing Systems into Modules </span>
+### <span style="color: blue">On the Criteria To Be Used in Decomposing Systems into Modules </span>
 
 by David Parnas 1972
 
@@ -107,7 +107,7 @@ Brooks admitted (after bitter learnings):
 > David Parnas Was Right, and I Was Wrong About Information Hiding.
 
 
-###### <span style="color: blue">The Mythical Man-Month: Essays on Software Engineering</span>
+### <span style="color: blue">The Mythical Man-Month: Essays on Software Engineering</span>
 
 by Fred Brooks 1975
 
@@ -144,7 +144,7 @@ team*, is a team with 5-10 people and cross-functional skills. Sounds
 familiar Agile community?
 
 
-###### <span style="color: blue">Time, Clocks, and the Ordering of Events in a Distributed System</span>
+### <span style="color: blue">Time, Clocks, and the Ordering of Events in a Distributed System</span>
 
 by Leslie Lamport 1978
 
@@ -159,7 +159,7 @@ DynamoDB](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf)
 can find a modern treatment about the topic from [Martin
 Fowler](https://martinfowler.com/articles/patterns-of-distributed-systems/lamport-clock.html).
 
-###### <span style="color: blue">The Emperor's Old Clothes</span>
+### <span style="color: blue">The Emperor's Old Clothes</span>
 
 by C.A.R Hoare 1980
 
@@ -196,7 +196,7 @@ not only apparent today but also apply to software product development
 in general.
 
 
-###### <span style="color: blue">Reflections on Trusting Trust</span>
+### <span style="color: blue">Reflections on Trusting Trust</span>
 
 by Ken Thomson 1984
 
@@ -223,7 +223,7 @@ that prints its own source code. Have you ever written one? Try it out
 without looking to solutions - it's a enlightening experience.
 
 
-###### <span style="color: blue">A Note on Distributed Computing</span>
+### <span style="color: blue">A Note on Distributed Computing</span>
 
 by Jim Waldo, Geoff Wyant, Ann Wollrath, Sam Kendall 1994
 
@@ -246,7 +246,7 @@ or Java RMI are fading away and that
 and [gRPC](https://grpc.io/) via HTTP gained ascendancy.
 
 
-###### <span style="color: blue">A Plea for Lean Software</span>
+### <span style="color: blue">A Plea for Lean Software</span>
 
 by Niklaus Wirth 1995
 
@@ -296,7 +296,7 @@ Wirth's paper is so full of gems, a selection of quotes (all before the agile re
 > effort.
 
 
-###### <span style="color: blue">Introduction to Functional Programming</span>
+### <span style="color: blue">Introduction to Functional Programming</span>
 
 by Richard Bird, Philip Wadler 1998
 
@@ -319,7 +319,7 @@ composable, better testable and easier maintainable.
 
 
 
-###### <span style="color: blue">Out Of The Tar Pit</span>
+### <span style="color: blue">Out Of The Tar Pit</span>
 
 by Ben Moseley, Peter Marks 2006
 
@@ -338,7 +338,7 @@ Rings a bell? Today *avoiding state* is tantamount in Computer Science
 to good, simple and scalable system design. Thinking of functional
 programming, stateless microservices and HTTP as a stateless protocol.
 
-###### <span style="color: blue">On Designing and Deploying Internet-Scale Services</span>
+### <span style="color: blue">On Designing and Deploying Internet-Scale Services</span>
 
 by James Hamilton 2007
 

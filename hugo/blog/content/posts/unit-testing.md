@@ -66,7 +66,11 @@ guarantee a usable, successful and bug-free application. Additionally
 you need system and UI tests in order to verify production
 readiness. The **test pyramid** visualizes this.
 
-<img src="/img/test_pyramid.png" alt="https://stackoverflow.com/questions/56696132/why-is-ui-testing-at-the-top-of-the-test-pyramid" class="medium-zoom-image" width="300">
+<p align="center">
+    <img src="/img/test_pyramid.png" alt="https://stackoverflow.com/questions/56696132/why-is-ui-testing-at-the-top-of-the-test-pyramid" class="medium-zoom-image" width="300">
+</p>
+
+
 
 
 System tests and UI tests are good to check your product as a whole,
@@ -85,7 +89,10 @@ their productivity. Did you ever work in a project with a Jira Board,
 cluttered with unresolved Bugs in the backlog? -- all bugs found by
 so-called manual QAs or testers.
 
-<img src="/img/ice_cone.jpg" alt="https://watirmelon.blog/testing-pyramids/" class="medium-zoom-image" width="300">
+<p align="center">
+    <img src="/img/ice_cone.jpg" alt="https://watirmelon.blog/testing-pyramids/" class="medium-zoom-image" width="300">
+</p>
+
 
 In this article I will focus on unit tests. Good unit tests should be
 clean, maintainable and most notably "useful" for developers. The main
@@ -211,7 +218,7 @@ There are a lot of opinions floating around about how to write good
 unit tests. In the following I list the traits which I consider most
 important.
 
-##### Tests should be fast
+#### Tests should be fast
 
 
 A useful test suite will be run frequently, sometimes multiple times a
@@ -276,7 +283,7 @@ public class UserServiceTest {
 }
 ```
 
-##### Tests should be isolated
+#### Tests should be isolated
 
 Tests should be independent from each other. It must be possible to
 run the tests in any order, concurrently and in parallel. This becomes
@@ -384,7 +391,7 @@ public class BankAccountServiceTest {
 }
 ```
 
-##### Tests should be deterministic
+#### Tests should be deterministic
 
 A deterministic test never changes its outcome when there was no
 change of behaviour. A test switching from green to red or the other
@@ -393,7 +400,7 @@ way to get rid of flaky dependencies like external network or database
 calls. The earlier example with the FakeUserRepository demonstrates
 this.
 
-##### Tests should focus on a single unit of the system
+#### Tests should focus on a single unit of the system
 
 A unit test should focus on a single part of the system. If a unit
 tests breaks, it should be easy to find the root cause. The other way
@@ -436,7 +443,7 @@ Google](https://www.oreilly.com/library/view/software-engineering-at/97814920827
 
 
 
-##### Tests should be enduring
+#### Tests should be enduring
 
 Strive for unchangeable tests. A test should be written once and never
 be touched except there is a change of behaviour in the corresponding
@@ -461,7 +468,7 @@ its interface with confusing public methods which should be private.
 
 
 
-##### Tests should be clear, concise and complete
+#### Tests should be clear, concise and complete
 
 A test should be clear, concise and complete. What does that mean
 exactly? A clear test is easy to read and to understand. Tests should
@@ -673,7 +680,7 @@ example below illustrates that.
     }
 ```
 
-##### Tests should give you confidence (and a good feeling)
+#### Tests should give you confidence (and a good feeling)
 
 Finally your test suite should give you confidence that your code
 changes are correct and you did not break anything. A green suite is

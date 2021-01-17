@@ -70,7 +70,7 @@ change all of the things that you ought to change, safety, and can do
 so for the lifetime of your codebase.
 
 
-#### 13. Do you enforce a common code styleguide?
+### 13. Do you enforce a common code styleguide?
 
 **Consistency** is one of the most important properties of a codebase.
 It bolsters readability and maintainability which are essential for
@@ -95,7 +95,7 @@ rules. All code looks the same. Developers' taste and ego take a back
 seat.
 
 
-#### 14. Do you write tests?
+### 14. Do you write tests?
 
 
 Writing automatic test is a major trait of a sustainable
@@ -138,7 +138,7 @@ This rule inverts responsibility, e.g. if someone breaks a feature and
 there was no test, the original author of the broken feature "shoulda
 put a test on it!".
 
-#### 15. Do you conduct code reviews? {#codereview}
+### 15. Do you conduct code reviews? {#codereview}
 
 Code reviews are a critical step in your software engineering
 process. Not only they prevent entering bugs into your mainline but
@@ -160,7 +160,7 @@ should comply to some [code review
 guidelines](https://google.github.io/eng-practices/review/reviewer/)
 in order to guarantee a flawless experience.
 
-#### 16. Do developers write documentation?
+### 16. Do developers write documentation?
 
 Documentation starts with the code. Code comments or a good
 description of a pull request are good examples. Thereby good
