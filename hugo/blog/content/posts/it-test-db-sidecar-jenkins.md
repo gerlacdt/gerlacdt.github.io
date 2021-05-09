@@ -10,9 +10,9 @@ real database instead of Fakes or Test Doubles during a CI job in
 order to verify the code works as expected. Therefore a clean database
 is needed for every CI-job. One solution is to use a shared instance
 of the database in your existing test-environment which get cleaned
-before and after a job. But this suffers from being "shared" since you
-never can run multiple CI-jobs in parallel because the jobs would
-interfere with each other.
+before and after a job. But this suffers from being "shared" and you
+never can run multiple CI-jobs in parallel without jobs interfering
+with each other.
 
 A much better solution is to use the
 [Sidecar-Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar)
@@ -25,6 +25,10 @@ test run. In a `Jenkinsfile` this is accomplished with:
 
 `docker.image(<imagename>.withRun(<docker run parameters>) {<run your
 tests>}`
+
+For more info about Docker, sidecars and Jenkins, see [Use Docker in
+Jenkins
+Pipelines](https://www.jenkins.io/doc/book/pipeline/docker/#running-sidecar-containers)
 
 A full example of a Jenkinsfile with a Postgres-DB sidecar container:
 
@@ -63,8 +67,3 @@ This pattern is so successful that many libraries exist using this
 pattern in order to provide Databases, Message Brokers and even Web
 Browser as sidecars, e.g the Java library
 [TestContainers](https://www.testcontainers.org/).
-
-
-For more info about Docker sidecars and Jenkins, see [Use Docker in
-Jenkins
-Pipelines](https://www.jenkins.io/doc/book/pipeline/docker/#running-sidecar-containers)
