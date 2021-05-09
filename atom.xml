@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-12-06T19:25:25+01:00</updated>
+    <updated>2021-05-09T19:54:59+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -13,7 +13,142 @@
             <uri>https://gerlacdt.github.io/</uri>
             </author>
     
-    <generator uri="https://gohugo.io/" version="0.78.2">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.83.1">Hugo</generator>
+        <entry>
+            <title type="text">Database Integration Tests with Docker Sidecar in Jenkins</title>
+            <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/" />
+            <id>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</id>
+            <updated>2021-05-09T19:53:58+02:00</updated>
+            <published>2021-05-09T08:00:00+02:00</published>
+            <author>
+                    <name>Daniel Gerlach</name>
+                    <uri>https://gerlacdt.github.io/</uri>
+                    </author>
+            <summary type="html"><![CDATA[More often than not, developers want to test the source code against a real database instead of Fakes or Test Doubles during a CI job in order to verify the code works as expected. Therefore a clean database is needed for every CI-job.]]></summary>
+            
+                <content type="html"><![CDATA[<p>More often than not, developers want to test the source code against a
+real database instead of Fakes or Test Doubles during a CI job in
+order to verify the code works as expected. Therefore a clean database
+is needed for every CI-job. One solution is to use a shared instance
+of the database in your existing test-environment which get cleaned
+before and after a job. But this suffers from being &ldquo;shared&rdquo; since you
+never can run multiple CI-jobs in parallel because the jobs would
+interfere with each other.</p>
+<p>A much better solution is to use the
+<a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar">Sidecar-Pattern</a>
+with <a href="https://docs.docker.com/">Docker</a>.</p>
+<p>A sidecar is a specific docker container starting with the main CI-job
+and provides specific functionality like a fresh database during the
+test run. In a <code>Jenkinsfile</code> this is accomplished with:</p>
+<p><code>docker.image(&lt;imagename&gt;.withRun(&lt;docker run parameters&gt;) {&lt;run your tests&gt;}</code></p>
+<p>A full example of a Jenkinsfile with a Postgres-DB sidecar container:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-groovy" data-lang="groovy"><span class="c1">// inside Jenkinsfile
+</span><span class="c1"></span>
+       <span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Build and Unit Tests&#39;</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">script</span> <span class="o">{</span>
+                    <span class="n">docker</span><span class="o">.</span><span class="na">image</span><span class="o">(</span><span class="s1">&#39;postgres:12.6&#39;</span><span class="o">)</span>
+                          <span class="o">.</span><span class="na">withRun</span><span class="o">(</span><span class="s1">&#39;-P -v `pwd`/scripts/sql_init:/docker-entrypoint-initdb.d -e POSTGRESQL_PASSWORD=postgres&#39;</span><span class="o">)</span> <span class="o">{</span> <span class="n">c</span> <span class="o">-&gt;</span>
+
+                        <span class="c1">// get random port from postgres-docker image
+</span><span class="c1"></span>                        <span class="c1">// random ports are important for running multiple jobs in parallel because the jobs must not use the same port on the host
+</span><span class="c1"></span>                        <span class="kt">def</span> <span class="n">port</span> <span class="o">=</span> <span class="n">sh</span><span class="o">(</span><span class="nl">returnStdout:</span> <span class="kc">true</span><span class="o">,</span> <span class="nl">script:</span> <span class="s2">&#34;docker inspect --format=&#39;{{(index (index .NetworkSettings.Ports \&#34;5432/tcp\&#34;) 0).HostPort}}&#39; ${c.id}&#34;</span><span class="o">).</span><span class="na">trim</span><span class="o">()</span>
+
+                        <span class="c1">// Wait until postgres is up
+</span><span class="c1"></span>                        <span class="n">sh</span> <span class="s2">&#34;while ! curl http://localhost:${port}/ 2&gt;&amp;1 | grep &#39;52&#39;; do echo &#39;waiting for postgres&#39;; sleep 1; done;&#34;</span>
+
+                        <span class="c1">// access DB on localhost:${port}
+</span><span class="c1"></span>                        <span class="c1">// e.g. run some database migrations
+</span><span class="c1"></span>                        <span class="n">sh</span> <span class="s2">&#34;mvn -Dflyway.user=springboot -Dflyway.password=springboot \
+</span><span class="s2">-Dflyway.url=jdbc:postgresql://localhost:${port}/&lt;dbname&gt; flyway:migrate&#34;</span>
+
+
+                        <span class="c1">// or run some tests
+</span><span class="c1"></span>                        <span class="n">sh</span> <span class="s2">&#34;SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:${port}/&lt;dbname&gt; mvn test&#34;</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This pattern is so successful that many libraries exist using this
+pattern in order to provide Databases, Message Brokers and even Web
+Browser as sidecars, e.g the Java library
+<a href="https://www.testcontainers.org/">TestContainers</a>.</p>
+<p>For more info about Docker sidecars and Jenkins, see <a href="https://www.jenkins.io/doc/book/pipeline/docker/#running-sidecar-containers">Use Docker in
+Jenkins
+Pipelines</a></p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/programming/" term="programming" label="programming" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/testing/" term="testing" label="testing" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/docker/" term="docker" label="docker" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://gerlacdt.github.io/tags/jenkins/" term="jenkins" label="jenkins" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Emacs as RSS reader</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/emacs-elfeed/" />
