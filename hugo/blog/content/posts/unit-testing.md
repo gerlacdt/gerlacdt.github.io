@@ -13,7 +13,7 @@ draft: false
   codebase
 * Unit Tests should help developers to be productive
 * Unit Tests should be fast
-* Unit Tests should be independent
+* Unit Tests should be isolated
 * Unit Tests should be deterministic
 * Unit Tests should focus on a single unit
 * Unit Tests should be enduring
@@ -410,6 +410,31 @@ and they neglect badly needed refactorings. This hampers
 maintainability and causes the quality of the codebase to
 degrade. More often than not, in many projects existing unit tests are
 more a burden than a backing for the developers.
+
+
+Often there is a misunderstanding of what "focus on one unit" exactly
+means. Here the two types of testing, the [classic testing and the
+mockist
+testing](https://martinfowler.com/articles/mocksArentStubs.html#ClassicalAndMockistTesting),
+come into play. The "mockists" are very strict and mock all
+dependencies. The mock-everything approach isolates the test from the
+rest of the world but comes with major disadvantages. First, the unit
+tests are polluted with various mock-statements which makes the real
+test logic hard to understand. And second, with mocking the
+dependencies, you expose the internals of the unit. This is a major
+bummer because once the internals are exposed, future refactorings are
+impossible without breaking a majority of existing tests. The "classic
+tester" avoid mocks and use Fakes or real implementations for
+dependencies. Hence the internals are kept hidden and refactorings are
+still possible.
+
+You can find a great definition about "focus on a single unit" in the
+book [Software Engineering at
+Google](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/):
+
+
+> It’s important to note that when we talk about unit tests as being narrowly scoped, we’re referring to the code that is being validated, not the code that is being executed.
+
 
 
 ##### Tests should be enduring
