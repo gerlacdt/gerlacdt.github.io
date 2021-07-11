@@ -51,7 +51,7 @@
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" /></noscript>
 
     <meta name="author" content="Daniel Gerlach" />
-    <meta name="description" content="TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be independent Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure One assertion per unit test Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&amp;rsquo;s Programmer Test Principles Microsoft&amp;rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days." />
+    <meta name="description" content="TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be isolated Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure One assertion per unit test Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&amp;rsquo;s Programmer Test Principles Microsoft&amp;rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days." />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -79,13 +79,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2020-05-04T08:08:00+02:00",
-        "dateModified": "2020-12-06T19:25:05+01:00",
+        "dateModified": "2021-07-11T11:41:31+02:00",
         "url": "https://gerlacdt.github.io/posts/unit-testing/",
         "headline": "Why and How to write better Unit Tests",
-        "description": "TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be independent Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure One assertion per unit test Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks\u0026rsquo;s Programmer Test Principles Microsoft\u0026rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.",
+        "description": "TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be isolated Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure One assertion per unit test Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks\u0026rsquo;s Programmer Test Principles Microsoft\u0026rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.",
         "inLanguage" : "en",
         "articleSection": "posts",
-        "wordCount":  3916 ,
+        "wordCount":  4098 ,
         "image": ["https://gerlacdt.github.io/img/test_pyramid.png","https://gerlacdt.github.io/img/ice_cone.jpg"],
         "author": {
             "@type": "Person",
@@ -124,13 +124,13 @@
 
 
 <meta property="og:title" content="Why and How to write better Unit Tests" />
-<meta property="og:description" content="TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be independent Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure One assertion per unit test Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&amp;rsquo;s Programmer Test Principles Microsoft&amp;rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days." />
+<meta property="og:description" content="TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be isolated Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure One assertion per unit test Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&amp;rsquo;s Programmer Test Principles Microsoft&amp;rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days." />
 <meta property="og:url" content="https://gerlacdt.github.io/posts/unit-testing/" />
 <meta property="og:site_name" content="Daniel&#39;s programming rants" />
 <meta property="og:locale" content="en" /><meta property="og:image" content="https://gerlacdt.github.io/img/test_pyramid.png" />
 <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2020-05-04T08:08:00+02:00" />
-    <meta property="article:modified_time" content="2020-12-06T19:25:05+01:00" />
+    <meta property="article:modified_time" content="2021-07-11T11:41:31+02:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -264,11 +264,11 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;3916</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;4098</span>
     
     
         
-        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;19&nbsp;mins</span>
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;20&nbsp;mins</span>
     
     
 </div>
@@ -281,7 +281,7 @@
 codebase</li>
 <li>Unit Tests should help developers to be productive</li>
 <li>Unit Tests should be fast</li>
-<li>Unit Tests should be independent</li>
+<li>Unit Tests should be isolated</li>
 <li>Unit Tests should be deterministic</li>
 <li>Unit Tests should focus on a single unit</li>
 <li>Unit Tests should be enduring</li>
@@ -812,6 +812,27 @@ and they neglect badly needed refactorings. This hampers
 maintainability and causes the quality of the codebase to
 degrade. More often than not, in many projects existing unit tests are
 more a burden than a backing for the developers.</p>
+<p>Often there is a misunderstanding of what &ldquo;focus on one unit&rdquo; exactly
+means. Here the two types of testing, the <a href="https://martinfowler.com/articles/mocksArentStubs.html#ClassicalAndMockistTesting" target="_blank" rel="noopener">classic testing and the
+mockist
+testing</a>,
+come into play. The &ldquo;mockists&rdquo; are very strict and mock all
+dependencies. The mock-everything approach isolates the test from the
+rest of the world but comes with major disadvantages. First, the unit
+tests are polluted with various mock-statements which makes the real
+test logic hard to understand. And second, with mocking the
+dependencies, you expose the internals of the unit. This is a major
+bummer because once the internals are exposed, future refactorings are
+impossible without breaking a majority of existing tests. The &ldquo;classic
+tester&rdquo; avoid mocks and use Fakes or real implementations for
+dependencies. Hence the internals are kept hidden and refactorings are
+still possible.</p>
+<p>You can find a great definition about &ldquo;focus on a single unit&rdquo; in the
+book <a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/" target="_blank" rel="noopener">Software Engineering at
+Google</a>:</p>
+<blockquote>
+<p>It’s important to note that when we talk about unit tests as being narrowly scoped, we’re referring to the code that is being validated, not the code that is being executed.</p>
+</blockquote>
 <h5 id="tests-should-be-enduring"><a href="#tests-should-be-enduring" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Tests should be enduring</h5>
 <p>Strive for unchangeable tests. A test should be written once and never
 be touched except there is a change of behaviour in the corresponding
@@ -1262,9 +1283,9 @@ refactorings are done regularly everything is fine.</p>
 
 
         
-    <div class="updated-badge-container"><div title="Updated @ 2020-12-06 19:25:05 CET" style="cursor:help;display:inline-block">
+    <div class="updated-badge-container"><div title="Updated @ 2021-07-11 11:41:31 CEST" style="cursor:help;display:inline-block">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-12-06</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-12-06</text></g></svg></div></div>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-07-11</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-07-11</text></g></svg></div></div>
 
 
         

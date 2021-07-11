@@ -17,7 +17,7 @@
         
         
         
-        <lastBuildDate>Sun, 09 May 2021 20:00:13 +0200</lastBuildDate>
+        <lastBuildDate>Sun, 11 Jul 2021 11:43:33 +0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
@@ -1346,7 +1346,7 @@ Law</a>.</p>
 codebase</li>
 <li>Unit Tests should help developers to be productive</li>
 <li>Unit Tests should be fast</li>
-<li>Unit Tests should be independent</li>
+<li>Unit Tests should be isolated</li>
 <li>Unit Tests should be deterministic</li>
 <li>Unit Tests should focus on a single unit</li>
 <li>Unit Tests should be enduring</li>
@@ -1877,6 +1877,27 @@ and they neglect badly needed refactorings. This hampers
 maintainability and causes the quality of the codebase to
 degrade. More often than not, in many projects existing unit tests are
 more a burden than a backing for the developers.</p>
+<p>Often there is a misunderstanding of what &ldquo;focus on one unit&rdquo; exactly
+means. Here the two types of testing, the <a href="https://martinfowler.com/articles/mocksArentStubs.html#ClassicalAndMockistTesting">classic testing and the
+mockist
+testing</a>,
+come into play. The &ldquo;mockists&rdquo; are very strict and mock all
+dependencies. The mock-everything approach isolates the test from the
+rest of the world but comes with major disadvantages. First, the unit
+tests are polluted with various mock-statements which makes the real
+test logic hard to understand. And second, with mocking the
+dependencies, you expose the internals of the unit. This is a major
+bummer because once the internals are exposed, future refactorings are
+impossible without breaking a majority of existing tests. The &ldquo;classic
+tester&rdquo; avoid mocks and use Fakes or real implementations for
+dependencies. Hence the internals are kept hidden and refactorings are
+still possible.</p>
+<p>You can find a great definition about &ldquo;focus on a single unit&rdquo; in the
+book <a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Software Engineering at
+Google</a>:</p>
+<blockquote>
+<p>It’s important to note that when we talk about unit tests as being narrowly scoped, we’re referring to the code that is being validated, not the code that is being executed.</p>
+</blockquote>
 <h5 id="tests-should-be-enduring">Tests should be enduring</h5>
 <p>Strive for unchangeable tests. A test should be written once and never
 be touched except there is a change of behaviour in the corresponding

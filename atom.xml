@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-05-09T20:00:13+02:00</updated>
+    <updated>2021-07-11T11:43:33+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -1356,13 +1356,13 @@ Law</a>.</p>
             <title type="text">Why and How to write better Unit Tests</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/unit-testing/" />
             <id>https://gerlacdt.github.io/posts/unit-testing/</id>
-            <updated>2020-12-06T19:25:05+01:00</updated>
+            <updated>2021-07-11T11:41:31+02:00</updated>
             <published>2020-05-04T08:08:00+02:00</published>
             <author>
                     <name>Daniel Gerlach</name>
                     <uri>https://gerlacdt.github.io/</uri>
                     </author>
-            <summary type="html"><![CDATA[TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be independent Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure One assertion per unit test Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&rsquo;s Programmer Test Principles Microsoft&rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.]]></summary>
+            <summary type="html"><![CDATA[TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be isolated Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure One assertion per unit test Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&rsquo;s Programmer Test Principles Microsoft&rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.]]></summary>
             
                 <content type="html"><![CDATA[<!-- [tldr](#tldr)  this is cross-reference inside the document-->
 <h3 id="tldr">TL;DR</h3>
@@ -1371,7 +1371,7 @@ Law</a>.</p>
 codebase</li>
 <li>Unit Tests should help developers to be productive</li>
 <li>Unit Tests should be fast</li>
-<li>Unit Tests should be independent</li>
+<li>Unit Tests should be isolated</li>
 <li>Unit Tests should be deterministic</li>
 <li>Unit Tests should focus on a single unit</li>
 <li>Unit Tests should be enduring</li>
@@ -1902,6 +1902,27 @@ and they neglect badly needed refactorings. This hampers
 maintainability and causes the quality of the codebase to
 degrade. More often than not, in many projects existing unit tests are
 more a burden than a backing for the developers.</p>
+<p>Often there is a misunderstanding of what &ldquo;focus on one unit&rdquo; exactly
+means. Here the two types of testing, the <a href="https://martinfowler.com/articles/mocksArentStubs.html#ClassicalAndMockistTesting">classic testing and the
+mockist
+testing</a>,
+come into play. The &ldquo;mockists&rdquo; are very strict and mock all
+dependencies. The mock-everything approach isolates the test from the
+rest of the world but comes with major disadvantages. First, the unit
+tests are polluted with various mock-statements which makes the real
+test logic hard to understand. And second, with mocking the
+dependencies, you expose the internals of the unit. This is a major
+bummer because once the internals are exposed, future refactorings are
+impossible without breaking a majority of existing tests. The &ldquo;classic
+tester&rdquo; avoid mocks and use Fakes or real implementations for
+dependencies. Hence the internals are kept hidden and refactorings are
+still possible.</p>
+<p>You can find a great definition about &ldquo;focus on a single unit&rdquo; in the
+book <a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Software Engineering at
+Google</a>:</p>
+<blockquote>
+<p>It’s important to note that when we talk about unit tests as being narrowly scoped, we’re referring to the code that is being validated, not the code that is being executed.</p>
+</blockquote>
 <h5 id="tests-should-be-enduring">Tests should be enduring</h5>
 <p>Strive for unchangeable tests. A test should be written once and never
 be touched except there is a change of behaviour in the corresponding
