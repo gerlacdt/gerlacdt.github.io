@@ -21,7 +21,6 @@ draft: false
   * Avoid complex control flow logic like nested ifs or loops
   * Unit Tests should follow a consistent naming pattern like *UnitName_StateUnderTest_ExpectedBehavior*
   * Unit Tests should comply to a consistent structure
-  * One assertion per unit test
   * Unit Tests should be [DAMP not
     DRY](https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html)
 * Unit Tests should give developers confidence to deploy and to refactor
@@ -484,7 +483,9 @@ you should create a separate test for each assertion. In case of a
 test failure, a single assertion helps to demystify the error. Most
 testing-frameworks anyway stop during the first assertion error per
 test. At best, a visible correlation from the test name to the
-assertion statement exist.
+assertion statement exist. Multiple assertions could be useful though
+for asserting multiple attributes of a complex object or checking
+expected side-effects.
 
 The following test shows one good assertion and some
 unnecessary ones:
