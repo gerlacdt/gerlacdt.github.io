@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-07-15T21:53:47+02:00</updated>
+    <updated>2021-07-17T15:13:01+02:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -861,7 +861,7 @@ company or team.</p>
             <title type="text">Google Testing Toilet Collection</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/google-testing-toilet/" />
             <id>https://gerlacdt.github.io/posts/google-testing-toilet/</id>
-            <updated>2020-10-10T15:02:27+02:00</updated>
+            <updated>2021-07-17T15:11:45+02:00</updated>
             <published>2020-05-23T08:00:00+02:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -879,38 +879,47 @@ favorites:</p>
 <h3 id="testing-on-the-toilet">Testing on the Toilet</h3>
 <ul>
 <li>
-<p><a href="https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html">Testing on the Toilet: Tests Too DRY? Make Them
+<p><a href="https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html">Tests Too DRY? Make Them
 DAMP!</a></p>
 </li>
 <li>
-<p><a href="https://testing.googleblog.com/2018/11/testing-on-toilet-exercise-service-call.html">Testing on the Toilet: Exercise Service Call Contracts in Tests</a></p>
+<p><a href="https://testing.googleblog.com/2018/11/testing-on-toilet-exercise-service-call.html">Exercise Service Call Contracts in Tests</a></p>
 </li>
 <li>
-<p><a href="https://testing.googleblog.com/2018/06/testing-on-toilet-only-verify-relevant.html">Testing on the Toilet: Only Verify Relevant Method Arguments</a></p>
+<p><a href="https://testing.googleblog.com/2018/06/testing-on-toilet-only-verify-relevant.html">Only Verify Relevant Method Arguments</a></p>
 </li>
 <li>
-<p><a href="https://testing.googleblog.com/2018/06/testing-on-toilet-keep-tests-focused.html">Testing on the Toilet: Keep Tests Focused</a></p>
+<p><a href="https://testing.googleblog.com/2018/06/testing-on-toilet-keep-tests-focused.html">Keep Tests Focused</a></p>
 </li>
 <li>
-<p><a href="https://testing.googleblog.com/2018/02/testing-on-toilet-cleanly-create-test.html">Testing on the Toilet: Cleanly Create Test Data</a></p>
+<p><a href="https://testing.googleblog.com/2018/02/testing-on-toilet-cleanly-create-test.html">Cleanly Create Test Data</a></p>
 </li>
 <li>
-<p><a href="https://testing.googleblog.com/2017/12/testing-on-toilet-only-verify-state.html">Testing on the Toilet: Only Verify State-Changing Method Calls</a></p>
+<p><a href="https://testing.googleblog.com/2017/12/testing-on-toilet-only-verify-state.html">Only Verify State-Changing Method Calls</a></p>
 </li>
 <li>
-<p><a href="https://testing.googleblog.com/2017/01/testing-on-toilet-keep-cause-and-effect.html">Testing on the Toilet: Keep Cause and Effect Clear</a></p>
+<p><a href="https://testing.googleblog.com/2017/01/testing-on-toilet-keep-cause-and-effect.html">Keep Cause and Effect Clear</a></p>
 </li>
 <li>
-<p><a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html">Testing on the Toilet: What Makes a Good End-to-End Test?</a></p>
+<p><a href="https://testing.googleblog.com/2016/09/testing-on-toilet-what-makes-good-end.html">What Makes a Good End-to-End Test?</a></p>
 </li>
 <li>
-<p><a href="https://testing.googleblog.com/2014/03/testing-on-toilet-what-makes-good-test.html">Testing on the Toilet: What Makes a Good Test?</a></p>
+<p><a href="https://testing.googleblog.com/2014/03/testing-on-toilet-what-makes-good-test.html">What Makes a Good Test?</a></p>
 </li>
 <li>
-<p><a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html">Testing on the Toilet: Know Your Test Doubles</a></p>
+<p><a href="https://testing.googleblog.com/2013/07/testing-on-toilet-know-your-test-doubles.html">Know Your Test Doubles</a></p>
 </li>
 <li>
 <p><a href="https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html">Just Say No to More End-to-End Tests</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2013/05/testing-on-toilet-dont-overuse-mocks.html">Don&rsquo;t overuse Mocks</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2015/01/testing-on-toilet-prefer-testing-public.html">Test Public APIs over implementation details</a></p>
+</li>
+<li>
+<p><a href="https://testing.googleblog.com/2014/04/testing-on-toilet-test-behaviors-not.html">Test behaviors, not methods</a></p>
 </li>
 </ul>
 <h3 id="code-health">Code Health</h3>
