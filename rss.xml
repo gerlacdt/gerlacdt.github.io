@@ -17,10 +17,346 @@
         
         
         
-        <lastBuildDate>Sat, 17 Jul 2021 15:13:01 +0200</lastBuildDate>
+        <lastBuildDate>Sun, 05 Sep 2021 15:55:56 +0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Reading List for the mindful Software Engineer</title>
+                <link>https://gerlacdt.github.io/posts/classic-papers/</link>
+                <guid isPermaLink="true">https://gerlacdt.github.io/posts/classic-papers/</guid>
+                <pubDate>Mon, 09 Aug 2021 10:04:01 +0100</pubDate>
+                
+                
+                
+                    <description><![CDATA[<p>Abstractions are essential in order to build complex systems and keep
+complexity under control. Especially in software development we rely
+on many abstractions to make our life easier. Although good
+abstractions do not &ldquo;leak&rdquo;, it&rsquo;s always helpful to understand the
+background and the details behind them.</p>
+<p>The following list (in chronological order) of classic computer
+science papers will give you insights of inventions of the last
+decades which are considered nowadays common sense. But back then,
+even the most basic concepts needed to be invented or discovered. I
+find it fascinating how much you can learn from the discovery of such
+breakthroughs and I hope you can learn from them as much as I
+did. Further it is quite satisfactory when one is able to connect the
+dots from the past to the present. Knowing the history prevent you
+from reinventing the wheel and from making similar failures:</p>
+<blockquote>
+<p>Those that fail to learn from history are doomed to repeat it.</p>
+</blockquote>
+<p>by Winston Churchill</p>
+<h6 id="span-stylecolor-bluerecursive-functions-of-symbolic-expressions-and-their-computations-by-machine-part-ispan"><span style="color: blue">Recursive Functions of Symbolic Expressions and Their Computations by Machine, Part I</span></h6>
+<p>by John McCarthy 1960</p>
+<p><a href="http://www-formal.stanford.edu/jmc/recursive.pdf">Link to paper</a></p>
+<p>This paper is special in it&rsquo;s own ways and is widely considered as a
+seminal work of computer science.</p>
+<p>John McCarthy defines the complete LISP programming language in
+roughly 30 pages. The design of Lisp with <strong>S-expressions</strong> is
+ingenious because it&rsquo;s so simple. 1960 most of the programming
+language concepts, which we consider basic today, needed to be
+defined. McCarthy does this on the go. He introduces <strong>conditional
+expressions</strong> like <code>if-then-else</code>. Those are needed for <strong>recursive
+functions</strong> in order to formulate the recursion termination
+condition. Casually he also introduces the first
+<strong>garbage-collection</strong> algorithm with a <code>free-storage-list</code>. All in
+one paper, groundbreaking!</p>
+<p>Unfortunately the paper is hard to &ldquo;digest&rdquo; due to it&rsquo;s age. A
+contemporary and more comprehensible essay was written by Paul Graham,
+<a href="http://www.paulgraham.com/rootsoflisp.html">The Roots of
+Lisp</a>. Graham picks up
+McCarthy&rsquo;s paper and brings it in a more readable form.</p>
+<h6 id="span-stylecolor-blueon-the-criteria-to-be-used-in-decomposing-systems-into-modules-span"><span style="color: blue">On the Criteria To Be Used in Decomposing Systems into Modules </span></h6>
+<p>by David Parnas 1972</p>
+<p><a href="https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf">Link to paper</a></p>
+<p>Today, we know modularization is a keystone for building large
+software systems. Independent and autonomous teams are critical. To
+achieve autonomy and smooth collaboration, modules must hide their
+internal implementation, i.e. they should only expose the least
+information which is absolutely necessary. The concept advocated by
+Parnas is <strong>information hiding</strong>. It is crucial to <em>encapsulate</em> the
+module&rsquo;s internals, so consumers do not have to deal with the module&rsquo;s
+internal complexity. Parnas summarizes:</p>
+<blockquote>
+<p>The benefits expected of modular programming are: (1)
+managerial-development time should be shortened because separate
+groups would work on each module with little need for communication:
+(2) product flexibility - it should be possible to make drastic
+changes to one module without a need to change others; (3) com-
+prehensibility - it should be possible to study the system one module at
+a time. The whole system can therefore be better designed because it
+is better understood.</p>
+</blockquote>
+<p>The principle of information hiding enables us to replace an existing
+implementation but to keep the exposed interface. Hence existing
+consumers remain untouched. Further modules can be reused and provide
+their functionality safely. Basically Parnas paved the way for
+<strong>APIs</strong> which are one of the most influential and powerful concepts
+of software engineering. APIs act as contracts between consumer and
+producer. This is true in the small scope for software libraries but
+also in a large scope for REST-APIs, gRPC and the like. APIs and
+modularization are preconditions for <strong>Microservices</strong> whose
+functionality is hidden between a well-defined and documented
+API. Even the Unix Philosophy is a &ldquo;just&rdquo; a description for a good
+module:</p>
+<ul>
+<li>Do one thing well</li>
+<li>Write programs that work together</li>
+<li>Write programs to handle text streams, because that is a
+<em>universal interface</em>.</li>
+</ul>
+<p>Historical fact: In the seventies information hiding was
+controversial. Even the most renowned IT people like Fred Brooks who
+managed the development of IBM&rsquo;s System/360 with thousands of people
+and a budget of 5 billion dollars did not believe in it. Years later
+Brooks admitted:</p>
+<blockquote>
+<p>David Parnas Was Right, and I Was Wrong About Information Hiding.</p>
+</blockquote>
+<h6 id="span-stylecolor-bluethe-mythical-man-month-essays-on-software-engineeringspan"><span style="color: blue">The Mythical Man-Month: Essays on Software Engineering</span></h6>
+<p>by Fred Brooks 1975</p>
+<p><a href="https://www.oreilly.com/library/view/mythical-man-month-the/0201835959/">Link to book</a></p>
+<p>Fred Brooks &ldquo;Essays on Software Engineering&rdquo; are from the seventies
+but many of his insights still hold up today. 50 years are an eternity
+in the IT field and it speaks for the quality of this seminal book.</p>
+<p>In his essay <em>The Mythical Man-Month</em>, he directly addresses software
+project management fallacies and bad estimations. Developers are not
+line workers but creative problem solvers - increasing their numbers
+will not positively impact the project&rsquo;s progress.</p>
+<blockquote>
+<p>Adding manpower to a late software project makes it later.</p>
+</blockquote>
+<blockquote>
+<p>Nine women can&rsquo;t make a baby in one month</p>
+</blockquote>
+<p>Many other terms are coined in his essays. He finds that there is <em>No
+Silver Bullet</em>, i.e. no new technology or process that will improve
+productivity by an order of magnitude. He also addresses the tendency
+towards <strong>over-engineering</strong> in <em>the Second System effect</em> and warns
+about its consequences.</p>
+<blockquote>
+<p>The second system is most dangerous system a man ever designs
+&hellip; The general tendency is to over-design the second system, using
+all ideas and frills that were cautiously sidetracked on the first
+one.</p>
+</blockquote>
+<p>Further, he advocates for small, independent teams. <em>The surgical
+team</em>, is a team with 5-10 people and cross-functional skills. Sounds
+familiar Agile community?</p>
+<h6 id="span-stylecolor-bluetime-clocks-and-the-ordering-of-events-in-a-distributed-systemspan"><span style="color: blue">Time, Clocks, and the Ordering of Events in a Distributed System</span></h6>
+<p>by Leslie Lamport 1978</p>
+<p><a href="https://lamport.azurewebsites.net/pubs/time-clocks.pdf">Link to paper</a></p>
+<p>The seminal paper about <strong>logical clocks</strong> or <em>Lamport
+clocks</em>. <em>Vector clocks</em>, a descendent of logical clocks, are one of
+the main building blocks of today&rsquo;s distributed systems. They provide
+means for <em>event ordering and synchronization</em> which are prerequisites
+for modern NoSQL databases like <a href="https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Amazon
+DynamoDB</a>.
+. You can find a modern treatment about the topic from <a href="https://martinfowler.com/articles/patterns-of-distributed-systems/lamport-clock.html">Martin
+Fowler</a>.</p>
+<h6 id="span-stylecolor-bluethe-emperors-old-clothesspan"><span style="color: blue">The Emperor&rsquo;s Old Clothes</span></h6>
+<p>by C.A.R Hoare 1980</p>
+<p><a href="https://dl.acm.org/doi/pdf/10.1145/358549.358561">Link to paper</a></p>
+<p>In Hoare&rsquo;s Turing lecture, he shares his experiences of designing and
+implementing programming languages. He muses about his first Algol 60
+compiler which was a great success. But his second project failed
+miserably (maybe because of the <em>second system effect</em>?). It was never
+delivered, even after years of delay. Failure was caused by well-known
+product management issues: &ldquo;lack of software knowledge outside of the
+programming group, interference from higher managers who imposed
+decisions,&hellip; overoptimism in the face of pressure from customers and
+the Sales Department&rdquo;. Eventually the project was reestablished and
+saved by implementing agile principles like <em>early customer feedback</em>
+and <em>incremental builds</em> - in the sixties 😂 :</p>
+<blockquote>
+<p>We assigned to each group of customers a small team of programmers
+and told the team leader to visit the customers and find out what
+they wanted; to select the easiest request to fulfil&hellip;</p>
+</blockquote>
+<p>At last, Hoare speaks about his frustrating experience with
+programming languages committees and the never ending story of feature
+bloat and negligence of simplicity which leads us to his most famous
+quote:</p>
+<blockquote>
+<p>I conclude that there are two ways of constructing a software
+design: One way is to make it so simple that there are obvious no
+deficiencies and the other way is to make it so complicated that
+there are not obvious deficiencies.</p>
+</blockquote>
+<p>I find it fascinating that his insights about building compilers are
+not only apparent today but also apply to software product development
+in general.</p>
+<h6 id="span-stylecolor-bluereflections-on-trusting-trustspan"><span style="color: blue">Reflections on Trusting Trust</span></h6>
+<p>by Ken Thomson 1984</p>
+<p><a href="https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf">Link to paper</a></p>
+<p>In his Turing Lecture Ken Thomson talks about trust:</p>
+<blockquote>
+<p>You can&rsquo;t trust code that you did not totally create
+yourself. (Especially code from companies that employ people like me
+(Ken Thomson).</p>
+</blockquote>
+<p>This applies especially to software libraries and tools like
+compilers. In three stages he describes how to inject a <em>Trojan Horse</em>
+into a compiler without leaving any traces in the source code. This is
+possible due to re-compiling the compiler and removing the offensive
+code but the binary is still infected and will inject the offensive
+code for new compilations. It is hard to grasp but once you have it,
+it is mind-bending.</p>
+<p>Casually, Ken shows a beautiful
+<a href="https://en.wikipedia.org/wiki/Quine_(computing)">Quine</a>, a program
+that prints its own source code. Have you ever written one? Try it out
+without looking to solutions - it&rsquo;s a enlightening experience.</p>
+<h6 id="span-stylecolor-bluea-note-on-distributed-computingspan"><span style="color: blue">A Note on Distributed Computing</span></h6>
+<p>by Jim Waldo, Geoff Wyant, Ann Wollrath, Sam Kendall 1994</p>
+<p><a href="https://scholar.harvard.edu/files/waldo/files/waldo-94.pdf">Link to paper</a></p>
+<p>Abstractions are not for free, often they are leaky, inappropriate or
+just do more harm than good. This paper gives great insights why you
+should not treat distributed computing as local computing. Hiding
+distributed computing under local interfaces is a bad idea. Many
+technologies failed, trying exactly that - remember SOAP Web Services, Corba, Java
+EJBs and Java RMI.</p>
+<p>Conclusion: one cannot hide the inherent issues of distributed
+systems, namely <em>latency, concurrency, partial failure</em> etc. behind an
+abstraction. Developers must always have those in mind and use
+appropriate techniques in order to build robust and resilient
+systems. It&rsquo;s good to see that old fashioned technologies like Corba
+or Java RMI have &ldquo;lost&rdquo; and that
+<a href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design#what-is-rest">REST</a>
+and <a href="https://grpc.io/">gRPC</a> via HTTP are the predominant ways to
+communicate today.</p>
+<h6 id="span-stylecolor-bluea-plea-for-lean-softwarespan"><span style="color: blue">A Plea for Lean Software</span></h6>
+<p>by Niklaus Wirth 1995</p>
+<p><a href="https://cr.yp.to/bib/1995/wirth.pdf">Link to paper</a></p>
+<p>Wirth elaborates about embracing <strong>simplicity</strong> and <strong>fighting
+complexity</strong>, both traits mainly forgotten by today&rsquo;s developers and
+customers. He makes a clear differentiation between <em>inherent</em>
+complexity and <em>self-inflicted</em> complexity. The later is the main
+reason for bulky software.</p>
+<p>His insights about iterative software development, modularization and
+the decomposition of complex systems are revolutionary. Especially
+because those insights transition so well into the modern world with
+microservices.</p>
+<p>He proves his points with the <a href="https://en.wikipedia.org/wiki/Oberon_(operating_system)">Oberon
+OS</a>, a
+complete system written by him and his colleague in less then three
+years. Compare this to <a href="https://en.wikipedia.org/wiki/IBM_System/360">IBM
+OS/360</a>, a project with
+five thousand man-years budget but infected with self-inflicted
+complexity and feature bloat. Both projects consist of an OS and
+additional tools like compiler, editor etc.</p>
+<p>It is one of the best paper&rsquo;s ever written and makes you a better
+programmer, simply because it changes your way of approaching big
+software projects and makes you honor simplicity more than ever.</p>
+<p>Wirth&rsquo;s paper is so full of gems, a selection of quotes:</p>
+<blockquote>
+<p>Truly good solutions emerge, after iterative improvements of after
+redesigns that explicit new insights, and the most rewarding
+iterations are those that result in programming simplifications.</p>
+</blockquote>
+<blockquote>
+<p>The belief that complex systems require armies of designers and
+programmers is wrong. A system that is not understood in its
+entirety, or at least to a significant degree of detail by a single
+individual, should probably not be built.</p>
+</blockquote>
+<blockquote>
+<p>Communication problems grow as the size of the design team
+grows. Whether they are obvious or not, when communication problems
+dominate, the team the project are both in deep trouble.</p>
+</blockquote>
+<blockquote>
+<p>To gain experience, there is no substitute for one&rsquo;s own programming
+effort.</p>
+</blockquote>
+<h6 id="span-stylecolor-blueintroduction-to-functional-programmingspan"><span style="color: blue">Introduction to Functional Programming</span></h6>
+<p>by Richard Bird, Philip Wadler 1998</p>
+<p><a href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnx0aGVhbnVqbWVodGF8Z3g6NzJiOTQ3YTVhODNlY2YyNg">Link to book</a></p>
+<p>Alongside Fred Brooks <em>Mythical Man-Month</em>, this is the second book on
+the list and it is the best introduction to functional programming,
+period. In a way, it complements
+<a href="https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html">SICP</a>,
+another classic and the best introduction to programming in general.</p>
+<p>The book touches functional core concepts like immutable data
+structures, lazy data structures, pure functions, function composition
+and high-order functions like <em>map, filter, fold</em>. After reading the
+book, you are well prepared for solving real world problems in a
+functional way. With these new tools in your toolbox, you will be better
+programmer and see the world differently.  For example, avoiding state
+and side-effects, will make your code much more readable, more
+composable, better testable and easier maintainable.</p>
+<h6 id="span-stylecolor-blueout-of-the-tar-pitspan"><span style="color: blue">Out Of The Tar Pit</span></h6>
+<p>by Ben Moseley, Peter Marks 2006</p>
+<p><a href="http://curtclifton.net/papers/MoseleyMarks06a.pdf">Link to paper</a></p>
+<p>This paper is a great elaboration about complexity, its causes and how
+to manage it.</p>
+<p>The authors distinguish between two types of complexity: <em>essential
+complexity</em> and <em>accidental complexity</em>. The latter is the main reason
+why systems are much more complex than necessary. Further they expose
+<strong>state</strong> as another major cause for complexity, but also code volume
+and the negligence of simplicity are main drivers.</p>
+<p>Rings a bell? Today <em>avoiding state</em> is tantamount in Computer Science
+to good, simple and scalable system design. Thinking of functional
+programming, stateless microservices and HTTP as a stateless protocol.</p>
+<h6 id="span-stylecolor-blueon-designing-and-deploying-internet-scale-servicesspan"><span style="color: blue">On Designing and Deploying Internet-Scale Services</span></h6>
+<p>by James Hamilton 2007</p>
+<p><a href="https://www.usenix.org/legacy/event/lisa07/tech/full_papers/hamilton/hamilton.pdf">Link to paper</a></p>
+<p>Today, distributed systems are everywhere. With the raise of
+ever-growing systems and new tools like Kubernetes, Containers and
+Microservices, new best practices were needed. This paper is whirlwind
+tour about best practices to build robust distributed systems in an
+<em>operating-friendly</em> way. The author&rsquo;s experiences draw on building
+the Microsoft Windows Live Services Platform.</p>
+<p>The paper describes keystones like <em>redundancy, fault tolerance, build
+for failure, avoid single point of failures, geo-distribution,
+firedrills, fail fast</em> and many more. Without knowing it, he basically
+describes the <strong>DevOps</strong> mindset:</p>
+<blockquote>
+<p>The trend we&rsquo;ve seen when looking across many services is that
+low-cost administration correlates highly with how closely the
+development, test and operations teams work together.</p>
+</blockquote>
+<blockquote>
+<p>If development is frequently called in the middle of the night,
+automation is the likely outcome. If operations is frequently
+called, the usual reaction is to grow the operations team.</p>
+</blockquote>
+<p>I like his tendency to &ldquo;testing in production&rdquo; with permanent
+firedrills and his meticulous attitude leaving nothing to chance:</p>
+<blockquote>
+<p>The general rule is that nothing works if it isn&rsquo;t tested
+frequently.</p>
+</blockquote>
+<p>It is a great read, especially, if you consider to build
+&ldquo;internet-scale&rdquo; systems. You find most of the advice in other
+distributed system books but the paper provides them in a condensed
+and terse way.</p>
+<h5 id="more">More</h5>
+<p>Interested in more? You can find a great and free collection
+of literature at <em><a href="https://github.com/papers-we-love/papers-we-love">github/papers-
+we-love</a></em>.</p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://gerlacdt.github.io/tags/programming/">programming</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Database Integration Tests with Docker Sidecar in Jenkins</title>

@@ -25,7 +25,7 @@ pluralizeListTitles = false
 summaryLength = 42
 
 # Enable Emoji emoticons support?
-enableEmoji = false
+enableEmoji = true
 
 # Text to display for footnote return links
 footnoteReturnLinkContents = "↩"
