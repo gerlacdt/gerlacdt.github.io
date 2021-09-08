@@ -20,7 +20,8 @@ find it fascinating how much you can learn from the discovery of such
 breakthroughs and I hope you can learn from them as much as I
 did. Further it is quite satisfactory when one is able to connect the
 dots from the past to the present. Knowing the history prevent you
-from reinventing the wheel and from making similar failures:
+from reinventing the wheel and from making same failures over and over
+again:
 
 > Those that fail to learn from history are doomed to repeat it.
 
@@ -87,11 +88,10 @@ their functionality safely. Basically Parnas paved the way for
 **APIs** which are one of the most influential and powerful concepts
 of software engineering. APIs act as contracts between consumer and
 producer. This is true in the small scope for software libraries but
-also in a large scope for REST-APIs, gRPC and the like. APIs and
-modularization are preconditions for **Microservices** whose
-functionality is hidden between a well-defined and documented
-API. Even the Unix Philosophy is a "just" a description for a good
-module:
+also in a large scope for REST-APIs, gRPC and the like. Modularization
+is a precondition for **Microservices** whose functionality is hidden
+between a well-defined and documented API. Even the Unix Philosophy is
+a "just" a description for a good module:
   * Do one thing well
   * Write programs that work together
   * Write programs to handle text streams, because that is a
@@ -102,7 +102,7 @@ Historical fact: In the seventies information hiding was
 controversial. Even the most renowned IT people like Fred Brooks who
 managed the development of IBM's System/360 with thousands of people
 and a budget of 5 billion dollars did not believe in it. Years later
-Brooks admitted:
+Brooks admitted (after bitter learnings):
 
 > David Parnas Was Right, and I Was Wrong About Information Hiding.
 
@@ -128,7 +128,7 @@ will not positively impact the project's progress.
 
 > Nine women can't make a baby in one month
 
-Many other terms are coined in his essays. He finds that there is *No
+Many other terms are coined in his essays. He muses that there is *No
 Silver Bullet*, i.e. no new technology or process that will improve
 productivity by an order of magnitude. He also addresses the tendency
 towards **over-engineering** in *the Second System effect* and warns
@@ -155,8 +155,8 @@ clocks*. *Vector clocks*, a descendent of logical clocks, are one of
 the main building blocks of today's distributed systems. They provide
 means for *event ordering and synchronization* which are prerequisites
 for modern NoSQL databases like [Amazon
-DynamoDB](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf).
-. You can find a modern treatment about the topic from [Martin
+DynamoDB](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf). You
+can find a modern treatment about the topic from [Martin
 Fowler](https://martinfowler.com/articles/patterns-of-distributed-systems/lamport-clock.html).
 
 ###### <span style="color: blue">The Emperor's Old Clothes</span>
@@ -208,7 +208,7 @@ In his Turing Lecture Ken Thomson talks about trust:
 > yourself. (Especially code from companies that employ people like me
 > (Ken Thomson).
 
-This applies especially to software libraries and tools like
+*You can't trust code*, this applies especially to software libraries and tools like
 compilers. In three stages he describes how to inject a *Trojan Horse*
 into a compiler without leaving any traces in the source code. This is
 possible due to re-compiling the compiler and removing the offensive
@@ -241,10 +241,9 @@ systems, namely *latency, concurrency, partial failure* etc. behind an
 abstraction. Developers must always have those in mind and use
 appropriate techniques in order to build robust and resilient
 systems. It's good to see that old fashioned technologies like Corba
-or Java RMI have "lost" and that
+or Java RMI are fading away and that
 [REST](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design#what-is-rest)
-and [gRPC](https://grpc.io/) via HTTP are the predominant ways to
-communicate today.
+and [gRPC](https://grpc.io/) via HTTP gained ascendancy.
 
 
 ###### <span style="color: blue">A Plea for Lean Software</span>
@@ -254,13 +253,13 @@ by Niklaus Wirth 1995
 [Link to paper](https://cr.yp.to/bib/1995/wirth.pdf)
 
 Wirth elaborates about embracing **simplicity** and **fighting
-complexity**, both traits mainly forgotten by today's developers and
+complexity**, both traits often forgotten by today's developers and
 customers. He makes a clear differentiation between *inherent*
 complexity and *self-inflicted* complexity. The later is the main
 reason for bulky software.
 
 His insights about iterative software development, modularization and
-the decomposition of complex systems are revolutionary. Especially
+the decomposition of complex systems are delightful. Especially
 because those insights transition so well into the modern world with
 microservices.
 
@@ -270,14 +269,14 @@ complete system written by him and his colleague in less then three
 years. Compare this to [IBM
 OS/360](https://en.wikipedia.org/wiki/IBM_System/360), a project with
 five thousand man-years budget but infected with self-inflicted
-complexity and feature bloat. Both projects consist of an OS and
-additional tools like compiler, editor etc.
+complexity and feature bloat. Both projects had a "similar" scope,
+namely an OS with additional tools like compiler, editor etc.
 
 It is one of the best paper's ever written and makes you a better
 programmer, simply because it changes your way of approaching big
 software projects and makes you honor simplicity more than ever.
 
-Wirth's paper is so full of gems, a selection of quotes:
+Wirth's paper is so full of gems, a selection of quotes (all before the agile revolution):
 
 
 > Truly good solutions emerge, after iterative improvements of after
@@ -309,8 +308,8 @@ period. In a way, it complements
 [SICP](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html),
 another classic and the best introduction to programming in general.
 
-The book touches functional core concepts like immutable data
-structures, lazy data structures, pure functions, function composition
+The book touches functional core concepts like immutable and lazy data
+structures, pure functions, function composition
 and high-order functions like *map, filter, fold*. After reading the
 book, you are well prepared for solving real world problems in a
 functional way. With these new tools in your toolbox, you will be better
@@ -329,7 +328,7 @@ by Ben Moseley, Peter Marks 2006
 This paper is a great elaboration about complexity, its causes and how
 to manage it.
 
-The authors distinguish between two types of complexity: *essential
+Like Wirth, the authors distinguish between two types of complexity: *essential
 complexity* and *accidental complexity*. The latter is the main reason
 why systems are much more complex than necessary. Further they expose
 **state** as another major cause for complexity, but also code volume
@@ -350,13 +349,13 @@ Today, distributed systems are everywhere. With the raise of
 ever-growing systems and new tools like Kubernetes, Containers and
 Microservices, new best practices were needed. This paper is whirlwind
 tour about best practices to build robust distributed systems in an
-*operating-friendly* way. The author's experiences draw on building
-the Microsoft Windows Live Services Platform.
+*operating-friendly* way.
 
 The paper describes keystones like *redundancy, fault tolerance, build
 for failure, avoid single point of failures, geo-distribution,
 firedrills, fail fast* and many more. Without knowing it, he basically
-describes the **DevOps** mindset:
+describes the contemporary **DevOps** mindset (and gives us the reason
+why it makes sense):
 
 > The trend we've seen when looking across many services is that
 > low-cost administration correlates highly with how closely the
@@ -370,7 +369,7 @@ I like his tendency to "testing in production" with permanent
 firedrills and his meticulous attitude leaving nothing to chance:
 
 > The general rule is that nothing works if it isn't tested
-> frequently.
+> **frequently**.
 
 It is a great read, especially, if you consider to build
 "internet-scale" systems. You find most of the advice in other
