@@ -354,8 +354,8 @@ tour about best practices to build robust distributed systems in an
 The paper describes keystones like *redundancy, fault tolerance, build
 for failure, avoid single point of failures, geo-distribution,
 firedrills, fail fast* and many more. Without knowing it, he basically
-describes the contemporary **DevOps** mindset (and gives us the reason
-why it makes sense):
+describes the contemporary **DevOps** mindset (and his observations
+gives us the reason why it makes sense):
 
 > The trend we've seen when looking across many services is that
 > low-cost administration correlates highly with how closely the
