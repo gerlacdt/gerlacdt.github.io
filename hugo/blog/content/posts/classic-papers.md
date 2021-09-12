@@ -1,6 +1,6 @@
 ---
 title: "Reading List for the mindful Software Engineer"
-date: 2021-08-09T10:04:01+01:00
+date: 2021-09-10T10:04:01+01:00
 tags: ["programming"]
 draft: false
 ---
