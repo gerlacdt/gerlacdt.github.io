@@ -1,6 +1,6 @@
 ---
 title: "The Non-Productive Programmer (NPP)"
-date: 2021-11-06T10:00:00+01:00
+date: 2021-12-18T10:00:00+01:00
 tags: ["programming", "engineering"]
 draft: false
 ---
