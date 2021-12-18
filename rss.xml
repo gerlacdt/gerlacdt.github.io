@@ -17,16 +17,279 @@
         
         
         
-        <lastBuildDate>Wed, 08 Sep 2021 19:41:30 +0200</lastBuildDate>
+        <lastBuildDate>Sat, 18 Dec 2021 19:59:07 +0100</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://gerlacdt.github.io/rss.xml" />
         
         
             <item>
+                <title>The Non-Productive Programmer (NPP)</title>
+                <link>https://gerlacdt.github.io/posts/nonproductive-programmer/</link>
+                <guid isPermaLink="true">https://gerlacdt.github.io/posts/nonproductive-programmer/</guid>
+                <pubDate>Sat, 06 Nov 2021 10:00:00 +0100</pubDate>
+                
+                
+                
+                    <description><![CDATA[<p>We all know them: programmers with long term experience stuck on a
+low-level of our craft not corresponding to their quantity of
+experience. Great programmers are creative workers and problem-solvers
+and one of their most important traits is: <strong>never stop learning</strong> &ndash;
+but getting stuck in its own comfort zone and becoming reluctant to
+change is deeply wired into human nature (<a href="https://www.sciencedaily.com/releases/2017/02/170221101016.htm">Humans are hard-wired to
+follow the path of least
+resistance</a>).
+In the following, I will show examples of non-productive programmers
+(NPPs), how to detect them, what are their characteristics and how to
+pro-actively counterattack our nature in order to learn continuously.</p>
+<h3 id="stuck-in-the-comfort-zone">Stuck in the Comfort Zone</h3>
+<p>Never leaving his own comfort zone or never thinking outside the box
+is one major reason why programmers get stuck. They rely on deprecated
+rituals, fall prey to old habits which they cannot strip off or adhere
+to technologies to which they are often heavily attached. Sometimes
+NPPs identify themselves with a special technology. This is visible
+when they introduce themselves as Spring or ReactJS developer.</p>
+<p>A good example are Java/Websphere NPPs. They have ten years of
+experience and don&rsquo;t know any other programming language or server
+technology. With Websphere, 10+ minutes builds and server startup
+times are normal. Since these programmers never experienced anything
+else, they are satisfied with their current environment. They adjusted
+their whole workflow around long waiting times, e.g. go for a &ldquo;compile
+coffee break&rdquo; or simply &ldquo;check emails&rdquo;. In rare cases NPPs have the
+courage to make some babysteps out of their universe. For instance
+they switch from Websphere to the &ldquo;lightweight&rdquo; Spring Framework which
+reduces the wait times enormously &ndash; e.g. from ten to three
+minutes. But the real big leaps in productivity are not considered,
+speaking of new programming languages like Go and NodeJS which provide
+build times in the range of seconds.</p>
+<h3 id="quantity-of-experience">Quantity of Experience</h3>
+<p>The quantity of experience is only one dimension. More important is
+the quality and deepness of experience. Especially NPPs suffer from
+superficial knowledge because in their work life, they never went deep
+into details. They apply their accumulated knowledge again and again
+without gaining a deeper understanding in their used technologies or
+problem domains.</p>
+<p>The quality of experience can vary strongly. NPPs often end up in a
+<strong>vicious cycle</strong>.  They move from project to project and the
+acquired knowledge of the <em>first year</em> is enough for accomplishing the
+next one. Due to the similarity of other projects, NPPs are never
+exposed to harder problems or forced to go out of their comfort
+zone. E.g. Java NPPs will never learn deeper foundational topics which
+are necessary to grow like the internals of the JVM, Profiling or
+Concurrency.</p>
+<p>A presumable Java NPP&rsquo;s vicious cycle could look like this:</p>
+<p><img src="/img/vicious_cycle.drawio.png" alt="vicious_cycle"></p>
+<p><a href="https://twitter.com/kelseyhightower/status/1281086164514963457?s=20">Kelsey Hightower</a> brought it to the point:</p>
+<blockquote>
+<p>There are many people with 15 years of 1 year experience.</p>
+</blockquote>
+<blockquote>
+<p>5 years running bash scripts is not the same as building a startup
+from the ground up</p>
+</blockquote>
+<h3 id="it-works-is-enough-attitude">&ldquo;It works, is enough&rdquo; Attitude</h3>
+<p>One of my personal programming pet peeves is the <em>It works, so why
+change?</em> attitude. Typical crime scenes are daily Pull Requests or
+Software Design Reviews. NPPs are reluctant to do the simplest changes
+like variable/function renamings or other code
+restructurings.</p>
+<blockquote>
+<p>Leaving the camp ground cleaner than before.</p>
+</blockquote>
+<p>The famous boy scout rule also applies to code, but cross-functional
+requirements like maintainability, comprehensibility or better code
+quality in general do not count for NPPs. <em>It works, so why put more
+effort in it</em> - that&rsquo;s their attitude. This behaviour is even
+encouraged by so-called agile teams, not experienced in software
+engineering. Such teams work heavily feature-driven. Developers
+pushing out the most features, in a bad quality and with
+unmaintainable hacks or workarounds, are the company heros. The
+internal quality suffers, in the long term the product architecture
+becomes a <a href="http://www.laputan.org/mud/">Big Ball of Mud</a>, the velocity
+slows down and eventually progress comes to a complete halt. Thereby
+<a href="https://martinfowler.com/articles/is-quality-worth-cost.html#VisualizingTheImpactOfInternalQuality">internal quality is the most critical factor to keep a product healthy
+and maintainable</a>. Worse
+yet, even with good developers in the team, NPPs will undermine their
+efforts because the <em>it works</em> mentality wins for the management.</p>
+<p>In the contrast to NPPs, great developers write maintainable code
+readable by humans, test their code rigorously with unit tests,
+refactor their code regularly and most importantly they are willing to
+go the extra mile in Pull Requests or Design Reviews and strive for a
+healthy codebase.</p>
+<h3 id="satisfied-with-shallow-understanding">Satisfied with Shallow Understanding</h3>
+<p>The NPP&rsquo;s biggest weakness though, is his deeply rooted behavioral
+pattern to be easily satisfied. As soon something is working, there is
+no aspiration anymore to investigate further. The result is <strong>shallow
+understanding</strong>. NPPs don&rsquo;t understand their tools and their own
+solutions fully &ndash; they accept <em>magic</em>.</p>
+<p>The acceptance of magic inhibits NPPs from getting to the bottom of
+the problems. For example the Spring Framework is a powerful Java Web
+Framework and a big productivity booster. As long you don&rsquo;t step out
+of the framework&rsquo;s scope, everything is fine. But if you want to do
+something unconventional, not anticipated by Spring, out of sudden the
+framework is an impediment. Since the NPP accepted Spring Framework&rsquo;s
+magic, he is screwed. The NPP&rsquo;s shallow understanding is exposed, but:</p>
+<p><em>Eventually, there is no &ldquo;magic&rdquo;, just code</em>.</p>
+<p>Sometimes, the only way is digging into the framework&rsquo;s or library&rsquo;s
+code. Ultimately one discovers there is no magic or that the library&rsquo;s
+code is ugly, hard to read and understand or even faulty. Then you
+learn something new and expand your horizon. Unfortunately, NPPs don&rsquo;t
+read Open Source code, it is not in their comfort zone.</p>
+<p>One more example of a NPP&rsquo;s <em>shallow understanding</em> is his missing
+deeper knowledge about his daily tools, e.g. <code>git</code>. More often than
+not, NPPs usually use IDEs for their daily tasks because it&rsquo;s
+convenient. Although, it turns out that NPPs only can accomplish basic
+tasks like <code>git push/pull/commit</code>, anything more mature such as
+resolving merge conflicts, squashing or re-order commits is beyond
+their understanding because they never went out of their cozy IDE
+zone. Using tools without knowing what&rsquo;s behind them, leads to an
+ability which helps to accomplish regular tasks but as soon something
+&ldquo;unexpected&rdquo; needs to be done, one hits a wall.</p>
+<p><em>The natural desire to understand the things deeper is one of the most
+underestimated traits of an outstanding engineer</em>.</p>
+<h3 id="blindly-follow-mantras">Blindly follow Mantras</h3>
+<p>Another kind of NPP is eager to read blogs and books in order to learn
+new technologies, platforms and processes, e.g. <a href="https://springframework.guru/gang-of-four-design-patterns/">GoF Design
+Patterns</a>,
+<a href="http://wiki.c2.com/?TestDrivenDevelopment">TDD</a>,
+<a href="https://martinfowler.com/bliki/DomainDrivenDesign.html">DDD</a>, <a href="https://en.wikipedia.org/wiki/SOLID">SOLID
+Principles</a>,
+<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>
+etc.. Alas, NPPs don&rsquo;t grok them entirely, follow them blindly and
+eventually doing more harm than good. They only see the top of the
+iceberg, memorize only buzzwords and don&rsquo;t comprehend in which
+situation to apply the new acquired knowledge. Unexpectedly, they
+overuse mantras and bask themselves in self-congratulation.</p>
+<p>In my career, I experienced following examples personally from
+different co-workers:</p>
+<ul>
+<li>
+<p>After reading <a href="https://springframework.guru/gang-of-four-design-patterns/">GoF Design
+Patterns</a>:
+if-else statements are considered evil and must be replaced by
+Strategy Pattern.</p>
+</li>
+<li>
+<p>After reading about the <a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">SRP
+principle</a>:
+functions cannot be longer than a few lines. NPPs confuse &ldquo;a
+function must not do more than one thing&rdquo; with &ldquo;a function should
+have only one reason to change&rdquo;. I must acknowledge that the naming,
+&ldquo;Single Responsibility Principle&rdquo;, is vague and in order to
+understand it completely, one needs already a lot of programming
+experience.</p>
+</li>
+<li>
+<p>After reading <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>: every single duplication must be extracted, no
+matter how small and insignificant. But the wise programmer knows:</p>
+<blockquote>
+<p>Duplication is far cheaper than the wrong abstraction</p>
+</blockquote>
+<p><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">Sandi Metz</a></p>
+</li>
+</ul>
+<p>NPPs memorize the benefits of the new technologies and are able to
+enumerate their <em>values</em> but they don&rsquo;t understand their
+<em>cost</em>. Trade-offs are neglected and new learned approaches are
+applied in wrong places where they don&rsquo;t make sense. Often solutions
+are mixed up and situations are misjudged. A famous quote describes this
+perfectly:</p>
+<blockquote>
+<p>Programmers know the value of everything and the cost of nothing.</p>
+</blockquote>
+<p>Alan Perlis</p>
+<p>Convincing NPPs of the opposite is hard and often ends up in harsh
+disputes , because NPPs think what they read in a seminal book is
+&ldquo;always&rdquo; true. Actually this is a good differentiation between good
+and non-productive developers. NPPs follow mantras blindly and rely on
+their shallow understanding. The best developers know when to use
+specific techniques and <strong>always use their own judgement</strong>. Kent
+Beck&rsquo;s quote <em>&ldquo;It depends&rdquo;</em> is not famous for nothing. Every complex
+situation deserves a deeper reasoning. And programming is one of
+humanity&rsquo;s most complex endeavors.</p>
+<h2 id="becoming-productive">Becoming Productive</h2>
+<p>Becoming productive is easy. Do exactly the opposite of the points
+mention above:</p>
+<ul>
+<li>
+<p>Get out of your comfort zone as often as possible and accept new
+challenges</p>
+</li>
+<li>
+<p>Don&rsquo;t be satisfied with &ldquo;<em>it works</em>&rdquo;, go the extra mile, make you
+code better than before. Take your time to discuss other solutions,
+take new approaches seriously, accept feedback from your peers.</p>
+</li>
+<li>
+<p>Don&rsquo;t be satisfied with magic. Whenever you have the time, dive
+deeper into the topics and try to understand the magic.</p>
+</li>
+<li>
+<p>When you learn something from books, learn it thoroughly, discuss it
+with your peers or your mentor in order to make sure you grokked the
+material and its trade-offs. Don&rsquo;t apply the newly acquired
+knowledge blindly!</p>
+</li>
+</ul>
+<p>Changing your attitude and applying the above points make you a better
+programmer. But how to become interested in the deeper things or how
+to train programmers to look behind the curtain? Well, everyone is
+different but from my experience following things work:</p>
+<ul>
+<li>
+<p>You need a natural drive to get to the bottom of something and not
+accept shallow understanding.</p>
+</li>
+<li>
+<p>You need an analytical mindset, question the status-quo, never accept
+the existing state as optimal. There is <em>always</em> room to improve!</p>
+</li>
+<li>
+<p>Gather information. You cannot know it all: reading books,
+conversations with colleagues, listening to technical talks are good
+sources to grow. Even if you never use the gather knowledge
+directly, it will give you good intuition for future problems,
+e.g. knowing about Functional Programming makes you a better (Java)
+Programmer.</p>
+</li>
+</ul>
+<p><strong>Finally, real proficiency and productivity comes from working and
+training everyday</strong>. There is no shortcut, humans' best teacher is
+learning from experiences and failures. Failures will stick, whereby
+the passive knowledge like books and talks will slowly fade away if
+not practiced regularly.</p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://gerlacdt.github.io/tags/programming/">programming</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://gerlacdt.github.io/tags/engineering/">engineering</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
                 <title>Reading List for the mindful Software Engineer</title>
                 <link>https://gerlacdt.github.io/posts/classic-papers/</link>
                 <guid isPermaLink="true">https://gerlacdt.github.io/posts/classic-papers/</guid>
-                <pubDate>Mon, 09 Aug 2021 10:04:01 +0100</pubDate>
+                <pubDate>Fri, 10 Sep 2021 10:04:01 +0100</pubDate>
                 
                 
                 
@@ -85,10 +348,10 @@ internal complexity. Parnas summarizes:</p>
 managerial-development time should be shortened because separate
 groups would work on each module with little need for communication:
 (2) product flexibility - it should be possible to make drastic
-changes to one module without a need to change others; (3) com-
-prehensibility - it should be possible to study the system one module at
-a time. The whole system can therefore be better designed because it
-is better understood.</p>
+changes to one module without a need to change others; (3)
+comprehensibility - it should be possible to study the system one
+module at a time. The whole system can therefore be better designed
+because it is better understood.</p>
 </blockquote>
 <p>The principle of information hiding enables us to replace an existing
 implementation but to keep the exposed interface. Hence existing
@@ -181,9 +444,9 @@ bloat and negligence of simplicity which leads us to his most famous
 quote:</p>
 <blockquote>
 <p>I conclude that there are two ways of constructing a software
-design: One way is to make it so simple that there are obvious no
+design: One way is to make it so simple that there are obviously no
 deficiencies and the other way is to make it so complicated that
-there are not obvious deficiencies.</p>
+there are no obvious deficiencies.</p>
 </blockquote>
 <p>I find it fascinating that his insights about building compilers are
 not only apparent today but also apply to software product development
