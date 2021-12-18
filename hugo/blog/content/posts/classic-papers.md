@@ -75,10 +75,10 @@ internal complexity. Parnas summarizes:
 managerial-development time should be shortened because separate
 groups would work on each module with little need for communication:
 (2) product flexibility - it should be possible to make drastic
-changes to one module without a need to change others; (3) com-
-prehensibility - it should be possible to study the system one module at
-a time. The whole system can therefore be better designed because it
-is better understood.
+changes to one module without a need to change others; (3)
+comprehensibility - it should be possible to study the system one
+module at a time. The whole system can therefore be better designed
+because it is better understood.
 
 
 The principle of information hiding enables us to replace an existing
@@ -187,9 +187,9 @@ bloat and negligence of simplicity which leads us to his most famous
 quote:
 
 > I conclude that there are two ways of constructing a software
-> design: One way is to make it so simple that there are obvious no
+> design: One way is to make it so simple that there are obviously no
 > deficiencies and the other way is to make it so complicated that
-> there are not obvious deficiencies.
+> there are no obvious deficiencies.
 
 I find it fascinating that his insights about building compilers are
 not only apparent today but also apply to software product development
