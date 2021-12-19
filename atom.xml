@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-12-18T20:02:17+01:00</updated>
+    <updated>2021-12-19T14:39:11+01:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -18,7 +18,7 @@
             <title type="text">The Non-Productive Programmer (NPP)</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/nonproductive-programmer/" />
             <id>https://gerlacdt.github.io/posts/nonproductive-programmer/</id>
-            <updated>2021-12-18T20:02:03+01:00</updated>
+            <updated>2021-12-19T14:38:01+01:00</updated>
             <published>2021-12-18T10:00:00+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -153,7 +153,7 @@ Principles</a>,
 etc.. Alas, NPPs don&rsquo;t grok them entirely, follow them blindly and
 eventually doing more harm than good. They only see the top of the
 iceberg, memorize only buzzwords and don&rsquo;t comprehend in which
-situation to apply the new acquired knowledge. Unexpectedly, they
+situation to apply the lately acquired knowledge. Unexpectedly, they
 overuse mantras and bask themselves in self-congratulation.</p>
 <p>In my career, I experienced following examples personally from
 different co-workers:</p>
@@ -185,7 +185,7 @@ matter how small and insignificant. But the wise programmer knows:</p>
 </ul>
 <p>NPPs memorize the benefits of the new technologies and are able to
 enumerate their <em>values</em> but they don&rsquo;t understand their
-<em>cost</em>. Trade-offs are neglected and new learned approaches are
+<em>cost</em>. Trade-offs are neglected and freshly learned approaches are
 applied in wrong places where they don&rsquo;t make sense. Often solutions
 are mixed up and situations are misjudged. A famous quote describes this
 perfectly:</p>
@@ -200,7 +200,7 @@ and non-productive developers. NPPs follow mantras blindly and rely on
 their shallow understanding. The best developers know when to use
 specific techniques and <strong>always use their own judgement</strong>. Kent
 Beck&rsquo;s quote <em>&ldquo;It depends&rdquo;</em> is not famous for nothing. Every complex
-situation deserves a deeper reasoning. And programming is one of
+situation deserves a deeper reasoning whereby programming is one of
 humanity&rsquo;s most complex endeavors.</p>
 <h2 id="becoming-productive">Becoming Productive</h2>
 <p>Becoming productive is easy. Do exactly the opposite of the points
@@ -211,7 +211,7 @@ mention above:</p>
 challenges</p>
 </li>
 <li>
-<p>Don&rsquo;t be satisfied with &ldquo;<em>it works</em>&rdquo;, go the extra mile, make you
+<p>Don&rsquo;t be satisfied with &ldquo;<em>it works</em>&rdquo;, go the extra mile, make the
 code better than before. Take your time to discuss other solutions,
 take new approaches seriously, accept feedback from your peers.</p>
 </li>
@@ -237,12 +237,12 @@ accept shallow understanding.</p>
 </li>
 <li>
 <p>You need an analytical mindset, question the status-quo, never accept
-the existing state as optimal. There is <em>always</em> room to improve!</p>
+the existing state as optimal. There is always room to improve!</p>
 </li>
 <li>
 <p>Gather information. You cannot know it all: reading books,
 conversations with colleagues, listening to technical talks are good
-sources to grow. Even if you never use the gather knowledge
+sources to grow. Even if you never use the gathered knowledge
 directly, it will give you good intuition for future problems,
 e.g. knowing about Functional Programming makes you a better (Java)
 Programmer.</p>
