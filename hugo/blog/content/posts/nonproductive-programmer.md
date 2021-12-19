@@ -164,7 +164,7 @@ Principles](https://en.wikipedia.org/wiki/SOLID),
 etc.. Alas, NPPs don't grok them entirely, follow them blindly and
 eventually doing more harm than good. They only see the top of the
 iceberg, memorize only buzzwords and don't comprehend in which
-situation to apply the new acquired knowledge. Unexpectedly, they
+situation to apply the lately acquired knowledge. Unexpectedly, they
 overuse mantras and bask themselves in self-congratulation.
 
 In my career, I experienced following examples personally from
@@ -195,7 +195,7 @@ Strategy Pattern.
 
 NPPs memorize the benefits of the new technologies and are able to
 enumerate their *values* but they don't understand their
-*cost*. Trade-offs are neglected and new learned approaches are
+*cost*. Trade-offs are neglected and freshly learned approaches are
 applied in wrong places where they don't make sense. Often solutions
 are mixed up and situations are misjudged. A famous quote describes this
 perfectly:
@@ -212,7 +212,7 @@ and non-productive developers. NPPs follow mantras blindly and rely on
 their shallow understanding. The best developers know when to use
 specific techniques and **always use their own judgement**. Kent
 Beck's quote *"It depends"* is not famous for nothing. Every complex
-situation deserves a deeper reasoning. And programming is one of
+situation deserves a deeper reasoning whereby programming is one of
 humanity's most complex endeavors.
 
 
@@ -224,7 +224,7 @@ mention above:
 * Get out of your comfort zone as often as possible and accept new
   challenges
 
-* Don't be satisfied with "*it works*", go the extra mile, make you
+* Don't be satisfied with "*it works*", go the extra mile, make the
   code better than before. Take your time to discuss other solutions,
   take new approaches seriously, accept feedback from your peers.
 
@@ -245,11 +245,11 @@ different but from my experience following things work:
   accept shallow understanding.
 
 * You need an analytical mindset, question the status-quo, never accept
-  the existing state as optimal. There is *always* room to improve!
+  the existing state as optimal. There is always room to improve!
 
 * Gather information. You cannot know it all: reading books,
   conversations with colleagues, listening to technical talks are good
-  sources to grow. Even if you never use the gather knowledge
+  sources to grow. Even if you never use the gathered knowledge
   directly, it will give you good intuition for future problems,
   e.g. knowing about Functional Programming makes you a better (Java)
   Programmer.
