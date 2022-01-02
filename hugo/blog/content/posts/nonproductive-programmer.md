@@ -40,10 +40,9 @@ they switch from Websphere to the "lightweight" Spring Framework which
 reduces the wait times enormously -- e.g. from ten to three
 minutes. But the real big leaps in productivity are not considered,
 speaking of new programming languages like Go and NodeJS which provide
-build times in the range of seconds. NPPs hardly leave their comfort
-zone and when they do, they make only baby steps. The previous example
-served demonstrative purposes, please don't rewrite your project
-because of faster build times!
+build times in the range of seconds. The previous example serves a
+demonstrative purpose, please don't rewrite your project because of
+faster build times!
 
 
 ### Quantity of Experience
@@ -202,7 +201,7 @@ Strategy Pattern.
   [microservices solve organizational scaling problems and cause
   technology
   problems](https://speakerdeck.com/peterbourgon/go-plus-microservices-equals-go-kit?slide=15)
-  but only [one percent of all applications will ever reach such a
+  but only [a minority of applications will ever reach such a
   scale](https://www.slideshare.net/RandyShoup/scaling-your-architecture-for-the-long-term). In
   most circumstances the [majestic
   monolith](https://m.signalvnoise.com/the-majestic-monolith/) is the
