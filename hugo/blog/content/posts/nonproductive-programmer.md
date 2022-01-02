@@ -21,7 +21,7 @@ pro-actively counterattack our nature in order to learn continuously.
 
 ### Stuck in the Comfort Zone
 
-Never leaving his own comfort zone or never thinking outside the box
+Never leaving their own comfort zone or never thinking outside the box
 is one major reason why programmers get stuck. They rely on deprecated
 rituals, fall prey to old habits which they cannot strip off or adhere
 to technologies to which they are often heavily attached. Sometimes
