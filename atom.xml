@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Daniel&#39;s programming rants</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-12-19T14:39:11+01:00</updated>
+    <updated>2022-01-02T11:31:54+01:00</updated>
     <id>https://gerlacdt.github.io/</id>
     <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/" />
     <link rel="self" type="application/atom+xml" href="https://gerlacdt.github.io/atom.xml" />
@@ -18,7 +18,7 @@
             <title type="text">The Non-Productive Programmer (NPP)</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/nonproductive-programmer/" />
             <id>https://gerlacdt.github.io/posts/nonproductive-programmer/</id>
-            <updated>2021-12-19T14:38:01+01:00</updated>
+            <updated>2022-01-02T11:31:05+01:00</updated>
             <published>2021-12-18T10:00:00+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
@@ -38,7 +38,7 @@ In the following, I will show examples of non-productive programmers
 (NPPs), how to detect them, what are their characteristics and how to
 pro-actively counterattack our nature in order to learn continuously.</p>
 <h3 id="stuck-in-the-comfort-zone">Stuck in the Comfort Zone</h3>
-<p>Never leaving his own comfort zone or never thinking outside the box
+<p>Never leaving their own comfort zone or never thinking outside the box
 is one major reason why programmers get stuck. They rely on deprecated
 rituals, fall prey to old habits which they cannot strip off or adhere
 to technologies to which they are often heavily attached. Sometimes
@@ -56,7 +56,9 @@ they switch from Websphere to the &ldquo;lightweight&rdquo; Spring Framework whi
 reduces the wait times enormously &ndash; e.g. from ten to three
 minutes. But the real big leaps in productivity are not considered,
 speaking of new programming languages like Go and NodeJS which provide
-build times in the range of seconds.</p>
+build times in the range of seconds. The previous example serves a
+demonstrative purpose, please don&rsquo;t rewrite your project because of
+faster build times!</p>
 <h3 id="quantity-of-experience">Quantity of Experience</h3>
 <p>The quantity of experience is only one dimension. More important is
 the quality and deepness of experience. Especially NPPs suffer from
@@ -182,6 +184,21 @@ matter how small and insignificant. But the wise programmer knows:</p>
 </blockquote>
 <p><a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">Sandi Metz</a></p>
 </li>
+<li>
+<p>After reading about <em>Microservices</em>, NPPs fall for the
+hype. Microservices are considered as a holy grail but come with
+serious
+<a href="https://martinfowler.com/articles/microservice-trade-offs.html">trade-offs</a>
+which are usually forgotten or not known. For example,
+<a href="https://speakerdeck.com/peterbourgon/go-plus-microservices-equals-go-kit?slide=15">microservices solve organizational scaling problems and cause
+technology
+problems</a>
+but only <a href="https://www.slideshare.net/RandyShoup/scaling-your-architecture-for-the-long-term">a minority of applications will ever reach such a
+scale</a>. In
+most circumstances the <a href="https://m.signalvnoise.com/the-majestic-monolith/">majestic
+monolith</a> is the
+better solution.</p>
+</li>
 </ul>
 <p>NPPs memorize the benefits of the new technologies and are able to
 enumerate their <em>values</em> but they don&rsquo;t understand their
@@ -285,7 +302,7 @@ not practiced regularly.</p>
             <title type="text">Reading List for the mindful Software Engineer</title>
             <link rel="alternate" type="text/html" href="https://gerlacdt.github.io/posts/classic-papers/" />
             <id>https://gerlacdt.github.io/posts/classic-papers/</id>
-            <updated>2021-12-18T19:58:40+01:00</updated>
+            <updated>2021-12-19T14:45:30+01:00</updated>
             <published>2021-09-10T10:04:01+01:00</published>
             <author>
                     <name>Daniel Gerlach</name>
