@@ -290,7 +290,7 @@ Wirth's paper is so full of gems, a selection of quotes (all before the agile re
 
 > Communication problems grow as the size of the design team
 > grows. Whether they are obvious or not, when communication problems
-> dominate, the team the project are both in deep trouble.
+> predominate, the team and the project are both in deep trouble.
 
 > To gain experience, there is no substitute for one's own programming
 > effort.
