@@ -19,23 +19,26 @@ compile error :disappointed:. Unlike back then, today's computers
 compile whole codebases in seconds. Now that is a big improvement and
 an insane productivity booster!
 
-Feedback Loops not only have a massive impact on programming or
-technical areas but also on digital product management. Speaking of
-the agile and lean startup movements, both of them focus heavily on
-shorting feedback loops, e.g. the lean startup method strives for fast
-customer feedback by building an Minimal Viable Product(MVP). This is
-similar to the fundamental agile principle: "reducing waste". In agile
-terms "waste" can be: building extra or incomplete features, handoffs,
-context switches, defects etc.. But the biggest waste is building the
-wrong product which can be prevented by early customer feedback.
+Feedback Loops not only have a massive impact on software development
+but also on digital product management. Speaking of the agile and lean
+startup movements, both of them focus heavily on shorting feedback
+loops, e.g. the lean startup method strives for fast customer feedback
+by building a Minimal Viable Product(MVP). This is similar to the
+fundamental agile principle: "reducing waste". In agile terms "waste"
+can be: building extra or incomplete features, handoffs, context
+switches, defects etc.. Whereby the biggest waste is building the wrong
+product which can be prevented by early customer feedback.
 
-But Feedback Loops are even present in other areas, they a crucial for
-our learning in general and affect our whole life. Don't believe me?
+Feedback Loops are even present in other areas, they a crucial for our
+*learning* in general and affect our whole life. Don't believe me?
 Let's dive into it.
 
 
 
 ## Feedback Loops in Software Engineering
+
+Feedback is strongly interweaved with a programmer's everyday life and
+one of the major pillar for developers productivity.
 
 - remember the ancient times when computers were programmed with punch
   cards, you had to hand in your card and the next day you got your
@@ -54,18 +57,18 @@ Let's dive into it.
   order to provide instant feedback and compile time errors.
 
 
-|Technology   |Comment   |
-|---|---|
-|<span style="color: blue">Code Compilation</span>| compile multiple times a minute or even JIT (just-in-time) compilation for every code change in IDE, instant feedback about syntax errors|
-|<span style="color: blue">Static Code Analysis</span>| more feedback about code quality, potential bugs and security issues|
-|<span style="color: blue">Trunk-Based Development</span>| fast integration feedback, avoid long running branches and merge conflicts |
-|<span style="color: blue">TDD</span>   | fast unit tests, feedback if local code change works |
-|<span style="color: blue">Unit Tests</span> | ran multiple times per minutes, check local changes |
-|<span style="color: blue">Code Reviews/Inspections</span>| 4-eye principle, feedback from colleagues |
-|<span style="color: blue">CI/CD pipeline</span>| build every commit, deploy on dev/prod environments, verify with smoke tests|
-|<span style="color: blue">Monitoring/Observability<span> | Feedback about system state, fast detection of errors, reduced MTTR (MeanTimeToRepair)
-|<span style="color: blue">Infrastructure as Code, well-defined Runbooks</span>| faster reaction to outages based on *Observability*|
-|<span style="color: blue">Microservices, Contract Tests</span>| feedback if code changes did not break the API contract|
+|Technology   |Time |Comment   |
+|---|---|---|
+|<span style="color: blue">Code Compilation</span>|seconds, minutes| compile multiple times a minute or even JIT (just-in-time) compilation for every code change in IDE, instant feedback about syntax errors|
+|<span style="color: blue">Static Code Analysis</span>|minutes| more feedback about code quality, potential bugs and security issues|
+|<span style="color: blue">Trunk-Based Development</span>|minutes| fast integration feedback, avoid long running branches and merge conflicts |
+|<span style="color: blue">TDD</span>   |seconds| fast unit tests, feedback if local code change works |
+|<span style="color: blue">Unit Tests</span> |seconds| ran multiple times per minutes, check local changes |
+|<span style="color: blue">Code Reviews/Inspections</span>|minutes, hours| 4-eye principle, feedback from colleagues |
+|<span style="color: blue">CI/CD pipeline</span>|minutes| build every commit, deploy on dev/prod environments, verify with smoke tests|
+|<span style="color: blue">Monitoring/Observability<span> |minutes| Feedback about system state, fast detection of errors, reduced MTTR (MeanTimeToRepair)
+|<span style="color: blue">Infrastructure as Code, well-defined Runbooks</span>|minutes| faster reaction to outages based on *Observability*|
+|<span style="color: blue">Microservices, Contract Tests</span>| minutes, hours|feedback if code changes did not break the API contract|
 
 
 ### Kubernetes Control (Feedback) Loop
