@@ -3,7 +3,7 @@
 # create ./public/ release folder
 cd blog
 rm -rf public/
-hugo -D
+hugo
 
 # move release to correct location
 cp -r public/* ../..
