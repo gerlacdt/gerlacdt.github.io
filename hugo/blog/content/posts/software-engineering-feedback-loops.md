@@ -2,7 +2,7 @@
 title: "Software Engineering and Feedback Loops"
 date: 2022-04-16T10:00:00+02:00
 tags: ["programming", "softwareengineering"]
-draft: false
+draft: true
 ---
 
 ## Introduction
@@ -57,18 +57,17 @@ one of the major pillar for developers productivity.
   order to provide instant feedback and compile time errors.
 
 
-|Technology   |Time |Comment   |
+|Technology   |Time|Comment   |
 |---|---|---|
-|<span style="color: blue">Code Compilation</span>|seconds, minutes| compile multiple times a minute or even JIT (just-in-time) compilation for every code change in IDE, instant feedback about syntax errors|
+|<span style="color: blue">Code Compilation</span>|seconds or<br />minutes in Java :smile:| compile multiple times a minute or even JIT (just-in-time) compilation for every code change in IDE, instant feedback about syntax errors|
 |<span style="color: blue">Static Code Analysis</span>|minutes| more feedback about code quality, potential bugs and security issues|
 |<span style="color: blue">Trunk-Based Development</span>|minutes| fast integration feedback, avoid long running branches and merge conflicts |
-|<span style="color: blue">TDD</span>   |seconds| fast unit tests, feedback if local code change works |
+|<span style="color: blue">TDD</span>   |seconds| fast test suite, feedback if local code change works |
 |<span style="color: blue">Unit Tests</span> |seconds| ran multiple times per minutes, check local changes |
-|<span style="color: blue">Code Reviews/Inspections</span>|minutes, hours| 4-eye principle, feedback from colleagues |
+|<span style="color: blue">Contract Tests</span>| minutes to hours|feedback if code changes did not break the API contract|
+|<span style="color: blue">Code Reviews/Inspections</span>|minutes to hours| 4-eye principle, feedback from colleagues |
 |<span style="color: blue">CI/CD pipeline</span>|minutes| build every commit, deploy on dev/prod environments, verify with smoke tests|
-|<span style="color: blue">Monitoring/Observability<span> |minutes| Feedback about system state, fast detection of errors, reduced MTTR (MeanTimeToRepair)
-|<span style="color: blue">Infrastructure as Code, well-defined Runbooks</span>|minutes| faster reaction to outages based on *Observability*|
-|<span style="color: blue">Microservices, Contract Tests</span>| minutes, hours|feedback if code changes did not break the API contract|
+|<span style="color: blue">Monitoring/Observability<span> |minutes| Feedback about system state, fast detection of outages, anomalies and errors, reduced MTTR (Mean Time To Repair)
 
 
 ### Kubernetes Control (Feedback) Loop
