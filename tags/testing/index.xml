@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>testing on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/tags/testing/</link>
+    <description>Recent content in testing on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 09 May 2021 08:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database Integration Tests with Docker Sidecar in Jenkins</title>
+      <link>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</link>
+      <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</guid>
+      <description>More often than not, developers want to test the source code against a real database instead of Fakes or Test Doubles during a CI job in order to verify the code works as expected. Therefore a clean database is needed for every CI-job. One solution is to use a shared instance of the database in your existing test-environment which get cleaned before and after a job. But this suffers from being &amp;ldquo;shared&amp;rdquo; and you never can run multiple CI-jobs in parallel without jobs interfering with each other.</description>
+    </item>
+    
+    <item>
+      <title>Google Testing Toilet Collection</title>
+      <link>https://gerlacdt.github.io/posts/google-testing-toilet/</link>
+      <pubDate>Sat, 23 May 2020 08:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/google-testing-toilet/</guid>
+      <description>In my one of my previous posts i wrote about Good Unit Tests. During my research i discovered the famous Google Testing on the Toilet posts which provide great advice. The Testing-on-the-Toilet articles are short (~3min reads) and give hands-on examples, ready to be applied immediately. Here are my favorites:
+Testing on the Toilet   Tests Too DRY? Make Them DAMP!
+  Exercise Service Call Contracts in Tests</description>
+    </item>
+    
+    <item>
+      <title>Why and How to write better Unit Tests</title>
+      <link>https://gerlacdt.github.io/posts/unit-testing/</link>
+      <pubDate>Mon, 04 May 2020 08:08:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/unit-testing/</guid>
+      <description>TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be isolated Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&amp;rsquo;s Programmer Test Principles Microsoft&amp;rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.</description>
+    </item>
+    
+  </channel>
+</rss>

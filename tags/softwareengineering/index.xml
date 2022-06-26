@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>softwareengineering on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/tags/softwareengineering/</link>
+    <description>Recent content in softwareengineering on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Apr 2022 10:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/softwareengineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Engineering and Feedback Loops</title>
+      <link>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</link>
+      <pubDate>Sat, 16 Apr 2022 10:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</guid>
+      <description>Introduction Most of the breakthrough inventions in historic and modern Software Engineering are related to feedback loops. They are essential for productive software development, Developer Effectiveness and Developer Happiness. The faster the feedback the more productive developers are. Remember the dawn of computing when computers were programmed with punch cards, programmers had to turn in their cards over night and only the next day they got the result &amp;ndash; often with a compile error 😞.</description>
+    </item>
+    
+    <item>
+      <title>Writing better Code</title>
+      <link>https://gerlacdt.github.io/posts/writing-better-software/</link>
+      <pubDate>Sun, 16 Aug 2020 18:38:45 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/writing-better-software/</guid>
+      <description>In Joel Spolsky&amp;rsquo;s blog post &amp;ldquo;The Joel Test: 12 Steps to better Code&amp;rdquo;, he describes a test composed of twelve simple yes-no questions. For a yes you get one point. 10 points are acceptable and 12 are perfect. If you have less than 10 points, you will get in trouble with your software &amp;ndash; sooner or later.
+For a quick self-check, these are the original questions:
+ Do you use source control?</description>
+    </item>
+    
+  </channel>
+</rss>

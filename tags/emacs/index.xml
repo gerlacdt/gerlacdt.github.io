@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>emacs on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/tags/emacs/</link>
+    <description>Recent content in emacs on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 10 Oct 2020 10:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs as RSS reader</title>
+      <link>https://gerlacdt.github.io/posts/emacs-elfeed/</link>
+      <pubDate>Sat, 10 Oct 2020 10:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/emacs-elfeed/</guid>
+      <description>Do you have a list of websites you visit regularly? Just to find out nothing new was added. This manual scraping is often a waste of time. Worse yet, scanning and filtering these websites for new interesting content is even more time consuming.
+Subscribing to an RSS feed can reduce your effort immensely. An RSS feed &amp;ldquo;pushes&amp;rdquo; the newest updates to subscribers and they will never miss updates. In order to make use of RSS feeds you need a &amp;ldquo;feed reader&amp;rdquo; or &amp;ldquo;feed aggregator&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Emacs Delete Lines</title>
+      <link>https://gerlacdt.github.io/posts/emacs-delete-lines/</link>
+      <pubDate>Mon, 13 May 2019 10:34:42 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/emacs-delete-lines/</guid>
+      <description>Sometimes when i write small scripts i tend to insert print statements for debugging. After i verified the correctness of my program i want to get rid of all unnecessary debug statements. With Emacs you can delete all lines which match a specific regular expression with M-x flush-lines or with its alias M-x delete-matching-lines. Interactively you can enter your regular expression and all matching lines will be deleted from you cursor position downwards.</description>
+    </item>
+    
+    <item>
+      <title>Install Emacs on MacOS</title>
+      <link>https://gerlacdt.github.io/posts/emacs-macos/</link>
+      <pubDate>Sat, 13 Apr 2019 10:34:42 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/emacs-macos/</guid>
+      <description>Yesterday Emacs 26.2 was released, see: https://www.gnu.org/software/emacs/news/NEWS.26.2
+In this short guide i want to show how i install Emacs on my MacBook. I use the vanilla Emacs build from https://emacsformacosx.com/. It is just a simple .dmg file.
+After installing the dmg file, Emacs is now available on your Mac as an application but not in the terminal-app. The terminal still opens the pre-install Emacs version. To make the new version available you have to create a bash-script and put it in your $PATH.</description>
+    </item>
+    
+    <item>
+      <title>Emacs Test Regexps</title>
+      <link>https://gerlacdt.github.io/posts/emacs-test-regexps/</link>
+      <pubDate>Sat, 06 Apr 2019 10:39:15 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/emacs-test-regexps/</guid>
+      <description>Replacing or searching text with regular expressions is very common. But sometimes it is hard to get them right and you need some playground to try them out. In order to verify regular expressions i used to visit webpages like:
+ https://regexr.com/ https://regex101.com/  But these webpages are optimised for perl, javascript or bash expressions and do not support Emacs regular expressions directly. In Emacs you have to consider some peculiarities.</description>
+    </item>
+    
+  </channel>
+</rss>

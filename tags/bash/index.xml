@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>bash on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/tags/bash/</link>
+    <description>Recent content in bash on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 13 Apr 2019 10:13:14 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Find and Replace in multiple files</title>
+      <link>https://gerlacdt.github.io/posts/find-and-replace/</link>
+      <pubDate>Sat, 13 Apr 2019 10:13:14 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/find-and-replace/</guid>
+      <description>As a software programmer you often have to search and replace a specific string in multiple files because of a refactoring or just improving a variable or function name.
+Normally you can use your IDE or your editor for this. But in bigger codebases with thousand or million lines of code it can be very slow. Neither do IDEs work with remote SSH-sessions. In such situations the command-line is pretty handy.</description>
+    </item>
+    
+    <item>
+      <title>ag the_silver_searcher, a grep replacement</title>
+      <link>https://gerlacdt.github.io/posts/ag-silver-searcher/</link>
+      <pubDate>Sat, 13 Apr 2019 10:04:01 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/ag-silver-searcher/</guid>
+      <description>As a programmer you often search for a specific strings or regexps in multiple files. Previously i used to do this with the well-known GNU-tools find and grep.
+The following command searches for main in all *.go files in the current directory and:
+1 2  find . -iname &amp;#39;*.go&amp;#39; | xargs grep -inH &amp;#34;main&amp;#34; # -i ignore case, -n print line number, -H print filename   Recently i discovered ag the silver searcher.</description>
+    </item>
+    
+  </channel>
+</rss>

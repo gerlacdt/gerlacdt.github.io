@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>programming on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/tags/programming/</link>
+    <description>Recent content in programming on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Apr 2022 10:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Engineering and Feedback Loops</title>
+      <link>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</link>
+      <pubDate>Sat, 16 Apr 2022 10:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</guid>
+      <description>Introduction Most of the breakthrough inventions in historic and modern Software Engineering are related to feedback loops. They are essential for productive software development, Developer Effectiveness and Developer Happiness. The faster the feedback the more productive developers are. Remember the dawn of computing when computers were programmed with punch cards, programmers had to turn in their cards over night and only the next day they got the result &amp;ndash; often with a compile error 😞.</description>
+    </item>
+    
+    <item>
+      <title>The Non-Productive Programmer (NPP)</title>
+      <link>https://gerlacdt.github.io/posts/nonproductive-programmer/</link>
+      <pubDate>Sat, 18 Dec 2021 10:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/nonproductive-programmer/</guid>
+      <description>We all know them: programmers with long term experience stuck on a low-level of our craft not corresponding to their quantity of experience. Great programmers are creative workers and problem-solvers and one of their most important traits is: never stop learning &amp;ndash; but getting stuck in its own comfort zone and becoming reluctant to change is deeply wired into human nature (Humans are hard-wired to follow the path of least resistance).</description>
+    </item>
+    
+    <item>
+      <title>Reading List for the mindful Software Engineer</title>
+      <link>https://gerlacdt.github.io/posts/classic-papers/</link>
+      <pubDate>Fri, 10 Sep 2021 10:04:01 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/classic-papers/</guid>
+      <description>Abstractions are essential in order to build complex systems and keep complexity under control. Especially in software development we rely on many abstractions to make our life easier. Although good abstractions do not &amp;ldquo;leak&amp;rdquo;, it&amp;rsquo;s always helpful to understand the background and the details behind them.
+The following list (in chronological order) of classic computer science papers will give you insights of inventions of the last decades which are considered nowadays common sense.</description>
+    </item>
+    
+    <item>
+      <title>Database Integration Tests with Docker Sidecar in Jenkins</title>
+      <link>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</link>
+      <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</guid>
+      <description>More often than not, developers want to test the source code against a real database instead of Fakes or Test Doubles during a CI job in order to verify the code works as expected. Therefore a clean database is needed for every CI-job. One solution is to use a shared instance of the database in your existing test-environment which get cleaned before and after a job. But this suffers from being &amp;ldquo;shared&amp;rdquo; and you never can run multiple CI-jobs in parallel without jobs interfering with each other.</description>
+    </item>
+    
+    <item>
+      <title>Writing better Code</title>
+      <link>https://gerlacdt.github.io/posts/writing-better-software/</link>
+      <pubDate>Sun, 16 Aug 2020 18:38:45 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/writing-better-software/</guid>
+      <description>In Joel Spolsky&amp;rsquo;s blog post &amp;ldquo;The Joel Test: 12 Steps to better Code&amp;rdquo;, he describes a test composed of twelve simple yes-no questions. For a yes you get one point. 10 points are acceptable and 12 are perfect. If you have less than 10 points, you will get in trouble with your software &amp;ndash; sooner or later.
+For a quick self-check, these are the original questions:
+ Do you use source control?</description>
+    </item>
+    
+    <item>
+      <title>Google Testing Toilet Collection</title>
+      <link>https://gerlacdt.github.io/posts/google-testing-toilet/</link>
+      <pubDate>Sat, 23 May 2020 08:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/google-testing-toilet/</guid>
+      <description>In my one of my previous posts i wrote about Good Unit Tests. During my research i discovered the famous Google Testing on the Toilet posts which provide great advice. The Testing-on-the-Toilet articles are short (~3min reads) and give hands-on examples, ready to be applied immediately. Here are my favorites:
+Testing on the Toilet   Tests Too DRY? Make Them DAMP!
+  Exercise Service Call Contracts in Tests</description>
+    </item>
+    
+    <item>
+      <title>Programming Quotes</title>
+      <link>https://gerlacdt.github.io/posts/programming-quotes/</link>
+      <pubDate>Sun, 17 May 2020 08:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/programming-quotes/</guid>
+      <description>Over the years i collected some (funny) programming quotes. Lean back and enjoy:
+ Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&amp;rsquo;re as clever as you can be when you write it, how will you ever debug it?
+ Brian W. Kernighan
+ Don’t comment bad code—rewrite it.
+ Brian W. Kernighan
+ The most effective debugging tool is still careful thought, coupled with judiciously placed print statements.</description>
+    </item>
+    
+    <item>
+      <title>Why and How to write better Unit Tests</title>
+      <link>https://gerlacdt.github.io/posts/unit-testing/</link>
+      <pubDate>Mon, 04 May 2020 08:08:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/unit-testing/</guid>
+      <description>TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be isolated Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&amp;rsquo;s Programmer Test Principles Microsoft&amp;rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.</description>
+    </item>
+    
+    <item>
+      <title>ESlint &#43; Prettier &#43; Typescript = Consistency</title>
+      <link>https://gerlacdt.github.io/posts/eslint-prettier-typescript/</link>
+      <pubDate>Tue, 24 Mar 2020 10:28:27 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/eslint-prettier-typescript/</guid>
+      <description>Consistency is one of the most important factors in a codebase. It gives new developers an orientation and direction how to write new code. It keeps the code understandable, clear and free from bikeshedding, so developers can focus on real problems instead of indulging in discussions on their preferred codestyle and individual taste.
+Consistency can be pertained by strict discipline but if possible you should enforce good style and formatting via opinionated code formatters like Prettier which makes development and collaboration a breeze.</description>
+    </item>
+    
+    <item>
+      <title>Things to consider with microservices</title>
+      <link>https://gerlacdt.github.io/posts/microservices/</link>
+      <pubDate>Sat, 30 Mar 2019 09:53:54 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/microservices/</guid>
+      <description>Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase. We outgrew the monolithic design and decided to introduce microservices. We extracted different domains like payment, booking, user and search. The teams were restructured into two-pizza teams.</description>
+    </item>
+    
+  </channel>
+</rss>

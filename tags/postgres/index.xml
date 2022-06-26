@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>postgres on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/tags/postgres/</link>
+    <description>Recent content in postgres on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 26 Jul 2019 10:15:34 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Postgres on Ubuntu</title>
+      <link>https://gerlacdt.github.io/posts/postgres-ubuntu/</link>
+      <pubDate>Fri, 26 Jul 2019 10:15:34 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/postgres-ubuntu/</guid>
+      <description>Recently i decided to switch from MacOS to Linux. I was already an Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i struggled a little bit with the installation of PostgreSQL. For MacOS there is a nice all-in-one package which i recommend: Postgres.app. Everything works out-of-the-box there. In Ubuntu, on the other hand, we need to adjust the default installation a little bit in order to start application development.</description>
+    </item>
+    
+  </channel>
+</rss>

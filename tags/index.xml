@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/tags/</link>
+    <description>Recent content in Tags on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Apr 2022 10:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>programming</title>
+      <link>https://gerlacdt.github.io/tags/programming/</link>
+      <pubDate>Sat, 16 Apr 2022 10:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>softwareengineering</title>
+      <link>https://gerlacdt.github.io/tags/softwareengineering/</link>
+      <pubDate>Sat, 16 Apr 2022 10:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/softwareengineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>engineering</title>
+      <link>https://gerlacdt.github.io/tags/engineering/</link>
+      <pubDate>Sat, 18 Dec 2021 10:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://gerlacdt.github.io/tags/docker/</link>
+      <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://gerlacdt.github.io/tags/jenkins/</link>
+      <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://gerlacdt.github.io/tags/testing/</link>
+      <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs</title>
+      <link>https://gerlacdt.github.io/tags/emacs/</link>
+      <pubDate>Sat, 10 Oct 2020 10:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>product</title>
+      <link>https://gerlacdt.github.io/tags/product/</link>
+      <pubDate>Thu, 08 Oct 2020 10:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://gerlacdt.github.io/tags/linux/</link>
+      <pubDate>Fri, 26 Jul 2019 10:15:34 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgres</title>
+      <link>https://gerlacdt.github.io/tags/postgres/</link>
+      <pubDate>Fri, 26 Jul 2019 10:15:34 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/postgres/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://gerlacdt.github.io/tags/bash/</link>
+      <pubDate>Sat, 13 Apr 2019 10:13:14 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microservices</title>
+      <link>https://gerlacdt.github.io/tags/microservices/</link>
+      <pubDate>Sat, 30 Mar 2019 09:53:54 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/microservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://gerlacdt.github.io/tags/javascript/</link>
+      <pubDate>Fri, 15 Mar 2019 08:51:40 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

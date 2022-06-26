@@ -1,1 +1,3 @@
 User-agent: *
+Disallow:
+Sitemap: https://gerlacdt.github.io/sitemap.xml

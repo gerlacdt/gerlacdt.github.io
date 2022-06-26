@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>jenkins on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/tags/jenkins/</link>
+    <description>Recent content in jenkins on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 09 May 2021 08:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database Integration Tests with Docker Sidecar in Jenkins</title>
+      <link>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</link>
+      <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</guid>
+      <description>More often than not, developers want to test the source code against a real database instead of Fakes or Test Doubles during a CI job in order to verify the code works as expected. Therefore a clean database is needed for every CI-job. One solution is to use a shared instance of the database in your existing test-environment which get cleaned before and after a job. But this suffers from being &amp;ldquo;shared&amp;rdquo; and you never can run multiple CI-jobs in parallel without jobs interfering with each other.</description>
+    </item>
+    
+  </channel>
+</rss>
