@@ -116,10 +116,11 @@ menu:
       name: posts
       url: /posts/
       weight: 10
+      weight: 20
     - identifier: tags
       name: tags
       url: /tags/
-      weight: 20
+      weight: 30
     # - identifier: example
     #   name: example.org
     #   url: https://example.org
