@@ -5,7 +5,16 @@
     <link>https://gerlacdt.github.io/</link>
     <description>Recent content on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 Dec 2021 10:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 10:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Engineering and Feedback Loops</title>
+      <link>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</link>
+      <pubDate>Thu, 29 Sep 2022 10:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</guid>
+      <description>Introduction Most of the breakthrough inventions in historic and modern Software Engineering are related to feedback loops. They are essential for productive software development, Developer Effectiveness and Developer Happiness. Remember the dawn of computing when computers were programmed with punch cards, programmers had to turn in their cards over night and the next day they got the result &amp;ndash; often with a compile error 😞. Unlike back then, today&amp;rsquo;s computers compile whole codebases in seconds.</description>
+    </item>
+    
     <item>
       <title>The Non-Productive Programmer (NPP)</title>
       <link>https://gerlacdt.github.io/posts/nonproductive-programmer/</link>

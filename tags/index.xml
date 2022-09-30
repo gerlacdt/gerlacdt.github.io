@@ -5,22 +5,31 @@
     <link>https://gerlacdt.github.io/tags/</link>
     <description>Recent content in Tags on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 Dec 2021 10:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 10:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>programming</title>
+      <link>https://gerlacdt.github.io/tags/programming/</link>
+      <pubDate>Thu, 29 Sep 2022 10:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>softwareengineering</title>
+      <link>https://gerlacdt.github.io/tags/softwareengineering/</link>
+      <pubDate>Thu, 29 Sep 2022 10:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/softwareengineering/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>engineering</title>
       <link>https://gerlacdt.github.io/tags/engineering/</link>
       <pubDate>Sat, 18 Dec 2021 10:00:00 +0100</pubDate>
       
       <guid>https://gerlacdt.github.io/tags/engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://gerlacdt.github.io/tags/programming/</link>
-      <pubDate>Sat, 18 Dec 2021 10:00:00 +0100</pubDate>
-      
-      <guid>https://gerlacdt.github.io/tags/programming/</guid>
       <description></description>
     </item>
     
@@ -66,15 +75,6 @@
       <pubDate>Thu, 08 Oct 2020 10:00:00 +0100</pubDate>
       
       <guid>https://gerlacdt.github.io/tags/product/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>softwareengineering</title>
-      <link>https://gerlacdt.github.io/tags/softwareengineering/</link>
-      <pubDate>Sun, 16 Aug 2020 18:38:45 +0200</pubDate>
-      
-      <guid>https://gerlacdt.github.io/tags/softwareengineering/</guid>
       <description></description>
     </item>
     
