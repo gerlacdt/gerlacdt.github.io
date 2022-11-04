@@ -5,7 +5,19 @@
     <link>https://gerlacdt.github.io/tags/programming/</link>
     <description>Recent content in programming on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 29 Sep 2022 10:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Nov 2022 10:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reading List Programming Books</title>
+      <link>https://gerlacdt.github.io/posts/programming-books/</link>
+      <pubDate>Fri, 04 Nov 2022 10:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/programming-books/</guid>
+      <description>This article contains a list of my favorite books with a major impact on my Software Engineering career. The books are categorized in:
+ Software Engineering Programming Brian Kernighan’s Books Modern Classics Learning Management and Leadership Unix Books From Stevens  Software Engineering A Philosophy of Software Design by John Ousterhout
+Link to book
+A fabulous book to level up your software design skills as an experienced engineer. The book is full of great advice.</description>
+    </item>
+    
     <item>
       <title>Software Engineering and Feedback Loops</title>
       <link>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</link>
