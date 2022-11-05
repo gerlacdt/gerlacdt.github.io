@@ -1,5 +1,5 @@
 ---
-title: "Reading List Programming Books"
+title: "Best Books For The Inquisitive Software Engineer"
 date: 2022-11-04T10:00:00+02:00
 tags: ["programming", "softwareengineering"]
 draft: false
