@@ -20,7 +20,13 @@ draft: true
 - Read Code
 - Learn Lisp
 
-Some teasers
+
+### Introduction/Motivation
+
+I am always pondering what practices, tactics, behaviours or approaches make up
+a productive programmer. After working 15+ years in IT, in small and big teams,
+with waterfall or agile processes and after writing thousands of lines of code, this
+article is my condensed treatment of what is most effective and helped me the most.
 
 ## You can't learn programming in 21 days
 
