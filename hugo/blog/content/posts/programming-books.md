@@ -253,14 +253,15 @@ by Eric Evans
     <img src="/img/books/ddd.jpg" alt="ddd" class="medium-zoom-image" width="200">
 </p>
 
-A classic from the early 2000s. It coined the term Domain Driven Design and is
-still the best way to structure medium- to large-sized business application.
-With the rise of microservices, terms like _Bounded Context_ are even more
+A classic from the early 2000s. It coined the term Domain Driven Design (DDD)
+and is still the best way to structure medium- to large-sized business
+application.  With the rise of microservices, the most influential concepts like
+_Strategic Design_, _Ubiquitous Language_ and _Bounded Context_ are even more
 relevant today. Besides the standard tactical design notions like Entities,
 Aggregates, Services and Repositories, you can find great refactoring advice
 too, e.g. _Intention-Revealing Interfaces_, _Side-Effect-Free functions_,
-_domain class invariants with explicit constraints_ etc. Alas, it is a bit
-verbose , a more condensed version with the essential ideas can be found
+_domain class invariants with explicit constraints_ etc. Alas, DDD is verbose, luckily a
+more condensed version with the essential ideas can be found
 [here](https://matfrs2.github.io/RS2/predavanja/literatura/Avram%20A,%20Marinescu%20F.%20-%20Domain%20Driven%20Design%20Quickly.pdf).
 
 Highlights:
@@ -639,8 +640,8 @@ by Gregor Hohpe
 </p>
 
 With the rise of _Agile_ and evolutionary architecture, architects are not
-needed anymore. Wrong! UML diagrams and PowerPoint slides are obsolete, yes, but
-modern architects ride the _Software Architect elevator_. This new kind of
+needed anymore. Wrong! UML diagrams and PowerPoint slides are obsolete, but
+modern architects ride the _Software Architect elevator_, i.e. this new kind of
 architect connects the penthouse (C-levels) with the engine room (software
 engineers) and all the levels in between. The book is worth reading just because
 of Gregor's awesome metaphors. You find a great teaser in his awesome
