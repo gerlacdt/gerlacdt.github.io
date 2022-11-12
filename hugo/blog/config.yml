@@ -9,7 +9,9 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 
-googleAnalytics: UA-138086762-1
+# https://gohugo.io/templates/internal#google-analytics
+# googleAnalytics: UA-138086762-1
+googleAnalytics: G-4BE9J0ZRDL
 
 minify:
   disableXML: true
