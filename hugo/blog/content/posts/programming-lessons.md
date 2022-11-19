@@ -1,6 +1,6 @@
 ---
 title: "Programmming lessons, I learned in 15 years"
-date: 2022-09-29T11:00:00+02:00
+date: 2022-11-19T11:00:00+02:00
 tags: ["programming", "softwareengineering"]
 draft: true
 ---
