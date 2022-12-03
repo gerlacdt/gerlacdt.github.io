@@ -1,5 +1,5 @@
 ---
-title: "Programmming lessons, I learned in 15 years"
+title: "Programming lessons"
 date: 2022-11-19T11:00:00+02:00
 tags: ["programming", "softwareengineering"]
 draft: true
@@ -7,28 +7,26 @@ draft: true
 
 ## TL;DR
 
-- Practice practice practice / You can't learn programming in 21 days
-- Practice your code reading skill / Read code / Code reading is as important of
+- Practice: You can't learn programming in 21 days
+- Practice: Code reading skill / Read code / Code reading is as important of
   even more important then code writing
 - Communication (processing textual information, writing/reading/communicate
   well)
-- Strive for fast Feedback loops (practice to proficiency)
-- Master your tools
-- Reduce complexity at any cost
 - Learn concepts not technologies or tools
-- Read books (expand you horizon but don't forget to practice)
-- Read Code
+- Reduce complexity at any cost
 - Learn Lisp
-
+- Master your tools
+- Read books (expand you horizon but don't forget to practice)
 
 ### Introduction/Motivation
 
 I am always pondering what practices, tactics, behaviours or approaches make up
-a productive programmer. After working 15+ years in IT, in small and big teams,
-with waterfall or agile processes and after writing thousands of lines of code, this
-article is my condensed treatment of what is most effective and helped me the most.
+a productive programmer. After 15+ years working as a software engineer, in
+small and big teams, with waterfall or agile processes and after writing
+thousands of lines of code, this article is my condensed treatment of what is
+the best advice for being more effective and productive.
 
-## You can't learn programming in 21 days
+## Practice: You can't learn programming in 21 days
 
 Teach yourself programming in ten years http://norvig.com/21-days.html
 
@@ -43,76 +41,23 @@ Teach yourself programming in ten years http://norvig.com/21-days.html
   stilled used codebase. See code reading skills.
 - Talk with other programmers; read other programs. This is more important than
   any book or training course.
+- Strive for fast Feedback loops (practice to proficiency), try and fail and
+  learn from mistakes gives the best learning experience, only reading books and
+  diving to long into theory will bring you not that far.
+
+  > "The only way to learn a new programming language is by writing programs in
+  > it." - Dennis Ritchie
+
+  > Computer science education cannot make anybody an expert programmer any more
+  > than studying brushes and pigment can make somebody an expert painter. –
+  > Eric S. Raymond
 
 According to Norvig (link) learning to program is a marathon. To master a craft
 it normally takes roughly ten thousands hours of practice. Daily exercises and
 challenging project work is necessary to climb up to new heights and improve
 yourself.
 
-## Read Books
-
-Books expand your horizon and you learn a lot in a very short time. But reading
-is not enough, you need to practice regularly in order to achieve mastery in our
-craft. I want to present the books which had the biggest impact on my
-programming life and which i think of the most "valuable" to read.
-
-### books about our craft and software engineering
-
-Book likes The Pragmatic Programmer, Code Complete or GoF Design Patterns
-contents is dense and abstract. During your first reading you understand the
-basics and the techniques but usually after years of practice, the second
-reading will teach you the real essence of the book because you will recognize
-many problems you faced in your career and connect the dots with the solutions
-in the books. This was for me a great aha-effect.
-
-### Algorithms and Data Structures
-
-You should own at least one Algorithm and Data structure book. I recommend
-"Introduction to Algorithms" Cormen, or the "Algorithm Design Manual" Skiena.
-Both are great and it's worth to buy them both.
-
-### Classics which drove my career
-
-- "Refactoring", Martin Fowler
-- "Extreme Programming explained", Kent Beck
-- "Domain Driven Design", Evans
-- Mythical Man-Month, Fred Brooks
-- books of Brian Kernighan The Practice of Programming The C programming
-  language (i read it 10 years ago for university studying purposes, back then i
-  could not appreciate the genius of him. This is true for a lot of books if you
-  read them a second time) The Unix programming environment The Go Programming
-  Language
-
-If you want do design and build distributed systems aka meaning all our fancy
-new microservice architectures, a modern classic is:
-
-- Designing Data-Intensive Applications, Martin Kleppmann
-
-Not a tech book, but a book which change my life regarding to my learning
-process is:
-
-A mindful of numbers by Barbera Oakley
-
-(there is a corresponding coursera course) This books really opens your mind and
-it will change your life. An effective learning skill is one of the most
-important skill a efficient programmer or any other can human can achieve.
-
-\*\* Read papers
-
-In comparison to blog post papers went through multiple proof readings and
-quality assurance rounds, especially if there are published at a conference.
-Hence they are often of a higher quality than internet blog posts.
-
-Google papers like MapReduce, BigTable and other classics like Turing Award
-papers of Ken Thomson, Hoare or about functional programming "Why functional
-programming matters?" Hughes
-
-My two favorite papers about software engineering in general are:
-
-- A Plea for lean software Niklaus Wirth
-- Emperors old clothes, Tony Hoare
-
-## Code reading skills
+## Practice: Code reading skills
 
 https://blog.codinghorror.com/when-understanding-means-rewriting/ Reading code
 is one of the most underrated skill in programming. Working as programming means
@@ -153,6 +98,33 @@ conclusion. This goes the other way around to: As an engineer you know what is
 possible and you are able to be a highly valuable contributer for new ideas or
 requirements. Maybe with a new technology ideas can be implemented much easier
 or make requirements possible to implement.
+
+## Learn concepts not technologies or tools
+
+- information hiding and encapsulation
+- coupling and cohesion
+- object oriented programming, objects, inheritance, polymorphism
+- functional programming - learn about immutability, high-order functions, pure
+  functions, avoiding side-effect
+- concurrency - there a different approaches to this like shared memory
+  (old-school), CSP golang style or clojure core.async, Actor based with Scala
+  Akka or Erlang, or just avoid it completely with an event-based approach like
+  nodejs
+- Test Driven Development - can be used in every language even if there is no
+  test-framework, you can write your own
+- ACID (transactions) - crucial so you know what you do not have to implement in
+  your application but is given to you from the SQL-database
+- Scaling with sharding/replication not only use AWS Dynamo DB but have some
+  background to make reasonable design decision about your data model
+- Networking Layers not TCP/IP layer implementation
+- Machine learning algorithms not only Tensorflow or pytorch or Sci-Kit
+- Math never gets old!
+
+In order to gain a full understanding of these concepts, sure you spend some
+efforts to learn an appropriate technology.
+
+“The only way to learn a new programming language is by writing programs in it.”
+Dennis Ritchie, inventor of the C programming language
 
 ## Learn Lisp (even if you do not use at your daily work)
 
@@ -213,7 +185,7 @@ programmer needs to master his tools in order to be productive.
 
 ### editor
 
-Emacs (my favorite), Vim, Sublime are great editors
+Emacs (my favorite), (Neo)Vim, Visual Studio Code are great editors
 
 ### OS
 
@@ -235,32 +207,73 @@ Marks 2006 https://blog.acolyer.org/2015/03/20/out-of-the-tar-pit/
 Controlling complexity is the essence of computer programming, Software Tools
 (1976), p. 319 (Brian Kernighan, P. J. Plauger).
 
-## Learn concepts not technologies or tools
+## Read Books
 
-- information hiding and encapsulation
-- coupling and cohesion
-- object oriented programming, objects, inheritance, polymorphism
-- functional programming - learn about immutability, high-order functions, pure
-  functions, avoiding side-effect
-- concurrency - there a different approaches to this like shared memory
-  (old-school), CSP golang style or clojure core.async, Actor based with Scala
-  Akka or Erlang, or just avoid it completely with an event-based approach like
-  nodejs
-- Test Driven Development - can be used in every language even if there is no
-  test-framework, you can write your own
-- ACID (transactions) - crucial so you know what you do not have to implement in
-  your application but is given to you from the SQL-database
-- Scaling with sharding/replication not only use AWS Dynamo DB but have some
-  background to make reasonable design decision about your data model
-- Networking Layers not TCP/IP layer implementation
-- Machine learning algorithms not only Tensorflow or pytorch or Sci-Kit
-- Math never gets old!
+Books expand your horizon and you learn a lot in a very short time. But reading
+is not enough, you need to practice regularly in order to achieve mastery in our
+craft. I want to present the books which had the biggest impact on my
+programming life and which i think of the most "valuable" to read.
 
-In order to gain a full understanding of these concepts, sure you spend some
-efforts to learn an appropriate technology.
+- reference to my [books](../programming-books) and [paper](../classic-papers)
+  list
+
+#### books about our craft and software engineering
+
+Book likes The Pragmatic Programmer, Code Complete or GoF Design Patterns
+contents is dense and abstract. During your first reading you understand the
+basics and the techniques but usually after years of practice, the second
+reading will teach you the real essence of the book because you will recognize
+many problems you faced in your career and connect the dots with the solutions
+in the books. This was for me a great aha-effect.
+
+#### Algorithms and Data Structures
+
+You should own at least one Algorithm and Data structure book. I recommend
+"Introduction to Algorithms" Cormen, or the "Algorithm Design Manual" Skiena.
+Both are great and it's worth to buy them both.
+
+#### Classics which drove my career
+
+- "Refactoring", Martin Fowler
+- "Extreme Programming explained", Kent Beck
+- "Domain Driven Design", Evans
+- Mythical Man-Month, Fred Brooks
+- books of Brian Kernighan The Practice of Programming The C programming
+  language (i read it 10 years ago for university studying purposes, back then i
+  could not appreciate the genius of him. This is true for a lot of books if you
+  read them a second time) The Unix programming environment The Go Programming
+  Language
+
+If you want do design and build distributed systems aka meaning all our fancy
+new microservice architectures, a modern classic is:
+
+- Designing Data-Intensive Applications, Martin Kleppmann
+
+Not a tech book, but a book which change my life regarding to my learning
+process is:
+
+A mindful of numbers by Barbera Oakley
+
+(there is a corresponding coursera course) This books really opens your mind and
+it will change your life. An effective learning skill is one of the most
+important skill a efficient programmer or any other can human can achieve.
+
+#### Read papers
+
+In comparison to blog post papers went through multiple proof readings and
+quality assurance rounds, especially if there are published at a conference.
+Hence they are often of a higher quality than internet blog posts.
+
+Google papers like MapReduce, BigTable and other classics like Turing Award
+papers of Ken Thomson, Hoare or about functional programming "Why functional
+programming matters?" Hughes
+
+My two favorite papers about software engineering in general are:
+
+- A Plea for lean software Niklaus Wirth
+- Emperors old clothes, Tony Hoare
+
+### Final Words
 
 With all this do not forget to write code on regular basis :) This is the most
 important take-away...
-
-“The only way to learn a new programming language is by writing programs in it.”
-Dennis Ritchie, inventor of the C programming language
