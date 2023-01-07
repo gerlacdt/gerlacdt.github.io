@@ -1,22 +1,24 @@
 ---
 title: "Programming lessons"
-date: 2022-11-19T11:00:00+02:00
+date: 2023-01-07T11:00:00+02:00
 tags: ["programming", "softwareengineering"]
 draft: true
 ---
 
 ## TL;DR
 
-- Practice: You can't learn programming in 21 days
-- Practice: Code reading skill / Read code / Code reading is as important of
-  even more important then code writing
-- Communication (processing textual information, writing/reading/communicate
-  well)
-- Learn concepts not technologies or tools
-- Reduce complexity at any cost
-- Learn Lisp
-- Master your tools
-- Read books (expand you horizon but don't forget to practice)
+1. Practice Practice Practice: You can't learn programming in 21 days
+1. Practice: Code reading skill / Read code / Code reading is as important of
+   even more important then code writing
+1. Communication (processing textual information, writing/reading/communicate
+   well)
+1. Learn concepts not technologies or tools
+1. Learn Lisp
+1. Master your tools
+1. Reduce complexity at any cost (Simplicity)
+1. Read books (expand you horizon but don't forget to practice)
+1. Understand the problem domain
+1. Write good Tests (testing alone is not good enough)
 
 ### Introduction/Motivation
 
@@ -195,6 +197,11 @@ Unix, MacOS or Windows
 
 They are composable and you get things done very fast
 
+### Keyboard, Mouse proficiency
+
+learn fast touch typing. Muscle Memory ensures you can focus on the problem
+instead of wasting brain power for typing correctly etc.
+
 ## Reduce complexity at any cost -> drive for simplicity always
 
 The purpose of software engineering is to control complexity, not to create
@@ -273,7 +280,36 @@ My two favorite papers about software engineering in general are:
 - A Plea for lean software Niklaus Wirth
 - Emperors old clothes, Tony Hoare
 
-### Final Words
+## Understand the problem domain
 
-With all this do not forget to write code on regular basis :) This is the most
-important take-away...
+Understand the problem/business domain your are working in. Being the best
+programmer in the team is not enough. You be most valuable if you can connect
+technology with the problem your trying to solve. Better understanding of the
+problem opens up complete new solution strategies.
+
+## Write good Tests
+
+In software projects, tests of any kind like unit, integration, system tests are
+now common practice. They are now a a basic building block like version control
+systems or good tooling like powerful IDEs etc.
+
+Unfortunately, just writing tests for the sake of tests is not enough. Good
+Testing is a delicate endeavour and more often than not, teams end up with an
+flaky, brittle and unmaintainable test suite. In such scenarios tests can even
+hamper productivity. Such test suites make refactorings hard or even impossible.
+As final resolution teams don't refactor anymore out of fear to break too many
+tests or just abandon testing completely!
+
+But good tests should enable and encourage refactoring. For example, Refactoring
+is a core building block in Test Driven Development. So why test suites are
+often a mess. -> overuse of mocks, which expose internal logic in the tests,
+which couple tests to this internal logic. Eventually, you cannot change the
+internal logic anymore since your tests depend on it. Solution use Fakes! Favor
+state-verification over interaction-verification! (see FlamingoBook)
+
+## Final Words
+
+If you have only one take-away, the most important one is **practice
+regularly**. Programming and, Learning in general, is a marathon not a sprint.
+You will get better but it does not happen in days with cramming but in years
+with continuous exercise.
