@@ -1,5 +1,5 @@
 ---
-title: "Programming lessons"
+title: "Top 10 Programming Lessons"
 date: 2023-01-07T11:00:00+02:00
 tags: ["programming", "softwareengineering"]
 draft: true
