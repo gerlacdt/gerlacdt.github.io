@@ -4,19 +4,18 @@ date: 2019-03-03T11:01:35+01:00
 draft: false
 ---
 
-
 # About me
 
-My name is **Daniel Gerlach**. I work at [Daimler Mobility AG](https://www.daimler-mobility.com/en/).
-
+My name is **Daniel Gerlach**. I work at [Mercedes-Benz-Mobility AG](https://www.mercedes-benz-mobility.com/en/).
 
 I am a happy long-term [Emacs](https://www.gnu.org/software/emacs/) user (almost 15 years now). At work i use different programming languages:
 
-* [Java](https://openjdk.java.net/)
-* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [Typescript](https://www.typescriptlang.org/)
-* [python](https://www.python.org/)
-* [Go](https://golang.org)
+- [Java](https://openjdk.java.net/)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Typescript](https://www.typescriptlang.org/)
+- [python](https://www.python.org/)
+- [Go](https://golang.org)
+- [Rust](https://www.rust-lang.org/)
 
 I am interested in programming. I have a favour for lispy-languages
 like [Common Lisp](https://lisp-lang.org/),
@@ -27,6 +26,10 @@ transparency, pure functions, high-order functions, functions as
 first-class citizens and composition of functions. I think functional
 programming makes coding more fun and comprehensible. Nevertheless i
 also like pragmatic programming languages like Go.
+
+Nowadays I also do a lot of cloud infrastructure engineering with
+[Azure](https://azure.microsoft.com/en-us) and
+[Terraform](https://www.terraform.io/).
 
 My coding principle is:
 
@@ -46,11 +49,9 @@ https://twitter.com/gerlacdt
 I like cats and i have one at home. Coincidentally her name is
 **Ruby** (like the programming language).
 
-
 ### Ruby in the kitchen
 
 ![ruby](/img/cat_in_the_kitchen.jpg)
-
 
 ### Ruby in the bag
 

@@ -118,10 +118,13 @@ menu:
       name: posts
       url: /posts/
       weight: 10
-      weight: 20
     - identifier: tags
       name: tags
       url: /tags/
+      weight: 20
+    - identifier: about
+      name: about
+      url: /about
       weight: 30
     # - identifier: example
     #   name: example.org
