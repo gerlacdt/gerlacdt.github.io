@@ -38,12 +38,9 @@ Recommended terminals are:
 - [Alacritty](https://alacritty.org/) (minimal, blazing fast, written in Rust)
 - [iTerm2](https://iterm2.com/) (MacOS)
 
-The standard MacOS terminal app does not offer TrueColor support and is not
-suitable.
-
 For a modern look-and-feel, I suggest [Nerd Fonts](https://www.nerdfonts.com/).
 It comes with icons for Kubernetes, Python, Java, Golang, Rust which pretty up
-the CLI. Install Nerd Fonts in Ubuntu with:
+the CLI. Install Nerd Fonts in Ubuntu and enable them in our terminal app:
 
 ```bash
 # download a specific font (or choose your favorite font)
@@ -77,9 +74,9 @@ font:
 ### Switch to ZSH
 
 Congrats, we have configured our terminal. Most Linux distribution come with
-_bash_ as the default shell, but we want to switch to **zsh** which is more
-powerful than _bash_, but yet fully compatible to it. For newer MacOS versions
-_zsh_ is the default shell. For Ubuntu you have to install _zsh_:
+_bash_ as the default shell. We want to switch to **zsh** which is more powerful
+than _bash_, but yet fully compatible to it. For newer MacOS versions _zsh_ is
+the default shell. For Ubuntu you have to install _zsh_:
 
 ```bash
 # install zsh
@@ -93,8 +90,8 @@ chsh -s /usr/bin/zsh
 
 With _zsh_ installed, we paved the way for our customization endeavours. Now we
 can install [oh-my-zsh](https://ohmyz.sh/), a delightful, extensible,
-pre-configured _zsh environment_ with sane defaults. It builds the base for
-further tailoring and provides a cheerful prompt with a nicer color theme.
+pre-configured _zsh environment_ with reasonable defaults. It builds the base
+for further tailoring and provides a cheerful prompt with a lovely color theme.
 _oh-my-zsh_ predefines a lot of
 [useful aliases for git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
 and [other CLI tools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins).
@@ -103,7 +100,7 @@ The main zsh configuration file is `~/.zshrc`. There you can enable and disable
 _oh-my-zsh_ plugins but also write your own aliases or activate subcommand
 completion for `kubectl`, `git` or `terraform`. You can go even further and
 write your own bash functions which are then available in you shell sessions.
-For example, I use a function to toggle between different java versions
+For example, I use functions to toggle between different java versions
 `toggle_java8` and `toggle_java17`. Below you find a small section from my
 `.zshrc`:
 
@@ -111,7 +108,7 @@ For example, I use a function to toggle between different java versions
 # file: ~/.zshrc  (selected parts from my .rc file)
 
 # oh-my-zsh location
-export ZSH="/home/gerlacdt/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # default oh-my-zsh prompt
 ZSH_THEME="robbyrussell"
@@ -151,7 +148,7 @@ source <(kubectl completion zsh)
 
 # terraform subcommand completion
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /home/gerlacdt/.local/bin/terraform terraform
+complete -o nospace -C $HOME/.local/bin/terraform terraform
 
 # example function which shows memory usage of a process
 # USAGE:
@@ -166,9 +163,10 @@ mem()
 
 In the next step we configure our shell prompt. By default the prompt only shows
 you the current working directory. _oh-my-zsh_ adds the current git branch. As a
-cloud infrastructure engineer I work with multiple Kubernetes clusters and Azure
-Accounts. I like to have such information directly in my shell, so that I don't
-coincidentally execute commands in the wrong environment :scream:.
+cloud infrastructure engineer though, I work with multiple K8s clusters,
+multiple Azure Accounts and other different contexts. Hence I like to have such
+information directly in my shell, so that I don't coincidentally execute
+commands in the wrong environment :scream:.
 
 The best prompt, in my opinion, is [starship](https://starship.rs/). It's
 stable, fast and easily configurable via a single `starhship.toml` file.
@@ -195,7 +193,7 @@ format = '[☸ ($cluster)\($namespace\)](green) '
 disabled = false
 
 # contexts for git, Azure/AWS/GCP are dected automatically
-# starship even detects the progrmamming language in your project directory
+# starship even detects the programming language in your project directory
 # you only need to add a section if you want to customize the defaults
 
 ```
@@ -214,27 +212,29 @@ We already made it very far and your terminal experience should have improved a
 lot by now. For being productive in the terminal you must master the
 pre-installed tools like `find`, `grep`, `sed`, `ls`, `cd`, `cat`, `less` etc.
 Additionally to the classic tools, there exist modern alternatives which
-provides a contemporary user experience. I want to present the ones I used the
-most and which have the biggest impact on my daily workflow:
+provides a contemporary user experience. Below you can find my favorite tools
+which have the biggest impact on my daily workflow:
 
 - [fzf](https://github.com/junegunn/fzf), an interactive shell command history
-  search tool on steroids, it completely changed the way how I use `CTRL-r`
-- [delta](https://dandavison.github.io/delta/), a much nicer git diff, it not
-  only highlights which line changed but also the word location in the line
+  search tool on steroids, it completely changed the way how I use `CTRL-r` aka
+  the shell command history
+- [delta](https://dandavison.github.io/delta/), a much nicer git diff, _delta_
+  not only highlights which line changed but also the exact location in the line
 - [ripgrep](https://github.com/BurntSushi/ripgrep) or
   [silver searcher ag](https://github.com/ggreer/the_silver_searcher), both are
-  `grep` alternatives, they are faster and provide a convenient API
+  `grep` alternatives, they are faster and provide more convenient API, they
+  ignore common folders by default like `.git` or `node_modules`
 
 - [bat](https://github.com/sharkdp/bat), a `cat` alternative with syntax
   highlighting and pager features
 - [zoxide](https://github.com/ajeetdsouza/zoxide), a smarter way to change
-  directories, zoxides remembers nested paths and you can easily switch into
-  them with a few keystrokes
+  directories, zoxides remembers nested paths and you can easily switch to them
+  with a few keystrokes
 
 - [tmux](https://github.com/tmux/tmux/wiki) or
   [zellij](https://zellij.dev/documentation) are terminal multiplexers. If you
-  want to run long running terminal sessions or you work on remote machine,
-  these tools are highly recommended.
+  run long running terminal sessions or you work on remote machine, these tools
+  are highly recommended.
 - [kubectx/kubens](https://github.com/ahmetb/kubectx), `kubectl` commands can
   get very long, with kubectx/kubens you can pin the cluster and namespace for
   all future commands which saves a lot of typing.
@@ -261,11 +261,10 @@ to yaml.
 
 #### Shell command tips and tricks
 
-The shell is a whole universe and it takes time to get familiar with it. But
-eventually, it is a rewarding experience which will be beneficial for the rest
-of your life. Unfortunately, there is no shortcut of learning the CLI but in
-then ext code block, I want to show you the commands I used the most to give you
-a headstart:
+The shell is a whole universe and it takes time to get familiar with it.
+Eventually, it is a rewarding experience which will be beneficial for the rest
+of your life. Unfortunately, there is no shortcut for learning the CLI. Anyway,
+I want to show you my most useful commands in order to give you an head start:
 
 ```bash
 # run you last commands again with !!
@@ -305,16 +304,16 @@ find . -iname "*.rs" | xargs sed -i "" "s/mod/foobar/g"
 
 ### Your Editor, choose wisely
 
-Fist of all, I don't want to trigger another _editor war_. Everyone can use
-which editor she prefers and make her most productive.
+Fist of all, I don't want to trigger another _editor war_. Everyone can use the
+editor she prefers and makes her most productive.
 
-Anyway, the editor is the main workhorse for developers and they spend many
-hours per day in it. Thus a good editor is essential. For me a good editor must
-be able to run inside the shell, so I don't need to switch between applications
-during my work session. Besides that, an editor should be fast. Contemporary
-editors should offer an instant experience opening and changing files. If you
-want to go down the rabbit whole, you can also start configuring your editor to
-your needs. My **opinionated** editor recommendations are:
+One's editor is the main workhorse for developers and they spend many hours per
+day in it. Thus a good editor is essential. For me a good editor must be able to
+run inside the shell, so I don't need to switch between applications during my
+work session. Besides that, an editor should be fast. Contemporary editors
+should offer an instant experience opening and changing files. If you want to go
+down the rabbit whole, you can also start configuring your editor to your needs.
+My **opinionated** editor recommendations are:
 
 #### [Emacs](https://www.gnu.org/software/emacs/)
 
@@ -322,7 +321,9 @@ My favorite editor. I used it for almost everything: programming, note taking,
 visual git user interface, writing etc. It's extremely configurable via
 [Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_node/eintr/).
 Sophisticated, stable plugins exist for every conceivable scenario, for example
-LSP support, Tree-sitter, Git etc.
+LSP support, Tree-sitter, Git etc. I use the awesome
+[Emacs Prelude](https://github.com/bbatsov/prelude) distribution. It builds the
+foundation for my own modifications.
 
 #### [Neovim](https://neovim.io/)
 
@@ -340,6 +341,35 @@ Helix is a blazing fast terminal editor written in
 out-of-the-box. I use it for short edits and Rust development. The great thing
 about Helix is that you get eighty percent of the Emacs or Neovim user
 experience with almost no customization effort.
+
+A common Emacs or Neovim config consists of dozen of files and thousand lines of
+source code. Compare this with helix, the following code block is my whole
+configuration:
+
+```toml
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+```
 
 ### gnu stow
 
