@@ -1,8 +1,8 @@
 ---
 title: "Effective CLI (more productive than an IDE!)"
-date: 2023-01-14T11:00:00+02:00
+date: 2023-01-15T11:00:00+02:00
 tags: ["programming", "softwareengineering", "linux", "shell"]
-draft: true
+draft: false
 ---
 
 ## TL;DR
