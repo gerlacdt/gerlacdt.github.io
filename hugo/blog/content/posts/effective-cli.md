@@ -21,17 +21,16 @@ configuration, it is on par with modern graphical IDEs. Because it is so
 configurable, you can make it truly your own, thereby surpassing out-of-the-box
 experience of IDEs. The _shell_ has existed for 50+ years, and since it's so
 adaptable, it's not going anywhere which makes it a great knowledge investment
-for the future. No need to re-learn your editing toolset every few years.
-However, it comes with a catch, a full _shell_ configuration takes time and
-effort. In this article, I want to show you how I configured my _shell_ for
-ultimate productivity, so you don't have to go same tiresome learning process as
-I did.
+for the future. No need to re-learn your toolset every few years. However, it
+comes with a catch, a full _shell_ configuration takes time and effort. In this
+article, I want to show you how I configured my _shell_ for ultimate
+productivity, so you don't have to go same tiresome learning process as I did.
 
 ### Use a modern Terminal
 
-All starts with a good _terminal application_ which is the door to your _shell
-environment_. A good terminal is crucial for a top-notch developer experience.
-Recommended terminals are:
+All starts with a good _terminal application_ which is the entrance to the
+_shell environment_. A good terminal is crucial for a top-notch developer
+experience. Recommended terminals are:
 
 - [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/3.40/)
 - [KDE Konsole](https://apps.kde.org/konsole/)
@@ -40,7 +39,8 @@ Recommended terminals are:
 
 For a modern look-and-feel, I suggest [Nerd Fonts](https://www.nerdfonts.com/).
 It comes with icons for Kubernetes, Python, Java, Golang, Rust which pretty up
-the CLI. Install Nerd Fonts in Ubuntu and enable them in our terminal app:
+the CLI. You must install Nerd Fonts in Ubuntu and enable them in the terminal
+app:
 
 ```bash
 # download a specific font (or choose your favorite font)
@@ -55,7 +55,7 @@ mv *.ttf ~/.local/share/fonts/
 # rebuild font cache, so that font will be available
 fc-cache -fv
 
-# afterwards you need to set the new font in you terminal application
+# afterwards you need to set the new font in you terminal app
 # for Gnome Terminal, you can do it in the Menu Settings
 # for Alacritty you need to adjust the config file, see below
 ```
@@ -75,7 +75,7 @@ font:
 
 Congrats, we have configured our terminal. Most Linux distribution come with
 _bash_ as the default shell. We want to switch to **zsh** which is more powerful
-than _bash_, but yet fully compatible to it. For newer MacOS versions _zsh_ is
+than _bash_, but yet fully compatible to it. For newer MacOS versions, _zsh_ is
 the default shell. For Ubuntu you have to install _zsh_:
 
 ```bash
@@ -88,11 +88,11 @@ chsh -s /usr/bin/zsh
 
 ### oh-my-zsh
 
-With _zsh_ installed, we paved the way for our customization endeavours. Now we
-can install [oh-my-zsh](https://ohmyz.sh/), a delightful, extensible,
+With _zsh_ installed, we paved the way for our customization endeavours. We
+ready to install [oh-my-zsh](https://ohmyz.sh/), a delightful, extensible,
 pre-configured _zsh environment_ with reasonable defaults. It builds the base
 for further tailoring and provides a cheerful prompt with a lovely color theme.
-_oh-my-zsh_ predefines a lot of
+_oh-my-zsh_ also defines a lot of
 [useful aliases for git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
 and [other CLI tools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins).
 
@@ -102,10 +102,10 @@ completion for `kubectl`, `git` or `terraform`. You can go even further and
 write your own bash functions which are then available in you shell sessions.
 For example, I use functions to toggle between different java versions
 `toggle_java8` and `toggle_java17`. Below you find a small section from my
-`.zshrc`:
+`~/.zshrc`:
 
 ```bash
-# file: ~/.zshrc  (selected parts from my .rc file)
+# file: ~/.zshrc  (selected parts)
 
 # oh-my-zsh location
 export ZSH="$HOME/.oh-my-zsh"
@@ -161,11 +161,11 @@ mem()
 
 ### starship
 
-In the next step we configure our shell prompt. By default the prompt only shows
+In the next step we configure our shell prompt. The default prompt only shows
 you the current working directory. _oh-my-zsh_ adds the current git branch. As a
 cloud infrastructure engineer though, I work with multiple K8s clusters,
-multiple Azure Accounts and other different contexts. Hence I like to have such
-information directly in my shell, so that I don't coincidentally execute
+multiple Azure Accounts and other different contexts. Hence I like to have all
+context information directly in my shell, so that I don't coincidentally execute
 commands in the wrong environment :scream:.
 
 The best prompt, in my opinion, is [starship](https://starship.rs/). It's
@@ -198,9 +198,8 @@ disabled = false
 
 ```
 
-My current prompt shows the local K8s cluster with the corresponding namespace,
-the current git branch, the current active Python and the Rust versions with
-icons:
+My current prompt shows the current K8s cluster and namespace, the current git
+branch, the current active Python and the Rust versions with icons:
 
 <p align="left">
     <img src="/img/starship.png" alt="starship_shell_prompt" class="medium-zoom-image">
@@ -209,35 +208,36 @@ icons:
 ### Modern CLI commands
 
 We already made it very far and your terminal experience should have improved a
-lot by now. For being productive in the terminal you must master the
+lot by now. For being productive in the terminal you should master the
 pre-installed tools like `find`, `grep`, `sed`, `ls`, `cd`, `cat`, `less` etc.
-Additionally to the classic tools, there exist modern alternatives which
-provides a contemporary user experience. Below you can find my favorite tools
-which have the biggest impact on my daily workflow:
+Additionally to the classic tools, modern alternatives exist which provides a
+contemporary user experience. Below you can find my favorite tools which have
+the biggest impact on my daily workflow:
 
 - [fzf](https://github.com/junegunn/fzf), an interactive shell command history
-  search tool on steroids, it completely changed the way how I use `CTRL-r` aka
-  the shell command history
+  search tool on steroids, it completely changed the way how I use the shell
+  command history with `CTRL-r`
 - [delta](https://dandavison.github.io/delta/), a much nicer git diff, _delta_
-  not only highlights which line changed but also the exact location in the line
+  not only highlights which lines changed but also the exact location in a
+  specific line
 - [ripgrep](https://github.com/BurntSushi/ripgrep) or
-  [silver searcher ag](https://github.com/ggreer/the_silver_searcher), both are
-  `grep` alternatives, they are faster and provide more convenient API, they
+  [ag](https://github.com/ggreer/the_silver_searcher), both are `grep`
+  alternatives, they are faster and provide a more convenient API, e.g they
   ignore common folders by default like `.git` or `node_modules`
 
 - [bat](https://github.com/sharkdp/bat), a `cat` alternative with syntax
   highlighting and pager features
 - [zoxide](https://github.com/ajeetdsouza/zoxide), a smarter way to change
-  directories, zoxides remembers nested paths and you can easily switch to them
-  with a few keystrokes
+  directories, _zoxide_ remembers nested paths and makes directory switching a
+  breeze
 
 - [tmux](https://github.com/tmux/tmux/wiki) or
   [zellij](https://zellij.dev/documentation) are terminal multiplexers. If you
-  run long running terminal sessions or you work on remote machine, these tools
-  are highly recommended.
+  run long running terminal sessions or you work on remote machines, these tools
+  are highly recommended
 - [kubectx/kubens](https://github.com/ahmetb/kubectx), `kubectl` commands can
   get very long, with kubectx/kubens you can pin the cluster and namespace for
-  all future commands which saves a lot of typing.
+  all future commands which saves a lot of typing
 
 #### jq / yq
 
@@ -256,8 +256,7 @@ curl -s "https://jsonplaceholder.typicode.com/todos" \
 ```
 
 [yq](https://github.com/mikefarah/yq) is the same as `jq` but for yaml files. A
-great facilitation if you work often with Kubernetes. `yq` can also convert json
-to yaml.
+great facilitation if you work often with Kubernetes.
 
 #### Shell command tips and tricks
 
@@ -307,21 +306,21 @@ find . -iname "*.rs" | xargs sed -i "" "s/mod/foobar/g"
 Fist of all, I don't want to trigger another _editor war_. Everyone can use the
 editor she prefers and makes her most productive.
 
-One's editor is the main workhorse for developers and they spend many hours per
-day in it. Thus a good editor is essential. For me a good editor must be able to
-run inside the shell, so I don't need to switch between applications during my
-work session. Besides that, an editor should be fast. Contemporary editors
-should offer an instant experience opening and changing files. If you want to go
-down the rabbit whole, you can also start configuring your editor to your needs.
-My **opinionated** editor recommendations are:
+Nevertheless, one's editor is the main workhorse for developers who spend many
+hours per day in it. Thus a good editor is essential. For me a good editor must
+be able to run inside the shell, so I don't need to switch between applications
+during my work session. Besides that, an editor should be fast. Contemporary
+editors should offer an instant experience opening and changing files. If you
+want to go down the rabbit whole, you can also start configuring your editor to
+your needs. My **opinionated** editor recommendations are:
 
 #### [Emacs](https://www.gnu.org/software/emacs/)
 
-My favorite editor. I used it for almost everything: programming, note taking,
+My favorite editor. I use it for almost everything: programming, note taking,
 visual git user interface, writing etc. It's extremely configurable via
 [Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_node/eintr/).
 Sophisticated, stable plugins exist for every conceivable scenario, for example
-LSP support, Tree-sitter, Git etc. I use the awesome
+LSP support, Tree-sitter, Git etc. I run the awesome
 [Emacs Prelude](https://github.com/bbatsov/prelude) distribution. It builds the
 foundation for my own modifications.
 
@@ -332,19 +331,18 @@ the VIM family, Neovim provides the classic modal-editing experience. Neovim is
 also highly configurable via Lua. You can extend the editor via plugins, write
 your own config or just use a pre-configured distribution like
 [AstroNvim](https://astronvim.github.io/) which gives you an IDE-like feeling
-without much config tinkering.
+without much tinkering.
 
 #### [Helix](https://helix-editor.com/)
 
 Helix is a blazing fast terminal editor written in
 [Rust](https://www.rust-lang.org/). Syntax-Highlighting and LSP support works
 out-of-the-box. I use it for short edits and Rust development. The great thing
-about Helix is that you get eighty percent of the Emacs or Neovim user
-experience with almost no customization effort.
+about Helix is that you get 80% of the Emacs or Neovim features with almost no
+customization effort.
 
-A common Emacs or Neovim config consists of dozen of files and thousand lines of
-source code. Compare this with helix, the following code block is my whole
-configuration:
+A normal Emacs or Neovim config consists of thousand lines of code. In contrast,
+this is my complete helix configuration:
 
 ```toml
 theme = "onedark"
@@ -371,13 +369,41 @@ hidden = false
 
 ```
 
-### gnu stow
+### GNU Stow
 
-Manage dotfiles in github repository
+The shell configuration is finalized. Although we are done, we have now a lot of
+dotfiles lying around in the `$HOME` directory. A good way to manage them would
+be `git`. Unluckily, we cannot put our full `$HOME` directory in a git
+repository. Here [GNU Stow](https://www.gnu.org/software/stow/) comes into play.
+_GNU Stow_ uses symbolic links to manage a group of dotfiles inside a single
+folder. This is exactly what we want. Let's go through a simple example:
 
-https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html
-https://www.jakewiesler.com/blog/managing-dotfiles
-https://dr563105.github.io/blog/manage-dotfiles-with-gnu-stow/
+```bash
+# create dotfiles folder somewhere
+mkdir $HOME/dotfiles
+
+cd dotfiles/
+
+# move our .gitconfig into the new dotfiles/ folder
+mkdir git
+mv $HOME/.gitconfig git/
+
+# inside dotfiles/, it should look like this:
+tree git -a
+git
+└── .gitconfig
+
+# lets create a symlink with GNU Stow
+stow --verbose --target=$HOME git
+
+# .gitconfig is now available at $HOME/.gitconfig
+
+# deleting the symbolic link is also possible
+stow --verbose --target=$HOME --delete git
+```
+
+If you want to go into a more detailed example, there is a great
+[step-by-step guide](https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html).
 
 ### Conclusion
 
