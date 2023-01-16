@@ -1,6 +1,6 @@
 ---
 title: "Effective CLI (more productive than an IDE!)"
-date: 2023-01-15T11:00:00+02:00
+date: 2023-01-16T11:00:00+02:00
 tags: ["programming", "softwareengineering", "linux", "shell"]
 draft: false
 ---
@@ -17,9 +17,9 @@ draft: false
 
 The _Unix shell/Command-Line Interface (CLI)_ is an ancient tool. Despite being
 around forever, the _shell_ is highly customizable and with a good
-configuration, it is on par with modern graphical IDEs. Because it is so
+configuration, it is on par with modern graphical IDEs. Because it is
 configurable, you can make it truly your own, thereby surpassing out-of-the-box
-experience of IDEs. The _shell_ has existed for 50+ years, and since it's so
+experience of IDEs. The _shell_ has existed for 50+ years, and since it's highly
 adaptable, it's not going anywhere which makes it a great knowledge investment
 for the future. No need to re-learn your toolset every few years. However, it
 comes with a catch, a full _shell_ configuration takes time and effort. In this
@@ -28,9 +28,8 @@ productivity, so you don't have to go same tiresome learning process as I did.
 
 ### Use a modern Terminal
 
-All starts with a good _terminal application_ which is the entrance to the
-_shell environment_. A good terminal is crucial for a top-notch developer
-experience. Recommended terminals are:
+A good _terminal application_ is the main entrance to your _shell environment_
+and crucial a top-notch developer experience. Recommended terminals are:
 
 - [Gnome Terminal](https://help.gnome.org/users/gnome-terminal/3.40/)
 - [KDE Konsole](https://apps.kde.org/konsole/)
@@ -39,8 +38,8 @@ experience. Recommended terminals are:
 
 For a modern look-and-feel, I suggest [Nerd Fonts](https://www.nerdfonts.com/).
 It comes with icons for Kubernetes, Python, Java, Golang, Rust which pretty up
-the CLI. You must install Nerd Fonts in Ubuntu and enable them in the terminal
-app:
+the CLI. For Ubuntu, you can install and enable Nerd Fonts with the following
+commands:
 
 ```bash
 # download a specific font (or choose your favorite font)
@@ -73,10 +72,10 @@ font:
 
 ### Switch to ZSH
 
-Congrats, we have configured our terminal. Most Linux distribution come with
-_bash_ as the default shell. We want to switch to **zsh** which is more powerful
-than _bash_, but yet fully compatible to it. For newer MacOS versions, _zsh_ is
-the default shell. For Ubuntu you have to install _zsh_:
+Most Linux distribution use _bash_ as the default shell. We want to switch to
+**zsh** which is more powerful than _bash_, but yet fully compatible to it.
+Newer MacOS versions come with _zsh_ enabled. For Ubuntu you have to install
+_zsh_:
 
 ```bash
 # install zsh
@@ -88,20 +87,21 @@ chsh -s /usr/bin/zsh
 
 ### oh-my-zsh
 
-With _zsh_ installed, we paved the way for our customization endeavours. We
+With _zsh_ installed, we paved the way for our customization endeavours. We are
 ready to install [oh-my-zsh](https://ohmyz.sh/), a delightful, extensible,
 pre-configured _zsh environment_ with reasonable defaults. It builds the base
 for further tailoring and provides a cheerful prompt with a lovely color theme.
 _oh-my-zsh_ also defines a lot of
 [useful aliases for git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
-and [other CLI tools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins).
+and [other CLI tools](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
+which save
 
 The main zsh configuration file is `~/.zshrc`. There you can enable and disable
 _oh-my-zsh_ plugins but also write your own aliases or activate subcommand
-completion for `kubectl`, `git` or `terraform`. You can go even further and
+completions for `kubectl`, `git` or `terraform`. You can go even further and
 write your own bash functions which are then available in you shell sessions.
 For example, I use functions to toggle between different java versions
-`toggle_java8` and `toggle_java17`. Below you find a small section from my
+`toggle_java8` and `toggle_java17`. Below you find a small section of my
 `~/.zshrc`:
 
 ```bash
@@ -162,14 +162,14 @@ mem()
 ### starship
 
 In the next step we configure our shell prompt. The default prompt only shows
-you the current working directory. _oh-my-zsh_ adds the current git branch. As a
-cloud infrastructure engineer though, I work with multiple K8s clusters,
-multiple Azure Accounts and other different contexts. Hence I like to have all
-context information directly in my shell, so that I don't coincidentally execute
-commands in the wrong environment :scream:.
+you the current working directory. As a cloud infrastructure engineer though, I
+work with _Git_, multiple K8s clusters, Azure Accounts and other different
+contexts. For that reason, I like to have all such information in my shell
+prompt. That proactively prevents executing commands in the wrong environment
+:scream:.
 
-The best prompt, in my opinion, is [starship](https://starship.rs/). It's
-stable, fast and easily configurable via a single `starhship.toml` file.
+The best prompt these days is [starship](https://starship.rs/). It's stable,
+fast and easily configurable via a single `starhship.toml` file.
 
 ```bash
 # file ~/.zshrc
@@ -195,7 +195,6 @@ disabled = false
 # contexts for git, Azure/AWS/GCP are dected automatically
 # starship even detects the programming language in your project directory
 # you only need to add a section if you want to customize the defaults
-
 ```
 
 My current prompt shows the current K8s cluster and namespace, the current git
@@ -208,11 +207,11 @@ branch, the current active Python and the Rust versions with icons:
 ### Modern CLI commands
 
 We already made it very far and your terminal experience should have improved a
-lot by now. For being productive in the terminal you should master the
-pre-installed tools like `find`, `grep`, `sed`, `ls`, `cd`, `cat`, `less` etc.
-Additionally to the classic tools, modern alternatives exist which provides a
-contemporary user experience. Below you can find my favorite tools which have
-the biggest impact on my daily workflow:
+lot by now. To get most out of the _shell_, you should master the pre-installed
+tools like `find`, `grep`, `sed`, `ls`, `cd`, `cat`, `less` etc. Additionally to
+the classic tools, modern alternatives exist which provides a contemporary user
+experience. Below you can find my favorite tools which have the biggest impact
+on my daily workflow:
 
 - [fzf](https://github.com/junegunn/fzf), an interactive shell command history
   search tool on steroids, it completely changed the way how I use the shell
@@ -228,7 +227,7 @@ the biggest impact on my daily workflow:
 - [bat](https://github.com/sharkdp/bat), a `cat` alternative with syntax
   highlighting and pager features
 - [zoxide](https://github.com/ajeetdsouza/zoxide), a smarter way to change
-  directories, _zoxide_ remembers nested paths and makes directory switching a
+  directories, _zoxide_ remembers nested paths and makes switching directories a
   breeze
 
 - [tmux](https://github.com/tmux/tmux/wiki) or
@@ -303,7 +302,8 @@ find . -iname "*.rs" | xargs sed -i "" "s/mod/foobar/g"
 
 ### Your Editor, choose wisely
 
-Fist of all, I don't want to trigger another _editor war_. Everyone can use the
+Fist of all, I don't want to trigger another
+[_editor war_](https://en.wikipedia.org/wiki/Editor_war). Everyone can use the
 editor she prefers and makes her most productive.
 
 Nevertheless, one's editor is the main workhorse for developers who spend many
@@ -371,12 +371,12 @@ hidden = false
 
 ### GNU Stow
 
-The shell configuration is finalized. Although we are done, we have now a lot of
-dotfiles lying around in the `$HOME` directory. A good way to manage them would
-be `git`. Unluckily, we cannot put our full `$HOME` directory in a git
-repository. Here [GNU Stow](https://www.gnu.org/software/stow/) comes into play.
-_GNU Stow_ uses symbolic links to manage a group of dotfiles inside a single
-folder. This is exactly what we want. Let's go through a simple example:
+Although we are done with the shell configuration, we have now a lot of dotfiles
+lying around in the `$HOME` directory. A good way to manage them would be `git`.
+Unluckily, we cannot put our `$HOME` directory in a git repository. Here
+[GNU Stow](https://www.gnu.org/software/stow/) comes into play. _GNU Stow_ uses
+symbolic links to manage a group of dotfiles inside a single folder. This is
+exactly what we want. Let's go through a simple example:
 
 ```bash
 # create dotfiles folder somewhere
@@ -402,7 +402,8 @@ stow --verbose --target=$HOME git
 stow --verbose --target=$HOME --delete git
 ```
 
-If you want to go into a more detailed example, there is a great
+If you want to learn how to symlink whole nested directory structures or just
+dive deeper, you can look into this great
 [step-by-step guide](https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html).
 
 ### Conclusion
@@ -413,3 +414,7 @@ process is never ending, you can always squeeze out more and optimize your
 environment. I hope this article gave you some valuable insights and ideas how
 to improve your productivity. And maybe you open your IDE less often
 :upside_down:
+
+### References
+
+[The Unix Programming Environment](https://www.cs.princeton.edu/~bwk/upe/upe.html)
