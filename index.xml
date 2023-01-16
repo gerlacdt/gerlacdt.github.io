@@ -5,7 +5,16 @@
     <link>https://gerlacdt.github.io/</link>
     <description>Recent content on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 04 Nov 2022 10:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Jan 2023 11:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Effective CLI (more productive than an IDE!)</title>
+      <link>https://gerlacdt.github.io/posts/effective-cli/</link>
+      <pubDate>Mon, 16 Jan 2023 11:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/effective-cli/</guid>
+      <description>TL;DR  Modern Terminal with nice (Nerd) Fonts ZSH oh-my-zsh Modern Prompt with starship Modern CLI tools (fzf, ripgrep, bat, tmux, jq) Fast editor (Emacs, Neovim, Helix) Organize your dotfiles with GNU Stow  The Unix shell/Command-Line Interface (CLI) is an ancient tool. Despite being around forever, the shell is highly customizable and with a good configuration, it is on par with modern graphical IDEs. Because it is configurable, you can make it truly your own, thereby surpassing out-of-the-box experience of IDEs.</description>
+    </item>
+    
     <item>
       <title>Best Books For The Inquisitive Software Engineer</title>
       <link>https://gerlacdt.github.io/posts/programming-books/</link>
@@ -229,9 +238,9 @@ The following command searches for main in all *.go files in the current directo
       <pubDate>Sun, 03 Mar 2019 11:01:35 +0100</pubDate>
       
       <guid>https://gerlacdt.github.io/about/</guid>
-      <description>About me My name is Daniel Gerlach. I work at Daimler Mobility AG.
+      <description>About me My name is Daniel Gerlach. I work at Mercedes-Benz-Mobility AG.
 I am a happy long-term Emacs user (almost 15 years now). At work i use different programming languages:
- Java Javascript Typescript python Go  I am interested in programming. I have a favour for lispy-languages like Common Lisp, Scheme or Clojure. Also i am a strong supporter of functional programming paradigms like immutability, reference transparency, pure functions, high-order functions, functions as first-class citizens and composition of functions.</description>
+ Java Javascript Typescript python Go Rust  I am interested in programming. I have a favour for lispy-languages like Common Lisp, Scheme or Clojure. Also i am a strong supporter of functional programming paradigms like immutability, reference transparency, pure functions, high-order functions, functions as first-class citizens and composition of functions.</description>
     </item>
     
   </channel>

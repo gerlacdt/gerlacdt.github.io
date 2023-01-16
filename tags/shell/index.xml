@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>shell on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/tags/shell/</link>
+    <description>Recent content in shell on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 16 Jan 2023 11:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Effective CLI (more productive than an IDE!)</title>
+      <link>https://gerlacdt.github.io/posts/effective-cli/</link>
+      <pubDate>Mon, 16 Jan 2023 11:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/effective-cli/</guid>
+      <description>TL;DR  Modern Terminal with nice (Nerd) Fonts ZSH oh-my-zsh Modern Prompt with starship Modern CLI tools (fzf, ripgrep, bat, tmux, jq) Fast editor (Emacs, Neovim, Helix) Organize your dotfiles with GNU Stow  The Unix shell/Command-Line Interface (CLI) is an ancient tool. Despite being around forever, the shell is highly customizable and with a good configuration, it is on par with modern graphical IDEs. Because it is configurable, you can make it truly your own, thereby surpassing out-of-the-box experience of IDEs.</description>
+    </item>
+    
+  </channel>
+</rss>
