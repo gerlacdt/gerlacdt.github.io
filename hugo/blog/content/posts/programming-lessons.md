@@ -1,6 +1,6 @@
 ---
-title: "Top 10 Programming Lessons"
-date: 2023-01-07T11:00:00+02:00
+title: "Top 10 Software Engineering Life Lessons"
+date: 2023-01-23T11:00:00+02:00
 tags: ["programming", "softwareengineering"]
 draft: true
 ---
@@ -16,9 +16,9 @@ draft: true
 1. Learn Lisp
 1. Master your tools
 1. Reduce complexity at any cost (Simplicity)
-1. Read books (expand you horizon but don't forget to practice)
+1. Read books (expand your horizon but don't forget to practice)
 1. Understand the problem domain
-1. Write good Tests (testing alone is not good enough)
+1. Write good Tests (testing alone is not enough)
 
 ### Introduction/Motivation
 
