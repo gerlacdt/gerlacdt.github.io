@@ -7,9 +7,8 @@ draft: true
 
 ## TL;DR
 
-1. Practice Practice Practice: You can't learn programming in 21 days
-1. Practice: Code reading skill / Read code / Code reading is as important of
-   even more important then code writing
+1. Write code
+1. Read Code
 1. Communication (processing textual information, writing/reading/communicate
    well)
 1. Learn concepts not technologies or tools
@@ -20,7 +19,7 @@ draft: true
 1. Understand the problem domain
 1. Write good Tests (testing alone is not enough)
 
-### Introduction/Motivation
+### Introduction
 
 I am always pondering what practices, tactics, behaviours or approaches make up
 a productive programmer. After 15+ years working as a software engineer, in
@@ -28,38 +27,45 @@ small and big teams, with waterfall or agile processes and after writing
 thousands of lines of code, this article is my condensed treatment of what is
 the best advice for being more effective and productive.
 
-## Practice: You can't learn programming in 21 days
+## Write Code
 
-Teach yourself programming in ten years http://norvig.com/21-days.html
+The most important thing in order to excel in programming is to practice
+regularly and write a lot of code. I cannot emphasize this enough: _You need to
+write a lot of code_. One cannot learn programming by only reading books or blog
+posts.
 
-- be the best programmer in one project, Mentor other team members,
+Peter Norvig wrote a seminal article called
+[Teach yourself Programming in Ten Years](http://norvig.com/21-days.html) which
+is the perfect guide for your journey becoming a professional programmer.
+According to Norvig, learning to program is a marathon. To master a craft, it
+takes roughly ten thousands hours of practice. Daily exercises and challenging
+project work is necessary to climb up to new heights and improve yourself.
 
-- be the worst programmer in another,Learn their best practices (see also The
-  Pragmatic Programmer or Code Complete). But also the _process_ how they get to
-  the solution
+Programming is a team sport. So the best way to learn is working on projects
+with other programmers. Thereby, be the best programmer in one project and
+mentor other team members. In another project, be the worst programmer and learn
+from your peers. Talk to other developers and study their practices. How do they
+approach problems, how to they structure their code, how do they think and which
+behaviours make them successful? Learn to work in different kind of projects,
+e.g. start a green-field project and design the system from scratch or maintain
+a big, legacy codebase. Different project types will demand from you a different
+skill sets. Also strive for direct feedback and be open for criticism from other
+developers.
 
-- work on projects with other programmers in a team
-- work on projects after other programmers. Like maintaining a legacy but
-  stilled used codebase. See code reading skills.
-- Talk with other programmers; read other programs. This is more important than
-  any book or training course.
-- Strive for fast Feedback loops (practice to proficiency), try and fail and
-  learn from mistakes gives the best learning experience, only reading books and
-  diving to long into theory will bring you not that far.
+> "The only way to learn a new programming language is by writing programs in
+> it." - Dennis Ritchie
 
-  > "The only way to learn a new programming language is by writing programs in
-  > it." - Dennis Ritchie
+> Computer science education cannot make anybody an expert programmer any more
+> than studying brushes and pigment can make somebody an expert painter. – Eric
+> S. Raymond
 
-  > Computer science education cannot make anybody an expert programmer any more
-  > than studying brushes and pigment can make somebody an expert painter. –
-  > Eric S. Raymond
+While producing new code is important, don't forget to read other peoples code,
+see next.
 
-According to Norvig (link) learning to program is a marathon. To master a craft
-it normally takes roughly ten thousands hours of practice. Daily exercises and
-challenging project work is necessary to climb up to new heights and improve
-yourself.
+## Read Code
 
-## Practice: Code reading skills
+Code reading skill / Read code / Code reading is as important of even more
+important then code writing
 
 https://blog.codinghorror.com/when-understanding-means-rewriting/ Reading code
 is one of the most underrated skill in programming. Working as programming means
