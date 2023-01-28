@@ -8,7 +8,8 @@ draft: false
 
 My name is **Daniel Gerlach**. I work at [Mercedes-Benz-Mobility AG](https://www.mercedes-benz-mobility.com/en/).
 
-I am a happy long-term [Emacs](https://www.gnu.org/software/emacs/) user (almost 15 years now). At work i use different programming languages:
+I am a happy long-term [Emacs](https://www.gnu.org/software/emacs/) user (almost
+15 years now). At work I use different programming languages:
 
 - [Java](https://openjdk.java.net/)
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -17,14 +18,14 @@ I am a happy long-term [Emacs](https://www.gnu.org/software/emacs/) user (almost
 - [Go](https://golang.org)
 - [Rust](https://www.rust-lang.org/)
 
-I am interested in programming. I have a favour for lispy-languages
+I am interested in programming and have a favour for lispy-languages
 like [Common Lisp](https://lisp-lang.org/),
 [Scheme](https://racket-lang.org/) or
-[Clojure](https://clojure.org/). Also i am a strong supporter of
+[Clojure](https://clojure.org/). Also I am a strong supporter of
 functional programming paradigms like immutability, reference
 transparency, pure functions, high-order functions, functions as
 first-class citizens and composition of functions. I think functional
-programming makes coding more fun and comprehensible. Nevertheless i
+programming makes coding more fun and comprehensible. Nevertheless I
 also like pragmatic programming languages like Go.
 
 Nowadays I also do a lot of cloud infrastructure engineering with

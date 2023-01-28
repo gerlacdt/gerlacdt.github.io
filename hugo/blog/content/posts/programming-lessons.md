@@ -9,12 +9,11 @@ draft: true
 
 1. Write code
 1. Read Code
-1. Communication (processing textual information, writing/reading/communicate
-   well)
+1. Communication
 1. Learn concepts not technologies or tools
 1. Learn Lisp
 1. Master your tools
-1. Reduce complexity at any cost (Simplicity)
+1. Control complexity (Simplicity)
 1. Read books (expand your horizon but don't forget to practice)
 1. Understand the problem domain
 1. Write good Tests (testing alone is not enough)
@@ -64,48 +63,85 @@ see next.
 
 ## Read Code
 
-Code reading skill / Read code / Code reading is as important of even more
-important then code writing
+Practicing code reading is as important as code writing. Maybe even more
+important because developers spent much more time on reading code than writing
+it,
+[see chart](https://blog.codinghorror.com/when-understanding-means-rewriting/):
 
-https://blog.codinghorror.com/when-understanding-means-rewriting/ Reading code
-is one of the most underrated skill in programming. Working as programming means
-50% reading time and only 20-30% writing code. Code-Reading skill is very
-important.
+<p align="center">
+    <img src="/img/code_reading.png" alt="code_reading" class="medium-zoom-image" width="400">
+</p>
 
-This means how fast you get familiar with a unknown codebase. What if there are
-not tests? What if there are only out-dated architecture diagrams and design
-docs? What if there are no docs at all? How do you approach such problems? How
-to collaborate with your team members in order to get going? Are you comfortable
-with code reviews or pair programming?
+Code Reading skills are crucial in order to get familiar with a new codebase, to
+do Code Reviews or just to understand the existing codebase to make a change.
 
-## (Written) Communication
+Besides that, code can be enjoyable and thrilling like a good book. Nowadays
+with Github and other Open-Source platforms, code is ubiquitously available. By
+reading it, you get in touch with pragmatic and idomatic code written by
+professionals. Hence you will automatically improve your own coding style.
+Example of good codebases are:
 
-The craft of programming begins with empathy, not formatting or languages or
-tools or algorithms or data structures.- Kent Beck
+- [Golang Stdlib](https://pkg.go.dev/std)
+- [Java Zookeeper](https://github.com/apache/zookeeper)
+- [Rust ripgrep](https://github.com/BurntSushi/ripgrep)
 
-Most projects fail not because of the technology or resources but because of
-failed communication in teams, across teams and because of wrongly communicated
-requirements or wrongly communicated expectations.
+If you have time to dip into your favorite library or framework, you will
+definitely gain some knowledge and aha moments . Reading the library code often
+can debunk its _magic_ and you can _connect the dots_. (thinking of
+[Spring Boot](https://github.com/spring-projects/spring-boot) and
+[RubyOnRails](https://github.com/rails/rails))
 
-Communications is the second underrated core skill of a good programmer.
+## Communication
 
-Empathy Mentoring Code reviews Pair programming (a lot of discipline required of
-both partners) Writing Design Docs Discussion about new ideas Convince other
-parties of your (better) solution/approach - but do not be stubborn you need to
-accept better solution too. Be a team player. If your team decides for one
-solution and you failed to convince the team. You still can disagree but you
-need to fully commit to the team's decision. Write crystal clear Jira tickets
-like requirements or PR comments in order to avoid confusion or double work
+> The craft of programming begins with empathy, not formatting or languages or
+> tools or algorithms or data structures.- Kent Beck
 
-Always be interested in the business case of your product. Pull the information
-from the Product Owner or Manager. With this background information you will be
-much more valuable as an engineer to the company. E.g. as an engineer you know
-what is possible and what not. So you can turn down "impossible" requirements
-immediately instead of wasting days or weeks only to come to the same
-conclusion. This goes the other way around to: As an engineer you know what is
-possible and you are able to be a highly valuable contributer for new ideas or
-requirements. Maybe with a new technology ideas can be implemented much easier
-or make requirements possible to implement.
+Most projects fail not because of the wrong technology or resources but because
+of failed communication inside and across teams. Wrongly communicated
+requirements, wrongly communicated expectations and missed alignments are
+frequent project killers.
+
+Since software engineering is a team sport, communication skills are critical.
+Two main types of communication exist: verbal and written communication. Both
+are equally important. Communication is day-to-day work and happens in all kinds
+of occasions:
+
+- Pair Programming, a good session requires a lot of discipline required of both
+  partners
+
+- Code review, good review comments always respect the author
+
+- Mentoring
+
+- Convincing other parties to use a (better) solution, be objective and not
+  biased for your _own solution_
+
+- Be a team player. If your team decides for one solution, you can disagree but
+  you must commit to the team's decision and bit the bullet (but try hard fist)
+
+- Writing Design Docs
+
+- Writing crystal clear requirements or Pull Request comments in order to avoid
+  confusion and double work
+
+Not only, we need skills for creating content but also for consuming content.
+Today, all of us get swamped with information via Emails or Slack messages.
+Highly efficient developers process textual information quickly, organize the
+information in an easily accessible way and are able to filter the important
+facts. It can be advantage to invest some time into
+[_speed reading_](https://en.wikipedia.org/wiki/Speed_reading) or other
+techniques which let you consume content faster.
+
+Maybe you think now of counter examples like Linus Torvalds (creator of Linux)
+or Guido van Rossum (creator of Python). Either of them pulled off their project
+almost alone but this is only true for the inception of their respective
+projects. On the long-run they created an highly active and vivid community
+which basically was the result of their great communication skills. Guido is
+know as the _benevolent dictator_, Linus is famous for his harsh but direct
+comments in the Linux Community and his ruthless clean code obsession. One major
+part of their success was their unique communication style. For Linus' C code in
+the early Linux Kernel spoke for itself and attracted a lot of passionate
+developers.
 
 ## Learn concepts not technologies or tools
 
@@ -130,9 +166,6 @@ or make requirements possible to implement.
 
 In order to gain a full understanding of these concepts, sure you spend some
 efforts to learn an appropriate technology.
-
-“The only way to learn a new programming language is by writing programs in it.”
-Dennis Ritchie, inventor of the C programming language
 
 ## Learn Lisp (even if you do not use at your daily work)
 
@@ -208,17 +241,19 @@ They are composable and you get things done very fast
 learn fast touch typing. Muscle Memory ensures you can focus on the problem
 instead of wasting brain power for typing correctly etc.
 
-## Reduce complexity at any cost -> drive for simplicity always
+## Control complexity
 
-The purpose of software engineering is to control complexity, not to create
-it. - Pamela Zave
+> Controlling complexity is the essence of computer programming, Software Tools
+> (1976), p. 319 (Brian Kernighan, P. J. Plauger).
 
-A Philosophy of Software design, John Ousterhout Big Ball of Mud
-http://www.laputan.org/mud/mud.html#BigBallOfMud Out of the tar pit, Moseley &
-Marks 2006 https://blog.acolyer.org/2015/03/20/out-of-the-tar-pit/
+> The purpose of software engineering is to control complexity, not to create
+> it. - Pamela Zave
 
-Controlling complexity is the essence of computer programming, Software Tools
-(1976), p. 319 (Brian Kernighan, P. J. Plauger).
+- A Philosophy of Software design, John Ousterhout
+- Big Ball of Mud http://www.laputan.org/mud/mud.html#BigBallOfMud
+- Out of the tar pit, Moseley & Marks 2006
+  https://blog.acolyer.org/2015/03/20/out-of-the-tar-pit/
+- A Plean for Lean Software (Wirth) https://cr.yp.to/bib/1995/wirth.pdf
 
 ## Read Books
 
@@ -292,6 +327,16 @@ Understand the problem/business domain your are working in. Being the best
 programmer in the team is not enough. You be most valuable if you can connect
 technology with the problem your trying to solve. Better understanding of the
 problem opens up complete new solution strategies.
+
+Always be interested in the business case of your product. Pull the information
+from the Product Owner or Manager. With this background information you will be
+much more valuable as an engineer to the company. E.g. as an engineer you know
+what is possible and what not. So you can turn down "impossible" requirements
+immediately instead of wasting days or weeks only to come to the same
+conclusion. This goes the other way around to: As an engineer you know what is
+possible and you are able to be a highly valuable contributer for new ideas or
+requirements. Maybe with a new technology ideas can be implemented much easier
+or make requirements possible to implement.
 
 ## Write good Tests
 
