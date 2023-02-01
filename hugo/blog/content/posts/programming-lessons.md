@@ -10,13 +10,13 @@ draft: true
 1. Write code
 1. Read Code
 1. Communication
-1. Learn concepts not technologies or tools
+1. Learn concepts, not technologies
 1. Learn Lisp
 1. Master your tools
 1. Control complexity (Simplicity)
 1. Read books (expand your horizon but don't forget to practice)
 1. Understand the problem domain
-1. Write good Tests (testing alone is not enough)
+1. Write \*good\* Tests (testing alone is not enough)
 
 ### Introduction
 
@@ -65,8 +65,7 @@ see next.
 
 Practicing code reading is as important as code writing. Maybe even more
 important because developers spent much more time on reading code than writing
-it,
-[see chart](https://blog.codinghorror.com/when-understanding-means-rewriting/):
+it, [see](https://blog.codinghorror.com/when-understanding-means-rewriting/):
 
 <p align="center">
     <img src="/img/code_reading.png" alt="code_reading" class="medium-zoom-image" width="400">
@@ -123,6 +122,11 @@ of occasions:
 
 - Writing crystal clear requirements or Pull Request comments in order to avoid
   confusion and double work
+
+Written communication is particularly important, famous companies like
+[Amazon](https://www.mad.co/insights/the-mad-six-pager) and
+[Hashicorp](https://works.hashicorp.com/articles/writing-practices-and-culture)
+have a established a writing culture which is a major pillar of their success.
 
 Not only, we need skills for creating content but also for consuming content.
 Today, all of us get swamped with information via Emails or Slack messages.
@@ -338,7 +342,7 @@ possible and you are able to be a highly valuable contributer for new ideas or
 requirements. Maybe with a new technology ideas can be implemented much easier
 or make requirements possible to implement.
 
-## Write good Tests
+## Write \*good\* Tests
 
 In software projects, tests of any kind like unit, integration, system tests are
 now common practice. They are now a a basic building block like version control
