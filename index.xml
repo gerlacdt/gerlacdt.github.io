@@ -130,7 +130,7 @@ Testing on the Toilet   Tests Too DRY? Make Them DAMP!
       <pubDate>Mon, 04 May 2020 08:08:00 +0200</pubDate>
       
       <guid>https://gerlacdt.github.io/posts/unit-testing/</guid>
-      <description>TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be isolated Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&amp;rsquo;s Programmer Test Principles Microsoft&amp;rsquo;s Best Practices for Unit testing    Why good unit tests are important TDD and test engineering culture is considered best practice these days.</description>
+      <description>TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be isolated Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&amp;rsquo;s Programmer Test Principles Microsoft&amp;rsquo;s Best Practices for Unit testing All Your Tests are Terrible TDD, Where Did It All Go Wrong (Ian Cooper)    Why good unit tests are important TDD and test engineering culture is considered best practice these days.</description>
     </item>
     
     <item>
@@ -239,8 +239,8 @@ The following command searches for main in all *.go files in the current directo
       
       <guid>https://gerlacdt.github.io/about/</guid>
       <description>About me My name is Daniel Gerlach. I work at Mercedes-Benz-Mobility AG.
-I am a happy long-term Emacs user (almost 15 years now). At work i use different programming languages:
- Java Javascript Typescript python Go Rust  I am interested in programming. I have a favour for lispy-languages like Common Lisp, Scheme or Clojure. Also i am a strong supporter of functional programming paradigms like immutability, reference transparency, pure functions, high-order functions, functions as first-class citizens and composition of functions.</description>
+I am a happy long-term Emacs user (almost 15 years now). At work I use different programming languages:
+ Java Javascript Typescript python Go Rust  I am interested in programming and have a favour for lispy-languages like Common Lisp, Scheme or Clojure. Also I am a strong supporter of functional programming paradigms like immutability, reference transparency, pure functions, high-order functions, functions as first-class citizens and composition of functions.</description>
     </item>
     
   </channel>
