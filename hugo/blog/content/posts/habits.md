@@ -99,7 +99,7 @@ because of failed communication inside and across teams. Wrongly communicated
 requirements, wrongly communicated expectations and missed alignments are
 frequent project killers.
 
-Since software engineering is a team sport. For that reasion verbal and written
+Since software engineering is a team sport. For that reason verbal and written
 communication skills are critical. Communication is daily business and happens
 in all kinds of occasions:
 
@@ -187,7 +187,7 @@ Lisp empowers you to learn the most important concepts in computer programming
 with a single programming language. For example, Lisp supports _procedural,
 functional and object-oriented programming_. You learn _recursion_ and get in
 touch with the power of _interactive programming with a REPL (Read-eval-print
-loop)_. Further Lisp offers the most powerful _meta-programming_ experience with
+loop)_. Further Lisp offers the most terrific _meta-programming_ experience with
 its macro-system enabled by _homoiconicity with S-expressions_. Homoiconicity
 means that Lisp code is constructed of Lisp data-structures. Hence you are able
 to manipulate Lisp code via Lisp code. A mind-bending experience, if you only
@@ -376,8 +376,7 @@ previous articles.
 _A Mind For Numbers_ [[11]](https://barbaraoakley.com/books/a-mind-for-numbers/)
 is my all-time favorite book about the most important concept itself:
 **learning**. It will change how you approach new material. By working your way
-through it, you will become a more powerful and motivated learner. An
-accompanying
+through it, you will become a more potent and motivated learner. An accompanying
 [Coursera course](https://www.coursera.org/learn/learning-how-to-learn) is
 freely available. Learning is a lifelong undertaking and every engineer should
 embrace that.
@@ -393,40 +392,43 @@ as an engineer if you are able to connect technology with the business problem
 your trying to solve. A comprehensive view over the problem scope generally
 reveals completely different solution strategies.
 
-Be interested in the business itself and related areas like marketing, sales,
-product design etc. Pull the information from the product owner or manager. With
-the background information you will be much more valuable for the company. For
-example, as an engineer you know what is possible and what not, so you can turn
-down "impossible" requirements immediately instead of wasting days or weeks only
-to come to the same conclusion. This goes the other way around to: As an
-engineer you know what is technologically possible, this enables you to
-contribute innovate ideas nobody else is able to.
+Be excited about the business itself and related areas like marketing, sales,
+product design etc. Try to speak the same language like the people in different
+departments instead of bothering them with tech-jargon. It's not coincidence
+that an _ubiquitous language_ is one of the most influential concepts from
+Domain Driven Design [(DDD)](https://www.domainlanguage.com/ddd/blue-book/).
+
+With the newly acquired background information you will be much more valuable
+for your organization. For example, as an engineer you know what is possible and
+what not, so you can turn down "impossible" requirements immediately instead of
+wasting days or weeks only to come to the same conclusion. Vice versa, as an
+engineer you know what is technologically feasible thus you can contribute to
+breakthrough ideas nobody else is able to.
 
 ## Learn to write good tests
 
 In modern software engineering automatic testing is now common practice like
-version control or continuous integration.
+version control or continuous integration. Unfortunately, just writing tests for
+the sake of testing is not enough. Writing good tests is a delicate endeavour
+and more often than not, typical test suites turn out to be flaky, brittle and
+unmaintainable. In these situations, code changes break many tests which leads
+to high maintenance effort. As a final resolution, teams do not refactor anymore
+or just abandon tests completely! In contrast, good tests should enable and
+encourage refactoring. We know already that refactoring is inevitable in order
+to control complexity and to prevent a big ball of mud.
 
-Unfortunately, just writing tests for the sake of testing is not enough. Writing
-good tests is a delicate endeavour and more often than not, typical test suites
-turn out to be flaky, brittle and unmaintainable. In these situations, code
-changes break many tests which leads to high maintenance effort. As a final
-resolution, teams do not refactor anymore or just abandon tests completely! In
-contrast, good tests should enable and encourage refactoring. We know already
-that refactoring is inevitable in order to control complexity.
-
-Brittle tests are caused by coupling the tests with the production code. This
-violates the main principles of good software design: _information hiding_ and
-_decoupling_. Particularly, this is the fault of overusing mocks. Mocking
-frameworks are affluently available in all programming languages and very easy
-to integrate. But what most of the people do not know: **mocks couple tests with
-the implementation and make refactorings impossible**
+Brittle tests are caused by coupling the tests with the _system under test_
+(SUT). This violates the main principles of good software design: _information
+hiding_ and _decoupling_. Particularly, this is the fault of overusing mocks.
+Mocking frameworks are affluently available in all programming languages and
+very easy to integrate. But what most of the people do not know: **mocks couple
+tests with the SUT implementation and make refactorings impossible**
 [[12]](https://abseil.io/resources/swe-book). Worse yet, mocks require a lot of
-setup code within tests themselves. That pollutes the tests and makes them hard
-to read. Instead of mocks you should use _Fakes_
+setup code within tests themselves which pollutes them and makes them hard to
+read. Instead of mocks you should use _Fakes_
 [[13]](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs)
-whenever possible. By using fakes, the _class under test_ implementation will
-not be exposed. Thus tests remain decoupled and refactorings possible.
+whenever possible. By using fakes, the SUT implementation will not be exposed.
+Tests remain decoupled and refactorings possible.
 
 The corner pillars of good software design [[14]](https://www.poodr.com/) also
 apply to tests: Decoupling, achieved by information hiding, encapsulation and
@@ -437,9 +439,9 @@ codebase.
 
 You made it! I hope you can relate to my selection of the most effective
 engineering habits. It is a long list, but if you only have one take-away, the
-most important point is: **practice regularly**. Programming and, learning in
-general, is a marathon not a sprint. You will improve by continuous exercising
-over years.
+most important point is: **practice regularly**. Programming, and learning in
+general, is a marathon not a sprint. You will merely improve by continuous
+exercising.
 
 ### References
 
