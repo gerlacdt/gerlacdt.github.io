@@ -21,10 +21,10 @@ draft: true
 ### Introduction
 
 I am always pondering what practices, tactics, behaviours and approaches make up
-the most successful software engineers. After almost 20 years working in the
-industry, in small and big teams, with waterfall and agile processes, and after
-thousands of written lines of code, I will present here an opinionated way of
-how to become an effective engineer.
+the most successful software engineers. After 15 years working in the industry,
+in small and big teams, with waterfall and agile processes, and after thousands
+of written lines of code, I will present here an opinionated way of how to
+become an effective engineer.
 
 ## Write Code
 
@@ -235,17 +235,15 @@ engineer must be proficient with his tools. The most prominent developer tools
 are the operating system (OS), the programming environment composed of an
 IDE/editor, a compiler, a build system, a version control system and the
 programming language itself. Even an Internet browser and "knowing how to
-google" is also part of well rounded toolset. Some examples which should be
-no-brainers on your daily workflow:
+google" are parts of a well rounded toolset. Some example no-brainer tasks:
 
 - search-and-replace in files
 - navigate fast through a codebase
 - branching, merging, resolving conflicts with a version control system
 - building and testing your code
 - writing idiomatic code in your favorite programming language
-- understanding of compiler error-stacktraces
-- managing your files and directories in your favorite OS
-- administrating your personal computer
+- understanding compiler error-stacktraces
+- administrating your local machine with our favorite OS
 - googling a programming question
 
 Software tools are important for an apt programmer, but he should also be
@@ -261,9 +259,9 @@ you adapt. Nevertheless I recommend to invest your efforts in perpetuating tools
 such as the terminal or classic editors like Vim and Emacs. These tools exist
 since the "dawn" of computing and probably will be supported forever. Even if
 they died, modern tools would build upon their legacy and your learning efforts
-would not be wasted, for example Vim keybindings are now supported by most of
+would not be wasted. For instance, Vim keybindings are now supported by most of
 the popular IDEs. Learning such everlasting tools will prevent you from
-troublesome and time-consuming tool switching.
+time-consuming tool switching.
 
 ## Control complexity
 
@@ -325,7 +323,7 @@ necessary to implement a feature. All these symptoms are caused by _uncontrolled
 code dependencies_ and _obscure code_. Simplicity is the opposite: good
 modularization restricts information sharing with information hiding and
 encapsulation, **obvious** code is easy to comprehend. Alas, most projects
-unintentionally end up as a _big ball of mud_
+accidentally end up as a _big ball of mud_
 [[7]](http://www.laputan.org/mud/mud.html#BigBallOfMud). A result of reckless
 information sharing between dependencies and hard to understand, obscure code.
 
