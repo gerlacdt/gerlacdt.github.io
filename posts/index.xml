@@ -5,7 +5,16 @@
     <link>https://gerlacdt.github.io/posts/</link>
     <description>Recent content in Posts on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 16 Jan 2023 11:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Apr 2023 11:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Top 10 Practices Of Effective Software Engineers</title>
+      <link>https://gerlacdt.github.io/posts/habits/</link>
+      <pubDate>Tue, 11 Apr 2023 11:00:00 +0200</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/habits/</guid>
+      <description>TL;DR  Write code Read Code (Written) Communication Learn concepts &amp;ndash; not technologies Learn Lisp Master your tools Control complexity (Simplicity) Read books (but don&amp;rsquo;t forget to practice) Understand the problem domain Learn to write good tests (or how to design well and write decoupled code)  Introduction I am always pondering what practices, tactics, behaviours and approaches make up the most successful software engineers. After 15 years working in the industry, in small and big teams, with waterfall and agile processes, and after thousands of written lines of code, I present here an opinionated way of how to become an effective engineer.</description>
+    </item>
+    
     <item>
       <title>Effective CLI (more productive than an IDE!)</title>
       <link>https://gerlacdt.github.io/posts/effective-cli/</link>

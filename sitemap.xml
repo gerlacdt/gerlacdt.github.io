@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gerlacdt.github.io/</loc>
-    <lastmod>2023-01-16T11:00:00+02:00</lastmod>
+    <lastmod>2023-04-11T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/posts/</loc>
+    <lastmod>2023-04-11T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/tags/programming/</loc>
+    <lastmod>2023-04-11T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/tags/softwareengineering/</loc>
+    <lastmod>2023-04-11T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/tags/</loc>
+    <lastmod>2023-04-11T11:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/posts/habits/</loc>
+    <lastmod>2023-04-11T11:00:00+02:00</lastmod>
   </url><url>
     <loc>https://gerlacdt.github.io/posts/effective-cli/</loc>
     <lastmod>2023-01-16T11:00:00+02:00</lastmod>
@@ -11,19 +26,7 @@
     <loc>https://gerlacdt.github.io/tags/linux/</loc>
     <lastmod>2023-01-16T11:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/</loc>
-    <lastmod>2023-01-16T11:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/tags/programming/</loc>
-    <lastmod>2023-01-16T11:00:00+02:00</lastmod>
-  </url><url>
     <loc>https://gerlacdt.github.io/tags/shell/</loc>
-    <lastmod>2023-01-16T11:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/tags/softwareengineering/</loc>
-    <lastmod>2023-01-16T11:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/tags/</loc>
     <lastmod>2023-01-16T11:00:00+02:00</lastmod>
   </url><url>
     <loc>https://gerlacdt.github.io/posts/programming-books/</loc>
