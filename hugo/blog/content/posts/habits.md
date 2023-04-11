@@ -23,8 +23,8 @@ draft: true
 I am always pondering what practices, tactics, behaviours and approaches make up
 the most successful software engineers. After 15 years working in the industry,
 in small and big teams, with waterfall and agile processes, and after thousands
-of written lines of code, I will present here an opinionated way of how to
-become an effective engineer.
+of written lines of code, I present here an opinionated way of how to become an
+effective engineer.
 
 ## Write Code
 
@@ -36,7 +36,7 @@ Peter Norvig's seminal article _Teach yourself Programming in Ten Years_
 [[1]](http://norvig.com/21-days.html) is the perfect guide for your journey to
 become a well-versed programmer. According to Norvig, learning to program is a
 marathon. To master a craft, it takes roughly ten thousands hours of practice.
-Daily exercises and challenging projects are necessary to improve oneself.
+Daily exercises and challenging projects are mandatory to progress.
 
 Programming is a team sport. Consequently the best way to learn is working on
 projects with other programmers. Thereby, be the best programmer in one project
@@ -87,7 +87,7 @@ If you have time to dip into your favorite library or framework, you will
 definitely gain some knowledge and aha moments . Reading the library code can
 debunk its _magic_ and you can connect the dots. (thinking of
 [Spring Boot](https://github.com/spring-projects/spring-boot) and
-[RubyOnRails](https://github.com/rails/rails))
+[Ruby On Rails](https://github.com/rails/rails))
 
 ## (Written) Communication
 
@@ -126,20 +126,20 @@ have an established writing culture which play a major role in their success
 stories.
 
 Not only, we need skills for creating content but also for consuming content.
-Today, all of us get swamped with information via Emails or Slack messages.
-Highly efficient developers process textual information quickly, organize the
-information in an accessible way and are able to filter the important facts. It
-is beneficial to invest some time into
+Today, all of us get swamped with information via Emails, Slack messages, code
+review requests etc. Highly efficient developers process textual information
+quickly, organize the information in an accessible way and are able to filter
+the important facts. It is beneficial to invest some time into
 [_speed reading_](https://en.wikipedia.org/wiki/Speed_reading) or other
 techniques which let you consume content faster.
 
 Maybe you think now of counter examples like Linus Torvalds (creator of Linux)
 or Guido van Rossum (creator of Python). Either of them pulled off his
-respective project almost alone but this is only true for the inception phase.
-On the long-run they created an highly active and vivid community which
-basically was the result of their great communication skills. Guido is known as
-the _benevolent dictator_, Linus is famous for his harsh but direct comments in
-the Linux Community and his ruthless clean code obsession.
+respective project almost alone. But this is only true for the inception phase.
+On the long-run they created highly active and vivid communities which basically
+were the result of their great communication skills. Guido is known as the
+_benevolent dictator_, Linus is famous for his harsh but direct comments in the
+Linux Community and his ruthless clean code obsession.
 
 ## Learn concepts -- not technologies
 
@@ -149,11 +149,11 @@ never keep up with everything - and it also make no sense. On the contrary, it
 is very valuable to put in an effort to master the concepts behind technologies.
 **By understanding the foundational concepts, you grasp the problems more
 thoroughly and hence it enables you to learn related technologies much faster**.
-Without a good understanding of the primary concepts, one cannot utilize
+Without a deeper understanding of the primary concepts, one cannot utilize
 corresponding technologies adequately. A good example is Node.js, I encountered
-a lot of codebases where it was clear that _async programming_ and the _Event
-Loop_ were misunderstood because CPU-intensive tasks were executed inside the
-single main-thread which led to blocked requests and service outages.
+codebases where it was clear that concepts like _async programming_ and the
+_Event Loop_ were misunderstood because CPU-intensive tasks were executed inside
+the single main-thread which led to blocked requests and service outages.
 
 _Software Engineering_ concepts are timeless and can be applied to a certain
 extent in any programming language. _Functional programming_ is my favorite
@@ -183,8 +183,8 @@ _Lisp_ is a perfect candidate :smiling_face_with_hearts:
 >
 > **Eric Steven Raymond** [[3]](http://www.catb.org/~esr/faqs/hacker-howto.html)
 
-Lisp empowers you to learn the most important concepts in computer programming
-with a single programming language. For example, Lisp supports _procedural,
+Lisp empowers you to learn the most important programming language concepts with
+a single programming language. For example, Lisp supports _procedural,
 functional and object-oriented programming_. You learn _recursion_ and get in
 touch with the power of _interactive programming with a REPL (Read-eval-print
 loop)_. Further Lisp offers the most terrific _meta-programming_ experience with
@@ -194,10 +194,10 @@ to manipulate Lisp code via Lisp code. A mind-bending experience, if you only
 programmed in Java or C# all along. With this power at your fingertips, you can
 implement your own _OOP system_ with objects, classes, inheritance and
 information hiding in a few hundred lines of Lisp code. For traditional
-programming languages like C, adding Object Orientation was an enormous PhD task
-which took multiple years (remember C++). In Lisp it is an undergrad assignment
-which takes a few days! :exploding_head: Implementing concepts yourself is the
-best way to learn them, that is where Lisp really shines.
+programming languages like C, adding OOP was an enormous PhD task which took
+multiple years (remember C++). In Lisp it is an undergrad assignment which takes
+a few days! :exploding_head: Implementing concepts yourself is the best way to
+learn them, that is where Lisp really shines.
 
 > _What I cannot build. I do not understand._ - **Richard Feynman**
 
@@ -218,7 +218,7 @@ implement an OOP system, a package manager or a unit test library led to
 hundreds of implementations whereby none of them established a standard. Lisp
 focuses on the highest productivity for an individual. Modern _engineering
 languages like Go or Rust_ are optimized for team productivity and put their
-focus on less abstractions but maintainability.
+focus on less abstractions but more maintainability.
 
 Last but not least, two of the best programming books use Lisp: _Structure and
 Interpretation of Computer Programs_
@@ -235,12 +235,13 @@ engineer must be proficient with his tools. The most prominent developer tools
 are the operating system (OS), the programming environment composed of an
 IDE/editor, a compiler, a build system, a version control system and the
 programming language itself. Even an Internet browser and "knowing how to
-google" are parts of a well rounded toolset. Some example no-brainer tasks:
+google" are parts of a well rounded toolset. The following tasks should be
+no-brainers for most experienced developers:
 
 - search-and-replace in files
 - navigate fast through a codebase
 - branching, merging, resolving conflicts with a version control system
-- building and testing your code
+- building project with automatic tests
 - writing idiomatic code in your favorite programming language
 - understanding compiler error-stacktraces
 - administrating your local machine with our favorite OS
@@ -253,7 +254,7 @@ detect typos faster on the screen which will lead to a faster feedback loop.
 Muscle Memory ensures you can focus on the problem instead of wasting brain
 power for typing.
 
-Mastering all these tools is vital for becoming productive. Thereby it is not
+Mastering all these tools is vital to become more productive. Thereby it is not
 relevant which specific OS (Linux, Windows) or editor (Emacs, Vim, or an IDE)
 you adapt. Nevertheless I recommend to invest your efforts in perpetuating tools
 such as the terminal or classic editors like Vim and Emacs. These tools exist
@@ -265,9 +266,9 @@ time-consuming tool switching.
 
 ## Control complexity
 
-A software engineer must always strive for **simplicity**. Continuously managing
-and controlling complexity is the only way to keep ever-growing projects
-maintainable. It is a crucial aspect of our craft:
+A great software engineer must always strive for **simplicity**. Continuously
+managing and controlling complexity is the only way to keep ever-growing
+projects maintainable. It is a crucial aspect of our craft:
 
 > _Controlling complexity is the essence of computer programming._
 >
@@ -335,10 +336,10 @@ Other causes of complexity are any form of **state**
 [[8]](https://curtclifton.net/papers/MoseleyMarks06a.pdf) and feature bloat.
 _Stateless Design_ is so desirable and successful because it is much easier to
 reason about, e.g. stateless microservices or stateless network protocols like
-HTTP. Feature bloat has two main reasons. First, product management forces tech
-teams to implement useless features [[9]](https://cr.yp.to/bib/1995/wirth.pdf)
-which is usually the consequence of roadmap- or output-driven development. And
-second, _gold-plating_ developers who implement potential, artificial
+HTTP. Feature bloat is often induced by product management which forces tech
+teams to implement useless features [[9]](https://cr.yp.to/bib/1995/wirth.pdf).
+That is usually the consequence of roadmap-driven development. Another source of
+feature bloat are _gold-plating_ developers who implement potential, artificial
 requirements which do not exist yet or over-engineer their design with too
 flexible and complicated abstractions.
 
@@ -400,20 +401,20 @@ With the newly acquired background information you will be much more valuable
 for your organization. For example, as an engineer you know what is possible and
 what not, so you can turn down "impossible" requirements immediately instead of
 wasting days or weeks only to come to the same conclusion. Vice versa, as an
-engineer you know what is technologically feasible thus you can contribute to
+engineer you know what is technologically feasible thus you can contribute
 breakthrough ideas nobody else is able to.
 
 ## Learn to write good tests
 
-In modern software engineering automatic testing is now common practice like
-version control or continuous integration. Unfortunately, just writing tests for
-the sake of testing is not enough. Writing good tests is a delicate endeavour
-and more often than not, typical test suites turn out to be flaky, brittle and
-unmaintainable. In these situations, code changes break many tests which leads
-to high maintenance effort. As a final resolution, teams do not refactor anymore
-or just abandon tests completely! In contrast, good tests should enable and
-encourage refactoring. We know already that refactoring is inevitable in order
-to control complexity and to prevent a big ball of mud.
+In modern software engineering automatic testing is now common practice.
+Unfortunately, just writing tests for the sake of testing is not enough. Writing
+good tests is a delicate venture and more often than not, typical test suites
+turn out to be flaky, brittle and unmaintainable. In these situations, code
+changes break many tests which leads to high maintenance effort. As a final
+resolution, teams do not refactor anymore or just abandon tests completely! In
+contrast, good tests should enable and encourage refactoring. We know already
+that refactoring is inevitable in order to control complexity and to prevent a
+big ball of mud.
 
 Brittle tests are caused by coupling the tests with the _system under test_
 (SUT). This violates the main principles of good software design: _information
@@ -422,11 +423,19 @@ Mocking frameworks are affluently available in all programming languages and
 very easy to integrate. But what most of the people do not know: **mocks couple
 tests with the SUT implementation and make refactorings impossible**
 [[12]](https://abseil.io/resources/swe-book). Worse yet, mocks require a lot of
-setup code within tests themselves which pollutes them and makes them hard to
-read. Instead of mocks you should use _Fakes_
+setup code that pollutes tests and makes them hard to read. Instead of mocks you
+should use _Fakes_
 [[13]](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs)
 whenever possible. By using fakes, the SUT implementation will not be exposed.
 Tests remain decoupled and refactorings possible.
+
+<p align="center">
+    <img src="/img/tests-diagram.png" alt="tests-diagram" class="medium-zoom-image" width="800">
+</p>
+
+<p align="center">
+    <img src="/img/test-cycle.png" alt="tests-cycle" class="medium-zoom-image" width="800">
+</p>
 
 The corner pillars of good software design [[14]](https://www.poodr.com/) also
 apply to tests: Decoupling, achieved by information hiding, encapsulation and
@@ -438,7 +447,7 @@ codebase.
 You made it! I hope you can relate to my selection of the most effective
 engineering habits. It is a long list, but if you only have one take-away, the
 most important point is: **practice regularly**. Programming, and learning in
-general, is a marathon not a sprint. You will merely improve by continuous
+general, is a marathon not a sprint. You will solely improve by continuous
 exercising.
 
 ### References
