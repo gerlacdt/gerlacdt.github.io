@@ -1,8 +1,8 @@
 ---
 title: "Top 10 Practices Of Effective Software Engineers"
-date: 2023-04-07T11:00:00+02:00
+date: 2023-04-11T11:00:00+02:00
 tags: ["programming", "softwareengineering"]
-draft: true
+draft: false
 ---
 
 ## TL;DR
