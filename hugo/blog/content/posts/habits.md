@@ -16,7 +16,7 @@ draft: false
 1. [Control complexity (Simplicity)](#control-complexity)
 1. [Read books (but don't forget to practice)](#read-books)
 1. [Understand the problem domain](#understand-the-problem-domain)
-1. [Learn to write good tests (or how to design well and write decoupled code)](#learn-to-write-good-tests-or-how-to-design-well-and-write-decoupled-code)
+1. [Learn to write good tests (or how to design well and write decoupled code)](#learn-to-write-good-tests)
 
 ### Introduction
 
