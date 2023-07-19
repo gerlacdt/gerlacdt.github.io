@@ -1,8 +1,8 @@
 ---
 title: "DDD and SOLID: A refactoring story"
-date: 2023-07-01T08:00:00+01:00
+date: 2023-07-19T08:00:00+01:00
 tags: ["programming", "softwareengineering", "ddd", "solid"]
-draft: true
+draft: false
 ---
 
 ## TL;DR
