@@ -102,9 +102,9 @@ methods even if only one is needed.
 #### Cohesion and Coupling
 
 The SOLID violations above lead to low cohesion and high coupling. As a result,
-simple changes will ripple through the whole codebase and the code is hard to
-maintain. Changes are also error-prone because we have to modify and touch
-always the existing code. In the next paragraphs, we refactor the `OrderService`
+simple changes will ripple through the whole codebase and are also error-prone
+because we have to modify and touch existing code. This leads to high
+maintenance effort. In the next paragraphs, we refactor the `OrderService`
 step-by-step and fix the above issues.
 
 ## Refactorings
@@ -127,7 +127,7 @@ Thus the code is easier to understand. Don't confuse it with the similar
 sounding architecture pattern
 [CQRS](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs).
 
-We can now restructure the `OrderService` into two classes:
+The restructured `OrderService` will be split up into two classes:
 
 <p align="center">
     <img src="/img/command-query-separation.png" alt="command-query-separation" class="medium-zoom-image" width="800">
@@ -146,10 +146,10 @@ To fix the SRP and ISP violations, we extract every single method of the
 Use-Cases are a concept from
 [Clean-](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 and [Hexagonal Architecture](https://reflectoring.io/spring-hexagonal/). Maybe
-it sounds drastic and over-engineered but for an ever-growing enterprise
-application it will soon pay off. The new consistent structure makes it obvious
-for developers where to add new functionality, keeps the code extensible and
-testable, and prevents god classes.
+it sounds over-engineered but for an ever-growing enterprise application it will
+soon pay off. The new consistent structure makes it obvious for developers where
+to add new functionality, keeps the code extensible and testable, and prevents
+god classes.
 
 <p align="center">
 <img src="/img/use-cases.png" alt="use-cases" class="medium-zoom-image" width="800">
@@ -158,8 +158,8 @@ testable, and prevents god classes.
 ## Domain Events
 
 The Use-Case classes became smaller and more structured now, but sometimes even
-a single Use-Case can grow too big, especially when there a lot of dependent
-side-effects:
+a single Use-Case can grow too big, especially when there are a lot of related
+side-effects involved:
 
 ```java
 public class CreateOrderUseCase {
@@ -193,10 +193,16 @@ By moving the side-effect logic into corresponding EventHandlers, the size of
 the `CreateOrderUseCase` class will be reduced drastically. Additionally,
 testability also improves because EventHandlers can be tested in isolation.
 
-Let's dive into the code. We start with the interface definition and the adopted
-`CreateOrderUseCase`. All side-effects are now handled by specific
-EventHandlers. The code does not look like a _Transaction Script_ any longer but
-feels like clean OOP code.
+The `CreatedOrderUseCase` will depend on the `EventHandler<CreatedOrderEvent>`
+interface. At runtime the `CompositeOrderCreatedEventHandler` will be injected
+which calls all EventHandlers for the `OrderCreatedEvent`. The class diagram:
+
+<p align="center">
+    <img src="/img/domain_event_hierachy.png" alt="domain_event_hierachy" class="medium-zoom-image" width="800">
+</p>
+
+The Use-Case logic does not look like a _Transaction Script_ any longer and
+feels like clean OOP:
 
 ```java
 // the generic interface
@@ -242,10 +248,8 @@ public class CreateOrderUseCase implements ICreateOrderUseCase {
 }
 ```
 
-With the [_Composite Pattern_](https://en.wikipedia.org/wiki/Composite_pattern),
-we group all EventHandlers for one DomainEvent together. The
-`CompositeOrderCreatedEventHandler` class implements `EventHandler<T>` and
-executes **all** EventHandlers for the `OrderCreatedEvent`:
+The grouping of all EventHandlers for one specific DomainEvent is done via the
+[_Composite Pattern_](https://en.wikipedia.org/wiki/Composite_pattern):
 
 ```java
 // single EventHandler
@@ -318,8 +322,9 @@ public class CompositeOrderCreatedEventHandler implements EventHandler<OrderCrea
 
 The restructuring enables us to add new functionality without modifying existing
 code. Therefore we comply with the _Open-Closed principle_! If we want to add a
-new side-effect, we only have to add a new `EventHandler<OrderCreatedEvent>`. It
-is not necessary to touch the original `CreateOrderUseCase` class anymore.
+new side-effect, we only have to add a new implementation of
+`EventHandler<OrderCreatedEvent>`. It is not necessary to touch the original
+`CreateOrderUseCase` class anymore.
 
 Some intrigued readers may wonder how to test this setup.
 [Spring Boot](https://spring.io/projects/spring-boot) offers an easy way to
@@ -370,11 +375,11 @@ functionality like _Cross Cutting Concerns_:
 
 The naive approach would be to add the new code into the Use-Case class itself
 but we already know that this violates the Open-Closed Principle. Maybe there is
-another approach? And yes there is, we can utilize the
+another approach? And yes there is. We can utilize the
 [_Decorator Pattern_](https://en.wikipedia.org/wiki/Decorator_pattern) to enrich
-the existing Use-Case with logging, transactional or profiling behaviour.
-Decorators wrap the `CreateOrderUseCase` and enrich it with logging and
-profiling:
+the existing Use-Case with logging, transactional or profiling behaviour. The
+following example shows decorators wrapping the `CreateOrderUseCase` with
+logging and profiling:
 
 ```java
 // Duration Decorator
@@ -425,6 +430,8 @@ public class LoggingCreateOrderUseCase implements ICreateOrderUseCase {
   public Order createOrder(OrderParams params) {
     // log params
     log.info("[LoggingDecorator] function params: {}", params);
+
+    // executes original logic
     return inner.createOrder(params);
   }
 }
@@ -487,7 +494,7 @@ Use-Case. This violates the
 to fix this is to find a common interface for all Use-Cases. Then you can write
 one decorator and cover all Use-Cases at once. At the beginning we introduced
 the _Command-Query Separation_. It is possible to classify all methods into
-commands and queries. For commands, a unifying interface would look like:
+commands and queries. For commands, a unifying interface would look like this:
 
 ```java
 public interface CommandHandler<TCommand> {
@@ -513,8 +520,8 @@ the new insights in your own projects.
 
 Finally, I want to mention that this article was heavily inspired by the book
 [Dependency Injection Principles, Practices, and Patterns ](https://www.manning.com/books/dependency-injection-principles-practices-patterns).
-Basically it is a rewrite of chapter 10 and ports the C# code to modern Java
-with Spring Boot.
+Basically it is a rewrite of chapter 10 and ports the C# examples to Java with
+Spring Boot.
 
 #### One more thing
 
