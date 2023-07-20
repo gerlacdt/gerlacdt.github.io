@@ -5,7 +5,16 @@
     <link>https://gerlacdt.github.io/tags/softwareengineering/</link>
     <description>Recent content in softwareengineering on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 11 Apr 2023 11:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/softwareengineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jul 2023 08:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/softwareengineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DDD and SOLID: A refactoring story</title>
+      <link>https://gerlacdt.github.io/posts/ddd-solid/</link>
+      <pubDate>Wed, 19 Jul 2023 08:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/ddd-solid/</guid>
+      <description>TL;DR  Command-Query Separation Extract Use Cases (Clean/Hexagonal Architecture) Domain Events (with Eventhandlers and Composite Pattern) Cross-Cutting Concerns (with Decorator Pattern)  Many backend applications end up as a big ball of mud where small changes ripple through the whole codebase. The root causes are high coupling and low cohesion. The best remedies against those are Domain Driven Design (DDD) and the SOLID principles which are well-known, but often wrongly applied.</description>
+    </item>
+    
     <item>
       <title>Top 10 Practices Of Effective Software Engineers</title>
       <link>https://gerlacdt.github.io/posts/habits/</link>

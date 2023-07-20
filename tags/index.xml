@@ -5,11 +5,20 @@
     <link>https://gerlacdt.github.io/tags/</link>
     <description>Recent content in Tags on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 11 Apr 2023 11:00:00 +0200</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jul 2023 08:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ddd</title>
+      <link>https://gerlacdt.github.io/tags/ddd/</link>
+      <pubDate>Wed, 19 Jul 2023 08:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/ddd/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>programming</title>
       <link>https://gerlacdt.github.io/tags/programming/</link>
-      <pubDate>Tue, 11 Apr 2023 11:00:00 +0200</pubDate>
+      <pubDate>Wed, 19 Jul 2023 08:00:00 +0100</pubDate>
       
       <guid>https://gerlacdt.github.io/tags/programming/</guid>
       <description></description>
@@ -18,9 +27,18 @@
     <item>
       <title>softwareengineering</title>
       <link>https://gerlacdt.github.io/tags/softwareengineering/</link>
-      <pubDate>Tue, 11 Apr 2023 11:00:00 +0200</pubDate>
+      <pubDate>Wed, 19 Jul 2023 08:00:00 +0100</pubDate>
       
       <guid>https://gerlacdt.github.io/tags/softwareengineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>solid</title>
+      <link>https://gerlacdt.github.io/tags/solid/</link>
+      <pubDate>Wed, 19 Jul 2023 08:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/solid/</guid>
       <description></description>
     </item>
     
