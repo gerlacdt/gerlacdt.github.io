@@ -255,13 +255,13 @@ by Eric Evans
 
 A classic from the early 2000s. It coined the term Domain Driven Design (DDD)
 and is still the best way to structure medium- to large-sized business
-application.  With the rise of microservices, the most influential concepts like
+application. With the rise of microservices, the most influential concepts like
 _Strategic Design_, _Ubiquitous Language_ and _Bounded Context_ are even more
 relevant today. Besides the standard tactical design notions like Entities,
 Aggregates, Services and Repositories, you can find great refactoring advice
 too, e.g. _Intention-Revealing Interfaces_, _Side-Effect-Free functions_,
-_domain class invariants with explicit constraints_ etc. Alas, DDD is verbose, luckily a
-more condensed version with the essential ideas can be found
+_domain class invariants with explicit constraints_ etc. Alas, DDD is verbose,
+luckily a more condensed version with the essential ideas can be found
 [here](https://matfrs2.github.io/RS2/predavanja/literatura/Avram%20A,%20Marinescu%20F.%20-%20Domain%20Driven%20Design%20Quickly.pdf).
 
 Highlights:
@@ -694,6 +694,10 @@ by Barbara Oakley
 
 [Link to book](https://barbaraoakley.com/books/a-mind-for-numbers/)
 
+<p align="left">
+    <img src="/img/books/mind_for_numbers.jpg" alt="mind_for_numbers" class="medium-zoom-image" width="200">
+</p>
+
 My personal favorite. The book massively changed the way I approach and learn
 new topics. I grasp them faster and more deeply. With the methodologies from the
 book, learning is fun! The corresponding online course
@@ -709,10 +713,6 @@ Highlights:
 - Spaced Repetition
 - Pomodoro Technique
 - Self-Testing
-
-<p align="left">
-    <img src="/img/books/mind_for_numbers.jpg" alt="mind_for_numbers" class="medium-zoom-image" width="200">
-</p>
 
 ## Management and Leadership
 

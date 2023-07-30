@@ -532,8 +532,8 @@ is different, every scenario requires its own assessment. Never forget:
 
 > It depends. - Kent Beck
 
-DDD and SOLID makes sense for an medium to large projects. A simple CRUD
-application won't benefit from over-engineered abstractions. They will be even
+DDD and SOLID make sense for medium to large projects. A simple CRUD application
+won't benefit from over-engineered abstractions. They will be even
 counter-productive and introduce accidental complexity.
 
 # References
