@@ -1,6 +1,6 @@
 ---
 title: "The Continuous Clean Code Process (CCCP)"
-date: 2023-06-09T10:00:00+01:00
+date: 2023-07-30T09:00:00+01:00
 tags: ["programming", "softwareengineering"]
 draft: true
 ---
@@ -11,8 +11,8 @@ Many software projects end up in a
 [_big ball of mud_](https://wiki.c2.com/?BigBallOfMud). One of the main causes
 is the neglect of internal quality and focusing on adding new features with
 unrealistic timelines. Code has the natural tendency to erode if you don't
-launch countermeasures permanently. This observation is also known as the [the
-second law of thermodynamics]:
+launch countermeasures permanently. This observation is also known as the
+[the second law of thermodynamics](https://en.wikipedia.org/wiki/Second_law_of_thermodynamics):
 
 > Systems tend to arrive at a state [...] where the entropy is highest [...]
 
@@ -32,9 +32,8 @@ Both versions work. But never forget to clean up afterwards. Ingrain this
 process in your habits. It's the key to prevent a "big ball of mud". Often teams
 code for months or years without touching and restructuring existing code, they
 just add new features often with dirty workarounds. This accumulates and adding
-new functionality will become harder, and eventually impossible, see: Martin
-Fowler Internal Quality, diagrams
-https://martinfowler.com/articles/is-quality-worth-cost.html
+new functionality will become harder, and eventually impossible, see:
+[Martin Fowler Internal Quality](https://martinfowler.com/articles/is-quality-worth-cost.html)
 
 <p align="center">
     <img src="/img/clean_code_over_time.png" alt="clean_code_over_time" class="medium-zoom-image" width="600">
@@ -72,11 +71,13 @@ maintainable codebase which is nice to interact with! Win-Win. The organization
 will also profit, since motivated developers are much more productive. And
 hopefully discussions about the need of refactorings end soon.
 
-Attention! Sometime developers tend to overdo thinks like over-engineering,
-gold-plating and over-refactoring. Refactoring and adding new functionality
-should be in balance. Be vigilant, don't fall into the trap to do weeks or
-months of refactoring without new features. This is not refactoring but most
-probably a re-write of your application!
+### Attention!
+
+Sometimes developers tend to overdo thinks like over-engineering, gold-plating
+and over-refactoring. Refactoring and adding new functionality should be in
+balance. Be vigilant, don't fall into the trap to do weeks or months of
+refactoring without new features. This is not refactoring but most probably a
+re-write of your application!
 
 Kent Beck is a goldmine of quotes:
 
@@ -85,6 +86,10 @@ Kent Beck is a goldmine of quotes:
 
 > Make it work, make it right, make it fast. - Kent Beck
 
-#### Additiosn
+### Fun Facts
 
-For Star Wars Fans CCCP is also known as C3-PO :)
+For Star Wars Fans CCCP is also known as C3-PO.
+
+## References
+
+- [Is High Quality Software Worth the Cost? - Martin Fowler](https://martinfowler.com/articles/is-quality-worth-cost.html)

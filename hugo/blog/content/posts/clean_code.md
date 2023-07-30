@@ -1,6 +1,6 @@
 ---
 title: "Clean Code: The good, the Bad and the Ugly"
-date: 2023-06-08T10:00:00+01:00
+date: 2023-07-30T09:00:00+01:00
 tags: ["programming", "softwareengineering"]
 draft: true
 ---
