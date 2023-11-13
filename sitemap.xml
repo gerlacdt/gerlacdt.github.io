@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gerlacdt.github.io/</loc>
-    <lastmod>2023-07-19T08:00:00+01:00</lastmod>
+    <lastmod>2023-11-13T08:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/tags/devops/</loc>
+    <lastmod>2023-11-13T08:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/posts/</loc>
+    <lastmod>2023-11-13T08:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/posts/production-readiness-checklist/</loc>
+    <lastmod>2023-11-13T08:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/tags/programming/</loc>
+    <lastmod>2023-11-13T08:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/tags/softwareengineering/</loc>
+    <lastmod>2023-11-13T08:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/tags/</loc>
+    <lastmod>2023-11-13T08:00:00+01:00</lastmod>
   </url><url>
     <loc>https://gerlacdt.github.io/tags/ddd/</loc>
     <lastmod>2023-07-19T08:00:00+01:00</lastmod>
@@ -11,19 +29,7 @@
     <loc>https://gerlacdt.github.io/posts/ddd-solid/</loc>
     <lastmod>2023-07-19T08:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/</loc>
-    <lastmod>2023-07-19T08:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/tags/programming/</loc>
-    <lastmod>2023-07-19T08:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/tags/softwareengineering/</loc>
-    <lastmod>2023-07-19T08:00:00+01:00</lastmod>
-  </url><url>
     <loc>https://gerlacdt.github.io/tags/solid/</loc>
-    <lastmod>2023-07-19T08:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/tags/</loc>
     <lastmod>2023-07-19T08:00:00+01:00</lastmod>
   </url><url>
     <loc>https://gerlacdt.github.io/posts/habits/</loc>

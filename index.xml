@@ -5,7 +5,18 @@
     <link>https://gerlacdt.github.io/</link>
     <description>Recent content on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 19 Jul 2023 08:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Nov 2023 08:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Production Readiness Checklist</title>
+      <link>https://gerlacdt.github.io/posts/production-readiness-checklist/</link>
+      <pubDate>Mon, 13 Nov 2023 08:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/production-readiness-checklist/</guid>
+      <description>Modern applications run typically in the cloud. As good residents, distributed applications must fulfill many requirements in order to enable reliable operations and maintenance. This article summarizes the most important points in order to go live and to keep applications healthy over their lifetime.
+Twelve-factor app All modern cloud applications should comply with the 12-factor app principles:
+ Codebase should be tracking in a version control system, the same code will be deployed in different environments Dependencies are shipped with the deployable artifact Backing Services can be detached and re-attached without code changes (e.</description>
+    </item>
+    
     <item>
       <title>DDD and SOLID: A refactoring story</title>
       <link>https://gerlacdt.github.io/posts/ddd-solid/</link>
