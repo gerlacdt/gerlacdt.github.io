@@ -15,8 +15,8 @@ order to go live and to keep applications healthy over their lifetime.
 All modern cloud applications should comply with the
 [12-factor app](https://12factor.net/) principles:
 
-1. **Codebase** should be tracking in a version control system, the same code
-   will be deployed in different environments
+1. **Codebase** is tracked in a version control system, the same code will be
+   deployed in different environments
 1. **Dependencies** are shipped with the deployable artifact
 1. **Backing Services** can be detached and re-attached without code changes
    (e.g. database, message broker)
@@ -36,6 +36,11 @@ All modern cloud applications should comply with the
 
 ### Development
 
+More often than not, developers are busy with adding new features but for
+reliable and robust applications, they must focus on cross-functional features
+too. With a DevOps culture, developers should collaborate closely with the
+ops-team and should know the infrastructure as well.
+
 - [ ] build with one command, complex logic should be abstracted away inside a
       script
 - [ ] integrate auto-formatting into the CI build
@@ -43,7 +48,7 @@ All modern cloud applications should comply with the
       [black](https://github.com/psf/black),
       [rustfmt](https://github.com/rust-lang/rustfmt),
       [gofmt](https://github.com/golang/go/tree/master/src/cmd/gofmt))
-- [ ] integrate static-code analyzers, linters into the CI build
+- [ ] integrate static-code analyzers and linters into the CI build
       ([errorprone](https://errorprone.info/), [infer](https://fbinfer.com/),
       [sonarqube](https://www.sonarsource.com/products/sonarqube/),
       [eslint](https://eslint.org/), [ruff](https://github.com/astral-sh/ruff),
@@ -56,8 +61,8 @@ All modern cloud applications should comply with the
       because they are costly to maintain
 
 - [ ] [**don't forget the fallacies of distributed systems**](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing),
-      e.g. networks are reliable (add retries with backoffs for idempotent
-      requests, circuit breakers, load-shedding)
+      add retries with backoffs for idempotent requests, circuit breakers,
+      load-shedding
 
 - [ ] know the application's resource limits - set them accordingly!
 
@@ -104,7 +109,7 @@ than with monolithic architectures. Therefore good observability is critical.
 
 - [ ] log to STDOUT/STDERR
 - [ ] _structured logging_ with JSON
-- [ ] add _request-ids_ to all log-events
+- [ ] add _request-ids_ to log-events
 - [ ] logs are ephemeral - don't use logs as persistent data store!
 
 #### Metrics
@@ -134,17 +139,21 @@ build a mental model of the complex, intertwined parts of big distributed
 systems. Good documentation is crucial for new team members and for your future
 self.
 
-- [ ] architecture diagrams visualize the IT landscape and help to create a
-      mental model of the system
+- [ ] architecture diagrams visualize the IT landscape and give an overview of
+      all participating applications and their relations
 - [ ] `README.md` in root directory
   - project overview and purpose
   - development instructions (build commands, how to setup the project locally)
   - references to other helpful documentation and related git-repositories
-- [ ] playbook/runbook with helpful instructions (how handle incidents, useful
-      logging/metrics queries, dashboard links)
+- [ ] playbook/runbook with helpful instructions (how to handle incidents,
+      useful logging/metrics queries, dashboard links)
 - [ ] architecture decisions records [ADRs](https://adr.github.io/)
 
 ### Costs
+
+The cloud is expensive. Hence it is important to have cost transparency in order
+to provide exact billings per organizational grouping. Further current costs
+should be monitored and alarms should be triggered if they are too high.
 
 - [ ] tag infrastructure (project, department, team, contact persons, cost
       center)
