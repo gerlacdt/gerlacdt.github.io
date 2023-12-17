@@ -69,7 +69,8 @@ So practice the CCCP and prevent "big ball of mud" code for your greater good.
 Further, refactorings are fun and as a side-effect you end up with a
 maintainable codebase which is nice to interact with! Win-Win. The organization
 will also profit, since motivated developers are much more productive. And
-hopefully discussions about the need of refactorings end soon.
+hopefully discussions about the need of refactorings end soon. See also
+[tactical vs strategic programming](https://web.stanford.edu/~ouster/cgi-bin/book.php).
 
 ### Attention!
 
