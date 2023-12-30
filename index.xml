@@ -5,7 +5,17 @@
     <link>https://gerlacdt.github.io/</link>
     <description>Recent content on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 13 Nov 2023 08:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Continuous Clean Code Process (CCCP)</title>
+      <link>https://gerlacdt.github.io/posts/cccp/</link>
+      <pubDate>Fri, 29 Dec 2023 09:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/posts/cccp/</guid>
+      <description>Most software projects end up in a big ball of mud. The major cause is neglecting internal quality and focusing on adding features with dirty hacks because of unrealistic timelines. Code has the natural tendency to erode if you don&amp;rsquo;t launch countermeasures permanently. This observation applies to all systems and is also known as the the second law of thermodynamics:
+ Systems tend to arrive at a state [&amp;hellip;] where the entropy is highest [&amp;hellip;]</description>
+    </item>
+    
     <item>
       <title>Production Readiness Checklist</title>
       <link>https://gerlacdt.github.io/posts/production-readiness-checklist/</link>

@@ -5,20 +5,11 @@
     <link>https://gerlacdt.github.io/tags/</link>
     <description>Recent content in Tags on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 13 Nov 2023 08:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>devops</title>
-      <link>https://gerlacdt.github.io/tags/devops/</link>
-      <pubDate>Mon, 13 Nov 2023 08:00:00 +0100</pubDate>
-      
-      <guid>https://gerlacdt.github.io/tags/devops/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Fri, 29 Dec 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>programming</title>
       <link>https://gerlacdt.github.io/tags/programming/</link>
-      <pubDate>Mon, 13 Nov 2023 08:00:00 +0100</pubDate>
+      <pubDate>Fri, 29 Dec 2023 09:00:00 +0100</pubDate>
       
       <guid>https://gerlacdt.github.io/tags/programming/</guid>
       <description></description>
@@ -27,9 +18,18 @@
     <item>
       <title>softwareengineering</title>
       <link>https://gerlacdt.github.io/tags/softwareengineering/</link>
-      <pubDate>Mon, 13 Nov 2023 08:00:00 +0100</pubDate>
+      <pubDate>Fri, 29 Dec 2023 09:00:00 +0100</pubDate>
       
       <guid>https://gerlacdt.github.io/tags/softwareengineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://gerlacdt.github.io/tags/devops/</link>
+      <pubDate>Mon, 13 Nov 2023 08:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/tags/devops/</guid>
       <description></description>
     </item>
     
