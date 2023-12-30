@@ -2,24 +2,23 @@
 title: "The Continuous Clean Code Process (CCCP)"
 date: 2023-12-29T09:00:00+01:00
 tags: ["programming", "softwareengineering"]
-draft: true
+draft: false
 ---
-
-# Introduction
 
 Most software projects end up in a
 [_big ball of mud_](https://wiki.c2.com/?BigBallOfMud). The major cause is
 neglecting internal quality and focusing on adding features with dirty hacks
 because of unrealistic timelines. Code has the natural tendency to erode if you
-don't launch countermeasures permanently. This observation is also known as the
+don't launch countermeasures permanently. This observation applies to all
+systems and is also known as the
 [the second law of thermodynamics](https://en.wikipedia.org/wiki/Second_law_of_thermodynamics):
 
 > Systems tend to arrive at a state [...] where the entropy is highest [...]
 
 The only way to prevent a big ball of mud is to ingrain continuous refactoring
-into the software engineering process, i.e. you continuously write clean code.
-Refactorings must be a regular task whereby they can happen after or before
-implementing the feature itself:
+into the software creation process, i.e. continuously writing clean code.
+Refactoring must be a regular task whereby it can happen before or after
+implementing a new feature itself:
 
 > **Make it work, make it right, make it fast.** - Kent Beck (refactor
 > afterwards)
@@ -27,66 +26,80 @@ implementing the feature itself:
 > **Make the change easy (this can be hard), then make the easy change.** - Kent
 > Beck (refactor beforehand)
 
-The best developers ingrained continuous refactoring as an habit. It is the main
-key to prevent a big ball of mud. Often teams code for months or years without
-touching and restructuring existing code, they continuously add new features
-with dirty workarounds. This accumulates and adding new functionality will
-become harder, and eventually impossible
+Often teams code for months or years without touching and restructuring the
+existing codebase. They perpetually add features with dirty workarounds and
+without thinking about the overall structure. This accumulates and adding new
+functionality will become harder, and eventually impossible
 [[1]](https://martinfowler.com/articles/is-quality-worth-cost.html)
 
 <p align="center">
     <img src="/img/clean_code_over_time.png" alt="clean_code_over_time" class="medium-zoom-image" width="600">
 </p>
 
-Always stick to clean code and avoid shortcuts. Choosing internal quality is
-always cheaper than adding cruft into the codebase. Beware of programmers who
-did not internalize clean code. In order to make the deadline, they integrate
-dirty hacks, workarounds or skip tests. This is non-sense, and shows clearly
-that many programmers do not understand their job. They justify their actions
-with flimsy arguments which are often driven by management pressure. So why not
-repeatedly do it, if the management provides this incentives.. Don't fall into
-this treacherous trap. The big problem with cruft and "big ball of mud"
-codebases is that they come silently and sneak into the codebase over time.
-There is not one single big decision which turns your codebase into a "big ball
-of mud" but all these tiny decisions you make everyday as a team, as a single
-developer or as an architect, which bring the systems into an unmaintainable
-state. The worst thing, you only detect it when it's too late or the pain is
-already severe.
+It is always better to stick to clean code and avoid shortcuts. Investing in
+internal quality is cheaper than adding cruft.
+[Cruft](https://martinfowler.com/bliki/TechnicalDebt.html) makes the system
+harder to modify and is introduced due to laziness, time pressure or simply lack
+of knowledge. Beware of programmers who did not internalize clean code. In order
+to make the deadline, they integrate dirty hacks, workarounds or skip tests.
+They justify their actions with flimsy arguments. Worse yet, because the
+management is not aware of internal quality, the milestone is perceived as a
+success and dirty developers are sometimes celebrated as heros. In consequence
+of such bad incentives, the codebase will deteriorate quickly since dirty
+developers gain the upper hand and quality-focused developers are ignored (and
+leave the company). The epitome of such bad developers are
+[tactical tornados](https://web.stanford.edu/~ouster/cgi-bin/book.php) -- loved
+by the management, hated by fellow team members.
 
-One of the biggest mistakes developers can make is giving in to (irrational)
-management timelines and then skipping tests. This completely is driven by wrong
-incentives. First if the development team made the milestone, everybody is happy
-and the dev team is rewarded. Second the dev team skipping tests shows them,
-that the management is not interested in internal quality, so they will
-regularly skip tests. Both leads to positive feedback loop which exacerbates the
-situation: the developers will regularly skip tests because the management does
-not care which worsen internal quality of the codebase and since the milestone
-was made successfully, the management will get the feeling they can make it
-again and again with the same approach :(.
+**The big problem with cruft is that it comes silently and sneaks into the
+codebase over time.** There will be no single decision which turns a codebase
+into a big ball of mud all of a sudden. Instead daily tiny decisions bring the
+system slowly into an unmaintainable state and the problem will only be detected
+when it is too late and the pain is severe. More often than not, the only rescue
+is a complete rewrite of the application.
 
-So practice the CCCP and prevent "big ball of mud" code for your greater good.
-Further, refactorings are fun and as a side-effect you end up with a
-maintainable codebase which is nice to interact with! Win-Win. The organization
-will also profit, since motivated developers are much more productive. And
-hopefully discussions about the need of refactorings end soon. This is the
-classic discussion about
+One of the biggest mistakes developers can make is skipping tests due to time
+pressure. If a developer team made the milestone, everybody is happy and the
+team is rewarded. This leads to a positive feedback loop which exacerbates the
+situation: the developers will regularly skip tests or generally write bad code
+since they get rewarded by the clueless management. Bad developers bring up the
+idea to skip tests themselves because they believe they are faster without
+tests. This is a fallacy! As soon other developers need to make a change, they
+will be slowed down immensely and bugs are introduced easily. Even the original
+authors will struggle with their own code without tests when they have not
+looked into it for some time. **A good test suite act as a safety net and gives
+guidance how to use the API. All developers benefit from it, introduce less bugs
+and are faster.**
+
+> The only way to go fast, is to go well. - Uncle Bob
+
+### <span style="color: red">Attention!!!</span>
+
+Is refactoring always the right way? _It depends_. Some developers tend to
+overdo things like over-engineering, gold-plating and over-refactoring. Be
+vigilant, don't fall into the trap doing weeks or months of refactoring without
+new features. This is not refactoring but most probably a rewrite of an
+application. Refactoring and adding new functionality should be in balance.
+Finding a balance is a discussion between
 [tactical vs strategic programming](https://web.stanford.edu/~ouster/cgi-bin/book.php).
-There must be balance - doing refactorings for months is not good either.
+Investing 10-20% of time into code improvements is a good starting point.
 
-### Attention!
+### Final Thoughts
 
-Sometimes developers tend to overdo thinks like over-engineering, gold-plating
-and over-refactoring. Refactoring and adding new functionality should be in
-balance. Be vigilant, don't fall into the trap to do weeks or months of
-refactoring without new features. This is not refactoring but most probably a
-re-write of your application!
+Practicing the _Continuous Clean Code Process_ (CCCP) is critical to prevent a
+big ball of mud. Through continuous refactorings, not only codebases stay clean,
+they are fun and as a side-effect teams end up with a maintainable codebase
+which is a pleasure to work with. Developer happiness will be high. **A clean
+codebase builds the foundation for fast developemnt over time and high-quality
+products.** Organizations will also profit since happy developers are more
+productive and attract even more good developers. Finally there is no excuse to
+write bad code :smile: -- but it is still hard.
 
-Kent Beck is a goldmine of quotes:
-
-### Star Wars Facts
+### Star Wars Fun Facts
 
 CCCP is also known as C3-PO.
 
-## References
+### References
 
 1. [Is High Quality Software Worth the Cost? - Martin Fowler](https://martinfowler.com/articles/is-quality-worth-cost.html)
+2. [A Philosophy of Software Design - John Ousterhout](https://web.stanford.edu/~ouster/cgi-bin/book.php)
