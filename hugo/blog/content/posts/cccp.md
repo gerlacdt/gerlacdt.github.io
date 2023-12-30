@@ -90,7 +90,7 @@ Practicing the _Continuous Clean Code Process_ (CCCP) is critical to prevent a
 big ball of mud. Through continuous refactorings, not only codebases stay clean,
 they are fun and as a side-effect teams end up with a maintainable codebase
 which is a pleasure to work with. Developer happiness will be high. **A clean
-codebase builds the foundation for fast developemnt over time and high-quality
+codebase builds the foundation for fast development over time and high-quality
 products.** Organizations will also profit since happy developers are more
 productive and attract even more good developers. Finally there is no excuse to
 write bad code :smile: -- but it is still hard.
