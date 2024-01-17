@@ -1,6 +1,6 @@
 ---
 title: "Clean Code: The good, the Bad and the Ugly"
-date: 2023-07-30T09:00:00+01:00
+date: 2024-01-17T09:00:00+01:00
 tags: ["programming", "softwareengineering"]
 draft: true
 ---
@@ -8,50 +8,66 @@ draft: true
 _Clean Code_ by Robert C. Martin is a seminal programming book. A whole
 generation of developers, including myself, became better programmers by
 following the book's advice. But after almost twenty years, does the book still
-hold up to its high standards, are there better alternatives nowadays - or was
-some advice given by _Clean Code_ bad?
+hold up to its high standards? Was some advice given by _Clean Code_ always bad?
+Are there better alternatives nowadays?
 
-To be fair, the author himself claims in the preface that the "some
-recommendations in the book are controversial and people might disagree". In
-this article I try to disagree :smile: and give my opinion about the high and
-low points.
+To be fair, the author himself claims in the preface that "some recommendations
+in the book are controversial and people might disagree". In this article I try
+to disagree and give my opinion about the highs and lows.
 
 ## The Good
 
-Besides the book's programming recommendations, I think the greatest achievement
-of the book is coining the term **Clean Code** and creating awareness about code
-quality:
+Besides the book's programming guidance, I think the greatest achievement of the
+book is coining the term **Clean Code** and creating the necessary awareness
+about code quality in general:
 
 > _The only way to go fast is to go well_ - Uncle Bob
 
-Especially young developers like me profited heavily from this insight and I
-truly believe this made the developers' world a better place. The impact of the
-book in the programming world is second to none.
+The impact of the book in the programming world is second to none. All of a
+sudden code quality, readability and maintainability were subject of discussion
+for developer teams. I truly believe this made the developers' world a better
+place.
 
-- general, foundational tips
+The book itself is full of great programming advice, mainly written in Java but
+applicable in other programming languages as well. It's especially valuable for
+new programmers, starting the craft. You will find foundational tips regarding
+functions and variable names that they should be intention-revealing and
+searchable. Or explanations what makes a good comment and when should you better
+rewrite the code. Other timeless ideas like the _DRY_ principle (Don't Repeat
+Yourself), _Command-Query separation_ and the nice metaphor with the _boy scout
+rule_ are also presented.
 
-  - good names for functions, variables (searchable, intention-revealing names)
-  - good comments
+Additionally, numerous useful programming practices are given. Senior developers
+take them for granted but junior developers need to learn them first, e.g.:
 
-- comes up with great thoughts/ideas:
+- _exception handling_: You should not pass null or return null. Use unchecked
+  exceptions
+- _unit testing_: A test should be FIRST(fast, independent, repeatable,
+  self-validated, timely) and should only have one assertion.
+- _Single Responsibility Principle_
+- prefer pure functions, i.e. functions without side-effects
 
-  - the boy scout rule
-  - command query separation
-  - DRY (Don't Repeat Yourself), no duplication
+At the very end the book contains a long list of worth knowing code smells. It's
+not only important to know how to write good code but also how to detect bad
+code.
 
-- exception handling (don't pass null, don't return null, use unchecked
-  exceptions)
-- unit testing (FIRST, fast, independent, repeatable, self-validation, timely)
-  - one assert per test
-- good topic like Single Responsibility Principle, Cohesion and Coupling
-  (unfortunately the books fails to deliver good explanations and does not
-  provide good examples) -> I know from my own experience come up with good code
-  examples is hard!
-- SOLID principles
+All the above makes _Clean Code_ an invaluable resource for all new programmers.
 
 ## The Bad
 
-- lenghty and hard to comprehend code examples
+Alas, this book is not perfect and it has flaws. Flaws surface, especially when
+there are million readers.
+
+three main things
+
+- deprecated topics like formatting, only Java examples, missing new modern
+  programming styles like functional programming
+- bad, wordy code examples
+- examples disregard the books own advice
+
+TODO
+
+- wordy and hard to comprehend code examples
 
 - function should be small and even smaller
 
@@ -77,6 +93,10 @@ book in the programming world is second to none.
   is not out-of-date, nowadays there are first-class concurrency languages like
   Go or Rust, they changed the approach a lot. Java coding-style without
   Lambdas, functional Interfaces, Streams etc.
+
+  (unfortunately the books fails to deliver good explanations and does not
+  provide good examples) -> I know from my own experience come up with good code
+  examples is hard!
 
 ## The Ugly
 
