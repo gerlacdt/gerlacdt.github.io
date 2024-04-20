@@ -1,0 +1,32 @@
+created: 20240419152432424
+modified: 20240420185900202
+tags: TableOfContents
+title: AboutMe
+type: text/vnd.tiddlywiki
+
+!! This is my first tiddler.
+
+I am Daniel  Gerlach, an enthusiastic //''software engineer''//. I am particularly interested in writing more comprehensible and maintainable code. I like lispy languages and functional programming. Professionally I used:
+
+
+# Java
+# Javascript with NodeJS
+# Typescript 
+
+In my freetime I used a kind of programming languages:
+
+# (e)Lisp (configuring Emacs
+# Clojure
+# Go
+# Rust
+# Python (coding challenges)
+
+Currently I also do a lot of infrastructure with [[Azure|https://azure.microsoft.com/en-us/]] and [[Terraform|https://www.terraform.io]]
+
+<<<
+“Everyone knows that debugging is twice as hard as writing a program in the first place. So if you’re as clever as you can be when you write it, how will you ever debug it?”
+- Brian W. Kernighan
+<<<
+
+<center>[img width=400 [./files/topgun.jpg]]</center>
+
