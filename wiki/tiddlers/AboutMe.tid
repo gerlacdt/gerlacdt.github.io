@@ -1,5 +1,5 @@
 created: 20240419152432424
-modified: 20240420185900202
+modified: 20240421122411133
 tags: TableOfContents
 title: AboutMe
 type: text/vnd.tiddlywiki
@@ -13,7 +13,7 @@ I am Daniel  Gerlach, an enthusiastic //''software engineer''//. I am particular
 # Javascript with NodeJS
 # Typescript 
 
-In my freetime I used a kind of programming languages:
+In my freetime I used a variety of programming languages:
 
 # (e)Lisp (configuring Emacs
 # Clojure
@@ -22,6 +22,8 @@ In my freetime I used a kind of programming languages:
 # Python (coding challenges)
 
 Currently I also do a lot of infrastructure with [[Azure|https://azure.microsoft.com/en-us/]] and [[Terraform|https://www.terraform.io]]
+
+!!! My leading principle is
 
 <<<
 “Everyone knows that debugging is twice as hard as writing a program in the first place. So if you’re as clever as you can be when you write it, how will you ever debug it?”

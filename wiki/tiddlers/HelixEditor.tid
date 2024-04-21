@@ -1,12 +1,10 @@
 created: 20240420183622445
-modified: 20240421101957227
+modified: 20240421122340941
 tags: Notes
 title: HelixEditor
 type: text/vnd.tiddlywiki
 
-! Useful shortcuts
-
-!!! multi selection/cursor
+!! multi selection/cursor
 
 ```bash
 # select whole buffer with %
@@ -15,14 +13,14 @@ type: text/vnd.tiddlywiki
 %s<searchtext>c 
 ```
 
-!!! cancel multi curser
+!! cancel multi cursor
 
 ```bash
 # collapse multi cursor into one with ,
 ,
 ```
 
-!!! select function
+!! select function
 
 ```bash
 # m for treesitter object
@@ -38,7 +36,7 @@ mif
 maf
 ```
 
-!!! switch cursor and anchor position
+!! switch cursor and anchor position
 
 ```bash
 Alt-;
@@ -54,7 +52,7 @@ Alt-;
 Alt-.
 ```
 
-!!! record macro
+!! record macro
 
 ```bash
 # <reg> can be "a or "b or any other character
