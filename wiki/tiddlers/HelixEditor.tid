@@ -1,5 +1,5 @@
 created: 20240420183622445
-modified: 20240420185517928
+modified: 20240421101957227
 tags: Notes
 title: HelixEditor
 type: text/vnd.tiddlywiki
@@ -42,6 +42,16 @@ maf
 
 ```bash
 Alt-;
+```
+
+!! repeat action
+
+```bash
+# repeat insertion
+.
+
+# repeat movement (f,F, t, T)
+Alt-.
 ```
 
 !!! record macro

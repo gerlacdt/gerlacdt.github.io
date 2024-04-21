@@ -1,5 +1,88 @@
 created: 20240420183646307
-modified: 20240420183654823
+modified: 20240421101804286
 tags: Notes
 title: Neovim
 type: text/vnd.tiddlywiki
+
+!! Select/Change
+
+```bash
+# word
+ciw
+
+# inside parenthesis
+ci{
+ci"
+
+# around parenthesis
+ca{
+ca"
+```
+
+
+!! Macros
+
+```bash
+# recording
+q<letter><commands>q
+
+# replay with newline
+<number>@<letter>
+
+# replay with ranges (this also works without jumping to next line at the end of the macro)
+
+```
+
+!! Normal Mode
+
+```bash
+# set line range manually
+:5,10norm @a
+
+# selection in visual line mode
+:<,>: norm @a
+
+## whole buffer range
+:&:normal @a
+```
+
+!! Visual Mode
+
+```bash
+# enter visual mode
+v
+
+# enter visual line mode (mark whole lines)
+V
+
+# enter block visual line mode
+CTRL-v
+- go down/up with cursor
+- :norm Iadd something
+
+# switch anchor and cursor of selection
+o
+
+# select inner function 
+vi{
+
+# select outer function
+va{
+
+# user tree-sitter objects
+vif
+vaf
+```
+
+!! surroundings
+
+```
+surr*ound_words             ysiw)           (surround_words)
+*make strings               ys$"            "make strings"
+[delete ar*ound me!]        ds]             delete around me!
+remove <b>HTML t*ags</b>    dst             remove HTML tags
+'change quot*es'            cs'"            "change quotes"
+<b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
+delete(functi*on calls)     dsf             function calls
+```
+
