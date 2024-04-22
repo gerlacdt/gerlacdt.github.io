@@ -1,0 +1,37 @@
+created: 20240422075705129
+modified: 20240422115319683
+tags: Books
+title: GrokkingSimplicity
+type: text/vnd.tiddlywiki
+
+!! 1 welcome to grokking simplicity
+
+//''Most important idea: distinguish actions, calculations and data''//
+
+!!! Actions
+<<<
+''Actions'' depend on time, so they are the hardest to get right. We separate them so we can devote more focus to them.
+<<<
+''Actions'' have "side-effects" and their result depends on when and how often they are called, examples: 
+
+* send an email
+* read/write to a database
+* //methods calling actions//
+
+!!! Calculations
+
+<<<
+''calculations '' do not depend on time. We want to write more code in this category because they are so easy to get right.
+<<<
+''calculations'' are ''pure functions'' without side-effects. Their output only depends on their input parameters, examples:
+
+* check if an email address is valid
+* find maximum number in array
+
+!!! Data
+
+<<<
+''data''  is inert and require interpretation. Data is easy to understand, store, and transmit.
+<<<
+
+!! 4 extracting calculations from actions
