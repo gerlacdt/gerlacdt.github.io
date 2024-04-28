@@ -1,5 +1,5 @@
 created: 20240422075705129
-modified: 20240422115319683
+modified: 20240428084643764
 tags: Books
 title: GrokkingSimplicity
 type: text/vnd.tiddlywiki
@@ -16,7 +16,8 @@ type: text/vnd.tiddlywiki
 
 * send an email
 * read/write to a database
-* //methods calling actions//
+* modifying a non-local variable (global or input parameter)
+* //methods calling other actions//
 
 !!! Calculations
 
@@ -34,4 +35,130 @@ type: text/vnd.tiddlywiki
 ''data''  is inert and require interpretation. Data is easy to understand, store, and transmit.
 <<<
 
-!! 4 extracting calculations from actions
+!! 5 improving the design of actions
+
+''Prefer calculations over actions, prefer data over calculations''
+
+<<<
+//Implicit inputs are all of the inputs that aren’t arguments. And implicit outputs are all of the outputs that aren’t the return value.// We’ve been writing functions with no implicit inputs and outputs. We call those calculations.
+<<<
+
+<<<
+Calculations are easiest to test because they have no implicit inputs and outputs. 
+<<<
+
+!! 6 staying immutable in a mutable language
+
+''use copy-on-write (shallow-copies) for all write operations, this will simulate immutability''
+
+!! 7 staying immutable with untrusted code
+
+* keep a safe zone which you own and where everything is immutable
+* use ''defensive copies'' for input and output outside the safe-zone
+* ''defensive copies'' are deep copies
+
+!! 8 Stratified Design
+
+//''use the same abstraction level inside a function''//
+
+!! 10/11 first-class functions
+
+* first-class values
+* first-class functions
+* high-order functions
+ * high-order functions return functions or take functions as arguments
+
+!! 13 chaining functional tools
+
+//''map() / filter() / reduce()''//
+
+''even sourcing''
+
+```javascript
+// events (operartion and data)
+var itemOps = [['add', "shirt"], ['add', "shoes"], ['remove', "shirt"],
+    ['add', "socks"], ['remove', "hat"], ….];
+
+// apply event sourcing (recreate state from events)
+var shoppingCart = reduce(itemOps, {}, function(cart, itemOp) {
+    var op = itemOp[0];
+    var item = itemOp[1];
+    if(op === ‘add’)  return addOne(cart, item);
+    if(op === ‘remove’) return removeOne(cart, item);
+});
+function removeOne(cart, item) {
+    if(!cart[item])
+        return cart;
+    else {
+        var quantity = cart[item].quantity;
+        if(quantity === 1)
+            return remove_item_by_name(cart, item);
+        else
+            return setFieldByName(cart, item, ‘quantity’, quantity - 1);
+    }
+}
+
+```
+
+!! 15 Isolating timelines
+
+* timeline diagrams are good to visualize and debug control flows which happens concurrently
+* Code can run concurrently (in Javascript asynchronously)
+* shared/global resources can be corrupted when codes run concurrently
+* use local variables to eliminate some problems
+* if you can't rid of shared variables, you must coordinate timelines
+
+!! 16 sharing resources between timelines
+
+''Queues'' help to sync overlapping asynchronous calls when you can't get rid of shared resources.
+
+''Queues'' can be used as a //concurrency primitive//
+
+!! 17 coordinating timelines
+
+more ''concurrency primitives'':
+
+* //Cut// (similar to a barrier or [[CountDownLatch|https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CountDownLatch.html]])
+* //JustOnce()// (only allows to be called once, even when user clicks or code alls multiple times)
+
+!! 18 Reactive and onion architecture
+
+''reactive architecture'' has a global state which is updated via event handlers/watchers. 
+State is never updated directly. Data structures need to be immutable and state changes via calculations and assigning the new value.
+
+//Decouples effects from causes//
+
+//cause// examples:
+
+* add item to shopping cart
+* remove item
+* update quantity
+
+//effect// examples:
+
+* show updated shopping cart
+* show new icon
+* show new quantity in DOM
+
+Reactive Webframeworks:
+
+* React with Redux store and Recoil atoms
+* Elm 
+
+''onion architecture''
+
+aka clean architecture or hexagonal design
+
+Layer structure (outside to inside)
+
+# outer,  //interaction layer// (actions affected by the outside world: network calls, DB, user input)
+# middle, //domain layer// (business logic, calculations)
+# inner, //language layer// (libs and utilities)
+
+''Layer Rules''
+
+* layers centered around a core
+* Interaction with the world is done exclusively in the interaction layer.
+* Layers call in toward the center.
+* Layers don’t know about layers outside of themselves.
+ 
