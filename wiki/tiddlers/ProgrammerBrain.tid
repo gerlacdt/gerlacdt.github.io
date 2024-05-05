@@ -1,0 +1,225 @@
+created: 20240429152752418
+modified: 20240505101616268
+tags: Books
+title: ProgrammerBrain
+type: text/vnd.tiddlywiki
+
+!! 1 decoding your confusion while coding
+
+''3 kinds of confusion in code''
+
+# //lack of knowledge// (e.g. does not know the programming language)
+# //lack of information// (e.g. information is hidden behind a function -> jump around to collect information)
+# //lack of processing power// (e.g. complex algorithm)
+
+* //Lack of knowledge = Issue in LTM (long-term memory)//
+* //Lack of information = Issue in STM (short-term memory)//
+* //Lack of processing power = Issue in working memory//
+
+!! 2 speed reading for code
+
+//STM has a capacity of 2-6 elements//
+
+''chunks'' are higher-level concepts. The bigger the chunk the better. One chunk consumes one space in STM, low-level knowledge also consumes one space!
+
+* low-level -> high-level ''chunk''
+* random letters -> word or sentence
+* random code -> recognizable visitor pattern
+
+''beacons'' help to process code easier (comments, good names, common patterns)
+
+!! 3 how to learn programming syntax quickly
+
+know syntax and concepts, you understand faster:
+
+* less disruption in workflow (no need to look up sth. in the internet) (might loose yourself in details)
+* after disruption, it takes 15 minutes to get back coding
+
+learning syntax with //flashcards//
+
+''spaced repetition'' is important to retain knowledge in LTM
+
+//After several repetitions spaced out over a long period, the knowledge should remain in your LTM forever.//
+
+strengthen memory
+
+# ''retrieval practice'' with spaced repetition (actively trying to remember something -> only look at first page in flashcards, test yourself first) 
+# ''elaboration'' (actively connecting new knowledge to existing memories, try to think about related concepts when you learn)
+
+
+<<<
+''Elaboration'' means thinking about what you want to remember, relating it to existing memories, and making the new memories fit into schemata already stored in your LTM.
+<<<
+
+@@color:red;''brain fact:''@@ memories are stored in networks with relationships to other memories. They way they are organized is called ''schemas''
+
+
+!!!! two forms of remembering information
+
+# //storage strength// (the more you study, the stronger the memory is)
+# //retrieval strength// (how easy it to remember sth.)
+
+!! 4 how to read complex code
+
+//working memory// can only handle 2-6 items (same as STM)
+
+capacity of working memory is the ''cognitive load''
+
+2 types of cognitive load: 
+
+* //intrinsic load// , inherent complexity of the problem
+* //extraneous load// , accidental complexity of the problem or caused by gaps of knowledge
+* //germain load// is required to move knowledge into LTM, if cognitive load is too high and working memory is overloaded, there won't be enough free capacity to stabilize the new knowledge.
+
+<<<
+Germane load, which means something like relevant load, is the effort it takes your brain to store information back to the LTM. When all the cognitive load you have room for is filled with intrinsic and extraneous load, there is no room left for germane load; in other words, you cannot remember the problems you have solved and their solutions.
+<<<
+
+techniques to reduce cognitive load:
+
+# (cognitive) refactoring, can be temporary just for understanding (localize/inline code)
+# replace unfamiliar language constructs
+
+memory aids when working memory is overloadd
+
+* visualize code, make structured notes like:
+** dependency graph
+** state table
+** ''tracing'' (run trough the code in your head)
+
+!! 6 getting better at solving programming problems
+
+<<<
+a ''mental model'' creates an abstraction in your working memory that you can use to reason about the problem at hand.
+<<<
+
+//mental models are simpler and more abstract than reality//
+
+!! 7 misconceptions: bugs in thinking
+
+With LTM knowledge, you learn faster. This is called //positive knowledge transfer//.
+
+There is also knowledge which interferes with learning new things, this is called //negative transfer//.
+
+''Misconceptions'' occur when you think you are right but you are wrong (when you learn sth. new and bring related LTM knowledge)
+
+!! 8 how to get better at naming things
+
+//naming// is important for code comprehension
+
+//naming// is hard
+
+* good names activate your LTM to find relevant information
+* bad names cause bad assumptions, leading to //misconceptions//
+
+<<<
+there are only two hard problems in computer science: cache invalidation and naming things - Phil Karlton (Netscape)
+<<<
+
+good names
+
+* should be ''consistent'' across the codebase (same format, all CamelCase or snake_case, same words have same meaning in all occurrences)
+* ''build good abstractions and therefore supports chunking''
+* should be there from the beginning of the project (be strict otherwise codebase degrades fast)
+* activate LTM knowledge like 
+** domain (customer, order)
+** programming concepts (tree, node, linkedList)
+** conventions (i,j for loop variables)
+
+<<<
+new contributors to a repository often look at existing tests (names) and modify them rather than reading the project’s guidelines.
+<<<
+
+!! 9 avoid bad code and cognitive load: two frameworks
+
+//code smells// create cognitive load
+
+<<<
+''Shotgun surgery''
+
+Generally, code changes should be local to one class. If you have to make many different changes in different places, that indicates a poor structure in the code.
+<<<
+
+''good function/class names help to chunk the code''
+
+chunking can go wrong, e.g. similar function names but different behaviour (`foo()`, `goo()`)
+
+# first framework are ''code smells''
+## //structural antipatterns//. This means code is correct but hard to comprehend or 
+## //conceptional antipatterns//. This means good code structure(short classes and methods) but confusing names
+# second framework ''linguistic antipatterns''
+## method `getCustomers()` returns boolean
+
+<<<
+''Linguistic antipatterns'' commonly occur in method or function names, too, when its name describes something the method or function does not do.
+<<<
+
+!! 10 getting better at solving complex problems
+
+//implicit memories// are //muscle memories// like touch typing
+
+//explicit memories// are memories you must recall actively like programming language syntax
+
+''strengthen implicit memories by automatize/practice skills''
+
+strengthen explicit memories:
+
+* study existing code
+* collaborate with a colleague (pair programming)
+* read code from Github
+* read books and blog posts about source code
+ 
+!! 11 act of writing code
+
+activities during programming
+
+# searching (looking through code base, reading and executing code via debugger)
+# comprehension (+searching, think about code, run and check tests)
+# transcription (implementing a plan, just coding)
+# incrementation (mix of searching, comprehension, transcription), for adding a new feature you need to read and understand existing code, understand where to add code, run tests, write new code or refactor code)
+# exploration (trying things out, write some experimental test for understand a topic etc.)
+
+
+''interruptions'' destroy productivity. It take 15 minutes to reconstruct the mental model
+
+Deal with interruptions by offloading the mental model into notes, TODO comments
+
+!! 12 designing and improving larger systems
+
+''cognitive dimensions of code bases (CDCB)''
+
+* //error proneness// (Javascript is very error-prone due to dynamic typing, Haskell is less error-prone due to strict static-typing)
+* //consistency//, how similar are similar things?
+* //diffuseness// (long methods, not idomatic code like using for-loops instead of list comprehensions in Python)
+* //hidden dependencies// (eventhandlers in JS stored in different files, hidden assumptions for input variables, hidden invariants)
+* //provisionality// , how is easy it is to think when you use a tool/programming language. A very strict language, it's harder to express your thoughts -> low provisionality
+* //viscosity//, how hard it is to make changes in a system?
+* //progressive evaluation//, how easy is it to check a system? (running test suite, compile time)
+* //role expressiveness//, how easy is it to detect the role of code parts? (all boolean return function are called isXXX(), similar problems are solved the same way)
+* //hard mental operations//, how hard is it to make progress? In Haskell writing code requires you to think very hard about type signatures of functions
+* //abstractions//, is the system compound of good abstractions? Function should build a domain layer of abstraction.
+
+''design maneuvers'' try to improve dimensions, they also have trade-offs. Improving one dimenstion can harm another one. Dimensions are in contrast to each other:
+
+* ''error-proneness'' vs ''viscosity'', strict types reduce errors but make the system harder to change
+
+!! 13 how to onboard new developers
+
+''curse of expertise'' or ''curse of knowledge'': we forget how hard learning a concept is when we already mastered it.
+
+Don't overload newcomers. Remember //germaine load//, we need some free space in working memory in order to transfer knowledge to LTM.
+
+<<< 
+experts and novices think and behave in very different ways.
+<<<
+
+* limits task to one activity (code searching, code writing, code understanding, code exploration) 
+** exploration
+** searching
+** transcription
+** comprehension
+** incremenetation
+* support LTM by ''explaining relevant information'' with documentation/diagrams/comments
+* support STM by ''prepare small focused tasks'' (don't start with a new feature, but let newcomer //understand// a code part or let them write a summary about a class)
+* support working memory: use diagrams, tracing (go through code step-by-step in your head)
+* read code together
