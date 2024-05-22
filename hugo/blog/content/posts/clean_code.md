@@ -17,6 +17,8 @@ to disagree and give my opinion about the highs and lows.
 
 ## The Good
 
+** advices, tips**
+
 Besides the book's programming guidance, I think the greatest achievement of the
 book is coining the term **Clean Code** and creating the necessary awareness
 about code quality in general:
@@ -55,6 +57,11 @@ All the above makes _Clean Code_ an invaluable resource for all new programmers.
 
 ## The Bad
 
+** mantra like advice with no compromise, overuse of everything is bad**
+
+> Water is healthy but too much and you can drown in it. Small functions are
+> healthy but too many and you can get lost.
+
 Alas, this book is not perfect and it has flaws. Flaws surface, especially when
 there are million readers.
 
@@ -63,11 +70,6 @@ three main things
 - deprecated topics like formatting, only Java examples, missing new modern
   programming styles like functional programming
 - bad, wordy code examples
-- examples disregard the books own advice
-
-TODO
-
-- wordy and hard to comprehend code examples
 
 - function should be small and even smaller
 
@@ -81,13 +83,6 @@ TODO
 - SOLID principle are introduced like SRP but with very bad examples people
   cannot relate to
 
-- side-effect are described and considered as bad but the book over-uses
-  side-effect in many coding examples. It seems Robert Martin does not consider
-  changing instance variables as side-effects (I think it still make the code
-  hard to read and forces me to jump around inside the class file)
-- same is true for command query separation, he explain it but completely
-  disregards in many code examples
-
 - obsolete topics: Formatting, Java-Centric with EJB, Aspect does not belong in
   a general Programming Book anymore, Concurrency with traditional Java tooling
   is not out-of-date, nowadays there are first-class concurrency languages like
@@ -99,6 +94,27 @@ TODO
   examples is hard!
 
 ## The Ugly
+
+** bad examples and the culmination is the prime generator **
+
+- examples disregard the books own advice
+- wordy and hard to comprehend code examples
+- side-effect are described and considered as bad but the book uses side-effects
+  in many coding examples. It seems Robert Martin does not consider changing
+  instance variables as side-effects (I think it still make the code hard to
+  read and forces me to jump around inside the class file)
+- side effect definition
+  https://en.wikipedia.org/wiki/Side_effect_(computer_science)
+
+> a function is said to have a side effect if it modifies some state variable
+> outside its local environment.
+
+> Example side effects include modifying a non-local variable, modifying a
+> static local variable, modifying a mutable argument passed by reference,
+> performing I/O or calling other functions with side-effects.
+
+- same is true for command query separation, he explain it but completely
+  disregards in many code examples
 
 clean code primary generator?!?
 
