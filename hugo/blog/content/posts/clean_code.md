@@ -1,27 +1,27 @@
 ---
 title: "Clean Code: The good, the Bad and the Ugly"
-date: 2024-01-17T09:00:00+01:00
+date: 2024-08-04T09:00:00+01:00
 tags: ["programming", "softwareengineering"]
 draft: true
 ---
 
 _Clean Code_ by Robert C. Martin is a seminal programming book. A whole
-generation of developers, including myself, became better programmers by
-following the book's advice. But after almost twenty years, does the book still
-hold up to its high standards? Was some advice given by _Clean Code_ always bad?
-Are there better alternatives nowadays?
+generation of developers, including myself, became better programmers by the
+book's advice. But after almost twenty years, does the book still hold up to its
+high standards? Was some advice given by _Clean Code_ questionable or even
+wrong? Are there better alternatives nowadays?
 
-To be fair, the author himself claims in the preface that "some recommendations
-in the book are controversial and people might disagree". In this article I try
-to disagree and give my opinion about the highs and lows.
+To be fair, the author himself claims in the preface that "_some recommendations
+in the book are controversial and people might disagree_". In this article I try
+to disagree. Let's go through to the **good, bad and ugly** parts of Clean Code!
 
 ## The Good
 
-** advices, tips**
+#### Great Programming Advice
 
 Besides the book's programming guidance, I think the greatest achievement of the
-book is coining the term **Clean Code** and creating the necessary awareness
-about code quality in general:
+book is coining the term **Clean Code** and creating a general awareness about
+code quality:
 
 > _The only way to go fast is to go well_ - Uncle Bob
 
@@ -42,60 +42,114 @@ rule_ are also presented.
 Additionally, numerous useful programming practices are given. Senior developers
 take them for granted but junior developers need to learn them first, e.g.:
 
-- _exception handling_: You should not pass null or return null. Use unchecked
-  exceptions
-- _unit testing_: A test should be FIRST(fast, independent, repeatable,
-  self-validated, timely) and should only have one assertion.
+- _naming_: use problem-domain names for functions, classes and variables (DDD
+  ubiquitous language)
+- _exception handling_: don't pass null or return null, use unchecked
+  exceptions, provide context in exceptions
+- _unit testing_: tests should be FIRST(Fast, Independent, Repeatabl,e
+  Self-validated, Timely) and should assert a single behaviour
 - _Single Responsibility Principle_
-- prefer pure functions, i.e. functions without side-effects
+- _functions_: do one thing, statements are all the same level of abstraction
+- prefer _pure functions_ with no side-effects
+- _Command Query Separation_: functions should return something and have no side
+  effect. Or return nothing but have a side effect
+- _DRY_
+- don't comment code, delete it - there is version control
+- _boundaries_, don't depend too much on 3rd party libs, hide them with
+  interfaces - this will make your code testable
+- _Law Of Demeter_
+- _Data Abstraction_, use encapsulation/information hiding to preserve
+  invariants (DDD)
 
-At the very end the book contains a long list of worth knowing code smells. It's
-not only important to know how to write good code but also how to detect bad
-code.
+These practices are timeless for all programmers - new and old. I keep finding
+myself giving these tips over and over to team members in pair programming
+sessions, discussions or other kind of talks.
 
-All the above makes _Clean Code_ an invaluable resource for all new programmers.
+#### Code Smells Compendium
+
+Another highlight of the book comes at the very end: an extensive list of common
+code smells. **It's not only important to know how to write good code but also
+how to detect bad code.**
 
 ## The Bad
 
-** mantra like advice with no compromise, overuse of everything is bad**
+2 main points:
 
-> Water is healthy but too much and you can drown in it. Small functions are
-> healthy but too many and you can get lost.
+#### obsolete topics
 
-Alas, this book is not perfect and it has flaws. Flaws surface, especially when
-there are million readers.
+Formatting, Java-Centric with EJB, Aspect does not belong in a general
+Programming Book anymore, Concurrency topics are shallow and deprecated,
+nowadays there are first-class concurrency languages like Go or Rust, they
+changed the approach a lot, even Java has nowadays structured concurrency
+capabilities. Java coding-style without Lambdas, functional Interfaces, Streams
+etc.
 
-three main things
-
-- deprecated topics like formatting, only Java examples, missing new modern
-  programming styles like functional programming
-- bad, wordy code examples
-
-- function should be small and even smaller
+only Java examples, missing new modern programming styles like functional
+programming
 
 - completely missing of Functional Programming Design:
-
   - immutability
   - referential transparency
   - high-order functions
-  - focus on no side-effects
+  - focus on no side-effects (although this is sometimes mentions but not
+    consistently applied)
 
-- SOLID principle are introduced like SRP but with very bad examples people
-  cannot relate to
+#### mantra-like writing style
 
-- obsolete topics: Formatting, Java-Centric with EJB, Aspect does not belong in
-  a general Programming Book anymore, Concurrency with traditional Java tooling
-  is not out-of-date, nowadays there are first-class concurrency languages like
-  Go or Rust, they changed the approach a lot. Java coding-style without
-  Lambdas, functional Interfaces, Streams etc.
+The topics are presented in a mantra-like way. More often than not there is no
+explanation given why the specific advice is useful, when to use the presented
+practices and in which concrete scenario to apply them. This is especially
+insufficient for new programmers who have no good judgement yet.
 
-  (unfortunately the books fails to deliver good explanations and does not
-  provide good examples) -> I know from my own experience come up with good code
-  examples is hard!
+Overusing any practice is bad. I made experience where new developers have read
+the Design Pattern book and the next day they started to replace all if-else
+conditions with Strategy Pattern :thinking_face:
+
+For example advice like:
+
+> The first rule of function is that they should be small. The second rule of
+> functions is that they should be smaller than that. - _Clean Code, chapter 3,
+> p34_
+
+or
+
+> Everytime you see a duplication in the code, it represents a missed
+> opportunity for abstraction. - _Clean Code, chapter 17, p289_
+
+are not _always_ beneficial. Sometimes such a coding style hurts more than it
+helps, particularly when a pattern is applied consistently without reasoning. I
+stand with Kent Beck's advice which is _always_ applicable:
+
+> It depends. - _Kent Beck_
+
+Good advice and practices always come with trade-offs and costs. These costs
+must be transparent and known, otherwise it's not possible to use practices
+adequately and in the right situations.
+
+Software developer maturity levels:
+
+Level 0 ignores advice and invents own uncommon coding style and practices
+
+Level 1 No sense of code cleanliness
+
+Level 2 Adheres religiously to code style advice in a book in all situations
+
+Level 3 Can appreciate the book's advice and apply it correctly when applicable
+
+Level 4 Writes and refactors code to make sound advice applicable in more
+situations
+
+The mantra-like writing-style leads to cargo-cult programming where people shout
+out: "This is not clean code" although they do not really understand what this
+means. Often these people overzealous adhere to the _Clean Code_ practices.
+Actually this hurts me the most, because it always ends up in heated discussions
+where people think they are right because it's written in the book without
+considering the special circumstances. It's not the book's fault that people are
+not able to judge about their situations though.
 
 ## The Ugly
 
-** bad examples and the culmination is the prime generator **
+#### bad examples and the culmination is the prime generator
 
 - examples disregard the books own advice
 - wordy and hard to comprehend code examples
@@ -105,6 +159,7 @@ three main things
   read and forces me to jump around inside the class file)
 - side effect definition
   https://en.wikipedia.org/wiki/Side_effect_(computer_science)
+- I know from my own experience come up with good code examples is hard!
 
 > a function is said to have a side effect if it modifies some state variable
 > outside its local environment.
@@ -235,61 +290,57 @@ The code example often are very verbose and don't hold on what the book is
 telling you. The examples show sometimes the opposite! This comparison is really
 inappropriate and baffles me.
 
+One can argument that this Java-style was good or popular back in the days but
+honestly it was always bad style - in any time period[1].
+
 ## conclusion
 
-- It depends :) For Junior and programming beginners there are better modern
-  alternatives about general software engineering:
+Would I recommend _Clean Code_ for new programmers? Not anymore as the first
+Software Engineering book. In my opinion there are better alternatives:
 
-- A Philosophy of Software Design (for medium to experienced developers)
-- The Pragmatic Programmer
-- Code Complete
-- Code that fits in your head
-  https://www.oreilly.com/library/view/code-that-fits/9780137464302/
+- [A Philosophy of Software Design](https://web.stanford.edu/~ouster/cgi-bin/book.php)
+- [Code That Fits in Your Head](https://www.oreilly.com/library/view/code-that-fits/9780137464302/)
+- [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
+- you can find more books in my [reading list](/posts/programming-books/)
 
-For even more books and deeper insight I recommend my
-[reading list](/posts/programming-books/)
+The above books contain great engineering wisdom and in my opinion they are
+written in more a open-minded way. The readers have some leeway for their own
+thinking. The books give more background about the practices, trade-offs and
+**why** these practices are useful. Although they miss the catchy name - _Clean
+Code_ is matchless. However _Clean Code_ is a classic and still a required read
+because it contains timeless advice. Just make sure you don't apply the
+practices without judgement and reasoning.
 
-Maybe for a Junior Developer, it's a good start - it's better than nothing. But
-often Clean Code's advice needs to be judged very carefully if it really applies
-to the situation. But still Clean Code is a classic and should be read by every
-serious (senior) developer since it still holds timeless advice, but you need to
-be careful filtering out the right ones. Further as a senior, you need to be
-know Clean Code just in order to discuss about it and in case to argue why
-advice is good, deprecated or bad.
+I don't know what's more annoying: the ugly parts I discovered when I reread the
+book or the errant discussions with team members who only know buzzwords or
+short memorized statements without recognizing the deeper background. In such
+discussions, situational reasoning and judgement are ignored. Sure this is not
+Uncle Bob's fault but the mantra-like writing style does not really encourage
+trade-offs and judgement. Here I miss a bit more elaboration in the book. One of
+my favorite parts of the book is when the book diverges from the mantra-like
+writing style:
 
-To be fair in chapter 1, the author warns about being controversial and many
-will also disagree with the book's recommendation. Unfortunately, the book has
-such a great community and often is treated the "bible" which leads to
-non-fruitful and heated discussions where no situational reasoning and judgement
-is allow - just like a religion, people just follow the book without thinking
-(it's often the most convenient solution) - sure this is not Uncle Bob's fault
-to have written such a well-received book.
+> In an effort to make our classes and methods small, we might create too many
+> tiny classes and methods. So this rule suggest that that we also keep our
+> function and class counts lows.
 
-## Final Words
+> High class and method counts are sometimes the result of pointless dogmatism.
 
-> The only way to go fast, is to go well. -- Uncle Bob
+> Is there a set of simple practices that can replace experience? Clearly not.
 
-Robert's quote heavily inspired me and I try to live and code by it everyday.
-Therefore I also want to coin a term :)
+> _Clean Code_, chapter 12, p176
 
-Anyhow I think the greatest achievement of the book is coining the term **Clean
-Code** and making all programmers aware that:
+I wish the book would contain much more of such diligent statements that
+triggers the reader's thinking process and nudges him to use his own judgement.
 
-> _The only way to go fast is to go well_ - Uncle Bob
+Last but not least, I want to point out that _Clean Code_ is an brilliant name
+and a great foundation for other software engineering inventions (like mine
+:smile:):
 
-- reading the book is essential as a senior software developer because you need
-  to know it in order to discuss with your peers
-- also only read the book with a good portion of your own judgement, a lot of
-  advice is outdated or just dreadful.
-- also the book caused a lot of heated discussion because the book is treated as
-  the "bible" with dogmas
-- especially for junior developers, I cannot recommend it because the wrong
-  advice it contains could mislead young aspiring developers because they lack
-  their own judgement -> better alternative exist and after reading them _Clean
-  Code_ can be a good complement to the other books. After reading them you are
-  prepared to judge what is good and what is bad advice
+- [**_The Continuous Clean Code Process (CCCP)_**](/posts/cccp/) - cleaning
+  up/refactoring regularly
 
-**_The Continuous Clean Code Process (CCCP)_**
+# References
 
-Try to clean up on a regular base, comply with your own high coding standard,
-don't deviate to the dark side and continuously clean up your code bases.
+1. [Star Trek The Next Generation, All Good Things](https://www.imdb.com/title/tt0111281/),
+   Picard: "Mr. Data, you are a clever man - in any time period."
