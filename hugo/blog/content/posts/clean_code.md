@@ -73,8 +73,6 @@ how to detect bad code.**
 
 ## The Bad
 
-2 main points:
-
 #### obsolete topics
 
 Formatting, Java-Centric with EJB, Aspect does not belong in a general

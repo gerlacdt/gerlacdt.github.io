@@ -1,5 +1,5 @@
 created: 20240419152432424
-modified: 20240421122411133
+modified: 20240923165452689
 tags: TableOfContents
 title: AboutMe
 type: text/vnd.tiddlywiki
@@ -10,12 +10,12 @@ I am Daniel  Gerlach, an enthusiastic //''software engineer''//. I am particular
 
 
 # Java
-# Javascript with NodeJS
+# Javascript
 # Typescript 
 
 In my freetime I used a variety of programming languages:
 
-# (e)Lisp (configuring Emacs
+# (e)Lisp (configuring Emacs)
 # Clojure
 # Go
 # Rust
