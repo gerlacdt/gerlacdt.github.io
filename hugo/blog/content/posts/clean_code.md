@@ -7,17 +7,15 @@ draft: true
 
 _Clean Code_ by Robert C. Martin is a seminal programming book. A whole
 generation of developers, including myself, became better programmers by the
-book's advice. But after almost twenty years, does the book still hold up to its
-high standards? Was some advice given by _Clean Code_ questionable or even
-wrong? Are there better alternatives nowadays?
+Uncle Bob's advice. But after almost twenty years, does the book still hold up
+to its high standards? Was some advice given by _Clean Code_ questionable or
+even wrong? Are there better alternatives nowadays?
 
 To be fair, the author himself claims in the preface that "_some recommendations
 in the book are controversial and people might disagree_". In this article I try
-to disagree. Let's go through to the **good, bad and ugly** parts of Clean Code!
+to disagree. Let's go through to the **good, bad and ugly** parts of Clean Code.
 
 ## The Good
-
-#### Great Programming Advice
 
 Besides the book's programming guidance, I think the greatest achievement of the
 book is coining the term **Clean Code** and creating a general awareness about
@@ -26,50 +24,50 @@ code quality:
 > _The only way to go fast is to go well_ - Uncle Bob
 
 The impact of the book in the programming world is second to none. All of a
-sudden code quality, readability and maintainability were subject of discussion
-for developer teams. I truly believe this made the developers' world a better
-place.
+sudden code quality, readability and maintainability were in the center of
+discussion for developer teams. I truly believe this made the developers' world
+a better place.
 
 The book itself is full of great programming advice, mainly written in Java but
 applicable in other programming languages as well. It's especially valuable for
 new programmers, starting the craft. You will find foundational tips regarding
-functions and variable names that they should be intention-revealing and
-searchable. Or explanations what makes a good comment and when should you better
-rewrite the code. Other timeless ideas like the _DRY_ principle (Don't Repeat
-Yourself), _Command-Query separation_ and the nice metaphor with the _boy scout
-rule_ are also presented.
+function and variable names that they should be intention-revealing and
+searchable. Other timeless ideas like the _DRY_ principle (Don't Repeat
+Yourself), _Command-Query separation_ and noteworthy metaphors like the _boy
+scout rule_ are also presented.
 
 Additionally, numerous useful programming practices are given. Senior developers
 take them for granted but junior developers need to learn them first, e.g.:
 
-- _naming_: use problem-domain names for functions, classes and variables (DDD
-  ubiquitous language)
-- _exception handling_: don't pass null or return null, use unchecked
-  exceptions, provide context in exceptions
-- _unit testing_: tests should be FIRST(Fast, Independent, Repeatabl,e
+- Good _naming_ uses problem-domain names for functions, classes and variables.
+  This is also a main principle in DDD, namely the ubiquitous language.
+- Good _exception handling_ uses unchecked exceptions and provides as much
+  context as possible
+- In good _unit testing_ tests should be FIRST (Fast, Independent, Repeatable
   Self-validated, Timely) and should assert a single behaviour
-- _Single Responsibility Principle_
-- _functions_: do one thing, statements are all the same level of abstraction
-- prefer _pure functions_ with no side-effects
-- _Command Query Separation_: functions should return something and have no side
-  effect. Or return nothing but have a side effect
-- _DRY_
-- don't comment code, delete it - there is version control
-- _boundaries_, don't depend too much on 3rd party libs, hide them with
-  interfaces - this will make your code testable
-- _Law Of Demeter_
-- _Data Abstraction_, use encapsulation/information hiding to preserve
-  invariants (DDD)
+- Classes should comply to the _Single Responsibility Principle_
+- _Functions_ should do one thing and all statements should have the same level
+  of abstraction
+- _pure functions_ should be preferred without side-effects
+- Functions should comply to the _Command Query Separation_ pattern. On the one
+  hand functions returning something should have no side effects, on the other
+  hand functions returning nothing have side effects
+- Keep your code _DRY_
+- Don't comment code, delete it - there is version control
+- Try to have good _boundaries_ in your codebase. Don't depend too much on 3rd
+  party libs, hide them behind interfaces. This will make your code testable
+- Good _Data Abstractions_ enabled by encapsulation/information hiding will
+  preserve class invariants and will guarantee convenient and easy-to-use class
+  APIs.
 
 These practices are timeless for all programmers - new and old. I keep finding
 myself giving these tips over and over to team members in pair programming
 sessions, discussions or other kind of talks.
 
-#### Code Smells Compendium
-
-Another highlight of the book comes at the very end: an extensive list of common
-code smells. **It's not only important to know how to write good code but also
-how to detect bad code.**
+Another highlight of the book is the extensive code smells compendium where the
+book describes the most common code smells with their corresponding
+countermeasures. **It's not only important to know how to write good code but
+also how to detect bad code.**
 
 ## The Bad
 
@@ -114,15 +112,22 @@ or
 > Everytime you see a duplication in the code, it represents a missed
 > opportunity for abstraction. - _Clean Code, chapter 17, p289_
 
-are not _always_ beneficial. Sometimes such a coding style hurts more than it
-helps, particularly when a pattern is applied consistently without reasoning. I
-stand with Kent Beck's advice which is _always_ applicable:
+are not _always_ beneficial. Dogmatic application of such rules hurts coding
+style more than it helps, particularly when a pattern is applied without
+reasoning. Actually the worst codebases I worked with were those where people
+dogmatically applied rules like small functions, DRY principle or SRP without
+reasoning. Eventually those codebases ended up with hundred of tiny classes
+contained dozens of mini-functions thereby completely ignoring higher and more
+important design rules like coupling and cohesion. The dogmatic writing style
+stands in contrast to Kent Beck's quote:
 
 > It depends. - _Kent Beck_
 
 Good advice and practices always come with trade-offs and costs. These costs
 must be transparent and known, otherwise it's not possible to use practices
-adequately and in the right situations.
+adequately and in the right situations. Rules and guidelines only give us new
+tools in our toolbox but still we need to reason and judge about new situation
+because all of them are unique in their own way.
 
 Software developer maturity levels:
 
@@ -332,11 +337,11 @@ I wish the book would contain much more of such diligent statements that
 triggers the reader's thinking process and nudges him to use his own judgement.
 
 Last but not least, I want to point out that _Clean Code_ is an brilliant name
-and a great foundation for other software engineering inventions (like mine
-:smile:):
+and a great foundation for other software engineering inventions. I came up with
+one of my own :grin::
 
 - [**_The Continuous Clean Code Process (CCCP)_**](/posts/cccp/) - cleaning
-  up/refactoring regularly
+  up/refactoring **perpetually**
 
 # References
 
