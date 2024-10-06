@@ -71,84 +71,79 @@ also how to detect bad code.**
 
 ## The Bad
 
-#### obsolete topics
+Even a seminal book is not perfect. In the following, I try to describe my two
+main points of criticism. First, while _Clean Code_ remains a classic resource
+for software engineering, **some of its content is obsolete**. For example the
+heavy Java focus, the reliance on
+[EJBs](https://en.wikipedia.org/wiki/Jakarta_Enterprise_Beans) and
+[AspectJ](https://en.wikipedia.org/wiki/AspectJ) limits the applicability for
+modern programming practices. Additionally, the concurrency topics covered are
+shallow and too low-level, especially considering the rise of first-class
+concurrency languages like Go and Rust. These languages offer more robust and
+efficient approaches to concurrency. Furthermore, the book primarily uses Java
+with Object-Oriented Programming examples, which may not adequately represent
+the diversity of modern programming styles today. Especially it lacks a
+comprehensive exploration of functional programming concepts, including
+immutability, referential transparency, high-order functions, and the emphasis
+on avoiding side effects. These principles are occasionally mentioned but they
+are not consistently applied in the book's examples.
 
-Formatting, Java-Centric with EJB, Aspect does not belong in a general
-Programming Book anymore, Concurrency topics are shallow and deprecated,
-nowadays there are first-class concurrency languages like Go or Rust, they
-changed the approach a lot, even Java has nowadays structured concurrency
-capabilities. Java coding-style without Lambdas, functional Interfaces, Streams
-etc.
+Second, **the book's dogmatic presentation of coding principles can be a
+double-edged sword.** While it offers valuable advice, its lack of nuanced
+explanations and context can lead to misunderstandings, particularly for newer
+developers. Overzealous adherence to rules like "small functions" or the "DRY
+principle" without seeing the costs can actually hinder code quality.
 
-only Java examples, missing new modern programming styles like functional
-programming
+For example, blindly applying the "DRY principle" can result in excessive
+abstraction, leading to a proliferation of tiny, overly complex classes. This
+can make the code harder to understand and maintain. A better approach,
+recognizing that sometimes duplication is acceptable to improve readability or
+performance, is essential for effective software development. Even more
+important is that we should not place simple coding practices above higher
+design principles like coupling, cohesion, information hiding etc.
 
-- completely missing of Functional Programming Design:
-  - immutability
-  - referential transparency
-  - high-order functions
-  - focus on no side-effects (although this is sometimes mentions but not
-    consistently applied)
-
-#### mantra-like writing style
-
-The topics are presented in a mantra-like way. More often than not there is no
-explanation given why the specific advice is useful, when to use the presented
-practices and in which concrete scenario to apply them. This is especially
-insufficient for new programmers who have no good judgement yet.
-
-Overusing any practice is bad. I made experience where new developers have read
-the Design Pattern book and the next day they started to replace all if-else
-conditions with Strategy Pattern :thinking_face:
-
-For example advice like:
+More mantra-like examples can be found in the book directly:
 
 > The first rule of function is that they should be small. The second rule of
 > functions is that they should be smaller than that. - _Clean Code, chapter 3,
 > p34_
 
-or
-
 > Everytime you see a duplication in the code, it represents a missed
 > opportunity for abstraction. - _Clean Code, chapter 17, p289_
 
-are not _always_ beneficial. Dogmatic application of such rules hurts coding
-style more than it helps, particularly when a pattern is applied without
-reasoning. Actually the worst codebases I worked with were those where people
-dogmatically applied rules like small functions, DRY principle or SRP without
-reasoning. Eventually those codebases ended up with hundred of tiny classes
-contained dozens of mini-functions thereby completely ignoring higher and more
-important design rules like coupling and cohesion. The dogmatic writing style
-stands in contrast to Kent Beck's quote:
+**This writing style can also contribute to cargo-cult programming,** where
+developers blindly follow rules without understanding the underlying reasons.
+More often than not, it leads to heated debates and misunderstandings, as people
+cling to their interpretations of the book's advice without considering the
+specific context of their projects. I admit though that it is not the book's
+fault that people are not able to judge about their situations but the
+mantra-like writing style does not really encourage reasoning. Funnily the book
+sometimes diverges from the mantra-like writing style and condemns dogmatism:
+
+> In an effort to make our classes and methods small, we might create too many
+> tiny classes and methods. So this rule suggest that that we also keep our
+> function and class counts lows.
+
+> High class and method counts are sometimes the result of pointless dogmatism.
+
+> Is there a set of simple practices that can replace experience? Clearly not.
+
+> _Clean Code_, chapter 12, p176
+
+These passages are rare and I wish the book would contain much more of such
+diligent statements that triggers the reader's thinking process and nudges him
+to use his own judgement. It's important to remember that software development
+is not a one-size-fits-all endeavor. Good developers understand the principles
+outlined in _Clean Code_ but also possess the judgment to apply them
+appropriately in different scenarios. Good advice and practices always come with
+trade-offs. These trade-offs must be transparent and known, otherwise it's not
+possible to use practices adequately. Rules and guidelines are only tools in our
+toolbox but still we need to reason and judge about them again and again since
+every situation is unique. That's why I like Kent Beck's quote so much:
 
 > It depends. - _Kent Beck_
 
-Good advice and practices always come with trade-offs and costs. These costs
-must be transparent and known, otherwise it's not possible to use practices
-adequately and in the right situations. Rules and guidelines only give us new
-tools in our toolbox but still we need to reason and judge about new situation
-because all of them are unique in their own way.
-
-Software developer maturity levels:
-
-Level 0 ignores advice and invents own uncommon coding style and practices
-
-Level 1 No sense of code cleanliness
-
-Level 2 Adheres religiously to code style advice in a book in all situations
-
-Level 3 Can appreciate the book's advice and apply it correctly when applicable
-
-Level 4 Writes and refactors code to make sound advice applicable in more
-situations
-
-The mantra-like writing-style leads to cargo-cult programming where people shout
-out: "This is not clean code" although they do not really understand what this
-means. Often these people overzealous adhere to the _Clean Code_ practices.
-Actually this hurts me the most, because it always ends up in heated discussions
-where people think they are right because it's written in the book without
-considering the special circumstances. It's not the book's fault that people are
-not able to judge about their situations though.
+Basically, this tiny quote covers the soul of software engineering.
 
 ## The Ugly
 
@@ -298,13 +293,14 @@ honestly it was always bad style - in any time period[1].
 
 ## conclusion
 
-Would I recommend _Clean Code_ for new programmers? Not anymore as the first
-Software Engineering book. In my opinion there are better alternatives:
+Would I recommend _Clean Code_ for new programmers? Yes, but not anymore as the
+first Software Engineering book. In my opinion there are better alternatives:
 
 - [A Philosophy of Software Design](https://web.stanford.edu/~ouster/cgi-bin/book.php)
 - [Code That Fits in Your Head](https://www.oreilly.com/library/view/code-that-fits/9780137464302/)
 - [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
-- you can find more books in my [reading list](/posts/programming-books/)
+- for a deep-dive you can find more books in my
+  [reading list](/posts/programming-books/)
 
 The above books contain great engineering wisdom and in my opinion they are
 written in more a open-minded way. The readers have some leeway for their own
@@ -313,28 +309,6 @@ thinking. The books give more background about the practices, trade-offs and
 Code_ is matchless. However _Clean Code_ is a classic and still a required read
 because it contains timeless advice. Just make sure you don't apply the
 practices without judgement and reasoning.
-
-I don't know what's more annoying: the ugly parts I discovered when I reread the
-book or the errant discussions with team members who only know buzzwords or
-short memorized statements without recognizing the deeper background. In such
-discussions, situational reasoning and judgement are ignored. Sure this is not
-Uncle Bob's fault but the mantra-like writing style does not really encourage
-trade-offs and judgement. Here I miss a bit more elaboration in the book. One of
-my favorite parts of the book is when the book diverges from the mantra-like
-writing style:
-
-> In an effort to make our classes and methods small, we might create too many
-> tiny classes and methods. So this rule suggest that that we also keep our
-> function and class counts lows.
-
-> High class and method counts are sometimes the result of pointless dogmatism.
-
-> Is there a set of simple practices that can replace experience? Clearly not.
-
-> _Clean Code_, chapter 12, p176
-
-I wish the book would contain much more of such diligent statements that
-triggers the reader's thinking process and nudges him to use his own judgement.
 
 Last but not least, I want to point out that _Clean Code_ is an brilliant name
 and a great foundation for other software engineering inventions. I came up with
