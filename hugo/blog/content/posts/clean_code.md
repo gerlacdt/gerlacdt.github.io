@@ -147,7 +147,7 @@ Basically, this tiny quote covers the soul of software engineering.
 
 ## The Ugly
 
-#### bad examples and the culmination is the prime generator
+#### bad examples
 
 - examples disregard the books own advice
 - wordy and hard to comprehend code examples
@@ -159,17 +159,22 @@ Basically, this tiny quote covers the soul of software engineering.
   https://en.wikipedia.org/wiki/Side_effect_(computer_science)
 - I know from my own experience come up with good code examples is hard!
 
+The code example often are very verbose and don't hold on what the book is
+telling you. The examples show sometimes the opposite!
+
+- same is true for command query separation, he explain it but completely
+  disregards in many code examples
+
+#### culmination is the prime generator
+
+side-effect definition
+
 > a function is said to have a side effect if it modifies some state variable
 > outside its local environment.
 
 > Example side effects include modifying a non-local variable, modifying a
 > static local variable, modifying a mutable argument passed by reference,
 > performing I/O or calling other functions with side-effects.
-
-- same is true for command query separation, he explain it but completely
-  disregards in many code examples
-
-clean code primary generator?!?
 
 https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481
 
@@ -248,7 +253,7 @@ public class PrimeGenerator {
 good primary number generator
 https://gist.github.com/gerlacdt/772c86b2f592a16ea6303defaf74974f
 
-```java
+```python
 # Program collects all primes less than or equal n.
 # It uses the Sieve of Eratosthenes algorithm, see
 # https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
@@ -275,18 +280,6 @@ def primes(n):
     # collect all primes, the numbers not crossed out
     return [i for i, v in enumerate(prime) if v]
 ```
-
-The culmination of bad taste is the comparison of: related to Primes: Comparing
-Knuth's Literature Programming Prime Generator C output with CWEB to a Java
-solution without the "literature comments" is a complete disaster. The main part
-of "Literature Programming" is the weaving comments into the code so that it
-reads like novel, that's the beauty of it. Basically he compares the output of
-the CWEB compiler with his Java example. The compiler output is not what should
-humans read...
-
-The code example often are very verbose and don't hold on what the book is
-telling you. The examples show sometimes the opposite! This comparison is really
-inappropriate and baffles me.
 
 One can argument that this Java-style was good or popular back in the days but
 honestly it was always bad style - in any time period[1].
