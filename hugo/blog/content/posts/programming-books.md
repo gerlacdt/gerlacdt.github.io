@@ -25,7 +25,7 @@ by John Ousterhout
 [Link to book](https://web.stanford.edu/~ouster/cgi-bin/book.php)
 
 <p align="left">
-    <img src="/img/books/philosophy_of_software_design.jpg" alt="philosophy_of_software_design" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/philosophy_of_software_design.jpg" alt="philosophy_of_software_design" class="medium-zoom-image" width="200">
 </p>
 
 A fabulous book to level up your software design skills as an experienced
@@ -50,7 +50,7 @@ by Dave Thomas and Andrew Hunt
 [Link to book](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
 
 <p align="left">
-    <img src="/img/books/pragmatic_programmer.jpg" alt="pragmatic_programmer" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/pragmatic_programmer.jpg" alt="pragmatic_programmer" class="medium-zoom-image" width="200">
 </p>
 
 _The Pragmatic Programmer_ is a whirlwind of highly effective programming
@@ -76,7 +76,7 @@ by Steve McConnell
 [Link to book](https://en.wikipedia.org/wiki/Code_Complete)
 
 <p align="left">
-    <img src="/img/books/code_complete.jpg" alt="code_complete" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/code_complete.jpg" alt="code_complete" class="medium-zoom-image" width="200">
 </p>
 
 An all-time classic about all facets of programming. In the 90s and the early
@@ -101,7 +101,7 @@ by Robert C. Martin
 [Link to book](https://www.oreilly.com/library/view/clean-code-a/9780136083238/)
 
 <p align="left">
-    <img src="/img/books/clean_code.jpg" alt="clean_code" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/clean_code.jpg" alt="clean_code" class="medium-zoom-image" width="200">
 </p>
 
 _Clean Code_ will teach you good programming techniques and styles. It coined
@@ -133,7 +133,7 @@ by Martin Fowler
 [Link to book](https://martinfowler.com/books/refactoring.html)
 
 <p align="left">
-    <img src="/img/books/refactoring.jpg" alt="refactoring" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/refactoring.jpg" alt="refactoring" class="medium-zoom-image" width="200">
 </p>
 
 Martin Fowler is a giant in modern Software Engineering. He was involved in
@@ -168,7 +168,7 @@ by Kent Beck
 [Link to book](https://www.oreilly.com/library/view/test-driven-development/0321146530/)
 
 <p align="left">
-    <img src="/img/books/tdd.jpg" alt="tdd" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/tdd.jpg" alt="tdd" class="medium-zoom-image" width="200">
 </p>
 
 The best introduction into one of the game-changing programming techniques of
@@ -194,7 +194,7 @@ by GoF aka Erich Gamma, John Vlissides, Ralph Johnson, Richard Helm
 [Link to book](https://en.wikipedia.org/wiki/Design_Patterns)
 
 <p align="left">
-    <img src="/img/books/gof.jpg" alt="gof" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/gof.jpg" alt="gof" class="medium-zoom-image" width="200">
 </p>
 
 A seminal textbook from the 90s. Patterns build the foundation for well designed
@@ -222,7 +222,7 @@ by Kent Beck
 [Link to book](https://www.oreilly.com/library/view/extreme-programming-explained/0321278658/)
 
 <p align="left">
-    <img src="/img/books/xp.jpg" alt="xp" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/xp.jpg" alt="xp" class="medium-zoom-image" width="200">
 </p>
 
 The real book about **agile**. All commercial agile frameworks like Scrum,
@@ -250,7 +250,7 @@ by Eric Evans
 [Link to book](https://www.domainlanguage.com/ddd/)
 
 <p align="left">
-    <img src="/img/books/ddd.jpg" alt="ddd" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/ddd.jpg" alt="ddd" class="medium-zoom-image" width="200">
 </p>
 
 A classic from the early 2000s. It coined the term Domain Driven Design (DDD)
@@ -286,7 +286,7 @@ by Fred Brooks
 [Link to book](https://en.wikipedia.org/wiki/The_Mythical_Man-Month)
 
 <p align="left">
-    <img src="/img/books/myth_month.jpg" alt="myth_month" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/myth_month.jpg" alt="myth_month" class="medium-zoom-image" width="200">
 </p>
 
 The last book in the _Software Engineering_ category but the most influential
@@ -315,7 +315,7 @@ by Harold Abelson and Gerald Jay Sussman with Julie Sussman
 [Link to book](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html)
 
 <p align="left">
-    <img src="/img/books/sicp.gif" alt="sicp" class="medium-zoom-image" width="400">
+    <img src="/blog/img/books/sicp.gif" alt="sicp" class="medium-zoom-image" width="400">
 </p>
 
 **The best programming book ever written**, period. The book is the best
@@ -350,7 +350,7 @@ by Peter Norvig
 [Link to book](https://github.com/norvig/paip-lisp)
 
 <p align="left">
-    <img src="/img/books/paip.jpg" alt="paip" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/paip.jpg" alt="paip" class="medium-zoom-image" width="200">
 </p>
 
 **The second best programming book ever written** and in a way a continuation of
@@ -384,7 +384,7 @@ by Daniel P. Friedman and Matthias Felleisen
 [Link to book](https://mitpress.mit.edu/9780262560993/the-little-schemer/)
 
 <p align="left">
-    <img src="/img/books/little_schemer.avif" alt="little_schemer" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/little_schemer.avif" alt="little_schemer" class="medium-zoom-image" width="200">
 </p>
 
 A book about _recursion_. Or let me rephrase: **The** book about recursion.
@@ -403,7 +403,7 @@ by Bird Wadler
 [Link to book PDF](https://doc.lagout.org/programmation/Functional%20Programming/Richard_Bird%2C_Philip_Wadler-Introduction_to_Functional_Programming_%28Prentice_Hall_International_Series_in_Computing_Science%29-Prentice_Hall%281988%29.pdf)
 
 <p align="left">
-    <img src="/img/books/intro_func.jpg" alt="intro_func" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/intro_func.jpg" alt="intro_func" class="medium-zoom-image" width="200">
 </p>
 
 According to
@@ -430,7 +430,7 @@ by Jon Bentley
 [Link to book](https://www.oreilly.com/library/view/programming-pearls-second/9780134498058/)
 
 <p align="left">
-    <img src="/img/books/prog_pearls.jpg" alt="prog_pearls" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/prog_pearls.jpg" alt="prog_pearls" class="medium-zoom-image" width="200">
 </p>
 
 Timeless programming lessons packaged in short essays about excellently selected
@@ -451,7 +451,7 @@ by Steven Skiena
 [Link to book](https://www.algorist.com/)
 
 <p align="left">
-    <img src="/img/books/algo_design_manual.jpg" alt="algo_design_manual" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/algo_design_manual.jpg" alt="algo_design_manual" class="medium-zoom-image" width="200">
 </p>
 
 Data Structures and Algorithms are the bread and butter for every programmer.
@@ -477,7 +477,7 @@ By Don Knuth
 [Link to book](https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming)
 
 <p align="left">
-    <img src="/img/books/art_of_programming.png" alt="art_of_programming" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/art_of_programming.png" alt="art_of_programming" class="medium-zoom-image" width="200">
 </p>
 
 No programming book list is complete without Knuth's magnum opus. Knuth himself
@@ -508,7 +508,7 @@ By Brian W. Kernighan, Dennis Richie
 [Link to book](https://www.cs.princeton.edu/~bwk/cbook.html)
 
 <p align="left">
-    <img src="/img/books/cbook.jpg" alt="cbook" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/cbook.jpg" alt="cbook" class="medium-zoom-image" width="200">
 </p>
 
 The book has a legendary status and needs no introduction. It offers a concise
@@ -524,7 +524,7 @@ By Brian W. Kernighan, Rob Pike
 [Link to book](https://www.cs.princeton.edu/~bwk/tpop.webpage/)
 
 <p align="left">
-    <img src="/img/books/practice_programming.jpg" alt="practice_programming" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/practice_programming.jpg" alt="practice_programming" class="medium-zoom-image" width="200">
 </p>
 
 A compendium of ageless programming practices, relevant for any programming
@@ -547,7 +547,7 @@ By Brian W. Kernighan, Rob Pike
 [Link to book](https://www.cs.princeton.edu/~bwk/upe/upe.html)
 
 <p align="left">
-    <img src="/img/books/unix_env.jpg" alt="unix_environment" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/unix_env.jpg" alt="unix_environment" class="medium-zoom-image" width="200">
 </p>
 
 Old but Gold! A great guide into the Unix Programming Environment. If you use
@@ -561,7 +561,7 @@ By Brian W. Kernighan, P.J. Plauger
 [Link to book](https://www.amazon.com/Software-Tools-Pascal-Brian-Kernighan/dp/0201103427)
 
 <p align="left">
-    <img src="/img/books/sw_tools.jpg" alt="software_tools_pascal" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/sw_tools.jpg" alt="software_tools_pascal" class="medium-zoom-image" width="200">
 </p>
 
 A little forgotten and underrated book, but one of my favorites. The advice in
@@ -590,7 +590,7 @@ by Titus Winters, Tom Manshreck and Hyrum Wright
 [Link to book](https://abseil.io/resources/swe-book)
 
 <p align="left">
-    <img src="/img/books/swe_at_google.jpg" alt="swe_at_google" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/swe_at_google.jpg" alt="swe_at_google" class="medium-zoom-image" width="200">
 </p>
 
 A must-read if you work in the software engineering field. The book contains it
@@ -611,7 +611,7 @@ by Martin Kleppmann
 [Link to book](https://dataintensive.net/)
 
 <p align="left">
-    <img src="/img/books/dataintensive.png" alt="dataintensive" class="medium-zoom-image" width="300">
+    <img src="/blog/img/books/dataintensive.png" alt="dataintensive" class="medium-zoom-image" width="300">
 </p>
 
 You work in a highly distributed IT landscape with microservices? Then this is a
@@ -636,7 +636,7 @@ by Gregor Hohpe
 [Link to book](https://architectelevator.com/book/)
 
 <p align="left">
-    <img src="/img/books/architectelevator.jpg" alt="architectelevator" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/architectelevator.jpg" alt="architectelevator" class="medium-zoom-image" width="200">
 </p>
 
 With the rise of _Agile_ and evolutionary architecture, architects are not
@@ -660,7 +660,7 @@ by Nicole Forsgren, Jez Humble, Gene Kim
 [Link to book](https://itrevolution.com/accelerate-book/)
 
 <p align="left">
-    <img src="/img/books/accelerate.webp" alt="accelerate" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/accelerate.webp" alt="accelerate" class="medium-zoom-image" width="200">
 </p>
 
 The **DevOps** book. Based on a four-year research, _Accelerate_ presents the
@@ -695,7 +695,7 @@ by Barbara Oakley
 [Link to book](https://barbaraoakley.com/books/a-mind-for-numbers/)
 
 <p align="left">
-    <img src="/img/books/mind_for_numbers.jpg" alt="mind_for_numbers" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/mind_for_numbers.jpg" alt="mind_for_numbers" class="medium-zoom-image" width="200">
 </p>
 
 My personal favorite. The book massively changed the way I approach and learn
@@ -723,7 +723,7 @@ by Camille Fournier
 [Link to book](https://www.oreilly.com/library/view/the-managers-path/9781491973882/)
 
 <p align="left">
-    <img src="/img/books/manager_path.jpg" alt="manager_path" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/manager_path.jpg" alt="manager_path" class="medium-zoom-image" width="200">
 </p>
 
 You want to take the next step in your career and want to approach a new
@@ -758,7 +758,7 @@ by Jocko Willink
 [Link to book](https://www.amazon.com/Leadership-Strategy-Tactics-Field-Manual/dp/1250226848)
 
 <p align="left">
-    <img src="/img/books/leadership_strategy.jpg" alt="leadership_strategy" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/leadership_strategy.jpg" alt="leadership_strategy" class="medium-zoom-image" width="200">
 </p
 >
 
@@ -792,7 +792,7 @@ by W. Richard Stevens
 [Link to book](http://www.apuebook.com/)
 
 <p align="left">
-    <img src="/img/books/apue.jpg" alt="apue" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/apue.jpg" alt="apue" class="medium-zoom-image" width="200">
 </p>
 
 ### Unix Network Programming: The Sockets Networking API Vol 1
@@ -802,7 +802,7 @@ by W. Richard Stevens
 [Link to book](http://www.kohala.com/start/)
 
 <p align="left">
-    <img src="/img/books/network_prog.jpg" alt="network_prog" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/network_prog.jpg" alt="network_prog" class="medium-zoom-image" width="200">
 </p>
 
 ### TCP/IP Illustrated: The Protocols, Volume 1
@@ -812,5 +812,5 @@ by W. Richard Stevens
 [Link to book](http://www.kohala.com/start/)
 
 <p align="left">
-    <img src="/img/books/network_protocol.gif" alt="network_protocol" class="medium-zoom-image" width="200">
+    <img src="/blog/img/books/network_protocol.gif" alt="network_protocol" class="medium-zoom-image" width="200">
 </p>

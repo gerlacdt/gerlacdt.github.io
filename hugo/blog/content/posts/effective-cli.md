@@ -201,7 +201,7 @@ My current prompt shows the current K8s cluster and namespace, the current git
 branch, the current active Python and the Rust versions with icons:
 
 <p align="left">
-    <img src="/img/starship.png" alt="starship_shell_prompt" class="medium-zoom-image">
+    <img src="/blog/img/starship.png" alt="starship_shell_prompt" class="medium-zoom-image">
 </p>
 
 ### Modern CLI commands

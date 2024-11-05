@@ -64,7 +64,7 @@ successful and bug-free application. Additionally you need system and UI tests
 in order to verify production readiness. The **test pyramid** visualizes this.
 
 <p align="center">
-    <img src="/img/test_pyramid.png" alt="https://stackoverflow.com/questions/56696132/why-is-ui-testing-at-the-top-of-the-test-pyramid" class="medium-zoom-image" width="300">
+    <img src="/blog/img/test_pyramid.png" alt="https://stackoverflow.com/questions/56696132/why-is-ui-testing-at-the-top-of-the-test-pyramid" class="medium-zoom-image" width="300">
 </p>
 
 System tests and UI tests are good to check your product as a whole, but these
@@ -82,7 +82,7 @@ cluttered with unresolved Bugs in the backlog? -- all bugs found by so-called
 manual QAs or testers.
 
 <p align="center">
-    <img src="/img/ice_cone.jpg" alt="https://watirmelon.blog/testing-pyramids/" class="medium-zoom-image" width="300">
+    <img src="/blog/img/ice_cone.jpg" alt="https://watirmelon.blog/testing-pyramids/" class="medium-zoom-image" width="300">
 </p>
 
 In this article I will focus on unit tests. Good unit tests should be clean,

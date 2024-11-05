@@ -92,7 +92,7 @@ correction early on, so the product direction can be changed and adopted to the
 market needs.
 
 <p align="center">
-    <img src="/img/lean_cycle.png" alt="lean_cycle" class="medium-zoom-image" width="700">
+    <img src="/blog/img/lean_cycle.png" alt="lean_cycle" class="medium-zoom-image" width="700">
 </p>
 
 Customer thoughts are indispensable since they have the best insights. A good

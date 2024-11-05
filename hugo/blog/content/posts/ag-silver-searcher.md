@@ -31,7 +31,7 @@ files in your current directory for the string "main".
 ag main
 ```
 
-![ag_silver_searcher](/img/ag_silver_searcher.png)
+![ag_silver_searcher](/blog/img/ag_silver_searcher.png)
 
 
 `ag` considers your `.gitignore` automatically but you can tweak it

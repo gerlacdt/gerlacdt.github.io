@@ -33,7 +33,7 @@ functionality will become harder, and eventually impossible
 [[1]](https://martinfowler.com/articles/is-quality-worth-cost.html)
 
 <p align="center">
-    <img src="/img/clean_code_over_time.png" alt="clean_code_over_time" class="medium-zoom-image" width="600">
+    <img src="/blog/img/clean_code_over_time.png" alt="clean_code_over_time" class="medium-zoom-image" width="600">
 </p>
 
 It is always better to stick to clean code and avoid shortcuts. Investing in

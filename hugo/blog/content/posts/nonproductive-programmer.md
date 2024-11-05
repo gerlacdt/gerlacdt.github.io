@@ -68,7 +68,7 @@ A presumable Java NPP's vicious cycle could look like this:
 
 
 <p align="center">
-  <img src="/img/vicious_cycle.drawio.png" alt="vicious cycle" class="medium-zoom-image" width="400">
+  <img src="/blog/img/vicious_cycle.drawio.png" alt="vicious cycle" class="medium-zoom-image" width="400">
 </p>
 
 

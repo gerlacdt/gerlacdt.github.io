@@ -25,4 +25,4 @@ expression and the text in your buffer will be highlighted
 immediately. It even considers different capture groups and highlights
 them in different colours. Very nice!
 
-![emacs_regexp_builder](/img/emacs_regexp_builder.png)
+![emacs_regexp_builder](/blog/img/emacs_regexp_builder.png)

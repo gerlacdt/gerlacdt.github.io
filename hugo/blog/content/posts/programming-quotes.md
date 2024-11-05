@@ -7,7 +7,7 @@ draft: false
 
 Over the years i collected some (funny) programming quotes. Lean back and enjoy:
 
-![Brian Kernighan](/img/kernighan.jpg)
+![Brian Kernighan](/blog/img/kernighan.jpg)
 
 > Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?
 

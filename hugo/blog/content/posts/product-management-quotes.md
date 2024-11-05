@@ -8,7 +8,7 @@ draft: false
 
 I collected my favorite quotes about product management:
 
-![Marty Cagan](/img/marty_cagan.jpg)
+![Marty Cagan](/blog/img/marty_cagan.jpg)
 
 > We need teams of missionaries, not teams of mercenaries.
 

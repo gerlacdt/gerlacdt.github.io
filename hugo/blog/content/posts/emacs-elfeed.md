@@ -74,4 +74,4 @@ https://github.com/skeeto/elfeed
 
 ### Screen record
 
-![elfeed](/img/elfeed.gif)
+![elfeed](/blog/img/elfeed.gif)

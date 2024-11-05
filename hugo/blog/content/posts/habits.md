@@ -66,7 +66,7 @@ Code reading is as important as code writing. Maybe even more important
 developers spent much more time on reading code than writing code.
 
 <p align="center">
-    <img src="/img/code_reading.png" alt="code_reading" class="medium-zoom-image" width="400">
+    <img src="/blog/img/code_reading.png" alt="code_reading" class="medium-zoom-image" width="400">
 </p>
 
 Code Reading skills are crucial in order to get familiar with a new codebase, to
@@ -166,7 +166,7 @@ functions and immutable (inherently thread-safe) data structures.
 Highly recommended concepts:
 
 <p align="center">
-    <img src="/img/concepts.png" alt="concepts_to_learn" class="medium-zoom-image" width="800">
+    <img src="/blog/img/concepts.png" alt="concepts_to_learn" class="medium-zoom-image" width="800">
 </p>
 
 Learning and grasping underlying concepts is crucial but you cannot gain a full
@@ -210,7 +210,7 @@ from million miles away [[4]](https://youtu.be/_gZK0tW8EhQ). You will figure out
 that many "new" features of Java or C# are just copied from Lisp.
 
 <p align="center">
-    <img src="/img/lisp_cycles.png" alt="lisp_cycles" class="medium-zoom-image" width="600">
+    <img src="/blog/img/lisp_cycles.png" alt="lisp_cycles" class="medium-zoom-image" width="600">
 </p>
 
 Unfortunately, Lisp's powerful abstractions are bane and boon. The ease to
@@ -329,7 +329,7 @@ accidentally end up as a _big ball of mud_
 information sharing between dependencies and hard to understand, obscure code.
 
 <p align="center">
-    <img src="/img/complexity-meme.jpg" alt="complexity-meme" class="medium-zoom-image" width="400">
+    <img src="/blog/img/complexity-meme.jpg" alt="complexity-meme" class="medium-zoom-image" width="400">
 </p>
 
 Other causes of complexity are any form of **state**
@@ -381,7 +381,7 @@ freely available. Learning is a lifelong undertaking and every engineer should
 embrace that.
 
 <p align="center">
-    <img src="/img/learning-too-old.jpg" alt="learning-too-old" class="medium-zoom-image" width="400">
+    <img src="/blog/img/learning-too-old.jpg" alt="learning-too-old" class="medium-zoom-image" width="400">
 </p>
 
 ## Understand the problem domain
@@ -430,11 +430,11 @@ whenever possible. By using fakes, the SUT implementation will not be exposed.
 Tests remain decoupled and refactorings possible.
 
 <p align="center">
-    <img src="/img/tests-diagram.png" alt="tests-diagram" class="medium-zoom-image" width="800">
+    <img src="/blog/img/tests-diagram.png" alt="tests-diagram" class="medium-zoom-image" width="800">
 </p>
 
 <p align="center">
-    <img src="/img/test-cycle.png" alt="tests-cycle" class="medium-zoom-image" width="800">
+    <img src="/blog/img/test-cycle.png" alt="tests-cycle" class="medium-zoom-image" width="800">
 </p>
 
 The corner pillars of good software design [[14]](https://www.poodr.com/) also

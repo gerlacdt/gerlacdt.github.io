@@ -29,7 +29,7 @@ hard to maintain and hard to comprehend. Does the following code snippet look
 familiar to you?
 
 <p align="left">
-    <img src="/img/codinghorror.png" alt="codinghorror" class="medium-zoom-image" width="70">
+    <img src="/blog/img/codinghorror.png" alt="codinghorror" class="medium-zoom-image" width="70">
 </p>
 
 ```java
@@ -130,7 +130,7 @@ sounding architecture pattern
 The restructured `OrderService` will be split up into two classes:
 
 <p align="center">
-    <img src="/img/command-query-separation.png" alt="command-query-separation" class="medium-zoom-image" width="800">
+    <img src="/blog/img/command-query-separation.png" alt="command-query-separation" class="medium-zoom-image" width="800">
 </p>
 
 The god class is stripped down to half its size but it still violates the
@@ -152,7 +152,7 @@ to add new functionality, keeps the code extensible and testable, and prevents
 god classes.
 
 <p align="center">
-<img src="/img/use-cases.png" alt="use-cases" class="medium-zoom-image" width="800">
+<img src="/blog/img/use-cases.png" alt="use-cases" class="medium-zoom-image" width="800">
 </p>
 
 ## Domain Events
@@ -198,7 +198,7 @@ interface. At runtime the `CompositeOrderCreatedEventHandler` will be injected
 which calls all EventHandlers for the `OrderCreatedEvent`. The class diagram:
 
 <p align="center">
-    <img src="/img/domain_event_hierachy.png" alt="domain_event_hierachy" class="medium-zoom-image" width="800">
+    <img src="/blog/img/domain_event_hierachy.png" alt="domain_event_hierachy" class="medium-zoom-image" width="800">
 </p>
 
 The Use-Case logic does not look like a _Transaction Script_ any longer and
