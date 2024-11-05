@@ -6,5 +6,5 @@ rm -rf public/
 hugo
 
 # move release to correct location
-cp -r public/* ../..
+cp -r public/* ../../blog
 rm -rf public/
