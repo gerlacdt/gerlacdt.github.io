@@ -22,7 +22,7 @@ situation. Maybe the whole involved team is proud of the high coverage, not
 recognizing their real problem.</p><p>Maintainable, fast and deterministic unit tests build the foundation of a
 sustainable codebase. But unit tests alone are not enough to guarantee a usable,
 successful and bug-free application. Additionally you need system and UI tests
-in order to verify production readiness. The <strong>test pyramid</strong> visualizes this.</p><p align=center><img src=/img/test_pyramid.png alt=https://stackoverflow.com/questions/56696132/why-is-ui-testing-at-the-top-of-the-test-pyramid class=medium-zoom-image width=300></p><p>System tests and UI tests are good to check your product as a whole, but these
+in order to verify production readiness. The <strong>test pyramid</strong> visualizes this.</p><p align=center><img src=/blog/img/test_pyramid.png alt=https://stackoverflow.com/questions/56696132/why-is-ui-testing-at-the-top-of-the-test-pyramid class=medium-zoom-image width=300></p><p>System tests and UI tests are good to check your product as a whole, but these
 tests are slow, flaky, not repeatable and often are conducted manually which
 makes them bad candidates for
 <a href=https://martinfowler.com/books/continuousDelivery.html>continuous integration and delivery</a>.
@@ -34,7 +34,7 @@ is the inverse of the test pyramid and leads to an unsustainable codebase
 because failing system tests leave developers in the dark about the root cause
 and drain their productivity. Did you ever work in a project with a Jira Board,
 cluttered with unresolved Bugs in the backlog? &ndash; all bugs found by so-called
-manual QAs or testers.</p><p align=center><img src=/img/ice_cone.jpg alt=https://watirmelon.blog/testing-pyramids/ class=medium-zoom-image width=300></p><p>In this article I will focus on unit tests. Good unit tests should be clean,
+manual QAs or testers.</p><p align=center><img src=/blog/img/ice_cone.jpg alt=https://watirmelon.blog/testing-pyramids/ class=medium-zoom-image width=300></p><p>In this article I will focus on unit tests. Good unit tests should be clean,
 maintainable and most notably &ldquo;useful&rdquo; for developers. The main purpose of tests
 is to save time for developers and keep the code quality high. But careless use
 of testing can have negative effects on productivity and code quality. E.g if

@@ -13,7 +13,7 @@ with an
 Services containing these transaction scripts evolve into god classes with
 thousand lines of code and dozen of dependencies. Such code is hard to test,
 hard to maintain and hard to comprehend. Does the following code snippet look
-familiar to you?</p><p align=left><img src=/img/codinghorror.png alt=codinghorror class=medium-zoom-image width=70></p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+familiar to you?</p><p align=left><img src=/blog/img/codinghorror.png alt=codinghorror class=medium-zoom-image width=70></p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
@@ -95,7 +95,7 @@ from Bertrand Meyer classifies functions into two types:</p><ul><li><p>A command
 be able to detect the type of a function by just looking at its declaration.
 Thus the code is easier to understand. Don&rsquo;t confuse it with the similar
 sounding architecture pattern
-<a href=https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs>CQRS</a>.</p><p>The restructured <code>OrderService</code> will be split up into two classes:</p><p align=center><img src=/img/command-query-separation.png alt=command-query-separation class=medium-zoom-image width=800></p><p>The god class is stripped down to half its size but it still violates the
+<a href=https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs>CQRS</a>.</p><p>The restructured <code>OrderService</code> will be split up into two classes:</p><p align=center><img src=/blog/img/command-query-separation.png alt=command-query-separation class=medium-zoom-image width=800></p><p>The god class is stripped down to half its size but it still violates the
 Single-Responsibility and Interface-Segregation Principle. Both classes,
 <code>OrderCommandService</code> and <code>OrderQueryService</code>, need to be changed because of
 multiple reasons and a consumer would still depend on methods which are
@@ -107,7 +107,7 @@ and <a href=https://reflectoring.io/spring-hexagonal/>Hexagonal Architecture</a>
 it sounds over-engineered but for an ever-growing enterprise application it will
 soon pay off. The new consistent structure makes it obvious for developers where
 to add new functionality, keeps the code extensible and testable, and prevents
-god classes.</p><p align=center><img src=/img/use-cases.png alt=use-cases class=medium-zoom-image width=800></p><h2 id=domain-events>Domain Events<a hidden class=anchor aria-hidden=true href=#domain-events>#</a></h2><p>The Use-Case classes became smaller and more structured now, but sometimes even
+god classes.</p><p align=center><img src=/blog/img/use-cases.png alt=use-cases class=medium-zoom-image width=800></p><h2 id=domain-events>Domain Events<a hidden class=anchor aria-hidden=true href=#domain-events>#</a></h2><p>The Use-Case classes became smaller and more structured now, but sometimes even
 a single Use-Case can grow too big, especially when there are a lot of related
 side-effects involved:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
@@ -146,7 +146,7 @@ whereby each handler has its own responsibility. For example:</p><ul><li>registe
 the <code>CreateOrderUseCase</code> class will be reduced drastically. Additionally,
 testability also improves because EventHandlers can be tested in isolation.</p><p>The <code>CreatedOrderUseCase</code> will depend on the <code>EventHandler&lt;CreatedOrderEvent></code>
 interface. At runtime the <code>CompositeOrderCreatedEventHandler</code> will be injected
-which calls all EventHandlers for the <code>OrderCreatedEvent</code>. The class diagram:</p><p align=center><img src=/img/domain_event_hierachy.png alt=domain_event_hierachy class=medium-zoom-image width=800></p><p>The Use-Case logic does not look like a <em>Transaction Script</em> any longer and
+which calls all EventHandlers for the <code>OrderCreatedEvent</code>. The class diagram:</p><p align=center><img src=/blog/img/domain_event_hierachy.png alt=domain_event_hierachy class=medium-zoom-image width=800></p><p>The Use-Case logic does not look like a <em>Transaction Script</em> any longer and
 feels like clean OOP:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
 </span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
 </span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
