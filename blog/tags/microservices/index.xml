@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>microservices on Daniel&#39;s programming rants</title>
-    <link>https://gerlacdt.github.io/tags/microservices/</link>
+    <link>https://gerlacdt.github.io/blog/tags/microservices/</link>
     <description>Recent content in microservices on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 30 Mar 2019 09:53:54 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Mar 2019 09:53:54 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Things to consider with microservices</title>
-      <link>https://gerlacdt.github.io/posts/microservices/</link>
+      <link>https://gerlacdt.github.io/blog/posts/microservices/</link>
       <pubDate>Sat, 30 Mar 2019 09:53:54 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/microservices/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/microservices/</guid>
       <description>Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase. We outgrew the monolithic design and decided to introduce microservices. We extracted different domains like payment, booking, user and search. The teams were restructured into two-pizza teams.</description>
     </item>
     

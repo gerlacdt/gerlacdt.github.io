@@ -5,4 +5,4 @@ wiki:
 
 .PHONY: publish
 publish:
-	tiddlywiki wiki --build index && mv wiki/output/index.html wiki/
+	tiddlywiki wiki --build index && mv output/index.html wiki/

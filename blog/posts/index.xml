@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Daniel&#39;s programming rants</title>
-    <link>https://gerlacdt.github.io/posts/</link>
+    <link>https://gerlacdt.github.io/blog/posts/</link>
     <description>Recent content in Posts on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Dec 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Continuous Clean Code Process (CCCP)</title>
-      <link>https://gerlacdt.github.io/posts/cccp/</link>
+      <link>https://gerlacdt.github.io/blog/posts/cccp/</link>
       <pubDate>Fri, 29 Dec 2023 09:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/cccp/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/cccp/</guid>
       <description>Most software projects end up in a big ball of mud. The major cause is neglecting internal quality and focusing on adding features with dirty hacks because of unrealistic timelines. Code has the natural tendency to erode if you don&amp;rsquo;t launch countermeasures permanently. This observation applies to all systems and is also known as the the second law of thermodynamics:
  Systems tend to arrive at a state [&amp;hellip;] where the entropy is highest [&amp;hellip;]</description>
     </item>
     
     <item>
       <title>Production Readiness Checklist</title>
-      <link>https://gerlacdt.github.io/posts/production-readiness-checklist/</link>
+      <link>https://gerlacdt.github.io/blog/posts/production-readiness-checklist/</link>
       <pubDate>Mon, 13 Nov 2023 08:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/production-readiness-checklist/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/production-readiness-checklist/</guid>
       <description>Modern applications run typically in the cloud. As good residents, distributed applications must fulfill many requirements in order to enable reliable operations and maintenance. This article summarizes the most important points in order to go live and to keep applications healthy over their lifetime.
 Twelve-factor app All modern cloud applications should comply with the 12-factor app principles:
  Codebase is tracked in a version control system, the same code will be deployed in different environments Dependencies are shipped with the deployable artifact Backing Services can be detached and re-attached without code changes (e.</description>
@@ -29,37 +29,37 @@ Twelve-factor app All modern cloud applications should comply with the 12-factor
     
     <item>
       <title>DDD and SOLID: A refactoring story</title>
-      <link>https://gerlacdt.github.io/posts/ddd-solid/</link>
+      <link>https://gerlacdt.github.io/blog/posts/ddd-solid/</link>
       <pubDate>Wed, 19 Jul 2023 08:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/ddd-solid/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/ddd-solid/</guid>
       <description>TL;DR  Command-Query Separation Extract Use Cases (Clean/Hexagonal Architecture) Domain Events (with Eventhandlers and Composite Pattern) Cross-Cutting Concerns (with Decorator Pattern)  Many backend applications end up as a big ball of mud where small changes ripple through the whole codebase. The root causes are high coupling and low cohesion. The best remedies against those are Domain Driven Design (DDD) and the SOLID principles which are well-known, but often wrongly applied.</description>
     </item>
     
     <item>
       <title>Top 10 Practices Of Effective Software Engineers</title>
-      <link>https://gerlacdt.github.io/posts/habits/</link>
+      <link>https://gerlacdt.github.io/blog/posts/habits/</link>
       <pubDate>Tue, 11 Apr 2023 11:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/habits/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/habits/</guid>
       <description>TL;DR  Write code Read Code (Written) Communication Learn concepts &amp;ndash; not technologies Learn Lisp Master your tools Control complexity (Simplicity) Read books (but don&amp;rsquo;t forget to practice) Understand the problem domain Learn to write good tests (or how to design well and write decoupled code)  Introduction I am always pondering what practices, tactics, behaviours and approaches make up the most successful software engineers. After 15 years working in the industry, in small and big teams, with waterfall and agile processes, and after thousands of written lines of code, I present here an opinionated way of how to become an effective engineer.</description>
     </item>
     
     <item>
       <title>Effective CLI (more productive than an IDE!)</title>
-      <link>https://gerlacdt.github.io/posts/effective-cli/</link>
+      <link>https://gerlacdt.github.io/blog/posts/effective-cli/</link>
       <pubDate>Mon, 16 Jan 2023 11:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/effective-cli/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/effective-cli/</guid>
       <description>TL;DR  Modern Terminal with nice (Nerd) Fonts ZSH oh-my-zsh Modern Prompt with starship Modern CLI tools (fzf, ripgrep, bat, tmux, jq) Fast editor (Emacs, Neovim, Helix) Organize your dotfiles with GNU Stow  The Unix shell/Command-Line Interface (CLI) is an ancient tool. Despite being around forever, the shell is highly customizable and with a good configuration, it is on par with modern graphical IDEs. Because it is configurable, you can make it truly your own, thereby surpassing out-of-the-box experience of IDEs.</description>
     </item>
     
     <item>
       <title>Best Books For The Inquisitive Software Engineer</title>
-      <link>https://gerlacdt.github.io/posts/programming-books/</link>
+      <link>https://gerlacdt.github.io/blog/posts/programming-books/</link>
       <pubDate>Fri, 04 Nov 2022 10:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/programming-books/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/programming-books/</guid>
       <description>This article contains a list of my favorite books with a major impact on my Software Engineering career. The books are categorized in:
  Software Engineering Programming Brian Kernighan’s Books Modern Classics Learning Management and Leadership Unix Books From Stevens  Software Engineering A Philosophy of Software Design by John Ousterhout
 Link to book
@@ -68,57 +68,57 @@ A fabulous book to level up your software design skills as an experienced engine
     
     <item>
       <title>Software Engineering and Feedback Loops</title>
-      <link>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</link>
+      <link>https://gerlacdt.github.io/blog/posts/software-engineering-feedback-loops/</link>
       <pubDate>Thu, 29 Sep 2022 10:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/software-engineering-feedback-loops/</guid>
       <description>Introduction Most of the breakthrough inventions in historic and modern Software Engineering are related to feedback loops. They are essential for productive software development, Developer Effectiveness and Developer Happiness. Remember the dawn of computing when computers were programmed with punch cards, programmers had to turn in their cards over night and the next day they got the result &amp;ndash; often with a compile error 😞. Unlike back then, today&amp;rsquo;s computers compile whole codebases in seconds.</description>
     </item>
     
     <item>
       <title>The Non-Productive Programmer (NPP)</title>
-      <link>https://gerlacdt.github.io/posts/nonproductive-programmer/</link>
+      <link>https://gerlacdt.github.io/blog/posts/nonproductive-programmer/</link>
       <pubDate>Sat, 18 Dec 2021 10:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/nonproductive-programmer/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/nonproductive-programmer/</guid>
       <description>We all know them: programmers with long term experience stuck on a low-level of our craft not corresponding to their quantity of experience. Great programmers are creative workers and problem-solvers and one of their most important traits is: never stop learning &amp;ndash; but getting stuck in its own comfort zone and becoming reluctant to change is deeply wired into human nature (Humans are hard-wired to follow the path of least resistance).</description>
     </item>
     
     <item>
       <title>Reading List for the mindful Software Engineer</title>
-      <link>https://gerlacdt.github.io/posts/classic-papers/</link>
+      <link>https://gerlacdt.github.io/blog/posts/classic-papers/</link>
       <pubDate>Fri, 10 Sep 2021 10:04:01 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/classic-papers/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/classic-papers/</guid>
       <description>Abstractions are essential in order to build complex systems and keep complexity under control. Especially in software development we rely on many abstractions to make our life easier. Although good abstractions do not &amp;ldquo;leak&amp;rdquo;, it&amp;rsquo;s always helpful to understand the background and the details behind them.
 The following list (in chronological order) of classic computer science papers will give you insights of inventions of the last decades which are considered nowadays common sense.</description>
     </item>
     
     <item>
       <title>Database Integration Tests with Docker Sidecar in Jenkins</title>
-      <link>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</link>
+      <link>https://gerlacdt.github.io/blog/posts/it-test-db-sidecar-jenkins/</link>
       <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/it-test-db-sidecar-jenkins/</guid>
       <description>More often than not, developers want to test the source code against a real database instead of Fakes or Test Doubles during a CI job in order to verify the code works as expected. Therefore a clean database is needed for every CI-job. One solution is to use a shared instance of the database in your existing test-environment which get cleaned before and after a job. But this suffers from being &amp;ldquo;shared&amp;rdquo; and you never can run multiple CI-jobs in parallel without jobs interfering with each other.</description>
     </item>
     
     <item>
       <title>Emacs as RSS reader</title>
-      <link>https://gerlacdt.github.io/posts/emacs-elfeed/</link>
+      <link>https://gerlacdt.github.io/blog/posts/emacs-elfeed/</link>
       <pubDate>Sat, 10 Oct 2020 10:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/emacs-elfeed/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/emacs-elfeed/</guid>
       <description>Do you have a list of websites you visit regularly? Just to find out nothing new was added. This manual scraping is often a waste of time. Worse yet, scanning and filtering these websites for new interesting content is even more time consuming.
 Subscribing to an RSS feed can reduce your effort immensely. An RSS feed &amp;ldquo;pushes&amp;rdquo; the newest updates to subscribers and they will never miss updates. In order to make use of RSS feeds you need a &amp;ldquo;feed reader&amp;rdquo; or &amp;ldquo;feed aggregator&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>Product Management Quotes</title>
-      <link>https://gerlacdt.github.io/posts/product-management-quotes/</link>
+      <link>https://gerlacdt.github.io/blog/posts/product-management-quotes/</link>
       <pubDate>Thu, 08 Oct 2020 10:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/product-management-quotes/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/product-management-quotes/</guid>
       <description>I collected my favorite quotes about product management:
  We need teams of missionaries, not teams of mercenaries.
  Marty Cagan, Inspired
@@ -129,10 +129,10 @@ Subscribing to an RSS feed can reduce your effort immensely. An RSS feed &amp;ld
     
     <item>
       <title>Writing better Code</title>
-      <link>https://gerlacdt.github.io/posts/writing-better-software/</link>
+      <link>https://gerlacdt.github.io/blog/posts/writing-better-software/</link>
       <pubDate>Sun, 16 Aug 2020 18:38:45 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/writing-better-software/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/writing-better-software/</guid>
       <description>In Joel Spolsky&amp;rsquo;s blog post &amp;ldquo;The Joel Test: 12 Steps to better Code&amp;rdquo;, he describes a test composed of twelve simple yes-no questions. For a yes you get one point. 10 points are acceptable and 12 are perfect. If you have less than 10 points, you will get in trouble with your software &amp;ndash; sooner or later.
 For a quick self-check, these are the original questions:
  Do you use source control?</description>
@@ -140,10 +140,10 @@ For a quick self-check, these are the original questions:
     
     <item>
       <title>Google Testing Toilet Collection</title>
-      <link>https://gerlacdt.github.io/posts/google-testing-toilet/</link>
+      <link>https://gerlacdt.github.io/blog/posts/google-testing-toilet/</link>
       <pubDate>Sat, 23 May 2020 08:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/google-testing-toilet/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/google-testing-toilet/</guid>
       <description>In my one of my previous posts i wrote about Good Unit Tests. During my research i discovered the famous Google Testing on the Toilet posts which provide great advice. The Testing-on-the-Toilet articles are short (~3min reads) and give hands-on examples, ready to be applied immediately. Here are my favorites:
 Testing on the Toilet   Tests Too DRY? Make Them DAMP!
   Exercise Service Call Contracts in Tests</description>
@@ -151,10 +151,10 @@ Testing on the Toilet   Tests Too DRY? Make Them DAMP!
     
     <item>
       <title>Programming Quotes</title>
-      <link>https://gerlacdt.github.io/posts/programming-quotes/</link>
+      <link>https://gerlacdt.github.io/blog/posts/programming-quotes/</link>
       <pubDate>Sun, 17 May 2020 08:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/programming-quotes/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/programming-quotes/</guid>
       <description>Over the years i collected some (funny) programming quotes. Lean back and enjoy:
  Everyone knows that debugging is twice as hard as writing a program in the first place. So if you&amp;rsquo;re as clever as you can be when you write it, how will you ever debug it?
  Brian W. Kernighan
@@ -165,47 +165,47 @@ Testing on the Toilet   Tests Too DRY? Make Them DAMP!
     
     <item>
       <title>Why and How to write better Unit Tests</title>
-      <link>https://gerlacdt.github.io/posts/unit-testing/</link>
+      <link>https://gerlacdt.github.io/blog/posts/unit-testing/</link>
       <pubDate>Mon, 04 May 2020 08:08:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/unit-testing/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/unit-testing/</guid>
       <description>TL;DR  Good unit tests build the foundation of a maintainable and high-quality codebase Unit Tests should help developers to be productive Unit Tests should be fast Unit Tests should be isolated Unit Tests should be deterministic Unit Tests should focus on a single unit Unit Tests should be enduring Unit Tests should be clear, concise and complete  Avoid complex control flow logic like nested ifs or loops Unit Tests should follow a consistent naming pattern like UnitName_StateUnderTest_ExpectedBehavior Unit Tests should comply to a consistent structure Unit Tests should be DAMP not DRY   Unit Tests should give developers confidence to deploy and to refactor Test Doubles help to make tests fast and deterministic The overuse of Mocking makes test hard to read and brittle Prefer state verification over interaction verification Prevent brittle tests Prevent flaky tests Read more:  Software Engineering at Google Kent Becks&amp;rsquo;s Programmer Test Principles Microsoft&amp;rsquo;s Best Practices for Unit testing All Your Tests are Terrible TDD, Where Did It All Go Wrong (Ian Cooper)    Why good unit tests are important TDD and test engineering culture is considered best practice these days.</description>
     </item>
     
     <item>
       <title>ESlint &#43; Prettier &#43; Typescript = Consistency</title>
-      <link>https://gerlacdt.github.io/posts/eslint-prettier-typescript/</link>
+      <link>https://gerlacdt.github.io/blog/posts/eslint-prettier-typescript/</link>
       <pubDate>Tue, 24 Mar 2020 10:28:27 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/eslint-prettier-typescript/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/eslint-prettier-typescript/</guid>
       <description>Consistency is one of the most important factors in a codebase. It gives new developers an orientation and direction how to write new code. It keeps the code understandable, clear and free from bikeshedding, so developers can focus on real problems instead of indulging in discussions on their preferred codestyle and individual taste.
 Consistency can be pertained by strict discipline but if possible you should enforce good style and formatting via opinionated code formatters like Prettier which makes development and collaboration a breeze.</description>
     </item>
     
     <item>
       <title>Install Postgres on Ubuntu</title>
-      <link>https://gerlacdt.github.io/posts/postgres-ubuntu/</link>
+      <link>https://gerlacdt.github.io/blog/posts/postgres-ubuntu/</link>
       <pubDate>Fri, 26 Jul 2019 10:15:34 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/postgres-ubuntu/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/postgres-ubuntu/</guid>
       <description>Recently i decided to switch from MacOS to Linux. I was already an Ubuntu user from 2006 till 2015. So i am used to Linux. Nevertheless i struggled a little bit with the installation of PostgreSQL. For MacOS there is a nice all-in-one package which i recommend: Postgres.app. Everything works out-of-the-box there. In Ubuntu, on the other hand, we need to adjust the default installation a little bit in order to start application development.</description>
     </item>
     
     <item>
       <title>Emacs Delete Lines</title>
-      <link>https://gerlacdt.github.io/posts/emacs-delete-lines/</link>
+      <link>https://gerlacdt.github.io/blog/posts/emacs-delete-lines/</link>
       <pubDate>Mon, 13 May 2019 10:34:42 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/emacs-delete-lines/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/emacs-delete-lines/</guid>
       <description>Sometimes when i write small scripts i tend to insert print statements for debugging. After i verified the correctness of my program i want to get rid of all unnecessary debug statements. With Emacs you can delete all lines which match a specific regular expression with M-x flush-lines or with its alias M-x delete-matching-lines. Interactively you can enter your regular expression and all matching lines will be deleted from you cursor position downwards.</description>
     </item>
     
     <item>
       <title>Install Emacs on MacOS</title>
-      <link>https://gerlacdt.github.io/posts/emacs-macos/</link>
+      <link>https://gerlacdt.github.io/blog/posts/emacs-macos/</link>
       <pubDate>Sat, 13 Apr 2019 10:34:42 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/emacs-macos/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/emacs-macos/</guid>
       <description>Yesterday Emacs 26.2 was released, see: https://www.gnu.org/software/emacs/news/NEWS.26.2
 In this short guide i want to show how i install Emacs on my MacBook. I use the vanilla Emacs build from https://emacsformacosx.com/. It is just a simple .dmg file.
 After installing the dmg file, Emacs is now available on your Mac as an application but not in the terminal-app. The terminal still opens the pre-install Emacs version. To make the new version available you have to create a bash-script and put it in your $PATH.</description>
@@ -213,20 +213,20 @@ After installing the dmg file, Emacs is now available on your Mac as an applicat
     
     <item>
       <title>Find and Replace in multiple files</title>
-      <link>https://gerlacdt.github.io/posts/find-and-replace/</link>
+      <link>https://gerlacdt.github.io/blog/posts/find-and-replace/</link>
       <pubDate>Sat, 13 Apr 2019 10:13:14 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/find-and-replace/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/find-and-replace/</guid>
       <description>As a software programmer you often have to search and replace a specific string in multiple files because of a refactoring or just improving a variable or function name.
 Normally you can use your IDE or your editor for this. But in bigger codebases with thousand or million lines of code it can be very slow. Neither do IDEs work with remote SSH-sessions. In such situations the command-line is pretty handy.</description>
     </item>
     
     <item>
       <title>ag the_silver_searcher, a grep replacement</title>
-      <link>https://gerlacdt.github.io/posts/ag-silver-searcher/</link>
+      <link>https://gerlacdt.github.io/blog/posts/ag-silver-searcher/</link>
       <pubDate>Sat, 13 Apr 2019 10:04:01 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/ag-silver-searcher/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/ag-silver-searcher/</guid>
       <description>As a programmer you often search for a specific strings or regexps in multiple files. Previously i used to do this with the well-known GNU-tools find and grep.
 The following command searches for main in all *.go files in the current directory and:
 1 2  find . -iname &amp;#39;*.go&amp;#39; | xargs grep -inH &amp;#34;main&amp;#34; # -i ignore case, -n print line number, -H print filename   Recently i discovered ag the silver searcher.</description>
@@ -234,38 +234,38 @@ The following command searches for main in all *.go files in the current directo
     
     <item>
       <title>Emacs Test Regexps</title>
-      <link>https://gerlacdt.github.io/posts/emacs-test-regexps/</link>
+      <link>https://gerlacdt.github.io/blog/posts/emacs-test-regexps/</link>
       <pubDate>Sat, 06 Apr 2019 10:39:15 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/emacs-test-regexps/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/emacs-test-regexps/</guid>
       <description>Replacing or searching text with regular expressions is very common. But sometimes it is hard to get them right and you need some playground to try them out. In order to verify regular expressions i used to visit webpages like:
  https://regexr.com/ https://regex101.com/  But these webpages are optimised for perl, javascript or bash expressions and do not support Emacs regular expressions directly. In Emacs you have to consider some peculiarities.</description>
     </item>
     
     <item>
       <title>Things to consider with microservices</title>
-      <link>https://gerlacdt.github.io/posts/microservices/</link>
+      <link>https://gerlacdt.github.io/blog/posts/microservices/</link>
       <pubDate>Sat, 30 Mar 2019 09:53:54 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/microservices/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/microservices/</guid>
       <description>Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase. We outgrew the monolithic design and decided to introduce microservices. We extracted different domains like payment, booking, user and search. The teams were restructured into two-pizza teams.</description>
     </item>
     
     <item>
       <title>My Presentations</title>
-      <link>https://gerlacdt.github.io/posts/my-presentations/</link>
+      <link>https://gerlacdt.github.io/blog/posts/my-presentations/</link>
       <pubDate>Sat, 16 Mar 2019 11:01:35 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/my-presentations/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/my-presentations/</guid>
       <description>Links to my presentation slides  clojure introduction javascript introduction java8 new features hashicorp nomad tutorial  </description>
     </item>
     
     <item>
       <title>My Nickname Is Danger</title>
-      <link>https://gerlacdt.github.io/posts/my-name-is-danger/</link>
+      <link>https://gerlacdt.github.io/blog/posts/my-name-is-danger/</link>
       <pubDate>Fri, 15 Mar 2019 08:51:40 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/my-name-is-danger/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/my-name-is-danger/</guid>
       <description>A few years ago one of my colleagues &amp;ldquo;discovered&amp;rdquo; an algorithm which led to my nickname:
  take the 3 first characters of my first name and surname concatenate them: DANiel + GERlach =&amp;gt; Danger  The algorithm can be implemented as a pure function in Javascript:
 1 2 3 4 5 6 7 8 9  function getNickname(fullname) {  return fullname  .split(/\s+/)  .map(n =&amp;gt; n.substring(0,3))  .</description>

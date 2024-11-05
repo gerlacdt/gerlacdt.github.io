@@ -2,160 +2,160 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Daniel&#39;s programming rants</title>
-    <link>https://gerlacdt.github.io/tags/</link>
+    <link>https://gerlacdt.github.io/blog/tags/</link>
     <description>Recent content in Tags on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Dec 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>programming</title>
-      <link>https://gerlacdt.github.io/tags/programming/</link>
+      <link>https://gerlacdt.github.io/blog/tags/programming/</link>
       <pubDate>Fri, 29 Dec 2023 09:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/programming/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>softwareengineering</title>
-      <link>https://gerlacdt.github.io/tags/softwareengineering/</link>
+      <link>https://gerlacdt.github.io/blog/tags/softwareengineering/</link>
       <pubDate>Fri, 29 Dec 2023 09:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/softwareengineering/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/softwareengineering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>devops</title>
-      <link>https://gerlacdt.github.io/tags/devops/</link>
+      <link>https://gerlacdt.github.io/blog/tags/devops/</link>
       <pubDate>Mon, 13 Nov 2023 08:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/devops/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ddd</title>
-      <link>https://gerlacdt.github.io/tags/ddd/</link>
+      <link>https://gerlacdt.github.io/blog/tags/ddd/</link>
       <pubDate>Wed, 19 Jul 2023 08:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/ddd/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/ddd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>solid</title>
-      <link>https://gerlacdt.github.io/tags/solid/</link>
+      <link>https://gerlacdt.github.io/blog/tags/solid/</link>
       <pubDate>Wed, 19 Jul 2023 08:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/solid/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/solid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://gerlacdt.github.io/tags/linux/</link>
+      <link>https://gerlacdt.github.io/blog/tags/linux/</link>
       <pubDate>Mon, 16 Jan 2023 11:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/linux/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>https://gerlacdt.github.io/tags/shell/</link>
+      <link>https://gerlacdt.github.io/blog/tags/shell/</link>
       <pubDate>Mon, 16 Jan 2023 11:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/shell/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>engineering</title>
-      <link>https://gerlacdt.github.io/tags/engineering/</link>
+      <link>https://gerlacdt.github.io/blog/tags/engineering/</link>
       <pubDate>Sat, 18 Dec 2021 10:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/engineering/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/engineering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>https://gerlacdt.github.io/tags/docker/</link>
+      <link>https://gerlacdt.github.io/blog/tags/docker/</link>
       <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/docker/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jenkins</title>
-      <link>https://gerlacdt.github.io/tags/jenkins/</link>
+      <link>https://gerlacdt.github.io/blog/tags/jenkins/</link>
       <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/jenkins/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/jenkins/</guid>
       <description></description>
     </item>
     
     <item>
       <title>testing</title>
-      <link>https://gerlacdt.github.io/tags/testing/</link>
+      <link>https://gerlacdt.github.io/blog/tags/testing/</link>
       <pubDate>Sun, 09 May 2021 08:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/testing/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/testing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>emacs</title>
-      <link>https://gerlacdt.github.io/tags/emacs/</link>
+      <link>https://gerlacdt.github.io/blog/tags/emacs/</link>
       <pubDate>Sat, 10 Oct 2020 10:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/emacs/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/emacs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>product</title>
-      <link>https://gerlacdt.github.io/tags/product/</link>
+      <link>https://gerlacdt.github.io/blog/tags/product/</link>
       <pubDate>Thu, 08 Oct 2020 10:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/product/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/product/</guid>
       <description></description>
     </item>
     
     <item>
       <title>postgres</title>
-      <link>https://gerlacdt.github.io/tags/postgres/</link>
+      <link>https://gerlacdt.github.io/blog/tags/postgres/</link>
       <pubDate>Fri, 26 Jul 2019 10:15:34 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/postgres/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/postgres/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bash</title>
-      <link>https://gerlacdt.github.io/tags/bash/</link>
+      <link>https://gerlacdt.github.io/blog/tags/bash/</link>
       <pubDate>Sat, 13 Apr 2019 10:13:14 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/bash/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>microservices</title>
-      <link>https://gerlacdt.github.io/tags/microservices/</link>
+      <link>https://gerlacdt.github.io/blog/tags/microservices/</link>
       <pubDate>Sat, 30 Mar 2019 09:53:54 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/microservices/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/microservices/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>https://gerlacdt.github.io/tags/javascript/</link>
+      <link>https://gerlacdt.github.io/blog/tags/javascript/</link>
       <pubDate>Fri, 15 Mar 2019 08:51:40 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/tags/javascript/</guid>
+      <guid>https://gerlacdt.github.io/blog/tags/javascript/</guid>
       <description></description>
     </item>
     

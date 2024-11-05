@@ -2,147 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gerlacdt.github.io/</loc>
+    <loc>https://gerlacdt.github.io/blog/</loc>
     <lastmod>2023-12-29T09:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/</loc>
     <lastmod>2023-12-29T09:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/programming/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/programming/</loc>
     <lastmod>2023-12-29T09:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/softwareengineering/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/softwareengineering/</loc>
     <lastmod>2023-12-29T09:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/</loc>
     <lastmod>2023-12-29T09:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/cccp/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/cccp/</loc>
     <lastmod>2023-12-29T09:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/devops/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/devops/</loc>
     <lastmod>2023-11-13T08:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/production-readiness-checklist/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/production-readiness-checklist/</loc>
     <lastmod>2023-11-13T08:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/ddd/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/ddd/</loc>
     <lastmod>2023-07-19T08:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/ddd-solid/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/ddd-solid/</loc>
     <lastmod>2023-07-19T08:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/solid/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/solid/</loc>
     <lastmod>2023-07-19T08:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/habits/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/habits/</loc>
     <lastmod>2023-04-11T11:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/effective-cli/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/effective-cli/</loc>
     <lastmod>2023-01-16T11:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/linux/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/linux/</loc>
     <lastmod>2023-01-16T11:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/shell/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/shell/</loc>
     <lastmod>2023-01-16T11:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/programming-books/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/programming-books/</loc>
     <lastmod>2022-11-04T10:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/software-engineering-feedback-loops/</loc>
     <lastmod>2022-09-29T10:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/engineering/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/engineering/</loc>
     <lastmod>2021-12-18T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/nonproductive-programmer/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/nonproductive-programmer/</loc>
     <lastmod>2021-12-18T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/classic-papers/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/classic-papers/</loc>
     <lastmod>2021-09-10T10:04:01+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/it-test-db-sidecar-jenkins/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/it-test-db-sidecar-jenkins/</loc>
     <lastmod>2021-05-09T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/docker/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/docker/</loc>
     <lastmod>2021-05-09T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/jenkins/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/jenkins/</loc>
     <lastmod>2021-05-09T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/testing/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/testing/</loc>
     <lastmod>2021-05-09T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/emacs/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/emacs/</loc>
     <lastmod>2020-10-10T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/emacs-elfeed/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/emacs-elfeed/</loc>
     <lastmod>2020-10-10T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/product/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/product/</loc>
     <lastmod>2020-10-08T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/product-management-quotes/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/product-management-quotes/</loc>
     <lastmod>2020-10-08T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/writing-better-software/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/writing-better-software/</loc>
     <lastmod>2020-08-16T18:38:45+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/google-testing-toilet/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/google-testing-toilet/</loc>
     <lastmod>2020-05-23T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/programming-quotes/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/programming-quotes/</loc>
     <lastmod>2020-05-17T08:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/unit-testing/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/unit-testing/</loc>
     <lastmod>2020-05-04T08:08:00+02:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/eslint-prettier-typescript/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/eslint-prettier-typescript/</loc>
     <lastmod>2020-03-24T10:28:27+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/postgres-ubuntu/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/postgres-ubuntu/</loc>
     <lastmod>2019-07-26T10:15:34+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/postgres/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/postgres/</loc>
     <lastmod>2019-07-26T10:15:34+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/emacs-delete-lines/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/emacs-delete-lines/</loc>
     <lastmod>2019-05-13T10:34:42+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/emacs-macos/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/emacs-macos/</loc>
     <lastmod>2019-04-13T10:34:42+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/bash/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/bash/</loc>
     <lastmod>2019-04-13T10:13:14+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/find-and-replace/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/find-and-replace/</loc>
     <lastmod>2019-04-13T10:13:14+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/ag-silver-searcher/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/ag-silver-searcher/</loc>
     <lastmod>2019-04-13T10:04:01+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/emacs-test-regexps/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/emacs-test-regexps/</loc>
     <lastmod>2019-04-06T10:39:15+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/microservices/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/microservices/</loc>
     <lastmod>2019-03-30T09:53:54+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/microservices/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/microservices/</loc>
     <lastmod>2019-03-30T09:53:54+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/my-presentations/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/my-presentations/</loc>
     <lastmod>2019-03-16T11:01:35+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/tags/javascript/</loc>
+    <loc>https://gerlacdt.github.io/blog/tags/javascript/</loc>
     <lastmod>2019-03-15T08:51:40+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/posts/my-name-is-danger/</loc>
+    <loc>https://gerlacdt.github.io/blog/posts/my-name-is-danger/</loc>
     <lastmod>2019-03-15T08:51:40+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/about/</loc>
+    <loc>https://gerlacdt.github.io/blog/about/</loc>
     <lastmod>2019-03-03T11:01:35+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/categories/</loc>
+    <loc>https://gerlacdt.github.io/blog/categories/</loc>
   </url>
 </urlset>

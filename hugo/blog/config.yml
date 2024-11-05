@@ -1,4 +1,4 @@
-baseURL: "https://gerlacdt.github.io/"
+baseURL: "https://gerlacdt.github.io/blog"
 title: "Daniel's programming rants"
 paginate: 10
 theme: PaperMod
@@ -135,10 +135,10 @@ menu:
 markup:
   goldmark:
     renderer:
-      unsafe: true  # turn on HTML in Markdown
+      unsafe: true # turn on HTML in Markdown
   highlight:
-      # anchorLineNos: true
-      codeFences: true
-      guessSyntax: false
-      lineNos: true
-      style: monokai
+    # anchorLineNos: true
+    codeFences: true
+    guessSyntax: false
+    lineNos: true
+    style: monokai

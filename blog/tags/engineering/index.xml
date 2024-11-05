@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>engineering on Daniel&#39;s programming rants</title>
-    <link>https://gerlacdt.github.io/tags/engineering/</link>
+    <link>https://gerlacdt.github.io/blog/tags/engineering/</link>
     <description>Recent content in engineering on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 Dec 2021 10:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Dec 2021 10:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Non-Productive Programmer (NPP)</title>
-      <link>https://gerlacdt.github.io/posts/nonproductive-programmer/</link>
+      <link>https://gerlacdt.github.io/blog/posts/nonproductive-programmer/</link>
       <pubDate>Sat, 18 Dec 2021 10:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/nonproductive-programmer/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/nonproductive-programmer/</guid>
       <description>We all know them: programmers with long term experience stuck on a low-level of our craft not corresponding to their quantity of experience. Great programmers are creative workers and problem-solvers and one of their most important traits is: never stop learning &amp;ndash; but getting stuck in its own comfort zone and becoming reluctant to change is deeply wired into human nature (Humans are hard-wired to follow the path of least resistance).</description>
     </item>
     

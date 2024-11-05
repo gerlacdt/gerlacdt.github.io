@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>product on Daniel&#39;s programming rants</title>
-    <link>https://gerlacdt.github.io/tags/product/</link>
+    <link>https://gerlacdt.github.io/blog/tags/product/</link>
     <description>Recent content in product on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 08 Oct 2020 10:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/product/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Oct 2020 10:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/product/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Product Management Quotes</title>
-      <link>https://gerlacdt.github.io/posts/product-management-quotes/</link>
+      <link>https://gerlacdt.github.io/blog/posts/product-management-quotes/</link>
       <pubDate>Thu, 08 Oct 2020 10:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/product-management-quotes/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/product-management-quotes/</guid>
       <description>I collected my favorite quotes about product management:
  We need teams of missionaries, not teams of mercenaries.
  Marty Cagan, Inspired

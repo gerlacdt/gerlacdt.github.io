@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>javascript on Daniel&#39;s programming rants</title>
-    <link>https://gerlacdt.github.io/tags/javascript/</link>
+    <link>https://gerlacdt.github.io/blog/tags/javascript/</link>
     <description>Recent content in javascript on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 15 Mar 2019 08:51:40 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Mar 2019 08:51:40 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Nickname Is Danger</title>
-      <link>https://gerlacdt.github.io/posts/my-name-is-danger/</link>
+      <link>https://gerlacdt.github.io/blog/posts/my-name-is-danger/</link>
       <pubDate>Fri, 15 Mar 2019 08:51:40 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/my-name-is-danger/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/my-name-is-danger/</guid>
       <description>A few years ago one of my colleagues &amp;ldquo;discovered&amp;rdquo; an algorithm which led to my nickname:
  take the 3 first characters of my first name and surname concatenate them: DANiel + GERlach =&amp;gt; Danger  The algorithm can be implemented as a pure function in Javascript:
 1 2 3 4 5 6 7 8 9  function getNickname(fullname) {  return fullname  .split(/\s+/)  .map(n =&amp;gt; n.substring(0,3))  .</description>

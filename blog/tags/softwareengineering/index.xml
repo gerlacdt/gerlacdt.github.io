@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>softwareengineering on Daniel&#39;s programming rants</title>
-    <link>https://gerlacdt.github.io/tags/softwareengineering/</link>
+    <link>https://gerlacdt.github.io/blog/tags/softwareengineering/</link>
     <description>Recent content in softwareengineering on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Dec 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/tags/softwareengineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/softwareengineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Continuous Clean Code Process (CCCP)</title>
-      <link>https://gerlacdt.github.io/posts/cccp/</link>
+      <link>https://gerlacdt.github.io/blog/posts/cccp/</link>
       <pubDate>Fri, 29 Dec 2023 09:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/cccp/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/cccp/</guid>
       <description>Most software projects end up in a big ball of mud. The major cause is neglecting internal quality and focusing on adding features with dirty hacks because of unrealistic timelines. Code has the natural tendency to erode if you don&amp;rsquo;t launch countermeasures permanently. This observation applies to all systems and is also known as the the second law of thermodynamics:
  Systems tend to arrive at a state [&amp;hellip;] where the entropy is highest [&amp;hellip;]</description>
     </item>
     
     <item>
       <title>Production Readiness Checklist</title>
-      <link>https://gerlacdt.github.io/posts/production-readiness-checklist/</link>
+      <link>https://gerlacdt.github.io/blog/posts/production-readiness-checklist/</link>
       <pubDate>Mon, 13 Nov 2023 08:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/production-readiness-checklist/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/production-readiness-checklist/</guid>
       <description>Modern applications run typically in the cloud. As good residents, distributed applications must fulfill many requirements in order to enable reliable operations and maintenance. This article summarizes the most important points in order to go live and to keep applications healthy over their lifetime.
 Twelve-factor app All modern cloud applications should comply with the 12-factor app principles:
  Codebase is tracked in a version control system, the same code will be deployed in different environments Dependencies are shipped with the deployable artifact Backing Services can be detached and re-attached without code changes (e.</description>
@@ -29,37 +29,37 @@ Twelve-factor app All modern cloud applications should comply with the 12-factor
     
     <item>
       <title>DDD and SOLID: A refactoring story</title>
-      <link>https://gerlacdt.github.io/posts/ddd-solid/</link>
+      <link>https://gerlacdt.github.io/blog/posts/ddd-solid/</link>
       <pubDate>Wed, 19 Jul 2023 08:00:00 +0100</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/ddd-solid/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/ddd-solid/</guid>
       <description>TL;DR  Command-Query Separation Extract Use Cases (Clean/Hexagonal Architecture) Domain Events (with Eventhandlers and Composite Pattern) Cross-Cutting Concerns (with Decorator Pattern)  Many backend applications end up as a big ball of mud where small changes ripple through the whole codebase. The root causes are high coupling and low cohesion. The best remedies against those are Domain Driven Design (DDD) and the SOLID principles which are well-known, but often wrongly applied.</description>
     </item>
     
     <item>
       <title>Top 10 Practices Of Effective Software Engineers</title>
-      <link>https://gerlacdt.github.io/posts/habits/</link>
+      <link>https://gerlacdt.github.io/blog/posts/habits/</link>
       <pubDate>Tue, 11 Apr 2023 11:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/habits/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/habits/</guid>
       <description>TL;DR  Write code Read Code (Written) Communication Learn concepts &amp;ndash; not technologies Learn Lisp Master your tools Control complexity (Simplicity) Read books (but don&amp;rsquo;t forget to practice) Understand the problem domain Learn to write good tests (or how to design well and write decoupled code)  Introduction I am always pondering what practices, tactics, behaviours and approaches make up the most successful software engineers. After 15 years working in the industry, in small and big teams, with waterfall and agile processes, and after thousands of written lines of code, I present here an opinionated way of how to become an effective engineer.</description>
     </item>
     
     <item>
       <title>Effective CLI (more productive than an IDE!)</title>
-      <link>https://gerlacdt.github.io/posts/effective-cli/</link>
+      <link>https://gerlacdt.github.io/blog/posts/effective-cli/</link>
       <pubDate>Mon, 16 Jan 2023 11:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/effective-cli/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/effective-cli/</guid>
       <description>TL;DR  Modern Terminal with nice (Nerd) Fonts ZSH oh-my-zsh Modern Prompt with starship Modern CLI tools (fzf, ripgrep, bat, tmux, jq) Fast editor (Emacs, Neovim, Helix) Organize your dotfiles with GNU Stow  The Unix shell/Command-Line Interface (CLI) is an ancient tool. Despite being around forever, the shell is highly customizable and with a good configuration, it is on par with modern graphical IDEs. Because it is configurable, you can make it truly your own, thereby surpassing out-of-the-box experience of IDEs.</description>
     </item>
     
     <item>
       <title>Best Books For The Inquisitive Software Engineer</title>
-      <link>https://gerlacdt.github.io/posts/programming-books/</link>
+      <link>https://gerlacdt.github.io/blog/posts/programming-books/</link>
       <pubDate>Fri, 04 Nov 2022 10:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/programming-books/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/programming-books/</guid>
       <description>This article contains a list of my favorite books with a major impact on my Software Engineering career. The books are categorized in:
  Software Engineering Programming Brian Kernighan’s Books Modern Classics Learning Management and Leadership Unix Books From Stevens  Software Engineering A Philosophy of Software Design by John Ousterhout
 Link to book
@@ -68,19 +68,19 @@ A fabulous book to level up your software design skills as an experienced engine
     
     <item>
       <title>Software Engineering and Feedback Loops</title>
-      <link>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</link>
+      <link>https://gerlacdt.github.io/blog/posts/software-engineering-feedback-loops/</link>
       <pubDate>Thu, 29 Sep 2022 10:00:00 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/software-engineering-feedback-loops/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/software-engineering-feedback-loops/</guid>
       <description>Introduction Most of the breakthrough inventions in historic and modern Software Engineering are related to feedback loops. They are essential for productive software development, Developer Effectiveness and Developer Happiness. Remember the dawn of computing when computers were programmed with punch cards, programmers had to turn in their cards over night and the next day they got the result &amp;ndash; often with a compile error 😞. Unlike back then, today&amp;rsquo;s computers compile whole codebases in seconds.</description>
     </item>
     
     <item>
       <title>Writing better Code</title>
-      <link>https://gerlacdt.github.io/posts/writing-better-software/</link>
+      <link>https://gerlacdt.github.io/blog/posts/writing-better-software/</link>
       <pubDate>Sun, 16 Aug 2020 18:38:45 +0200</pubDate>
       
-      <guid>https://gerlacdt.github.io/posts/writing-better-software/</guid>
+      <guid>https://gerlacdt.github.io/blog/posts/writing-better-software/</guid>
       <description>In Joel Spolsky&amp;rsquo;s blog post &amp;ldquo;The Joel Test: 12 Steps to better Code&amp;rdquo;, he describes a test composed of twelve simple yes-no questions. For a yes you get one point. 10 points are acceptable and 12 are perfect. If you have less than 10 points, you will get in trouble with your software &amp;ndash; sooner or later.
 For a quick self-check, these are the original questions:
  Do you use source control?</description>
