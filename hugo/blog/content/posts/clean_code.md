@@ -43,22 +43,22 @@ take them for granted but junior developers need to learn them first, e.g.:
   This is also a main principle in DDD, namely the ubiquitous language.
 - Good _exception handling_ uses unchecked exceptions and provides as much
   context as possible
-- In good _unit testing_ tests should be FIRST (Fast, Independent, Repeatable
+- Good _unit tests_ should be FIRST (Fast, Independent, Repeatable
   Self-validated, Timely) and should assert a single behaviour
 - Classes should comply to the _Single Responsibility Principle_
 - _Functions_ should do one thing and all statements should have the same level
   of abstraction
-- _pure functions_ should be preferred without side-effects
+- _pure functions_ without side-effects should be preferred
 - Functions should comply to the _Command Query Separation_ pattern. On the one
   hand functions returning something should have no side effects, on the other
   hand functions returning nothing have side effects
 - Keep your code _DRY_
 - Don't comment code, delete it - there is version control
 - Try to have good _boundaries_ in your codebase. Don't depend too much on 3rd
-  party libs, hide them behind interfaces. This will make your code testable
+  party libs, hide them behind interfaces. This will keep your code testable
 - Good _Data Abstractions_ enabled by encapsulation/information hiding will
-  preserve class invariants and will guarantee convenient and easy-to-use class
-  APIs.
+  preserve class invariants and will guarantee convenient and comprehensible
+  class APIs.
 
 These practices are timeless for all programmers - new and old. I keep finding
 myself giving these tips over and over to team members in pair programming
@@ -79,36 +79,36 @@ heavy Java focus, the reliance on
 [AspectJ](https://en.wikipedia.org/wiki/AspectJ) limits the applicability for
 modern programming practices. Additionally, the concurrency topics covered are
 shallow and too low-level, especially considering the rise of first-class
-concurrency languages like Go and Rust. These languages offer more robust and
-efficient approaches to concurrency. Furthermore, the book primarily uses Java
-with Object-Oriented Programming examples, which may not adequately represent
-the diversity of modern programming styles today. Especially it lacks a
-comprehensive exploration of functional programming concepts, including
+concurrency languages like Go and Rust. These new languages offer more robust
+and efficient approaches to concurrency. Furthermore, the book primarily uses
+Java with Object-Oriented Programming examples, which may not adequately
+represent the diversity of modern programming styles today. Especially it lacks
+a comprehensive exploration of functional programming concepts, including
 immutability, referential transparency, high-order functions, and the emphasis
-on avoiding side effects. These principles are occasionally mentioned but they
+on avoiding side effects. Such principles are occasionally mentioned but they
 are not consistently applied in the book's examples.
 
 Second, **the book's dogmatic presentation of coding principles can be a
 double-edged sword.** While it offers valuable advice, its lack of nuanced
 explanations and context can lead to misunderstandings, particularly for newer
 developers. Overzealous adherence to rules like "small functions" or the "DRY
-principle" without seeing the costs can actually hinder code quality.
+principle" without seeing the costs is harmful to code quality.
 
 For example, blindly applying the "DRY principle" can result in excessive
 abstraction, leading to a proliferation of tiny, overly complex classes. This
 can make the code harder to understand and maintain. A better approach,
 recognizing that sometimes duplication is acceptable to improve readability or
 performance, is essential for effective software development. Even more
-important is that we should not place simple coding practices above higher
+important is that we should not place tactical coding practices above higher
 design principles like coupling, cohesion, information hiding etc.
 
-More mantra-like examples can be found in the book directly:
+More mantra-like examples can be found in the book:
 
 > The first rule of function is that they should be small. The second rule of
 > functions is that they should be smaller than that. - _Clean Code, chapter 3,
 > p34_
 
-> Everytime you see a duplication in the code, it represents a missed
+> Every time you see a duplication in the code, it represents a missed
 > opportunity for abstraction. - _Clean Code, chapter 17, p289_
 
 **This writing style can also contribute to cargo-cult programming,** where
@@ -117,8 +117,9 @@ More often than not, it leads to heated debates and misunderstandings, as people
 cling to their interpretations of the book's advice without considering the
 specific context of their projects. I admit though that it is not the book's
 fault that people are not able to judge about their situations but the
-mantra-like writing style does not really encourage reasoning. Funnily the book
-sometimes diverges from the mantra-like writing style and condemns dogmatism:
+mantra-like writing style does not really encourage deeper reasoning. Funnily
+the book sometimes diverges from the mantra-like writing style and condemns
+dogmatism:
 
 > In an effort to make our classes and methods small, we might create too many
 > tiny classes and methods. So this rule suggest that that we also keep our
@@ -147,27 +148,27 @@ Basically, this tiny quote covers the soul of software engineering.
 
 ## The Ugly
 
-#### bad examples
+The examples are the Achilles' heel of the book. **The main problem with the
+examples is that they often disregard the book's own advice and even promote the
+exact opposite**. Examples are more verbose than necessary which makes it hard
+to comprehend especially for new programmers because a lot of Java background
+knowledge is required, e.g. some code examples are built up on
+[FitNesse](https://fitnesse.org/) or the [Junit](https://junit.org/junit5/)
+framework internals, others are just too lengthy (tens of pages) like the
+Argument Parser. More often than not, the examples apply the book's advice
+dogmatically which ends up in bad code. All this is hard to comprehend as a
+programmer journey man who is the target audience of the book. It's impossible
+for him to separate the critical information from the double-meaning examples.
+Let's go through my personal pet peeve: the _prime generator_:
 
-- examples disregard the books own advice
-- wordy and hard to comprehend code examples
+#### Prime Generator
+
 - side-effect are described and considered as bad but the book uses side-effects
   in many coding examples. It seems Robert Martin does not consider changing
   instance variables as side-effects (I think it still make the code hard to
   read and forces me to jump around inside the class file)
 - side effect definition
   https://en.wikipedia.org/wiki/Side_effect_(computer_science)
-- I know from my own experience come up with good code examples is hard!
-
-The code example often are very verbose and don't hold on what the book is
-telling you. The examples show sometimes the opposite!
-
-- same is true for command query separation, he explain it but completely
-  disregards in many code examples
-
-#### culmination is the prime generator
-
-side-effect definition
 
 > a function is said to have a side effect if it modifies some state variable
 > outside its local environment.
@@ -175,6 +176,19 @@ side-effect definition
 > Example side effects include modifying a non-local variable, modifying a
 > static local variable, modifying a mutable argument passed by reference,
 > performing I/O or calling other functions with side-effects.
+
+- same is true for command query separation, he explain it but completely
+  disregards in many code examples
+- non pragmatic Java code, all static functions, non thread safety
+- static class variables, non thread safety
+- small functions make the code hard to read
+- it's hard to find good names for so many small functions, names are too long
+  _isLeastRelevantMultipleOfNextLargerPrimeFactor()_
+
+The whole examples give the impression that this good Java style, although it's
+very bad. Hopefully nobody write Java code like this in his daily work projects.
+One still can argument that this Java-style was popular back in the days but
+honestly it was always bad style - in any time period[1].
 
 https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481
 
@@ -250,8 +264,10 @@ public class PrimeGenerator {
 }
 ```
 
-good primary number generator
-https://gist.github.com/gerlacdt/772c86b2f592a16ea6303defaf74974f
+In comparison,
+[my primary number generator](https://gist.github.com/gerlacdt/772c86b2f592a16ea6303defaf74974f)
+closely based on the Sieve of Eratosthenes algorithm with some supporting
+comments:
 
 ```python
 # Program collects all primes less than or equal n.
@@ -277,12 +293,12 @@ def primes(n):
                 prime[i] = False
         p += 1
 
-    # collect all primes, the numbers not crossed out
+    # collect all primes aka the numbers not crossed out
     return [i for i, v in enumerate(prime) if v]
 ```
 
-One can argument that this Java-style was good or popular back in the days but
-honestly it was always bad style - in any time period[1].
+Although I know from my own writing experience, coming up with good code
+examples is hard, the examples of _Clean Code_ are not worthy of a seminal book.
 
 ## conclusion
 
