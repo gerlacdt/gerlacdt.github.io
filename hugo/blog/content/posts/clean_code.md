@@ -49,7 +49,7 @@ take them for granted but junior developers need to learn them first, e.g.:
 - _Functions_ should do one thing and all statements should have the same level
   of abstraction
 - _pure functions_ without side-effects should be preferred
-- Functions should comply to the _Command Query Separation_ pattern. On the one
+- Functions should comply to the _Command-Query Separation_ pattern. On the one
   hand functions returning something should have no side effects, on the other
   hand functions returning nothing have side effects
 - Keep your code _DRY_
@@ -156,19 +156,29 @@ knowledge is required, e.g. some code examples are built up on
 [FitNesse](https://fitnesse.org/) or the [Junit](https://junit.org/junit5/)
 framework internals, others are just too lengthy (tens of pages) like the
 Argument Parser. More often than not, the examples apply the book's advice
-dogmatically which ends up in bad code. All this is hard to comprehend as a
-programmer journey man who is the target audience of the book. It's impossible
-for him to separate the critical information from the double-meaning examples.
-Let's go through my personal pet peeve: the _prime generator_:
+dogmatically which ends up in bad code. As a programmer journey man, the target
+audience of the book, it is hard to filter out the critical information from the
+noise. Let's go through a concrete example: the _prime generator_.
 
 #### Prime Generator
 
-- side-effect are described and considered as bad but the book uses side-effects
-  in many coding examples. It seems Robert Martin does not consider changing
-  instance variables as side-effects (I think it still make the code hard to
-  read and forces me to jump around inside the class file)
-- side effect definition
-  https://en.wikipedia.org/wiki/Side_effect_(computer_science)
+The
+[Prime Generator](https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481)
+example is my personal pet peeve and the epitome of applying good practices
+dogmatically but ending up with poor code. So what is so bad about it? Many
+things. First of all, the functions are too small. You have to hop around from
+function to function multiple times in order to understand the code. Because
+there are so many functions, it's very hard to find good intuitive names for
+them that's why they get longer and longer. Their meaning is obscured too.
+Reading the two or three lines of code is more comprehensive than reading the
+function name itself. This is a sign of bad abstractions. For example, are you
+able to deduce what's behind _isLeastRelevantMultipleOfNextLargerPrimeFactor()_?
+
+Now it's time to focus on where the prime generator applies exactly the opposite
+of clean code. The book clearly consults against side-effects but the Prime
+Generator is full of them! A short primer what a
+[side effect](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>)
+is:
 
 > a function is said to have a side effect if it modifies some state variable
 > outside its local environment.
@@ -177,20 +187,40 @@ Let's go through my personal pet peeve: the _prime generator_:
 > static local variable, modifying a mutable argument passed by reference,
 > performing I/O or calling other functions with side-effects.
 
-- same is true for command query separation, he explain it but completely
-  disregards in many code examples
-- non pragmatic Java code, all static functions, non thread safety
-- static class variables, non thread safety
-- small functions make the code hard to read
-- it's hard to find good names for so many small functions, names are too long
-  _isLeastRelevantMultipleOfNextLargerPrimeFactor()_
+Unfortunately, almost all `private static` functions have a side-effect because
+they change internal static class variables. Worse yet, the functions are so
+small and highly nested, sometimes the side-effect is hidden because it happens
+in a nested function.
+[Command-Query Separation(CQS)](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation)
+is a great way of writing intention-revealing APIs but it is also disregarded in
+the Prime Generator. A short recap:
+
+> It (CQS) states that every method should either be a command that performs an
+> action, or a query that returns data to the caller, but not both.
+
+Whereby a command has a side-effect but not return value and a query returns a
+value but has no side-effect. Consistently applying CQS in a codebase hugely
+helps to write intention-revealing interface and maintainable code. The function
+`boolean isPrime(int candidate)` though returns a value but also has a
+side-effect. It changes a static class variable and thereby the internal class
+state. Even worse the function name `isPrime()` confuses the reader even more
+since it gives the wrong intention that there is no side-effect.
+
+Last but not least, the whole example is written in non-pragmatic Java style.
+The use of static class variables and functions is a strange choice and causes
+multiple problems. First the code is unnecessarily thread-unsafe. Second, the
+main function `generate(int n)` returns the static class variable
+`int[] primes`. By doing this, every API consumer has access to the internals of
+the `PrimeGenerator` class and can destroy the class invariants by overriding
+`int[] primes` from outside. Using `protected` visiblity for the main function
+`generate(int n)` in combination with `static` is also questionable. The worst
+part is that with examples junior programmers will copy this coding style and
+apply their work projects :scream:!
 
 The whole examples give the impression that this good Java style, although it's
 very bad. Hopefully nobody write Java code like this in his daily work projects.
 One still can argument that this Java-style was popular back in the days but
 honestly it was always bad style - in any time period[1].
-
-https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481
 
 ```java
 // from Clean Code chapter 10
