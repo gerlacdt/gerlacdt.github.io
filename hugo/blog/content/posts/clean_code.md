@@ -2,7 +2,7 @@
 title: "Clean Code: The good, the Bad and the Ugly"
 date: 2024-12-13T09:00:00+01:00
 tags: ["programming", "softwareengineering"]
-draft: true
+draft: false
 ---
 
 _Clean Code_ by Robert C. Martin is a seminal programming book. A whole
@@ -24,9 +24,8 @@ code quality**:
 > _The only way to go fast is to go well_ - Uncle Bob
 
 The impact of the book in the programming world is second to none. All of a
-sudden code quality, readability and maintainability were in the center of
-discussion for developer teams. I truly believe this made the developers' world
-a better place.
+sudden code quality, readability and maintainability were in the developers'
+focus. I truly believe this made the programmers' world a better place.
 
 The book itself is full of great programming advice, mainly written in Java but
 applicable in other programming languages as well. It's especially valuable for
@@ -83,24 +82,21 @@ Java with Object-Oriented Programming examples, which may not adequately
 represent the diversity of modern programming styles today. Especially it lacks
 a comprehensive exploration of functional programming concepts, including
 immutability, referential transparency, high-order functions, and the emphasis
-on avoiding side effects. Such principles are occasionally mentioned but they
-are not consistently applied in the book's examples.
+on avoiding side effects. Such principles are occasionally mentioned but not
+consistently applied.
 
 Second, **the book's dogmatic presentation of coding principles can be a
 double-edged sword.** While it offers valuable advice, its lack of nuanced
 explanations and context can lead to misunderstandings, particularly for newer
 developers. Overzealous adherence to rules like "small functions" or the "DRY
-principle" without seeing the costs is harmful to code quality.
-
-For example, blindly applying the "DRY principle" can result in excessive
-abstraction, leading to a proliferation of tiny, overly complex classes. This
-can make the code harder to understand and maintain. A better approach,
-recognizing that sometimes duplication is acceptable to improve readability or
-performance, is essential for effective software development. Even more
-important is that we should not place tactical coding practices above higher
-design principles like coupling, cohesion, information hiding etc.
-
-More mantra-like examples can be found in the book:
+principle" without seeing the costs is harmful to code quality. For example,
+blindly applying the "DRY principle" can result in excessive abstraction,
+leading to a proliferation of tiny, overly complex classes. This can make the
+code harder to understand and maintain. A better approach, recognizing that
+sometimes duplication is acceptable to improve readability or performance, is
+essential for effective software development. Even more important is that we
+should not place tactical coding practices above higher design principles like
+coupling, cohesion, information hiding etc. Some quotes directly from the book:
 
 > The first rule of function is that they should be small. The second rule of
 > functions is that they should be smaller than that. - _Clean Code, chapter 3,
@@ -112,11 +108,11 @@ More mantra-like examples can be found in the book:
 **This writing style can also contribute to cargo-cult programming,** where
 developers blindly follow rules without understanding the underlying reasons.
 More often than not, it leads to heated debates and misunderstandings, as people
-cling to their interpretations of the book's advice without considering the
+cling to their interpretations of the book's advice without considering their
 specific project context. I admit though that it is not the book's fault that
 people are not able to judge about their situations but the mantra-like writing
 style does not really encourage deeper reasoning. Funnily the book sometimes
-diverges from the mantra-like writing style and condemns dogmatism:
+diverges from the this writing style and condemns dogmatism:
 
 > In an effort to make our classes and methods small, we might create too many
 > tiny classes and methods. So this rule suggest that that we also keep our
@@ -142,7 +138,7 @@ That's why I like Kent Beck's quote so much:
 > It depends. - _Kent Beck_
 
 Basically, with this tiny quote Kent covers the soul of software engineering.
-It's also my most used sentence at work :).
+It's also my most used sentence at work :smile:.
 
 ## The Ugly
 
@@ -150,12 +146,13 @@ The book's examples, particularly the infamous _prime generator_, often
 contradict the advice it offers. These examples prioritize verbosity over
 clarity, making them difficult to understand, especially for beginners. They
 frequently rely on Java-specific frameworks like
-[FitNesse](https://fitnesse.org/) and [Junit](https://junit.org/junit5/)
+[FitNesse](https://fitnesse.org/) and [JUnit](https://junit.org/junit5/)
 internals, creating a barrier for programmers unfamiliar with those tools.
 Additionally, some examples, like the Argument Parser, sprawl across tens of
-pages, overwhelming readers. This overemphasis on dogma often leads to
-convoluted code, hindering the learning process for "programmer journeymen," the
-intended audience of the book.
+pages, overwhelming readers. The overemphasis on dogma leads to convoluted code,
+hindering the learning process for "programmer journeymen," the intended
+audience of the book. **That's why the code examples are the ugly part of the
+book.**
 
 ```java
 // from Clean Code chapter 10
@@ -244,9 +241,9 @@ instance, consider the following function names:
 These convoluted names highlight the failure of abstraction. In this case a few
 lines of code are more easily understood than the function name itself.
 
-Sometimes the prime generator applies exactly the opposite of Clean Code. The
-book clearly consults against side-effects but the Prime Generator is full of
-them! A short primer what a
+Regarding side-effects, the prime generator example applies exactly the opposite
+of Clean Code. The book clearly consults to avoid side-effects but the prime
+generator is full of them! A short primer what a
 [side effect](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>)
 is:
 
@@ -257,32 +254,32 @@ is:
 > static local variable, modifying a mutable argument passed by reference,
 > performing I/O or calling other functions with side-effects.
 
-Unfortunately, almost all `private static` functions of the Prime Generator have
+Unfortunately, almost all `private static` functions of the prime generator have
 a side-effect because they change internal static class variables. Worse yet,
-the functions are so small and highly nested, sometimes the side-effect is
-hidden because it happens in a nested function.
+because of the small and nested functions the side-effect is hidden in a
+non-obvious nested function call.
 
 [Command-Query Separation(CQS)](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation)
-is a great way of writing intention-revealing APIs but it is also disregarded in
-the Prime Generator. A short recap:
+is highly recommended in the book and is a great way of writing
+intention-revealing APIs but it is also disregarded in the prime generator
+example. A short description of CQS:
 
 > It (CQS) states that every method should either be a command that performs an
 > action, or a query that returns data to the caller, but not both.
 
-Whereby a command has a side-effect but not return value and a query returns a
-value but has no side-effect. Consistently applying CQS in a codebase hugely
-helps to write intention-revealing interfaces and maintainable code. The
-function `boolean isPrime(int candidate)` though returns a value but also has a
+Whereby a command has a side-effect but no return value and a query returns a
+value but has no side-effect. Consistently applied, CQS hugely helps to write
+intention-revealing interfaces and maintainable code. The function
+`boolean isPrime(int candidate)` though returns a value but also has a
 side-effect. It changes a static class variable, thereby giving the wrong
 intention to the API user.
 
 Lastly, the Prime Generator example employs a non-pragmatic Java style. The use
 of static class variables and functions introduces several issues. Firstly, it
-compromises thread safety. Secondly, the generate(int n) function returns a
-static class variable, exposing internal implementation details and potentially
-allowing external modifications that can violate the class's invariants. Using
-protected visibility for a static function like generate(int n) is also
-questionable.
+compromises thread safety. Secondly, the
+`protected static int[] generate(int n)` function returns a static class
+variable, exposing class internals and potentially allowing external
+modifications that can violate the class's invariants.
 
 Unfortunately, this style might mislead junior programmers into adopting these
 practices in their projects. The inclusion of such examples in a book like Clean
@@ -304,22 +301,21 @@ first Software Engineering book. In my opinion there are better alternatives:
 - [A Philosophy of Software Design](https://web.stanford.edu/~ouster/cgi-bin/book.php)
 - [Code That Fits in Your Head](https://www.oreilly.com/library/view/code-that-fits/9780137464302/)
 - [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)
-- for a deep-dive you can find more books in my
-  [reading list](/posts/programming-books/)
+- more books on my [personal reading list](/blog/posts/programming-books/)
 
 The above books contain great engineering wisdom and in my opinion they are
-written in more a open-minded way. The readers have some leeway for their own
+written in a open-minded way. The readers have some leeway for their own
 thinking. The books give more background about the practices, trade-offs and
 **why** these practices are useful. Although they miss the catchy name - _Clean
 Code_ is matchless. However _Clean Code_ is a classic and still a required read
 because it contains timeless advice. Just make sure you don't apply the
-practices without judgement and reasoning.
+practices blindly and without your own judgement.
 
 Last but not least, I want to point out that _Clean Code_ is an brilliant name
 and a great foundation for other software engineering inventions. I came up with
 one of my own :grin::
 
-- [**_The Continuous Clean Code Process (CCCP)_**](/posts/cccp/) - cleaning
+- [**_The Continuous Clean Code Process (CCCP)_**](/blog/posts/cccp/) - cleaning
   up/refactoring **perpetually**
 
 # References
