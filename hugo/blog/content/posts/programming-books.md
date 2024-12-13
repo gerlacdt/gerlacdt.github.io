@@ -69,6 +69,19 @@ Highlights:
 - Importance of Tooling (shell, text manipulation, editor, IDE, version control
   etc.)
 
+### Code That Fits in Your Head: Heuristics for Software Engineering
+
+by Mark Seemann
+
+[Link to book](https://www.oreilly.com/library/view/code-that-fits/9780137464302/)
+
+<p align="left">
+    <img src="/blog/img/books/code_that_fits_in_your_head.jpeg" alt="code_that_fits_in_your_head" class="medium-zoom-image" width="200">
+</p>
+
+A modern, up-to-date treatment about all kinds of software engineering topics.
+In my eyes, it is the spiritual successor of _Clean Code_. Highly recommended.
+
 ### Code Complete
 
 by Steve McConnell
