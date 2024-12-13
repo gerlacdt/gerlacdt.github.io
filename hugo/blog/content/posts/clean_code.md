@@ -146,17 +146,16 @@ It's also my most used sentence at work :).
 
 ## The Ugly
 
-The examples are the Achilles' heel of the book. **The main problem with the
-examples is that they often disregard the book's own advice and even promote the
-exact opposite**. Examples are more verbose than necessary which makes it hard
-to comprehend especially for new programmers because a lot of Java background
-knowledge is required, e.g. some code examples are built up on
-[FitNesse](https://fitnesse.org/) or the [Junit](https://junit.org/junit5/)
-framework internals, others are just too lengthy (tens of pages) like the
-Argument Parser. More often than not, the examples apply the book's advice
-dogmatically which ends up in bad code. As a programmer journey man, the target
-audience of the book, it is hard to filter out the critical information from the
-noise. Let's go through a concrete example: the _prime generator_.
+The book's examples, particularly the infamous _prime generator_, often
+contradict the advice it offers. These examples prioritize verbosity over
+clarity, making them difficult to understand, especially for beginners. They
+frequently rely on Java-specific frameworks like
+[FitNesse](https://fitnesse.org/) and [Junit](https://junit.org/junit5/)
+internals, creating a barrier for programmers unfamiliar with those tools.
+Additionally, some examples, like the Argument Parser, sprawl across tens of
+pages, overwhelming readers. This overemphasis on dogma often leads to
+convoluted code, hindering the learning process for "programmer journeymen," the
+intended audience of the book.
 
 ```java
 // from Clean Code chapter 10
@@ -231,11 +230,11 @@ public class PrimeGenerator {
 ```
 
 The
-[Prime Generator](https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481)
-example is a prime candidate for demonstrating the pitfalls of overly dogmatic
-adherence to good practices. The primary issue lies in its excessive function
-granularity. This fragmentation forces readers to constantly jump between
-functions, hindering comprehension. The sheer number of tiny functions
+[prime generator](https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481)
+example is an excellent candidate for demonstrating the pitfalls of overly
+dogmatic adherence to good practices. The primary issue lies in its excessive
+function granularity. This fragmentation forces readers to constantly jump
+between functions, hindering comprehension. The sheer number of tiny functions
 necessitates overly verbose names, further obfuscating the code's intent. For
 instance, consider the following function names:
 
@@ -245,7 +244,7 @@ instance, consider the following function names:
 These convoluted names highlight the failure of abstraction. In this case a few
 lines of code are more easily understood than the function name itself.
 
-Sometimes the prime generator applies exactly the opposite of clean code. The
+Sometimes the prime generator applies exactly the opposite of Clean Code. The
 book clearly consults against side-effects but the Prime Generator is full of
 them! A short primer what a
 [side effect](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>)
@@ -274,30 +273,28 @@ Whereby a command has a side-effect but not return value and a query returns a
 value but has no side-effect. Consistently applying CQS in a codebase hugely
 helps to write intention-revealing interfaces and maintainable code. The
 function `boolean isPrime(int candidate)` though returns a value but also has a
-side-effect. It changes a static class variable and thereby the internal class
-state. The name `isPrime()` gives a wrong intention to the API user.
+side-effect. It changes a static class variable, thereby giving the wrong
+intention to the API user.
 
-Last but not least, the whole example is written in non-pragmatic Java style.
-The use of static class variables and functions is a strange choice and causes
-multiple problems. First the code is unnecessarily thread-unsafe. Second, the
-main function `generate(int n)` returns the static class variable
-`int[] primes`. By doing this, every API consumer has access to the internals of
-the `PrimeGenerator` class and can destroy the class invariants by overriding
-`int[] primes` from outside. Using `protected` visiblity for the main function
-`generate(int n)` in combination with `static` is also questionable. The worst
-part is that with examples junior programmers will copy this coding style and
-apply their work projects :scream:!
+Lastly, the Prime Generator example employs a non-pragmatic Java style. The use
+of static class variables and functions introduces several issues. Firstly, it
+compromises thread safety. Secondly, the generate(int n) function returns a
+static class variable, exposing internal implementation details and potentially
+allowing external modifications that can violate the class's invariants. Using
+protected visibility for a static function like generate(int n) is also
+questionable.
 
-The whole examples give the impression that this is good Java style, it's in the
-_Clean Code_ book, right? Hopefully nobody write Java code like this in his
-daily work projects. One still can argument that this Java-style was popular
-back in the days but honestly it was always bad style - in any time period[1].
+Unfortunately, this style might mislead junior programmers into adopting these
+practices in their projects. The inclusion of such examples in a book like Clean
+Code could inadvertently promote this suboptimal coding style. While it could be
+true that this style was acceptable in the past, it has always been considered
+poor practice - in any time period[1].
 
 For a comparison, you can look up my
 [primary number generator](https://gist.github.com/gerlacdt/772c86b2f592a16ea6303defaf74974f)
-closely based on the Sieve of Eratosthenes algorithm with some supporting
-comments - yes sometimes comments are more helpful than refactoring everything
-into tiny functions!
+implementation closely based on the Sieve of Eratosthenes algorithm with some
+supporting comments - yes sometimes comments are more helpful than refactoring
+everything into tiny functions!
 
 ## Conclusion
 
