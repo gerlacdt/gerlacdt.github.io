@@ -1,15 +1,15 @@
 ---
 title: "Clean Code: The good, the Bad and the Ugly"
-date: 2024-08-04T09:00:00+01:00
+date: 2024-12-13T09:00:00+01:00
 tags: ["programming", "softwareengineering"]
 draft: true
 ---
 
 _Clean Code_ by Robert C. Martin is a seminal programming book. A whole
-generation of developers, including myself, became better programmers by the
-Uncle Bob's advice. But after almost twenty years, does the book still hold up
-to its high standards? Was some advice given by _Clean Code_ questionable or
-even wrong? Are there better alternatives nowadays?
+generation of developers, including myself, became better programmers by Uncle
+Bob's advice. But after almost twenty years, does the book still hold up to its
+high standards? Was some advice given by _Clean Code_ questionable or even
+wrong? Are there better alternatives nowadays?
 
 To be fair, the author himself claims in the preface that "_some recommendations
 in the book are controversial and people might disagree_". In this article I try
@@ -17,9 +17,9 @@ to disagree. Let's go through to the **good, bad and ugly** parts of Clean Code.
 
 ## The Good
 
-Besides the book's programming guidance, I think the greatest achievement of the
-book is coining the term **Clean Code** and creating a general awareness about
-code quality:
+Besides the book's programming guidance, **I think the greatest achievement of
+the book is coining the term Clean Code and creating a general awareness about
+code quality**:
 
 > _The only way to go fast is to go well_ - Uncle Bob
 
@@ -49,16 +49,14 @@ take them for granted but junior developers need to learn them first, e.g.:
 - _Functions_ should do one thing and all statements should have the same level
   of abstraction
 - _pure functions_ without side-effects should be preferred
-- Functions should comply to the _Command-Query Separation_ pattern. On the one
-  hand functions returning something should have no side effects, on the other
-  hand functions returning nothing have side effects
+- Functions should comply to the _Command-Query Separation_ pattern
 - Keep your code _DRY_
 - Don't comment code, delete it - there is version control
-- Try to have good _boundaries_ in your codebase. Don't depend too much on 3rd
-  party libs, hide them behind interfaces. This will keep your code testable
+- Good _boundaries_ are important. Don't depend too much on 3rd party libs, hide
+  them behind interfaces. This will keep your code testable
 - Good _Data Abstractions_ enabled by encapsulation/information hiding will
-  preserve class invariants and will guarantee convenient and comprehensible
-  class APIs.
+  preserve class invariants and will guarantee error-resistant and
+  comprehensible APIs.
 
 These practices are timeless for all programmers - new and old. I keep finding
 myself giving these tips over and over to team members in pair programming
@@ -77,7 +75,7 @@ for software engineering, **some of its content is obsolete**. For example the
 heavy Java focus, the reliance on
 [EJBs](https://en.wikipedia.org/wiki/Jakarta_Enterprise_Beans) and
 [AspectJ](https://en.wikipedia.org/wiki/AspectJ) limits the applicability for
-modern programming practices. Additionally, the concurrency topics covered are
+modern programming practices. Additionally, the covered concurrency topics are
 shallow and too low-level, especially considering the rise of first-class
 concurrency languages like Go and Rust. These new languages offer more robust
 and efficient approaches to concurrency. Furthermore, the book primarily uses
@@ -115,11 +113,10 @@ More mantra-like examples can be found in the book:
 developers blindly follow rules without understanding the underlying reasons.
 More often than not, it leads to heated debates and misunderstandings, as people
 cling to their interpretations of the book's advice without considering the
-specific context of their projects. I admit though that it is not the book's
-fault that people are not able to judge about their situations but the
-mantra-like writing style does not really encourage deeper reasoning. Funnily
-the book sometimes diverges from the mantra-like writing style and condemns
-dogmatism:
+specific project context. I admit though that it is not the book's fault that
+people are not able to judge about their situations but the mantra-like writing
+style does not really encourage deeper reasoning. Funnily the book sometimes
+diverges from the mantra-like writing style and condemns dogmatism:
 
 > In an effort to make our classes and methods small, we might create too many
 > tiny classes and methods. So this rule suggest that that we also keep our
@@ -138,13 +135,14 @@ is not a one-size-fits-all endeavor. Good developers understand the principles
 outlined in _Clean Code_ but also possess the judgment to apply them
 appropriately in different scenarios. Good advice and practices always come with
 trade-offs. These trade-offs must be transparent and known, otherwise it's not
-possible to use practices adequately. Rules and guidelines are only tools in our
-toolbox but still we need to reason and judge about them again and again since
-every situation is unique. That's why I like Kent Beck's quote so much:
+possible to use them adequately. Rules and guidelines are only tools in our
+toolbox but we need to reason and judge about them for every problem anew.
+That's why I like Kent Beck's quote so much:
 
 > It depends. - _Kent Beck_
 
-Basically, this tiny quote covers the soul of software engineering.
+Basically, with this tiny quote Kent covers the soul of software engineering.
+It's also my most used sentence at work :).
 
 ## The Ugly
 
@@ -159,68 +157,6 @@ Argument Parser. More often than not, the examples apply the book's advice
 dogmatically which ends up in bad code. As a programmer journey man, the target
 audience of the book, it is hard to filter out the critical information from the
 noise. Let's go through a concrete example: the _prime generator_.
-
-#### Prime Generator
-
-The
-[Prime Generator](https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481)
-example is my personal pet peeve and the epitome of applying good practices
-dogmatically but ending up with poor code. So what is so bad about it? Many
-things. First of all, the functions are too small. You have to hop around from
-function to function multiple times in order to understand the code. Because
-there are so many functions, it's very hard to find good intuitive names for
-them that's why they get longer and longer. Their meaning is obscured too.
-Reading the two or three lines of code is more comprehensive than reading the
-function name itself. This is a sign of bad abstractions. For example, are you
-able to deduce what's behind _isLeastRelevantMultipleOfNextLargerPrimeFactor()_?
-
-Now it's time to focus on where the prime generator applies exactly the opposite
-of clean code. The book clearly consults against side-effects but the Prime
-Generator is full of them! A short primer what a
-[side effect](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>)
-is:
-
-> a function is said to have a side effect if it modifies some state variable
-> outside its local environment.
-
-> Example side effects include modifying a non-local variable, modifying a
-> static local variable, modifying a mutable argument passed by reference,
-> performing I/O or calling other functions with side-effects.
-
-Unfortunately, almost all `private static` functions have a side-effect because
-they change internal static class variables. Worse yet, the functions are so
-small and highly nested, sometimes the side-effect is hidden because it happens
-in a nested function.
-[Command-Query Separation(CQS)](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation)
-is a great way of writing intention-revealing APIs but it is also disregarded in
-the Prime Generator. A short recap:
-
-> It (CQS) states that every method should either be a command that performs an
-> action, or a query that returns data to the caller, but not both.
-
-Whereby a command has a side-effect but not return value and a query returns a
-value but has no side-effect. Consistently applying CQS in a codebase hugely
-helps to write intention-revealing interface and maintainable code. The function
-`boolean isPrime(int candidate)` though returns a value but also has a
-side-effect. It changes a static class variable and thereby the internal class
-state. Even worse the function name `isPrime()` confuses the reader even more
-since it gives the wrong intention that there is no side-effect.
-
-Last but not least, the whole example is written in non-pragmatic Java style.
-The use of static class variables and functions is a strange choice and causes
-multiple problems. First the code is unnecessarily thread-unsafe. Second, the
-main function `generate(int n)` returns the static class variable
-`int[] primes`. By doing this, every API consumer has access to the internals of
-the `PrimeGenerator` class and can destroy the class invariants by overriding
-`int[] primes` from outside. Using `protected` visiblity for the main function
-`generate(int n)` in combination with `static` is also questionable. The worst
-part is that with examples junior programmers will copy this coding style and
-apply their work projects :scream:!
-
-The whole examples give the impression that this good Java style, although it's
-very bad. Hopefully nobody write Java code like this in his daily work projects.
-One still can argument that this Java-style was popular back in the days but
-honestly it was always bad style - in any time period[1].
 
 ```java
 // from Clean Code chapter 10
@@ -294,43 +230,76 @@ public class PrimeGenerator {
 }
 ```
 
-In comparison,
-[my primary number generator](https://gist.github.com/gerlacdt/772c86b2f592a16ea6303defaf74974f)
+The
+[Prime Generator](https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481)
+example is a prime candidate for demonstrating the pitfalls of overly dogmatic
+adherence to good practices. The primary issue lies in its excessive function
+granularity. This fragmentation forces readers to constantly jump between
+functions, hindering comprehension. The sheer number of tiny functions
+necessitates overly verbose names, further obfuscating the code's intent. For
+instance, consider the following function names:
+
+- _smallestOddNthMultipleNotLessThanCandidate()_
+- or _isLeastRelevantMultipleOfNextLargerPrimeFactor()_?
+
+These convoluted names highlight the failure of abstraction. In this case a few
+lines of code are more easily understood than the function name itself.
+
+Sometimes the prime generator applies exactly the opposite of clean code. The
+book clearly consults against side-effects but the Prime Generator is full of
+them! A short primer what a
+[side effect](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>)
+is:
+
+> a function is said to have a side effect if it modifies some state variable
+> outside its local environment.
+
+> Example side effects include modifying a non-local variable, modifying a
+> static local variable, modifying a mutable argument passed by reference,
+> performing I/O or calling other functions with side-effects.
+
+Unfortunately, almost all `private static` functions of the Prime Generator have
+a side-effect because they change internal static class variables. Worse yet,
+the functions are so small and highly nested, sometimes the side-effect is
+hidden because it happens in a nested function.
+
+[Command-Query Separation(CQS)](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation)
+is a great way of writing intention-revealing APIs but it is also disregarded in
+the Prime Generator. A short recap:
+
+> It (CQS) states that every method should either be a command that performs an
+> action, or a query that returns data to the caller, but not both.
+
+Whereby a command has a side-effect but not return value and a query returns a
+value but has no side-effect. Consistently applying CQS in a codebase hugely
+helps to write intention-revealing interfaces and maintainable code. The
+function `boolean isPrime(int candidate)` though returns a value but also has a
+side-effect. It changes a static class variable and thereby the internal class
+state. The name `isPrime()` gives a wrong intention to the API user.
+
+Last but not least, the whole example is written in non-pragmatic Java style.
+The use of static class variables and functions is a strange choice and causes
+multiple problems. First the code is unnecessarily thread-unsafe. Second, the
+main function `generate(int n)` returns the static class variable
+`int[] primes`. By doing this, every API consumer has access to the internals of
+the `PrimeGenerator` class and can destroy the class invariants by overriding
+`int[] primes` from outside. Using `protected` visiblity for the main function
+`generate(int n)` in combination with `static` is also questionable. The worst
+part is that with examples junior programmers will copy this coding style and
+apply their work projects :scream:!
+
+The whole examples give the impression that this is good Java style, it's in the
+_Clean Code_ book, right? Hopefully nobody write Java code like this in his
+daily work projects. One still can argument that this Java-style was popular
+back in the days but honestly it was always bad style - in any time period[1].
+
+For a comparison, you can look up my
+[primary number generator](https://gist.github.com/gerlacdt/772c86b2f592a16ea6303defaf74974f)
 closely based on the Sieve of Eratosthenes algorithm with some supporting
-comments:
+comments - yes sometimes comments are more helpful than refactoring everything
+into tiny functions!
 
-```python
-# Program collects all primes less than or equal n.
-# It uses the Sieve of Eratosthenes algorithm, see
-# https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
-
-
-def primes(n):
-    # Initializes start array with n-entries, all numbers are primes initially
-    prime = [True for i in range(n + 1)]
-
-    # 0 and 1 are no primes
-    prime[0] = False
-    prime[1] = False
-
-    # start from 2 as first prime
-    p = 2
-    while p * p <= n:
-        # number not crossed out yet, it must be a prime
-        if prime[p] == True:
-            # Cross out all multiples of p
-            for i in range(p ** 2, n + 1, p):
-                prime[i] = False
-        p += 1
-
-    # collect all primes aka the numbers not crossed out
-    return [i for i, v in enumerate(prime) if v]
-```
-
-Although I know from my own writing experience, coming up with good code
-examples is hard, the examples of _Clean Code_ are not worthy of a seminal book.
-
-## conclusion
+## Conclusion
 
 Would I recommend _Clean Code_ for new programmers? Yes, but not anymore as the
 first Software Engineering book. In my opinion there are better alternatives:
