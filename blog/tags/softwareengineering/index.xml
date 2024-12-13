@@ -5,7 +5,17 @@
     <link>https://gerlacdt.github.io/blog/tags/softwareengineering/</link>
     <description>Recent content in softwareengineering on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Dec 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/softwareengineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Dec 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/softwareengineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clean Code: The good, the Bad and the Ugly</title>
+      <link>https://gerlacdt.github.io/blog/posts/clean_code/</link>
+      <pubDate>Fri, 13 Dec 2024 09:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/blog/posts/clean_code/</guid>
+      <description>Clean Code by Robert C. Martin is a seminal programming book. A whole generation of developers, including myself, became better programmers by Uncle Bob&amp;rsquo;s advice. But after almost twenty years, does the book still hold up to its high standards? Was some advice given by Clean Code questionable or even wrong? Are there better alternatives nowadays?
+To be fair, the author himself claims in the preface that &amp;ldquo;some recommendations in the book are controversial and people might disagree&amp;rdquo;.</description>
+    </item>
+    
     <item>
       <title>The Continuous Clean Code Process (CCCP)</title>
       <link>https://gerlacdt.github.io/blog/posts/cccp/</link>
