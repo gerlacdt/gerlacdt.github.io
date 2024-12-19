@@ -256,8 +256,8 @@ is:
 
 Unfortunately, almost all `private static` functions of the prime generator have
 a side-effect because they change internal static class variables. Worse yet,
-because of the small and nested functions the side-effect is hidden in a
-non-obvious nested function call.
+some side-effects are hidden in nested functions making the code even harder to
+understand.
 
 [Command-Query Separation(CQS)](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation)
 is highly recommended in the book and is a great way of writing
