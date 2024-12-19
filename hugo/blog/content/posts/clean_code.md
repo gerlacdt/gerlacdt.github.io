@@ -1,5 +1,5 @@
 ---
-title: "Clean Code: The good, the Bad and the Ugly"
+title: "Clean Code: The Good, the Bad and the Ugly"
 date: 2024-12-13T09:00:00+01:00
 tags: ["programming", "softwareengineering"]
 draft: false
