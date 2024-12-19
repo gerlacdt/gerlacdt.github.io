@@ -309,7 +309,7 @@ thinking. The books give more background about the practices, trade-offs and
 **why** these practices are useful. Although they miss the catchy name - _Clean
 Code_ is matchless. However _Clean Code_ is a classic and still a required read
 because it contains timeless advice. Just make sure you don't apply the
-practices blindly and without your own judgement.
+practices blindly and without judgement.
 
 Last but not least, I want to point out that _Clean Code_ is an brilliant name
 and a great foundation for other software engineering inventions. I came up with
