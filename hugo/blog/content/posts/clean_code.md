@@ -236,7 +236,7 @@ necessitates overly verbose names, further obfuscating the code's intent. For
 instance, consider the following function names:
 
 - _smallestOddNthMultipleNotLessThanCandidate()_
-- or _isLeastRelevantMultipleOfNextLargerPrimeFactor()_?
+- _isLeastRelevantMultipleOfNextLargerPrimeFactor()_
 
 These convoluted names highlight the failure of abstraction. In this case a few
 lines of code are more easily understood than the function name itself.
