@@ -5,7 +5,18 @@
     <link>https://gerlacdt.github.io/blog/</link>
     <description>Recent content on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 13 Dec 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Dec 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logging, the sensible defaults</title>
+      <link>https://gerlacdt.github.io/blog/posts/logging/</link>
+      <pubDate>Mon, 23 Dec 2024 09:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/blog/posts/logging/</guid>
+      <description>Logging is a major pillar for well-designed applications. It is not only a large help during development but also critical for failure analysis and debugging.
+ The most effective debugging tool is still careful thought, coupled with judiciously placed print statements. - Brian W. Kernighan
+ Further logging is essential for observability in production. Nonetheless, I often encounter codebases with lousy logging practices. This manifests itself in useless logging missing context or in over-logging thereby bringing down the whole system.</description>
+    </item>
+    
     <item>
       <title>Clean Code: The Good, the Bad and the Ugly</title>
       <link>https://gerlacdt.github.io/blog/posts/clean_code/</link>
