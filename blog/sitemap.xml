@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gerlacdt.github.io/blog/</loc>
-    <lastmod>2024-12-23T09:00:00+01:00</lastmod>
+    <lastmod>2024-12-27T09:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/blog/posts/logging/</loc>
-    <lastmod>2024-12-23T09:00:00+01:00</lastmod>
+    <loc>https://gerlacdt.github.io/blog/posts/my-presentations/</loc>
+    <lastmod>2024-12-27T09:00:00+01:00</lastmod>
   </url><url>
     <loc>https://gerlacdt.github.io/blog/posts/</loc>
+    <lastmod>2024-12-27T09:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/blog/posts/logging/</loc>
     <lastmod>2024-12-23T09:00:00+01:00</lastmod>
   </url><url>
     <loc>https://gerlacdt.github.io/blog/tags/programming/</loc>
@@ -136,9 +139,6 @@
   </url><url>
     <loc>https://gerlacdt.github.io/blog/posts/microservices/</loc>
     <lastmod>2019-03-30T09:53:54+01:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/blog/posts/my-presentations/</loc>
-    <lastmod>2019-03-16T11:01:35+01:00</lastmod>
   </url><url>
     <loc>https://gerlacdt.github.io/blog/tags/javascript/</loc>
     <lastmod>2019-03-15T08:51:40+01:00</lastmod>

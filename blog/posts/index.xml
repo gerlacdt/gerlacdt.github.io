@@ -5,7 +5,16 @@
     <link>https://gerlacdt.github.io/blog/posts/</link>
     <description>Recent content in Posts on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 Dec 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Dec 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Presentations</title>
+      <link>https://gerlacdt.github.io/blog/posts/my-presentations/</link>
+      <pubDate>Fri, 27 Dec 2024 09:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/blog/posts/my-presentations/</guid>
+      <description>Links to my presentation slides  clojure introduction javascript introduction java8 new features hashicorp nomad tutorial learning how to learn  </description>
+    </item>
+    
     <item>
       <title>Logging, the sensible defaults</title>
       <link>https://gerlacdt.github.io/blog/posts/logging/</link>
@@ -270,15 +279,6 @@ The following command searches for main in all *.go files in the current directo
       
       <guid>https://gerlacdt.github.io/blog/posts/microservices/</guid>
       <description>Introduction Some years ago i was involved in migrating a big IBM Websphere monolith into a microservice landscape. We had a lot of problems with the monolith. Our development speed slowed down. We had many merge conflicts because of too many dependencies in the codebase. We outgrew the monolithic design and decided to introduce microservices. We extracted different domains like payment, booking, user and search. The teams were restructured into two-pizza teams.</description>
-    </item>
-    
-    <item>
-      <title>My Presentations</title>
-      <link>https://gerlacdt.github.io/blog/posts/my-presentations/</link>
-      <pubDate>Sat, 16 Mar 2019 11:01:35 +0100</pubDate>
-      
-      <guid>https://gerlacdt.github.io/blog/posts/my-presentations/</guid>
-      <description>Links to my presentation slides  clojure introduction javascript introduction java8 new features hashicorp nomad tutorial  </description>
     </item>
     
     <item>
