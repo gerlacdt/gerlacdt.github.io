@@ -259,19 +259,17 @@ some side-effects are hidden in nested functions making the code even harder to
 understand.
 
 [Command-Query Separation(CQS)](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation)
-is highly recommended in the book and is a great way of writing
-intention-revealing APIs but it is also disregarded in the prime generator
-example. A short description of CQS:
+is recommended in the book and is a great way to write intention-revealing APIs.
+Consistently applied, CQS helps to write coherent and maintainable code but it
+is disregarded in the prime generator example.
 
-> It (CQS) states that every method should either be a command that performs an
+> CQS states that every method should either be a command that performs an
 > action, or a query that returns data to the caller, but not both.
 
-Whereby a command has a side-effect but no return value and a query returns a
-value but has no side-effect. Consistently applied, CQS hugely helps to write
-intention-revealing interfaces and maintainable code. The function
-`boolean isPrime(int candidate)` though returns a value but also has a
-side-effect. It changes a static class variable, thereby giving the wrong
-intention to the API user.
+The function `boolean isPrime(int candidate)` returns a value but also changes a
+static class variable as a side-effect. This contradicts CQS and leads to
+"surprises" for API users. The `isPrime()` function could return different
+results depending on the internal class state!
 
 Lastly, the Prime Generator example employs a non-pragmatic Java style. The use
 of static class variables and functions introduces several issues. Firstly, it
@@ -305,13 +303,12 @@ first Software Engineering book. In my opinion there are better alternatives:
 The above books contain great engineering wisdom and in my opinion they are
 written in a open-minded way. The readers have some leeway for their own
 thinking. The books give more background about the practices, trade-offs and
-**why** these practices are useful. Although they miss the catchy name - _Clean
-Code_ is matchless. However _Clean Code_ is a classic and still a required read
-because it contains timeless advice. Just make sure you don't apply the
-practices blindly and without judgement.
+**why** these practices are useful. Nonetheless _Clean Code_ is a classic and a
+required read because it contains timeless advice for programmers of all levels.
+Just make sure you don't apply the practices blindly.
 
-Last but not least, I want to point out that _Clean Code_ is an brilliant name
-and a great foundation for other software engineering inventions. I came up with
+Last but not least, I want to point out that _Clean Code_ is a brilliant name
+and a great foundation for other software engineering practices. I came up with
 one of my own :grin::
 
 - [**_The Continuous Clean Code Process (CCCP)_**](/blog/posts/cccp/) - cleaning
