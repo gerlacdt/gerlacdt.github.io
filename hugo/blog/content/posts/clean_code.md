@@ -42,7 +42,7 @@ take them for granted but junior developers need to learn them first, e.g.:
   This is also a main principle in DDD, namely the ubiquitous language.
 - Good _exception handling_ uses unchecked exceptions and provides as much
   context as possible
-- Good _unit tests_ should be FIRST (Fast, Independent, Repeatable
+- Good _unit tests_ should be FIRST (Fast, Independent, Repeatable,
   Self-validated, Timely) and should assert a single behaviour
 - Classes should comply to the _Single Responsibility Principle_
 - _Functions_ should do one thing and all statements should have the same level
@@ -109,10 +109,10 @@ coupling, cohesion, information hiding etc. Some quotes directly from the book:
 developers blindly follow rules without understanding the underlying reasons.
 More often than not, it leads to heated debates and misunderstandings, as people
 cling to their interpretations of the book's advice without considering their
-specific project context. I admit though that it is not the book's fault that
-people are not able to judge about their situations but the mantra-like writing
-style does not really encourage deeper reasoning. Funnily the book sometimes
-diverges from the this writing style and condemns dogmatism:
+specific project context. I admit, it is not the book's fault that people are
+not able to judge about their situations but the mantra-like writing style does
+not really encourage deeper reasoning. Funnily the book sometimes diverges from
+the this writing style and condemns dogmatism:
 
 > In an effort to make our classes and methods small, we might create too many
 > tiny classes and methods. So this rule suggest that that we also keep our
@@ -142,17 +142,19 @@ It's also my most used sentence at work :smile:.
 
 ## The Ugly
 
-The book's examples, particularly the infamous _prime generator_, often
-contradict the advice it offers. These examples prioritize verbosity over
-clarity, making them difficult to understand, especially for beginners. They
-frequently rely on Java-specific frameworks like
+The book's examples often contradict its own advice. Examples prioritize
+verbosity over clarity, making them difficult to understand, especially for
+beginners. They frequently rely on Java-specific frameworks like
 [FitNesse](https://fitnesse.org/) and [JUnit](https://junit.org/junit5/)
 internals, creating a barrier for programmers unfamiliar with those tools.
 Additionally, some examples, like the Argument Parser, sprawl across tens of
 pages, overwhelming readers. The overemphasis on dogma leads to convoluted code,
-hindering the learning process for "programmer journeymen," the intended
-audience of the book. **That's why the code examples are the ugly part of the
-book.**
+hindering the learning process for _programmer journeymen_, the intended
+audience of the book. That's why **the code examples are the ugly part of the
+book.** The
+[prime generator](https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481)
+example is an excellent candidate for demonstrating the pitfalls of overly
+dogmatic adherence to good practices.
 
 ```java
 // from Clean Code chapter 10
@@ -226,14 +228,11 @@ public class PrimeGenerator {
 }
 ```
 
-The
-[prime generator](https://gist.github.com/gerlacdt/41cf41c1f32093ca2866d35dffc88481)
-example is an excellent candidate for demonstrating the pitfalls of overly
-dogmatic adherence to good practices. The primary issue lies in its excessive
-function granularity. This fragmentation forces readers to constantly jump
-between functions, hindering comprehension. The sheer number of tiny functions
-necessitates overly verbose names, further obfuscating the code's intent. For
-instance, consider the following function names:
+The primary issue lies in its excessive function granularity. This fragmentation
+forces readers to constantly jump between functions, hindering comprehension.
+The sheer number of tiny functions necessitates overly verbose names, further
+obfuscating the code's intent. For instance, consider the following function
+names:
 
 - _smallestOddNthMultipleNotLessThanCandidate()_
 - _isLeastRelevantMultipleOfNextLargerPrimeFactor()_
@@ -284,8 +283,8 @@ modifications that can violate the class's invariants.
 Unfortunately, this style might mislead junior programmers into adopting these
 practices in their projects. The inclusion of such examples in a book like Clean
 Code could inadvertently promote this suboptimal coding style. While it could be
-true that this style was acceptable in the past, it has always been considered
-poor practice - in any time period[1].
+true that this style was acceptable in the past, it is not good code - in any
+time period[1].
 
 For a comparison, you can look up my
 [primary number generator](https://gist.github.com/gerlacdt/772c86b2f592a16ea6303defaf74974f)
