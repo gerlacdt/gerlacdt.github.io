@@ -1,10 +1,14 @@
 created: 20240420183743449
-modified: 20240518210636320
+modified: 20250102143917624
 tags: Books
 title: MindForNumbers
 type: text/vnd.tiddlywiki
 
-!! general brain facts
+!!! general brain facts
+* left hemisphere
+** responsible for calculation, math etc.
+** sometimes your brain tricks you.
+* right hemisphere is responsible for reasoning, ask yourself "does it make sense"
 
 !!! focused mode
 * ''narrow mode'', neuron in a small region are used
@@ -16,17 +20,6 @@ type: text/vnd.tiddlywiki
 * ''wide mode'', mind drifts in a big region of the brain (and can connect neurons from other regions)
 * //brain needs time to relax in order to wire your neurons and understand the new knowledge which you learned in focus mode//
 
-!!! chunking
-* do not memorized but understand a concept
-* ''chunks are built in focused mode''
-* //chunks free up working mode. Once understood the concept of a problem you only need the abstract name of it. But with the chunk you can access the knowledge//
-
-
-** brain
-*** left hemisphere
-**** responsible for calculation, math etc.
-**** sometimes your brain tricks you.
-
 <<<
 For you everything seems perfectly right but you made a mistake
 (e.g. in focus mode).  Now you need to step back and relax in diffuse
@@ -35,7 +28,16 @@ your done in order not to fool yourself. Or have other students to
 discuss the topic to hear another perspective.
 <<<
 
-* right hemisphere is responsible for reasoning, ask yourself "does it make sense"
+!!! chunking
+* do not memorized but understand a concept
+* ''chunks are built in focused mode''
+* //chunks free up working mode. Once understood the concept of a problem you only need the abstract name of it. But with the chunk you can access the knowledge//
+
+
+
+
+
+
 
 !! two kinds of memory
 
@@ -59,14 +61,14 @@ discuss the topic to hear another perspective.
 ** try to solve problem without looking
 ** look away from page and try to remember the main idea
 * //test yourself all the time//
-** helps to avoid illusion of confidence (i.e. fooling yourself)
+** helps to avoid illusion of competence (i.e. fooling yourself)
 ** change environment to avoid cues for your memory
 * @@color:red;''spaced repetition''@@ (e.g. flash cards)
-* actively practice (//re-reading is useless and causes an illusion of confidence//)
+* actively practice (//re-reading is useless and causes an illusion of competence//)
 * try to explain it in your own simple terms, improves your understanding
 
 !! bad learning practices
-* only re-reading (fools yourself, illusion of confidence)
+* only re-reading (fools yourself, illusion of competence)
 
 
 !! Taking tests
