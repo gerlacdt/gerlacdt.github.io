@@ -134,11 +134,17 @@ books about Philosophy (Karl Popper, Beginning of infinity)
 
 # Humans
 
-- meet family and friends
-- invest in good relationships
-- keep away of toxic people
-- read some books about leadership and how to be more valuabe in your team (not
-  only as individual contribution)
+All the tips mentioned above focus on the individual – on yourself. However,
+humans are social beings and truly thrive when they spend quality time with
+family and friends. Therefore, investing in strong relationships with your close
+ones is essential. Additionally, be mindful of the company you keep; avoid toxic
+and perpetually pessimistic individuals, as they can significantly impact your
+well-being. Lastly, consider reading some
+[books about leadership and how to be a good team member](../programming-books/#management-and-leadership).
+Software development is a collaborative effort, and the most successful software
+engineers not only excel technically but also possess strong communication
+skills, are excellent team players and mentors, and ultimately, bring optimism
+and positive energy to the team.
 
 # References
 
