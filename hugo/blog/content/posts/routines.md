@@ -34,7 +34,7 @@ more responsible life.
 
 # Health
 
-### Sports/Calistenics
+### Sports/Calisthenics
 
 Having worked as a software engineer for nearly 20 years, the shift to a
 full-time home office in 2020 during the COVID-19 pandemic brought significant
@@ -44,7 +44,7 @@ pain and other related problems. Recognizing the need for change, I realized
 that incorporating regular exercise was the key to improvement.
 
 Being naturally inclined towards a less active lifestyle, I opted for
-calisthenics due to its convenience of being primarily home-based. Initially,
+Calisthenics due to its convenience of being primarily home-based. Initially,
 adhering to a consistent workout schedule proved challenging. However, regular
 exercise has since become an indispensable part of my life. The benefits have
 been truly transformative: not only has my back pain subsided, but I also
@@ -56,7 +56,7 @@ schedule and effective exercises. In my experience,
 [Calisthenics Movement](https://www.calimove.com/p/home) stands out as an
 excellent program. Their approach is science-backed, and their instructors
 possess two decades of expertise. For those unfamiliar,
-[calisthenics](https://en.wikipedia.org/wiki/Calisthenics) is a form of training
+[Calisthenics](https://en.wikipedia.org/wiki/Calisthenics) is a form of training
 that primarily or exclusively utilizes body weight for exercises such as
 push-ups, pull-ups, and squats.
 
@@ -70,11 +70,11 @@ including issues in the back, neck, and shoulders.
 
 While regular exercise is fundamental, achieving optimal health and strength
 also necessitates attention to nutrition, which is just as vital as your
-consistent calisthenics sessions.
+consistent Calisthenics sessions.
 
-### Heathy Nutrition
+### Healthy Nutrition
 
-Beyond calisthenics, a healthy approach to eating is equally crucial. While
+Beyond Calisthenics, a healthy approach to eating is equally crucial. While
 nutrition is a vast subject that can feel overwhelming, **the single most
 impactful change you can make is to reduce your sugar consumption.** I highly
 recommend the book
