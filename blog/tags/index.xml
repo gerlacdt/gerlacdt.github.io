@@ -5,11 +5,20 @@
     <link>https://gerlacdt.github.io/blog/tags/</link>
     <description>Recent content in Tags on Daniel&#39;s programming rants</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 Dec 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Apr 2025 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>life</title>
+      <link>https://gerlacdt.github.io/blog/tags/life/</link>
+      <pubDate>Fri, 18 Apr 2025 09:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/blog/tags/life/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>programming</title>
       <link>https://gerlacdt.github.io/blog/tags/programming/</link>
-      <pubDate>Mon, 23 Dec 2024 09:00:00 +0100</pubDate>
+      <pubDate>Fri, 18 Apr 2025 09:00:00 +0100</pubDate>
       
       <guid>https://gerlacdt.github.io/blog/tags/programming/</guid>
       <description></description>
@@ -18,7 +27,7 @@
     <item>
       <title>softwareengineering</title>
       <link>https://gerlacdt.github.io/blog/tags/softwareengineering/</link>
-      <pubDate>Mon, 23 Dec 2024 09:00:00 +0100</pubDate>
+      <pubDate>Fri, 18 Apr 2025 09:00:00 +0100</pubDate>
       
       <guid>https://gerlacdt.github.io/blog/tags/softwareengineering/</guid>
       <description></description>

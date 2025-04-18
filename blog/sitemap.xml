@@ -3,24 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gerlacdt.github.io/blog/</loc>
-    <lastmod>2024-12-27T09:00:00+01:00</lastmod>
+    <lastmod>2025-04-18T09:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/blog/tags/life/</loc>
+    <lastmod>2025-04-18T09:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/blog/posts/</loc>
+    <lastmod>2025-04-18T09:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/blog/tags/programming/</loc>
+    <lastmod>2025-04-18T09:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/blog/posts/routines/</loc>
+    <lastmod>2025-04-18T09:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/blog/tags/softwareengineering/</loc>
+    <lastmod>2025-04-18T09:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://gerlacdt.github.io/blog/tags/</loc>
+    <lastmod>2025-04-18T09:00:00+01:00</lastmod>
   </url><url>
     <loc>https://gerlacdt.github.io/blog/posts/my-presentations/</loc>
     <lastmod>2024-12-27T09:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://gerlacdt.github.io/blog/posts/</loc>
-    <lastmod>2024-12-27T09:00:00+01:00</lastmod>
-  </url><url>
     <loc>https://gerlacdt.github.io/blog/posts/logging/</loc>
-    <lastmod>2024-12-23T09:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/blog/tags/programming/</loc>
-    <lastmod>2024-12-23T09:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/blog/tags/softwareengineering/</loc>
-    <lastmod>2024-12-23T09:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://gerlacdt.github.io/blog/tags/</loc>
     <lastmod>2024-12-23T09:00:00+01:00</lastmod>
   </url><url>
     <loc>https://gerlacdt.github.io/blog/posts/clean_code/</loc>

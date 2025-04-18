@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>life on Daniel&#39;s programming rants</title>
+    <link>https://gerlacdt.github.io/blog/tags/life/</link>
+    <description>Recent content in life on Daniel&#39;s programming rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 18 Apr 2025 09:00:00 +0100</lastBuildDate><atom:link href="https://gerlacdt.github.io/blog/tags/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Routines for a healthy and happy life (as a software engineer)</title>
+      <link>https://gerlacdt.github.io/blog/posts/routines/</link>
+      <pubDate>Fri, 18 Apr 2025 09:00:00 +0100</pubDate>
+      
+      <guid>https://gerlacdt.github.io/blog/posts/routines/</guid>
+      <description>Introduction I have always been passionate about productivity. As a dedicated software engineer, the pursuit of continuous learning and the creation of high-quality, maintainable code are paramount. However, focusing solely on honing technical skills while neglecting other facets of life can lead to an imbalance, a state best described by Kelsey Hightower&amp;rsquo;s insightful observation:
+ If you focus too much on technology and technical skills, you&amp;rsquo;ll end up as a senior engineer and a junior human being.</description>
+    </item>
+    
+  </channel>
+</rss>
