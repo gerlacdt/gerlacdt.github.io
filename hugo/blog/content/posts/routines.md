@@ -127,10 +127,26 @@ books about Philosophy (Karl Popper, Beginning of infinity)
 
 ### Learning How to Learn
 
-- Growth Mindset
-- never stop learning
-- challenge your brain and your body
-- teach others
+_Learning_ stands out as one of life's most crucial skills, making it essential
+to invest in honing your learning abilities. Barbara Oakley's book,
+[A Mind for Numbers](https://barbaraoakley.com/books/a-mind-for-numbers/),
+offers exceptional guidance in this area. She also provides a valuable free
+[Coursera Course](https://www.coursera.org/learn/learning-how-to-learn). Both
+resources are truly remarkable and will transform your approach to learning and
+tackling complex subjects, ultimately making you a more effective learner.
+
+In addition to cultivating a positive learning attitude, developing a _growth
+mindset_ is equally important. This is particularly vital for children, as they
+need to understand that they can achieve anything through dedicated effort and
+time. This perspective contrasts with a static mindset, where individuals
+believe in fixed talents and tend to give up early when faced with challenging
+skills, thinking they lack inherent ability and will never succeed.
+
+A powerful way to boost your own motivation and discover greater purpose in life
+is to teach others. Not only will you deepen your own understanding through the
+process of explaining concepts, but you'll also empower others to reach their
+goals. This act of sharing knowledge is a wonderful way to forge friendships and
+build strong relationships in general.
 
 # Humans
 
@@ -150,4 +166,6 @@ and positive energy to the team.
 
 - [Fat Chance: The Hidden Truth About Sugar, Obesity, and Disease](https://www.amazon.de/Fat-Chance-Hidden-Obesity-Disease/dp/000751414X)
 - [Calisthenics Movement](https://www.calimove.com/p/home)
+- [A Mind for Numbers - Barbara Oakley](https://barbaraoakley.com/books/a-mind-for-numbers/)
+- [Learning How To Learn, Coursera Free Course](https://www.coursera.org/learn/learning-how-to-learn)
 - [Shaolin Book](https://www.shihengyi.online/shaolin-spirit-book)
