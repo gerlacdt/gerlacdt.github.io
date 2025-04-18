@@ -1,8 +1,8 @@
 ---
-title: "Routines, non-tech stuff that changed my life (as a software engineer)"
-date: 2025-04-12T09:00:00+01:00
+title: "Routines for a healthy and happy life (as a software engineer)"
+date: 2025-04-18T09:00:00+01:00
 tags: ["programming", "softwareengineering", "life"]
-draft: true
+draft: false
 ---
 
 # Introduction
@@ -13,8 +13,8 @@ maintainable code are paramount. However, focusing solely on honing technical
 skills while neglecting other facets of life can lead to an imbalance, a state
 best described by Kelsey Hightower's insightful observation:
 
-"If you focus too much on technology and technical skills, you'll end up as a
-senior engineer and a junior human being." - Kelsey Hightower
+> If you focus too much on technology and technical skills, you'll end up as a
+> senior engineer and a junior human being. - Kelsey Hightower
 
 Previously, I've shared [best practices](../habits) concerning coding and
 engineering productivity from a technical standpoint. But to unlock even greater
@@ -57,8 +57,8 @@ schedule and effective exercises. In my experience,
 excellent program. Their approach is science-backed, and their instructors
 possess two decades of expertise. For those unfamiliar,
 [Calisthenics](https://en.wikipedia.org/wiki/Calisthenics) is a form of training
-that primarily or exclusively utilizes body weight for exercises such as
-push-ups, pull-ups, and squats.
+that primarily utilizes body weight for exercises such as push-ups, pull-ups,
+and squats.
 
 A word of caution: it's crucial not to overexert yourself at the beginning. Your
 joints and tendons need time to adapt to the new demands, and a thorough warm-up
@@ -67,10 +67,6 @@ piece of advice, don't limit your focus solely to strength training.
 Incorporating mobility and flexibility sessions is equally important. Good
 mobility can significantly alleviate various types of musculoskeletal pain,
 including issues in the back, neck, and shoulders.
-
-While regular exercise is fundamental, achieving optimal health and strength
-also necessitates attention to nutrition, which is just as vital as your
-consistent Calisthenics sessions.
 
 ### Healthy Nutrition
 
@@ -87,7 +83,8 @@ production, triggered by sugar intake, reduces leptin levels, preventing us from
 feeling satisfied. This eventually creates a vicious cycle: the more sugar you
 consume, the more your body craves it. The only way to mitigate the insulin
 spike caused by sugar is to consume it alongside fiber-rich foods such as
-broccoli, oats, and other vegetables and fruits.
+broccoli, oats, and other vegetables and fruits or by reducing your sugar
+consumption itself.
 
 By significantly reducing or eliminating sugar from your daily meals, you'll
 likely experience increased energy levels, improved alertness, and a more
@@ -113,17 +110,73 @@ Furthermore, a short nap in the afternoon can significantly boost alertness and
 enhance creativity. It's particularly important for older individuals to
 prioritize sleep, as the body increasingly relies on this recovery period.
 
-# Non-Tech Interest
+# Non-Tech Interests
 
 ### Philosophy
 
-books about Philosophy (Karl Popper, Beginning of infinity)
+As a software engineer who has accumulated years of experience, you naturally
+acquire proficiency in numerous programming languages and diverse technologies,
+mastering your craft. However, confining oneself solely to this technical domain
+can feel limiting, and the constant pursuit of the next trendy technology can
+eventually become monotonous. As Kelsey Hightower aptly put it, you risk
+becoming a senior developer but remaining a "junior human being." I firmly
+believe that studying Philosophy offers a wealth of benefits. It sharpens your
+critical thinking and problem-solving abilities. Exposure to a multitude of
+perspectives broadens your own viewpoint, expands your horizons, and fosters
+open-mindedness. You'll engage in deeper contemplation of crucial topics, such
+as the nature of our society, and gain a greater appreciation for the freedoms
+and privileges we enjoy in the Western world. The "Age of Enlightenment" stands
+as one of the most significant milestones in human history, driven by the
+insights of philosophers and intellectuals.
 
-- books about history (History of Human kind, Nexus, Ascent of Men)
+[The Beginning of Infinity](https://en.wikipedia.org/wiki/The_Beginning_of_Infinity)
+builds upon this very idea, elaborating on how the Enlightenment liberated us
+from the constraints of authority and dogmatic thinking. It ushered in an era
+where individuals could think for themselves, critically evaluate each other's
+ideas, and rigorously refute theories. Knowledge, according to the book, is
+inherently infinite because each new discovery invariably unveils further areas
+of the unknown. Coupled with the seemingly infinite nature of the universe, this
+led David Deutsch to call the Enlightenment "the beginning of infinity."
+
+Beyond philosophy, delving into human history is also profoundly "enlightening".
+It cultivates a deeper awareness of our collective achievements and fosters a
+sense of gratitude for the present. However, we must not take our free Western
+society for granted; the ongoing effort to champion an open society and actively
+resist its adversaries is a constant necessity. Karl Popper's seminal work, _The
+Open Society and Its Enemies_, offers profound insights into this crucial
+matter.
+
+Other books about history I strongly recommend:
+
+- Sapiens: A Brief History of Humankind
+- Nexus A Brief History of Information Networks
+- The Ascent of Man
+
+"Nexus" is a particularly insightful exploration of how information networks
+impact our society. It provides a deeper understanding of how both democracies
+and tyrannies utilize information channels to achieve their objectives, and also
+elucidates why democracies are especially vulnerable to social media and other
+mass communication tools. Interestingly, Yuval Noah Harari explains that the
+existence of both democracy and totalitarian states is contingent upon the
+presence of a mass communication – a fascinating point to consider because we
+live more and more in a world dominated by social media.
 
 ### Meditation
 
-[Shaolin Book](https://www.shihengyi.online/shaolin-spirit-book)
+Another routine that has significantly benefited me is _meditation_. While I
+don't practice it professionally, I meditate two or three times a week for about
+five minutes. Meditation helps to induce relaxation, and afterwards, I find
+myself more alert and able to maintain focus for extended periods. Furthermore,
+it effectively reduces stress levels and anxiety. Perhaps even more valuable is
+the increased resilience it fosters against negative emotions such as anger and
+fear.
+
+Personally, I highly recommend the book
+[Shaolin Spirit](https://www.shihengyi.online/shaolin-spirit-book). It provides
+an excellent introduction to meditation and also offers insights into profound
+life philosophies, specifically Zen and Taoism. The book presents practical ways
+to integrate these principles into your daily life, and actively applying them
+can noticeably improve your overall well-being.
 
 ### Learning How to Learn
 
@@ -148,7 +201,7 @@ process of explaining concepts, but you'll also empower others to reach their
 goals. This act of sharing knowledge is a wonderful way to forge friendships and
 build strong relationships in general.
 
-# Humans
+# Humans/Relationships
 
 All the tips mentioned above focus on the individual – on yourself. However,
 humans are social beings and truly thrive when they spend quality time with
@@ -162,10 +215,26 @@ engineers not only excel technically but also possess strong communication
 skills, are excellent team players and mentors, and ultimately, bring optimism
 and positive energy to the team.
 
+# Final Words
+
+I hope some of these ideas resonated with you and sparked your interest in at
+least one of the topics discussed. Personally, these routines and practices have
+had a positive impact on my life. I feel better overall, possess more energy,
+and generally maintain a more positive mood. I experience a greater sense of
+balance and find myself more resilient when facing various challenges, such as
+anxieties about job security or coping with difficult experiences and events.
+Beyond feeling better, I also believe I understand the world a bit more clearly,
+allowing me to make significantly better decisions in my life (and my job).
+
+Don't forget, where ever you starting point is:
+
+> It's the beginning of infinity.
+
 # References
 
 - [Fat Chance: The Hidden Truth About Sugar, Obesity, and Disease](https://www.amazon.de/Fat-Chance-Hidden-Obesity-Disease/dp/000751414X)
 - [Calisthenics Movement](https://www.calimove.com/p/home)
 - [A Mind for Numbers - Barbara Oakley](https://barbaraoakley.com/books/a-mind-for-numbers/)
 - [Learning How To Learn, Coursera Free Course](https://www.coursera.org/learn/learning-how-to-learn)
-- [Shaolin Book](https://www.shihengyi.online/shaolin-spirit-book)
+- [Shaolin Spirit](https://www.shihengyi.online/shaolin-spirit-book)
+- [Why We Sleep](https://www.gatesnotes.com/why-we-sleep)
