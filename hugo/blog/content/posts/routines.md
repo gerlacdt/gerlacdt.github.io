@@ -77,9 +77,9 @@ recommend the book
 [Fat Chance: The Hidden Truth About Sugar, Obesity, and Disease](https://www.amazon.de/Fat-Chance-Hidden-Obesity-Disease/dp/000751414X)
 by Robert Lustig. This book was truly eye-opening in understanding the
 detrimental effects of sugar. It clearly explains the cycles of insulin and
-leptin and how sugar disrupts their balance, leading to addiction. Leptin is the
+Leptin and how sugar disrupts their balance, leading to addiction. Leptin is the
 hormone responsible for signaling satiety to our body. Excessive insulin
-production, triggered by sugar intake, reduces leptin levels, preventing us from
+production, triggered by sugar intake, reduces Leptin levels, preventing us from
 feeling satisfied. This eventually creates a vicious cycle: the more sugar you
 consume, the more your body craves it. The only way to mitigate the insulin
 spike caused by sugar is to consume it alongside fiber-rich foods such as
@@ -136,7 +136,7 @@ where individuals could think for themselves, critically evaluate each other's
 ideas, and rigorously refute theories. Knowledge, according to the book, is
 inherently infinite because each new discovery invariably unveils further areas
 of the unknown. Coupled with the seemingly infinite nature of the universe, this
-led David Deutsch to call the Enlightenment "the beginning of infinity."
+led David Deutsch to call the Enlightenment _the beginning of infinity._
 
 Beyond philosophy, delving into human history is also profoundly "enlightening".
 It cultivates a deeper awareness of our collective achievements and fosters a
@@ -158,8 +158,8 @@ and tyrannies utilize information channels to achieve their objectives, and also
 elucidates why democracies are especially vulnerable to social media and other
 mass communication tools. Interestingly, Yuval Noah Harari explains that the
 existence of both democracy and totalitarian states is contingent upon the
-presence of a mass communication – a fascinating point to consider because we
-live more and more in a world dominated by social media.
+presence of mass communication – a fascinating point to consider because we live
+more and more in a world dominated by social media.
 
 ### Meditation
 
