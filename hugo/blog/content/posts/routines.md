@@ -226,7 +226,7 @@ anxieties about job security or coping with difficult experiences and events.
 Beyond feeling better, I also believe I understand the world a bit more clearly,
 allowing me to make significantly better decisions in my life (and my job).
 
-Don't forget, where ever your starting point is:
+Don't forget, wherever you are now
 
 > It's the beginning of infinity.
 
