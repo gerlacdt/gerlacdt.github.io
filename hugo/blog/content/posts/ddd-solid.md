@@ -543,3 +543,5 @@ counter-productive and introduce accidental complexity.
 - [Command Handler Pattern](https://blogs.cuttingedge.it/steven/posts/2011/meanwhile-on-the-command-side-of-my-architecture/)
 
 - [Query Handler Pattern](https://blogs.cuttingedge.it/steven/posts/2011/meanwhile-on-the-query-side-of-my-architecture/)
+
+- [Domain Event with Spring Boot](https://dev.to/kirekov/spring-data-power-of-domain-events-2okm)
