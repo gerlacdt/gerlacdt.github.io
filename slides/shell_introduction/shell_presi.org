@@ -1,0 +1,80 @@
+#+title: Getting comfy with the Shell - a practical guide for improving your CLI skills
+#+author: Daniel Gerlach
+
+* better terminal app (iterm2 etc.)
+https://iterm2.com/
+https://alacritty.org/
+https://ghostty.org/
+
+* use a pre-configured shell
+** oh-my-zsh
+https://github.com/ohmyzsh/ohmyzsh
+** starship
+https://starship.rs/
+
+* better shell prompt with context
+** current k8s cluster and namespace
+** git branch (dirty or clean)
+** Azure subscription
+
+* aliases
+** git
+** kubectl
+** terraform
+** emacs
+** netshoot (k8s debugging)
+
+* custom shell functions
+** switch between azure nonprod and prod subscription
+
+* tmux (tabs, persistent session) with tmuxinator
+
+* modern shell tools
+** fzf (better command history)
+** bat (better cat)
+** zoxide (better navigation)
+** delta  (better diff)
+** improved kubectl
+*** kubectx
+https://github.com/ahmetb/kubectx
+*** kubens
+
+** shell completions
+*** kubectl
+*** git
+*** terraform
+
+** handle json and yaml
+*** jq
+**** brew install jq
+cd ~/tmp
+az aks show --name aks-mcap-weu-nonprod-green --resource-group rg-mcap-nonprod-westeurope-aks -o json > aks.json
+cat aks.json
+cat aks.json | jq
+cat aks.json | jq ".oidcIssuerProfile"
+**** works with curl
+curl -H "x-api-key: $API_KEY_NONPROD" https://mcap-sample-nonprod.mobility.corpinter.net/foobar | jq .error
+
+*** yq
+**** brew install yq
+cd /Users/dagerla/src/sre/mcap-tenant-sample/apps/base/sample-app
+cat helm-release.yaml | yq ".spec.chart"
+
+* gnu stow - how to manage your dotfiles?
+* mise - how to manage different versions of dev tools?
+
+* new tools are coming
+** [[https://github.com/google-gemini/gemini-cli][Google Gemini CLI]]
+** [[https://www.claude.com/product/claude-code][Claude Code]]
+** [[https://developers.openai.com/codex/cli/][Code CLI]]
+
+* Conclusion
+** Shell is customizable
+** Adopt the shell to your needs in order to be more productive -> sharpen your axe
+
+
+* Opinionated Tips
+** use a better editor: Emacs ;) -- or neovim
+** fast typing also helps:
+https://monkeytype.com/
+https://www.keybr.com/
