@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>Getting comfy with the shell</h3>
+          <blockquote>
+            A practical guide for improving your CLI skills
+          </blockquote>
+        </section>
+        <section>
+          <h4>Human and Tools</h4>
+          <img src="img/human_tools.png" width="500" />
+          <blockquote>
+            &ldquo;Man is a tool-using animal. Without tools he is nothing, with
+            tools he is all&rdquo;
+            <br />
+            - Anonymous
+          </blockquote>
+        </section>
+        <section>
+          <img src="img/lincoln_quote.jpg" width="600" />
+        </section>
+        <section>
+          <img src="img/fool_tool.jpeg" width="700" />
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
