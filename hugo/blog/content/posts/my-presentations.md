@@ -11,3 +11,4 @@ draft: false
 - [java8 new features](http://gerlacdt.github.io/slides/java8-introduction/slides/index.html)
 - [hashicorp nomad tutorial](http://gerlacdt.github.io/slides/nomad-scheduler/slides/index.html)
 - [learning how to learn](http://gerlacdt.github.io/slides/learning_how_to_learn)
+- [shell introduction](http://gerlacdt.github.io/slides/shell_introduction)
