@@ -1,20 +1,23 @@
 #+title: Getting comfy with the Shell - a practical guide for improving your CLI skills
 #+author: Daniel Gerlach
 
-* better terminal app (iterm2 etc.)
+* better terminal app
 https://iterm2.com/
 https://alacritty.org/
 https://ghostty.org/
 
-* use a pre-configured shell
-** oh-my-zsh
-https://github.com/ohmyzsh/ohmyzsh
-** starship
-https://starship.rs/
+* shell is programming environment
+** configurabe via dotfiles
+- .zshrc, .bashrc
+- .emacs, .vimrc
 
-* better shell prompt with context
-** current k8s cluster and namespace
-** git branch (dirty or clean)
+* use a pre-configured shell
+** [[https://github.com/ohmyzsh/ohmyzsh][oh-my-zsh]]
+
+* better shell prompt
+** [[https://starship.rs][starship]]
+** k8s cluster and namespace
+** git branch
 ** Azure subscription
 
 * aliases
@@ -66,15 +69,10 @@ cat helm-release.yaml | yq ".spec.chart"
 * new tools are coming
 ** [[https://github.com/google-gemini/gemini-cli][Google Gemini CLI]]
 ** [[https://www.claude.com/product/claude-code][Claude Code]]
-** [[https://developers.openai.com/codex/cli/][Code CLI]]
-
-* Conclusion
-** Shell is customizable
-** Adopt the shell to your needs in order to be more productive -> sharpen your axe
-
+** [[https://developers.openai.com/codex/cli][Codex CLI OpenAI]]
 
 * Opinionated Tips
-** use a better editor: Emacs ;) -- or neovim
+** use a better editor: Emacs ;)
 ** fast typing also helps:
 https://monkeytype.com/
 https://www.keybr.com/
