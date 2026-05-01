@@ -1,0 +1,16 @@
+tags: Biology Math Kinship
+title: Kin Selection and Hamilton's Rule
+type: text/vnd.tiddlywiki
+
+!! Hamilton's Rule
+Altruism evolves when the cost to the actor is outweighed by the benefit to the relative, weighted by their genetic relatedness:
+
+//rB > C//
+
+!! Coefficients of Relatedness (r)
+* '''0.5 (50%):''' Parents to Children, Full Siblings.
+* '''0.25 (25%):''' Grandparents/Grandchildren, Aunts/Uncles, Nieces/Nephews.
+* '''0.125 (12.5%):''' First Cousins.
+
+!! Haplodiploidy
+In ants and bees, the unique sex-determination system makes sisters share 75% of their genes (r=0.75), explaining why workers often forgo their own reproduction to raise sisters.

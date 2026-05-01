@@ -1,0 +1,50 @@
+created: 20260501080701081
+modified: 20260501082246536
+tags: Books
+title: TheAlgorithm
+type: text/vnd.tiddlywiki
+
+! Overview
+In ''"The Algorithm: The Hypergrowth Formula That Transformed Tesla, Lululemon, General Motors, and SpaceX"'' (2026), Jon McNeill distills a radical five-step management philosophy designed to dismantle complexity and force hypergrowth.
+
+---
+
+! The Five Steps of The Algorithm
+
+!! 1. Question Every Requirement
+Requirements must be attached to a specific person, not a department. If you can’t find the owner, the rule is "legacy debt."
+
+* **Logic:** //Safety// or //Legal// rules are often just outdated interpretations.
+* **Real-Life Example:** At ''Tesla'', engineers questioned a fiberglass sound-dampening mat on the battery pack. They found the requirement was based on a legacy spec that didn't apply to the new design and deleted it entirely.
+
+!! 2. Delete Every Possible Step
+Try to kill a process before improving it. If you aren't forced to add back at least 10% of what you deleted, you aren't being radical enough.
+
+* **Logic:** Optimizing a step that shouldn't exist is a waste of resources.
+* **Real-Life Example:** At ''Lululemon'', McNeill deleted redundant quality-check handoffs between logistics partners, allowing products to reach shelves significantly faster.
+
+!! 3. Simplify and Optimize
+Only simplify what remains after deletion. Reduce complexity to minimize points of failure.
+
+* **Logic:** Complexity is a tax on speed.
+* **Real-Life Example:** ''SpaceX'' simplified rocket engine plumbing by using fuel as a coolant in a simple loop, reducing both mass and the number of potential failure points.
+
+!! 4. Accelerate Cycle Time
+Reduce the "latency" between idea and execution. Fast mistakes provide the data needed for more "turns" of the wheel.
+
+* **Logic:** Speed is the ultimate competitive advantage.
+* **Real-Life Example:** ''General Motors'' shifted from quarterly software updates to rapid, continuous integration loops, pushing vehicle fixes in days instead of months.
+
+!! 5. Automate Last
+Never automate a process that hasn't been through the first four steps.
+
+* **Logic:** Automating a mess creates an "automated mess" that is harder to fix.
+* **Real-Life Example:** ''Tesla'' famously over-automated the Model 3 line with robots to move blankets. After applying the algorithm, they realized the blankets weren't needed at all, deleted the task, and removed the robots.
+
+---
+
+! Cultural Prerequisites
+
+* **Inject Urgency:** Use "unrealistic" deadlines to force simple solutions.
+* **Eat Your Own Dog Food:** Leaders must experience the friction their customers feel.
+* **Permission to Fail:** You cannot question everything if you are afraid of being wrong.

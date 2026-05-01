@@ -1,0 +1,110 @@
+created: 20260501085158135
+modified: 20260501085623336
+tags: Memory
+title: PAOSystem
+type: text/vnd.tiddlywiki
+
+!! 3. PAO System (Person-Action-Object)
+
+The **PAO System** is an advanced method for memorizing long strings of numbers by chunking them into groups of six digits.
+
+* **The Setup:** You create a list for numbers 00-99. Each number is assigned one **Person**, one **Action**, and one **Object**.
+* **The Encoding:** To remember a 6-digit number (e.g., 150299):
+# **15** (Person) - Leonardo da Vinci
+# **02** (Action) - Singing
+# **99** (Object) - Scepter
+* **Result:** You visualize "Leonardo da Vinci singing into a scepter."
+
+!! Summary of Why They Work
+
+* ''Dual Coding:'' Using both verbal and visual channels.
+* ''Elaboration:'' Making abstract data "weird" or "vivid" so the brain pays attention.
+* ''Spatial Memory:'' Tapping into the human brain's evolutionary strength in navigating environments (especially for Memory Palaces).
+
+
+title: Custom PAO Memory System
+tags: Mnemonics Memory PAO
+modifier: Gemini
+
+! Number-to-Letter Mapping
+This system uses a custom letter mapping based on visual similarity or phonetic initials rather than the traditional Major System[cite: 1].
+
+|!Digit |!Letter |!Logic |
+|0 |O |Easy to remember (shape)[cite: 1] |
+|1 |A |Alphabetical order[cite: 1] |
+|2 |B |Alphabetical order[cite: 1] |
+|3 |C |Alphabetical order[cite: 1] |
+|4 |D |Alphabetical order[cite: 1] |
+|5 |E |Alphabetical order[cite: 1] |
+|6 |S |Visual similarity / "Six" starts with S[cite: 1] |
+|7 |G |Alphabetical order[cite: 1] |
+|8 |H |Alphabetical order[cite: 1] |
+|9 |N |Easy to remember[cite: 1] |
+
+---
+
+! PAO List (00-99) 
+Below is the Person-Action-Object list derived from the provided mapping[cite: 1].
+
+''NOT COMPLETE''
+
+|!# |!Code |!Person |!Action |!Object |
+|00 |OO |Jean-Luc Picard | - | -[cite: 1]|
+|01 |OA |Number 1 (Riker) |commands |Enterprise[cite: 1]|
+|02 |OB |Obi-Wan Kenobi |force push |stormtrooper[cite: 1]|
+|05 |OE |Abraham Lincoln |buying something |dollar bill[cite: 1]|
+|06 |OS |Steve Jobs |presenting |iPhone[cite: 1]|
+|07 |OG |James Bond |sipping |Martini glass[cite: 1]|
+|10 |AO |Lothar Mattaeus |kicking |football[cite: 1]|
+|11 |AA |Andre Agassi |serve/hit ball |tennis racket[cite: 1]|
+|12 |AB |Antonio Banderas |destroying |guitar[cite: 1]|
+|13 |AC |Al Capone |lying |bed (behind bars)[cite: 1]|
+|14 |AD |Albus Dumbledore |pointing |wand[cite: 1]|
+|15 |AE |Albert Einstein |writing |blackboard[cite: 1]|
+|16 |AS |Arnold Schwarzenegger |lifting |dumbbells[cite: 1]|
+|17 |AG |Andre the Giant |throwing |rocks[cite: 1]|
+|18 |AH |Anthony Hopkins |eating |liver[cite: 1]|
+|19 |AN |Anakin Skywalker |licking |lightsaber[cite: 1]|
+|20 |BO |Barack Obama |giving a speech |speaker's desk[cite: 1]|
+|22 |BB |Boris Becker |juggling |tennis balls[cite: 1]|
+|23 |BC |Michael Jordan |jumping/flying |basket[cite: 1]|
+|24 |BD |Kobe Bryant |dribbling |basketball[cite: 1]|
+|26 |BS |Britney Spears |posing for selfie |mobile phone[cite: 1]|
+|27 |BG |Bill Gates |reading |book[cite: 1]|
+|28 |BH |Ben Hur |racing |chariot[cite: 1]|
+|31 |CA |Captain Ahab |harpooning |whale[cite: 1]|
+|32 |CB |Christian Bale |breaking |backbone[cite: 1]|
+|33 |CC |Charlie Chaplin |swinging |cane[cite: 1]|
+|34 |CD |Shaquille o'Neal |crushing |backboard[cite: 1]|
+|35 |CE |Clint Eastwood |drawing |gun[cite: 1]|
+|36 |CS |Claudia Schiffer |walking |catwalk[cite: 1]|
+|39 |CN |Chuck Norris |high-kicking |head[cite: 1]|
+|41 |DA |Dan Aykroyd |catching |ghost[cite: 1]|
+|42 |DB |Doc Brown |connecting |electric sockets[cite: 1]|
+|43 |DC |Batman |doing pushups |floor[cite: 1]|
+|44 |DD |David Duchovny |showing |FBI badge[cite: 1]|
+|46 |DS |Super Mario |jumping on |mushroom[cite: 1]|
+|50 |EO |50 Cent |wearing |bulletproof vest[cite: 1]|
+|54 |ED |Evil Dead Ash |one-handed holding |shotgun[cite: 1]|
+|56 |ES |Dan |shuffling |cards[cite: 1]|
+|58 |EH |Ethan Hunt |climbing |mountain[cite: 1]|
+|59 |EN |Edward Norton |transforming |Hulk[cite: 1]|
+|62 |SB |Sandra Bullock |driving |bus[cite: 1]|
+|63 |SC |Sarah Conner |fleeing |from doctors[cite: 1]|
+|66 |SS |Sylvester Stallone |punching |glove[cite: 1]|
+|68 |SH |Stephen Hawking |sitting |wheelchair[cite: 1]|
+|72 |GB |George Bush |waving |US flag[cite: 1]|
+|74 |GD |Gerald Depardieu |sword fighting |sword[cite: 1]|
+|75 |GE |Gloria Estefan |dance |dance floor[cite: 1]|
+|76 |GS |Gwen Stefani |singing |microphone[cite: 1]|
+|77 |GG |Galileo Galilei |pulling apart |telescope[cite: 1]|
+|80 |HO |Santa Claus |slipping |chimney[cite: 1]|
+|81 |HA |Daniel Gerlach |typing |keyboard[cite: 1]|
+|82 |HB |Tamara |cheering |beer glass[cite: 1]|
+|84 |HD |Terminator |shoot |gun[cite: 1]|
+|86 |HS |Han Solo |kissing |Princess Leia[cite: 1]|
+|87 |HG |Vicky |holding |Xbox Controller[cite: 1]|
+|88 |HH |Hitler |speaking |big audience[cite: 1]|
+|91 |NA |Neil Armstrong |spacewalking |spaceman[cite: 1]|
+|93 |NC |Nicolas Cage |punching |bad guy's face[cite: 1]|
+|99 |NN |Marty McFly |skating |hover board[cite: 1]|
