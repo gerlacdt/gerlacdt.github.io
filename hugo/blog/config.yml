@@ -126,10 +126,10 @@ menu:
       name: about
       url: /about
       weight: 30
-    # - identifier: example
-    #   name: example.org
-    #   url: https://example.org
-    #   weight: 30
+    - identifier: wiki
+      name: wiki
+      url: https://gerlacdt.github.io/wiki
+      weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 markup:
