@@ -1,5 +1,5 @@
 created: 20260501085158135
-modified: 20260501085623336
+modified: 20260704110134588
 tags: Memory
 title: PAOSystem
 type: text/vnd.tiddlywiki
@@ -49,62 +49,103 @@ Below is the Person-Action-Object list derived from the provided mapping[cite: 1
 ''NOT COMPLETE''
 
 |!# |!Code |!Person |!Action |!Object |
-|00 |OO |Jean-Luc Picard | - | -[cite: 1]|
-|01 |OA |Number 1 (Riker) |commands |Enterprise[cite: 1]|
-|02 |OB |Obi-Wan Kenobi |force push |stormtrooper[cite: 1]|
-|05 |OE |Abraham Lincoln |buying something |dollar bill[cite: 1]|
-|06 |OS |Steve Jobs |presenting |iPhone[cite: 1]|
-|07 |OG |James Bond |sipping |Martini glass[cite: 1]|
-|10 |AO |Lothar Mattaeus |kicking |football[cite: 1]|
-|11 |AA |Andre Agassi |serve/hit ball |tennis racket[cite: 1]|
-|12 |AB |Antonio Banderas |destroying |guitar[cite: 1]|
-|13 |AC |Al Capone |lying |bed (behind bars)[cite: 1]|
-|14 |AD |Albus Dumbledore |pointing |wand[cite: 1]|
-|15 |AE |Albert Einstein |writing |blackboard[cite: 1]|
-|16 |AS |Arnold Schwarzenegger |lifting |dumbbells[cite: 1]|
-|17 |AG |Andre the Giant |throwing |rocks[cite: 1]|
-|18 |AH |Anthony Hopkins |eating |liver[cite: 1]|
-|19 |AN |Anakin Skywalker |licking |lightsaber[cite: 1]|
-|20 |BO |Barack Obama |giving a speech |speaker's desk[cite: 1]|
-|22 |BB |Boris Becker |juggling |tennis balls[cite: 1]|
-|23 |BC |Michael Jordan |jumping/flying |basket[cite: 1]|
-|24 |BD |Kobe Bryant |dribbling |basketball[cite: 1]|
-|26 |BS |Britney Spears |posing for selfie |mobile phone[cite: 1]|
-|27 |BG |Bill Gates |reading |book[cite: 1]|
-|28 |BH |Ben Hur |racing |chariot[cite: 1]|
-|31 |CA |Captain Ahab |harpooning |whale[cite: 1]|
-|32 |CB |Christian Bale |breaking |backbone[cite: 1]|
-|33 |CC |Charlie Chaplin |swinging |cane[cite: 1]|
-|34 |CD |Shaquille o'Neal |crushing |backboard[cite: 1]|
-|35 |CE |Clint Eastwood |drawing |gun[cite: 1]|
-|36 |CS |Claudia Schiffer |walking |catwalk[cite: 1]|
-|39 |CN |Chuck Norris |high-kicking |head[cite: 1]|
-|41 |DA |Dan Aykroyd |catching |ghost[cite: 1]|
-|42 |DB |Doc Brown |connecting |electric sockets[cite: 1]|
-|43 |DC |Batman |doing pushups |floor[cite: 1]|
-|44 |DD |David Duchovny |showing |FBI badge[cite: 1]|
-|46 |DS |Super Mario |jumping on |mushroom[cite: 1]|
-|50 |EO |50 Cent |wearing |bulletproof vest[cite: 1]|
-|54 |ED |Evil Dead Ash |one-handed holding |shotgun[cite: 1]|
-|56 |ES |Dan |shuffling |cards[cite: 1]|
-|58 |EH |Ethan Hunt |climbing |mountain[cite: 1]|
-|59 |EN |Edward Norton |transforming |Hulk[cite: 1]|
-|62 |SB |Sandra Bullock |driving |bus[cite: 1]|
-|63 |SC |Sarah Conner |fleeing |from doctors[cite: 1]|
-|66 |SS |Sylvester Stallone |punching |glove[cite: 1]|
-|68 |SH |Stephen Hawking |sitting |wheelchair[cite: 1]|
-|72 |GB |George Bush |waving |US flag[cite: 1]|
-|74 |GD |Gerald Depardieu |sword fighting |sword[cite: 1]|
-|75 |GE |Gloria Estefan |dance |dance floor[cite: 1]|
-|76 |GS |Gwen Stefani |singing |microphone[cite: 1]|
-|77 |GG |Galileo Galilei |pulling apart |telescope[cite: 1]|
-|80 |HO |Santa Claus |slipping |chimney[cite: 1]|
-|81 |HA |Daniel Gerlach |typing |keyboard[cite: 1]|
-|82 |HB |Tamara |cheering |beer glass[cite: 1]|
-|84 |HD |Terminator |shoot |gun[cite: 1]|
-|86 |HS |Han Solo |kissing |Princess Leia[cite: 1]|
-|87 |HG |Vicky |holding |Xbox Controller[cite: 1]|
-|88 |HH |Hitler |speaking |big audience[cite: 1]|
-|91 |NA |Neil Armstrong |spacewalking |spaceman[cite: 1]|
-|93 |NC |Nicolas Cage |punching |bad guy's face[cite: 1]|
-|99 |NN |Marty McFly |skating |hover board[cite: 1]|
+|00 |OO |Jean-Luc Picard |sipping |Earl Grey tea |
+|01 |OA |Number 1 (Riker) |commands |Enterprise |
+|02 |OB |Obi-Wan Kenobi |force push |stormtrooper |
+|03 |OC |Captain Cook |navigating |sextant |
+|04 |OD |Darth Vader |choking |lightsaber |
+|05 |OE |Abraham Lincoln |buying something |dollar bill |
+|06 |OS |Steve Jobs |presenting |iPhone |
+|07 |OG |James Bond |sipping |Martini glass |
+|08 |OH |Harry Potter |casting |spellbook |
+|09 |ON |Napoleon |conquering |map |
+|10 |AO |Lothar Mattaeus |kicking |football |
+|11 |AA |Andre Agassi |serve/hit ball |tennis racket |
+|12 |AB |Antonio Banderas |zorro-fencing |rapier |
+|13 |AC |Al Capone |lying |bed (behind bars) |
+|14 |AD |Albus Dumbledore |pointing |wand |
+|15 |AE |Albert Einstein |writing |blackboard |
+|16 |AS |Arnold Schwarzenegger |lifting |dumbbells |
+|17 |AG |Andre the Giant |throwing |rocks |
+|18 |AH |Anthony Hopkins |eating |liver |
+|19 |AN |Anakin Skywalker |licking |lightsaber |
+|20 |BO |Barack Obama |giving a speech |speaker's desk |
+|21 |BA |Bruce Almighty |parting |water |
+|22 |BB |Boris Becker |juggling |tennis balls |
+|23 |BC |Michael Jordan |jumping/flying |basket |
+|24 |BD |Kobe Bryant |dribbling |basketball |
+|25 |BE |Bruce Edwards |fighting |nunchucks |
+|26 |BS |Britney Spears |posing for selfie |mobile phone |
+|27 |BG |Bill Gates |reading |book |
+|28 |BH |Ben Hur |racing |chariot |
+|29 |BN |Batman (Nolan) |driving |Batmobile |
+|30 |CO |Charlie Chaplin |wandering |bowler hat |
+|31 |CA |Captain Ahab |harpooning |whale |
+|32 |CB |Christian Bale |breaking |backbone |
+|33 |CC |Charlie Chaplin |swinging |cane |
+|34 |CD |Shaquille o'Neal |crushing |backboard |
+|35 |CE |Clint Eastwood |drawing |gun |
+|36 |CS |Claudia Schiffer |walking |catwalk |
+|37 |CG |Che Guevara |smoking |cigar |
+|38 |CH |Hulk Hogan |tearing |t-shirt |
+|39 |CN |Chuck Norris |high-kicking |head |
+|40 |DO |Darth Maul |spinning |double lightsaber |
+|41 |DA |Dan Aykroyd |catching |ghost |
+|42 |DB |Doc Brown |connecting |electric sockets |
+|43 |DC |Batman |doing pushups |floor |
+|44 |DD |David Duchovny |showing |FBI badge |
+|45 |DE |David Edison |inventing |lightbulb |
+|46 |DS |Super Mario |jumping on |mushroom |
+|47 |DG |David Goggins |running |running shoe |
+|48 |DH |David Hasselhoff |rescuing |lifeguard buoy |
+|49 |DN |David Niven |gambling |poker chip |
+|50 |EO |50 Cent |wearing |bulletproof vest |
+|51 |EA |Elvis Presley |singing |microphone |
+|52 |EB |Ebenezer Scrooge |counting |gold coins |
+|53 |EC |Eric Clapton |strumming |electric guitar |
+|54 |ED |Evil Dead Ash |one-handed holding |shotgun |
+|55 |EE |Emperor Palpatine |zapping |force lightning |
+|56 |ES |Dan |shuffling |cards |
+|57 |EG |Edgar Guest |writing |fountain pen |
+|58 |EH |Ethan Hunt |climbing |mountain |
+|59 |EN |Edward Norton |transforming |Hulk |
+|60 |SO |Sherlock Holmes |magnifying |magnifying glass |
+|61 |SA |Steve Austin |drinking |beer |
+|62 |SB |Sandra Bullock |driving |bus |
+|63 |SC |Sarah Conner |fleeing |from doctors |
+|64 |SD |Salvador Dali |painting |melting clock |
+|65 |SE |Sylvester Stallone |punching |boxing ring |
+|66 |SS |Sylvester Stallone |punching |glove |
+|67 |SG |Sting |scanning |binoculars |
+|68 |SH |Stephen Hawking |sitting |wheelchair |
+|69 |SN |Santa Claus |delivering |toy sack |
+|70 |GO |Gandalf |waving |magic staff |
+|71 |GA |Gordon Ramsay |cooking |frying pan |
+|72 |GB |George Bush |waving |US flag |
+|73 |GC |George Clooney |sipping |espresso |
+|74 |GD |Gerald Depardieu |sword fighting |sword |
+|75 |GE |Gloria Estefan |dance |dance floor |
+|76 |GS |Gwen Stefani |singing |microphone |
+|77 |GG |Galileo Galilei |pulling apart |telescope |
+|78 |GH |George Harrison |Gardening |Large shovel |
+|79 |GN |Greg Norman |swinging |golf club |
+|80 |HO |Santa Claus |slipping |chimney |
+|81 |HA |Daniel Gerlach |typing |keyboard |
+|82 |HB |Tamara |cheering |beer glass |
+|83 |HC |Harrison Ford |piloting |plane |
+|84 |HD |Terminator |shoot |gun |
+|85 |HE |He-Man |raising | Power Sword |
+|86 |HS |Han Solo |kissing |Princess Leia |
+|87 |HG |Vicky |holding |Xbox Controller |
+|88 |HH |Hitler |speaking |big audience |
+|89 |HN |Hulk |smashing |fist |
+|90 |NO |Neo |dodging |bullets |
+|91 |NA |Neil Armstrong |spacewalking |spaceman |
+|92 |NB |Napoleon Bonaparte |mounting |white horse |
+|93 |NC |Nicolas Cage |punching |bad guy's face |
+|94 |ND |Niall David |climbing |rope |
+|95 |NE |Nelly |singing |band-aid |
+|96 |NS |Nicki Minaj |rapping |microphone |
+|97 |NG |Neil Gaiman |writing |quill |
+|98 |NH |Nathan Hale |proclaiming |noose |
+|99 |NN |Marty McFly |skating |hover board |
